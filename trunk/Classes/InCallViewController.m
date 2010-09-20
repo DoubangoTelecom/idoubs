@@ -280,9 +280,9 @@
 			}
 			
 			[self->timerInCall invalidate], self->timerInCall = nil;
-			[self->timerSuicide invalidate], self->timerSuicide = nil;
+			//[self->timerSuicide invalidate], self->timerSuicide = nil;
 			
-			self->timerInCall = [NSTimer scheduledTimerWithTimeInterval:1.5 
+			[NSTimer scheduledTimerWithTimeInterval:1.5 
 												target:self 
 												selector:@selector(timerSuicideTick:) 
 												userInfo:nil 
@@ -347,7 +347,7 @@
 	TSK_FREE(self->producerData);
 	
 	[timerInCall invalidate], timerInCall = nil;
-	[timerSuicide invalidate], timerSuicide = nil;
+	//[timerSuicide invalidate], timerSuicide = nil;
 	[dateFormatter dealloc];
 	[self->session release];
     [super dealloc];
@@ -412,7 +412,7 @@
 -(int)consumerPreparedWithWidth:(int) width andHeight: (int)height andFps: (int)fps{
 	NSLog(@"InCallViewController::prepareWithWidth");
 	
-	CGContextRelease(self->bitmapContext);
+	CGContextRelease(self->bitmapContext), self->bitmapContext = nil;
 	
 	if(self->consumerDataSize != (width*height*4)){
 		self->consumerDataSize = (width*height*4);
