@@ -38,7 +38,7 @@
 	double dateSeconds;
 	NSDateFormatter *dateFormatter;
 	NSTimer* timerInCall;
-	NSTimer* timerSuicide;
+	//NSTimer* timerSuicide;
 	
 	BOOL canStreamVideo;
 	
