@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Identity</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Display Name</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>identity_displayname</string>
+			<key>DefaultValue</key>
+			<string>John Doe</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Public Id</string>
+			<key>Key</key>
+			<string>identity_impu</string>
+			<key>DefaultValue</key>
+			<string>sip:johndoe@open-ims.test</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Private Id</string>
+			<key>Key</key>
+			<string>identity_impi</string>
+			<key>DefaultValue</key>
+			<string>johndoe@open-ims.test</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Password</string>
+			<key>Key</key>
+			<string>identity_password</string>
+			<key>IsSecure</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Realm</string>
+			<key>Key</key>
+			<string>identity_realm</string>
+			<key>DefaultValue</key>
+			<string>sip:open-ims.test</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>3GPP Early IMS</string>
+			<key>Key</key>
+			<string>identity_earlyims</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>
