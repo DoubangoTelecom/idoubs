@@ -384,6 +384,7 @@
 //
 - (int) onEvent: (DWSipEvent*)event{
 	int ret = -1;
+	//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	switch (event.baseType) {
 			/*tsip_event_invite,
@@ -420,6 +421,8 @@
 		default:
 			break;
 	}
+	
+	//[pool release];
 	
 	return ret;
 }

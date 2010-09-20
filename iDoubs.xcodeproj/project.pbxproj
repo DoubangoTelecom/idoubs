@@ -2375,7 +2375,6 @@
 				EC857B4D1227921300A1F1B3 /* turn */,
 				EC857B341227921300A1F1B3 /* tinynet_config.h */,
 				EC857B331227921300A1F1B3 /* tinynet.h */,
-				EC1120AF12471DE90028C6A5 /* tnet_utils.c */,
 				EC857B391227921300A1F1B3 /* tnet.h */,
 				EC857B381227921300A1F1B3 /* tnet.c */,
 				EC857B3A1227921300A1F1B3 /* tnet_auth.c */,
@@ -2395,6 +2394,7 @@
 				EC857B481227921300A1F1B3 /* tnet_transport_poll.c */,
 				EC857B491227921300A1F1B3 /* tnet_transport_win32.c */,
 				EC857B4A1227921300A1F1B3 /* tnet_types.h */,
+				EC1120AF12471DE90028C6A5 /* tnet_utils.c */,
 				EC857B4C1227921300A1F1B3 /* tnet_utils.h */,
 			);
 			path = src;
