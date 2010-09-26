@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HistoryEvent.h"
+#import "PService.h"
 
-@protocol PHistoryService
+@protocol PHistoryService  <PService>
 
+-(BOOL) isLoadingHistory;
+-(BOOL) addEvent: (HistoryEvent*)event;
+-(BOOL) updateEvent: (HistoryEvent*)event;
+-(BOOL) deleteEvent: (HistoryEvent*)event;
+-(BOOL) clear;
+-(NSMutableArray*)events;
 
 @end

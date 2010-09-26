@@ -15,6 +15,7 @@
 #import "NSNotificationCenter+MainThread.h"
 
 #import "ServiceManager.h"
+#import "iDoubsAppDelegate.h"
 
 //
 // Private functions
@@ -231,6 +232,84 @@
 	return 0;
 }
 
+
+-(int) onInviteEvent: (DWInviteEvent*) e {
+	EventArgs* eargs = nil;
+	
+	DWInviteSession* session = e.session;
+	short code = e.code;
+	NSString* phrase = e.phrase;
+	
+	/*tsip_ssession_id_t session_id = baseSession.id;
+	SESSION_TYPE_T type = baseSession.type;
+	
+	SESSION_STATE_T oldState = baseSession.state;*/
+	
+	switch(e.type)
+	{
+		case tsip_i_newcall:
+		{
+			if(session){ /* As we are not the owner, then the session MUST be null */
+				NSLog(@"Invalid incoming session");
+				[session hangUp];
+				return 0;
+			}
+			
+			tmedia_type_t type = tsip_ssession_get_mediatype(e.event->ss);
+			if(!(session = [e takeCallSessionOwnership])){
+				NSLog(@"Failed to take the session");
+				return 0;
+			}
+			
+			// Ignore Mixed session (both audio/video and MSRP) as specified by GSMA RCS.
+			switch(type){
+				case tmedia_audio:
+				case tmedia_video:
+				case tmedia_audiovideo:
+					break;
+					
+				default:
+					NSLog(@"Media Type not supported");
+					[session hangUp], [session release], session = nil;
+					return 0;
+			}
+			
+			// Receive call
+			[InCallViewController receiveCall:(DWCallSession*)session];	
+			
+			// HACK: just tell him that there is an incoming session
+			eargs = [[InviteEventArgs alloc]initWithType:INVITE_INCOMING andSipCode:code andPhrase:phrase];
+			[eargs putExtraWithKey:@"id" andValue:[NSString stringWithFormat:@"%lld", session.id]];
+			[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:[InviteEventArgs eventName] object:eargs];
+			
+			[session release];
+			
+			break;
+		}
+			
+		case tsip_i_request:
+		case tsip_ao_request:
+			
+		case tsip_o_ect_ok:
+		case tsip_o_ect_nok:
+		case tsip_i_ect:
+			
+		case tsip_m_early_media:
+		case tsip_m_local_hold_ok:
+		case tsip_m_local_hold_nok:
+		case tsip_m_local_resume_ok:
+		case tsip_m_local_resume_nok:
+		case tsip_m_remote_hold:
+		case tsip_m_remote_resume:
+		default:
+			break;
+	}
+	
+	[eargs release];
+	
+	return 0;
+}
+
 -(int) onDialogEvent: (DWDialogEvent*) e {
 	
 	EventArgs* eargs = nil;
@@ -384,7 +463,6 @@
 //
 - (int) onEvent: (DWSipEvent*)event{
 	int ret = -1;
-	//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	switch (event.baseType) {
 			/*tsip_event_invite,
@@ -396,6 +474,13 @@
 			 
 			 ,
 			 tsip_event_stack,*/
+			
+		case tsip_event_invite:
+			{
+				DWInviteEvent* inviteEvent = [event isMemberOfClass:[DWInviteEvent class]] ? ((DWInviteEvent*)event) : nil;
+				ret = [self onInviteEvent: inviteEvent];
+				break;
+			}
 			
 		case tsip_event_dialog:
 			{
@@ -421,8 +506,6 @@
 		default:
 			break;
 	}
-	
-	//[pool release];
 	
 	return ret;
 }
