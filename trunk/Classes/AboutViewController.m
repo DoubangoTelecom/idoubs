@@ -11,6 +11,9 @@
 
 @implementation AboutViewController
 
+@synthesize webView;
+
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -20,13 +23,20 @@
     return self;
 }
 */
-
 /*
+- (void)awakeFromNib {
+	[super awakeFromNib];
+}
+*/
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"]isDirectory:NO]]];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

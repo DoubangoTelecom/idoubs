@@ -9,6 +9,7 @@
 // http://www.drobnik.com/touch/2010/05/nsnotifications-and-background-threads/
 // http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Notifications/Articles/Threading.html
 // http://www.iphoneexamples.com/
+// http://dblog.com.au/iphone-development-tutorials/iphone-sdk-tutorial-reading-data-from-a-sqlite-database/
 
 #import "iDoubsAppDelegate.h"
 
@@ -16,6 +17,7 @@
 
 #import "RegisteringViewController.h"
 #import "DialerViewController.h"
+#import "HistoryViewController.h"
 
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -47,7 +49,10 @@
 	
 	
 	DialerViewController* dialerViewController = (DialerViewController*)[viewControllers objectAtIndex:tab_index_dialer];
+	HistoryViewController* historyViewController = (HistoryViewController*)[viewControllers objectAtIndex:tab_index_history];
 	self->peoplePickerDelegate.delegateDialer = dialerViewController;
+	historyViewController.delegateDialer = dialerViewController;
+	
 	
 	self->inCallViewController = [[InCallViewController alloc] initWithNibName:@"InCallViewController" bundle:nil];
 	UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:@"In Call" image:nil tag:1];
@@ -62,7 +67,6 @@
 	RegisteringViewController *registeringViewController = [[RegisteringViewController alloc] initWithNibName:@"RegisteringViewController" bundle:nil];
 	[self.tabBarController presentModalViewController:registeringViewController animated:NO];
 	[registeringViewController release];
-	
 	
 	
     return YES;

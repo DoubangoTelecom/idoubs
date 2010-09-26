@@ -35,7 +35,6 @@
 	DWSipSession* baseSession;
 	DWSipMessage* message;
 	
-@protected
 	tsip_event_t* event;
 }
 
@@ -46,6 +45,8 @@
 @property(readonly) NSString* phrase;
 @property(readonly) DWSipSession* baseSession;
 @property(readonly) DWSipMessage* message;
+@property(readonly) DWSipStack* stack;
+@property(readonly) tsip_event_t* event;
 
 @end
 
@@ -71,7 +72,7 @@
 
 
 
-/* ======================== InviteEvent ========================*/
+/* ======================== DWInviteEvent ========================*/
 @interface DWInviteEvent : DWSipEvent
 {
 	

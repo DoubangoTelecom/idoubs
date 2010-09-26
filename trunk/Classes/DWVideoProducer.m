@@ -12,6 +12,9 @@
 
 #define DWPRODUCER(self)                ((dw_producer_t*)(self))
 
+#define IPHONE_VIDEO_DEFAULT_WIDTH 400
+#define IPHONE_VIDEO_DEFAULT_HEIGHT 304
+
 
 // Producer callback (From Video Grabber to our plugin)
 static int dw_plugin_cb(const void* callback_data, const void* buffer, tsk_size_t size)
@@ -43,11 +46,11 @@ int dw_producer_prepare(tmedia_producer_t* self, const tmedia_codec_t* codec)
 	}
 	
 	/* Set Capture parameters */
-	producer->fps = TMEDIA_CODEC_VIDEO(codec)->fps;
-	producer->width = TMEDIA_CODEC_VIDEO(codec)->width;
-	producer->height = TMEDIA_CODEC_VIDEO(codec)->height;
+	producer->negociatedFps = TMEDIA_CODEC_VIDEO(codec)->fps;
+	producer->negociatedWidth = TMEDIA_CODEC_VIDEO(codec)->width;
+	producer->negociatedHeight = TMEDIA_CODEC_VIDEO(codec)->height;
 	
-	if((ret = [producer->eProducer.callback producerPreparedWithWidth:producer->width andHeight:producer->height andFps:producer->fps])){
+	if((ret = [producer->eProducer.callback producerPrepared:producer])){
 		return ret;
 	}
 	return 0;
@@ -74,7 +77,7 @@ int dw_producer_start(tmedia_producer_t* self)
 	}
 	
 	
-	if((ret = [producer->eProducer.callback producerStarted])){
+	if((ret = [producer->eProducer.callback producerStarted:producer])){
 		return ret;
 	}
 	
@@ -97,7 +100,7 @@ int dw_producer_pause(tmedia_producer_t* self)
 		return -2;
 	}
 	
-	if((ret = [producer->eProducer.callback producerPaused])){
+	if((ret = [producer->eProducer.callback producerPaused:producer])){
 		return ret;
 	}
 	
@@ -124,7 +127,7 @@ int dw_producer_stop(tmedia_producer_t* self)
 		return -2;
 	}
 	
-	if((ret = [producer->eProducer.callback producerStopped])){
+	if((ret = [producer->eProducer.callback producerStopped:producer])){
 		return ret;
 	}
 	
@@ -144,10 +147,12 @@ static tsk_object_t* dw_producer_ctor(tsk_object_t * self, va_list * app)
 		/* init base */
 		tmedia_producer_init(TMEDIA_PRODUCER(producer));
 		TMEDIA_PRODUCER(producer)->video.chroma = tmedia_uyvy422;
+		TMEDIA_PRODUCER(producer)->video.width = IPHONE_VIDEO_DEFAULT_WIDTH;
+		TMEDIA_PRODUCER(producer)->video.height = IPHONE_VIDEO_DEFAULT_HEIGHT;
 		/* init self (default values) */
-		producer->fps = 15;
-		producer->width = 176;
-		producer->height = 144;
+		producer->negociatedFps = 15;
+		producer->negociatedWidth = 176;
+		producer->negociatedHeight = 144;
 		producer->eProducer = [[DWVideoProducer sharedInstance] retain];
 		
 		[producer->eProducer.callback producerCreated:producer];
