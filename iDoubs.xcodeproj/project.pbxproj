@@ -880,6 +880,16 @@
 		ECDD2E6B12444BC200A79262 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857AE4122791F500A1F1B3 /* libtinyXCAP.a */; };
 		ECDD2F1D1244621900A79262 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		ECDD33021244EE7700A79262 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDD33011244EE7700A79262 /* 86-camera.png */; };
+		ECF9EA80124E393E00EB1CC8 /* ringbacktone.wav in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */; };
+		ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EA82124E39F200EB1CC8 /* SoundService.m */; };
+		ECF9EB8D124E529D00EB1CC8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EB8C124E529C00EB1CC8 /* about.html */; };
+		ECF9EC59124E5C4500EB1CC8 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF9EC58124E5C4500EB1CC8 /* libsqlite3.0.dylib */; };
+		ECF9EC63124E5EC500EB1CC8 /* HistoryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EC62124E5EC500EB1CC8 /* HistoryEvent.m */; };
+		ECF9EC66124F7CF100EB1CC8 /* HistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EC65124F7CF100EB1CC8 /* HistoryService.m */; };
+		ECF9EC6D124F7E7000EB1CC8 /* HistoryDatabase.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EC6C124F7E7000EB1CC8 /* HistoryDatabase.sql */; };
+		ECF9EE5E124FA80B00EB1CC8 /* call_incoming_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */; };
+		ECF9EE5F124FA80B00EB1CC8 /* call_missed_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */; };
+		ECF9EE60124FA80B00EB1CC8 /* call_outgoing_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1961,6 +1971,19 @@
 		EC9FA0BC123DA90400AABEFA /* DWVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWVideoProducer.h; sourceTree = "<group>"; };
 		EC9FA0BD123DA90400AABEFA /* DWVideoProducer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWVideoProducer.m; sourceTree = "<group>"; };
 		ECDD33011244EE7700A79262 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
+		ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
+		ECF9EA81124E39F200EB1CC8 /* SoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundService.h; sourceTree = "<group>"; };
+		ECF9EA82124E39F200EB1CC8 /* SoundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundService.m; sourceTree = "<group>"; };
+		ECF9EB8C124E529C00EB1CC8 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		ECF9EC58124E5C4500EB1CC8 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		ECF9EC61124E5EC500EB1CC8 /* HistoryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryEvent.h; sourceTree = "<group>"; };
+		ECF9EC62124E5EC500EB1CC8 /* HistoryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryEvent.m; sourceTree = "<group>"; };
+		ECF9EC64124F7CF100EB1CC8 /* HistoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryService.h; sourceTree = "<group>"; };
+		ECF9EC65124F7CF100EB1CC8 /* HistoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryService.m; sourceTree = "<group>"; };
+		ECF9EC6C124F7E7000EB1CC8 /* HistoryDatabase.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = HistoryDatabase.sql; sourceTree = "<group>"; };
+		ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_incoming_45.png; sourceTree = "<group>"; };
+		ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_missed_45.png; sourceTree = "<group>"; };
+		ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_outgoing_45.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1989,6 +2012,7 @@
 				EC11214A1247293A0028C6A5 /* AVFoundation.framework in Frameworks */,
 				EC11215612472CDE0028C6A5 /* CoreVideo.framework in Frameworks */,
 				EC11215D12472D120028C6A5 /* CoreMedia.framework in Frameworks */,
+				ECF9EC59124E5C4500EB1CC8 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2142,6 +2166,7 @@
 				EC112142124728EE0028C6A5 /* CoreVideo.framework */,
 				EC1121491247293A0028C6A5 /* AVFoundation.framework */,
 				EC11215C12472D120028C6A5 /* CoreMedia.framework */,
+				ECF9EC58124E5C4500EB1CC8 /* libsqlite3.0.dylib */,
 			);
 			name = iDoubs;
 			sourceTree = "<group>";
@@ -2158,6 +2183,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9EC6B124F7E5F00EB1CC8 /* SQL */,
+				ECF9EB8B124E528E00EB1CC8 /* html */,
+				ECF9EA7A124E38DA00EB1CC8 /* sounds */,
 				EC9F9CBF123C66BF00AABEFA /* Images */,
 				EC4AA75E123AE4BA009795F4 /* ProfileViewController.xib */,
 				EC4AA5851239E758009795F4 /* RegisteringViewController.xib */,
@@ -2232,6 +2260,8 @@
 			children = (
 				EC34E1A0122AD634009CDAB5 /* Configuration.h */,
 				EC34E1A1122AD634009CDAB5 /* Configuration.m */,
+				ECF9EC61124E5EC500EB1CC8 /* HistoryEvent.h */,
+				ECF9EC62124E5EC500EB1CC8 /* HistoryEvent.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -4174,6 +4204,9 @@
 		EC9F9CBF123C66BF00AABEFA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
+				ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */,
+				ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */,
 				ECDD33011244EE7700A79262 /* 86-camera.png */,
 				EC9F9CC0123C66DB00AABEFA /* avatar_48.png */,
 			);
@@ -4220,8 +4253,36 @@
 				EC34E225122ADC48009CDAB5 /* ServiceManager.m */,
 				EC796FB31231299600BA0FF7 /* SipService.h */,
 				EC796FB41231299600BA0FF7 /* SipService.m */,
+				ECF9EA81124E39F200EB1CC8 /* SoundService.h */,
+				ECF9EA82124E39F200EB1CC8 /* SoundService.m */,
+				ECF9EC64124F7CF100EB1CC8 /* HistoryService.h */,
+				ECF9EC65124F7CF100EB1CC8 /* HistoryService.m */,
 			);
 			name = Impl;
+			sourceTree = "<group>";
+		};
+		ECF9EA7A124E38DA00EB1CC8 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
+		ECF9EB8B124E528E00EB1CC8 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9EB8C124E529C00EB1CC8 /* about.html */,
+			);
+			name = html;
+			sourceTree = "<group>";
+		};
+		ECF9EC6B124F7E5F00EB1CC8 /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9EC6C124F7E7000EB1CC8 /* HistoryDatabase.sql */,
+			);
+			name = SQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5039,6 +5100,12 @@
 				EC9F9CC1123C66DB00AABEFA /* avatar_48.png in Resources */,
 				EC9F9F41123D768C00AABEFA /* InCallViewController.xib in Resources */,
 				ECDD33021244EE7700A79262 /* 86-camera.png in Resources */,
+				ECF9EA80124E393E00EB1CC8 /* ringbacktone.wav in Resources */,
+				ECF9EB8D124E529D00EB1CC8 /* about.html in Resources */,
+				ECF9EC6D124F7E7000EB1CC8 /* HistoryDatabase.sql in Resources */,
+				ECF9EE5E124FA80B00EB1CC8 /* call_incoming_45.png in Resources */,
+				ECF9EE5F124FA80B00EB1CC8 /* call_missed_45.png in Resources */,
+				ECF9EE60124FA80B00EB1CC8 /* call_outgoing_45.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5073,6 +5140,9 @@
 				EC9F9F40123D768C00AABEFA /* InCallViewController.m in Sources */,
 				EC9FA0BB123DA8F500AABEFA /* DWVideoConsumer.m in Sources */,
 				EC9FA0BE123DA90400AABEFA /* DWVideoProducer.m in Sources */,
+				ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */,
+				ECF9EC63124E5EC500EB1CC8 /* HistoryEvent.m in Sources */,
+				ECF9EC66124F7CF100EB1CC8 /* HistoryService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

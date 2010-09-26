@@ -296,6 +296,10 @@ int __stack_callback(const tsip_event_t *sipevent)
 		return -2;
 	}
 	
+	// Les choses serieuses vont commencer!!!
+	// This is a POSIX thread but thanks to multithreading
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
 	[sipStack lock];
 	
 	if(!sipStack->delegate){
@@ -310,11 +314,9 @@ int __stack_callback(const tsip_event_t *sipevent)
 			break;
 		}
 		case tsip_event_invite:
-		{       /* INVITE */
-			//if(Stack->getCallback()){
-			//	e = new InviteEvent(sipevent);
-			//	Stack->getCallback()->OnInviteEvent((const InviteEvent*)e);
-			//}
+		{     /* INVITE */
+			event = [[DWInviteEvent alloc] initWithEvent:(tsip_event_t*)sipevent];
+			ret = [sipStack->delegate onEvent: event];
 			break;
 		}
 		case tsip_event_message:
@@ -375,8 +377,7 @@ int __stack_callback(const tsip_event_t *sipevent)
 done:
 	[sipStack unlock];
 	
-	[event release];
-	
+	[pool release];
 	
 	return ret;
 }

@@ -11,12 +11,14 @@
 
 #import "DWVideoConsumer.h"
 #import "DWVideoProducer.h"
-
 #import "DWSipSession.h"
+
+#import "HistoryEvent.h"
 
 @protocol InCallViewControllerDelegate
 
 -(void)setSession: (DWCallSession*)session;
+-(DWCallSession*)session;
 
 @end
 
@@ -32,8 +34,10 @@
 	CGContextRef bitmapContext;
 	void* consumerData;
 	size_t consumerDataSize;
-	void* producerData;
-	size_t producerDataSize;
+	size_t producerWidth;
+	size_t producerHeight;
+	int producerFps;
+	BOOL producerFirstFrame;
 	
 	double dateSeconds;
 	NSDateFormatter *dateFormatter;
@@ -50,6 +54,8 @@
 	DWCallSession* session;
 	dw_producer_t* producer;
 	
+	HistoryAVCallEvent* callEvent;
+	
 	IBOutlet UIButton *buttonStartVideo;
 	IBOutlet UIButton *buttonHoldResume;
 	IBOutlet UIButton *buttonHangUp;
@@ -63,7 +69,6 @@
 @property (retain, nonatomic) IBOutlet UIImageView *remoteImageView;
 @property (retain, nonatomic) IBOutlet UIView *localView;
 
-
 @property (retain, nonatomic) IBOutlet UIButton *buttonStartVideo;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHoldResume;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangUp;
@@ -72,9 +77,10 @@
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
 @property (retain, nonatomic) IBOutlet UILabel *labelTime;
 
-
 - (IBAction) onButtonStartVideoClick: (id)sender;
 - (IBAction) onButtonHoldResumeClick: (id)sender;
 - (IBAction) onButtonHangUpClick: (id)sender;
+
++(int) receiveCall:(DWCallSession*) session;
 
 @end

@@ -23,6 +23,8 @@
 @interface ServiceManager : NSObject {
 	NSObject<PConfigurationService>* configurationService;
 	NSObject<PSipService>* sipService;
+	NSObject<PSoundService>* soundService;
+	NSObject<PHistoryService>* historyService;
 }
 
 -(BOOL) start;
@@ -31,6 +33,8 @@
 // services
 @property(readonly, retain) NSObject<PConfigurationService>* configurationService;
 @property(readonly, retain) NSObject<PSipService>* sipService;
+@property(readonly, retain) NSObject<PSoundService>* soundService;
+@property(readonly, retain) NSObject<PHistoryService>* historyService;
 
 // singleton
 +(ServiceManager*) sharedManager;

@@ -16,8 +16,8 @@
 
 @synthesize baseType;
 @synthesize code;
-//@synthesize baseSession;
-//@synthesize message;
+@synthesize stack;
+@synthesize event;
 //@synthesize phrase;
 
 -(DWSipEvent*) initWithEvent: (tsip_event_t*) _event{
@@ -26,6 +26,12 @@
 		self->event = tsk_object_ref(_event);
 		self->baseType = self->event->type;
 		self->code = self->event->code;	
+		
+		const tsip_stack_handle_t* stack_handle = tsip_ssession_get_stack(_event->ss);
+        const void* userdata;
+        if(stack_handle && (userdata = tsip_stack_get_userdata(stack_handle))){
+			self->stack = ((DWSipStack*)userdata);
+        }
 	}
 	
 	return self;
@@ -111,6 +117,47 @@
 
 +(NSString*) name{
 	return @"RegistrationEvent";
+}
+
+-(void) dealloc{
+	[self->session release];
+	[super dealloc];
+}
+
+@end
+
+
+/* ======================== DWInviteEvent ========================*/
+@implementation DWInviteEvent
+
+@synthesize type;
+@synthesize session;
+
+-(DWInviteEvent*) initWithEvent: (tsip_event_t*) _event{
+	self = (DWInviteEvent*)[super initWithEvent:_event];
+	if(self){
+		self->type = TSIP_INVITE_EVENT(self->event)->type;
+		self->session = [[self.baseSession isMemberOfClass:[DWInviteSession class]] ? ((DWInviteSession*)self.baseSession) : nil retain];
+	}
+	return self;
+}
+
+-(DWCallSession*) takeCallSessionOwnership{
+	if(self.stack){
+		if(self->event && self->event->ss && !tsip_ssession_have_ownership(self->event->ss)){
+			/* The constructor will call take_ownerhip() */
+			return (DWCallSession*)[[DWCallSession alloc] initWithStack:self.stack andHandle: self->event->ss];
+		}
+	}
+	return nil;
+}
+
+-(DWMsrpSession*) takeMsrpSessionOwnership{
+	return nil;
+}
+
++(NSString*) name{
+	return @"InviteEvent";
 }
 
 -(void) dealloc{

@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DialerViewController.h"
 
-@interface HistoryViewController : UIViewController {
-
+@interface HistoryViewController : UITableViewController {
+	NSDateFormatter* dateFormatterDuration;
+	NSDateFormatter* dateFormatterDate;
+	
+	NSObject<DialerViewControllerDelegate> *delegateDialer;
 }
+
+@property (retain, nonatomic) NSObject<DialerViewControllerDelegate> *delegateDialer;
 
 @end

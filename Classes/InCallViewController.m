@@ -46,20 +46,21 @@
 }
 
 - (void)startVideoCapture{
+	[labelState setText:@"Starting Video stream"];
 	if(self->avCaptureDevice || self->avCaptureSession){
-		NSLog(@"Already capturing");
+		NSLog(@"Already capturing"), [labelState setText:@"Already capturing"];
 		return;
 	}
 	
 	if((self->avCaptureDevice = [self frontFacingCamera]) == nil){
-		NSLog(@"Failed to get valide capture device");
+		NSLog(@"Failed to get valide capture device"), [labelState setText:@"Failed to get valide capture device"];
 		return;
 	}
 	
 	NSError *error = nil;
     AVCaptureDeviceInput *videoInput = [AVCaptureDeviceInput deviceInputWithDevice:self->avCaptureDevice error:&error];
     if (!videoInput){
-        NSLog(@"Failed to get video input: %@", error);
+        NSLog(@"Failed to get video input: %@", error), [labelState setText:@"Failed to get video input"];
 		self->avCaptureDevice = nil;
         return;
     }
@@ -72,14 +73,14 @@
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
                               [NSNumber numberWithUnsignedInt:kCVPixelFormatType_422YpCbCr8], kCVPixelBufferPixelFormatTypeKey,
-							  [NSNumber numberWithInt:176], (id)kCVPixelBufferWidthKey,
-                              [NSNumber numberWithInt:144], (id)kCVPixelBufferHeightKey,
+							  [NSNumber numberWithInt:self->producerWidth], (id)kCVPixelBufferWidthKey,
+                              [NSNumber numberWithInt:self->producerHeight], (id)kCVPixelBufferHeightKey,
                                
 							  
 							  nil];
     avCaptureVideoDataOutput.videoSettings = settings;
     [settings release];
-    avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, 15);
+    avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, 5/*self->producerFps*/);
     
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
@@ -92,7 +93,10 @@
 	previewLayer.frame = self->localView.bounds;
 	[self->localView.layer addSublayer: previewLayer];
 	
+	self->producerFirstFrame = YES;
     [self->avCaptureSession startRunning];
+	
+	[labelState setText:@"Video capture started"];
 }
 
 - (void)stopVideoCapture{
@@ -113,18 +117,18 @@
         UInt8 *bufferPtr = (UInt8 *)CVPixelBufferGetBaseAddress(pixelBuffer);
         size_t buffeSize = CVPixelBufferGetDataSize(pixelBuffer);
 		
-		//size_t w = CVPixelBufferGetWidth(pixelBuffer);
-		//size_t h = CVPixelBufferGetHeight(pixelBuffer);
-		
-		/*if(self->producerDataSize != buffeSize){
-			self->producerDataSize = buffeSize;
-			self->producerData = tsk_realloc(self->producerData, self->producerDataSize);
+		if(self->producerFirstFrame){ // Hope will never change
+			if((self->producer = tsk_object_ref(self->producer))){
+				TMEDIA_PRODUCER(self->producer)->video.width = CVPixelBufferGetWidth(pixelBuffer);
+				TMEDIA_PRODUCER(self->producer)->video.height = CVPixelBufferGetHeight(pixelBuffer);
+				self->producerFirstFrame = NO;
+				tsk_object_unref(self->producer);
+			}
 		}
-		memcpy(self->producerData, bufferPtr, buffeSize);*/
+		
 		if(self->producer && TMEDIA_PRODUCER(self->producer)->callback){
 			TMEDIA_PRODUCER(self->producer)->callback(TMEDIA_PRODUCER(self->producer)->callback_data, bufferPtr, buffeSize);
         }
-		
 		
         CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);		
     }
@@ -242,16 +246,37 @@
 		case INVITE_INCOMING:
 		{
 			[labelState setText:@"Incoming Call from Bob"];
+			
+			[self->callEvent release], self->callEvent = nil;
+			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:@"bob"];
+			self->callEvent.status = HistoryEventStatus_Missed;
 			break;
 		}
 			
 		case INVITE_INPROGRESS:
+		{
 			[labelState setText:@"In progress..."];
+			
+			[self->callEvent release], self->callEvent = nil;
+			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:@"bob"];
+			self->callEvent.status = HistoryEventStatus_Outgoing;
+			
+			[SharedServiceManager.soundService playRingBackTone];
 			break;
+		}
 			
 		case INVITE_RINGING:
 		{
 			[labelState setText:@"Ringing"];
+			
+			break;
+		}
+			
+		case INVITE_EARLY_MEDIA:
+		{
+			[labelState setText:@"Early Media"];
+			
+			[SharedServiceManager.soundService stopRingBackTone];
 			break;
 		}
 			
@@ -259,6 +284,18 @@
 		{
 			[labelState setText:@"In Call"];
 			[self->timerInCall invalidate], self->timerInCall = nil;
+			
+			if(self->callEvent){
+				self->callEvent.start = [[NSDate date] timeIntervalSince1970];
+				if(self->callEvent.status == HistoryEventStatus_Missed){
+					self->callEvent.status = HistoryEventStatus_Incoming;
+				}
+				else{
+					self->callEvent.status = HistoryEventStatus_Outgoing;
+				}
+			}
+			
+			[SharedServiceManager.soundService stopRingBackTone];
 			
 			self->dateSeconds = 0;
 			self->timerInCall = [NSTimer scheduledTimerWithTimeInterval:1 
@@ -271,7 +308,7 @@
 			
 		case INVITE_TERMWAIT:
 		case INVITE_DISCONNECTED:
-		{
+		{			
 			if(eargs.type == INVITE_TERMWAIT){
 				[labelState setText:@"Ending Call..."];
 			}
@@ -279,8 +316,15 @@
 				[labelState setText:eargs.phrase];
 			}
 			
+			if(self->callEvent){
+				self->callEvent.end = [[NSDate date] timeIntervalSince1970];
+				[SharedServiceManager.historyService addEvent:self->callEvent];
+				[self->callEvent release], self->callEvent = nil;
+			}
+			
+			[SharedServiceManager.soundService stopRingBackTone];
+			
 			[self->timerInCall invalidate], self->timerInCall = nil;
-			//[self->timerSuicide invalidate], self->timerSuicide = nil;
 			
 			[NSTimer scheduledTimerWithTimeInterval:1.5 
 												target:self 
@@ -332,10 +376,16 @@
 	[self->session release];
 	self->session = nil;
 	
+#if TARGET_OS_EMBEDDED
+	// force camera stop()
+	[self stopVideoCapture];
+#endif
+	
 	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSMutableArray* viewControllers = [NSMutableArray arrayWithArray:appDelegate.tabBarController.viewControllers];
 	[viewControllers removeObject:self];
 	[appDelegate.tabBarController setViewControllers:viewControllers animated:NO];
+	
 	
 	[appDelegate.tabBarController setSelectedIndex:tab_index_dialer];
 }
@@ -344,15 +394,39 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
 	TSK_FREE(self->consumerData);
-	TSK_FREE(self->producerData);
 	
-	[timerInCall invalidate], timerInCall = nil;
-	//[timerSuicide invalidate], timerSuicide = nil;
-	[dateFormatter dealloc];
+	[self->callEvent release];
+	
+	[self->timerInCall invalidate], self->timerInCall = nil;
+	//[self->timerSuicide invalidate], timerSuicide = nil;
+	[self->dateFormatter dealloc];
 	[self->session release];
     [super dealloc];
 }
 
+-(void)receiveCallOnMainThread:(DWCallSession*)_session{
+	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[appDelegate.inCallViewController setSession:(DWCallSession*)_session];
+	
+	NSMutableArray* viewControllers = [NSMutableArray arrayWithArray:appDelegate.tabBarController.viewControllers];
+	[viewControllers insertObject:appDelegate.inCallViewController atIndex:3];
+	[appDelegate.tabBarController setViewControllers:viewControllers animated:YES];
+	[appDelegate.tabBarController setSelectedIndex:3];
+}
+
++(int) receiveCall:(DWCallSession*) _session{
+	// Check if we are already in call
+	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
+	if([appDelegate.inCallViewController session]){
+		NSLog(@"Already in call");
+		[_session hangUp];
+		return 0;
+	}
+	
+	// Show screen
+	[appDelegate.inCallViewController performSelectorOnMainThread:@selector(receiveCallOnMainThread:) withObject:_session waitUntilDone:YES];
+	return 0;
+}
 
 
 /* ======================== InCallViewControllerDelegate ========================*/
@@ -362,44 +436,69 @@
 	// register for callbacks
 }
 
+-(DWCallSession*)session{
+	return self->session;
+}
 
 
 /* ======================== DWVideoProducerCallback ========================*/
--(int)producerStarted{
-	return self->canStreamVideo = YES;
-}
-
--(int)producerPaused{
-	return 0;
-}
-
--(int)producerStopped{
-	self->canStreamVideo = NO;
-#if TARGET_OS_EMBEDDED
-	[self stopVideoCapture];
-#endif
-	return 0;
-}
-
--(int)producerPreparedWithWidth:(int) width andHeight: (int)height andFps: (int)fps{
-	if(self->producerDataSize != (width*height*2)){
-		self->producerDataSize = (width*height*2);
-		self->producerData = tsk_realloc(self->producerData, self->producerDataSize);
+-(int)producerStarted:(dw_producer_t*)_producer{
+	if(self->producer == _producer){
+		self->canStreamVideo = YES;
+		return 0;
 	}
-	return 0;
+	
+	NSLog(@"Not our producer");
+	return -1;
+}
+
+-(int)producerPaused:(dw_producer_t*)_producer{
+	if(self->producer == _producer){
+		return 0;
+	}
+	
+	NSLog(@"Not our producer");
+	return -1;
+}
+
+-(int)producerStopped:(dw_producer_t*)_producer{
+	if(self->producer == _producer){
+		self->canStreamVideo = NO;
+#if	TARGET_OS_EMBEDDED
+		[self stopVideoCapture];
+#endif
+		return 0;
+	}
+	
+	NSLog(@"Not our producer");
+	return -1;
+}
+
+-(int)producerPrepared:(dw_producer_t*)_producer{
+	if(self->producer == _producer){
+		self->producerHeight = _producer->negociatedHeight;
+		self->producerWidth = _producer->negociatedWidth;
+		self->producerFps = _producer->negociatedFps;
+		return 0;
+	}
+	
+	NSLog(@"Not our producer");
+	return -1;
 }
 
 -(int)producerCreated:(dw_producer_t*)_producer{
-	TSK_OBJECT_SAFE_FREE(self->producer);
-	self->producer = tsk_object_ref(_producer);
+	self->producer = _producer;
 	return 0;
 }
 
 -(int)producerDestroyed:(dw_producer_t*)_producer{
 	if(_producer == self->producer){
-		TSK_OBJECT_SAFE_FREE(self->producer);
+		self->producer = tsk_null;
+		return 0;
 	}
-	return 0;
+	
+	NSLog(@"Not our producer");
+	return -1;
 }
 
 
