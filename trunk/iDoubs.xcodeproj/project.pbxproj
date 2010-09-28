@@ -890,6 +890,10 @@
 		ECF9EE5E124FA80B00EB1CC8 /* call_incoming_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */; };
 		ECF9EE5F124FA80B00EB1CC8 /* call_missed_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */; };
 		ECF9EE60124FA80B00EB1CC8 /* call_outgoing_45.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */; };
+		ECF9F0F11250C30C00EB1CC8 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F0F01250C30C00EB1CC8 /* ringtone.mp3 */; };
+		ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */; };
+		ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */; };
+		ECF9F1711250CE8800EB1CC8 /* DWSipUri.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1984,6 +1988,11 @@
 		ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_incoming_45.png; sourceTree = "<group>"; };
 		ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_missed_45.png; sourceTree = "<group>"; };
 		ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_outgoing_45.png; sourceTree = "<group>"; };
+		ECF9F0F01250C30C00EB1CC8 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_qcif.png; sourceTree = "<group>"; };
+		ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_qcif.png; sourceTree = "<group>"; };
+		ECF9F16F1250CE8800EB1CC8 /* DWSipUri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSipUri.h; sourceTree = "<group>"; };
+		ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSipUri.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4197,6 +4206,8 @@
 				EC34E279122B78E4009CDAB5 /* DWMessage.h */,
 				EC34E288122B7C7A009CDAB5 /* DWSipSession.h */,
 				EC34E289122B7C7A009CDAB5 /* DWSipSession.m */,
+				ECF9F16F1250CE8800EB1CC8 /* DWSipUri.h */,
+				ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */,
 			);
 			name = "Doubango Wrappers";
 			sourceTree = "<group>";
@@ -4204,6 +4215,8 @@
 		EC9F9CBF123C66BF00AABEFA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */,
+				ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */,
 				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
 				ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */,
 				ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */,
@@ -4264,6 +4277,7 @@
 		ECF9EA7A124E38DA00EB1CC8 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9F0F01250C30C00EB1CC8 /* ringtone.mp3 */,
 				ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */,
 			);
 			name = sounds;
@@ -5106,6 +5120,9 @@
 				ECF9EE5E124FA80B00EB1CC8 /* call_incoming_45.png in Resources */,
 				ECF9EE5F124FA80B00EB1CC8 /* call_missed_45.png in Resources */,
 				ECF9EE60124FA80B00EB1CC8 /* call_outgoing_45.png in Resources */,
+				ECF9F0F11250C30C00EB1CC8 /* ringtone.mp3 in Resources */,
+				ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */,
+				ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5143,6 +5160,7 @@
 				ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */,
 				ECF9EC63124E5EC500EB1CC8 /* HistoryEvent.m in Sources */,
 				ECF9EC66124F7CF100EB1CC8 /* HistoryService.m in Sources */,
+				ECF9F1711250CE8800EB1CC8 /* DWSipUri.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

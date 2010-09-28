@@ -140,6 +140,7 @@
 					   stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
 	NSString* remoteUri = [self.textFieldAddress.text stringByReplacingOccurrencesOfString:@" " withString:@""];
 	remoteUri = [@"sip:" stringByAppendingFormat:@"%@@%@",remoteUri, realm];
+	callSession.remoteParty = remoteUri; // Just for UI, useless
 	
 	if(sender == self.buttonVideo){
 		[callSession callAudioVideoWithActionConfig:actionConfig andRemoteUri: remoteUri];
