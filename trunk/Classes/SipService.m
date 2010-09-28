@@ -10,6 +10,7 @@
 
 #import "DWSipSession.h"
 #import "DWSipEvent.h"
+#import "DWMessage.h"
 
 #import "EventArgs.h"
 #import "NSNotificationCenter+MainThread.h"
@@ -261,6 +262,13 @@
 				return 0;
 			}
 			
+			// Check message validity
+			if(!e.message){
+				NSLog(@"Invalid message");
+				[session hangUp], [session release], session = nil;
+				return 0;
+			}
+			
 			// Ignore Mixed session (both audio/video and MSRP) as specified by GSMA RCS.
 			switch(type){
 				case tmedia_audio:
@@ -273,6 +281,9 @@
 					[session hangUp], [session release], session = nil;
 					return 0;
 			}
+			
+			// Remote Party
+			session.remoteParty = [e.message sipHeaderValueWithType:tsip_htype_From];
 			
 			// Receive call
 			[InCallViewController receiveCall:(DWCallSession*)session];	

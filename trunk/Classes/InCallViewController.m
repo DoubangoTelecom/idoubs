@@ -15,6 +15,7 @@
 
 #import "ServiceManager.h"
 #import "EventArgs.h"
+#import "DWSipUri.h"
 
 /*================= InCallViewController (Timers) ======================*/
 @interface InCallViewController (Timers)
@@ -80,7 +81,7 @@
 							  nil];
     avCaptureVideoDataOutput.videoSettings = settings;
     [settings release];
-    avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, 5/*self->producerFps*/);
+    avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, self->producerFps);
     
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
@@ -91,21 +92,24 @@
 	
 	AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: self->avCaptureSession];
 	previewLayer.frame = self->localView.bounds;
+	previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	[self->localView.layer addSublayer: previewLayer];
 	
 	self->producerFirstFrame = YES;
     [self->avCaptureSession startRunning];
 	
 	[labelState setText:@"Video capture started"];
+	[self.buttonStartVideo setTitle: @"Stop Video" forState: UIControlStateNormal];
 }
 
 - (void)stopVideoCapture{
 	if(self->avCaptureSession){
 		[self->avCaptureSession stopRunning], self->avCaptureSession = nil;
+		[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+		[labelState setText:@"Video capture stopped"];
 	}
-	if(self->avCaptureSession){
-		[self->avCaptureSession release], self->avCaptureSession = nil;
-	}
+	self->avCaptureDevice = nil;
+	
 	for (UIView *view in self->localView.subviews) {
 		[view removeFromSuperview];
 	}
@@ -144,10 +148,12 @@
 
 @synthesize remoteImageView;
 @synthesize localView;
+@synthesize incomingCallView;
 
 @synthesize buttonStartVideo;
 @synthesize buttonHoldResume;
 @synthesize buttonHangUp;
+@synthesize buttonPickCall;
 
 @synthesize labelState;
 @synthesize labelRemoteParty;
@@ -167,6 +173,9 @@
 		
 		self->dateFormatter = [[NSDateFormatter alloc] init];
 		[self->dateFormatter setDateFormat:@"mm:ss"];
+		
+		[self.incomingCallView setHidden:YES];
+		self.incomingCallView.layer.cornerRadius = 15;
     }
     return self;
 }
@@ -245,20 +254,34 @@
 	switch (eargs.type) {
 		case INVITE_INCOMING:
 		{
-			[labelState setText:@"Incoming Call from Bob"];
+			[self.incomingCallView setHidden:NO];
+			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+			
+			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
+			
+			[labelRemoteParty setText:[DWSipUri friendlyName:self->session.remoteParty]];
+			[labelState setText:[@"Incoming Call from " stringByAppendingFormat:@"%@", labelRemoteParty.text]];
+			
+			[SharedServiceManager.soundService playRingTone];
 			
 			[self->callEvent release], self->callEvent = nil;
-			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:@"bob"];
+			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:self->session.remoteParty];
 			self->callEvent.status = HistoryEventStatus_Missed;
 			break;
 		}
 			
 		case INVITE_INPROGRESS:
 		{
+			[self.incomingCallView setHidden:YES];
+			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+			
+			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
+			
+			[labelRemoteParty setText:[DWSipUri friendlyName:self->session.remoteParty]];
 			[labelState setText:@"In progress..."];
 			
 			[self->callEvent release], self->callEvent = nil;
-			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:@"bob"];
+			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:self->session.remoteParty];
 			self->callEvent.status = HistoryEventStatus_Outgoing;
 			
 			[SharedServiceManager.soundService playRingBackTone];
@@ -276,12 +299,15 @@
 		{
 			[labelState setText:@"Early Media"];
 			
+			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
 			break;
 		}
 			
 		case INVITE_CONNECTED:
 		{
+			[self.incomingCallView setHidden:YES];
+			
 			[labelState setText:@"In Call"];
 			[self->timerInCall invalidate], self->timerInCall = nil;
 			
@@ -295,6 +321,7 @@
 				}
 			}
 			
+			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
 			
 			self->dateSeconds = 0;
@@ -309,6 +336,10 @@
 		case INVITE_TERMWAIT:
 		case INVITE_DISCONNECTED:
 		{			
+			[self.incomingCallView setHidden:YES];
+			
+			[UIDevice currentDevice].proximityMonitoringEnabled = NO;
+			
 			if(eargs.type == INVITE_TERMWAIT){
 				[labelState setText:@"Ending Call..."];
 			}
@@ -322,6 +353,7 @@
 				[self->callEvent release], self->callEvent = nil;
 			}
 			
+			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
 			
 			[self->timerInCall invalidate], self->timerInCall = nil;
@@ -365,6 +397,9 @@
 	[self->session hangUp];
 }
 
+- (IBAction) onButtonPickCallClick: (id)sender{
+	[self->session accept];
+}
 
 -(void)timerInCallTick:(NSTimer*)timer {
 	self->dateSeconds++;
@@ -531,7 +566,7 @@
 }
 
 -(int)consumerHasBuffer: (const void*)buffer withSize: (tsk_size_t)size{
-	NSLog(@"InCallViewController::consumeWithBuffer");
+	//NSLog(@"InCallViewController::consumeWithBuffer");
 	
 	if(self->consumerData && self->bitmapContext /* FIXME: Check size validity */){
 		memcpy(self->consumerData, buffer, size);

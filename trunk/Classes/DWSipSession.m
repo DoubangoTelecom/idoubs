@@ -227,6 +227,8 @@ static NSLock* __sessionsLock = nil;
 /* ======================== DWInviteSession ========================*/
 @implementation DWInviteSession
 
+@synthesize remoteParty;
+
 -(DWInviteSession*)initWithStack:(DWSipStack *)_sipStack{
 	self = (DWInviteSession*)[super initWithType:SESSION_TYPE_INVITE andStack:_sipStack];
 	return self;
@@ -266,6 +268,15 @@ static NSLock* __sessionsLock = nil;
 	return (tsip_action_REJECT(self->handle,
 				TSIP_ACTION_SET_CONFIG(actionConfig ? actionConfig.handle : tsk_null),
 				TSIP_ACTION_SET_NULL()) == 0);
+}
+
+-(tmedia_type_t) mediaType{
+	return tsip_ssession_get_mediatype(self->handle);
+}
+
+-(void) dealloc{
+	[self->remoteParty release];
+	[super dealloc];
 }
 
 @end

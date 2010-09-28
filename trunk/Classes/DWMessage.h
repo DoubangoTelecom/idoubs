@@ -29,6 +29,8 @@
 
 -(DWSipMessage*) initWithMessage: (tsip_message_t*)message;
 
+-(NSString*) sipHeaderValueWithType: (tsip_header_type_t)type;
+-(NSString*) sipHeaderValueWithType: (tsip_header_type_t)type atIndex: (unsigned)index;
 
 @end
 
