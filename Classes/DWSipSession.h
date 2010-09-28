@@ -68,6 +68,7 @@ SESSION_TYPE_T;
 
 /* ======================== DWInviteSession ========================*/
 @interface DWInviteSession : DWSipSession{
+	tmedia_type_t mediaType;
 }
 
 -(DWInviteSession*)initWithStack:(DWSipStack *)sipStack;
@@ -79,6 +80,10 @@ SESSION_TYPE_T;
 -(BOOL) hangUpWithActionConfig: (DWActionConfig*)actionConfig;
 -(BOOL) reject;
 -(BOOL) rejectWithActionConfig: (DWActionConfig*)actionConfig;
+
+@property(readwrite, retain) NSString* remoteParty;
+@property(readonly) tmedia_type_t mediaType;
+
 
 @end
 

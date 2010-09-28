@@ -30,6 +30,7 @@
 > {
 	IBOutlet UIImageView *remoteImageView;
 	IBOutlet UIView *localView;
+	IBOutlet UIView *incomingCallView;
 	
 	CGContextRef bitmapContext;
 	void* consumerData;
@@ -59,6 +60,7 @@
 	IBOutlet UIButton *buttonStartVideo;
 	IBOutlet UIButton *buttonHoldResume;
 	IBOutlet UIButton *buttonHangUp;
+	IBOutlet UIButton *buttonPickCall;
 	
 	IBOutlet UILabel *labelState;
 	IBOutlet UILabel *labelRemoteParty;
@@ -68,10 +70,12 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *remoteImageView;
 @property (retain, nonatomic) IBOutlet UIView *localView;
+@property (retain, nonatomic) IBOutlet UIView *incomingCallView;
 
 @property (retain, nonatomic) IBOutlet UIButton *buttonStartVideo;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHoldResume;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangUp;
+@property (retain, nonatomic) IBOutlet UIButton *buttonPickCall;
 
 @property (retain, nonatomic) IBOutlet UILabel *labelState;
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
@@ -80,6 +84,7 @@
 - (IBAction) onButtonStartVideoClick: (id)sender;
 - (IBAction) onButtonHoldResumeClick: (id)sender;
 - (IBAction) onButtonHangUpClick: (id)sender;
+- (IBAction) onButtonPickCallClick: (id)sender;
 
 +(int) receiveCall:(DWCallSession*) session;
 
