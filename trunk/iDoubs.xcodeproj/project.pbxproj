@@ -908,6 +908,8 @@
 		ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */; };
 		ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */; };
 		ECF9F1711250CE8800EB1CC8 /* DWSipUri.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */; };
+		ECFC09A21253DDF500A826A4 /* keypad_del.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFC09A11253DDF500A826A4 /* keypad_del.png */; };
+		ECFC09A41253DE4900A826A4 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFC09A31253DE4900A826A4 /* button_back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2021,6 +2023,8 @@
 		ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_qcif.png; sourceTree = "<group>"; };
 		ECF9F16F1250CE8800EB1CC8 /* DWSipUri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSipUri.h; sourceTree = "<group>"; };
 		ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSipUri.m; sourceTree = "<group>"; };
+		ECFC09A11253DDF500A826A4 /* keypad_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_del.png; sourceTree = "<group>"; };
+		ECFC09A31253DE4900A826A4 /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4245,6 +4249,7 @@
 			children = (
 				ECF94A5D1253D41C00C1D400 /* keypad */,
 				ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */,
+				ECFC09A31253DE4900A826A4 /* button_back.png */,
 				ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */,
 				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
 				ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */,
@@ -4306,6 +4311,7 @@
 		ECF94A5D1253D41C00C1D400 /* keypad */ = {
 			isa = PBXGroup;
 			children = (
+				ECFC09A11253DDF500A826A4 /* keypad_del.png */,
 				ECF94A5E1253D43900C1D400 /* keypad_0.png */,
 				ECF94A5F1253D43900C1D400 /* keypad_1.png */,
 				ECF94A601253D43900C1D400 /* keypad_2.png */,
@@ -5187,6 +5193,8 @@
 				ECF94A771253D43900C1D400 /* keypad_placeholder.png in Resources */,
 				ECF94A781253D43900C1D400 /* keypad_sharp.png in Resources */,
 				ECF94A791253D43900C1D400 /* keypad_star.png in Resources */,
+				ECFC09A21253DDF500A826A4 /* keypad_del.png in Resources */,
+				ECFC09A41253DE4900A826A4 /* button_back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

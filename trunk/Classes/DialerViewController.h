@@ -13,7 +13,7 @@
 	-(void)setAddress:(NSString*)address;
 @end
 
-@interface DialerViewController : UIViewController<DialerViewControllerDelegate> {
+@interface DialerViewController : UIViewController<DialerViewControllerDelegate, UITextFieldDelegate> {
 	IBOutlet UIButton *buttonZero;
 	IBOutlet UIButton *buttonOne;
 	IBOutlet UIButton *buttonTwo;
@@ -31,7 +31,7 @@
 	IBOutlet UIButton *buttonPickContact;
 	
 	IBOutlet UIButton *buttonVoice;
-	IBOutlet UIButton *buttonSMS;
+	IBOutlet UIButton *buttonDel;
 	IBOutlet UIButton *buttonVideo;
 }
 
@@ -53,12 +53,12 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonPickContact;
 
 @property (retain, nonatomic) IBOutlet UIButton *buttonVoice;
-@property (retain, nonatomic) IBOutlet UIButton *buttonSMS;
+@property (retain, nonatomic) IBOutlet UIButton *buttonDel;
 @property (retain, nonatomic) IBOutlet UIButton *buttonVideo;
 
 - (IBAction) onKeyboardClick: (id)sender;
 - (IBAction) onPickContactClick: (id)sender;
 - (IBAction) onAVCallClick: (id)sender;
-- (IBAction) onSMSClick: (id)sender;
+- (IBAction) onDelClick: (id)sender;
 
 @end

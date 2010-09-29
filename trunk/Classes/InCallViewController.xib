@@ -96,16 +96,16 @@
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Start Video</string>
 						<reference key="IBUIHighlightedTitleColor" ref="745690423"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="745690423"/>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="105733689">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="585541219">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">button_back.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="645938301">
@@ -118,14 +118,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="301745309"/>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Hold</string>
 						<reference key="IBUIHighlightedTitleColor" ref="745690423"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="745690423"/>
 						<reference key="IBUINormalTitleShadowColor" ref="105733689"/>
+						<reference key="IBUINormalBackgroundImage" ref="585541219"/>
 					</object>
 					<object class="IBUIButton" id="44109050">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -137,14 +134,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="301745309"/>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">End Call</string>
 						<reference key="IBUIHighlightedTitleColor" ref="745690423"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="745690423"/>
 						<reference key="IBUINormalTitleShadowColor" ref="105733689"/>
+						<reference key="IBUINormalBackgroundImage" ref="585541219"/>
 					</object>
 					<object class="IBUILabel" id="56792584">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -188,10 +182,7 @@
 							<double key="NSSize">18</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4wMjU1MTAyMDQwOCAwLjAyNTUxMDIwNDA4IDAuMDI1NTEwMjA0MDgAA</bytes>
-						</object>
+						<reference key="IBUITextColor" ref="745690423"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -263,10 +254,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MSAxIDEAA</bytes>
-				</object>
+				<reference key="IBUIBackgroundColor" ref="745690423"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -536,7 +524,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>InCallViewController</string>
 					<string>UIResponder</string>
-					<string>{{707, 170}, {320, 480}}</string>
+					<string>{{664, 475}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -939,6 +927,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../iDoubs.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">button_back.png</string>
+			<string key="NS.object.0">{106, 68}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">123</string>
 	</data>
 </archive>
