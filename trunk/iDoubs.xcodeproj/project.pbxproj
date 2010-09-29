@@ -880,6 +880,20 @@
 		ECDD2E6B12444BC200A79262 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857AE4122791F500A1F1B3 /* libtinyXCAP.a */; };
 		ECDD2F1D1244621900A79262 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		ECDD33021244EE7700A79262 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDD33011244EE7700A79262 /* 86-camera.png */; };
+		ECF94A6C1253D43900C1D400 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A5E1253D43900C1D400 /* keypad_0.png */; };
+		ECF94A6D1253D43900C1D400 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A5F1253D43900C1D400 /* keypad_1.png */; };
+		ECF94A6E1253D43900C1D400 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A601253D43900C1D400 /* keypad_2.png */; };
+		ECF94A6F1253D43900C1D400 /* keypad_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A611253D43900C1D400 /* keypad_3.png */; };
+		ECF94A701253D43900C1D400 /* keypad_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A621253D43900C1D400 /* keypad_4.png */; };
+		ECF94A711253D43900C1D400 /* keypad_5.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A631253D43900C1D400 /* keypad_5.png */; };
+		ECF94A721253D43900C1D400 /* keypad_6.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A641253D43900C1D400 /* keypad_6.png */; };
+		ECF94A731253D43900C1D400 /* keypad_7.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A651253D43900C1D400 /* keypad_7.png */; };
+		ECF94A741253D43900C1D400 /* keypad_8.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A661253D43900C1D400 /* keypad_8.png */; };
+		ECF94A751253D43900C1D400 /* keypad_9.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A671253D43900C1D400 /* keypad_9.png */; };
+		ECF94A761253D43900C1D400 /* keypad_Call.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A681253D43900C1D400 /* keypad_Call.png */; };
+		ECF94A771253D43900C1D400 /* keypad_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A691253D43900C1D400 /* keypad_placeholder.png */; };
+		ECF94A781253D43900C1D400 /* keypad_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A6A1253D43900C1D400 /* keypad_sharp.png */; };
+		ECF94A791253D43900C1D400 /* keypad_star.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A6B1253D43900C1D400 /* keypad_star.png */; };
 		ECF9EA80124E393E00EB1CC8 /* ringbacktone.wav in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */; };
 		ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EA82124E39F200EB1CC8 /* SoundService.m */; };
 		ECF9EB8D124E529D00EB1CC8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EB8C124E529C00EB1CC8 /* about.html */; };
@@ -1975,6 +1989,20 @@
 		EC9FA0BC123DA90400AABEFA /* DWVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWVideoProducer.h; sourceTree = "<group>"; };
 		EC9FA0BD123DA90400AABEFA /* DWVideoProducer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWVideoProducer.m; sourceTree = "<group>"; };
 		ECDD33011244EE7700A79262 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
+		ECF94A5E1253D43900C1D400 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
+		ECF94A5F1253D43900C1D400 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
+		ECF94A601253D43900C1D400 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
+		ECF94A611253D43900C1D400 /* keypad_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_3.png; sourceTree = "<group>"; };
+		ECF94A621253D43900C1D400 /* keypad_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_4.png; sourceTree = "<group>"; };
+		ECF94A631253D43900C1D400 /* keypad_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_5.png; sourceTree = "<group>"; };
+		ECF94A641253D43900C1D400 /* keypad_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_6.png; sourceTree = "<group>"; };
+		ECF94A651253D43900C1D400 /* keypad_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_7.png; sourceTree = "<group>"; };
+		ECF94A661253D43900C1D400 /* keypad_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_8.png; sourceTree = "<group>"; };
+		ECF94A671253D43900C1D400 /* keypad_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_9.png; sourceTree = "<group>"; };
+		ECF94A681253D43900C1D400 /* keypad_Call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_Call.png; sourceTree = "<group>"; };
+		ECF94A691253D43900C1D400 /* keypad_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_placeholder.png; sourceTree = "<group>"; };
+		ECF94A6A1253D43900C1D400 /* keypad_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_sharp.png; sourceTree = "<group>"; };
+		ECF94A6B1253D43900C1D400 /* keypad_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_star.png; sourceTree = "<group>"; };
 		ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		ECF9EA81124E39F200EB1CC8 /* SoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundService.h; sourceTree = "<group>"; };
 		ECF9EA82124E39F200EB1CC8 /* SoundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundService.m; sourceTree = "<group>"; };
@@ -4215,6 +4243,7 @@
 		EC9F9CBF123C66BF00AABEFA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ECF94A5D1253D41C00C1D400 /* keypad */,
 				ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */,
 				ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */,
 				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
@@ -4272,6 +4301,27 @@
 				ECF9EC65124F7CF100EB1CC8 /* HistoryService.m */,
 			);
 			name = Impl;
+			sourceTree = "<group>";
+		};
+		ECF94A5D1253D41C00C1D400 /* keypad */ = {
+			isa = PBXGroup;
+			children = (
+				ECF94A5E1253D43900C1D400 /* keypad_0.png */,
+				ECF94A5F1253D43900C1D400 /* keypad_1.png */,
+				ECF94A601253D43900C1D400 /* keypad_2.png */,
+				ECF94A611253D43900C1D400 /* keypad_3.png */,
+				ECF94A621253D43900C1D400 /* keypad_4.png */,
+				ECF94A631253D43900C1D400 /* keypad_5.png */,
+				ECF94A641253D43900C1D400 /* keypad_6.png */,
+				ECF94A651253D43900C1D400 /* keypad_7.png */,
+				ECF94A661253D43900C1D400 /* keypad_8.png */,
+				ECF94A671253D43900C1D400 /* keypad_9.png */,
+				ECF94A681253D43900C1D400 /* keypad_Call.png */,
+				ECF94A691253D43900C1D400 /* keypad_placeholder.png */,
+				ECF94A6A1253D43900C1D400 /* keypad_sharp.png */,
+				ECF94A6B1253D43900C1D400 /* keypad_star.png */,
+			);
+			name = keypad;
 			sourceTree = "<group>";
 		};
 		ECF9EA7A124E38DA00EB1CC8 /* sounds */ = {
@@ -5123,6 +5173,20 @@
 				ECF9F0F11250C30C00EB1CC8 /* ringtone.mp3 in Resources */,
 				ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */,
 				ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */,
+				ECF94A6C1253D43900C1D400 /* keypad_0.png in Resources */,
+				ECF94A6D1253D43900C1D400 /* keypad_1.png in Resources */,
+				ECF94A6E1253D43900C1D400 /* keypad_2.png in Resources */,
+				ECF94A6F1253D43900C1D400 /* keypad_3.png in Resources */,
+				ECF94A701253D43900C1D400 /* keypad_4.png in Resources */,
+				ECF94A711253D43900C1D400 /* keypad_5.png in Resources */,
+				ECF94A721253D43900C1D400 /* keypad_6.png in Resources */,
+				ECF94A731253D43900C1D400 /* keypad_7.png in Resources */,
+				ECF94A741253D43900C1D400 /* keypad_8.png in Resources */,
+				ECF94A751253D43900C1D400 /* keypad_9.png in Resources */,
+				ECF94A761253D43900C1D400 /* keypad_Call.png in Resources */,
+				ECF94A771253D43900C1D400 /* keypad_placeholder.png in Resources */,
+				ECF94A781253D43900C1D400 /* keypad_sharp.png in Resources */,
+				ECF94A791253D43900C1D400 /* keypad_star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
