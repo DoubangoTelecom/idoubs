@@ -1,7 +1,7 @@
 #summary Building the source code
 #labels Featured,Phase-Implementation
 
-To build the source code you need: xcode, iOS SDK and svn.
+To build the source code you need: xcode, iOS SDK (3.2 or later) and svn tools.
 
  * Open new Terminal
  * Create new directory named *mydoubs*
@@ -23,4 +23,4 @@ cd iPhone
 svn checkout http://idoubs.googlecode.com/svn/trunk/ idoubs
 }}}
 
-To open all projects, open *mydoubs/iPhone/idoubs/iDoubs.xcodeproj*
+To open & build all projects, open *mydoubs/iPhone/idoubs/iDoubs.xcodeproj*
