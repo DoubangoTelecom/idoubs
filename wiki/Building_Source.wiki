@@ -4,9 +4,23 @@
 To build the source code you need: xcode, iOS SDK and svn.
 
  * Open new Terminal
- * Create new directory named "mydoubs"
+ * Create new directory named *mydoubs*
 {{{
 mkdir mydoubs
 cd mydoubs
 }}}
- * Checkout doubango source code. Important: The destination directory MUST be called "Doubango"
+ * Checkout doubango source code into *mydoubs*. Important: The destination directory MUST be called *doubango*
+{{{
+svn checkout http://doubango.googlecode.com/svn/trunk/ doubango
+}}}
+ * Create new directory named *iPhone* into *mydoubs*
+{{{
+mkdir iPhone
+cd iPhone
+}}}
+ *  Checkout iDoubs source code into *iPhone*
+{{{
+svn checkout http://idoubs.googlecode.com/svn/trunk/ idoubs
+}}}
+
+To open all projects, open *mydoubs/iPhone/idoubs/iDoubs.xcodeproj*
