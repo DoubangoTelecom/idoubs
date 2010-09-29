@@ -3,10 +3,10 @@
 
 To build the source code you need: xcode, iOS SDK and svn.
 
-* Open new Terminal
-* Create new directory named "mydoubs"
+ * Open new Terminal
+ * Create new directory named "mydoubs"
 {{{
 mkdir mydoubs
 cd mydoubs
 }}}
-* Checkout doubango source code. Important: The destination directory MUST be called "Doubango"
+ * Checkout doubango source code. Important: The destination directory MUST be called "Doubango"
