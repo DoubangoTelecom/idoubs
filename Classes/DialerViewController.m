@@ -35,7 +35,7 @@
 
 @synthesize buttonVoice;
 @synthesize buttonVideo;
-@synthesize buttonSMS;
+@synthesize buttonDel;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -47,12 +47,15 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	
+	[super viewDidLoad];
+	
+	[self.textFieldAddress setDelegate:self];
+	
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -75,6 +78,15 @@
     // e.g. self.myOutlet = nil;
 }
 
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	
+	[textField resignFirstResponder];
+	
+	return YES;
+	
+}
 
 - (IBAction) onKeyboardClick: (id)sender{
 	if (sender == self.buttonZero) {
@@ -154,7 +166,11 @@
 	[callSession release];
 }
 
-- (IBAction) onSMSClick: (id)sender{
+- (IBAction) onDelClick: (id)sender{
+	NSString* val = self.textFieldAddress.text;
+	if([val length] >0){
+		self.textFieldAddress.text = [val substringToIndex:([val length]-1)];
+	}
 }
 
 
@@ -186,7 +202,7 @@
 	
 	[buttonVoice dealloc];
 	[buttonVideo dealloc];
-	[buttonSMS dealloc];
+	[buttonDel dealloc];
 	
     [super dealloc];
 }
