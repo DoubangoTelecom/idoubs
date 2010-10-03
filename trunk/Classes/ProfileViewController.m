@@ -1,10 +1,23 @@
-//
-//  ProfileViewController.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 9/11/10.
-//  Copyright 2010 doubango. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 #import "ProfileViewController.h"
 
@@ -19,6 +32,7 @@
 
 @synthesize buttonSignInOut;
 @synthesize labelDebug;
+@synthesize imageViewStatus;
 
 
 /*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -37,22 +51,28 @@
 	 addObserver:self
 	 selector:@selector(onRegistrationEvent:)
 	 name:[RegistrationEventArgs eventName] object:nil];
-	
-	if([[SharedServiceManager sipService] isRegistered]){
-		[labelDebug setText:@"Connected"];
-	}
-	else{
-		[labelDebug setText:@"Disconnected"];
-	}
 }
 
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	if([[SharedServiceManager sipService] isRegistered]){
+		[labelDebug setText:@"Connected"];
+		[self.buttonSignInOut setTitle: @"Sign Out" forState: UIControlStateNormal];
+		self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_out_48.png"];
+		self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_green_16.png"];
+	}
+	else{
+		[labelDebug setText:@"Disconnected"];
+		[self.buttonSignInOut setTitle: @"Sign In" forState: UIControlStateNormal];
+		self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_in_48.png"];
+		self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_red_16.png"];
+	}
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -91,16 +111,25 @@
 	switch (eargs.type) {			
 		case REGISTRATION_OK:
 			[self.buttonSignInOut setTitle: @"Sign Out" forState: UIControlStateNormal];
+			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_out_48.png"];
+			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_green_16.png"];
 			break;
 			
 		case UNREGISTRATION_OK:
 			[self.buttonSignInOut setTitle: @"Sign In" forState: UIControlStateNormal];
+			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_in_48.png"];
+			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_red_16.png"];
+			break;
+			
+		case REGISTRATION_INPROGRESS:
+		case UNREGISTRATION_INPROGRESS:
+			[self.buttonSignInOut setTitle: @"Cancel" forState: UIControlStateNormal];
+			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_inprogress_48.png"];
+			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_grey_16.png"];
 			break;
 			
 		case REGISTRATION_NOK:			
-		case REGISTRATION_INPROGRESS:
 		case UNREGISTRATION_NOK:
-		case UNREGISTRATION_INPROGRESS:
 		default:
 			break;
 	}

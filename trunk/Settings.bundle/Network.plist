@@ -48,7 +48,7 @@
 			<key>Key</key>
 			<string>network_pcscf_host</string>
 			<key>DefaultValue</key>
-			<real>127</real>
+			<string>127.0.0.1</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -58,7 +58,7 @@
 			<key>Key</key>
 			<string>network_pcscf_port</string>
 			<key>DefaultValue</key>
-			<string>5060</string>
+			<integer>5060</integer>
 		</dict>
 		<dict>
 			<key>Type</key>

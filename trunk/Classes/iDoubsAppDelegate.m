@@ -1,15 +1,31 @@
-//
-//  iDoubsAppDelegate.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 8/27/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 // http://www.drobnik.com/touch/2010/05/nsnotifications-and-background-threads/
 // http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Notifications/Articles/Threading.html
 // http://www.iphoneexamples.com/
 // http://dblog.com.au/iphone-development-tutorials/iphone-sdk-tutorial-reading-data-from-a-sqlite-database/
+// http://gravityjack.com/gravityjack_news/iphone-4-0-%E2%80%93-what-matters-part-1.html
+// http://developer.apple.com/iphone/library/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/iPhoneAppProgrammingGuide.pdf?q=introduction-to-apples-developer-tools
+
 
 #import "iDoubsAppDelegate.h"
 
@@ -41,7 +57,7 @@
 	peoplePickerController.displayedProperties = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty], 
 												  [NSNumber numberWithInt:kABPersonEmailProperty],
 												  [NSNumber numberWithInt:kABPersonBirthdayProperty], nil];
-	peoplePickerController.tabBarItem = [[self.tabBarController.viewControllers objectAtIndex:tab_index_contacts] tabBarItem]; 
+	peoplePickerController.tabBarItem = [[self.tabBarController.viewControllers objectAtIndex:tab_index_contacts] tabBarItem];
 	
 	NSMutableArray* viewControllers = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
 	[viewControllers replaceObjectAtIndex:tab_index_contacts withObject:peoplePickerController];
@@ -55,7 +71,7 @@
 	
 	
 	self->inCallViewController = [[InCallViewController alloc] initWithNibName:@"InCallViewController" bundle:nil];
-	UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:@"In Call" image:nil tag:1];
+	UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:@"In Call" image:[UIImage imageNamed:@"badge_phone.png"] tag:1];
 	self->inCallViewController.tabBarItem = tabBarItem;
 	[tabBarItem release];
 	
@@ -86,6 +102,23 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000	
+	if([SharedServiceManager.sipService isRegistered]){
+		NSLog(@"applicationDidEnterBackground (Registered)");
+	
+		if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported]){
+			[application setKeepAliveTimeout:600 handler: ^{
+				NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
+			}];
+		}
+	}
+	else{
+		NSLog(@"applicationDidEnterBackground (Not Registered)");
+	}
+	
+#else
+	NSLog(@"applicationDidEnterBackground (Not supported)");
+#endif
 }
 
 

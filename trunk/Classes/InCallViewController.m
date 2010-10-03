@@ -1,10 +1,23 @@
-//
-//  InCallViewController.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 9/12/10.
-//  Copyright 2010 doubango. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 #import "InCallViewController.h"
 
@@ -70,10 +83,13 @@
     self->avCaptureSession.sessionPreset = AVCaptureSessionPresetLow;
     [self->avCaptureSession addInput:videoInput];
 	
-    
+    // Currently, the only supported key is kCVPixelBufferPixelFormatTypeKey. Recommended pixel format choices are 
+	// kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange or kCVPixelFormatType_32BGRA. 
+	// On iPhone 3G, the recommended pixel format choices are kCVPixelFormatType_422YpCbCr8 or kCVPixelFormatType_32BGRA.
+	//
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              [NSNumber numberWithUnsignedInt:kCVPixelFormatType_422YpCbCr8], kCVPixelBufferPixelFormatTypeKey,
+                              //[NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
 							  [NSNumber numberWithInt:self->producerWidth], (id)kCVPixelBufferWidthKey,
                               [NSNumber numberWithInt:self->producerHeight], (id)kCVPixelBufferHeightKey,
                                
@@ -88,7 +104,6 @@
     [self->avCaptureSession addOutput:avCaptureVideoDataOutput];
     [avCaptureVideoDataOutput release];
     dispatch_release(queue);
-	
 	
 	AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: self->avCaptureSession];
 	previewLayer.frame = self->localView.bounds;
@@ -125,6 +140,24 @@
 			if((self->producer = tsk_object_ref(self->producer))){
 				TMEDIA_PRODUCER(self->producer)->video.width = CVPixelBufferGetWidth(pixelBuffer);
 				TMEDIA_PRODUCER(self->producer)->video.height = CVPixelBufferGetHeight(pixelBuffer);
+				
+				int pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer);
+				switch (pixelFormat) {
+					case kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange:
+						TMEDIA_PRODUCER(producer)->video.chroma = tmedia_nv12; // iPhone 3GS or 4
+						NSLog(@"Capture pixel format=NV12");
+						break;
+					case kCVPixelFormatType_422YpCbCr8:
+						TMEDIA_PRODUCER(producer)->video.chroma = tmedia_uyvy422; // iPhone 3
+						NSLog(@"Capture pixel format=UYUY422");
+						break;
+					default:
+						TMEDIA_PRODUCER(producer)->video.chroma = tmedia_rgb32;
+						NSLog(@"Capture pixel format=RGB32");
+						break;
+				}
+				
+				
 				self->producerFirstFrame = NO;
 				tsk_object_unref(self->producer);
 			}
@@ -254,6 +287,8 @@
 	switch (eargs.type) {
 		case INVITE_INCOMING:
 		{
+			self->dateSeconds = 0;
+			
 			[self.incomingCallView setHidden:NO];
 			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
 			
@@ -262,6 +297,19 @@
 			[labelRemoteParty setText:[DWSipUri friendlyName:self->session.remoteParty]];
 			[labelState setText:[@"Incoming Call from " stringByAppendingFormat:@"%@", labelRemoteParty.text]];
 			
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
+			if ([UIApplication sharedApplication].applicationState ==  UIApplicationStateBackground) {
+				UILocalNotification* localNotif = [[[UILocalNotification alloc] init] autorelease];
+				if (localNotif){
+					localNotif.alertBody =[NSString  stringWithFormat:@"Call from %@",labelRemoteParty.text];
+					localNotif.soundName = UILocalNotificationDefaultSoundName; 
+					localNotif.applicationIconBadgeNumber = 0;
+					localNotif.repeatInterval = 0;
+					
+					[[UIApplication sharedApplication]  presentLocalNotificationNow:localNotif];
+				}
+			}
+#endif
 			[SharedServiceManager.soundService playRingTone];
 			
 			[self->callEvent release], self->callEvent = nil;
@@ -272,6 +320,8 @@
 			
 		case INVITE_INPROGRESS:
 		{
+			self->dateSeconds = 0;
+			
 			[self.incomingCallView setHidden:YES];
 			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
 			
@@ -324,7 +374,6 @@
 			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
 			
-			self->dateSeconds = 0;
 			self->timerInCall = [NSTimer scheduledTimerWithTimeInterval:1 
 							target:self 
 							selector:@selector(timerInCallTick:) 
@@ -348,7 +397,9 @@
 			}
 			
 			if(self->callEvent){
-				self->callEvent.end = [[NSDate date] timeIntervalSince1970];
+				if(self->dateSeconds>0){
+					self->callEvent.end = [[NSDate date] timeIntervalSince1970];
+				}
 				[SharedServiceManager.historyService addEvent:self->callEvent];
 				[self->callEvent release], self->callEvent = nil;
 			}
