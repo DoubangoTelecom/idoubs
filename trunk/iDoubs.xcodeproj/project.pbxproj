@@ -865,6 +865,29 @@
 		EC9F9FEB123D859A00AABEFA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9F9FEA123D859A00AABEFA /* AudioToolbox.framework */; };
 		EC9FA0BB123DA8F500AABEFA /* DWVideoConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FA0BA123DA8F500AABEFA /* DWVideoConsumer.m */; };
 		EC9FA0BE123DA90400AABEFA /* DWVideoProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9FA0BD123DA90400AABEFA /* DWVideoProducer.m */; };
+		ECC41BE81258207C00347CE0 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BD91258207C00347CE0 /* keypad_0.png */; };
+		ECC41BE91258207C00347CE0 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDA1258207C00347CE0 /* keypad_1.png */; };
+		ECC41BEA1258207C00347CE0 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDB1258207C00347CE0 /* keypad_2.png */; };
+		ECC41BEB1258207C00347CE0 /* keypad_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDC1258207C00347CE0 /* keypad_3.png */; };
+		ECC41BEC1258207C00347CE0 /* keypad_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDD1258207C00347CE0 /* keypad_4.png */; };
+		ECC41BED1258207C00347CE0 /* keypad_5.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDE1258207C00347CE0 /* keypad_5.png */; };
+		ECC41BEE1258207C00347CE0 /* keypad_6.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BDF1258207C00347CE0 /* keypad_6.png */; };
+		ECC41BEF1258207C00347CE0 /* keypad_7.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE01258207C00347CE0 /* keypad_7.png */; };
+		ECC41BF01258207C00347CE0 /* keypad_8.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE11258207C00347CE0 /* keypad_8.png */; };
+		ECC41BF11258207C00347CE0 /* keypad_9.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE21258207C00347CE0 /* keypad_9.png */; };
+		ECC41BF21258207C00347CE0 /* keypad_Call.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE31258207C00347CE0 /* keypad_Call.png */; };
+		ECC41BF31258207C00347CE0 /* keypad_del.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE41258207C00347CE0 /* keypad_del.png */; };
+		ECC41BF41258207C00347CE0 /* keypad_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE51258207C00347CE0 /* keypad_placeholder.png */; };
+		ECC41BF51258207C00347CE0 /* keypad_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE61258207C00347CE0 /* keypad_sharp.png */; };
+		ECC41BF61258207C00347CE0 /* keypad_star.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41BE71258207C00347CE0 /* keypad_star.png */; };
+		ECC41C5F12582D2200347CE0 /* badge_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C5E12582D2200347CE0 /* badge_phone.png */; };
+		ECC41C7E1258306200347CE0 /* bullet_ball_glass_green_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C7B1258306200347CE0 /* bullet_ball_glass_green_16.png */; };
+		ECC41C7F1258306200347CE0 /* bullet_ball_glass_grey_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C7C1258306200347CE0 /* bullet_ball_glass_grey_16.png */; };
+		ECC41C801258306200347CE0 /* bullet_ball_glass_red_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C7D1258306200347CE0 /* bullet_ball_glass_red_16.png */; };
+		ECC41CA11258332000347CE0 /* sign_in_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C9E1258332000347CE0 /* sign_in_48.png */; };
+		ECC41CA21258332000347CE0 /* sign_inprogress_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41C9F1258332000347CE0 /* sign_inprogress_48.png */; };
+		ECC41CA31258332000347CE0 /* sign_out_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41CA01258332000347CE0 /* sign_out_48.png */; };
+		ECC41CB21258350600347CE0 /* phone_hang_up_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC41CB11258350600347CE0 /* phone_hang_up_48.png */; };
 		ECDD2E5F12444BC200A79262 /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857A971227914C00A1F1B3 /* libtinyDAV.a */; };
 		ECDD2E6012444BC200A79262 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857A9E1227915B00A1F1B3 /* libtinyHTTP.a */; };
 		ECDD2E6112444BC200A79262 /* libtinyIPSEC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857AA51227916A00A1F1B3 /* libtinyIPSEC.a */; };
@@ -880,20 +903,7 @@
 		ECDD2E6B12444BC200A79262 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC857AE4122791F500A1F1B3 /* libtinyXCAP.a */; };
 		ECDD2F1D1244621900A79262 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		ECDD33021244EE7700A79262 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDD33011244EE7700A79262 /* 86-camera.png */; };
-		ECF94A6C1253D43900C1D400 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A5E1253D43900C1D400 /* keypad_0.png */; };
-		ECF94A6D1253D43900C1D400 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A5F1253D43900C1D400 /* keypad_1.png */; };
-		ECF94A6E1253D43900C1D400 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A601253D43900C1D400 /* keypad_2.png */; };
-		ECF94A6F1253D43900C1D400 /* keypad_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A611253D43900C1D400 /* keypad_3.png */; };
-		ECF94A701253D43900C1D400 /* keypad_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A621253D43900C1D400 /* keypad_4.png */; };
-		ECF94A711253D43900C1D400 /* keypad_5.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A631253D43900C1D400 /* keypad_5.png */; };
-		ECF94A721253D43900C1D400 /* keypad_6.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A641253D43900C1D400 /* keypad_6.png */; };
-		ECF94A731253D43900C1D400 /* keypad_7.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A651253D43900C1D400 /* keypad_7.png */; };
-		ECF94A741253D43900C1D400 /* keypad_8.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A661253D43900C1D400 /* keypad_8.png */; };
-		ECF94A751253D43900C1D400 /* keypad_9.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A671253D43900C1D400 /* keypad_9.png */; };
-		ECF94A761253D43900C1D400 /* keypad_Call.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A681253D43900C1D400 /* keypad_Call.png */; };
-		ECF94A771253D43900C1D400 /* keypad_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A691253D43900C1D400 /* keypad_placeholder.png */; };
-		ECF94A781253D43900C1D400 /* keypad_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A6A1253D43900C1D400 /* keypad_sharp.png */; };
-		ECF94A791253D43900C1D400 /* keypad_star.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF94A6B1253D43900C1D400 /* keypad_star.png */; };
+		ECEF513B1257ADEC00777236 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEF512F1257ADC200777236 /* CFNetwork.framework */; };
 		ECF9EA80124E393E00EB1CC8 /* ringbacktone.wav in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */; };
 		ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EA82124E39F200EB1CC8 /* SoundService.m */; };
 		ECF9EB8D124E529D00EB1CC8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EB8C124E529C00EB1CC8 /* about.html */; };
@@ -908,7 +918,6 @@
 		ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */; };
 		ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */; };
 		ECF9F1711250CE8800EB1CC8 /* DWSipUri.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */; };
-		ECFC09A21253DDF500A826A4 /* keypad_del.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFC09A11253DDF500A826A4 /* keypad_del.png */; };
 		ECFC09A41253DE4900A826A4 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFC09A31253DE4900A826A4 /* button_back.png */; };
 /* End PBXBuildFile section */
 
@@ -1990,21 +1999,31 @@
 		EC9FA0BA123DA8F500AABEFA /* DWVideoConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWVideoConsumer.m; sourceTree = "<group>"; };
 		EC9FA0BC123DA90400AABEFA /* DWVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWVideoProducer.h; sourceTree = "<group>"; };
 		EC9FA0BD123DA90400AABEFA /* DWVideoProducer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWVideoProducer.m; sourceTree = "<group>"; };
+		ECC41BD91258207C00347CE0 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
+		ECC41BDA1258207C00347CE0 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
+		ECC41BDB1258207C00347CE0 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
+		ECC41BDC1258207C00347CE0 /* keypad_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_3.png; sourceTree = "<group>"; };
+		ECC41BDD1258207C00347CE0 /* keypad_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_4.png; sourceTree = "<group>"; };
+		ECC41BDE1258207C00347CE0 /* keypad_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_5.png; sourceTree = "<group>"; };
+		ECC41BDF1258207C00347CE0 /* keypad_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_6.png; sourceTree = "<group>"; };
+		ECC41BE01258207C00347CE0 /* keypad_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_7.png; sourceTree = "<group>"; };
+		ECC41BE11258207C00347CE0 /* keypad_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_8.png; sourceTree = "<group>"; };
+		ECC41BE21258207C00347CE0 /* keypad_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_9.png; sourceTree = "<group>"; };
+		ECC41BE31258207C00347CE0 /* keypad_Call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_Call.png; sourceTree = "<group>"; };
+		ECC41BE41258207C00347CE0 /* keypad_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_del.png; sourceTree = "<group>"; };
+		ECC41BE51258207C00347CE0 /* keypad_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_placeholder.png; sourceTree = "<group>"; };
+		ECC41BE61258207C00347CE0 /* keypad_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_sharp.png; sourceTree = "<group>"; };
+		ECC41BE71258207C00347CE0 /* keypad_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_star.png; sourceTree = "<group>"; };
+		ECC41C5E12582D2200347CE0 /* badge_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge_phone.png; sourceTree = "<group>"; };
+		ECC41C7B1258306200347CE0 /* bullet_ball_glass_green_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_ball_glass_green_16.png; sourceTree = "<group>"; };
+		ECC41C7C1258306200347CE0 /* bullet_ball_glass_grey_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_ball_glass_grey_16.png; sourceTree = "<group>"; };
+		ECC41C7D1258306200347CE0 /* bullet_ball_glass_red_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_ball_glass_red_16.png; sourceTree = "<group>"; };
+		ECC41C9E1258332000347CE0 /* sign_in_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_in_48.png; sourceTree = "<group>"; };
+		ECC41C9F1258332000347CE0 /* sign_inprogress_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_inprogress_48.png; sourceTree = "<group>"; };
+		ECC41CA01258332000347CE0 /* sign_out_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_out_48.png; sourceTree = "<group>"; };
+		ECC41CB11258350600347CE0 /* phone_hang_up_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_hang_up_48.png; sourceTree = "<group>"; };
 		ECDD33011244EE7700A79262 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
-		ECF94A5E1253D43900C1D400 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
-		ECF94A5F1253D43900C1D400 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
-		ECF94A601253D43900C1D400 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
-		ECF94A611253D43900C1D400 /* keypad_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_3.png; sourceTree = "<group>"; };
-		ECF94A621253D43900C1D400 /* keypad_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_4.png; sourceTree = "<group>"; };
-		ECF94A631253D43900C1D400 /* keypad_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_5.png; sourceTree = "<group>"; };
-		ECF94A641253D43900C1D400 /* keypad_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_6.png; sourceTree = "<group>"; };
-		ECF94A651253D43900C1D400 /* keypad_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_7.png; sourceTree = "<group>"; };
-		ECF94A661253D43900C1D400 /* keypad_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_8.png; sourceTree = "<group>"; };
-		ECF94A671253D43900C1D400 /* keypad_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_9.png; sourceTree = "<group>"; };
-		ECF94A681253D43900C1D400 /* keypad_Call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_Call.png; sourceTree = "<group>"; };
-		ECF94A691253D43900C1D400 /* keypad_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_placeholder.png; sourceTree = "<group>"; };
-		ECF94A6A1253D43900C1D400 /* keypad_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_sharp.png; sourceTree = "<group>"; };
-		ECF94A6B1253D43900C1D400 /* keypad_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_star.png; sourceTree = "<group>"; };
+		ECEF512F1257ADC200777236 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		ECF9EA81124E39F200EB1CC8 /* SoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundService.h; sourceTree = "<group>"; };
 		ECF9EA82124E39F200EB1CC8 /* SoundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundService.m; sourceTree = "<group>"; };
@@ -2023,7 +2042,6 @@
 		ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_qcif.png; sourceTree = "<group>"; };
 		ECF9F16F1250CE8800EB1CC8 /* DWSipUri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSipUri.h; sourceTree = "<group>"; };
 		ECF9F1701250CE8800EB1CC8 /* DWSipUri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSipUri.m; sourceTree = "<group>"; };
-		ECFC09A11253DDF500A826A4 /* keypad_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_del.png; sourceTree = "<group>"; };
 		ECFC09A31253DE4900A826A4 /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2054,6 +2072,7 @@
 				EC11215612472CDE0028C6A5 /* CoreVideo.framework in Frameworks */,
 				EC11215D12472D120028C6A5 /* CoreMedia.framework in Frameworks */,
 				ECF9EC59124E5C4500EB1CC8 /* libsqlite3.0.dylib in Frameworks */,
+				ECEF513B1257ADEC00777236 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2208,6 +2227,7 @@
 				EC1121491247293A0028C6A5 /* AVFoundation.framework */,
 				EC11215C12472D120028C6A5 /* CoreMedia.framework */,
 				ECF9EC58124E5C4500EB1CC8 /* libsqlite3.0.dylib */,
+				ECEF512F1257ADC200777236 /* CFNetwork.framework */,
 			);
 			name = iDoubs;
 			sourceTree = "<group>";
@@ -4249,10 +4269,18 @@
 			children = (
 				ECF94A5D1253D41C00C1D400 /* keypad */,
 				ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */,
+				ECC41CB11258350600347CE0 /* phone_hang_up_48.png */,
 				ECFC09A31253DE4900A826A4 /* button_back.png */,
 				ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */,
 				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
+				ECC41C5E12582D2200347CE0 /* badge_phone.png */,
+				ECC41C7B1258306200347CE0 /* bullet_ball_glass_green_16.png */,
+				ECC41C7C1258306200347CE0 /* bullet_ball_glass_grey_16.png */,
+				ECC41C7D1258306200347CE0 /* bullet_ball_glass_red_16.png */,
 				ECF9EE5C124FA80B00EB1CC8 /* call_missed_45.png */,
+				ECC41C9E1258332000347CE0 /* sign_in_48.png */,
+				ECC41C9F1258332000347CE0 /* sign_inprogress_48.png */,
+				ECC41CA01258332000347CE0 /* sign_out_48.png */,
 				ECF9EE5D124FA80B00EB1CC8 /* call_outgoing_45.png */,
 				ECDD33011244EE7700A79262 /* 86-camera.png */,
 				EC9F9CC0123C66DB00AABEFA /* avatar_48.png */,
@@ -4311,21 +4339,21 @@
 		ECF94A5D1253D41C00C1D400 /* keypad */ = {
 			isa = PBXGroup;
 			children = (
-				ECFC09A11253DDF500A826A4 /* keypad_del.png */,
-				ECF94A5E1253D43900C1D400 /* keypad_0.png */,
-				ECF94A5F1253D43900C1D400 /* keypad_1.png */,
-				ECF94A601253D43900C1D400 /* keypad_2.png */,
-				ECF94A611253D43900C1D400 /* keypad_3.png */,
-				ECF94A621253D43900C1D400 /* keypad_4.png */,
-				ECF94A631253D43900C1D400 /* keypad_5.png */,
-				ECF94A641253D43900C1D400 /* keypad_6.png */,
-				ECF94A651253D43900C1D400 /* keypad_7.png */,
-				ECF94A661253D43900C1D400 /* keypad_8.png */,
-				ECF94A671253D43900C1D400 /* keypad_9.png */,
-				ECF94A681253D43900C1D400 /* keypad_Call.png */,
-				ECF94A691253D43900C1D400 /* keypad_placeholder.png */,
-				ECF94A6A1253D43900C1D400 /* keypad_sharp.png */,
-				ECF94A6B1253D43900C1D400 /* keypad_star.png */,
+				ECC41BD91258207C00347CE0 /* keypad_0.png */,
+				ECC41BDA1258207C00347CE0 /* keypad_1.png */,
+				ECC41BDB1258207C00347CE0 /* keypad_2.png */,
+				ECC41BDC1258207C00347CE0 /* keypad_3.png */,
+				ECC41BDD1258207C00347CE0 /* keypad_4.png */,
+				ECC41BDE1258207C00347CE0 /* keypad_5.png */,
+				ECC41BDF1258207C00347CE0 /* keypad_6.png */,
+				ECC41BE01258207C00347CE0 /* keypad_7.png */,
+				ECC41BE11258207C00347CE0 /* keypad_8.png */,
+				ECC41BE21258207C00347CE0 /* keypad_9.png */,
+				ECC41BE31258207C00347CE0 /* keypad_Call.png */,
+				ECC41BE41258207C00347CE0 /* keypad_del.png */,
+				ECC41BE51258207C00347CE0 /* keypad_placeholder.png */,
+				ECC41BE61258207C00347CE0 /* keypad_sharp.png */,
+				ECC41BE71258207C00347CE0 /* keypad_star.png */,
 			);
 			name = keypad;
 			sourceTree = "<group>";
@@ -5179,22 +5207,30 @@
 				ECF9F0F11250C30C00EB1CC8 /* ringtone.mp3 in Resources */,
 				ECF9F13A1250CAEB00EB1CC8 /* black_qcif.png in Resources */,
 				ECF9F13B1250CAEB00EB1CC8 /* green_qcif.png in Resources */,
-				ECF94A6C1253D43900C1D400 /* keypad_0.png in Resources */,
-				ECF94A6D1253D43900C1D400 /* keypad_1.png in Resources */,
-				ECF94A6E1253D43900C1D400 /* keypad_2.png in Resources */,
-				ECF94A6F1253D43900C1D400 /* keypad_3.png in Resources */,
-				ECF94A701253D43900C1D400 /* keypad_4.png in Resources */,
-				ECF94A711253D43900C1D400 /* keypad_5.png in Resources */,
-				ECF94A721253D43900C1D400 /* keypad_6.png in Resources */,
-				ECF94A731253D43900C1D400 /* keypad_7.png in Resources */,
-				ECF94A741253D43900C1D400 /* keypad_8.png in Resources */,
-				ECF94A751253D43900C1D400 /* keypad_9.png in Resources */,
-				ECF94A761253D43900C1D400 /* keypad_Call.png in Resources */,
-				ECF94A771253D43900C1D400 /* keypad_placeholder.png in Resources */,
-				ECF94A781253D43900C1D400 /* keypad_sharp.png in Resources */,
-				ECF94A791253D43900C1D400 /* keypad_star.png in Resources */,
-				ECFC09A21253DDF500A826A4 /* keypad_del.png in Resources */,
 				ECFC09A41253DE4900A826A4 /* button_back.png in Resources */,
+				ECC41BE81258207C00347CE0 /* keypad_0.png in Resources */,
+				ECC41BE91258207C00347CE0 /* keypad_1.png in Resources */,
+				ECC41BEA1258207C00347CE0 /* keypad_2.png in Resources */,
+				ECC41BEB1258207C00347CE0 /* keypad_3.png in Resources */,
+				ECC41BEC1258207C00347CE0 /* keypad_4.png in Resources */,
+				ECC41BED1258207C00347CE0 /* keypad_5.png in Resources */,
+				ECC41BEE1258207C00347CE0 /* keypad_6.png in Resources */,
+				ECC41BEF1258207C00347CE0 /* keypad_7.png in Resources */,
+				ECC41BF01258207C00347CE0 /* keypad_8.png in Resources */,
+				ECC41BF11258207C00347CE0 /* keypad_9.png in Resources */,
+				ECC41BF21258207C00347CE0 /* keypad_Call.png in Resources */,
+				ECC41BF31258207C00347CE0 /* keypad_del.png in Resources */,
+				ECC41BF41258207C00347CE0 /* keypad_placeholder.png in Resources */,
+				ECC41BF51258207C00347CE0 /* keypad_sharp.png in Resources */,
+				ECC41BF61258207C00347CE0 /* keypad_star.png in Resources */,
+				ECC41C5F12582D2200347CE0 /* badge_phone.png in Resources */,
+				ECC41C7E1258306200347CE0 /* bullet_ball_glass_green_16.png in Resources */,
+				ECC41C7F1258306200347CE0 /* bullet_ball_glass_grey_16.png in Resources */,
+				ECC41C801258306200347CE0 /* bullet_ball_glass_red_16.png in Resources */,
+				ECC41CA11258332000347CE0 /* sign_in_48.png in Resources */,
+				ECC41CA21258332000347CE0 /* sign_inprogress_48.png in Resources */,
+				ECC41CA31258332000347CE0 /* sign_out_48.png in Resources */,
+				ECC41CB21258350600347CE0 /* phone_hang_up_48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

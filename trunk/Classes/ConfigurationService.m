@@ -1,13 +1,77 @@
-//
-//  ConfigurationService.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 8/29/10.
-//  Copyright 2010 doubango. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 #import "ConfigurationService.h"
 
+#import "DWSipStack.h"
+
+@interface ConfigurationService(Codecs)
+-(int) getCodecs;
+@end
+
+@implementation ConfigurationService(Codecs)
+-(int) getCodecs{
+	tdav_codec_id_t codecs = tdav_codec_id_none;
+	
+	if([self->prefs boolForKey:@"codecs_amr_nb_oa"]){
+		codecs |= tdav_codec_id_amr_nb_oa;
+	}
+	if([self->prefs boolForKey:@"codecs_amr_nb_be"]){
+		codecs |= tdav_codec_id_amr_nb_be;
+	}
+	if([self->prefs boolForKey:@"codecs_gsm"]){
+		codecs |= tdav_codec_id_gsm;
+	}
+	if([self->prefs boolForKey:@"codecs_pcma"]){
+		codecs |= tdav_codec_id_pcma;
+	}
+	if([self->prefs boolForKey:@"codecs_pcmu"]){
+		codecs |= tdav_codec_id_pcmu;
+	}
+	if([self->prefs boolForKey:@"codecs_speex_nb"]){
+		codecs |= tdav_codec_id_speex_nb;
+	}
+	if([self->prefs boolForKey:@"codecs_h263"]){
+		codecs |= tdav_codec_id_h263;
+	}
+	if([self->prefs boolForKey:@"codecs_h263p"]){
+		codecs |= tdav_codec_id_h263p;
+	}
+	if([self->prefs boolForKey:@"codecs_h264_bp10"]){
+		codecs |= tdav_codec_id_h264_bp10;
+	}
+	if([self->prefs boolForKey:@"codecs_h264_bp20"]){
+		codecs |= tdav_codec_id_h264_bp20;
+	}
+	if([self->prefs boolForKey:@"codecs_h264_bp30"]){
+		codecs |= tdav_codec_id_h264_bp30;
+	}
+	if([self->prefs boolForKey:@"codecs_theora"]){
+		codecs |= tdav_codec_id_theora;
+	}
+	
+	return (int)codecs;
+}
+
+@end
 
 @implementation ConfigurationService
 
@@ -110,6 +174,20 @@
 								  @"UDP", @"network_transport",
 								  
 								  
+								  /* === MEDIA === */
+								  [NSNumber numberWithBool:NO], @"codecs_amr_nb_oa",
+								  [NSNumber numberWithBool:NO], @"codecs_amr_nb_be",
+								  [NSNumber numberWithBool:YES], @"codecs_gsm",
+								  [NSNumber numberWithBool:YES], @"codecs_pcma",
+								  [NSNumber numberWithBool:YES], @"codecs_pcmu",
+								  [NSNumber numberWithBool:NO], @"codecs_speex_nb",
+								  [NSNumber numberWithBool:NO], @"codecs_h263",
+								  [NSNumber numberWithBool:YES], @"codecs_h263p",
+								  [NSNumber numberWithBool:YES], @"codecs_h264_bp10",
+								  [NSNumber numberWithBool:NO], @"codecs_h264_bp20",
+								  [NSNumber numberWithBool:NO], @"codecs_h264_bp30",
+								  [NSNumber numberWithBool:YES], @"codecs_theora",
+								  
 							
 								  nil];
 		
@@ -122,11 +200,19 @@
 // PService
 //
 -(BOOL) start{
-	return NO;
+	[[NSNotificationCenter defaultCenter] addObserver: self 
+				selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
+	return YES;
 }
 
 -(BOOL) stop{
-	return NO;
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	return YES;
+}
+
+
+-(void)userDefaultsDidChangeNotification:(NSNotification *)note {
+	[DWSipStack setCodecs:[self getCodecs]];
 }
 
 //
@@ -139,6 +225,9 @@
 }
 
 -(int) getInt: (CONFIGURATION_SECTION_T) section  entry:(CONFIGURATION_ENTRY_T) e{
+	if(section == CONFIGURATION_SECTION_MEDIA && e == CONFIGURATION_ENTRY_CODECS){// HACK: special case
+		return [self getCodecs];
+	}
 	return [self->prefs integerForKey:[self entryKey: section entry:e]];
 }
 
@@ -149,6 +238,7 @@
 -(BOOL) getBoolean: (CONFIGURATION_SECTION_T) section entry:(CONFIGURATION_ENTRY_T) e{
 	return [self->prefs boolForKey:[self entryKey: section entry:e]];
 }
+
 
 
 @end

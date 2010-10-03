@@ -40,7 +40,7 @@
 			<key>Key</key>
 			<string>codecs_gsm</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -70,7 +70,7 @@
 			<key>Key</key>
 			<string>codecs_speex_nb</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -86,7 +86,7 @@
 			<key>Key</key>
 			<string>codecs_h263</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>

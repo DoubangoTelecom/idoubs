@@ -1,10 +1,23 @@
-//
-//  HistoryService.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 9/26/10.
-//  Copyright 2010 doubango. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 #import "HistoryService.h"
 
@@ -19,6 +32,7 @@
 -(BOOL) databaseClose;
 -(BOOL) databaseAddAVCall:(HistoryAVCallEvent*)event;
 -(BOOL) databaseRemoveEvent:(HistoryEvent*)event;
+-(BOOL) databaseClearEvents;
 @end
 
 
@@ -120,7 +134,7 @@
 	
 	BOOL success = NO;
 	NSString* sqlStatement = [@"insert into hist_av (seen,status,type,remoteParty,start,end) values" 
-					 stringByAppendingFormat:@"(%d,%d,%d,'%@',%lld,%lld)",
+					 stringByAppendingFormat:@"(%d,%d,%d,'%@',%f,%f)",
 					 event.seen ? 1 : 0,
 					 (int)event.status,
 					 (int)event.type,
@@ -152,6 +166,31 @@
 	}
 	
 	return NO;
+}
+
+-(BOOL) databaseClearEvents{
+	if(!self->database){
+		NSLog(@"Invalid database");
+		return NO;
+	}
+	// AVCAlls
+	// MSRPCalls
+	// ...
+	BOOL success = NO;	
+	sqlite3_stmt *compiledStatement;
+	int ret;
+	
+	if((ret = sqlite3_prepare_v2(self->database, "delete from hist_av", -1, &compiledStatement, NULL)) == SQLITE_OK) {
+		success = ((ret = sqlite3_step(compiledStatement))==SQLITE_DONE);
+	}
+	sqlite3_finalize(compiledStatement);
+	
+	if(success){
+		[self->events removeAllObjects];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"HistoryChanged" object:self];
+	}
+	
+	return success;
 }
 
 @end
@@ -226,7 +265,7 @@
 }
 
 -(BOOL) clear{
-	return NO;
+	return [self databaseClearEvents];
 }
 
 -(NSMutableArray*)events{
