@@ -1,10 +1,23 @@
-//
-//  DialerViewController.m
-//  iDoubs
-//
-//  Created by Mamadou DIOP on 9/3/10.
-//  Copyright 2010 doubango. All rights reserved.
-//
+/*
+ * Copyright (C) 2010 Mamadou Diop.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango.org>
+ *       
+ * This file is part of idoubs Project (http://code.google.com/p/idoubs)
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 
 #import "DialerViewController.h"
 
@@ -89,44 +102,19 @@
 }
 
 - (IBAction) onKeyboardClick: (id)sender{
-	if (sender == self.buttonZero) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"0"];
-	}
-	else if (sender == self.buttonOne) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"1"];
-	}
-	else if (sender == self.buttonTwo) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"2"];
-	}
-	else if (sender == self.buttonThree) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"3"];
-	}
-	else if (sender == self.buttonFour) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"4"];
-	}
-	else if (sender == self.buttonFive) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"5"];
-	}
-	else if (sender == self.buttonSix) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"6"];
-	}
-	else if (sender == self.buttonSeven) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"7"];
-	}
-	else if (sender == self.buttonEight) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"8"];
-	}
-	else if (sender == self.buttonNine) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"9"];
-	}
-	else if (sender == self.buttonStar) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"*"];
-	}
-	else if (sender == self.buttonSharp) {
-		self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"#"];
-	}
+	NSInteger tag = ((UIButton*)sender).tag;
 	
-	//[self.textFieldAddress setText:@"4524"];
+	switch (tag) {
+		case 10:
+			self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"*"];
+			break;
+		case 11:
+			self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:@"#"];
+			break;
+		default:
+			self.textFieldAddress.text = [self.textFieldAddress.text stringByAppendingString:[NSString stringWithFormat:@"%d", tag]];
+			break;
+	}
 }
 
 - (IBAction) onPickContactClick: (id)sender{
@@ -134,7 +122,11 @@
 	[appDelegate.tabBarController setSelectedIndex:tab_index_contacts];
 }
 
-- (IBAction) onAVCallClick: (id)sender{	
+- (IBAction) onAVCallClick: (id)sender{
+	if([self.textFieldAddress.text length] ==0){
+		return;
+	}
+	
 	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	DWActionConfig* actionConfig = [[DWActionConfig alloc] init];
@@ -148,10 +140,15 @@
 	[appDelegate.tabBarController setViewControllers:viewControllers animated:YES];
 	[appDelegate.tabBarController setSelectedIndex:3];
 	
-	NSString* realm = [[SharedServiceManager.configurationService getString:CONFIGURATION_SECTION_NETWORK entry:CONFIGURATION_ENTRY_REALM]
-					   stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
 	NSString* remoteUri = [self.textFieldAddress.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-	remoteUri = [@"sip:" stringByAppendingFormat:@"%@@%@",remoteUri, realm];
+	if(![remoteUri hasPrefix:@"sip:"] && ![remoteUri hasPrefix:@"tel:"]){
+		remoteUri = [@"sip:" stringByAppendingString:remoteUri];
+	}
+	if(![remoteUri hasPrefix:@"tel:"] && [remoteUri rangeOfString:@"@"].length == 0){
+		NSString* realm = [[SharedServiceManager.configurationService getString:CONFIGURATION_SECTION_NETWORK entry:CONFIGURATION_ENTRY_REALM]
+						   stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
+		remoteUri = [remoteUri stringByAppendingFormat:@"@%@",realm];
+	}
 	callSession.remoteParty = remoteUri; // Just for UI, useless
 	
 	if(sender == self.buttonVideo){
