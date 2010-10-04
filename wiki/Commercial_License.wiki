@@ -8,4 +8,4 @@ We can provide a non-GPL version of all components used in both [http://code.goo
 Owners of [http://doubango.org doubango] licenses can reuse part or whole 
 [http://code.google.com/p/idoubs/ iDoubs] source code whithout any restruction.<br/>
 
-For more information, please send me a mail at *diopmamadou(at)doubango.org* 
+For more information, please send me a mail at *diopmamadou(at)doubango(dot)org* 
