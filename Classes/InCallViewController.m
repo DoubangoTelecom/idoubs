@@ -38,7 +38,7 @@
 @end
 
 /*================= InCallViewController (VideoCapture) ======================*/
-#if TARGET_OS_EMBEDDED
+#if HAS_VIDEO_CAPTURE
 @interface InCallViewController (VideoCapture)
 
 - (AVCaptureDevice *)frontFacingCamera;
@@ -429,7 +429,7 @@
 }
 
 - (IBAction) onButtonStartVideoClick: (id)sender{
-#if TARGET_OS_EMBEDDED
+#if HAS_VIDEO_CAPTURE
 	if(canStreamVideo){
 		if(self->avCaptureDevice){
 			[self stopVideoCapture:nil];
@@ -462,7 +462,7 @@
 	[self->session release];
 	self->session = nil;
 	
-#if TARGET_OS_EMBEDDED
+#if HAS_VIDEO_CAPTURE
 	// force camera stop()
 	[self stopVideoCapture:nil];
 #endif
@@ -550,7 +550,7 @@
 -(int)producerStopped:(dw_producer_t*)_producer{
 	if(self->producer == _producer){
 		self->canStreamVideo = NO;
-#if	TARGET_OS_EMBEDDED
+#if	HAS_VIDEO_CAPTURE
 		[self performSelectorOnMainThread:@selector(stopVideoCapture:) withObject:nil waitUntilDone:NO];
 #endif
 		return 0;

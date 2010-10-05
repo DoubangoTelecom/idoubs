@@ -28,6 +28,8 @@
 
 #import "HistoryEvent.h"
 
+#define HAS_VIDEO_CAPTURE (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000 && TARGET_OS_EMBEDDED)
+
 @protocol InCallViewControllerDelegate
 
 -(void)setSession: (DWCallSession*)session;
@@ -37,7 +39,7 @@
 
 
 @interface InCallViewController : UIViewController<DWVideoConsumerCallback, DWVideoProducerCallback, InCallViewControllerDelegate
-#if TARGET_OS_EMBEDDED
+#if HAS_VIDEO_CAPTURE
 ,AVCaptureVideoDataOutputSampleBufferDelegate
 #endif
 > {
@@ -60,7 +62,7 @@
 	
 	BOOL canStreamVideo;
 	
-#if TARGET_OS_EMBEDDED
+#if HAS_VIDEO_CAPTURE
 	AVCaptureSession* avCaptureSession;
 	AVCaptureDevice *avCaptureDevice;
 #endif
