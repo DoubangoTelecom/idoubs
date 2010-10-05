@@ -137,6 +137,12 @@
 			
 			/* === NATT === */
 		case CONFIGURATION_SECTION_NATT:
+			switch (e) {					
+				case CONFIGURATION_ENTRY_USE_STUN: return @"natt_stun_enabled";
+				case CONFIGURATION_ENTRY_STUN_DISCO: return @"natt_stun_disco";
+				case CONFIGURATION_ENTRY_STUN_SERVER: return @"natt_stun_server";
+				case CONFIGURATION_ENTRY_STUN_PORT: return @"natt_stun_port";
+			}
 			break;
 			
 			/* === XCAP === */
@@ -187,6 +193,13 @@
 								  [NSNumber numberWithBool:NO], @"codecs_h264_bp20",
 								  [NSNumber numberWithBool:NO], @"codecs_h264_bp30",
 								  [NSNumber numberWithBool:YES], @"codecs_theora",
+								  
+								  
+								  /* === NATT === */
+								  [NSNumber numberWithBool:NO], @"natt_stun_enabled",
+								  [NSNumber numberWithBool:NO], @"natt_stun_disco",
+								  @"numb.viagenie.ca", @"natt_stun_server",
+								  [NSNumber numberWithInt:3478], @"natt_stun_port",
 								  
 							
 								  nil];

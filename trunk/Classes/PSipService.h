@@ -31,7 +31,7 @@
 -(BOOL)registerIdentity;
 -(BOOL)unRegisterIdentity;
 -(BOOL)publish;
--(BOOL)isRegistered;
+-(enum SESSION_STATE_E)registrationState;
 
 -(DWSipStack*) sipStack;
 

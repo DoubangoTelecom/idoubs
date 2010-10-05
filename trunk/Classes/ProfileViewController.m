@@ -21,6 +21,8 @@
 
 #import "ProfileViewController.h"
 
+#import "DWSipSession.h"
+
 #import "ServiceManager.h"
 #import "EventArgs.h"
 
@@ -59,7 +61,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	if([[SharedServiceManager sipService] isRegistered]){
+	if([[SharedServiceManager sipService] registrationState] == SESSION_STATE_CONNECTED){
 		[labelDebug setText:@"Connected"];
 		[self.buttonSignInOut setTitle: @"Sign Out" forState: UIControlStateNormal];
 		self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_out_48.png"];
@@ -96,11 +98,17 @@
 }
 
 - (IBAction) onbuttonSignInOutClick: (id)sender{
-	if([[SharedServiceManager sipService] isRegistered]){
-		[[SharedServiceManager sipService] unRegisterIdentity];
-	}
-	else{
-		[[SharedServiceManager sipService] registerIdentity];
+	switch ([[SharedServiceManager sipService] registrationState]) {
+		case SESSION_STATE_CONNECTED:
+			[[SharedServiceManager sipService] unRegisterIdentity];
+			break;
+		case SESSION_STATE_DISCONNECTED:
+			[[SharedServiceManager sipService] registerIdentity];
+			break;
+		case SESSION_STATE_CONNECTING:
+		case SESSION_STATE_DISCONNECTING:
+			[[SharedServiceManager sipService] stopStack];
+			break;
 	}
 }
 

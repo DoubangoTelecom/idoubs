@@ -103,7 +103,7 @@
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000	
-	if([SharedServiceManager.sipService isRegistered]){
+	if([SharedServiceManager.sipService registrationState] == SESSION_STATE_CONNECTED || [SharedServiceManager.sipService registrationState] == SESSION_STATE_CONNECTING){
 		NSLog(@"applicationDidEnterBackground (Registered)");
 	
 		if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported]){

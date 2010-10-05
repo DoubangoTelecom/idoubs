@@ -90,6 +90,8 @@
 	
 	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[appDelegate.tabBarController dismissModalViewControllerAnimated:NO];
+	
+	[[SharedServiceManager sipService] unRegisterIdentity];
 }
 
 
@@ -111,10 +113,13 @@
 			break;
 			
 		case REGISTRATION_NOK:
-		{
+		{			
 			UIAlertView* errorView = [[UIAlertView alloc]initWithTitle:@"Failed To Register" message:eargs.phrase delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[errorView show];
 			[errorView release];
+			
+			iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
+			[appDelegate.tabBarController dismissModalViewControllerAnimated:NO];
 			break;
 		}
 			

@@ -34,9 +34,18 @@
 //
 // Private functions
 //
-@interface SipService()
-
+@interface SipService(Private)
+-(void)asyncStackStop;
 @end
+
+@implementation SipService(Private)
+-(void)asyncStackStop {
+	if(self->sipStack && (self->sipStack.state == STACK_STATE_STARTING || self->sipStack.state == STACK_STATE_STARTED)){
+		[self->sipStack stop];
+	}
+}
+@end
+
 
 @implementation SipService
 
@@ -55,9 +64,7 @@
 }
 
 -(BOOL) stop{
-	if(self->sipStack && (self->sipStack.state == STACK_STATE_STARTING || self->sipStack.state == STACK_STATE_STARTED)){
-		return [self->sipStack stop];
-	}
+	[self stopStack];
 	return YES;
 }
 
@@ -66,10 +73,8 @@
 //	PSipService
 //
 -(BOOL)stopStack{
-	if(self->sipStack){
-		return [self->sipStack stop];
-	}
-	return NO;
+	[NSThread detachNewThreadSelector:@selector(asyncStackStop) toTarget:self withObject:nil];
+	return YES;
 }
 
 -(BOOL)registerIdentity{
@@ -122,8 +127,14 @@
 	BOOL useSTUN = [SharedServiceManager.configurationService getBoolean: CONFIGURATION_SECTION_NATT entry:CONFIGURATION_ENTRY_USE_STUN];
 	if(useSTUN){
 		BOOL discoSTUN  = [SharedServiceManager.configurationService getBoolean: CONFIGURATION_SECTION_NATT entry:CONFIGURATION_ENTRY_STUN_DISCO];
-		if(discoSTUN){
-			// FIXME: discover STUN
+		if(discoSTUN){			
+			NSString* domain = [realm stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
+			unsigned short stunPort = 0;
+			NSString* stunServer = [self->sipStack dnsSrvWithService:[@"_stun._udp." stringByAppendingString:domain] andPort:&stunPort];
+			if(stunServer){
+				NSLog(@"Failed to discover STUN server with service:_stun._udp.%@", domain);
+			}
+			[self->sipStack setSTUNServerIP:stunServer andPort:stunPort]; // Needed event if null (to disable/enable)
 		}
 		else {
 			NSString* serverSTUN = [SharedServiceManager.configurationService getString:CONFIGURATION_SECTION_NATT entry:CONFIGURATION_ENTRY_STUN_SERVER];
@@ -166,7 +177,7 @@
 	
 	BOOL useSigComp = [SharedServiceManager.configurationService getBoolean: CONFIGURATION_SECTION_NETWORK entry:CONFIGURATION_ENTRY_SIGCOMP];
 	if(useSigComp){
-		NSString* compId = [NSString stringWithFormat:@"urn:uuid:%s", [[NSProcessInfo processInfo] globallyUniqueString]];
+		NSString* compId = [NSString stringWithFormat:@"urn:uuid:%@", [[NSProcessInfo processInfo] globallyUniqueString]];
 		[self->sipStack setSigCompId:compId];
 	}
 	else{
@@ -204,21 +215,24 @@
 }
 
 -(BOOL)unRegisterIdentity{
-	if(self->registrationSession){
-		return [self->registrationSession unRegisterIdentity];
-	}
-	
-	return NO;
+	//if(self->registrationSession){
+	//	return [self->registrationSession unRegisterIdentity];
+	//}
+	// Instead of just unregistering, hangup all dialogs (INVITE, SUBSCRIBE, PUBLISH, MESSAGE, ...)
+	[NSThread detachNewThreadSelector:@selector(asyncStackStop) toTarget:self withObject:nil];
+	return YES;
 }
 
 -(BOOL)publish{
 	return NO;
 }
 
--(BOOL)isRegistered{
-	return (self->registrationSession != nil && self->registrationSession.state == SESSION_STATE_CONNECTED);
+-(SESSION_STATE_T)registrationState{
+	if(self->registrationSession){
+		return self->registrationSession.state;
+	}
+	return SESSION_STATE_NONE;
 }
-
 
 -(DWSipStack*) sipStack{
 	return self->sipStack;
@@ -460,7 +474,8 @@
 						eargs = [[RegistrationEventArgs alloc] initWithType:type andSipCode:code andPhrase:phrase];
 						[eargs putExtraWithKey:@"id" andValue:[NSString stringWithFormat:@"%lld", session_id]];
 						[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:[RegistrationEventArgs eventName] object:eargs];						
-						/* FIXME: Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
+						/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
+						[self stopStack];
 					}
 					else{
 						NSLog(@"Invalid Registration Session");

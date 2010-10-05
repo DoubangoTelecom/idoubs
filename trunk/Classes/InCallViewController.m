@@ -43,7 +43,7 @@
 
 - (AVCaptureDevice *)frontFacingCamera;
 - (void)startVideoCapture;
-- (void)stopVideoCapture;
+- (void)stopVideoCapture:(id)arg;
 
 @end
 
@@ -114,13 +114,13 @@
     [self->avCaptureSession startRunning];
 	
 	[labelState setText:@"Video capture started"];
-	[self.buttonStartVideo setTitle: @"Stop Video" forState: UIControlStateNormal];
+	self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_stop_48.png"];
 }
 
-- (void)stopVideoCapture{
+- (void)stopVideoCapture:(id)arg{
 	if(self->avCaptureSession){
 		[self->avCaptureSession stopRunning], self->avCaptureSession = nil;
-		[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+		self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
 		[labelState setText:@"Video capture stopped"];
 	}
 	self->avCaptureDevice = nil;
@@ -163,9 +163,7 @@
 			}
 		}
 		
-		if(self->producer && TMEDIA_PRODUCER(self->producer)->callback){
-			TMEDIA_PRODUCER(self->producer)->callback(TMEDIA_PRODUCER(self->producer)->callback_data, bufferPtr, buffeSize);
-        }
+		dw_producer_push(self->producer, bufferPtr, buffeSize);
 		
         CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);		
     }
@@ -288,9 +286,10 @@
 		case INVITE_INCOMING:
 		{
 			self->dateSeconds = 0;
+			[self->labelTime setText:@"00:00"];
 			
 			[self.incomingCallView setHidden:NO];
-			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+			self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
 			
 			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
 			
@@ -321,9 +320,10 @@
 		case INVITE_INPROGRESS:
 		{
 			self->dateSeconds = 0;
+			[self->labelTime setText:@"00:00"];
 			
 			[self.incomingCallView setHidden:YES];
-			[self.buttonStartVideo setTitle: @"Start Video" forState: UIControlStateNormal];
+			self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
 			
 			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
 			
@@ -432,7 +432,7 @@
 #if TARGET_OS_EMBEDDED
 	if(canStreamVideo){
 		if(self->avCaptureDevice){
-			[self stopVideoCapture];
+			[self stopVideoCapture:nil];
 		}
 		else{
 			[self startVideoCapture];
@@ -464,7 +464,7 @@
 	
 #if TARGET_OS_EMBEDDED
 	// force camera stop()
-	[self stopVideoCapture];
+	[self stopVideoCapture:nil];
 #endif
 	
 	iDoubsAppDelegate *appDelegate = (iDoubsAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -551,7 +551,7 @@
 	if(self->producer == _producer){
 		self->canStreamVideo = NO;
 #if	TARGET_OS_EMBEDDED
-		[self stopVideoCapture];
+		[self performSelectorOnMainThread:@selector(stopVideoCapture:) withObject:nil waitUntilDone:NO];
 #endif
 		return 0;
 	}
