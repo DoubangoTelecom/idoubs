@@ -40,6 +40,8 @@ dw_producer_t;
 
 extern const tmedia_producer_plugin_def_t *dw_videoProducer_plugin_def_t;
 
+int dw_producer_push(dw_producer_t* producer, const void* buffer, tsk_size_t size);
+
 @protocol DWVideoProducerCallback
 -(int)producerStarted:(dw_producer_t*)producer;
 -(int)producerPaused:(dw_producer_t*)producer;

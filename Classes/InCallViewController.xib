@@ -85,9 +85,12 @@
 					<object class="IBUIButton" id="759592098">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{15, 352}, {104, 48}}</string>
+						<string key="NSFrame">{{15, 352}, {76, 48}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
+						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+							<integer value="5" key="IBUIAccessibilityTraits"/>
+						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
@@ -97,7 +100,6 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Start Video</string>
 						<reference key="IBUIHighlightedTitleColor" ref="745690423"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -107,11 +109,15 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">video_start_48.png</string>
+						</object>
 					</object>
 					<object class="IBUIButton" id="645938301">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{127, 352}, {72, 48}}</string>
+						<string key="NSFrame">{{116, 352}, {72, 48}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -231,6 +237,10 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="105733689"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">phone_pick_up_16.png</string>
+								</object>
 							</object>
 							<object class="IBUIButton" id="1007242012">
 								<reference key="NSNextResponder" ref="20522112"/>
@@ -250,6 +260,10 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="105733689"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">phone_hang_up_16.png</string>
+								</object>
 							</object>
 						</object>
 						<string key="NSFrame">{{73, 109}, {191, 147}}</string>
@@ -421,13 +435,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="56792584"/>
 							<reference ref="759592098"/>
-							<reference ref="645938301"/>
 							<reference ref="44109050"/>
 							<reference ref="371188522"/>
 							<reference ref="20522112"/>
 							<reference ref="151514621"/>
 							<reference ref="332072546"/>
 							<reference ref="237266924"/>
+							<reference ref="645938301"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -529,6 +543,7 @@
 					<string>6.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
+					<string>8.IBViewBoundsToFrameTransform</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -562,6 +577,9 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABC/gAAw8cAAA</bytes>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -941,8 +959,21 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">../iDoubs.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">phone_hang_up_48.png</string>
-			<string key="NS.object.0">{48, 48}</string>
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>phone_hang_up_16.png</string>
+				<string>phone_hang_up_48.png</string>
+				<string>phone_pick_up_16.png</string>
+				<string>video_start_48.png</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{24, 24}</string>
+				<string>{48, 48}</string>
+				<string>{24, 24}</string>
+				<string>{48, 48}</string>
+			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">123</string>
 	</data>

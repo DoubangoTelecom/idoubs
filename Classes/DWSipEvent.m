@@ -40,11 +40,13 @@
 		self->baseType = self->event->type;
 		self->code = self->event->code;	
 		
-		const tsip_stack_handle_t* stack_handle = tsip_ssession_get_stack(_event->ss);
-        const void* userdata;
-        if(stack_handle && (userdata = tsip_stack_get_userdata(stack_handle))){
-			self->stack = ((DWSipStack*)userdata);
-        }
+		if(_event->ss){ // Could be null for stack-events
+			const tsip_stack_handle_t* stack_handle = tsip_ssession_get_stack(_event->ss);
+			const void* userdata;
+			if(stack_handle && (userdata = tsip_stack_get_userdata(stack_handle))){
+				self->stack = ((DWSipStack*)userdata);
+			}
+		}
 	}
 	
 	return self;

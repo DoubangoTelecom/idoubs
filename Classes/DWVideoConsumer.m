@@ -56,9 +56,13 @@ int dw_consumer_prepare(tmedia_consumer_t* self, const tmedia_codec_t* codec)
 	TMEDIA_CONSUMER(consumer)->video.width = TMEDIA_CODEC_VIDEO(codec)->width;
 	TMEDIA_CONSUMER(consumer)->video.height = TMEDIA_CODEC_VIDEO(codec)->height;
 	
-	return [consumer->eConsumer.callback consumerPreparedWithWidth:TMEDIA_CONSUMER(consumer)->video.width 
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int ret = [consumer->eConsumer.callback consumerPreparedWithWidth:TMEDIA_CONSUMER(consumer)->video.width 
 												   andHeight:TMEDIA_CONSUMER(consumer)->video.height 
 												   andFps:TMEDIA_CONSUMER(consumer)->video.fps];
+	[pool release];
+	
+	return ret;
 }
 
 int dw_consumer_start(tmedia_consumer_t* self)
@@ -81,20 +85,21 @@ int dw_consumer_start(tmedia_consumer_t* self)
 		return 0;
 	}
 	
-	if((ret = [consumer->eConsumer.callback consumerStarted])){
-		return ret;
-	}
-	else {
-		consumer->started = tsk_true;
-	}
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [consumer->eConsumer.callback consumerStarted];
+	[pool release];
 	
-	return 0;
+	consumer->started = (ret == 0);
+	
+	
+	return ret;
 }
 
 int dw_consumer_consume(tmedia_consumer_t* self, void** buffer, tsk_size_t size, const tsk_object_t* proto_hdr)
 {
 	dw_consumer_t* consumer = (dw_consumer_t*)self;
 	if(consumer && consumer->eConsumer && buffer){
+		// up to the callback function to install pool
 		int ret = [consumer->eConsumer.callback consumerHasBuffer:*buffer withSize:size];
 		return ret;
 	}
@@ -118,7 +123,11 @@ int dw_consumer_pause(tmedia_consumer_t* self)
 		return -2;
 	}
 	
-	return [consumer->eConsumer.callback consumerPaused];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int ret = [consumer->eConsumer.callback consumerPaused];
+	[pool release];
+	
+	return ret;
 }
 
 int dw_consumer_stop(tmedia_consumer_t* self)
@@ -141,12 +150,12 @@ int dw_consumer_stop(tmedia_consumer_t* self)
 		return -2;
 	}
 	
-	if((ret = [consumer->eConsumer.callback consumerStopped])){
-		return ret;
-	}
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [consumer->eConsumer.callback consumerStopped];
+	[pool release];
 	
-	consumer->started = tsk_false;
-	return 0;
+	consumer->started = (ret == 0) ? tsk_false : tsk_true;
+	return ret;
 }
 
 
