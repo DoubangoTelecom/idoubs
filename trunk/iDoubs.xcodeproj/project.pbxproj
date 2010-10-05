@@ -904,6 +904,11 @@
 		ECDD2F1D1244621900A79262 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		ECDD33021244EE7700A79262 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDD33011244EE7700A79262 /* 86-camera.png */; };
 		ECEF513B1257ADEC00777236 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEF512F1257ADC200777236 /* CFNetwork.framework */; };
+		ECF1A248125A4BC100FF0374 /* phone_hang_up_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F5125A4BC100FF0374 /* phone_hang_up_16.png */; };
+		ECF1A249125A4BC100FF0374 /* phone_pick_up_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F6125A4BC100FF0374 /* phone_pick_up_16.png */; };
+		ECF1A24A125A4BC100FF0374 /* phone_pick_up_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F7125A4BC100FF0374 /* phone_pick_up_48.png */; };
+		ECF1A25F125A4C8B00FF0374 /* video_start_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A25D125A4C8B00FF0374 /* video_start_48.png */; };
+		ECF1A260125A4C8B00FF0374 /* video_stop_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A25E125A4C8B00FF0374 /* video_stop_48.png */; };
 		ECF9EA80124E393E00EB1CC8 /* ringbacktone.wav in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */; };
 		ECF9EA83124E39F200EB1CC8 /* SoundService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF9EA82124E39F200EB1CC8 /* SoundService.m */; };
 		ECF9EB8D124E529D00EB1CC8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = ECF9EB8C124E529C00EB1CC8 /* about.html */; };
@@ -2024,6 +2029,11 @@
 		ECC41CB11258350600347CE0 /* phone_hang_up_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_hang_up_48.png; sourceTree = "<group>"; };
 		ECDD33011244EE7700A79262 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		ECEF512F1257ADC200777236 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ECF1A1F5125A4BC100FF0374 /* phone_hang_up_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_hang_up_16.png; sourceTree = "<group>"; };
+		ECF1A1F6125A4BC100FF0374 /* phone_pick_up_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_pick_up_16.png; sourceTree = "<group>"; };
+		ECF1A1F7125A4BC100FF0374 /* phone_pick_up_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_pick_up_48.png; sourceTree = "<group>"; };
+		ECF1A25D125A4C8B00FF0374 /* video_start_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_start_48.png; sourceTree = "<group>"; };
+		ECF1A25E125A4C8B00FF0374 /* video_stop_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_stop_48.png; sourceTree = "<group>"; };
 		ECF9EA7F124E393E00EB1CC8 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		ECF9EA81124E39F200EB1CC8 /* SoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundService.h; sourceTree = "<group>"; };
 		ECF9EA82124E39F200EB1CC8 /* SoundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundService.m; sourceTree = "<group>"; };
@@ -4267,13 +4277,15 @@
 		EC9F9CBF123C66BF00AABEFA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ECF1A178125A4BA700FF0374 /* phone */,
 				ECF94A5D1253D41C00C1D400 /* keypad */,
 				ECF9F1381250CAEB00EB1CC8 /* black_qcif.png */,
-				ECC41CB11258350600347CE0 /* phone_hang_up_48.png */,
 				ECFC09A31253DE4900A826A4 /* button_back.png */,
 				ECF9F1391250CAEB00EB1CC8 /* green_qcif.png */,
 				ECF9EE5B124FA80B00EB1CC8 /* call_incoming_45.png */,
 				ECC41C5E12582D2200347CE0 /* badge_phone.png */,
+				ECF1A25D125A4C8B00FF0374 /* video_start_48.png */,
+				ECF1A25E125A4C8B00FF0374 /* video_stop_48.png */,
 				ECC41C7B1258306200347CE0 /* bullet_ball_glass_green_16.png */,
 				ECC41C7C1258306200347CE0 /* bullet_ball_glass_grey_16.png */,
 				ECC41C7D1258306200347CE0 /* bullet_ball_glass_red_16.png */,
@@ -4297,6 +4309,17 @@
 				EC9FA0BD123DA90400AABEFA /* DWVideoProducer.m */,
 			);
 			name = plugins;
+			sourceTree = "<group>";
+		};
+		ECF1A178125A4BA700FF0374 /* phone */ = {
+			isa = PBXGroup;
+			children = (
+				ECC41CB11258350600347CE0 /* phone_hang_up_48.png */,
+				ECF1A1F5125A4BC100FF0374 /* phone_hang_up_16.png */,
+				ECF1A1F6125A4BC100FF0374 /* phone_pick_up_16.png */,
+				ECF1A1F7125A4BC100FF0374 /* phone_pick_up_48.png */,
+			);
+			name = phone;
 			sourceTree = "<group>";
 		};
 		ECF6E30D122AD31300198BC9 /* Services */ = {
@@ -5231,6 +5254,11 @@
 				ECC41CA21258332000347CE0 /* sign_inprogress_48.png in Resources */,
 				ECC41CA31258332000347CE0 /* sign_out_48.png in Resources */,
 				ECC41CB21258350600347CE0 /* phone_hang_up_48.png in Resources */,
+				ECF1A248125A4BC100FF0374 /* phone_hang_up_16.png in Resources */,
+				ECF1A249125A4BC100FF0374 /* phone_pick_up_16.png in Resources */,
+				ECF1A24A125A4BC100FF0374 /* phone_pick_up_48.png in Resources */,
+				ECF1A25F125A4C8B00FF0374 /* video_start_48.png in Resources */,
+				ECF1A260125A4C8B00FF0374 /* video_stop_48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5971,6 +5999,11 @@
 					"-lswscale",
 					"-lavcodec",
 					"-lx264",
+					"-lgsm",
+					"-lopencore-amrnb",
+					"-logg",
+					"-ltheora",
+					"-ltheoraenc",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = iDoubs;
@@ -6053,6 +6086,8 @@
 					"$(DOUBANGO_CFLAGS)",
 					"-DHAVE_FFMPEG=1",
 					"-DHAVE_COREAUDIO=1",
+					"-DHAVE_LIBGSM=1",
+					"-DHAVE_OPENCORE_AMR=1",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyDAV;

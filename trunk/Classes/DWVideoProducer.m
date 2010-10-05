@@ -29,18 +29,14 @@
 #define IPHONE_VIDEO_DEFAULT_HEIGHT 304
 
 
-// Producer callback (From Video Grabber to our plugin)
-static int dw_plugin_cb(const void* callback_data, const void* buffer, tsk_size_t size)
-{
-	const dw_producer_t* producer = (const dw_producer_t*)callback_data;
-	
+// Push data (From Video Grabber to our plugin)
+int dw_producer_push(dw_producer_t* producer, const void* buffer, tsk_size_t size){
 	if(producer && TMEDIA_PRODUCER(producer)->callback){
-		TMEDIA_PRODUCER(producer)->callback(TMEDIA_PRODUCER(producer)->callback_data, buffer, size);
+		return TMEDIA_PRODUCER(producer)->callback(TMEDIA_PRODUCER(producer)->callback_data, buffer, size);
 	}
 	
 	return 0;
 }
-
 
 /* ============ Video Media Producer Interface ================= */
 int dw_producer_prepare(tmedia_producer_t* self, const tmedia_codec_t* codec)
@@ -63,10 +59,11 @@ int dw_producer_prepare(tmedia_producer_t* self, const tmedia_codec_t* codec)
 	producer->negociatedWidth = TMEDIA_CODEC_VIDEO(codec)->width;
 	producer->negociatedHeight = TMEDIA_CODEC_VIDEO(codec)->height;
 	
-	if((ret = [producer->eProducer.callback producerPrepared:producer])){
-		return ret;
-	}
-	return 0;
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [producer->eProducer.callback producerPrepared:producer];
+	[pool release];
+	
+	return ret;
 }
 
 int dw_producer_start(tmedia_producer_t* self)
@@ -89,13 +86,12 @@ int dw_producer_start(tmedia_producer_t* self)
 		return 0;
 	}
 	
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [producer->eProducer.callback producerStarted:producer];
+	[pool release];
 	
-	if((ret = [producer->eProducer.callback producerStarted:producer])){
-		return ret;
-	}
-	
-	producer->started = tsk_true;
-	return 0;
+	producer->started = (ret == 0);
+	return ret;
 }
 
 int dw_producer_pause(tmedia_producer_t* self)
@@ -113,11 +109,11 @@ int dw_producer_pause(tmedia_producer_t* self)
 		return -2;
 	}
 	
-	if((ret = [producer->eProducer.callback producerPaused:producer])){
-		return ret;
-	}
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [producer->eProducer.callback producerPaused:producer];
+	[pool release];
 	
-	return 0;
+	return ret;
 }
 
 int dw_producer_stop(tmedia_producer_t* self)
@@ -140,11 +136,11 @@ int dw_producer_stop(tmedia_producer_t* self)
 		return -2;
 	}
 	
-	if((ret = [producer->eProducer.callback producerStopped:producer])){
-		return ret;
-	}
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ret = [producer->eProducer.callback producerStopped:producer];
+	[pool release];
 	
-	producer->started = tsk_false;
+	producer->started = (ret == 0) ?tsk_false:tsk_true;
 	return 0;
 }
 
@@ -168,7 +164,9 @@ static tsk_object_t* dw_producer_ctor(tsk_object_t * self, va_list * app)
 		producer->negociatedHeight = 144;
 		producer->eProducer = [[DWVideoProducer sharedInstance] retain];
 		
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		[producer->eProducer.callback producerCreated:producer];
+		[pool release];
 	}
 	return self;
 }
