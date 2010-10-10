@@ -34,6 +34,7 @@
 
 @synthesize buttonSignInOut;
 @synthesize labelDebug;
+@synthesize labelDisplayName;
 @synthesize imageViewStatus;
 
 
@@ -64,15 +65,17 @@
 	if([[SharedServiceManager sipService] registrationState] == SESSION_STATE_CONNECTED){
 		[labelDebug setText:@"Connected"];
 		[self.buttonSignInOut setTitle: @"Sign Out" forState: UIControlStateNormal];
-		self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_out_48.png"];
+		[self.buttonSignInOut setImage:[UIImage imageNamed:@"sign_out_48.png"] forState:UIControlStateNormal];
 		self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_green_16.png"];
 	}
 	else{
 		[labelDebug setText:@"Disconnected"];
 		[self.buttonSignInOut setTitle: @"Sign In" forState: UIControlStateNormal];
-		self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_in_48.png"];
+		[self.buttonSignInOut setImage:[UIImage imageNamed:@"sign_in_48.png"] forState:UIControlStateNormal];
 		self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_red_16.png"];
 	}
+	
+	[self.labelDisplayName setText:[[SharedServiceManager configurationService] getString:CONFIGURATION_SECTION_IDENTITY entry:CONFIGURATION_ENTRY_DISPLAY_NAME]];
 }
 
 
@@ -119,20 +122,20 @@
 	switch (eargs.type) {			
 		case REGISTRATION_OK:
 			[self.buttonSignInOut setTitle: @"Sign Out" forState: UIControlStateNormal];
-			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_out_48.png"];
+			[self.buttonSignInOut setImage:[UIImage imageNamed:@"sign_out_48.png"] forState:UIControlStateNormal];
 			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_green_16.png"];
 			break;
 			
 		case UNREGISTRATION_OK:
 			[self.buttonSignInOut setTitle: @"Sign In" forState: UIControlStateNormal];
-			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_in_48.png"];
+			[self.buttonSignInOut setImage:[UIImage imageNamed:@"sign_in_48.png"] forState:UIControlStateNormal];
 			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_red_16.png"];
 			break;
 			
 		case REGISTRATION_INPROGRESS:
 		case UNREGISTRATION_INPROGRESS:
 			[self.buttonSignInOut setTitle: @"Cancel" forState: UIControlStateNormal];
-			self.buttonSignInOut.imageView.image = [UIImage imageNamed:@"sign_inprogress_48.png"];
+			[self.buttonSignInOut setImage:[UIImage imageNamed:@"sign_inprogress_48.png"] forState:UIControlStateNormal];
 			self.imageViewStatus.image = [UIImage imageNamed:@"bullet_ball_glass_grey_16.png"];
 			break;
 			

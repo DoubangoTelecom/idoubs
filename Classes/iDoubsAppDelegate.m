@@ -25,6 +25,7 @@
 // http://dblog.com.au/iphone-development-tutorials/iphone-sdk-tutorial-reading-data-from-a-sqlite-database/
 // http://gravityjack.com/gravityjack_news/iphone-4-0-%E2%80%93-what-matters-part-1.html
 // http://developer.apple.com/iphone/library/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/iPhoneAppProgrammingGuide.pdf?q=introduction-to-apples-developer-tools
+// http://atastypixel.com/blog/using-remoteio-audio-unit/
 
 
 #import "iDoubsAppDelegate.h"

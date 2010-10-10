@@ -30,6 +30,8 @@
 #import "EventArgs.h"
 #import "DWSipUri.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+
 /*================= InCallViewController (Timers) ======================*/
 @interface InCallViewController (Timers)
 -(void)timerInCallTick:(NSTimer*)timer;
@@ -114,13 +116,13 @@
     [self->avCaptureSession startRunning];
 	
 	[labelState setText:@"Video capture started"];
-	self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_stop_48.png"];
+	[self.buttonStartVideo setImage:[UIImage imageNamed:@"video_stop_48.png"] forState:UIControlStateNormal];
 }
 
 - (void)stopVideoCapture:(id)arg{
 	if(self->avCaptureSession){
 		[self->avCaptureSession stopRunning], self->avCaptureSession = nil;
-		self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
+		[self.buttonStartVideo setImage:[UIImage imageNamed:@"video_start_48.png"] forState:UIControlStateNormal];
 		[labelState setText:@"Video capture stopped"];
 	}
 	self->avCaptureDevice = nil;
@@ -201,6 +203,9 @@
 		 addObserver:self
 		 selector:@selector(onCallEvent:)
 		 name:[InviteEventArgs eventName] object:nil];
+		
+		// Initialize the audio system
+		AudioSessionInitialize(NULL,NULL,NULL,NULL);
 		
 		self->dateFormatter = [[NSDateFormatter alloc] init];
 		[self->dateFormatter setDateFormat:@"mm:ss"];
@@ -289,7 +294,7 @@
 			[self->labelTime setText:@"00:00"];
 			
 			[self.incomingCallView setHidden:NO];
-			self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
+			[self.buttonStartVideo setImage:[UIImage imageNamed:@"video_start_48.png"] forState:UIControlStateNormal];
 			
 			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
 			
@@ -309,6 +314,9 @@
 				}
 			}
 #endif
+			UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+			AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+			
 			[SharedServiceManager.soundService playRingTone];
 			
 			[self->callEvent release], self->callEvent = nil;
@@ -323,7 +331,7 @@
 			[self->labelTime setText:@"00:00"];
 			
 			[self.incomingCallView setHidden:YES];
-			self.buttonStartVideo.imageView.image = [UIImage imageNamed:@"video_start_48.png"];
+			[self.buttonStartVideo setImage:[UIImage imageNamed:@"video_start_48.png"] forState:UIControlStateNormal];
 			
 			[UIDevice currentDevice].proximityMonitoringEnabled = YES;
 			
@@ -333,6 +341,9 @@
 			[self->callEvent release], self->callEvent = nil;
 			self->callEvent = [[HistoryAVCallEvent alloc] initAudioCallEvent:self->session.remoteParty];
 			self->callEvent.status = HistoryEventStatus_Outgoing;
+			
+			UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_None;
+			AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
 			
 			[SharedServiceManager.soundService playRingBackTone];
 			break;
@@ -371,6 +382,9 @@
 				}
 			}
 			
+			UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_None;
+			AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+			
 			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
 			
@@ -403,6 +417,11 @@
 				[SharedServiceManager.historyService addEvent:self->callEvent];
 				[self->callEvent release], self->callEvent = nil;
 			}
+			
+			UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_None;
+			AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+			
+			//AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 			
 			[SharedServiceManager.soundService stopRingTone];
 			[SharedServiceManager.soundService stopRingBackTone];
