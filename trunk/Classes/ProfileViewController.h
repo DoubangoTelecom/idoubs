@@ -26,11 +26,13 @@
 
 	IBOutlet UIButton *buttonSignInOut;
 	IBOutlet UILabel *labelDebug;
+	IBOutlet UILabel *labelDisplayName;
 	IBOutlet UIImageView *imageViewStatus;
 }
 
 @property (retain, nonatomic) IBOutlet UIButton *buttonSignInOut;
 @property (retain, nonatomic) IBOutlet UILabel *labelDebug;
+@property (retain, nonatomic) IBOutlet UILabel *labelDisplayName;
 @property (retain, nonatomic) IBOutlet UIImageView *imageViewStatus;
 
 - (IBAction) onbuttonSignInOutClick: (id)sender;
