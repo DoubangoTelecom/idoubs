@@ -5927,7 +5927,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
-				SYMROOT = /Users/diopmamadou/Documents/doubango/tinySAK;
+				SYMROOT = ./build;
 				TINY3RDPARTIES_INCLUDE = "$(DOUBANGO_HOME)/thirdparties/iphone/include";
 				TINY3RDPARTIES_LIB = "$(DOUBANGO_HOME)/thirdparties/iphone/lib";
 				TINYDAV_INCLUDE = "$(DOUBANGO_HOME)/tinyDAV/include";
@@ -6049,7 +6049,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySAK;
 				SDKROOT = iphonesimulator4.0;
-				SYMROOT = /Users/diopmamadou/Documents/doubango/tinySAK;
+				SYMROOT = .;
 			};
 			name = Debug;
 		};
