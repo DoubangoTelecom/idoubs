@@ -449,6 +449,7 @@
 
 - (IBAction) onButtonStartVideoClick: (id)sender{
 #if HAS_VIDEO_CAPTURE
+	NSLog(@"Video capture supported");
 	if(canStreamVideo){
 		if(self->avCaptureDevice){
 			[self stopVideoCapture:nil];
@@ -457,6 +458,9 @@
 			[self startVideoCapture];
 		}
 	}
+#else
+	NSLog(@"Video capture not supported");
+
 #endif
 }
 

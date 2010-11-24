@@ -38,6 +38,8 @@ typedef struct dw_consumer_s
 dw_consumer_t;
 
 /* ============ Media Consumer Interface ================= */
+#define dw_consumer_set tsk_null
+
 int dw_consumer_prepare(tmedia_consumer_t* self, const tmedia_codec_t* codec)
 {	
 	dw_consumer_t* consumer = (dw_consumer_t*)self;
@@ -211,8 +213,9 @@ static const tmedia_consumer_plugin_def_t dw_consumer_plugin_def_s =
 	&dw_consumer_def_s,
 	
 	tmedia_video,
-	"iOS4 Video consumer",
+	"iOS Video consumer",
 	
+	dw_consumer_set,
 	dw_consumer_prepare,
 	dw_consumer_start,
 	dw_consumer_consume,
