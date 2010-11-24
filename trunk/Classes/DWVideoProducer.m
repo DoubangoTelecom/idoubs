@@ -39,6 +39,8 @@ int dw_producer_push(dw_producer_t* producer, const void* buffer, tsk_size_t siz
 }
 
 /* ============ Video Media Producer Interface ================= */
+#define dw_producer_set	tsk_null
+
 int dw_producer_prepare(tmedia_producer_t* self, const tmedia_codec_t* codec)
 {
 	dw_producer_t* producer = (dw_producer_t*)self;
@@ -207,6 +209,7 @@ static const tmedia_producer_plugin_def_t dw_producer_plugin_def_s =
 	tmedia_video,
 	"iOS4 Video producer",
 	
+	dw_producer_set,
 	dw_producer_prepare,
 	dw_producer_start,
 	dw_producer_pause,
