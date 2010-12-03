@@ -74,6 +74,8 @@
 		EC4AA760123AE4BA009795F4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4AA75E123AE4BA009795F4 /* ProfileViewController.xib */; };
 		EC4AA841123BE969009795F4 /* NSNotificationCenter+MainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4AA840123BE969009795F4 /* NSNotificationCenter+MainThread.m */; };
 		EC4AA89D123BF44F009795F4 /* EventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4AA89C123BF44F009795F4 /* EventArgs.m */; };
+		EC6368FE12A8CD41005F600D /* tdav_codec_mp4ves.c in Sources */ = {isa = PBXBuildFile; fileRef = EC6368FD12A8CD41005F600D /* tdav_codec_mp4ves.c */; };
+		EC63690112A8CD94005F600D /* tdav_codec_mp4ves.h in Headers */ = {isa = PBXBuildFile; fileRef = EC63690012A8CD94005F600D /* tdav_codec_mp4ves.h */; };
 		EC796EFC1231131200BA0FF7 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC796EFA1231131200BA0FF7 /* AboutViewController.m */; };
 		EC796EFD1231131200BA0FF7 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC796EFB1231131200BA0FF7 /* AboutViewController.xib */; };
 		EC796F011231132F00BA0FF7 /* DialerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC796EFF1231132F00BA0FF7 /* DialerViewController.m */; };
@@ -1183,6 +1185,8 @@
 		EC4AA840123BE969009795F4 /* NSNotificationCenter+MainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+MainThread.m"; sourceTree = "<group>"; };
 		EC4AA89B123BF44F009795F4 /* EventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventArgs.h; sourceTree = "<group>"; };
 		EC4AA89C123BF44F009795F4 /* EventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventArgs.m; sourceTree = "<group>"; };
+		EC6368FD12A8CD41005F600D /* tdav_codec_mp4ves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_mp4ves.c; sourceTree = "<group>"; };
+		EC63690012A8CD94005F600D /* tdav_codec_mp4ves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_mp4ves.h; sourceTree = "<group>"; };
 		EC796EF91231131200BA0FF7 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		EC796EFA1231131200BA0FF7 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		EC796EFB1231131200BA0FF7 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutViewController.xib; path = Classes/AboutViewController.xib; sourceTree = "<group>"; };
@@ -2356,6 +2360,22 @@
 				EC9F9F3E123D768C00AABEFA /* InCallViewController.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		EC6368FC12A8CD41005F600D /* mp4ves */ = {
+			isa = PBXGroup;
+			children = (
+				EC6368FD12A8CD41005F600D /* tdav_codec_mp4ves.c */,
+			);
+			path = mp4ves;
+			sourceTree = "<group>";
+		};
+		EC6368FF12A8CD94005F600D /* mp4ves */ = {
+			isa = PBXGroup;
+			children = (
+				EC63690012A8CD94005F600D /* tdav_codec_mp4ves.h */,
+			);
+			path = mp4ves;
 			sourceTree = "<group>";
 		};
 		EC8566EC12278F1C00A1F1B3 /* Doubango */ = {
@@ -3872,6 +3892,7 @@
 		EC97366B1227A1A100E6DA71 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				EC6368FF12A8CD94005F600D /* mp4ves */,
 				EC97366C1227A1A100E6DA71 /* amr */,
 				EC97366E1227A1A100E6DA71 /* bv */,
 				EC9736711227A1A100E6DA71 /* dtmf */,
@@ -4093,6 +4114,7 @@
 		EC9736AB1227A1A200E6DA71 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				EC6368FC12A8CD41005F600D /* mp4ves */,
 				EC9736AC1227A1A200E6DA71 /* amr */,
 				EC9736AE1227A1A200E6DA71 /* bv */,
 				EC9736B11227A1A200E6DA71 /* dtmf */,
@@ -4488,6 +4510,7 @@
 				EC9736FE1227A1A200E6DA71 /* tdav_session_video.h in Headers */,
 				EC9736FF1227A1A200E6DA71 /* tinydav.h in Headers */,
 				EC9737001227A1A200E6DA71 /* tinydav_config.h in Headers */,
+				EC63690112A8CD94005F600D /* tdav_codec_mp4ves.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5370,6 +5393,7 @@
 				EC9737201227A1A200E6DA71 /* tdav_converter_video.c in Sources */,
 				EC9737211227A1A200E6DA71 /* tdav_runnable_video.c in Sources */,
 				EC9737221227A1A200E6DA71 /* tdav_session_video.c in Sources */,
+				EC6368FE12A8CD41005F600D /* tdav_codec_mp4ves.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
