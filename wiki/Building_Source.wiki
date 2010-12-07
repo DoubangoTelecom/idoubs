@@ -22,7 +22,7 @@ cd iPhone
 {{{
 svn checkout http://idoubs.googlecode.com/svn/trunk/ idoubs
 }}}
-* change *mydoubs* folder permissions
+ * change *mydoubs* folder permissions
 {{{
 chmod -R 777 mydoubs/*
 }}}
