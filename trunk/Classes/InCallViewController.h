@@ -55,9 +55,11 @@
 	int producerFps;
 	BOOL producerFirstFrame;
 	
+	int blankPacketsSent;
 	double dateSeconds;
 	NSDateFormatter *dateFormatter;
 	NSTimer* timerInCall;
+	NSTimer* timerBlankPackets;
 	//NSTimer* timerSuicide;
 	
 	BOOL canStreamVideo;

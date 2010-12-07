@@ -32,8 +32,11 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
+#define BLANK_PACKETS_TO_SEND	3
+
 /*================= InCallViewController (Timers) ======================*/
 @interface InCallViewController (Timers)
+-(void)timerBlankPacketsTick:(NSTimer*)timer;
 -(void)timerInCallTick:(NSTimer*)timer;
 -(void)timerSuicideTick:(NSTimer*)timer;
 
@@ -212,6 +215,10 @@
 		
 		[self.incomingCallView setHidden:YES];
 		self.incomingCallView.layer.cornerRadius = 15;
+		
+#if !HAS_VIDEO_CAPTURE
+		[self.buttonStartVideo setHidden:YES];
+#endif
     }
     return self;
 }
@@ -371,6 +378,7 @@
 			
 			[labelState setText:@"In Call"];
 			[self->timerInCall invalidate], self->timerInCall = nil;
+			[self->timerBlankPackets invalidate], self->timerBlankPackets = nil;
 			
 			if(self->callEvent){
 				self->callEvent.start = [[NSDate date] timeIntervalSince1970];
@@ -393,6 +401,17 @@
 							selector:@selector(timerInCallTick:) 
 							userInfo:nil 
 							repeats:YES];
+			
+			if((self->session.mediaType & tmedia_video) == tmedia_video){
+				// send blank packets to open the NAT
+				self->blankPacketsSent = 0;
+				self->timerBlankPackets = [NSTimer scheduledTimerWithTimeInterval:0.2 
+											target:self
+											selector:@selector(timerBlankPacketsTick:)
+											userInfo:nil
+											repeats:YES];
+			}
+			
 			break;
 		}
 			
@@ -427,6 +446,7 @@
 			[SharedServiceManager.soundService stopRingBackTone];
 			
 			[self->timerInCall invalidate], self->timerInCall = nil;
+			[self->timerBlankPackets invalidate], self->timerBlankPackets = nil;
 			
 			[NSTimer scheduledTimerWithTimeInterval:1.5 
 												target:self 
@@ -473,6 +493,37 @@
 
 - (IBAction) onButtonPickCallClick: (id)sender{
 	[self->session accept];
+}
+
+-(void)timerBlankPacketsTick:(NSTimer*)timer {
+	if((self->producer = tsk_object_ref(self->producer))){
+		uint8_t* buffer_ptr = tsk_null;
+		float buffer_size = 0.f;
+		switch (TMEDIA_PRODUCER(self->producer)->video.chroma) {
+			case tmedia_nv12:
+				buffer_size = 1.5f * TMEDIA_PRODUCER(self->producer)->video.width * TMEDIA_PRODUCER(self->producer)->video.height;
+				break;
+			case tmedia_uyvy422:
+				buffer_size = 2.f * TMEDIA_PRODUCER(self->producer)->video.width * TMEDIA_PRODUCER(self->producer)->video.height;
+				break;
+			case tmedia_rgb32:
+				buffer_size = 4.f * TMEDIA_PRODUCER(self->producer)->video.width * TMEDIA_PRODUCER(self->producer)->video.height;
+				break;
+		}
+		if(buffer_size){
+			NSLog(@"Sending Blank packet number %d", self->blankPacketsSent);
+			if((buffer_ptr = tsk_calloc(buffer_size, sizeof(uint8_t)))){
+				dw_producer_push(self->producer, buffer_ptr, buffer_size);
+				TSK_FREE(buffer_ptr);
+			}
+		}
+			
+		tsk_object_unref(self->producer);
+	}
+	
+	if(++self->blankPacketsSent >= BLANK_PACKETS_TO_SEND){
+		[self->timerBlankPackets invalidate], self->timerBlankPackets = nil;
+	}
 }
 
 -(void)timerInCallTick:(NSTimer*)timer {
