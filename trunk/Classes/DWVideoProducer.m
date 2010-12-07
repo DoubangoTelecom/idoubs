@@ -157,7 +157,7 @@ static tsk_object_t* dw_producer_ctor(tsk_object_t * self, va_list * app)
 	if(producer){		
 		/* init base */
 		tmedia_producer_init(TMEDIA_PRODUCER(producer));
-		TMEDIA_PRODUCER(producer)->video.chroma = tmedia_uyvy422;
+		TMEDIA_PRODUCER(producer)->video.chroma = tmedia_nv12;
 		TMEDIA_PRODUCER(producer)->video.width = IPHONE_VIDEO_DEFAULT_WIDTH;
 		TMEDIA_PRODUCER(producer)->video.height = IPHONE_VIDEO_DEFAULT_HEIGHT;
 		/* init self (default values) */
