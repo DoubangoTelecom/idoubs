@@ -22,5 +22,9 @@ cd iPhone
 {{{
 svn checkout http://idoubs.googlecode.com/svn/trunk/ idoubs
 }}}
+* change *mydoubs* folder permissions
+{{{
+chmod -R 777 mydoubs/*
+}}}
 
 To open & build all projects, open *mydoubs/iPhone/idoubs/iDoubs.xcodeproj*
