@@ -6072,7 +6072,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySAK;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.1;
 				SYMROOT = .;
 			};
 			name = Debug;
@@ -6264,7 +6264,7 @@
 				OTHER_CFLAGS = "$(DOUBANGO_CFLAGS)";
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
