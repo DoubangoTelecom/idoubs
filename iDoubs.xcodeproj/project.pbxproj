@@ -914,6 +914,8 @@
 		ECEBE0F612BE8B6600DBD49E /* tmedia_content_multipart.h in Headers */ = {isa = PBXBuildFile; fileRef = ECEBE0F212BE8B6600DBD49E /* tmedia_content_multipart.h */; };
 		ECEBE0F712BE8B6600DBD49E /* tmedia_content_sip_frag.h in Headers */ = {isa = PBXBuildFile; fileRef = ECEBE0F312BE8B6600DBD49E /* tmedia_content_sip_frag.h */; };
 		ECEF513B1257ADEC00777236 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEF512F1257ADC200777236 /* CFNetwork.framework */; };
+		ECF06A1C12DBF0A90058B535 /* tsip_dialog_register.c in Sources */ = {isa = PBXBuildFile; fileRef = ECF06A1B12DBF0A90058B535 /* tsip_dialog_register.c */; };
+		ECF06A1F12DBF0CB0058B535 /* tsip_dialog_register.common.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF06A1E12DBF0CB0058B535 /* tsip_dialog_register.common.h */; };
 		ECF1A248125A4BC100FF0374 /* phone_hang_up_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F5125A4BC100FF0374 /* phone_hang_up_16.png */; };
 		ECF1A249125A4BC100FF0374 /* phone_pick_up_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F6125A4BC100FF0374 /* phone_pick_up_16.png */; };
 		ECF1A24A125A4BC100FF0374 /* phone_pick_up_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF1A1F7125A4BC100FF0374 /* phone_pick_up_48.png */; };
@@ -2049,6 +2051,8 @@
 		ECEBE0F212BE8B6600DBD49E /* tmedia_content_multipart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_content_multipart.h; sourceTree = "<group>"; };
 		ECEBE0F312BE8B6600DBD49E /* tmedia_content_sip_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_content_sip_frag.h; sourceTree = "<group>"; };
 		ECEF512F1257ADC200777236 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ECF06A1B12DBF0A90058B535 /* tsip_dialog_register.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_dialog_register.c; sourceTree = "<group>"; };
+		ECF06A1E12DBF0CB0058B535 /* tsip_dialog_register.common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_dialog_register.common.h; sourceTree = "<group>"; };
 		ECF1A1F5125A4BC100FF0374 /* phone_hang_up_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_hang_up_16.png; sourceTree = "<group>"; };
 		ECF1A1F6125A4BC100FF0374 /* phone_pick_up_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_pick_up_16.png; sourceTree = "<group>"; };
 		ECF1A1F7125A4BC100FF0374 /* phone_pick_up_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_pick_up_48.png; sourceTree = "<group>"; };
@@ -3437,6 +3441,7 @@
 		EC97339D1227A0E100E6DA71 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECF06A1E12DBF0CB0058B535 /* tsip_dialog_register.common.h */,
 				EC97339E1227A0E100E6DA71 /* tsip_dialog.h */,
 				EC97339F1227A0E100E6DA71 /* tsip_dialog_invite.common.h */,
 				EC9733A01227A0E100E6DA71 /* tsip_dialog_invite.h */,
@@ -3644,6 +3649,7 @@
 		EC9734941227A0E100E6DA71 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECF06A1B12DBF0A90058B535 /* tsip_dialog_register.c */,
 				EC9734951227A0E100E6DA71 /* tsip_dialog.c */,
 				EC9734961227A0E100E6DA71 /* tsip_dialog_invite.c */,
 				EC9734971227A0E100E6DA71 /* tsip_dialog_invite.cdiv.c */,
@@ -4939,6 +4945,7 @@
 				EC9735B61227A0E100E6DA71 /* tinysip.h in Headers */,
 				EC9735B71227A0E100E6DA71 /* tinysip_config.h in Headers */,
 				EC9735B81227A0E100E6DA71 /* tsip.h in Headers */,
+				ECF06A1F12DBF0CB0058B535 /* tsip_dialog_register.common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5812,6 +5819,7 @@
 				EC9736451227A0E100E6DA71 /* tsip_ssession.c in Sources */,
 				EC9736461227A0E100E6DA71 /* tsip_timers.c in Sources */,
 				EC9736471227A0E100E6DA71 /* tsip_uri.c in Sources */,
+				ECF06A1C12DBF0A90058B535 /* tsip_dialog_register.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
