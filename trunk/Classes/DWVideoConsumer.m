@@ -55,12 +55,19 @@ int dw_consumer_prepare(tmedia_consumer_t* self, const tmedia_codec_t* codec)
 	}
 	
 	TMEDIA_CONSUMER(consumer)->video.fps = TMEDIA_CODEC_VIDEO(codec)->fps;
-	TMEDIA_CONSUMER(consumer)->video.width = TMEDIA_CODEC_VIDEO(codec)->width;
-	TMEDIA_CONSUMER(consumer)->video.height = TMEDIA_CODEC_VIDEO(codec)->height;
+	TMEDIA_CONSUMER(consumer)->video.in.width = TMEDIA_CODEC_VIDEO(codec)->width;
+	TMEDIA_CONSUMER(consumer)->video.in.height = TMEDIA_CODEC_VIDEO(codec)->height;
+	
+	if(!self->video.display.width){
+		self->video.display.width = self->video.in.width;
+	}
+	if(!self->video.display.height){
+		self->video.display.height = self->video.in.height;
+	}
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	int ret = [consumer->eConsumer.callback consumerPreparedWithWidth:TMEDIA_CONSUMER(consumer)->video.width 
-												   andHeight:TMEDIA_CONSUMER(consumer)->video.height 
+	int ret = [consumer->eConsumer.callback consumerPreparedWithWidth:TMEDIA_CONSUMER(consumer)->video.in.width 
+												   andHeight:TMEDIA_CONSUMER(consumer)->video.in.height 
 												   andFps:TMEDIA_CONSUMER(consumer)->video.fps];
 	[pool release];
 	
@@ -171,11 +178,11 @@ static tsk_object_t* dw_consumer_ctor(tsk_object_t * self, va_list * app)
 	if(consumer){		
 		/* init base */
 		tmedia_consumer_init(TMEDIA_CONSUMER(consumer));
-		TMEDIA_CONSUMER(consumer)->video.chroma = tmedia_rgb32;
+		TMEDIA_CONSUMER(consumer)->video.in.chroma = tmedia_rgb32;
 		/* init self (Default values)*/
 		TMEDIA_CONSUMER(consumer)->video.fps = 15;
-		TMEDIA_CONSUMER(consumer)->video.width = 176;
-		TMEDIA_CONSUMER(consumer)->video.height = 144;
+		TMEDIA_CONSUMER(consumer)->video.in.width = 176;
+		TMEDIA_CONSUMER(consumer)->video.in.height = 144;
 		consumer->eConsumer = [[DWVideoConsumer sharedInstance] retain];
 	}
 	return self;

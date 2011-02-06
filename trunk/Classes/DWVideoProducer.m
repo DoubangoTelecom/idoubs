@@ -31,8 +31,8 @@
 
 // Push data (From Video Grabber to our plugin)
 int dw_producer_push(dw_producer_t* producer, const void* buffer, tsk_size_t size){
-	if(producer && TMEDIA_PRODUCER(producer)->callback){
-		return TMEDIA_PRODUCER(producer)->callback(TMEDIA_PRODUCER(producer)->callback_data, buffer, size);
+	if(producer && TMEDIA_PRODUCER(producer)->enc_cb.callback){
+		return TMEDIA_PRODUCER(producer)->enc_cb.callback(TMEDIA_PRODUCER(producer)->enc_cb.callback_data, buffer, size);
 	}
 	
 	return 0;
