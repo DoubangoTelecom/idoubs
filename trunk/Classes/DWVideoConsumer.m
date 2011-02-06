@@ -178,7 +178,9 @@ static tsk_object_t* dw_consumer_ctor(tsk_object_t * self, va_list * app)
 	if(consumer){		
 		/* init base */
 		tmedia_consumer_init(TMEDIA_CONSUMER(consumer));
-		TMEDIA_CONSUMER(consumer)->video.in.chroma = tmedia_rgb32;
+		TMEDIA_CONSUMER(consumer)->video.in.chroma = tmedia_yuv420p;
+		TMEDIA_CONSUMER(consumer)->video.display.chroma = tmedia_rgb32;
+		
 		/* init self (Default values)*/
 		TMEDIA_CONSUMER(consumer)->video.fps = 15;
 		TMEDIA_CONSUMER(consumer)->video.in.width = 176;
