@@ -10,7 +10,7 @@ STACK_STATE_T;
 @interface NgnSipStack : NSObject {
 	STACK_STATE_T mState;
 	NSString* mCompId;
-	SipStack* mSipStack;
+	SipStack* _mSipStack;
 }
 
 -(NgnSipStack*) initWithSipCallback: (const SipCallback*) callback andRealmUri: (NSString*) realmUri andIMPIUri: (NSString*) impiUri andIMPUUri: (NSString*)impuUri;
@@ -36,8 +36,8 @@ STACK_STATE_T;
 -(BOOL) setAoRWithIP: (NSString*) ip andPort: (unsigned short) port;
 
 -(BOOL) setSigCompParamsWithDMS: (unsigned) dms andSMS: (unsigned) sms andCPB: (unsigned) cpb andPresDict: (BOOL) enablePresDict;
--(NSString*) getCompId;
--(void) setCompId: (NSString*)compId;
+-(NSString*) getSigCompId;
+-(void) setSigCompId: (NSString*)compId;
 
 -(BOOL) setSTUNServerIP: (NSString*) ip andPort: (unsigned short) port;
 -(BOOL) setSTUNCredLogin: (NSString*) login andPassword: (NSString*) password;

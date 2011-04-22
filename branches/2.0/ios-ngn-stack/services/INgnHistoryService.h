@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import "INgnBaseService.h"
 
-@interface INgnHistoryService : NSObject {
-
-}
+@protocol INgnHistoryService <INgnBaseService>
 
 @end

@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import "INgnBaseService.h"
 
-@interface INgnHttpClientService : NSObject {
-
-}
+@protocol INgnHttpClientService <INgnBaseService>
 
 @end

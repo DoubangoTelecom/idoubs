@@ -9,22 +9,50 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		ECF200861360D9EA00B0BFEB /* NgnConfigurationEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */; };
+		ECF2008D1360E01500B0BFEB /* NgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */; };
+		ECF2008E1360E01500B0BFEB /* NgnConfigurationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */; };
+		ECF200931360E2BD00B0BFEB /* NgnContactService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */; };
+		ECF200941360E2BD00B0BFEB /* NgnContactService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200921360E2BD00B0BFEB /* NgnContactService.mm */; };
+		ECF200971360E2D200B0BFEB /* NgnHistoryService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200951360E2D200B0BFEB /* NgnHistoryService.h */; };
+		ECF200981360E2D200B0BFEB /* NgnHistoryService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */; };
+		ECF2009B1360E2E900B0BFEB /* NgnHttpClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200991360E2E900B0BFEB /* NgnHttpClientService.h */; };
+		ECF2009C1360E2E900B0BFEB /* NgnHttpClientService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2009A1360E2E900B0BFEB /* NgnHttpClientService.mm */; };
+		ECF2009F1360E2FF00B0BFEB /* NgnNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2009D1360E2FF00B0BFEB /* NgnNetworkService.h */; };
+		ECF200A01360E2FF00B0BFEB /* NgnNetworkService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */; };
+		ECF200A31360E31200B0BFEB /* NgnSoundService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200A11360E31200B0BFEB /* NgnSoundService.h */; };
+		ECF200A41360E31200B0BFEB /* NgnSoundService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200A21360E31200B0BFEB /* NgnSoundService.mm */; };
+		ECF200A71360E32100B0BFEB /* NgnStorageService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200A51360E32100B0BFEB /* NgnStorageService.h */; };
+		ECF200A81360E32100B0BFEB /* NgnStorageService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200A61360E32100B0BFEB /* NgnStorageService.mm */; };
+		ECF200AC1360E34C00B0BFEB /* INgnSipService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200AA1360E34C00B0BFEB /* INgnSipService.h */; };
+		ECF200EC1360E9EB00B0BFEB /* NgnEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */; };
+		ECF200ED1360E9EB00B0BFEB /* NgnEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */; };
+		ECF200F21360ED1700B0BFEB /* NgnSipService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200F01360ED1700B0BFEB /* NgnSipService.h */; };
+		ECF200F31360ED1700B0BFEB /* NgnSipService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF200F11360ED1700B0BFEB /* NgnSipService.mm */; };
+		ECF2012A1360F83D00B0BFEB /* NgnAVSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201281360F83D00B0BFEB /* NgnAVSession.h */; };
+		ECF2012B1360F83D00B0BFEB /* NgnAVSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201291360F83D00B0BFEB /* NgnAVSession.mm */; };
+		ECF2012E1360F84E00B0BFEB /* NgnInviteSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2012C1360F84E00B0BFEB /* NgnInviteSession.h */; };
+		ECF2012F1360F84E00B0BFEB /* NgnInviteSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2012D1360F84E00B0BFEB /* NgnInviteSession.mm */; };
+		ECF201321360F85E00B0BFEB /* NgnMsrpSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201301360F85E00B0BFEB /* NgnMsrpSession.h */; };
+		ECF201331360F85E00B0BFEB /* NgnMsrpSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201311360F85E00B0BFEB /* NgnMsrpSession.mm */; };
+		ECF201361360F87B00B0BFEB /* NgnPresenceStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201341360F87B00B0BFEB /* NgnPresenceStatus.h */; };
+		ECF2013A1360F89800B0BFEB /* NgnPublicationSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201381360F89800B0BFEB /* NgnPublicationSession.h */; };
+		ECF2013B1360F89800B0BFEB /* NgnPublicationSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201391360F89800B0BFEB /* NgnPublicationSession.mm */; };
+		ECF2013E1360F8AA00B0BFEB /* NgnRegistrationSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2013C1360F8AA00B0BFEB /* NgnRegistrationSession.h */; };
+		ECF2013F1360F8AA00B0BFEB /* NgnRegistrationSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2013D1360F8AA00B0BFEB /* NgnRegistrationSession.mm */; };
+		ECF201421360F8C300B0BFEB /* NgnSipPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201401360F8C300B0BFEB /* NgnSipPreferences.h */; };
+		ECF201431360F8C300B0BFEB /* NgnSipPreferences.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */; };
+		ECF201461360F8DF00B0BFEB /* NgnSubscriptionSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */; };
+		ECF201471360F8DF00B0BFEB /* NgnSubscriptionSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */; };
 		ECFD23CF135D53C500E6A9A3 /* INgnBaseService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */; };
 		ECFD23D0135D53C500E6A9A3 /* NgnBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */; };
 		ECFD23D3135D53F500E6A9A3 /* INgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */; };
-		ECFD23D4135D53F500E6A9A3 /* INgnConfigurationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23D2135D53F500E6A9A3 /* INgnConfigurationService.mm */; };
 		ECFD23D7135D540400E6A9A3 /* INgnContactService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23D5135D540400E6A9A3 /* INgnContactService.h */; };
-		ECFD23D8135D540400E6A9A3 /* INgnContactService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23D6135D540400E6A9A3 /* INgnContactService.mm */; };
 		ECFD23DB135D541500E6A9A3 /* INgnHistoryService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23D9135D541500E6A9A3 /* INgnHistoryService.h */; };
-		ECFD23DC135D541500E6A9A3 /* INgnHistoryService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23DA135D541500E6A9A3 /* INgnHistoryService.mm */; };
 		ECFD23DF135D542800E6A9A3 /* INgnHttpClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23DD135D542800E6A9A3 /* INgnHttpClientService.h */; };
-		ECFD23E0135D542800E6A9A3 /* INgnHttpClientService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23DE135D542800E6A9A3 /* INgnHttpClientService.mm */; };
 		ECFD23E3135D544100E6A9A3 /* INgnNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23E1135D544100E6A9A3 /* INgnNetworkService.h */; };
-		ECFD23E4135D544100E6A9A3 /* INgnNetworkService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23E2135D544100E6A9A3 /* INgnNetworkService.mm */; };
 		ECFD23E7135D545100E6A9A3 /* INgnSoundService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23E5135D545100E6A9A3 /* INgnSoundService.h */; };
-		ECFD23E8135D545100E6A9A3 /* INgnSoundService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23E6135D545100E6A9A3 /* INgnSoundService.mm */; };
 		ECFD23EB135D546400E6A9A3 /* INgnStorageService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23E9135D546400E6A9A3 /* INgnStorageService.h */; };
-		ECFD23EC135D546400E6A9A3 /* INgnStorageService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23EA135D546400E6A9A3 /* INgnStorageService.mm */; };
 		ECFD23FA135D556200E6A9A3 /* NgnBaseService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23F9135D556200E6A9A3 /* NgnBaseService.h */; };
 		ECFD24F2135D58F700E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
 		ECFD2688135D5D8500E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
@@ -1067,23 +1095,51 @@
 		AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_ngn_stack_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationEntry.h; sourceTree = "<group>"; };
+		ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationService.h; sourceTree = "<group>"; };
+		ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnConfigurationService.mm; sourceTree = "<group>"; };
+		ECF200911360E2BD00B0BFEB /* NgnContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContactService.h; sourceTree = "<group>"; };
+		ECF200921360E2BD00B0BFEB /* NgnContactService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnContactService.mm; sourceTree = "<group>"; };
+		ECF200951360E2D200B0BFEB /* NgnHistoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistoryService.h; sourceTree = "<group>"; };
+		ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryService.mm; sourceTree = "<group>"; };
+		ECF200991360E2E900B0BFEB /* NgnHttpClientService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHttpClientService.h; sourceTree = "<group>"; };
+		ECF2009A1360E2E900B0BFEB /* NgnHttpClientService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHttpClientService.mm; sourceTree = "<group>"; };
+		ECF2009D1360E2FF00B0BFEB /* NgnNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnNetworkService.h; sourceTree = "<group>"; };
+		ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnNetworkService.mm; sourceTree = "<group>"; };
+		ECF200A11360E31200B0BFEB /* NgnSoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSoundService.h; sourceTree = "<group>"; };
+		ECF200A21360E31200B0BFEB /* NgnSoundService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSoundService.mm; sourceTree = "<group>"; };
+		ECF200A51360E32100B0BFEB /* NgnStorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnStorageService.h; sourceTree = "<group>"; };
+		ECF200A61360E32100B0BFEB /* NgnStorageService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnStorageService.mm; sourceTree = "<group>"; };
+		ECF200AA1360E34C00B0BFEB /* INgnSipService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnSipService.h; sourceTree = "<group>"; };
+		ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnEngine.h; sourceTree = "<group>"; };
+		ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnEngine.mm; sourceTree = "<group>"; };
+		ECF200F01360ED1700B0BFEB /* NgnSipService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSipService.h; sourceTree = "<group>"; };
+		ECF200F11360ED1700B0BFEB /* NgnSipService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSipService.mm; sourceTree = "<group>"; };
+		ECF201281360F83D00B0BFEB /* NgnAVSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnAVSession.h; sourceTree = "<group>"; };
+		ECF201291360F83D00B0BFEB /* NgnAVSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnAVSession.mm; sourceTree = "<group>"; };
+		ECF2012C1360F84E00B0BFEB /* NgnInviteSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnInviteSession.h; sourceTree = "<group>"; };
+		ECF2012D1360F84E00B0BFEB /* NgnInviteSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnInviteSession.mm; sourceTree = "<group>"; };
+		ECF201301360F85E00B0BFEB /* NgnMsrpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMsrpSession.h; sourceTree = "<group>"; };
+		ECF201311360F85E00B0BFEB /* NgnMsrpSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnMsrpSession.mm; sourceTree = "<group>"; };
+		ECF201341360F87B00B0BFEB /* NgnPresenceStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPresenceStatus.h; sourceTree = "<group>"; };
+		ECF201381360F89800B0BFEB /* NgnPublicationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPublicationSession.h; sourceTree = "<group>"; };
+		ECF201391360F89800B0BFEB /* NgnPublicationSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnPublicationSession.mm; sourceTree = "<group>"; };
+		ECF2013C1360F8AA00B0BFEB /* NgnRegistrationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnRegistrationSession.h; sourceTree = "<group>"; };
+		ECF2013D1360F8AA00B0BFEB /* NgnRegistrationSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnRegistrationSession.mm; sourceTree = "<group>"; };
+		ECF201401360F8C300B0BFEB /* NgnSipPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSipPreferences.h; sourceTree = "<group>"; };
+		ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSipPreferences.mm; sourceTree = "<group>"; };
+		ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSubscriptionSession.h; sourceTree = "<group>"; };
+		ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSubscriptionSession.mm; sourceTree = "<group>"; };
 		ECFD23A2135D513200E6A9A3 /* idoubs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; sourceTree = "<group>"; };
 		ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnBaseService.h; sourceTree = "<group>"; };
 		ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NgnBaseService.m; path = ../NgnBaseService.m; sourceTree = "<group>"; };
 		ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnConfigurationService.h; sourceTree = "<group>"; };
-		ECFD23D2135D53F500E6A9A3 /* INgnConfigurationService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnConfigurationService.mm; sourceTree = "<group>"; };
 		ECFD23D5135D540400E6A9A3 /* INgnContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnContactService.h; sourceTree = "<group>"; };
-		ECFD23D6135D540400E6A9A3 /* INgnContactService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnContactService.mm; sourceTree = "<group>"; };
 		ECFD23D9135D541500E6A9A3 /* INgnHistoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnHistoryService.h; sourceTree = "<group>"; };
-		ECFD23DA135D541500E6A9A3 /* INgnHistoryService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnHistoryService.mm; sourceTree = "<group>"; };
 		ECFD23DD135D542800E6A9A3 /* INgnHttpClientService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnHttpClientService.h; sourceTree = "<group>"; };
-		ECFD23DE135D542800E6A9A3 /* INgnHttpClientService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnHttpClientService.mm; sourceTree = "<group>"; };
 		ECFD23E1135D544100E6A9A3 /* INgnNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnNetworkService.h; sourceTree = "<group>"; };
-		ECFD23E2135D544100E6A9A3 /* INgnNetworkService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnNetworkService.mm; sourceTree = "<group>"; };
 		ECFD23E5135D545100E6A9A3 /* INgnSoundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnSoundService.h; sourceTree = "<group>"; };
-		ECFD23E6135D545100E6A9A3 /* INgnSoundService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnSoundService.mm; sourceTree = "<group>"; };
 		ECFD23E9135D546400E6A9A3 /* INgnStorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnStorageService.h; sourceTree = "<group>"; };
-		ECFD23EA135D546400E6A9A3 /* INgnStorageService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INgnStorageService.mm; sourceTree = "<group>"; };
 		ECFD23F9135D556200E6A9A3 /* NgnBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnBaseService.h; sourceTree = "<group>"; };
 		ECFD2426135D584100E6A9A3 /* libtinySAK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinySAK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyNET.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2355,6 +2411,8 @@
 				ECFD23C0135D534100E6A9A3 /* services */,
 				ECFD23C2135D534100E6A9A3 /* sip */,
 				ECFD23C3135D534100E6A9A3 /* utils */,
+				ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */,
+				ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2390,19 +2448,13 @@
 				ECFD23C1135D534100E6A9A3 /* impl */,
 				ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */,
 				ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */,
-				ECFD23D2135D53F500E6A9A3 /* INgnConfigurationService.mm */,
 				ECFD23D5135D540400E6A9A3 /* INgnContactService.h */,
-				ECFD23D6135D540400E6A9A3 /* INgnContactService.mm */,
 				ECFD23D9135D541500E6A9A3 /* INgnHistoryService.h */,
-				ECFD23DA135D541500E6A9A3 /* INgnHistoryService.mm */,
 				ECFD23DD135D542800E6A9A3 /* INgnHttpClientService.h */,
-				ECFD23DE135D542800E6A9A3 /* INgnHttpClientService.mm */,
 				ECFD23E1135D544100E6A9A3 /* INgnNetworkService.h */,
-				ECFD23E2135D544100E6A9A3 /* INgnNetworkService.mm */,
 				ECFD23E5135D545100E6A9A3 /* INgnSoundService.h */,
-				ECFD23E6135D545100E6A9A3 /* INgnSoundService.mm */,
 				ECFD23E9135D546400E6A9A3 /* INgnStorageService.h */,
-				ECFD23EA135D546400E6A9A3 /* INgnStorageService.mm */,
+				ECF200AA1360E34C00B0BFEB /* INgnSipService.h */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -2412,6 +2464,22 @@
 			children = (
 				ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */,
 				ECFD23F9135D556200E6A9A3 /* NgnBaseService.h */,
+				ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */,
+				ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */,
+				ECF200911360E2BD00B0BFEB /* NgnContactService.h */,
+				ECF200921360E2BD00B0BFEB /* NgnContactService.mm */,
+				ECF200951360E2D200B0BFEB /* NgnHistoryService.h */,
+				ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */,
+				ECF200991360E2E900B0BFEB /* NgnHttpClientService.h */,
+				ECF2009A1360E2E900B0BFEB /* NgnHttpClientService.mm */,
+				ECF2009D1360E2FF00B0BFEB /* NgnNetworkService.h */,
+				ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */,
+				ECF200A11360E31200B0BFEB /* NgnSoundService.h */,
+				ECF200A21360E31200B0BFEB /* NgnSoundService.mm */,
+				ECF200A51360E32100B0BFEB /* NgnStorageService.h */,
+				ECF200A61360E32100B0BFEB /* NgnStorageService.mm */,
+				ECF200F01360ED1700B0BFEB /* NgnSipService.h */,
+				ECF200F11360ED1700B0BFEB /* NgnSipService.mm */,
 			);
 			path = impl;
 			sourceTree = "<group>";
@@ -2423,6 +2491,21 @@
 				ECFD3318135E868300E6A9A3 /* NgnSipSession.mm */,
 				ECFD331B135E86EA00E6A9A3 /* NgnSipStack.h */,
 				ECFD331C135E86EA00E6A9A3 /* NgnSipStack.mm */,
+				ECF201281360F83D00B0BFEB /* NgnAVSession.h */,
+				ECF201291360F83D00B0BFEB /* NgnAVSession.mm */,
+				ECF2012C1360F84E00B0BFEB /* NgnInviteSession.h */,
+				ECF2012D1360F84E00B0BFEB /* NgnInviteSession.mm */,
+				ECF201301360F85E00B0BFEB /* NgnMsrpSession.h */,
+				ECF201311360F85E00B0BFEB /* NgnMsrpSession.mm */,
+				ECF201341360F87B00B0BFEB /* NgnPresenceStatus.h */,
+				ECF201381360F89800B0BFEB /* NgnPublicationSession.h */,
+				ECF201391360F89800B0BFEB /* NgnPublicationSession.mm */,
+				ECF2013C1360F8AA00B0BFEB /* NgnRegistrationSession.h */,
+				ECF2013D1360F8AA00B0BFEB /* NgnRegistrationSession.mm */,
+				ECF201401360F8C300B0BFEB /* NgnSipPreferences.h */,
+				ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */,
+				ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */,
+				ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */,
 			);
 			path = sip;
 			sourceTree = "<group>";
@@ -2434,6 +2517,7 @@
 				ECFD33F1135EA8E000E6A9A3 /* NgnStringUtils.m */,
 				ECFD3433135EB27500E6A9A3 /* NgnNotificationCenter.h */,
 				ECFD3434135EB27500E6A9A3 /* NgnNotificationCenter.m */,
+				ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -4850,6 +4934,25 @@
 				ECFD3435135EB27500E6A9A3 /* NgnNotificationCenter.h in Headers */,
 				ECFD3439135EB3AD00E6A9A3 /* NgnEventArgs.h in Headers */,
 				ECFD344B135EB65600E6A9A3 /* NgnRegistrationEventArgs.h in Headers */,
+				ECF200861360D9EA00B0BFEB /* NgnConfigurationEntry.h in Headers */,
+				ECF2008D1360E01500B0BFEB /* NgnConfigurationService.h in Headers */,
+				ECF200931360E2BD00B0BFEB /* NgnContactService.h in Headers */,
+				ECF200971360E2D200B0BFEB /* NgnHistoryService.h in Headers */,
+				ECF2009B1360E2E900B0BFEB /* NgnHttpClientService.h in Headers */,
+				ECF2009F1360E2FF00B0BFEB /* NgnNetworkService.h in Headers */,
+				ECF200A31360E31200B0BFEB /* NgnSoundService.h in Headers */,
+				ECF200A71360E32100B0BFEB /* NgnStorageService.h in Headers */,
+				ECF200AC1360E34C00B0BFEB /* INgnSipService.h in Headers */,
+				ECF200EC1360E9EB00B0BFEB /* NgnEngine.h in Headers */,
+				ECF200F21360ED1700B0BFEB /* NgnSipService.h in Headers */,
+				ECF2012A1360F83D00B0BFEB /* NgnAVSession.h in Headers */,
+				ECF2012E1360F84E00B0BFEB /* NgnInviteSession.h in Headers */,
+				ECF201321360F85E00B0BFEB /* NgnMsrpSession.h in Headers */,
+				ECF201361360F87B00B0BFEB /* NgnPresenceStatus.h in Headers */,
+				ECF2013A1360F89800B0BFEB /* NgnPublicationSession.h in Headers */,
+				ECF2013E1360F8AA00B0BFEB /* NgnRegistrationSession.h in Headers */,
+				ECF201421360F8C300B0BFEB /* NgnSipPreferences.h in Headers */,
+				ECF201461360F8DF00B0BFEB /* NgnSubscriptionSession.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5731,19 +5834,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFD23D0135D53C500E6A9A3 /* NgnBaseService.m in Sources */,
-				ECFD23D4135D53F500E6A9A3 /* INgnConfigurationService.mm in Sources */,
-				ECFD23D8135D540400E6A9A3 /* INgnContactService.mm in Sources */,
-				ECFD23DC135D541500E6A9A3 /* INgnHistoryService.mm in Sources */,
-				ECFD23E0135D542800E6A9A3 /* INgnHttpClientService.mm in Sources */,
-				ECFD23E4135D544100E6A9A3 /* INgnNetworkService.mm in Sources */,
-				ECFD23E8135D545100E6A9A3 /* INgnSoundService.mm in Sources */,
-				ECFD23EC135D546400E6A9A3 /* INgnStorageService.mm in Sources */,
 				ECFD331A135E868300E6A9A3 /* NgnSipSession.mm in Sources */,
 				ECFD331E135E86EA00E6A9A3 /* NgnSipStack.mm in Sources */,
 				ECFD33F3135EA8E000E6A9A3 /* NgnStringUtils.m in Sources */,
 				ECFD3436135EB27500E6A9A3 /* NgnNotificationCenter.m in Sources */,
 				ECFD343A135EB3AD00E6A9A3 /* NgnEventArgs.m in Sources */,
 				ECFD344C135EB65600E6A9A3 /* NgnRegistrationEventArgs.m in Sources */,
+				ECF2008E1360E01500B0BFEB /* NgnConfigurationService.mm in Sources */,
+				ECF200941360E2BD00B0BFEB /* NgnContactService.mm in Sources */,
+				ECF200981360E2D200B0BFEB /* NgnHistoryService.mm in Sources */,
+				ECF2009C1360E2E900B0BFEB /* NgnHttpClientService.mm in Sources */,
+				ECF200A01360E2FF00B0BFEB /* NgnNetworkService.mm in Sources */,
+				ECF200A41360E31200B0BFEB /* NgnSoundService.mm in Sources */,
+				ECF200A81360E32100B0BFEB /* NgnStorageService.mm in Sources */,
+				ECF200ED1360E9EB00B0BFEB /* NgnEngine.mm in Sources */,
+				ECF200F31360ED1700B0BFEB /* NgnSipService.mm in Sources */,
+				ECF2012B1360F83D00B0BFEB /* NgnAVSession.mm in Sources */,
+				ECF2012F1360F84E00B0BFEB /* NgnInviteSession.mm in Sources */,
+				ECF201331360F85E00B0BFEB /* NgnMsrpSession.mm in Sources */,
+				ECF2013B1360F89800B0BFEB /* NgnPublicationSession.mm in Sources */,
+				ECF2013F1360F8AA00B0BFEB /* NgnRegistrationSession.mm in Sources */,
+				ECF201431360F8C300B0BFEB /* NgnSipPreferences.mm in Sources */,
+				ECF201471360F8DF00B0BFEB /* NgnSubscriptionSession.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
