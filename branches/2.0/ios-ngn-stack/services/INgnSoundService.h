@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import "INgnBaseService.h"
 
-@interface INgnSoundService : NSObject {
-
-}
+@protocol INgnSoundService <INgnBaseService>
 
 @end
