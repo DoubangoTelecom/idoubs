@@ -7,12 +7,6 @@ static NgnEngine* sInstance = nil;
 
 @implementation NgnEngine (Private)
 
-+(NgnEngine*) getInstance{
-	if(sInstance == nil){
-		sInstance = [[NgnEngine alloc] init];
-	}
-	return sInstance;
-}
 @end
 
 @implementation NgnEngine
@@ -71,6 +65,13 @@ static NgnEngine* sInstance = nil;
 }
 
 +(void)initialize{
+}
+
++(NgnEngine*) getInstance{
+	if(sInstance == nil){
+		sInstance = [[NgnEngine alloc] init];
+	}
+	return sInstance;
 }
 
 @end

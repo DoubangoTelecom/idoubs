@@ -6,17 +6,273 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		EC8EBD741368447E00DC70DF /* Doubango */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EC8EBDBC136844A200DC70DF /* Build configuration list for PBXAggregateTarget "Doubango" */;
+			buildPhases = (
+			);
+			dependencies = (
+				EC83B7CC13697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7CE13697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7D013697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7D213697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7D413697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7D613697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7D813697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7DA13697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7DC13697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7DE13697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7E013697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7E213697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7E413697BA900DD3355 /* PBXTargetDependency */,
+				EC83B7E613697BA900DD3355 /* PBXTargetDependency */,
+			);
+			name = Doubango;
+			productName = Doubango;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* idoubsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* idoubsAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		EC8EBE07136849E600DC70DF /* RecentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE06136849E600DC70DF /* RecentsView.xib */; };
+		EC8EBE09136849F700DC70DF /* NumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE08136849F700DC70DF /* NumPadView.xib */; };
+		EC8EBE0B13684A0900DC70DF /* ContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE0A13684A0900DC70DF /* ContactsView.xib */; };
+		EC8EBE0D13684A1700DC70DF /* MessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE0C13684A1700DC70DF /* MessagesView.xib */; };
+		EC8EBE6413685F6200DC70DF /* RecentsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */; };
+		EC8EBE6713685F7600DC70DF /* NumPadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */; };
+		EC8EBE6A13685F8A00DC70DF /* ContactsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */; };
+		EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */; };
+		EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */; };
+		EC8EBE9E1368651200DC70DF /* OnlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE9C1368651200DC70DF /* OnlineView.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC83B7CB13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			remoteInfo = tinySAK;
+		};
+		EC83B7CD13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			remoteInfo = tinyNET;
+		};
+		EC83B7CF13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			remoteInfo = tinySDP;
+		};
+		EC83B7D113697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			remoteInfo = tinyRTP;
+		};
+		EC83B7D313697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			remoteInfo = tinyIPSec;
+		};
+		EC83B7D513697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			remoteInfo = tinyMSRP;
+		};
+		EC83B7D713697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			remoteInfo = tinyHTTP;
+		};
+		EC83B7D913697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			remoteInfo = tinyMEDIA;
+		};
+		EC83B7DB13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC83B7DD13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			remoteInfo = tinySMS;
+		};
+		EC83B7DF13697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			remoteInfo = tinyXCAP;
+		};
+		EC83B7E113697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			remoteInfo = tinySIP;
+		};
+		EC83B7E313697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			remoteInfo = tinyDAV;
+		};
+		EC83B7E513697BA900DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD32AD135E821000E6A9A3 /* tinyWRAP */;
+			remoteInfo = tinyWRAP;
+		};
+		EC8EBEF81368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "ios-ngn-stack";
+		};
+		EC8EBEFA1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2426135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC8EBEFC1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD24ED135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC8EBEFE1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD25F7135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC8EBF001368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2693135D5DDD00E6A9A3;
+			remoteInfo = tinyRTP;
+		};
+		EC8EBF021368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2767135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC8EBF041368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD279B135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC8EBF061368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2851135E7ABA00E6A9A3;
+			remoteInfo = tinyHTTP;
+		};
+		EC8EBF081368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2CDE135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC8EBF0A1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2D5A135E7CD800E6A9A3;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC8EBF0C1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2E02135E7D1000E6A9A3;
+			remoteInfo = tinySMS;
+		};
+		EC8EBF0E1368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2E5B135E7D3600E6A9A3;
+			remoteInfo = tinyXCAP;
+		};
+		EC8EBF101368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD2E9A135E7D6D00E6A9A3;
+			remoteInfo = tinySIP;
+		};
+		EC8EBF121368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD3171135E7DA100E6A9A3;
+			remoteInfo = tinyDAV;
+		};
+		EC8EBF141368921400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFD32AE135E821000E6A9A3;
+			remoteInfo = tinyWRAP;
+		};
+		EC8EBF181368936400DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8EBCDD136832D600DC70DF;
+			remoteInfo = Doubango;
+		};
+		EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "ios-ngn-stack";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -24,8 +280,6 @@
 		1D3623250D0F684500981E51 /* idoubsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = idoubsAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* idoubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idoubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		2840D7CD1179279E00D7F93C /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -33,6 +287,22 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC8EBE06136849E600DC70DF /* RecentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentsView.xib; sourceTree = "<group>"; };
+		EC8EBE08136849F700DC70DF /* NumPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPadView.xib; sourceTree = "<group>"; };
+		EC8EBE0A13684A0900DC70DF /* ContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsView.xib; sourceTree = "<group>"; };
+		EC8EBE0C13684A1700DC70DF /* MessagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesView.xib; sourceTree = "<group>"; };
+		EC8EBE6213685F6200DC70DF /* RecentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsViewController.h; sourceTree = "<group>"; };
+		EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecentsViewController.mm; sourceTree = "<group>"; };
+		EC8EBE6513685F7600DC70DF /* NumPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumPadViewController.h; sourceTree = "<group>"; };
+		EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumPadViewController.mm; sourceTree = "<group>"; };
+		EC8EBE6813685F8A00DC70DF /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactsViewController.mm; sourceTree = "<group>"; };
+		EC8EBE6B13685F9900DC70DF /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessagesViewController.mm; sourceTree = "<group>"; };
+		EC8EBE9A1368651200DC70DF /* OnlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineViewController.h; sourceTree = "<group>"; };
+		EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OnlineViewController.mm; sourceTree = "<group>"; };
+		EC8EBE9C1368651200DC70DF /* OnlineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OnlineView.xib; path = Classes/OnlineView.xib; sourceTree = "<group>"; };
+		EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-ngn-stack.xcodeproj"; path = "../ios-ngn-stack/ios-ngn-stack.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +322,18 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28216C950DB411BC00E5133A /* FirstViewController.h */,
-				28216C960DB411BC00E5133A /* FirstViewController.m */,
 				1D3623240D0F684500981E51 /* idoubsAppDelegate.h */,
 				1D3623250D0F684500981E51 /* idoubsAppDelegate.m */,
+				EC8EBE6213685F6200DC70DF /* RecentsViewController.h */,
+				EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */,
+				EC8EBE6513685F7600DC70DF /* NumPadViewController.h */,
+				EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */,
+				EC8EBE6813685F8A00DC70DF /* ContactsViewController.h */,
+				EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */,
+				EC8EBE6B13685F9900DC70DF /* MessagesViewController.h */,
+				EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */,
+				EC8EBE9A1368651200DC70DF /* OnlineViewController.h */,
+				EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -71,6 +349,7 @@
 		29B97314FDCFA39411CA2CEA /* idoubs */ = {
 			isa = PBXGroup;
 			children = (
+				EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -92,10 +371,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC8EBE9C1368651200DC70DF /* OnlineView.xib */,
 				2840D7CD1179279E00D7F93C /* FirstView.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* idoubs-Info.plist */,
+				EC8EBE06136849E600DC70DF /* RecentsView.xib */,
+				EC8EBE08136849F700DC70DF /* NumPadView.xib */,
+				EC8EBE0A13684A0900DC70DF /* ContactsView.xib */,
+				EC8EBE0C13684A1700DC70DF /* MessagesView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -108,6 +392,28 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC8EBEE61368921400DC70DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */,
+				EC8EBEFB1368921400DC70DF /* libtinySAK.a */,
+				EC8EBEFD1368921400DC70DF /* libtinyNET.a */,
+				EC8EBEFF1368921400DC70DF /* libtinySDP.a */,
+				EC8EBF011368921400DC70DF /* libtinyRTP.a */,
+				EC8EBF031368921400DC70DF /* libtinyIPSec.a */,
+				EC8EBF051368921400DC70DF /* libtinyMSRP.a */,
+				EC8EBF071368921400DC70DF /* libtinyHTTP.a */,
+				EC8EBF091368921400DC70DF /* libtinyMEDIA.a */,
+				EC8EBF0B1368921400DC70DF /* libtinySIGCOMP.a */,
+				EC8EBF0D1368921400DC70DF /* libtinySMS.a */,
+				EC8EBF0F1368921400DC70DF /* libtinyXCAP.a */,
+				EC8EBF111368921400DC70DF /* libtinySIP.a */,
+				EC8EBF131368921400DC70DF /* libtinyDAV.a */,
+				EC8EBF151368921400DC70DF /* libtinyWRAP.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +430,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC8EBF1D136893A500DC70DF /* PBXTargetDependency */,
+				EC8EBF191368936400DC70DF /* PBXTargetDependency */,
 			);
 			name = idoubs;
 			productName = idoubs;
@@ -135,6 +443,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Doubango Telecom";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "idoubs" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -147,12 +458,127 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* idoubs */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EC8EBEE61368921400DC70DF /* Products */;
+					ProjectRef = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* idoubs */,
+				EC8EBD741368447E00DC70DF /* Doubango */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libios_ngn_stack.a;
+			remoteRef = EC8EBEF81368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBEFB1368921400DC70DF /* libtinySAK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinySAK.a;
+			remoteRef = EC8EBEFA1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBEFD1368921400DC70DF /* libtinyNET.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyNET.a;
+			remoteRef = EC8EBEFC1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBEFF1368921400DC70DF /* libtinySDP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinySDP.a;
+			remoteRef = EC8EBEFE1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF011368921400DC70DF /* libtinyRTP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyRTP.a;
+			remoteRef = EC8EBF001368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF031368921400DC70DF /* libtinyIPSec.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyIPSec.a;
+			remoteRef = EC8EBF021368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF051368921400DC70DF /* libtinyMSRP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyMSRP.a;
+			remoteRef = EC8EBF041368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF071368921400DC70DF /* libtinyHTTP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyHTTP.a;
+			remoteRef = EC8EBF061368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF091368921400DC70DF /* libtinyMEDIA.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyMEDIA.a;
+			remoteRef = EC8EBF081368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF0B1368921400DC70DF /* libtinySIGCOMP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinySIGCOMP.a;
+			remoteRef = EC8EBF0A1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF0D1368921400DC70DF /* libtinySMS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinySMS.a;
+			remoteRef = EC8EBF0C1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF0F1368921400DC70DF /* libtinyXCAP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyXCAP.a;
+			remoteRef = EC8EBF0E1368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF111368921400DC70DF /* libtinySIP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinySIP.a;
+			remoteRef = EC8EBF101368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF131368921400DC70DF /* libtinyDAV.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyDAV.a;
+			remoteRef = EC8EBF121368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC8EBF151368921400DC70DF /* libtinyWRAP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyWRAP.a;
+			remoteRef = EC8EBF141368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -162,6 +588,11 @@
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */,
+				EC8EBE07136849E600DC70DF /* RecentsView.xib in Resources */,
+				EC8EBE09136849F700DC70DF /* NumPadView.xib in Resources */,
+				EC8EBE0B13684A0900DC70DF /* ContactsView.xib in Resources */,
+				EC8EBE0D13684A1700DC70DF /* MessagesView.xib in Resources */,
+				EC8EBE9E1368651200DC70DF /* OnlineView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,11 +605,98 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* idoubsAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				EC8EBE6413685F6200DC70DF /* RecentsViewController.mm in Sources */,
+				EC8EBE6713685F7600DC70DF /* NumPadViewController.mm in Sources */,
+				EC8EBE6A13685F8A00DC70DF /* ContactsViewController.mm in Sources */,
+				EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */,
+				EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC83B7CC13697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySAK;
+			targetProxy = EC83B7CB13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7CE13697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyNET;
+			targetProxy = EC83B7CD13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7D013697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySDP;
+			targetProxy = EC83B7CF13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7D213697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyRTP;
+			targetProxy = EC83B7D113697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7D413697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyIPSec;
+			targetProxy = EC83B7D313697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7D613697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyMSRP;
+			targetProxy = EC83B7D513697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7D813697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyHTTP;
+			targetProxy = EC83B7D713697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7DA13697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyMEDIA;
+			targetProxy = EC83B7D913697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7DC13697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySIGCOMP;
+			targetProxy = EC83B7DB13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7DE13697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySMS;
+			targetProxy = EC83B7DD13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7E013697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyXCAP;
+			targetProxy = EC83B7DF13697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7E213697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySIP;
+			targetProxy = EC83B7E113697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7E413697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyDAV;
+			targetProxy = EC83B7E313697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B7E613697BA900DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyWRAP;
+			targetProxy = EC83B7E513697BA900DD3355 /* PBXContainerItemProxy */;
+		};
+		EC8EBF191368936400DC70DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Doubango;
+			targetProxy = EC8EBF181368936400DC70DF /* PBXContainerItemProxy */;
+		};
+		EC8EBF1D136893A500DC70DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ios-ngn-stack";
+			targetProxy = EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -190,6 +708,18 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					$IOS_NGN_STACK_HOME,
+					$DOUBANGO_HOME/bindings/_common,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinySMS/include,
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO/HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinyDAV/include,
+				);
 				INFOPLIST_FILE = "idoubs-Info.plist";
 				PRODUCT_NAME = idoubs;
 			};
@@ -213,11 +743,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IOS_NGN_STACK_HOME = "../ios-ngn-stack";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -231,7 +763,28 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		EC8EBD751368447E00DC70DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Doubango;
+			};
+			name = Debug;
+		};
+		EC8EBD761368447E00DC70DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Doubango;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -252,6 +805,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8EBDBC136844A200DC70DF /* Build configuration list for PBXAggregateTarget "Doubango" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8EBD751368447E00DC70DF /* Debug */,
+				EC8EBD761368447E00DC70DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

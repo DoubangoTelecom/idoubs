@@ -1,4 +1,7 @@
 #import "NgnRegistrationSession.h"
+#import <Foundation/NSDictionary.h>
+
+static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 
 @implementation NgnRegistrationSession (Private)
 
@@ -33,6 +36,37 @@
         [super addCapsWithName:@"+g.3gpp.cs-voice"];
 	}
 	return self;
+}
+
++(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri{
+	@synchronized(kSessions){
+		NgnRegistrationSession* regSession = [[[NgnRegistrationSession alloc] internalInit:sipStack] autorelease];
+		if(regSession){
+			if(toUri){
+				[regSession setToUri:toUri];
+			}
+			[kSessions setObject: regSession forKey:[regSession getIdAsNumber]];
+		}
+		return regSession;
+	}
+}
+
++(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack{
+	return [NgnRegistrationSession createOutgoingSessionWithStack:sipStack andToUri:nil];
+}
+
++(NgnRegistrationSession*) findSessionWithId: (long)sessionId{
+	@synchronized(kSessions){
+		return [kSessions objectForKey:[NSNumber numberWithLong:sessionId]];
+	}
+}
+
++(BOOL) hasSessionWithId: (long)sessionId{
+	return [NgnRegistrationSession findSessionWithId:sessionId] != nil;
+}
+
++(void) releaseSessionWithId: (long)sessionId{
+	[kSessions removeObjectForKey:[NSNumber numberWithLong:sessionId]];
 }
 
 @end

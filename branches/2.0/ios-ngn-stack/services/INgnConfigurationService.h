@@ -3,8 +3,8 @@
 #import "INgnBaseService.h"
 
 @protocol INgnConfigurationService <INgnBaseService>
--(NSString*)getStringForKey: (NSString*)key withDefaultValue: (NSString*)defaultValue;
--(int)getIntForKey: (NSString*)key withDefaultValue: (int)defaultValue;
--(float)getFloatForKey: (NSString*)key withDefaultValue: (float)defaultValue;
--(BOOL)getBoolForKey: (NSString*)key withDefaultValue: (BOOL)defaultValue;
+-(NSString*)getStringForKey: (NSString*)key;
+-(int)getIntForKey: (NSString*)key;
+-(float)getFloatForKey: (NSString*)key;
+-(BOOL)getBoolForKey: (NSString*)key;
 @end
