@@ -2,11 +2,13 @@
 
 #import "NgnBaseService.h"
 #import "INgnSipService.h"
+#import "NgnRegistrationSession.h"
 
-class NgnSipCallback;
+class _NgnSipCallback;
 
 @interface NgnSipService : NgnBaseService <INgnSipService>{
-	NgnSipCallback* mSipCallback;
+	_NgnSipCallback* _mSipCallback;
+	NgnRegistrationSession* mRegistrationSession;
 }
 
 @end

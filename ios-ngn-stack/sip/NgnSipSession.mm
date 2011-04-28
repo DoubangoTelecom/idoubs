@@ -40,6 +40,10 @@
 	return mId;
 }
 
+-(NSNumber*)getIdAsNumber{
+	return [NSNumber numberWithLong: [self getId]];
+}
+
 -(BOOL)isOutgoing{
 	return mOutgoing;
 }

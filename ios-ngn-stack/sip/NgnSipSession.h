@@ -27,6 +27,7 @@ ConnectionState_t;
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
 -(void)initialize;
 -(long)getId;
+-(NSNumber*)getIdAsNumber;
 -(BOOL)isOutgoing;
 -(NgnSipStack*)getSipStack;
 -(BOOL)addHeaderWithName: (NSString*)name andValue: (NSString*)value;

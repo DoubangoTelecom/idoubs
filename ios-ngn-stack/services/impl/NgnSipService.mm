@@ -8,14 +8,14 @@
 //	NgnSipCallback
 //
 
-class NgnSipCallback : public SipCallback
+class _NgnSipCallback : public SipCallback
 {
 public:
-	NgnSipCallback(NgnSipService* sipService) : SipCallback(){
+	_NgnSipCallback(NgnSipService* sipService) : SipCallback(){
 		mSipService = [sipService retain];
 	}
 	
-	~NgnSipCallback(){
+	~_NgnSipCallback(){
 		[mSipService release];
 	}
 	
@@ -85,13 +85,19 @@ private
 
 -(NgnSipService*)init{
 	if((self = [super init])){
-		mSipCallback = new NgnSipCallback(self);
+		_mSipCallback = new _NgnSipCallback(self);
 	}
 	return self;
 }
 
 -(void)dealloc{
-	if(mSipCallback) delete mSipCallback;
+	if(_mSipCallback){
+		delete _mSipCallback;
+	}
+	if(mRegistrationSession){
+		[NgnRegistrationSession releaseSessionWithId: [mRegistrationSession getId]];
+		mRegistrationSession = nil;
+	}
 	[super dealloc];
 }
 
