@@ -1,13 +1,6 @@
-//
-//  idoubsAppDelegate.m
-//  idoubs
-//
-//  Created by Mamadou DIOP on 4/19/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "idoubsAppDelegate.h"
 
+#import "iOSNgnStack.h"
 
 @implementation idoubsAppDelegate
 
@@ -20,7 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
+    
+	NgnEngine* engine = [NgnEngine getInstance];
+	
 
     // Add the tab bar controller's view to the window and display.
     [window addSubview:tabBarController.view];
