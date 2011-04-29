@@ -3,7 +3,7 @@
 #include "SipStack.h"
 
 typedef enum STACK_STATE_E {
-	NONE, STARTING, STARTED, STOPPING, STOPPED
+	STACK_STATE_NONE, STACK_STATE_STARTING, STACK_STATE_STARTED, STACK_STATE_STOPPING, STACK_STATE_STOPPED
 }
 STACK_STATE_T;
 
@@ -16,7 +16,8 @@ STACK_STATE_T;
 -(NgnSipStack*) initWithSipCallback: (const SipCallback*) callback andRealmUri: (NSString*) realmUri andIMPIUri: (NSString*) impiUri andIMPUUri: (NSString*)impuUri;
 
 -(STACK_STATE_T) getState;
--(void) setState: (STACK_STATE_T)state;
+-(void) setState: (STACK_STATE_T)newState;
+@property(readwrite) STACK_STATE_T state;
 
 -(BOOL) start;
 -(BOOL) setRealm: (NSString *)realmUri;
@@ -46,7 +47,10 @@ STACK_STATE_T;
 -(NSString *) dnsNaptrSrvWithDomain: (NSString *) domain andService: (NSString *) service andPort: (unsigned short*) port;
 -(NSString *) dnsSrvWithService: (NSString *) service andPort: (unsigned short*) port;
 
+-(NSString*)getPreferredIdentity;
+
 -(BOOL) isValid;
+-(SipStack*) getStack;
 -(BOOL) stop;
 
 +(void) setCodecs:(tdav_codec_id_t) codecs;

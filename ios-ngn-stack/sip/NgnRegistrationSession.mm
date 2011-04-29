@@ -7,6 +7,10 @@ static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 
 -(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack{
 	if((self = (NgnRegistrationSession*)[super initWithSipStack:sipStack])){
+		if(!(_mSession = new RegistrationSession([sipStack getStack]))){
+			TSK_DEBUG_ERROR("Failed to create session");
+			return self;
+		}
 		[super initialize];
 		[super setSigCompId: [sipStack getSigCompId]];
 		// FIXME: setExpires
@@ -37,6 +41,11 @@ static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 	}
 	return self;
 }
+
+@end
+
+
+@implementation NgnRegistrationSession
 
 +(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri{
 	@synchronized(kSessions){
@@ -69,10 +78,6 @@ static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 	[kSessions removeObjectForKey:[NSNumber numberWithLong:sessionId]];
 }
 
-@end
-
-
-@implementation NgnRegistrationSession
 
 -(void)dealloc{
 	if(_mSession){

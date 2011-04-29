@@ -33,11 +33,15 @@
 	[self getSession]->addCaps("language", "\"en,fr\"");
 }
 
--(long)getId{
+-(long)id{
 	if(mId == -1){
 		mId = [self getSession]->getId(); 
 	}
 	return mId;
+}
+
+-(long)getId{
+	return self.id;
 }
 
 -(NSNumber*)getIdAsNumber{
