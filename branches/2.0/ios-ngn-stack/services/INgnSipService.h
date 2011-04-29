@@ -13,6 +13,6 @@
 -(int)getCodecs;
 -(void)setCodecs: (int)codecs;
 -(BOOL)stopStack;
--(BOOL)register_;
--(BOOL)unRegister;
+-(BOOL)registerIdentity;
+-(BOOL)unRegisterIdentity;
 @end

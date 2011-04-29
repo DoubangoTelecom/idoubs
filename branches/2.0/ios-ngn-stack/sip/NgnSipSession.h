@@ -24,6 +24,8 @@ ConnectionState_t;
     ConnectionState_t mConnectionState;
 }
 
+@property(readonly) long id;
+
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
 -(void)initialize;
 -(long)getId;

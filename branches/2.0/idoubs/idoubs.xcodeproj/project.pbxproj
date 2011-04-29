@@ -34,7 +34,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* idoubsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* idoubsAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -42,6 +41,11 @@
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		EC83B7F4136980CC00DD3355 /* idoubsAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */; };
+		EC83B88A13698CEA00DD3355 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88913698CEA00DD3355 /* AVFoundation.framework */; };
+		EC83B88C13698CEA00DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88B13698CEA00DD3355 /* CFNetwork.framework */; };
+		EC83B88E13698CEA00DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88D13698CEA00DD3355 /* libresolv.dylib */; };
+		EC83B89013698CEA00DD3355 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */; };
 		EC8EBE07136849E600DC70DF /* RecentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE06136849E600DC70DF /* RecentsView.xib */; };
 		EC8EBE09136849F700DC70DF /* NumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE08136849F700DC70DF /* NumPadView.xib */; };
 		EC8EBE0B13684A0900DC70DF /* ContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE0A13684A0900DC70DF /* ContactsView.xib */; };
@@ -153,6 +157,125 @@
 			remoteGlobalIDString = ECFD32AD135E821000E6A9A3 /* tinyWRAP */;
 			remoteInfo = tinyWRAP;
 		};
+		EC83B8071369822300DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			remoteInfo = tinySAK;
+		};
+		EC83B8171369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			remoteInfo = tinyNET;
+		};
+		EC83B8191369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			remoteInfo = tinySDP;
+		};
+		EC83B81B1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			remoteInfo = tinyRTP;
+		};
+		EC83B81D1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			remoteInfo = tinyIPSec;
+		};
+		EC83B81F1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			remoteInfo = tinyMSRP;
+		};
+		EC83B8211369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			remoteInfo = tinyHTTP;
+		};
+		EC83B8231369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			remoteInfo = tinyMEDIA;
+		};
+		EC83B8251369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC83B8271369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			remoteInfo = tinySMS;
+		};
+		EC83B8291369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			remoteInfo = tinyXCAP;
+		};
+		EC83B82B1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			remoteInfo = tinySIP;
+		};
+		EC83B82D1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			remoteInfo = tinyDAV;
+		};
+		EC83B82F1369851A00DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD32AD135E821000E6A9A3 /* tinyWRAP */;
+			remoteInfo = tinyWRAP;
+		};
+		EC83BA30136990F800DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC83BA14136990B700DD3355 /* testRegistration.app */;
+			remoteInfo = testRegistration;
+		};
+		EC83BA32136990F800DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC83BA1C136990C800DD3355 /* testAudioCall.app */;
+			remoteInfo = testAudioCall;
+		};
+		EC83BA34136990F800DD3355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC83BA27136990DA00DD3355 /* testVideoCall.app */;
+			remoteInfo = testVideoCall;
+		};
 		EC8EBEF81368921400DC70DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -258,13 +381,6 @@
 			remoteGlobalIDString = ECFD32AE135E821000E6A9A3;
 			remoteInfo = tinyWRAP;
 		};
-		EC8EBF181368936400DC70DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EC8EBCDD136832D600DC70DF;
-			remoteInfo = Doubango;
-		};
 		EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -277,7 +393,6 @@
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* idoubsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubsAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* idoubsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = idoubsAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* idoubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idoubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
@@ -287,6 +402,11 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = idoubsAppDelegate.mm; sourceTree = "<group>"; };
+		EC83B88913698CEA00DD3355 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EC83B88B13698CEA00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EC83B88D13698CEA00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		EC8EBE06136849E600DC70DF /* RecentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentsView.xib; sourceTree = "<group>"; };
 		EC8EBE08136849F700DC70DF /* NumPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPadView.xib; sourceTree = "<group>"; };
 		EC8EBE0A13684A0900DC70DF /* ContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsView.xib; sourceTree = "<group>"; };
@@ -313,6 +433,10 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				EC83B88A13698CEA00DD3355 /* AVFoundation.framework in Frameworks */,
+				EC83B88C13698CEA00DD3355 /* CFNetwork.framework in Frameworks */,
+				EC83B88E13698CEA00DD3355 /* libresolv.dylib in Frameworks */,
+				EC83B89013698CEA00DD3355 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +446,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */,
 				1D3623240D0F684500981E51 /* idoubsAppDelegate.h */,
-				1D3623250D0F684500981E51 /* idoubsAppDelegate.m */,
 				EC8EBE6213685F6200DC70DF /* RecentsViewController.h */,
 				EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */,
 				EC8EBE6513685F7600DC70DF /* NumPadViewController.h */,
@@ -387,6 +511,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC83B88D13698CEA00DD3355 /* libresolv.dylib */,
+				EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */,
+				EC83B88B13698CEA00DD3355 /* CFNetwork.framework */,
+				EC83B88913698CEA00DD3355 /* AVFoundation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
@@ -412,6 +540,9 @@
 				EC8EBF111368921400DC70DF /* libtinySIP.a */,
 				EC8EBF131368921400DC70DF /* libtinyDAV.a */,
 				EC8EBF151368921400DC70DF /* libtinyWRAP.a */,
+				EC83BA31136990F800DD3355 /* testRegistration.app */,
+				EC83BA33136990F800DD3355 /* testAudioCall.app */,
+				EC83BA35136990F800DD3355 /* testVideoCall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,7 +562,20 @@
 			);
 			dependencies = (
 				EC8EBF1D136893A500DC70DF /* PBXTargetDependency */,
-				EC8EBF191368936400DC70DF /* PBXTargetDependency */,
+				EC83B8181369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8081369822300DD3355 /* PBXTargetDependency */,
+				EC83B81A1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B81C1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B81E1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8201369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8221369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8241369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8261369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8281369851A00DD3355 /* PBXTargetDependency */,
+				EC83B82A1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B82C1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B82E1369851A00DD3355 /* PBXTargetDependency */,
+				EC83B8301369851A00DD3355 /* PBXTargetDependency */,
 			);
 			name = idoubs;
 			productName = idoubs;
@@ -473,6 +617,29 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		EC83BA31136990F800DD3355 /* testRegistration.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = testRegistration.app;
+			remoteRef = EC83BA30136990F800DD3355 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC83BA33136990F800DD3355 /* testAudioCall.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			name = testAudioCall.app;
+			path = "build/Debug-iphonesimulator/testAudioCall.app";
+			remoteRef = EC83BA32136990F800DD3355 /* PBXContainerItemProxy */;
+			sourceTree = "<group>";
+		};
+		EC83BA35136990F800DD3355 /* testVideoCall.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			name = testVideoCall.app;
+			path = "build/Debug-iphonesimulator/testVideoCall.app";
+			remoteRef = EC83BA34136990F800DD3355 /* PBXContainerItemProxy */;
+			sourceTree = "<group>";
+		};
 		EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -604,12 +771,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* idoubsAppDelegate.m in Sources */,
 				EC8EBE6413685F6200DC70DF /* RecentsViewController.mm in Sources */,
 				EC8EBE6713685F7600DC70DF /* NumPadViewController.mm in Sources */,
 				EC8EBE6A13685F8A00DC70DF /* ContactsViewController.mm in Sources */,
 				EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */,
 				EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */,
+				EC83B7F4136980CC00DD3355 /* idoubsAppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,10 +853,75 @@
 			name = tinyWRAP;
 			targetProxy = EC83B7E513697BA900DD3355 /* PBXContainerItemProxy */;
 		};
-		EC8EBF191368936400DC70DF /* PBXTargetDependency */ = {
+		EC83B8081369822300DD3355 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Doubango;
-			targetProxy = EC8EBF181368936400DC70DF /* PBXContainerItemProxy */;
+			name = tinySAK;
+			targetProxy = EC83B8071369822300DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8181369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyNET;
+			targetProxy = EC83B8171369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B81A1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySDP;
+			targetProxy = EC83B8191369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B81C1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyRTP;
+			targetProxy = EC83B81B1369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B81E1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyIPSec;
+			targetProxy = EC83B81D1369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8201369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyMSRP;
+			targetProxy = EC83B81F1369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8221369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyHTTP;
+			targetProxy = EC83B8211369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8241369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyMEDIA;
+			targetProxy = EC83B8231369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8261369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySIGCOMP;
+			targetProxy = EC83B8251369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8281369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySMS;
+			targetProxy = EC83B8271369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B82A1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyXCAP;
+			targetProxy = EC83B8291369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B82C1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinySIP;
+			targetProxy = EC83B82B1369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B82E1369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyDAV;
+			targetProxy = EC83B82D1369851A00DD3355 /* PBXContainerItemProxy */;
+		};
+		EC83B8301369851A00DD3355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyWRAP;
+			targetProxy = EC83B82F1369851A00DD3355 /* PBXContainerItemProxy */;
 		};
 		EC8EBF1D136893A500DC70DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -718,9 +950,31 @@
 					$DOUBANGO/HOME/tinyMSRP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
 					$DOUBANGO_HOME/tinyDAV/include,
 				);
 				INFOPLIST_FILE = "idoubs-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-ngn-stack/build/Debug-iphonesimulator\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lios_ngn_stack",
+					"-ltinySAK",
+					"-ltinyNET",
+					"-ltinySIP",
+					"-ltinyRTP",
+					"-ltinySIGCOMP",
+					"-ltinySMS",
+					"-ltinyHTTP",
+					"-ltinySDP",
+					"-ltinyMSRP",
+					"-ltinyDAV",
+					"-ltinyIPSec",
+					"-ltinyMEDIA",
+					"-ltinyWRAP",
+					"-ObjC",
+				);
 				PRODUCT_NAME = idoubs;
 			};
 			name = Debug;
@@ -733,6 +987,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
 				INFOPLIST_FILE = "idoubs-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-ngn-stack/build/Debug-iphonesimulator\"",
+				);
 				PRODUCT_NAME = idoubs;
 				VALIDATE_PRODUCT = YES;
 			};
