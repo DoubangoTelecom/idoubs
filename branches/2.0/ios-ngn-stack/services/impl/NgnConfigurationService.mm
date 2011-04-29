@@ -41,6 +41,9 @@
 								  DEFAULT_NATT_STUN_SERVER, NATT_STUN_SERVER,
 								  [NSNumber numberWithInt:DEFAULT_NATT_STUN_PORT], NATT_STUN_PORT,
 								  
+								  /* === SECURITY === */
+								  DEFAULT_SECURITY_IMSAKA_OPID, SECURITY_IMSAKA_OPID,
+								  
 								  
 								  nil];
 		
@@ -69,22 +72,38 @@
 //	INgnConfigurationService
 //
 
--(NSString*)getStringForKey: (NSString*)key{
+-(NSString*)getStringWithKey: (NSString*)key{
 	return [mPrefs stringForKey:key];
 }
 
--(int)getIntForKey: (NSString*)key{
+-(int)getIntWithKey: (NSString*)key{
 	return [mPrefs integerForKey:key];
 }
 
 
--(float)getFloatForKey: (NSString*)key{
+-(float)getFloatWithKey: (NSString*)key{
 	return [mPrefs floatForKey:key];
 }
 
 
--(BOOL)getBoolForKey: (NSString*)key{
+-(BOOL)getBoolWithKey: (NSString*)key{
 	return [mPrefs boolForKey:key];
+}
+
+-(void)setStringWithKey: (NSString*)key andValue:(NSString*)value{
+	[mPrefs setObject:value forKey:key];
+}
+
+-(void)setIntWithKey: (NSString*)key andValue:(int)value{
+	[mPrefs setInteger:value forKey:key];
+}
+
+-(void)setFloatWithKey: (NSString*)key andValue:(float)value{
+	[mPrefs setFloat:value forKey:key];
+}
+
+-(void)setBoolWithKey: (NSString*)key andValue:(BOOL)value{
+	[mPrefs setBool:value forKey:key];
 }
 
 @end

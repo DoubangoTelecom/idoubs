@@ -1,4 +1,5 @@
 #import "NgnSipStack.h"
+#import "NgnStringUtils.h"
 
 #include "tsk_debug.h"
 
@@ -29,12 +30,16 @@
 	[super dealloc];
 }
 
+-(STACK_STATE_T) state{
+	return [self getState];
+}
+
 -(STACK_STATE_T) getState{
 	return mState;
 }
 
--(void) setState: (STACK_STATE_T)state{
-	mState = state;
+-(void) setState: (STACK_STATE_T)newState{
+	mState = newState;
 }
 
 -(BOOL) start{
@@ -230,12 +235,23 @@
 	return nil;
 }
 
+-(NSString*)getPreferredIdentity{
+	char* _preferredIdentity = _mSipStack->getPreferredIdentity();
+	NSString* preferredIdentity = [NgnStringUtils toNSString: _preferredIdentity];
+	TSK_FREE(_preferredIdentity);
+	return preferredIdentity;
+}
+
 -(BOOL) isValid{
 	if(_mSipStack){
 		return _mSipStack->isValid();
 	}
 	TSK_DEBUG_ERROR("Null embedded SipStack");
 	return FALSE;
+}
+
+-(SipStack*) getStack{
+	return _mSipStack;
 }
 
 -(BOOL) stop{
