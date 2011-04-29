@@ -6,9 +6,6 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-	NgnEngine* pEngine = [NgnEngine getInstance];
-	[pEngine start];
 	
     // Override point for customization after application launch
     [window makeKeyAndVisible];
