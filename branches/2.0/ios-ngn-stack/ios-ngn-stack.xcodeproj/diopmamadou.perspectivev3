@@ -267,13 +267,18 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>EC83BA0F1369908500DD3355</string>
+								<string>EC83BA3A1369918A00DD3355</string>
+								<string>EC83BA391369917C00DD3355</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>9</integer>
+									<integer>4</integer>
+									<integer>2</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -312,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TestRegistration.mm</string>
+								<string>TestVideoCall.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TestRegistration.mm</string>
+										<string>TestVideoCall.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC6AD649136B322100617B95</string>
+										<string>EC6AD64E136B357800617B95</string>
 										<key>history</key>
 										<array>
 											<string>EC6AD3B9136AC82D00617B95</string>
@@ -359,7 +364,9 @@
 											<string>EC6AD61C136B2C1D00617B95</string>
 											<string>EC6AD621136B2C4400617B95</string>
 											<string>EC6AD639136B30FD00617B95</string>
-											<string>EC6AD63A136B30FD00617B95</string>
+											<string>EC6AD64B136B357800617B95</string>
+											<string>EC6AD64C136B357800617B95</string>
+											<string>EC6AD64D136B357800617B95</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

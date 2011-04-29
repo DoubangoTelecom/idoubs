@@ -8,7 +8,7 @@
 			D2AAC07D0554694100DB518D /* ios-ngn-stack */,
 		);
 		breakpoints = (
-			EC83BB1F1369A8C700DD3355 /* TestAudioCall.mm:14 */,
+			EC83BB1F1369A8C700DD3355 /* TestAudioCall.mm:11 */,
 		);
 		codeSenseManager = ECFD239A135D510C00E6A9A3 /* Code sense */;
 		executables = (
@@ -471,6 +471,10 @@
 			EC6AD643136B315A00617B95 /* PBXTextBookmark */ = EC6AD643136B315A00617B95 /* PBXTextBookmark */;
 			EC6AD646136B31BE00617B95 /* PBXTextBookmark */ = EC6AD646136B31BE00617B95 /* PBXTextBookmark */;
 			EC6AD649136B322100617B95 /* PBXTextBookmark */ = EC6AD649136B322100617B95 /* PBXTextBookmark */;
+			EC6AD64B136B357800617B95 /* PBXTextBookmark */ = EC6AD64B136B357800617B95 /* PBXTextBookmark */;
+			EC6AD64C136B357800617B95 /* PBXTextBookmark */ = EC6AD64C136B357800617B95 /* PBXTextBookmark */;
+			EC6AD64D136B357800617B95 /* PBXTextBookmark */ = EC6AD64D136B357800617B95 /* PBXTextBookmark */;
+			EC6AD64E136B357800617B95 /* PBXTextBookmark */ = EC6AD64E136B357800617B95 /* PBXTextBookmark */;
 			EC83BA63136995ED00DD3355 = EC83BA63136995ED00DD3355 /* PBXTextBookmark */;
 			EC83BA64136995ED00DD3355 = EC83BA64136995ED00DD3355 /* PBXTextBookmark */;
 			EC83BA65136995ED00DD3355 = EC83BA65136995ED00DD3355 /* PBXTextBookmark */;
@@ -3750,6 +3754,46 @@
 		vrLen = 1079;
 		vrLoc = 0;
 	};
+	EC6AD64B136B357800617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC83BA4E1369945B00DD3355 /* TestRegistration.mm */;
+		name = "TestRegistration.mm: 8";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 1079;
+		vrLoc = 0;
+	};
+	EC6AD64C136B357800617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC83BAF813699C5D00DD3355 /* TestAudioCall.mm */;
+		name = "TestAudioCall.mm: 8";
+		rLen = 0;
+		rLoc = 175;
+		rType = 0;
+		vrLen = 414;
+		vrLoc = 0;
+	};
+	EC6AD64D136B357800617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC83BAF113699C4B00DD3355 /* TestVideoCall.mm */;
+		name = "TestVideoCall.mm: 14";
+		rLen = 0;
+		rLoc = 263;
+		rType = 0;
+		vrLen = 484;
+		vrLoc = 0;
+	};
+	EC6AD64E136B357800617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC83BAF113699C4B00DD3355 /* TestVideoCall.mm */;
+		name = "TestVideoCall.mm: 8";
+		rLen = 0;
+		rLoc = 171;
+		rType = 0;
+		vrLen = 410;
+		vrLoc = 0;
+	};
 	EC83B77C1369768A00DD3355 /* iOSNgnStack.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1080, 465}}";
@@ -3924,9 +3968,9 @@
 	};
 	EC83BAF113699C4B00DD3355 /* TestVideoCall.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 299}}";
-			sepNavSelRange = "{337, 0}";
-			sepNavVisRange = "{0, 348}";
+			sepNavIntBoundsRect = "{{0, 0}, {1080, 458}}";
+			sepNavSelRange = "{171, 0}";
+			sepNavVisRange = "{0, 410}";
 			sepNavWindowFrame = "{{222, 126}, {750, 558}}";
 		};
 	};
@@ -3939,9 +3983,9 @@
 	};
 	EC83BAF813699C5D00DD3355 /* TestAudioCall.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1080, 416}}";
-			sepNavSelRange = "{182, 63}";
-			sepNavVisRange = "{0, 484}";
+			sepNavIntBoundsRect = "{{0, 0}, {1080, 458}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{0, 414}";
 		};
 	};
 	EC83BAFA13699C5D00DD3355 /* main.m */ = {
@@ -3951,7 +3995,7 @@
 			sepNavVisRange = "{0, 224}";
 		};
 	};
-	EC83BB1F1369A8C700DD3355 /* TestAudioCall.mm:14 */ = {
+	EC83BB1F1369A8C700DD3355 /* TestAudioCall.mm:11 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3963,7 +4007,7 @@
 		functionName = "-applicationDidFinishLaunching:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 14;
+		lineNumber = 11;
 		modificationTime = 325792228.884471;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
