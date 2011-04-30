@@ -38,6 +38,35 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		EC6AD5C3136B1BDB00617B95 /* NgnStackEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6AD5C1136B1BDB00617B95 /* NgnStackEventArgs.h */; };
 		EC6AD5C4136B1BDB00617B95 /* NgnStackEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */; };
+		EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */; };
+		EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */; };
+		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
+		EC81BD31136C57630068BCB4 /* tdav_producer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */; };
+		EC81BD61136C5BA20068BCB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD5C136C5BA20068BCB4 /* main.m */; };
+		EC81BD62136C5BA20068BCB4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC81BD5D136C5BA20068BCB4 /* MainWindow.xib */; };
+		EC81BD63136C5BA20068BCB4 /* TestAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD5F136C5BA20068BCB4 /* TestAudioUnit.mm */; };
+		EC81BDE7136C73CF0068BCB4 /* tdav_consumer_audiounit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BDE6136C73CF0068BCB4 /* tdav_consumer_audiounit.h */; };
+		EC81BDE9136C73DF0068BCB4 /* tdav_consumer_audiounit.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BDE8136C73DF0068BCB4 /* tdav_consumer_audiounit.c */; };
+		EC81BDEB136C73F70068BCB4 /* tdav_producer_audiounit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BDEA136C73F70068BCB4 /* tdav_producer_audiounit.h */; };
+		EC81BDED136C74090068BCB4 /* tdav_producer_audiounit.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */; };
+		EC81BDEF136C74220068BCB4 /* tdav_audiounit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BDEE136C74220068BCB4 /* tdav_audiounit.h */; };
+		EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */; };
+		EC81BE54136C8E140068BCB4 /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */; };
+		EC81BE55136C8E140068BCB4 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
+		EC81BE56136C8E140068BCB4 /* libtinyIPSec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2767135E79B800E6A9A3 /* libtinyIPSec.a */; };
+		EC81BE57136C8E140068BCB4 /* libtinyMEDIA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2CDE135E7C7D00E6A9A3 /* libtinyMEDIA.a */; };
+		EC81BE58136C8E140068BCB4 /* libtinyMSRP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD279B135E7A0200E6A9A3 /* libtinyMSRP.a */; };
+		EC81BE59136C8E140068BCB4 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
+		EC81BE5A136C8E140068BCB4 /* libtinyRTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2693135D5DDD00E6A9A3 /* libtinyRTP.a */; };
+		EC81BE5B136C8E140068BCB4 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
+		EC81BE5C136C8E140068BCB4 /* libtinySDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD25F7135D5CD100E6A9A3 /* libtinySDP.a */; };
+		EC81BE5D136C8E140068BCB4 /* libtinySIGCOMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2D5A135E7CD800E6A9A3 /* libtinySIGCOMP.a */; };
+		EC81BE5E136C8E140068BCB4 /* libtinySIP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E9A135E7D6D00E6A9A3 /* libtinySIP.a */; };
+		EC81BE5F136C8E140068BCB4 /* libtinySMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E02135E7D1000E6A9A3 /* libtinySMS.a */; };
+		EC81BE60136C8E140068BCB4 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E5B135E7D3600E6A9A3 /* libtinyXCAP.a */; };
+		EC81BE63136C8E3B0068BCB4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
+		EC81BE72136C8EF80068BCB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		EC81BE9D136C8FE60068BCB4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC83B77D1369768A00DD3355 /* iOSNgnStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EC83B77C1369768A00DD3355 /* iOSNgnStack.h */; };
 		EC83BA401369927100DD3355 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC83BA3F1369927100DD3355 /* MainWindow.xib */; };
 		EC83BA421369928200DD3355 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC83BA411369928200DD3355 /* MainWindow.xib */; };
@@ -915,8 +944,6 @@
 		ECFD315F135E7D8900E6A9A3 /* tsip_ssession.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD3035135E7D8900E6A9A3 /* tsip_ssession.c */; };
 		ECFD3160135E7D8900E6A9A3 /* tsip_timers.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD3036135E7D8900E6A9A3 /* tsip_timers.c */; };
 		ECFD3161135E7D8900E6A9A3 /* tsip_uri.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD3037135E7D8900E6A9A3 /* tsip_uri.c */; };
-		ECFD3207135E7DBC00E6A9A3 /* tdav_consumer_coreaudio.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD317B135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.h */; };
-		ECFD3208135E7DBC00E6A9A3 /* tdav_producer_coreaudio.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD317C135E7DBB00E6A9A3 /* tdav_producer_coreaudio.h */; };
 		ECFD3209135E7DBC00E6A9A3 /* tdav_consumer_dsound.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD317E135E7DBB00E6A9A3 /* tdav_consumer_dsound.h */; };
 		ECFD320A135E7DBC00E6A9A3 /* tdav_producer_dsound.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD317F135E7DBB00E6A9A3 /* tdav_producer_dsound.h */; };
 		ECFD320B135E7DBC00E6A9A3 /* tdav_consumer_audio.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD3181135E7DBB00E6A9A3 /* tdav_consumer_audio.h */; };
@@ -956,8 +983,6 @@
 		ECFD322D135E7DBC00E6A9A3 /* tdav_session_video.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD31B9135E7DBB00E6A9A3 /* tdav_session_video.h */; };
 		ECFD322E135E7DBC00E6A9A3 /* tinydav.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD31BB135E7DBB00E6A9A3 /* tinydav.h */; };
 		ECFD322F135E7DBC00E6A9A3 /* tinydav_config.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD31BC135E7DBB00E6A9A3 /* tinydav_config.h */; };
-		ECFD3230135E7DBC00E6A9A3 /* tdav_consumer_coreaudio.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31C1135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.c */; };
-		ECFD3231135E7DBC00E6A9A3 /* tdav_producer_coreaudio.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31C2135E7DBB00E6A9A3 /* tdav_producer_coreaudio.c */; };
 		ECFD3232135E7DBC00E6A9A3 /* tdav_consumer_dsound.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31C4135E7DBB00E6A9A3 /* tdav_consumer_dsound.c */; };
 		ECFD3233135E7DBC00E6A9A3 /* tdav_producer_dsound.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31C5135E7DBB00E6A9A3 /* tdav_producer_dsound.c */; };
 		ECFD3234135E7DBC00E6A9A3 /* tdav_consumer_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */; };
@@ -1052,6 +1077,97 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC81BE3A136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			remoteInfo = tinySAK;
+		};
+		EC81BE3C136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			remoteInfo = tinyNET;
+		};
+		EC81BE3E136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			remoteInfo = tinySDP;
+		};
+		EC81BE40136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			remoteInfo = tinyRTP;
+		};
+		EC81BE42136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			remoteInfo = tinyIPSec;
+		};
+		EC81BE44136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			remoteInfo = tinyMSRP;
+		};
+		EC81BE46136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			remoteInfo = tinyHTTP;
+		};
+		EC81BE48136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			remoteInfo = tinyMEDIA;
+		};
+		EC81BE4A136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC81BE4C136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			remoteInfo = tinySMS;
+		};
+		EC81BE4E136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			remoteInfo = tinyXCAP;
+		};
+		EC81BE50136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			remoteInfo = tinySIP;
+		};
+		EC81BE52136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			remoteInfo = tinyDAV;
+		};
 		EC83BBFB1369C00E00DD3355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -1592,6 +1708,26 @@
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6AD5C1136B1BDB00617B95 /* NgnStackEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnStackEventArgs.h; sourceTree = "<group>"; };
 		EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnStackEventArgs.m; sourceTree = "<group>"; };
+		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
+		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
+		EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audioqueue.c; sourceTree = "<group>"; };
+		EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_producer_audioqueue.c; sourceTree = "<group>"; };
+		EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testAudioUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC81BD5B136C5BA20068BCB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC81BD5C136C5BA20068BCB4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC81BD5D136C5BA20068BCB4 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		EC81BD5E136C5BA20068BCB4 /* TestAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAudioUnit.h; sourceTree = "<group>"; };
+		EC81BD5F136C5BA20068BCB4 /* TestAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestAudioUnit.mm; sourceTree = "<group>"; };
+		EC81BDE6136C73CF0068BCB4 /* tdav_consumer_audiounit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audiounit.h; sourceTree = "<group>"; };
+		EC81BDE8136C73DF0068BCB4 /* tdav_consumer_audiounit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audiounit.c; sourceTree = "<group>"; };
+		EC81BDEA136C73F70068BCB4 /* tdav_producer_audiounit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audiounit.h; sourceTree = "<group>"; };
+		EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_producer_audiounit.c; sourceTree = "<group>"; };
+		EC81BDEE136C74220068BCB4 /* tdav_audiounit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_audiounit.h; sourceTree = "<group>"; };
+		EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_audiounit.c; sourceTree = "<group>"; };
+		EC81BE6B136C8ECA0068BCB4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EC81BE76136C8F3B0068BCB4 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EC83B77C1369768A00DD3355 /* iOSNgnStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnStack.h; sourceTree = "<group>"; };
 		EC83BA14136990B700DD3355 /* testRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC83BA1C136990C800DD3355 /* testAudioCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testAudioCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2588,8 +2724,6 @@
 		ECFD3036135E7D8900E6A9A3 /* tsip_timers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_timers.c; sourceTree = "<group>"; };
 		ECFD3037135E7D8900E6A9A3 /* tsip_uri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_uri.c; sourceTree = "<group>"; };
 		ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyDAV.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECFD317B135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_coreaudio.h; sourceTree = "<group>"; };
-		ECFD317C135E7DBB00E6A9A3 /* tdav_producer_coreaudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_coreaudio.h; sourceTree = "<group>"; };
 		ECFD317E135E7DBB00E6A9A3 /* tdav_consumer_dsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_dsound.h; sourceTree = "<group>"; };
 		ECFD317F135E7DBB00E6A9A3 /* tdav_producer_dsound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_dsound.h; sourceTree = "<group>"; };
 		ECFD3181135E7DBB00E6A9A3 /* tdav_consumer_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audio.h; sourceTree = "<group>"; };
@@ -2629,8 +2763,6 @@
 		ECFD31B9135E7DBB00E6A9A3 /* tdav_session_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_video.h; sourceTree = "<group>"; };
 		ECFD31BB135E7DBB00E6A9A3 /* tinydav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinydav.h; sourceTree = "<group>"; };
 		ECFD31BC135E7DBB00E6A9A3 /* tinydav_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinydav_config.h; sourceTree = "<group>"; };
-		ECFD31C1135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_coreaudio.c; sourceTree = "<group>"; };
-		ECFD31C2135E7DBB00E6A9A3 /* tdav_producer_coreaudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_producer_coreaudio.c; sourceTree = "<group>"; };
 		ECFD31C4135E7DBB00E6A9A3 /* tdav_consumer_dsound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_dsound.c; sourceTree = "<group>"; };
 		ECFD31C5135E7DBB00E6A9A3 /* tdav_producer_dsound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_producer_dsound.c; sourceTree = "<group>"; };
 		ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audio.c; sourceTree = "<group>"; };
@@ -2727,6 +2859,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC81BD4E136C5B3D0068BCB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC81BE54136C8E140068BCB4 /* libtinyDAV.a in Frameworks */,
+				EC81BE55136C8E140068BCB4 /* libtinyHTTP.a in Frameworks */,
+				EC81BE56136C8E140068BCB4 /* libtinyIPSec.a in Frameworks */,
+				EC81BE57136C8E140068BCB4 /* libtinyMEDIA.a in Frameworks */,
+				EC81BE58136C8E140068BCB4 /* libtinyMSRP.a in Frameworks */,
+				EC81BE59136C8E140068BCB4 /* libtinyNET.a in Frameworks */,
+				EC81BE5A136C8E140068BCB4 /* libtinyRTP.a in Frameworks */,
+				EC81BE5B136C8E140068BCB4 /* libtinySAK.a in Frameworks */,
+				EC81BE5C136C8E140068BCB4 /* libtinySDP.a in Frameworks */,
+				EC81BE5D136C8E140068BCB4 /* libtinySIGCOMP.a in Frameworks */,
+				EC81BE5E136C8E140068BCB4 /* libtinySIP.a in Frameworks */,
+				EC81BE5F136C8E140068BCB4 /* libtinySMS.a in Frameworks */,
+				EC81BE60136C8E140068BCB4 /* libtinyXCAP.a in Frameworks */,
+				EC81BE63136C8E3B0068BCB4 /* CFNetwork.framework in Frameworks */,
+				EC81BE72136C8EF80068BCB4 /* AVFoundation.framework in Frameworks */,
+				EC81BE9D136C8FE60068BCB4 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2938,6 +3093,7 @@
 				EC83BA14136990B700DD3355 /* testRegistration.app */,
 				EC83BA1C136990C800DD3355 /* testAudioCall.app */,
 				EC83BA27136990DA00DD3355 /* testVideoCall.app */,
+				EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2953,6 +3109,10 @@
 				034768DFFF38A50411DB9C8B /* Products */,
 				EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */,
 				EC83BC3D1369C57E00DD3355 /* libresolv.dylib */,
+				EC81BE6B136C8ECA0068BCB4 /* CoreAudio.framework */,
+				EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */,
+				EC81BE76136C8F3B0068BCB4 /* AudioUnit.framework */,
+				EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */,
 			);
 			name = "ios-ngn-stack";
 			sourceTree = "<group>";
@@ -2973,9 +3133,75 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		EC81BD59136C5B570068BCB4 /* testAudioUnit */ = {
+			isa = PBXGroup;
+			children = (
+				EC81BD5B136C5BA20068BCB4 /* Info.plist */,
+				EC81BD5C136C5BA20068BCB4 /* main.m */,
+				EC81BD5D136C5BA20068BCB4 /* MainWindow.xib */,
+				EC81BD5E136C5BA20068BCB4 /* TestAudioUnit.h */,
+				EC81BD5F136C5BA20068BCB4 /* TestAudioUnit.mm */,
+			);
+			name = testAudioUnit;
+			path = ../testAudioUnit;
+			sourceTree = SOURCE_ROOT;
+		};
+		EC81BDA8136C6BC00068BCB4 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32B4135E824700E6A9A3 /* ActionConfig.h */,
+				ECFD32B6135E824700E6A9A3 /* AudioResampler.h */,
+				ECFD32B7135E824700E6A9A3 /* Common.h */,
+				ECFD32B9135E824700E6A9A3 /* DDebug.h */,
+				ECFD32BB135E824700E6A9A3 /* MediaContent.h */,
+				ECFD32BD135E824700E6A9A3 /* MediaSessionMgr.h */,
+				ECFD32BF135E824700E6A9A3 /* Msrp.h */,
+				ECFD32C2135E824700E6A9A3 /* ProxyConsumer.h */,
+				ECFD32C4135E824700E6A9A3 /* ProxyPluginMgr.h */,
+				ECFD32C6135E824700E6A9A3 /* ProxyProducer.h */,
+				ECFD32C8135E824700E6A9A3 /* SafeObject.h */,
+				ECFD32CA135E824700E6A9A3 /* SipCallback.h */,
+				ECFD32CC135E824700E6A9A3 /* SipEvent.h */,
+				ECFD32CE135E824700E6A9A3 /* SipMessage.h */,
+				ECFD32D0135E824700E6A9A3 /* SipSession.h */,
+				ECFD32D2135E824700E6A9A3 /* SipStack.h */,
+				ECFD32D5135E824700E6A9A3 /* SipUri.h */,
+				ECFD32D8135E824700E6A9A3 /* SMSEncoder.h */,
+				ECFD32D9135E824700E6A9A3 /* tinyWRAP_config.h */,
+				ECFD32DC135E824700E6A9A3 /* Xcap.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		EC81BDA9136C6BC60068BCB4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32DB135E824700E6A9A3 /* Xcap.cxx */,
+				ECFD32B3135E824700E6A9A3 /* ActionConfig.cxx */,
+				ECFD32B5135E824700E6A9A3 /* AudioResampler.cxx */,
+				ECFD32B8135E824700E6A9A3 /* DDebug.cxx */,
+				ECFD32BA135E824700E6A9A3 /* MediaContent.cxx */,
+				ECFD32BC135E824700E6A9A3 /* MediaSessionMgr.cxx */,
+				ECFD32BE135E824700E6A9A3 /* Msrp.cxx */,
+				ECFD32C1135E824700E6A9A3 /* ProxyConsumer.cxx */,
+				ECFD32C3135E824700E6A9A3 /* ProxyPluginMgr.cxx */,
+				ECFD32C5135E824700E6A9A3 /* ProxyProducer.cxx */,
+				ECFD32C7135E824700E6A9A3 /* SafeObject.cxx */,
+				ECFD32C9135E824700E6A9A3 /* SipCallback.cxx */,
+				ECFD32CB135E824700E6A9A3 /* SipEvent.cxx */,
+				ECFD32CD135E824700E6A9A3 /* SipMessage.cxx */,
+				ECFD32CF135E824700E6A9A3 /* SipSession.cxx */,
+				ECFD32D1135E824700E6A9A3 /* SipStack.cxx */,
+				ECFD32D4135E824700E6A9A3 /* SipUri.cxx */,
+				ECFD32D7135E824700E6A9A3 /* SMSEncoder.cxx */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		EC83BA0F1369908500DD3355 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EC81BD59136C5B570068BCB4 /* testAudioUnit */,
 				EC83BA3A1369918A00DD3355 /* testVideoCall */,
 				EC83BA391369917C00DD3355 /* testAudioCall */,
 				EC83BA381369916D00DD3355 /* testRegistration */,
@@ -4954,8 +5180,11 @@
 		ECFD317A135E7DBB00E6A9A3 /* coreaudio */ = {
 			isa = PBXGroup;
 			children = (
-				ECFD317B135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.h */,
-				ECFD317C135E7DBB00E6A9A3 /* tdav_producer_coreaudio.h */,
+				EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */,
+				EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */,
+				EC81BDE6136C73CF0068BCB4 /* tdav_consumer_audiounit.h */,
+				EC81BDEA136C73F70068BCB4 /* tdav_producer_audiounit.h */,
+				EC81BDEE136C74220068BCB4 /* tdav_audiounit.h */,
 			);
 			path = coreaudio;
 			sourceTree = "<group>";
@@ -5224,8 +5453,11 @@
 		ECFD31C0135E7DBB00E6A9A3 /* coreaudio */ = {
 			isa = PBXGroup;
 			children = (
-				ECFD31C1135E7DBB00E6A9A3 /* tdav_consumer_coreaudio.c */,
-				ECFD31C2135E7DBB00E6A9A3 /* tdav_producer_coreaudio.c */,
+				EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */,
+				EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */,
+				EC81BDE8136C73DF0068BCB4 /* tdav_consumer_audiounit.c */,
+				EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */,
+				EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */,
 			);
 			path = coreaudio;
 			sourceTree = "<group>";
@@ -5454,44 +5686,8 @@
 		ECFD32B1135E821900E6A9A3 /* tinyWRAP */ = {
 			isa = PBXGroup;
 			children = (
-				ECFD32B3135E824700E6A9A3 /* ActionConfig.cxx */,
-				ECFD32B4135E824700E6A9A3 /* ActionConfig.h */,
-				ECFD32B5135E824700E6A9A3 /* AudioResampler.cxx */,
-				ECFD32B6135E824700E6A9A3 /* AudioResampler.h */,
-				ECFD32B7135E824700E6A9A3 /* Common.h */,
-				ECFD32B8135E824700E6A9A3 /* DDebug.cxx */,
-				ECFD32B9135E824700E6A9A3 /* DDebug.h */,
-				ECFD32BA135E824700E6A9A3 /* MediaContent.cxx */,
-				ECFD32BB135E824700E6A9A3 /* MediaContent.h */,
-				ECFD32BC135E824700E6A9A3 /* MediaSessionMgr.cxx */,
-				ECFD32BD135E824700E6A9A3 /* MediaSessionMgr.h */,
-				ECFD32BE135E824700E6A9A3 /* Msrp.cxx */,
-				ECFD32BF135E824700E6A9A3 /* Msrp.h */,
-				ECFD32C1135E824700E6A9A3 /* ProxyConsumer.cxx */,
-				ECFD32C2135E824700E6A9A3 /* ProxyConsumer.h */,
-				ECFD32C3135E824700E6A9A3 /* ProxyPluginMgr.cxx */,
-				ECFD32C4135E824700E6A9A3 /* ProxyPluginMgr.h */,
-				ECFD32C5135E824700E6A9A3 /* ProxyProducer.cxx */,
-				ECFD32C6135E824700E6A9A3 /* ProxyProducer.h */,
-				ECFD32C7135E824700E6A9A3 /* SafeObject.cxx */,
-				ECFD32C8135E824700E6A9A3 /* SafeObject.h */,
-				ECFD32C9135E824700E6A9A3 /* SipCallback.cxx */,
-				ECFD32CA135E824700E6A9A3 /* SipCallback.h */,
-				ECFD32CB135E824700E6A9A3 /* SipEvent.cxx */,
-				ECFD32CC135E824700E6A9A3 /* SipEvent.h */,
-				ECFD32CD135E824700E6A9A3 /* SipMessage.cxx */,
-				ECFD32CE135E824700E6A9A3 /* SipMessage.h */,
-				ECFD32CF135E824700E6A9A3 /* SipSession.cxx */,
-				ECFD32D0135E824700E6A9A3 /* SipSession.h */,
-				ECFD32D1135E824700E6A9A3 /* SipStack.cxx */,
-				ECFD32D2135E824700E6A9A3 /* SipStack.h */,
-				ECFD32D4135E824700E6A9A3 /* SipUri.cxx */,
-				ECFD32D5135E824700E6A9A3 /* SipUri.h */,
-				ECFD32D7135E824700E6A9A3 /* SMSEncoder.cxx */,
-				ECFD32D8135E824700E6A9A3 /* SMSEncoder.h */,
-				ECFD32D9135E824700E6A9A3 /* tinyWRAP_config.h */,
-				ECFD32DB135E824700E6A9A3 /* Xcap.cxx */,
-				ECFD32DC135E824700E6A9A3 /* Xcap.h */,
+				EC81BDA9136C6BC60068BCB4 /* src */,
+				EC81BDA8136C6BC00068BCB4 /* include */,
 			);
 			name = tinyWRAP;
 			sourceTree = "<group>";
@@ -5541,6 +5737,8 @@
 				EC83B77D1369768A00DD3355 /* iOSNgnStack.h in Headers */,
 				EC83BD861369D05B00DD3355 /* iOSNgnConfig.h in Headers */,
 				EC6AD5C3136B1BDB00617B95 /* NgnStackEventArgs.h in Headers */,
+				EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */,
+				EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6023,8 +6221,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD3207135E7DBC00E6A9A3 /* tdav_consumer_coreaudio.h in Headers */,
-				ECFD3208135E7DBC00E6A9A3 /* tdav_producer_coreaudio.h in Headers */,
 				ECFD3209135E7DBC00E6A9A3 /* tdav_consumer_dsound.h in Headers */,
 				ECFD320A135E7DBC00E6A9A3 /* tdav_producer_dsound.h in Headers */,
 				ECFD320B135E7DBC00E6A9A3 /* tdav_consumer_audio.h in Headers */,
@@ -6064,6 +6260,9 @@
 				ECFD322D135E7DBC00E6A9A3 /* tdav_session_video.h in Headers */,
 				ECFD322E135E7DBC00E6A9A3 /* tinydav.h in Headers */,
 				ECFD322F135E7DBC00E6A9A3 /* tinydav_config.h in Headers */,
+				EC81BDE7136C73CF0068BCB4 /* tdav_consumer_audiounit.h in Headers */,
+				EC81BDEB136C73F70068BCB4 /* tdav_producer_audiounit.h in Headers */,
+				EC81BDEF136C74220068BCB4 /* tdav_audiounit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6115,6 +6314,36 @@
 			productName = "ios-ngn-stack";
 			productReference = D2AAC07E0554694100DB518D /* libios_ngn_stack.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC81BD58136C5B3E0068BCB4 /* Build configuration list for PBXNativeTarget "testAudioUnit" */;
+			buildPhases = (
+				EC81BD4C136C5B3D0068BCB4 /* Resources */,
+				EC81BD4D136C5B3D0068BCB4 /* Sources */,
+				EC81BD4E136C5B3D0068BCB4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC81BE3B136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE3D136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE3F136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE41136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE43136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE45136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE47136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE49136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE4B136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE4D136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE4F136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE51136C8E0C0068BCB4 /* PBXTargetDependency */,
+				EC81BE53136C8E0C0068BCB4 /* PBXTargetDependency */,
+			);
+			name = testAudioUnit;
+			productName = testAudioUnit;
+			productReference = EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */;
+			productType = "com.apple.product-type.application";
 		};
 		EC83BA13136990B700DD3355 /* testRegistration */ = {
 			isa = PBXNativeTarget;
@@ -6507,11 +6736,20 @@
 				EC83BA13136990B700DD3355 /* testRegistration */,
 				EC83BA1B136990C800DD3355 /* testAudioCall */,
 				EC83BA26136990DA00DD3355 /* testVideoCall */,
+				EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC81BD4C136C5B3D0068BCB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC81BD62136C5BA20068BCB4 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC83BA10136990B700DD3355 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -6567,6 +6805,15 @@
 				ECF201431360F8C300B0BFEB /* NgnSipPreferences.mm in Sources */,
 				ECF201471360F8DF00B0BFEB /* NgnSubscriptionSession.mm in Sources */,
 				EC6AD5C4136B1BDB00617B95 /* NgnStackEventArgs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC81BD4D136C5B3D0068BCB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC81BD61136C5BA20068BCB4 /* main.m in Sources */,
+				EC81BD63136C5BA20068BCB4 /* TestAudioUnit.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7054,8 +7301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD3230135E7DBC00E6A9A3 /* tdav_consumer_coreaudio.c in Sources */,
-				ECFD3231135E7DBC00E6A9A3 /* tdav_producer_coreaudio.c in Sources */,
 				ECFD3232135E7DBC00E6A9A3 /* tdav_consumer_dsound.c in Sources */,
 				ECFD3233135E7DBC00E6A9A3 /* tdav_producer_dsound.c in Sources */,
 				ECFD3234135E7DBC00E6A9A3 /* tdav_consumer_audio.c in Sources */,
@@ -7093,6 +7338,11 @@
 				ECFD3254135E7DBC00E6A9A3 /* tdav_converter_video.c in Sources */,
 				ECFD3255135E7DBC00E6A9A3 /* tdav_runnable_video.c in Sources */,
 				ECFD3256135E7DBC00E6A9A3 /* tdav_session_video.c in Sources */,
+				EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */,
+				EC81BD31136C57630068BCB4 /* tdav_producer_audioqueue.c in Sources */,
+				EC81BDE9136C73DF0068BCB4 /* tdav_consumer_audiounit.c in Sources */,
+				EC81BDED136C74090068BCB4 /* tdav_producer_audiounit.c in Sources */,
+				EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7124,6 +7374,71 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC81BE3B136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC81BE3A136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE3D136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC81BE3C136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE3F136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC81BE3E136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE41136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			targetProxy = EC81BE40136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE43136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC81BE42136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE45136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC81BE44136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE47136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			targetProxy = EC81BE46136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE49136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC81BE48136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE4B136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			targetProxy = EC81BE4A136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE4D136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			targetProxy = EC81BE4C136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE4F136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			targetProxy = EC81BE4E136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE51136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			targetProxy = EC81BE50136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
+		EC81BE53136C8E0C0068BCB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			targetProxy = EC81BE52136C8E0C0068BCB4 /* PBXContainerItemProxy */;
+		};
 		EC83BBFC1369C00E00DD3355 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* ios-ngn-stack */;
@@ -7553,6 +7868,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DHAVE_COREAUDIO_AUDIO_UNIT=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -7569,6 +7885,56 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
+			};
+			name = Release;
+		};
+		EC81BD53136C5B3E0068BCB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				HEADER_SEARCH_PATHS = $DOUBANGO_INCLUDES;
+				INFOPLIST_FILE = ../testAudioUnit/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testAudioUnit;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC81BD54136C5B3E0068BCB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "testAudioUnit-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testAudioUnit;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -8175,6 +8541,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC81BD58136C5B3E0068BCB4 /* Build configuration list for PBXNativeTarget "testAudioUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC81BD53136C5B3E0068BCB4 /* Debug */,
+				EC81BD54136C5B3E0068BCB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

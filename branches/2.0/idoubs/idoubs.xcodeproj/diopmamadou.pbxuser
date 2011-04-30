@@ -2,8 +2,8 @@
 {
 	1D3623240D0F684500981E51 /* idoubsAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {663, 389}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1094, 441}}";
+			sepNavSelRange = "{326, 0}";
 			sepNavVisRange = "{0, 326}";
 		};
 	};
@@ -14,30 +14,12 @@
 		name = idoubsAppDelegate.m;
 		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/Classes/idoubsAppDelegate.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 1222}}";
-			sepNavSelRange = "{157, 1}";
-			sepNavVisRange = "{0, 1121}";
-		};
 	};
 	1D6058900D05DD3D006BFB54 /* idoubs */ = {
 		activeExec = 0;
 		executables = (
 			ECFD23AB135D519D00E6A9A3 /* idoubs */,
 		);
-	};
-	28216C950DB411BC00E5133A /* FirstViewController.h */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = sourcecode.c.h;
-		name = FirstViewController.h;
-		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/Classes/FirstViewController.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {503, 389}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 87}";
-		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
@@ -49,7 +31,6 @@
 		);
 		breakpoints = (
 			EC83B7861369785000DD3355 /* idoubsAppDelegate.m:17 */,
-			EC83B8AA13698D4D00DD3355 /* idoubsAppDelegate.mm:16 */,
 		);
 		codeSenseManager = ECFD23BB135D51A000E6A9A3 /* Code sense */;
 		executables = (
@@ -116,29 +97,69 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 325678275;
-			PBXWorkspaceStateSaveDate = 325678275;
+			PBXPerProjectTemplateStateSaveDate = 325860848;
+			PBXWorkspaceStateSaveDate = 325860848;
 		};
 		perUserProjectItems = {
-			EC83B7FC1369812100DD3355 /* PBXTextBookmark */ = EC83B7FC1369812100DD3355 /* PBXTextBookmark */;
-			EC83B7FD1369812100DD3355 /* PBXTextBookmark */ = EC83B7FD1369812100DD3355 /* PBXTextBookmark */;
-			EC83B7FE1369812100DD3355 /* PBXTextBookmark */ = EC83B7FE1369812100DD3355 /* PBXTextBookmark */;
-			EC83B7FF1369812100DD3355 /* PBXTextBookmark */ = EC83B7FF1369812100DD3355 /* PBXTextBookmark */;
-			EC83B8001369812100DD3355 /* PBXTextBookmark */ = EC83B8001369812100DD3355 /* PBXTextBookmark */;
-			EC83B85C13698B4900DD3355 /* PBXTextBookmark */ = EC83B85C13698B4900DD3355 /* PBXTextBookmark */;
-			EC83BB6A1369ADC400DD3355 /* PBXTextBookmark */ = EC83BB6A1369ADC400DD3355 /* PBXTextBookmark */;
-			EC83BDA11369E3F400DD3355 /* PBXTextBookmark */ = EC83BDA11369E3F400DD3355 /* PBXTextBookmark */;
-			EC8EBE71136860A300DC70DF /* PBXTextBookmark */ = EC8EBE71136860A300DC70DF /* PBXTextBookmark */;
-			EC8EBE72136860A300DC70DF /* PBXTextBookmark */ = EC8EBE72136860A300DC70DF /* PBXTextBookmark */;
-			EC8EBE76136860A300DC70DF /* PBXTextBookmark */ = EC8EBE76136860A300DC70DF /* PBXTextBookmark */;
-			EC8EBE78136860A300DC70DF /* PBXTextBookmark */ = EC8EBE78136860A300DC70DF /* PBXTextBookmark */;
-			EC8EBE7A136860A300DC70DF /* PBXTextBookmark */ = EC8EBE7A136860A300DC70DF /* PBXTextBookmark */;
-			EC8EBEAA13688E9800DC70DF /* PBXTextBookmark */ = EC8EBEAA13688E9800DC70DF /* PBXTextBookmark */;
+			EC6AD694136B3B5F00617B95 = EC6AD694136B3B5F00617B95 /* PBXTextBookmark */;
+			EC6AD69C136B52B600617B95 = EC6AD69C136B52B600617B95 /* PBXTextBookmark */;
+			EC7EF6D7136B5380006A1444 = EC7EF6D7136B5380006A1444 /* PBXTextBookmark */;
+			EC81BC6E136C3DF80068BCB4 /* PBXTextBookmark */ = EC81BC6E136C3DF80068BCB4 /* PBXTextBookmark */;
+			EC83B7FC1369812100DD3355 = EC83B7FC1369812100DD3355 /* PBXTextBookmark */;
+			EC83B7FD1369812100DD3355 = EC83B7FD1369812100DD3355 /* PBXTextBookmark */;
+			EC83B7FE1369812100DD3355 = EC83B7FE1369812100DD3355 /* PBXTextBookmark */;
+			EC83B7FF1369812100DD3355 = EC83B7FF1369812100DD3355 /* PBXTextBookmark */;
+			EC83B8001369812100DD3355 = EC83B8001369812100DD3355 /* PBXTextBookmark */;
+			EC83B85C13698B4900DD3355 = EC83B85C13698B4900DD3355 /* PBXTextBookmark */;
+			EC8EBE76136860A300DC70DF = EC8EBE76136860A300DC70DF /* PBXTextBookmark */;
+			EC8EBE78136860A300DC70DF = EC8EBE78136860A300DC70DF /* PBXTextBookmark */;
+			EC8EBE7A136860A300DC70DF = EC8EBE7A136860A300DC70DF /* PBXTextBookmark */;
+			EC8EBEAA13688E9800DC70DF = EC8EBEAA13688E9800DC70DF /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
 			SYMROOT = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/build;
 		};
+	};
+	EC6AD694136B3B5F00617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */;
+		name = "idoubsAppDelegate.mm: 18";
+		rLen = 0;
+		rLoc = 452;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 0;
+	};
+	EC6AD69C136B52B600617B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* idoubsAppDelegate.h */;
+		name = "idoubsAppDelegate.h: 13";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 0;
+	};
+	EC7EF6D7136B5380006A1444 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* idoubsAppDelegate.h */;
+		name = "idoubsAppDelegate.h: 13";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 0;
+	};
+	EC81BC6E136C3DF80068BCB4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* idoubsAppDelegate.h */;
+		name = "idoubsAppDelegate.h: 13";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 0;
 	};
 	EC83B7861369785000DD3355 /* idoubsAppDelegate.m:17 */ = {
 		isa = PBXFileBreakpoint;
@@ -153,15 +174,15 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 17;
-		modificationTime = 325696943.212128;
-		originalNumberOfMultipleMatches = 0;
+		modificationTime = 325864217.344746;
+		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 1300}}";
-			sepNavSelRange = "{311, 0}";
-			sepNavVisRange = "{0, 371}";
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1105}}";
+			sepNavSelRange = "{452, 0}";
+			sepNavVisRange = "{0, 1279}";
 		};
 	};
 	EC83B7FC1369812100DD3355 /* PBXTextBookmark */ = {
@@ -224,43 +245,6 @@
 		vrLen = 89;
 		vrLoc = 0;
 	};
-	EC83B8AA13698D4D00DD3355 /* idoubsAppDelegate.mm:16 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */;
-		functionName = "-application:didFinishLaunchingWithOptions:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 16;
-		modificationTime = 325696962.491819;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
-	EC83BB6A1369ADC400DD3355 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */;
-		name = "idoubsAppDelegate.mm: 16";
-		rLen = 0;
-		rLoc = 356;
-		rType = 0;
-		vrLen = 1060;
-		vrLoc = 0;
-	};
-	EC83BDA11369E3F400DD3355 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */;
-		name = "idoubsAppDelegate.mm: 16";
-		rLen = 0;
-		rLoc = 356;
-		rType = 0;
-		vrLen = 1061;
-		vrLoc = 0;
-	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
 	};
@@ -319,26 +303,6 @@
 			sepNavSelRange = "{438, 0}";
 			sepNavVisRange = "{0, 1037}";
 		};
-	};
-	EC8EBE71136860A300DC70DF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* idoubsAppDelegate.h */;
-		name = "idoubsAppDelegate.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 326;
-		vrLoc = 0;
-	};
-	EC8EBE72136860A300DC70DF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28216C950DB411BC00E5133A /* FirstViewController.h */;
-		name = "FirstViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 87;
-		vrLoc = 0;
 	};
 	EC8EBE76136860A300DC70DF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
