@@ -13,12 +13,12 @@
 //static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
 //static const BOOL kEnableEarlyIMS = TRUE;
 
-static const NSString* kProxyHost = @"212.123.76.12";
+static const NSString* kProxyHost = @"212.123.76.";
 static const int kProxyPort = 5060;
-static const NSString* kRealm = @"212.123.76.12";
-static const NSString* kPassword = @"zoncu";
+static const NSString* kRealm = @"212.123.76.";
+static const NSString* kPassword = @"xxxx";
 static const NSString* kPrivateIdentity = @"200006395544399062";
-static const NSString* kPublicIdentity = @"sip:200006395544399062@212.123.76.12";
+static const NSString* kPublicIdentity = @"sip:200006395544399062@212.123.76.";
 static const BOOL kEnableEarlyIMS = TRUE;
 
 @implementation TestRegistration(SipCallbackEvents)
