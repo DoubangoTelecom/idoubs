@@ -327,7 +327,7 @@ private
 	NgnNSLog(TAG, @"realm='%@', impu='%@', impi='%@'", sipPreferences.realm, sipPreferences.impu, sipPreferences.impi);
 	
 	if (sipStack == nil) {
-		sipStack = [[NgnSipStack alloc] initWithSipCallback:_mSipCallback andRealmUri:sipPreferences.realm andIMPIUri:sipPreferences.impu andIMPUUri:sipPreferences.impu];
+		sipStack = [[NgnSipStack alloc] initWithSipCallback:_mSipCallback andRealmUri:sipPreferences.realm andIMPIUri:sipPreferences.impi andIMPUUri:sipPreferences.impu];
 		//SipStack.setCodecs_2(mConfigurationService.getInt(NgnConfigurationEntry.MEDIA_CODECS, 
 		//												  NgnConfigurationEntry.DEFAULT_MEDIA_CODECS));
 	} else {

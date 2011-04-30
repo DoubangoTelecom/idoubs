@@ -11,12 +11,7 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
-	NgnEngine* engine = [NgnEngine getInstance];
-	[engine start];
-	
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Add the tab bar controller's view to the window and display.
     [window addSubview:tabBarController.view];
     [window makeKeyAndVisible];

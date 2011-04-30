@@ -5,14 +5,21 @@
 #define TAG kTAG
 
 // Credentials
-static const NSString* kProxyHost = @"proxy.sipthor.net";
-static const int kProxyPort = 5060;
-static const NSString* kRealm = @"sip2sip.info";
-static const NSString* kPassword = @"d3sb7j4fb8";
-static const NSString* kPrivateIdentity = @"2233392625";
-static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
-static const BOOL kEnableEarlyIMS = TRUE;
+//static const NSString* kProxyHost = @"proxy.sipthor.net";
+//static const int kProxyPort = 5060;
+//static const NSString* kRealm = @"sip2sip.info";
+//static const NSString* kPassword = @"d3sb7j4fb8";
+//static const NSString* kPrivateIdentity = @"2233392625";
+//static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
+//static const BOOL kEnableEarlyIMS = TRUE;
 
+static const NSString* kProxyHost = @"212.123.76.12";
+static const int kProxyPort = 5060;
+static const NSString* kRealm = @"212.123.76.12";
+static const NSString* kPassword = @"zoncu";
+static const NSString* kPrivateIdentity = @"200006395544399062";
+static const NSString* kPublicIdentity = @"sip:200006395544399062@212.123.76.12";
+static const BOOL kEnableEarlyIMS = TRUE;
 
 @implementation TestRegistration(SipCallbackEvents)
 
