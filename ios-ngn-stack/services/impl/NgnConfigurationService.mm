@@ -52,6 +52,12 @@
 	return self;
 }
 
+-(void)dealloc{
+	[self stop];
+	
+	[super dealloc];
+}
+
 //
 // INgnBaseService
 //

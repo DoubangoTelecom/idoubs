@@ -6,8 +6,7 @@
 @implementation NgnSipSession
 
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack{
-	self = [super init];
-	if(self){
+	if((self = [super init])){
 		mSipStack = [sipStack retain];
 		mOutgoing = FALSE;
 		mConnectionState = CONN_STATE_NONE;
@@ -18,12 +17,13 @@
 	return self;
 }
 -(void)dealloc{
-	[mSipStack dealloc];
+	[mSipStack release];
 	[mFromUri release];
     [mToUri release];
     [mCompId release];
     [mRemotePartyUri release];
     [mRemotePartyDisplayName release];
+	
 	[super dealloc];
 }
 

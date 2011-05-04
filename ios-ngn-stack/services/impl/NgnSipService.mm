@@ -6,6 +6,11 @@
 
 #import "NgnRegistrationEventArgs.h"
 #import "NgnStackEventArgs.h"
+#import "NgnInviteEventArgs.h"
+
+#import "NgnRegistrationSession.h"
+#import "NgnAVSession.h"
+#import "NgnMsrpSession.h"
 
 #import "SipCallback.h"
 #import "SipEvent.h"
@@ -32,10 +37,10 @@ public:
 	}
 	
 	/* == OnDialogEvent == */
-	int OnDialogEvent(const DialogEvent* e){
-		const char* _phrase = e->getPhrase();
-		const short _code = e->getCode();
-		const SipSession* _session = e->getBaseSession();
+	int OnDialogEvent(const DialogEvent* _e){
+		const char* _phrase = _e->getPhrase();
+		const short _code = _e->getCode();
+		const SipSession* _session = _e->getBaseSession();
 		
 		if(!_session){
 			TSK_DEBUG_ERROR("Null Sip session");
@@ -59,10 +64,24 @@ public:
 				// Registration
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
-							 initWithSessionId:_sessionId andEventType: REGISTRATION_INPROGRESS  andSipCode:_code  andSipPhrase: phrase];
+							 initWithSessionId:_sessionId 
+							 andEventType: REGISTRATION_INPROGRESS 
+							 andSipCode:_code  
+							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_CONNECTING];					
 					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
+				// Audio/Video/MSRP(Chat, FileTransfer)
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] 
+							 initWithSessionId: _sessionId andEvenType: 
+							 INVITE_EVENT_INPROGRESS andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase: phrase];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INPROGRESS];
+					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				
 				break;
 			}
 			
@@ -70,7 +89,6 @@ public:
 			case tsip_event_code_dialog_connected:
 			{
 				// Registration
-				// mammamia
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId andEventType: REGISTRATION_OK  andSipCode:_code  andSipPhrase: phrase];
@@ -82,6 +100,17 @@ public:
 					}
 					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
+				// Audio/Video/MSRP(Chat, FileTransfer)
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] 
+							 initWithSessionId: _sessionId andEvenType: 
+							 INVITE_EVENT_CONNECTED andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase: phrase];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
+					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INCALL];
+					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				
 				break;
 			}
 				
@@ -91,10 +120,24 @@ public:
 				// Registration
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
-							 initWithSessionId:_sessionId andEventType: UNREGISTRATION_INPROGRESS  andSipCode:_code  andSipPhrase: phrase];
+							 initWithSessionId:_sessionId 
+							 andEventType: UNREGISTRATION_INPROGRESS  
+							 andSipCode:_code  
+							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATING];					
 					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
+				// Audio/Video/MSRP(Chat, FileTransfer)
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] 
+							 initWithSessionId: _sessionId andEvenType: 
+							 INVITE_EVENT_TERMWAIT andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase: phrase];
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
+					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATING];
+					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				
 				break;
 			}
 				
@@ -104,12 +147,33 @@ public:
 				// Registration
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
-							 initWithSessionId:_sessionId andEventType: UNREGISTRATION_OK  andSipCode:_code  andSipPhrase: phrase];
+							 initWithSessionId:_sessionId 
+							 andEventType: UNREGISTRATION_OK  
+							 andSipCode:_code  
+							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATED];					
 					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 					/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
 					[mSipService stopStack];
 				}
+				// Audio/Video/MSRP(Chat, FileTransfer)
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] 
+							 initWithSessionId: _sessionId andEvenType: 
+							 INVITE_EVENT_TERMINATED andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase: phrase];
+					
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
+					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATED];
+					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					if([ngnSipSession isKindOfClass: [NgnAVSession class]]){
+						[NgnAVSession releaseSession: (NgnAVSession**)&ngnSipSession];
+					}
+					else if([ngnSipSession isKindOfClass: [NgnMsrpSession class]]){
+						[NgnMsrpSession releaseSession: (NgnMsrpSession**)&ngnSipSession];
+					}
+				}
+				
 				break;
 			}
 				
@@ -125,9 +189,9 @@ done:
 	}
 	
 	/* == OnStackEvent == */
-	int OnStackEvent(const StackEvent* e) {
-		short _code = e->getCode();
-		const char* _phrase = e->getPhrase();
+	int OnStackEvent(const StackEvent* _e) {
+		short _code = _e->getCode();
+		const char* _phrase = _e->getPhrase();
 		// This is a POSIX thread but thanks to multithreading
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		NgnStackEventTypes_t eventType = STACK_EVENT_NONE;
@@ -162,27 +226,113 @@ done:
 	}
 	
 	/* == OnInviteEvent == */
-	int OnInviteEvent(const InviteEvent* e) { 
-		// This is a POSIX thread but thanks to multithreading
-		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int OnInviteEvent(const InviteEvent* _e) { 
+		tsip_invite_event_type_t _type = _e->getType();
+		short _code = _e->getCode();
+		const char* _phrase = _e->getPhrase();
+		const InviteSession* _session = _e->getSession();
 		
-		//done:
-		//		[pool release];
+		// This is a POSIX thread but thanks to multithreading
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		
+		NgnInviteEventArgs* eargs = nil;
+		NSString* phrase = [NgnStringUtils toNSString:_phrase];
+		const long _sessionId = _session ? _session->getId() : -1;
+		NgnSipSession* ngnSipSession = nil;
+		
+		switch (_type) {
+			case tsip_i_newcall:
+			{
+				if(_session) /* As we are not the owner, then the session MUST be null */{
+					TSK_DEBUG_ERROR("Invalid incoming session");
+					const_cast<InviteSession*>(_session)->hangup(); // To avoid another callback event
+					goto done;
+				
+				}
+				const SipMessage* _message = _e->getSipMessage();
+				if(!_message){
+					TSK_DEBUG_ERROR("Invalid message");
+					goto done;
+				}
+				
+				twrap_media_type_t _sessionType = _e->getMediaType();
+				// == BEGIN SWITCH
+				switch(_sessionType){
+					case twrap_media_msrp:
+					{
+						//if ((session = e.takeMsrpSessionOwnership()) == null){
+						//	Log.e(TAG,"Failed to take MSRP session ownership");
+						//	return -1;
+						//}
+						
+						//NgnMsrpSession msrpSession = NgnMsrpSession.takeIncomingSession(mSipService.getSipStack(), 
+						//																(MsrpSession)session, message);
+						//if (msrpSession == null){
+						//	Log.e(TAG,"Failed to create new session");
+						//	session.hangup();
+						//	session.delete();
+						//	return 0;
+						//}
+						//mSipService.broadcastInviteEvent(new NgnInviteEventArgs(msrpSession.getId(), NgnInviteEventTypes.INCOMING, msrpSession.getMediaType(), phrase));
+						goto done;
+					}
+						
+					case twrap_media_audio:
+					case twrap_media_audiovideo:
+					case twrap_media_video:
+					{
+						if (!(_session = _e->takeCallSessionOwnership())){
+							TSK_DEBUG_ERROR("Failed to take audio/video session ownership");
+							goto done;
+						}
+						NgnAVSession* ngnAVSession = [NgnAVSession takeIncomingSessionWithSipStack: mSipService.sipStack 
+																					andCallSession: (CallSession**)&_session 
+																					  andMediaType: _sessionType 
+																					 andSipMessage: _message];
+						if(_session){
+							delete _session;
+						}
+						if(ngnAVSession){
+							eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnAVSession.id 
+															 andEvenType: INVITE_EVENT_INCOMING 
+															 andMediaType: ngnAVSession.mediaType
+															 andSipPhrase: phrase];
+							[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+						}
+						break;
+					}
+						
+					default:
+					{
+						TSK_DEBUG_ERROR("Invalid media type");
+						goto done;
+					}
+				}
+				// == END SWITCH
+				break;
+			}
+			default:
+				break;
+		}
+		
+		
+done:
+		[pool release];
 		return 0; 
 	}
 	
 	/* == OnMessagingEvent == */
 	int OnMessagingEvent(const MessagingEvent* e) { 
 		// This is a POSIX thread but thanks to multithreading
-		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
-		//done:
-		//		[pool release];
+//done:
+		//[pool release];
 		return 0;
 	}
 	
 	/* == OnOptionsEvent == */
-	int OnOptionsEvent(const OptionsEvent* e) { 
+	int OnOptionsEvent(const OptionsEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
 		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
@@ -192,7 +342,7 @@ done:
 	}
 	
 	/* == OnPublicationEvent == */
-	int OnPublicationEvent(const PublicationEvent* e) { 
+	int OnPublicationEvent(const PublicationEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
 		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
@@ -202,7 +352,7 @@ done:
 	}
 	
 	/* == OnRegistrationEvent == */
-	int OnRegistrationEvent(const RegistrationEvent* e) { 
+	int OnRegistrationEvent(const RegistrationEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
 		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
@@ -212,7 +362,7 @@ done:
 	}
 	
 	/* == OnSubscriptionEvent == */
-	int OnSubscriptionEvent(const SubscriptionEvent* e) { 
+	int OnSubscriptionEvent(const SubscriptionEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
 		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
@@ -256,15 +406,16 @@ private
 }
 
 -(void)dealloc{
-	[self->sipPreferences release];
+	[self stop];
+	
+	[sipPreferences release];
 	[mConfigurationService release];
-	[self->sipStack release];
+	[sipStack release];
 	if(_mSipCallback){
 		delete _mSipCallback;
 	}
 	if(sipRegSession){
-		[NgnRegistrationSession releaseSessionWithId: [sipRegSession getId]];
-		sipRegSession = nil;
+		[NgnRegistrationSession releaseSession: &sipRegSession];
 	}
 	[super dealloc];
 }
@@ -275,7 +426,8 @@ private
 }
 
 -(BOOL) stop{
-	NSLog(@"NgnSipService::Start()");
+	NSLog(@"NgnSipService::Stop()");
+	[self stopStack]; // FIXME: async => should not
 	return YES;
 }
 
