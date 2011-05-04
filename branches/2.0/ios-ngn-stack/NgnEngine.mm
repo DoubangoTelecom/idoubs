@@ -26,6 +26,8 @@ static NgnEngine* sInstance = nil;
 }
 
 -(void)dealloc{
+	[self stop];
+	
 	[mSipService release];
 	[mConfigurationService release];
 	[super dealloc];

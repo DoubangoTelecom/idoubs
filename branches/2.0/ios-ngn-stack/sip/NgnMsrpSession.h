@@ -6,4 +6,7 @@
 
 }
 
++(void) releaseSession: (NgnMsrpSession**) session;
++(NgnMsrpSession*) getSessionWithId: (long) sessionId;
+
 @end

@@ -1,9 +1,12 @@
 #import "NgnRegistrationSession.h"
 #import <Foundation/NSDictionary.h>
 
-static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
+#import "SipSession.h"
+
 
 @implementation NgnRegistrationSession (Private)
+
+static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init] autorelease];
 
 -(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack{
 	if((self = (NgnRegistrationSession*)[super initWithSipStack:sipStack])){
@@ -49,7 +52,7 @@ static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 
 +(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri{
 	@synchronized(kSessions){
-		NgnRegistrationSession* regSession = [[[NgnRegistrationSession alloc] internalInit:sipStack] autorelease];
+		NgnRegistrationSession* regSession = [[[NgnRegistrationSession alloc] internalInit: sipStack] autorelease];
 		if(regSession){
 			if(toUri){
 				[regSession setToUri:toUri];
@@ -64,18 +67,28 @@ static const NSMutableDictionary* kSessions = [[NSMutableDictionary alloc]init];
 	return [NgnRegistrationSession createOutgoingSessionWithStack:sipStack andToUri:nil];
 }
 
-+(NgnRegistrationSession*) findSessionWithId: (long)sessionId{
++(NgnRegistrationSession*) getSessionWithId: (long)sessionId{
 	@synchronized(kSessions){
 		return [kSessions objectForKey:[NSNumber numberWithLong:sessionId]];
 	}
 }
 
 +(BOOL) hasSessionWithId: (long)sessionId{
-	return [NgnRegistrationSession findSessionWithId:sessionId] != nil;
+	return [NgnRegistrationSession getSessionWithId:sessionId] != nil;
 }
 
-+(void) releaseSessionWithId: (long)sessionId{
-	[kSessions removeObjectForKey:[NSNumber numberWithLong:sessionId]];
++(void) releaseSession: (NgnRegistrationSession**) session{
+	@synchronized (kSessions){
+		if (session && *session){
+			if ([(*session) retainCount] == 1) {
+				[kSessions removeObjectForKey: [*session getIdAsNumber]];
+			}
+			else {
+				[(*session) release];
+			}
+			*session = nil;
+		}
+	}
 }
 
 
