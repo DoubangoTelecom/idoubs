@@ -67,6 +67,8 @@
 		EC81BE63136C8E3B0068BCB4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC81BE72136C8EF80068BCB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
 		EC81BE9D136C8FE60068BCB4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = EC824AED136ECE9F004FC3A8 /* tdav_apple.h */; };
+		EC824B35136EDBBD004FC3A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC83B77D1369768A00DD3355 /* iOSNgnStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EC83B77C1369768A00DD3355 /* iOSNgnStack.h */; };
 		EC83BA401369927100DD3355 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC83BA3F1369927100DD3355 /* MainWindow.xib */; };
 		EC83BA421369928200DD3355 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC83BA411369928200DD3355 /* MainWindow.xib */; };
@@ -129,6 +131,14 @@
 		EC83BCA51369C6A000DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC83BCA61369C6A000DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
 		EC83BD861369D05B00DD3355 /* iOSNgnConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */; };
+		EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		EC9547F2136DC12100F4C113 /* NgnMediaType.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9547F1136DC12100F4C113 /* NgnMediaType.h */; };
+		EC95480A136DCBC300F4C113 /* NgnPredicate.h in Headers */ = {isa = PBXBuildFile; fileRef = EC954809136DCBC300F4C113 /* NgnPredicate.h */; };
+		EC95485B136DE0ED00F4C113 /* NgnUriUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC954859136DE0ED00F4C113 /* NgnUriUtils.h */; };
+		EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */; };
+		EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */; };
+		EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */; };
 		ECF200861360D9EA00B0BFEB /* NgnConfigurationEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */; };
 		ECF2008D1360E01500B0BFEB /* NgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */; };
 		ECF2008E1360E01500B0BFEB /* NgnConfigurationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */; };
@@ -1081,91 +1091,91 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
 			remoteInfo = tinySAK;
 		};
 		EC81BE3C136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
 			remoteInfo = tinyNET;
 		};
 		EC81BE3E136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
 			remoteInfo = tinySDP;
 		};
 		EC81BE40136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
 			remoteInfo = tinyRTP;
 		};
 		EC81BE42136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
 			remoteInfo = tinyIPSec;
 		};
 		EC81BE44136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
 			remoteInfo = tinyMSRP;
 		};
 		EC81BE46136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
 			remoteInfo = tinyHTTP;
 		};
 		EC81BE48136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
 			remoteInfo = tinyMEDIA;
 		};
 		EC81BE4A136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
 			remoteInfo = tinySIGCOMP;
 		};
 		EC81BE4C136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3;
 			remoteInfo = tinySMS;
 		};
 		EC81BE4E136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3;
 			remoteInfo = tinyXCAP;
 		};
 		EC81BE50136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3;
 			remoteInfo = tinySIP;
 		};
 		EC81BE52136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3;
 			remoteInfo = tinyDAV;
 		};
 		EC83BBFB1369C00E00DD3355 /* PBXContainerItemProxy */ = {
@@ -1728,6 +1738,7 @@
 		EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EC81BE76136C8F3B0068BCB4 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EC824AED136ECE9F004FC3A8 /* tdav_apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_apple.h; sourceTree = "<group>"; };
 		EC83B77C1369768A00DD3355 /* iOSNgnStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnStack.h; sourceTree = "<group>"; };
 		EC83BA14136990B700DD3355 /* testRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC83BA1C136990C800DD3355 /* testAudioCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testAudioCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1750,6 +1761,12 @@
 		EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC83BC3D1369C57E00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnConfig.h; sourceTree = "<group>"; };
+		EC9547F1136DC12100F4C113 /* NgnMediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMediaType.h; sourceTree = "<group>"; };
+		EC954809136DCBC300F4C113 /* NgnPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPredicate.h; sourceTree = "<group>"; };
+		EC954859136DE0ED00F4C113 /* NgnUriUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnUriUtils.h; sourceTree = "<group>"; };
+		EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnUriUtils.m; sourceTree = "<group>"; };
+		EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnInviteEventArgs.h; sourceTree = "<group>"; };
+		EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnInviteEventArgs.m; sourceTree = "<group>"; };
 		ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationEntry.h; sourceTree = "<group>"; };
 		ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationService.h; sourceTree = "<group>"; };
 		ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnConfigurationService.mm; sourceTree = "<group>"; };
@@ -2906,6 +2923,7 @@
 				EC83BC381369C55000DD3355 /* libtinyXCAP.a in Frameworks */,
 				EC83BC3C1369C57E00DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83BC3E1369C57E00DD3355 /* libresolv.dylib in Frameworks */,
+				EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2930,6 +2948,7 @@
 				EC83BC711369C64800DD3355 /* libtinyXCAP.a in Frameworks */,
 				EC83BC741369C66E00DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83BC751369C66E00DD3355 /* libresolv.dylib in Frameworks */,
+				EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2969,6 +2988,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFD24F2135D58F700E6A9A3 /* libtinySAK.a in Frameworks */,
+				EC824B35136EDBBD004FC3A8 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3274,6 +3294,8 @@
 				ECFD344A135EB65600E6A9A3 /* NgnRegistrationEventArgs.m */,
 				EC6AD5C1136B1BDB00617B95 /* NgnStackEventArgs.h */,
 				EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */,
+				EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */,
+				EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -3281,6 +3303,7 @@
 		ECFD23BE135D534100E6A9A3 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				EC9547F1136DC12100F4C113 /* NgnMediaType.h */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -3368,6 +3391,9 @@
 				ECFD3433135EB27500E6A9A3 /* NgnNotificationCenter.h */,
 				ECFD3434135EB27500E6A9A3 /* NgnNotificationCenter.m */,
 				ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */,
+				EC954809136DCBC300F4C113 /* NgnPredicate.h */,
+				EC954859136DE0ED00F4C113 /* NgnUriUtils.h */,
+				EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -5143,9 +5169,10 @@
 				ECFD3178135E7DBB00E6A9A3 /* audio */,
 				ECFD318C135E7DBB00E6A9A3 /* codecs */,
 				ECFD31AE135E7DBB00E6A9A3 /* msrp */,
+				ECFD31B4135E7DBB00E6A9A3 /* video */,
 				ECFD31B2135E7DBB00E6A9A3 /* tdav.h */,
 				ECFD31B3135E7DBB00E6A9A3 /* tdav_win32.h */,
-				ECFD31B4135E7DBB00E6A9A3 /* video */,
+				EC824AED136ECE9F004FC3A8 /* tdav_apple.h */,
 			);
 			path = tinydav;
 			sourceTree = "<group>";
@@ -5416,9 +5443,9 @@
 				ECFD31BE135E7DBB00E6A9A3 /* audio */,
 				ECFD31D2135E7DBB00E6A9A3 /* codecs */,
 				ECFD31F4135E7DBC00E6A9A3 /* msrp */,
+				ECFD31FA135E7DBC00E6A9A3 /* video */,
 				ECFD31F8135E7DBC00E6A9A3 /* tdav.c */,
 				ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */,
-				ECFD31FA135E7DBC00E6A9A3 /* video */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -5430,15 +5457,15 @@
 				ECFD31C0135E7DBB00E6A9A3 /* coreaudio */,
 				ECFD31C3135E7DBB00E6A9A3 /* directsound */,
 				ECFD31C6135E7DBB00E6A9A3 /* oss */,
-				ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */,
+				ECFD31CF135E7DBB00E6A9A3 /* waveapi */,
 				ECFD31C8135E7DBB00E6A9A3 /* tdav_jitterbuffer.c */,
 				ECFD31C9135E7DBB00E6A9A3 /* tdav_producer_audio.c */,
 				ECFD31CA135E7DBB00E6A9A3 /* tdav_session_audio.c */,
+				ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */,
 				ECFD31CB135E7DBB00E6A9A3 /* tdav_speakup_jitterbuffer.c */,
 				ECFD31CC135E7DBB00E6A9A3 /* tdav_speex_denoise.c */,
 				ECFD31CD135E7DBB00E6A9A3 /* tdav_speex_jitterbuffer.c */,
 				ECFD31CE135E7DBB00E6A9A3 /* tdav_speex_resampler.c */,
-				ECFD31CF135E7DBB00E6A9A3 /* waveapi */,
 			);
 			path = audio;
 			sourceTree = "<group>";
@@ -5652,12 +5679,12 @@
 		ECFD31FA135E7DBC00E6A9A3 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				ECFD3200135E7DBC00E6A9A3 /* v4linux */,
 				ECFD31FB135E7DBC00E6A9A3 /* android */,
 				ECFD31FC135E7DBC00E6A9A3 /* directshow */,
 				ECFD31FD135E7DBC00E6A9A3 /* tdav_converter_video.c */,
 				ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */,
 				ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */,
-				ECFD3200135E7DBC00E6A9A3 /* v4linux */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -5739,6 +5766,10 @@
 				EC6AD5C3136B1BDB00617B95 /* NgnStackEventArgs.h in Headers */,
 				EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */,
 				EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */,
+				EC9547F2136DC12100F4C113 /* NgnMediaType.h in Headers */,
+				EC95480A136DCBC300F4C113 /* NgnPredicate.h in Headers */,
+				EC95485B136DE0ED00F4C113 /* NgnUriUtils.h in Headers */,
+				EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6263,6 +6294,7 @@
 				EC81BDE7136C73CF0068BCB4 /* tdav_consumer_audiounit.h in Headers */,
 				EC81BDEB136C73F70068BCB4 /* tdav_producer_audiounit.h in Headers */,
 				EC81BDEF136C74220068BCB4 /* tdav_audiounit.h in Headers */,
+				EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6805,6 +6837,8 @@
 				ECF201431360F8C300B0BFEB /* NgnSipPreferences.mm in Sources */,
 				ECF201471360F8DF00B0BFEB /* NgnSubscriptionSession.mm in Sources */,
 				EC6AD5C4136B1BDB00617B95 /* NgnStackEventArgs.m in Sources */,
+				EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */,
+				EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7862,15 +7896,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_CFLAGS = "-DHAVE_COREAUDIO_AUDIO_UNIT=1";
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DHAVE_SPEEX_DSP=1",
+					"-DHAVE_SPEEX_DENOISE=0",
+					"-DHAVE_SPEEX_JB=1",
+					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
+					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -7901,7 +7949,9 @@
 				HEADER_SEARCH_PATHS = $DOUBANGO_INCLUDES;
 				INFOPLIST_FILE = ../testAudioUnit/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -7909,6 +7959,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testAudioUnit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -7954,7 +8005,9 @@
 				);
 				INFOPLIST_FILE = ../testRegistration/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8007,7 +8060,9 @@
 				);
 				INFOPLIST_FILE = ../testAudioCall/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8152,7 +8207,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = $DOUBANGO_HOME/tinyNET/src;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/tinyNET/src,
+				);
 				OTHER_CFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
@@ -8468,6 +8526,7 @@
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyDAV;

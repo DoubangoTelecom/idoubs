@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 
 #import "NgnSipSession.h"
-#import "SipSession.h"
+
+class RegistrationSession;
 
 @interface NgnRegistrationSession : NgnSipSession {
 	RegistrationSession* _mSession;
@@ -12,8 +13,8 @@
 
 +(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri;
 +(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack;
-+(NgnRegistrationSession*) findSessionWithId: (long)sessionId;
++(NgnRegistrationSession*) getSessionWithId: (long)sessionId;
 +(BOOL) hasSessionWithId: (long)sessionId;
-+(void) releaseSessionWithId: (long)sessionId;
++(void) releaseSession: (NgnRegistrationSession**) session;
 
 @end

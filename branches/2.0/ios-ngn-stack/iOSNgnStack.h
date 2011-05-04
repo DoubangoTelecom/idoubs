@@ -8,6 +8,10 @@
 
 #import "events/NgnRegistrationEventArgs.h"
 #import "events/NgnStackEventArgs.h"
+#import "events/NgnInviteEventArgs.h"
+
+#import "sip/NgnRegistrationSession.h"
+#import "sip/NgnAVSession.h"
 
 #endif /* IOS_NGN_STACK_API_H */
 

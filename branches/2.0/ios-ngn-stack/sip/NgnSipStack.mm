@@ -6,8 +6,7 @@
 @implementation NgnSipStack
 
 -(NgnSipStack*) initWithSipCallback: (const SipCallback*) callback andRealmUri: (NSString*) realmUri andIMPIUri: (NSString*) impiUri andIMPUUri: (NSString*)impuUri{
-	self = [super init];
-	if(self){
+	if((self = [super init])){
 		_mSipStack = new SipStack(const_cast<SipCallback*>(callback), [realmUri UTF8String], [impiUri UTF8String], [impuUri UTF8String]);
 		if(_mSipStack){
 			// Sip headers
