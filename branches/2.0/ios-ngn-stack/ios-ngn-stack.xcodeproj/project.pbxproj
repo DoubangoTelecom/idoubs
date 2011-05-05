@@ -3518,6 +3518,8 @@
 		ECFD29C4135E7B8500E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ECFD2A1C135E7B8500E6A9A3 /* turn */,
+				ECFD2A04135E7B8500E6A9A3 /* tls */,
 				ECFD29C5135E7B8500E6A9A3 /* dhcp */,
 				ECFD29CE135E7B8500E6A9A3 /* dhcp6 */,
 				ECFD29D7135E7B8500E6A9A3 /* dns */,
@@ -3525,7 +3527,6 @@
 				ECFD29FB135E7B8500E6A9A3 /* stun */,
 				ECFD2A02135E7B8500E6A9A3 /* tinynet.h */,
 				ECFD2A03135E7B8500E6A9A3 /* tinynet_config.h */,
-				ECFD2A04135E7B8500E6A9A3 /* tls */,
 				ECFD2A07135E7B8500E6A9A3 /* tnet.c */,
 				ECFD2A08135E7B8500E6A9A3 /* tnet.h */,
 				ECFD2A09135E7B8500E6A9A3 /* tnet_auth.c */,
@@ -3547,7 +3548,6 @@
 				ECFD2A19135E7B8500E6A9A3 /* tnet_types.h */,
 				ECFD2A1A135E7B8500E6A9A3 /* tnet_utils.c */,
 				ECFD2A1B135E7B8500E6A9A3 /* tnet_utils.h */,
-				ECFD2A1C135E7B8500E6A9A3 /* turn */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -7919,7 +7919,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
