@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NgnSipSession.h"
-#import "NgnMediaType.h"
+#import "media/NgnMediaType.h"
 
 typedef enum InviteState_e{
 	INVITE_STATE_NONE,

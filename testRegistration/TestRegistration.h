@@ -6,6 +6,7 @@
 
 @interface TestRegistration : NSObject <UIApplicationDelegate, AVAudioSessionDelegate> {
     UIWindow *window;
+	UIActivityIndicatorView* activityIndicator;
 	UIButton *buttonRegister;
 	UILabel *labelStatus;
 	
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* activityIndicator;
 @property (retain, nonatomic) IBOutlet UIButton *buttonRegister;
 @property (retain, nonatomic) IBOutlet UILabel *labelStatus;
 

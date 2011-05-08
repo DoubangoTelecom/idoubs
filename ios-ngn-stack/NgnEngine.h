@@ -10,6 +10,9 @@
 	NgnBaseService<INgnConfigurationService>* mConfigurationService;
 }
 
+@property(readonly) NgnBaseService<INgnSipService>* sipService;
+@property(readonly) NgnBaseService<INgnConfigurationService>* configurationService;
+
 -(BOOL)start;
 -(BOOL)stop;
 -(NgnBaseService<INgnSipService>*)getSipService;

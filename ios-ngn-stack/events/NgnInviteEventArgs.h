@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NgnEventArgs.h"
-#import "NgnMediaType.h"
+#import "media/NgnMediaType.h"
 
 #define kNgnInviteEventArgs_Name @"NgnInviteEventArgs_Name"
 
