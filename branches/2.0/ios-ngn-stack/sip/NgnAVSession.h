@@ -1,10 +1,9 @@
 #import <Foundation/Foundation.h>
 
-#import "INgnConfigurationService.h"
+#import "services/INgnConfigurationService.h"
+#import "services/impl/NgnBaseService.h"
 #import "NgnInviteSession.h"
-#import "NgnPredicate.h"
-
-#import "NgnBaseService.h"
+#import "utils/NgnPredicate.h"
 
 class CallSession;
 class SipMessage;

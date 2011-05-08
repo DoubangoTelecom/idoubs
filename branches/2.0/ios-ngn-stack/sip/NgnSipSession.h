@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NgnSipStack.h"
+
 #import "SipSession.h"
 
 typedef enum ConnectionState_e{
@@ -25,6 +26,7 @@ ConnectionState_t;
 }
 
 @property(readonly) long id;
+@property(readonly) NSString* remotePartyUri;
 
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
 -(void)initialize;

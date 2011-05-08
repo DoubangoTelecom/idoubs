@@ -5,6 +5,7 @@
 #import "NgnEngine.h"
 
 #import "utils/NgnConfigurationEntry.h"
+#import "utils/NgnStringUtils.h"
 
 #import "events/NgnRegistrationEventArgs.h"
 #import "events/NgnStackEventArgs.h"

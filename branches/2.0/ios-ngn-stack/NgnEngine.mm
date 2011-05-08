@@ -74,6 +74,9 @@ static NgnEngine* sInstance = nil;
 	return bSuccess;
 }
 
+-(NgnBaseService<INgnSipService>*) sipService{
+	return [self getSipService];
+}
 -(NgnBaseService<INgnSipService>*)getSipService{
 	if(mSipService == nil){
 		mSipService = [[NgnSipService alloc] init];
@@ -81,6 +84,9 @@ static NgnEngine* sInstance = nil;
 	return mSipService;
 }
 
+-(NgnBaseService<INgnConfigurationService>*) configurationService{
+	return [self getConfigurationService];
+}
 -(NgnBaseService<INgnConfigurationService>*)getConfigurationService{
 	if(mConfigurationService == nil){
 		mConfigurationService = [[NgnConfigurationService alloc] init];
