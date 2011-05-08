@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red234\green234\blue234;\red85\green81\blue13;\red103\green18\blue18;
+\red34\green81\blue81;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18080\viewh14200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\qc\pardirnatural
+
+\f0\b\fs24 \cf0 iOS NGN Stack\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\b0 \cf0 This version of the NGN stack is based on Doubango v2.x and has been developed from scratch. If you are using iDoubs v1.x you MUST know that it won't work with this NGN stack.
+\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+
+\b0 1) == Building the source code ==\
+\
+To build the source code you will need: xcode 3.x or later, iOS SDK 4.x or later and svn tools.\
+\
+a) open new Terminal (Applications => Utilities => Terminal)\
+\
+b) from the command line, login as root\
+
+\i sudo -i
+\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+c) Create new directory named 
+\b mydoubs 
+\b0 anywhere in your disk
+\b \
+\pard\pardeftab720\ql\qnatural
+
+\f1\b0 \cf0 \cb2 mkdir mydoubs\
+cd mydoubs
+\f0\i \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\i0 \cf0 \
+d) checkout 
+\b doubango
+\b0  source code (both trunk and branches) into 
+\b mydoubs
+\b0 . Important: The destination folder MUST be named 
+\b doubango
+\b0 .\
+\pard\pardeftab720\ql\qnatural
+
+\f1 \cf0 \cb2 svn checkout http\cf3 :\cf4 //doubango.googlecode.com/svn/ doubango\cf0 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+e) create new folder named iPhone into mydoubs\
+\pard\pardeftab720\ql\qnatural
+\cf0 \cb2 mkdir iPhone\
+cd iPhone\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 f) checkout ios-ngn-stack source code into iPhone folder. Important: The destination folder MUST be named idoubs.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \cb2 svn checkout http\cf3 :\cf4 //idoubs.googlecode.com/svn/ idoubs\cf0 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+g) change mydoubs folder permissions\
+\pard\pardeftab720\ql\qnatural
+\cf0 \cb2 cd ../..\
+chmod \cf3 -\cf0 R \cf5 \cb2 777\cf0 \cb2  mydoubs\cf4 /*\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \cb1 \
+h) open mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack.xcodeproj\
+	1) Very Important: make sure that the right base sdk is selected (iOS SDK x.y): Right click on "ios-ngn-stack" => "Get Info" => From "Architectures" group adjust "Base SDK" and select "iOS x.y".\
+	2) build Doubango: Right click on "Doubango" aggregate target and select "Build Doubango"\
+	3) build the NGN stack: Right click on "ios-ngn-stack" target and select "Build ios-ngn-stack"\
+	4) build the audio test application: Right click on "testAudioCall" and select "Build testAudioCall". For now don't try to run the test application. See next section for more information.\
+\
+2) == Adjusting your credentials ==}

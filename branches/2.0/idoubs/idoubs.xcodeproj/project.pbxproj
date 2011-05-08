@@ -31,6 +31,17 @@
 			name = Doubango;
 			productName = Doubango;
 		};
+		ECB72B5F1373487500C4CA0C /* Ngn */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = ECB72B681373489800C4CA0C /* Build configuration list for PBXAggregateTarget "Ngn" */;
+			buildPhases = (
+			);
+			dependencies = (
+				ECB72B631373487900C4CA0C /* PBXTargetDependency */,
+			);
+			name = Ngn;
+			productName = Ngn;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -56,6 +67,21 @@
 		EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */; };
 		EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */; };
 		EC8EBE9E1368651200DC70DF /* OnlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE9C1368651200DC70DF /* OnlineView.xib */; };
+		ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */; };
+		ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFB1368921400DC70DF /* libtinySAK.a */; };
+		ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFD1368921400DC70DF /* libtinyNET.a */; };
+		ECE113B61376F66C00096382 /* libtinySDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFF1368921400DC70DF /* libtinySDP.a */; };
+		ECE113B71376F66C00096382 /* libtinyRTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF011368921400DC70DF /* libtinyRTP.a */; };
+		ECE113B81376F66C00096382 /* libtinyIPSec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF031368921400DC70DF /* libtinyIPSec.a */; };
+		ECE113B91376F66C00096382 /* libtinyMSRP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF051368921400DC70DF /* libtinyMSRP.a */; };
+		ECE113BA1376F66C00096382 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF071368921400DC70DF /* libtinyHTTP.a */; };
+		ECE113BB1376F66C00096382 /* libtinyMEDIA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF091368921400DC70DF /* libtinyMEDIA.a */; };
+		ECE113BC1376F66C00096382 /* libtinySIGCOMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF0B1368921400DC70DF /* libtinySIGCOMP.a */; };
+		ECE113BD1376F66C00096382 /* libtinySMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF0D1368921400DC70DF /* libtinySMS.a */; };
+		ECE113BE1376F66C00096382 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF0F1368921400DC70DF /* libtinyXCAP.a */; };
+		ECE113BF1376F66C00096382 /* libtinySIP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF111368921400DC70DF /* libtinySIP.a */; };
+		ECE113C01376F66C00096382 /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF131368921400DC70DF /* libtinyDAV.a */; };
+		ECE113C11376F66C00096382 /* libtinyWRAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBF151368921400DC70DF /* libtinyWRAP.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +89,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */;
+			remoteGlobalIDString = EC81BD50136C5B3D0068BCB4;
 			remoteInfo = testAudioUnit;
 		};
 		EC83B7CB13697BA900DD3355 /* PBXContainerItemProxy */ = {
@@ -395,6 +421,13 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "ios-ngn-stack";
 		};
+		ECB72B621373487900C4CA0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "ios-ngn-stack";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -437,6 +470,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */,
+				ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */,
+				ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */,
+				ECE113B61376F66C00096382 /* libtinySDP.a in Frameworks */,
+				ECE113B71376F66C00096382 /* libtinyRTP.a in Frameworks */,
+				ECE113B81376F66C00096382 /* libtinyIPSec.a in Frameworks */,
+				ECE113B91376F66C00096382 /* libtinyMSRP.a in Frameworks */,
+				ECE113BA1376F66C00096382 /* libtinyHTTP.a in Frameworks */,
+				ECE113BB1376F66C00096382 /* libtinyMEDIA.a in Frameworks */,
+				ECE113BC1376F66C00096382 /* libtinySIGCOMP.a in Frameworks */,
+				ECE113BD1376F66C00096382 /* libtinySMS.a in Frameworks */,
+				ECE113BE1376F66C00096382 /* libtinyXCAP.a in Frameworks */,
+				ECE113BF1376F66C00096382 /* libtinySIP.a in Frameworks */,
+				ECE113C01376F66C00096382 /* libtinyDAV.a in Frameworks */,
+				ECE113C11376F66C00096382 /* libtinyWRAP.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -620,6 +668,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* idoubs */,
 				EC8EBD741368447E00DC70DF /* Doubango */,
+				ECB72B5F1373487500C4CA0C /* Ngn */,
 			);
 		};
 /* End PBXProject section */
@@ -628,10 +677,9 @@
 		EC81BD57136C5B3E0068BCB4 /* testAudioUnit.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			name = testAudioUnit.app;
-			path = "build/Debug-iphonesimulator/testAudioUnit.app";
+			path = testAudioUnit.app;
 			remoteRef = EC81BD56136C5B3E0068BCB4 /* PBXContainerItemProxy */;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		EC83BA31136990F800DD3355 /* testRegistration.app */ = {
 			isa = PBXReferenceProxy;
@@ -942,6 +990,11 @@
 			name = "ios-ngn-stack";
 			targetProxy = EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */;
 		};
+		ECB72B631373487900C4CA0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ios-ngn-stack";
+			targetProxy = ECB72B621373487900C4CA0C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -970,24 +1023,14 @@
 				INFOPLIST_FILE = "idoubs-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../ios-ngn-stack/build/Debug-iphonesimulator\"",
+					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
-					"-lios_ngn_stack",
-					"-ltinySAK",
-					"-ltinyNET",
-					"-ltinySIP",
-					"-ltinyRTP",
-					"-ltinySIGCOMP",
-					"-ltinySMS",
-					"-ltinyHTTP",
-					"-ltinySDP",
-					"-ltinyMSRP",
-					"-ltinyDAV",
-					"-ltinyIPSec",
-					"-ltinyMEDIA",
-					"-ltinyWRAP",
-					"-ObjC",
+					"-lspeexdsp",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
 			};
@@ -1016,6 +1059,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1060,6 +1107,27 @@
 			};
 			name = Release;
 		};
+		ECB72B601373487500C4CA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Ngn;
+			};
+			name = Debug;
+		};
+		ECB72B611373487500C4CA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Ngn;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1086,6 +1154,15 @@
 			buildConfigurations = (
 				EC8EBD751368447E00DC70DF /* Debug */,
 				EC8EBD761368447E00DC70DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECB72B681373489800C4CA0C /* Build configuration list for PBXAggregateTarget "Ngn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB72B601373487500C4CA0C /* Debug */,
+				ECB72B611373487500C4CA0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

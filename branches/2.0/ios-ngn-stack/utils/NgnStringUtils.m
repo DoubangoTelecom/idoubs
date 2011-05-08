@@ -26,4 +26,11 @@
 	return [nsstring UTF8String];
 }
 
+#if TARGET_OS_IPHONE
++(UIColor*) colorFromRGBValue: (int)rgbvalue{
+	return [UIColor colorWithRed: ((float)((rgbvalue & 0xFF0000) >> 16))/255.0
+					green: ((float)((rgbvalue & 0xFF00) >> 8))/255.0
+					blue: ((float)(rgbvalue & 0xFF))/255.0 alpha:1.0];
+}
+#endif
 @end

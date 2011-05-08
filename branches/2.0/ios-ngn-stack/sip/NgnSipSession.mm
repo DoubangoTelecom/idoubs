@@ -1,7 +1,7 @@
 #import "NgnSipSession.h"
+#import "NgnStringUtils.h"
 
 #import "tsk_debug.h"
-#import "NgnStringUtils.h"
 
 @implementation NgnSipSession
 
@@ -113,6 +113,10 @@
 	}
 	[mToUri release], mToUri = [uri retain];
 	return TRUE;
+}
+
+-(NSString*) remotePartyUri{
+	return [self getRemotePartyUri];
 }
 
 -(NSString*)getRemotePartyUri{

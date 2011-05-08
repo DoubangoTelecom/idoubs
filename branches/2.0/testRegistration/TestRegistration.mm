@@ -1,24 +1,19 @@
 #import "TestRegistration.h"
 
+// Include all headers
+#import "iOSNgnStack.h"
+
 #undef TAG
 #define kTAG @"TestRegistration///: "
 #define TAG kTAG
 
 // Credentials
-//static const NSString* kProxyHost = @"proxy.sipthor.net";
-//static const int kProxyPort = 5060;
-//static const NSString* kRealm = @"sip2sip.info";
-//static const NSString* kPassword = @"d3sb7j4fb8";
-//static const NSString* kPrivateIdentity = @"2233392625";
-//static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
-//static const BOOL kEnableEarlyIMS = TRUE;
-
-static const NSString* kProxyHost = @"212.123.76.";
+static const NSString* kProxyHost = @"proxy.sipthor.net";
 static const int kProxyPort = 5060;
-static const NSString* kRealm = @"212.123.76.";
-static const NSString* kPassword = @"xxxx";
-static const NSString* kPrivateIdentity = @"200006395544399062";
-static const NSString* kPublicIdentity = @"sip:200006395544399062@212.123.76.";
+static const NSString* kRealm = @"sip2sip.info";
+static const NSString* kPassword = @"d3sb7j4fb8";
+static const NSString* kPrivateIdentity = @"2233392625";
+static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
 static const BOOL kEnableEarlyIMS = TRUE;
 
 @implementation TestRegistration(SipCallbackEvents)
@@ -27,38 +22,47 @@ static const BOOL kEnableEarlyIMS = TRUE;
 -(void) onRegistrationEvent:(NSNotification*)notification {
 	NgnRegistrationEventArgs* eargs = [notification object];
 	
+	// Current event triggered the callback
+	// to get the current registration state you should use "mSipService::getRegistrationState"
 	switch (eargs.eventType) {
 		// provisional responses
 		case REGISTRATION_INPROGRESS:
 		case UNREGISTRATION_INPROGRESS:
+			[activityIndicator startAnimating];
 			break;
 		// final responses
 		case REGISTRATION_OK:
 		case REGISTRATION_NOK:
 		case UNREGISTRATION_OK:
 		case UNREGISTRATION_NOK:
+			[activityIndicator stopAnimating];
 		default:
 			break;
 	}
 	[buttonRegister setTitle: [mSipService isRegistered] ? @"UnRegister" : @"Register" forState: UIControlStateNormal];
 	labelStatus.text = eargs.sipPhrase;
 	
+	// gets the new registration state
 	ConnectionState_t registrationState = [mSipService getRegistrationState];	
 	switch (registrationState) {
 		case CONN_STATE_NONE:
 		case CONN_STATE_TERMINATED:
+		default:
 			[buttonRegister setTitle: @"Register" forState: UIControlStateNormal];
 			if(mScheduleRegistration){
 				mScheduleRegistration = FALSE;
 				[mSipService registerIdentity];
 			}
+			labelStatus.backgroundColor = [UIColor redColor];
 			break;
 		case CONN_STATE_CONNECTING:
 		case CONN_STATE_TERMINATING:
 			[buttonRegister setTitle: @"Cancel" forState: UIControlStateNormal];
+			labelStatus.backgroundColor = [UIColor redColor];
 			break;
 		case CONN_STATE_CONNECTED:
 			[buttonRegister setTitle: @"UnRegister" forState: UIControlStateNormal];
+			labelStatus.backgroundColor = [UIColor greenColor];
 			break;
 	}
 }
@@ -68,6 +72,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 @implementation TestRegistration
 
 @synthesize window;
+@synthesize activityIndicator;
 @synthesize buttonRegister;
 @synthesize labelStatus;
 
@@ -75,6 +80,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     NgnNSLog(TAG, @"applicationDidFinishLaunching");
     
+	// add observers
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onRegistrationEvent:) name:kNgnRegistrationEventArgs_Name object:nil];
 	
