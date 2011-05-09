@@ -33,15 +33,11 @@
 	[self getSession]->addCaps("language", "\"en,fr\"");
 }
 
--(long)id{
+-(long)getId{
 	if(mId == -1){
 		mId = [self getSession]->getId(); 
 	}
 	return mId;
-}
-
--(long)getId{
-	return self.id;
 }
 
 -(NSNumber*)getIdAsNumber{
@@ -113,10 +109,6 @@
 	}
 	[mToUri release], mToUri = [uri retain];
 	return TRUE;
-}
-
--(NSString*) remotePartyUri{
-	return [self getRemotePartyUri];
 }
 
 -(NSString*)getRemotePartyUri{

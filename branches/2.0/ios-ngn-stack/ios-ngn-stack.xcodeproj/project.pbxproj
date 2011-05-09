@@ -131,6 +131,9 @@
 		EC83BCA51369C6A000DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC83BCA61369C6A000DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
 		EC83BD861369D05B00DD3355 /* iOSNgnConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */; };
+		EC8724751377EE0400C616F0 /* NgnContact.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8724731377EE0400C616F0 /* NgnContact.h */; };
+		EC8724761377EE0400C616F0 /* NgnContact.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8724741377EE0400C616F0 /* NgnContact.m */; };
+		EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
 		EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547F2136DC12100F4C113 /* NgnMediaType.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9547F1136DC12100F4C113 /* NgnMediaType.h */; };
@@ -1761,6 +1764,9 @@
 		EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC83BC3D1369C57E00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnConfig.h; sourceTree = "<group>"; };
+		EC8724731377EE0400C616F0 /* NgnContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContact.h; sourceTree = "<group>"; };
+		EC8724741377EE0400C616F0 /* NgnContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnContact.m; sourceTree = "<group>"; };
+		EC87251F1378101000C616F0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		EC9547F1136DC12100F4C113 /* NgnMediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMediaType.h; sourceTree = "<group>"; };
 		EC954809136DCBC300F4C113 /* NgnPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPredicate.h; sourceTree = "<group>"; };
 		EC954859136DE0ED00F4C113 /* NgnUriUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnUriUtils.h; sourceTree = "<group>"; };
@@ -2949,6 +2955,7 @@
 				EC83BC741369C66E00DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83BC751369C66E00DD3355 /* libresolv.dylib in Frameworks */,
 				EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */,
+				EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3133,6 +3140,7 @@
 				EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */,
 				EC81BE76136C8F3B0068BCB4 /* AudioUnit.framework */,
 				EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */,
+				EC87251F1378101000C616F0 /* AddressBook.framework */,
 			);
 			name = "ios-ngn-stack";
 			sourceTree = "<group>";
@@ -3311,6 +3319,8 @@
 		ECFD23BF135D534100E6A9A3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				EC8724731377EE0400C616F0 /* NgnContact.h */,
+				EC8724741377EE0400C616F0 /* NgnContact.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5770,6 +5780,7 @@
 				EC95480A136DCBC300F4C113 /* NgnPredicate.h in Headers */,
 				EC95485B136DE0ED00F4C113 /* NgnUriUtils.h in Headers */,
 				EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */,
+				EC8724751377EE0400C616F0 /* NgnContact.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6839,6 +6850,7 @@
 				EC6AD5C4136B1BDB00617B95 /* NgnStackEventArgs.m in Sources */,
 				EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */,
 				EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */,
+				EC8724761377EE0400C616F0 /* NgnContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

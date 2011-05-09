@@ -69,7 +69,7 @@ public:
 							 andSipCode:_code  
 							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_CONNECTING];					
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
 				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
@@ -79,7 +79,7 @@ public:
 							 andSipPhrase: phrase];
 					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INPROGRESS];
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				
 				break;
@@ -98,7 +98,7 @@ public:
 					if(![NgnStringUtils isNullOrEmpty:defaultIdentity]){
 						[mSipService setDefaultIdentity:defaultIdentity];
 					}
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
 				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
@@ -108,7 +108,7 @@ public:
 							 andSipPhrase: phrase];
 					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INCALL];
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				
 				break;
@@ -125,7 +125,7 @@ public:
 							 andSipCode:_code  
 							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATING];					
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
 				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
@@ -135,7 +135,7 @@ public:
 							 andSipPhrase: phrase];
 					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATING];
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				
 				break;
@@ -152,7 +152,7 @@ public:
 							 andSipCode:_code  
 							 andSipPhrase: phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATED];					
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 					/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
 					[mSipService stopStack];
 				}
@@ -165,7 +165,7 @@ public:
 					
 					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATED];
-					[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 					if([ngnSipSession isKindOfClass: [NgnAVSession class]]){
 						[NgnAVSession releaseSession: (NgnAVSession**)&ngnSipSession];
 					}
@@ -218,7 +218,7 @@ done:
 		}
 		
 		NgnStackEventArgs* eargs = [[NgnStackEventArgs alloc]initWithEventType: eventType andPhrase: [NgnStringUtils toNSString:_phrase]];
-		[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnStackEventArgs_Name object:eargs];
+		[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnStackEventArgs_Name object:eargs];
 done:
 		[eargs autorelease];
 		[pool release];
@@ -297,7 +297,7 @@ done:
 															 andEvenType: INVITE_EVENT_INCOMING 
 															 andMediaType: ngnAVSession.mediaType
 															 andSipPhrase: phrase];
-							[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+							[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 						}
 						break;
 					}
@@ -311,6 +311,115 @@ done:
 				// == END SWITCH
 				break;
 			}
+				
+			
+			case tsip_ao_request:
+			{
+				if (_code == 180 && _session != tsk_null){
+					if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+						eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+																  andEvenType: INVITE_EVENT_RINGING 
+																 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+																 andSipPhrase: phrase];
+						[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+					}
+				}
+				break;
+			}
+				
+			case tsip_i_request:
+			case tsip_o_ect_ok:
+			case tsip_o_ect_nok:
+			case tsip_i_ect:
+			{
+				break;
+			}
+			
+				
+			case tsip_m_early_media:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_EARLY_MEDIA
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+				
+				
+			case tsip_m_local_hold_ok:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setLocalHold: TRUE];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_LOCAL_HOLD_OK
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			case tsip_m_local_hold_nok:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_LOCAL_HOLD_NOK
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			case tsip_m_local_resume_ok:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setLocalHold: FALSE];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_LOCAL_RESUME_OK
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			case tsip_m_local_resume_nok:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_LOCAL_RESUME_NOK
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			case tsip_m_remote_hold:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setRemoteHold: TRUE];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_REMOTE_HOLD
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			case tsip_m_remote_resume:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setRemoteHold: FALSE];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
+															  andEvenType: INVITE_EVENT_REMOTE_RESUME
+															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase: phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+				
 			default:
 				break;
 		}
