@@ -2,6 +2,7 @@
 
 #import "NgnSipService.h"
 #import "NgnConfigurationService.h"
+#import "NgnContactService.h"
 
 #undef TAG
 #define kTAG @"NgnEngine///: "
@@ -53,8 +54,9 @@ static NgnEngine* sInstance = nil;
 		NgnNSLog(TAG, @"NOT working in multithreaded mode :(");
 	}
 	
-	bSuccess &= [[self getSipService] start];
-	bSuccess &= [[self getConfigurationService] start];
+	bSuccess &= [self.configurationService start];
+	bSuccess &= [self.contactService start];
+	bSuccess &= [self.sipService start];
 	
 	mStarted = TRUE;
 	return bSuccess;
@@ -67,16 +69,14 @@ static NgnEngine* sInstance = nil;
 	
 	BOOL bSuccess = TRUE;
 	
-	bSuccess &= [[self getSipService] stop];
-	bSuccess &= [[self getConfigurationService] stop];
+	bSuccess &= [self.sipService stop];
+	bSuccess &= [self.contactService stop];
+	bSuccess &= [self.configurationService stop];
 	
 	mStarted = FALSE;
 	return bSuccess;
 }
 
--(NgnBaseService<INgnSipService>*) sipService{
-	return [self getSipService];
-}
 -(NgnBaseService<INgnSipService>*)getSipService{
 	if(mSipService == nil){
 		mSipService = [[NgnSipService alloc] init];
@@ -84,14 +84,18 @@ static NgnEngine* sInstance = nil;
 	return mSipService;
 }
 
--(NgnBaseService<INgnConfigurationService>*) configurationService{
-	return [self getConfigurationService];
-}
 -(NgnBaseService<INgnConfigurationService>*)getConfigurationService{
 	if(mConfigurationService == nil){
 		mConfigurationService = [[NgnConfigurationService alloc] init];
 	}
 	return mConfigurationService;
+}
+
+-(NgnBaseService<INgnContactService>*)getContactService{
+	if(mContactService == nil){
+		mContactService = [[NgnContactService alloc] init];
+	}
+	return mContactService;
 }
 
 +(void)initialize{

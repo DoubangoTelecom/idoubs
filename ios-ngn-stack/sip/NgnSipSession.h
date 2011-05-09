@@ -25,8 +25,11 @@ ConnectionState_t;
     ConnectionState_t mConnectionState;
 }
 
-@property(readonly) long id;
-@property(readonly) NSString* remotePartyUri;
+@property(readonly, getter=getId) long id;
+@property(readonly, getter=getConnectionState) ConnectionState_t connectionState;
+@property(readwrite, assign, getter=getRemotePartyUri, setter=setRemotePartyUri) NSString* remotePartyUri;
+@property(readonly, getter=getFromUri) NSString* fromUri;
+@property(readonly, getter=getToUri) NSString* toUri;
 
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
 -(void)initialize;
