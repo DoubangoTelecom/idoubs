@@ -5,3 +5,4 @@
 @protocol INgnContactService <INgnBaseService>
 
 @end
+

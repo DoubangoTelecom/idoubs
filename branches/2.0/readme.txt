@@ -30,7 +30,7 @@ chmod -R 777 mydoubs/*
 
 h) open mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack.xcodeproj
 	1) Very Important: make sure that the right base sdk is selected (iOS SDK x.y): Right click on "ios-ngn-stack" => "Get Info" => "Build" tab => From "Architectures" group adjust "Base SDK" and select "iOS x.y".
-	2) build Doubango: Right click on "Doubango" aggregate target and select "Build Doubango"
+	2) build Doubango: Right click on "Doubango" aggregated target and select "Build Doubango"
 	3) build the NGN stack: Right click on "ios-ngn-stack" target and select "Build ios-ngn-stack"
 	4) build the audio test application: Right click on "testAudioCall" and select "Build testAudioCall". For now don't try to run the test application. See next section for more information.
 
@@ -38,7 +38,7 @@ h) open mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack.xcodeproj
 The default credentials use sip2sip.info and should work for all users. Before changing these credentials you can try to use these credentials to be sure that there are no network issues.
 a) From xcode, open Tests/testAudioCall/TestAudioCall.mm
 b) From line 13 to 19 you have the default credentials used by the test application. Change them to yours!
-c) Right click on "testAudioCall" target and select "Build testAudioCall and Start". If your credentials then you should auto. login (green bar).
+c) Right click on "testAudioCall" target and select "Build testAudioCall and Start". If your credentials are correct then you should auto. login (green bar).
 Enter any phone number and press "Audio Call" to make a call.
 
 3) == Audio Quality ==
@@ -51,7 +51,7 @@ Et voilà
 
 4) == Short presentation for developers ==
 Right now the documentation is not ready yet but if you are already developing with "android-ngn-stack" you should not have any problem with "ios-ngn-stack" as we are using the same classes, functions, engine, philosophy, …
-The best way to start programing with the NGN stack is to study the source code of "testAudioCall" application.
+The best way to start programing with the NGN stack is to study the source code of "testAudioCall" application. In the coming days we will release the source code of iDoubs.
 
 a) Including all header files
 in order to have access to all functions of the framework, you must include the stack header file: 

@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
-@interface NSNotificationCenter (NextGenerationNetworkStack)
+@interface NgnNotificationCenter
 
-- (void)postNotificationOnMainThread:(NSNotification *)notification;
-- (void)postNotificationOnMainThreadWithName:(NSString *)aName object:(id)anObject;
-- (void)postNotificationOnMainThreadWithName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
++ (void)postNotificationOnMainThread:(NSNotification *)notification;
++ (void)postNotificationOnMainThreadWithName:(NSString *)aName object:(id)anObject;
++ (void)postNotificationOnMainThreadWithName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
 
 @end
