@@ -4,7 +4,7 @@
 #import "INgnHistoryService.h"
 
 @interface NgnHistoryService : NgnBaseService <INgnHistoryService> {
-
+	
 }
 
 @end

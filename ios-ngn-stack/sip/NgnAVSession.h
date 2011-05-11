@@ -3,7 +3,11 @@
 #import "services/INgnConfigurationService.h"
 #import "services/impl/NgnBaseService.h"
 #import "NgnInviteSession.h"
-#import "utils/NgnPredicate.h"
+
+#undef NgnAVSessionMutableArray
+#undef NgnAVSessionArray
+#define NgnAVSessionMutableArray	NSMutableArray
+#define NgnAVSessionArray	NSArray
 
 class CallSession;
 class SipMessage;
@@ -30,7 +34,7 @@ class ActionConfig;
 +(NgnAVSession*) createOutgoingSessionWithSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t) mediaType;
 +(void) releaseSession: (NgnAVSession**) session;
 +(NgnAVSession*) getSessionWithId: (long) sessionId;
-+(NgnAVSession*) getSession: (NSObject<NgnPredicate>*) predicate;
++(NgnAVSession*) getSessionWithPredicate: (NSPredicate*) predicate;
 +(BOOL) hasSessionWithId:(long) sessionId;
 +(BOOL) hasActiveSession;
 +(NgnAVSession*) getFirstActiveCallAndNot:(long) sessionId;

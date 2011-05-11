@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "NgnEventArgs.h"
+
+#import "events/NgnEventArgs.h"
 
 #define kNgnStackEventArgs_Name @"NgnStackEventArgs_Name"
 

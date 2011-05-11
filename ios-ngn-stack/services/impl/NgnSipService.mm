@@ -3,17 +3,22 @@
 #import "NgnEngine.h"
 #import "NgnNotificationCenter.h"
 #import "NgnStringUtils.h"
+#import "NgnContentType.h"
 
 #import "NgnRegistrationEventArgs.h"
 #import "NgnStackEventArgs.h"
 #import "NgnInviteEventArgs.h"
+#import "NgnMessagingEventArgs.h"
 
 #import "NgnRegistrationSession.h"
 #import "NgnAVSession.h"
 #import "NgnMsrpSession.h"
+#import "NgnMessagingSession.h"
 
 #import "SipCallback.h"
 #import "SipEvent.h"
+#import "SipMessage.h"
+#import "SMSEncoder.h"
 
 #import "tsk_debug.h"
 
@@ -29,11 +34,15 @@ class _NgnSipCallback : public SipCallback
 {
 public:
 	_NgnSipCallback(NgnSipService* sipService) : SipCallback(){
+		// I know that you will say why we don't get the sip service from the engine? See below for the response
 		mSipService = [sipService retain];
+		// in the next versions we will get the stack id in order to retrieve the associated engine then the configuration service
+		mConfigurationService = [[NgnEngine getInstance].configurationService retain];
 	}
 	
 	~_NgnSipCallback(){
 		[mSipService release];
+		[mConfigurationService release];
 	}
 	
 	/* == OnDialogEvent == */
@@ -81,6 +90,16 @@ public:
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INPROGRESS];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
+				// Messaging (PagerMode IM)
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _sessionId 
+							 andEventType: MESSAGING_EVENT_CONNECTING
+							 andPhrase: phrase 
+							 andPayload: nil];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
+				}
 				
 				break;
 			}
@@ -110,7 +129,16 @@ public:
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INCALL];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
-				
+				// Messaging (PagerMode IM)
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _sessionId 
+							 andEventType: MESSAGING_EVENT_CONNECTED
+							 andPhrase: phrase 
+							 andPayload: nil];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
+				}
 				break;
 			}
 				
@@ -136,6 +164,16 @@ public:
 					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				// Messaging (PagerMode IM)
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _sessionId 
+							 andEventType: MESSAGING_EVENT_TERMINATING
+							 andPhrase: phrase 
+							 andPayload: nil];
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
 				
 				break;
@@ -172,6 +210,17 @@ public:
 					else if([ngnSipSession isKindOfClass: [NgnMsrpSession class]]){
 						[NgnMsrpSession releaseSession: (NgnMsrpSession**)&ngnSipSession];
 					}
+				}
+				// Messaging (PagerMode IM)
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _sessionId 
+							 andEventType: MESSAGING_EVENT_TERMINATED
+							 andPhrase: phrase 
+							 andPayload: nil];
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
+					[NgnMessagingSession releaseSession: (NgnMessagingSession**)&ngnSipSession];
 				}
 				
 				break;
@@ -431,12 +480,121 @@ done:
 	}
 	
 	/* == OnMessagingEvent == */
-	int OnMessagingEvent(const MessagingEvent* e) { 
-		// This is a POSIX thread but thanks to multithreading
-		//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int OnMessagingEvent(const MessagingEvent* _e) { 
+		tsip_message_event_type_t _type = _e->getType();
 		
-//done:
-		//[pool release];
+		// This is a POSIX thread but thanks to multithreading
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		
+		NgnMessagingEventArgs* eargs = nil;
+		
+		switch (_type) {
+			case tsip_ao_message:
+			{
+				const MessagingSession* _session = _e->getSession();
+				const SipMessage* _message = _e->getSipMessage();
+				const char* _phrase = _e->getPhrase();
+				char* _from = _message ? const_cast<SipMessage*>(_message)->getSipHeaderValue("f") : tsk_null;
+				short _code = _e->getCode();
+				if(_session && _code>=200 && _message){// just ignore 1xx
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _session->getId() 
+							 andEventType: (_code >=200 && _code<=299) ? MESSAGING_EVENT_SUCCESS : MESSAGING_EVENT_FAILURE
+							 andPhrase: [NgnStringUtils toNSString: _phrase] 
+							 andPayload: nil];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsFrom andValue:[NgnStringUtils toNSString: _from]];
+					TSK_FREE(_from);
+				}
+				break;
+			}
+			
+			case tsip_i_message:
+			{
+				if(_e->getSession()){
+					TSK_DEBUG_ERROR("Incoming message cannot contain non-null session");
+					goto done;
+				}
+				const SipMessage* _message = _e->getSipMessage();
+				if(!_message){
+					TSK_DEBUG_ERROR("Null Sip Message");
+					goto done;
+				}
+				MessagingSession* _session = _e->takeSessionOwnership(); /* "Server-side-session" e.g. Initial MESSAGE sent by the remote party */
+				NgnMessagingSession* ngnSession = nil;
+				if (!_session){
+					TSK_DEBUG_ERROR("Failed to take session ownership");
+					goto done;
+				}
+				ngnSession = [NgnMessagingSession takeIncomingSessionWithSipStack: mSipService.sipStack
+														andMessagingSession: &_session 
+														andSipMessage: _message];
+				if(!ngnSession){
+					if(_session){
+						_session->reject();
+						TSK_DEBUG_ERROR("Failed to create NGN session base on messaging session");
+						delete _session;
+					}
+					goto done;
+				}
+				
+				const char* _phrase = _e->getPhrase();
+				char* _from = const_cast<SipMessage*>(_message)->getSipHeaderValue("f");
+				char* _ctype = const_cast<SipMessage*>(_message)->getSipHeaderValue("c");
+				const void* _content = const_cast<SipMessage*>(_message)->getSipContentPtr();
+				unsigned _content_length = const_cast<SipMessage*>(_message)->getSipContentLength();
+				NSString* ctype = nil;
+				
+				if(!_content || !_content_length){
+					TSK_DEBUG_ERROR("Invalid MESSAGE");
+					[ngnSession reject];
+					goto tsip_i_message_done;
+				}
+				
+				// accept
+				if([mConfigurationService getBoolWithKey: RCS_AUTO_ACCEPT_PAGER_MODE_IM]){
+					[ngnSession accept];
+				}
+				
+				// parse data
+				ctype = [NgnStringUtils toNSString: _ctype];
+				
+				if([ctype caseInsensitiveCompare: kContentType3gppSMS] == NSOrderedSame){
+					TSK_DEBUG_ERROR("3GPP SMS Not implemented yet");
+					goto tsip_i_message_done;
+				}
+				else {
+					eargs = [[NgnMessagingEventArgs alloc] 
+							 initWithSessionId: _session->getId() 
+							 andEventType: MESSAGING_EVENT_INCOMING
+							 andPhrase: [NgnStringUtils toNSString: _phrase] 
+							 andPayload: [NSData dataWithBytes: _content length: _content_length]];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsFrom andValue:[NgnStringUtils toNSString: _from]];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsContentType andValue: ctype];
+				}
+
+				
+tsip_i_message_done:
+				if(_session){
+					delete _session, _session = tsk_null;
+				}
+				TSK_FREE(_from);
+				TSK_FREE(_ctype);
+				
+				
+				break;
+			}
+				
+			default:
+				break;
+		}
+		
+		if(eargs){
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+		}
+		
+done:
+		[eargs autorelease];
+		[pool release];
 		return 0;
 	}
 	
@@ -480,9 +638,9 @@ done:
 		return 0; 
 	}
 	
-private
-	:
+private:
 	NgnSipService* mSipService;
+	NgnBaseService<INgnConfigurationService>* mConfigurationService;
 };
 
 //
@@ -530,12 +688,12 @@ private
 }
 
 -(BOOL) start{
-	NSLog(@"NgnSipService::Start()");
+	NgnNSLog(TAG, @"Start()");
 	return YES;
 }
 
 -(BOOL) stop{
-	NSLog(@"NgnSipService::Stop()");
+	NgnNSLog(TAG, @"Stop()");
 	[self stopStack]; // FIXME: async => should not
 	return YES;
 }

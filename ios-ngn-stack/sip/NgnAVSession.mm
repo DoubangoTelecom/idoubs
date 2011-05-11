@@ -7,9 +7,23 @@
 #import "SipSession.h"
 #import "SipMessage.h"
 
+#undef kSessions
+#define kSessions [NgnAVSession getAllSessions]
+
+@interface NgnAVSession (Private)
++(NSMutableDictionary*) getAllSessions;
+-(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState;
+@end
+
 @implementation NgnAVSession (Private)
 
-static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init] autorelease];
++(NSMutableDictionary*) getAllSessions{
+	static NSMutableDictionary* sessions = nil;
+	if(sessions == nil){
+		sessions = [[NSMutableDictionary alloc] init];
+	}
+	return sessions;
+}
 
 -(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState{
 	if((self = (NgnAVSession*)[super initWithSipStack: sipStack])){
@@ -201,7 +215,10 @@ static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init]
 			default:
 				return nil;
 		}
-		NgnAVSession* avSession = [[[NgnAVSession alloc] internalInit: sipStack andCallSession: session andMediaType: media andState: INVITE_STATE_INCOMING] autorelease];
+		NgnAVSession* avSession = [[[NgnAVSession alloc] internalInit: sipStack 
+													   andCallSession: session 
+													   andMediaType: media 
+													   andState: INVITE_STATE_INCOMING] autorelease];
 		if(avSession){
 			if (sipMessage){
 				char* fHeaderValue = const_cast<SipMessage*>(sipMessage)->getSipHeaderValue("f");
@@ -245,11 +262,11 @@ static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init]
 	}
 }
 
-+(NgnAVSession*) getSession: (NSObject<NgnPredicate>*) predicate{
++(NgnAVSession*) getSessionWithPredicate: (NSPredicate*) predicate{
 	@synchronized(kSessions){
 		NSArray* values = [kSessions allValues];
 		for(NgnAVSession* value in values){
-			if([predicate match: value]){
+			if([predicate evaluateWithObject: value]){
 				return value;
 			}
 		}
@@ -281,8 +298,8 @@ static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init]
 				return value;
 			}
 		}
-		return nil;
 	}
+	return nil;
 }
 
 +(NgnAVSession*) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{

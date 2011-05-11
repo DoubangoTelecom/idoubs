@@ -1,10 +1,8 @@
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 #import "iOSNgnStack.h"
 
-@interface TestRegistration : NSObject <UIApplicationDelegate, AVAudioSessionDelegate> {
+@interface TestRegistration : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	UIActivityIndicatorView* activityIndicator;
 	UIButton *buttonRegister;
