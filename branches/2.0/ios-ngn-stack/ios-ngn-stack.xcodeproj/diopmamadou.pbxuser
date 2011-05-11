@@ -668,6 +668,9 @@
 			ECA63E95137AB8E70031FC77 /* PBXTextBookmark */ = ECA63E95137AB8E70031FC77 /* PBXTextBookmark */;
 			ECA63E96137AB8E80031FC77 /* PBXTextBookmark */ = ECA63E96137AB8E80031FC77 /* PBXTextBookmark */;
 			ECA63E97137AB8E80031FC77 /* PBXTextBookmark */ = ECA63E97137AB8E80031FC77 /* PBXTextBookmark */;
+			ECA63E98137AB9430031FC77 /* PBXTextBookmark */ = ECA63E98137AB9430031FC77 /* PBXTextBookmark */;
+			ECA63E99137AB9430031FC77 /* PBXTextBookmark */ = ECA63E99137AB9430031FC77 /* PBXTextBookmark */;
+			ECA63E9A137AB9430031FC77 /* PBXTextBookmark */ = ECA63E9A137AB9430031FC77 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD2399135D510C00E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -4927,7 +4930,7 @@
 		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
 		name = "NgnHistoryService.mm: 7";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 334;
 		rType = 0;
 		vrLen = 72;
 		vrLoc = 0;
@@ -5853,7 +5856,7 @@
 		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
 		name = "NgnHistoryService.mm: 7";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 334;
 		rType = 0;
 		vrLen = 72;
 		vrLoc = 0;
@@ -6063,7 +6066,7 @@
 		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
 		name = "NgnHistoryService.mm: 3";
 		rLen = 66;
-		rLoc = 31;
+		rLoc = 53;
 		rType = 0;
 		vrLen = 281;
 		vrLoc = 0;
@@ -6268,6 +6271,36 @@
 		vrLen = 1248;
 		vrLoc = 0;
 	};
+	ECA63E98137AB9430031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7D39631379ED7E0052CE45 /* TestMessaging.mm */;
+		name = "TestMessaging.mm: 27";
+		rLen = 0;
+		rLoc = 748;
+		rType = 0;
+		vrLen = 1248;
+		vrLoc = 0;
+	};
+	ECA63E99137AB9430031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
+		name = "NgnHistoryService.mm: 3";
+		rLen = 66;
+		rLoc = 53;
+		rType = 0;
+		vrLen = 281;
+		vrLoc = 0;
+	};
+	ECA63E9A137AB9430031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
+		name = "NgnHistoryService.mm: 27";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 334;
+		vrLoc = 0;
+	};
 	ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 2483}}";
@@ -6314,8 +6347,8 @@
 	ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{31, 66}";
-			sepNavVisRange = "{0, 281}";
+			sepNavSelRange = "{333, 0}";
+			sepNavVisRange = "{0, 334}";
 		};
 	};
 	ECF200991360E2E900B0BFEB /* NgnHttpClientService.h */ = {
