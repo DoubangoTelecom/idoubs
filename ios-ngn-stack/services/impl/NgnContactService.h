@@ -4,8 +4,8 @@
 #import <AddressBook/AddressBook.h>
 
 #import "iOSNgnConfig.h"
-#import "NgnBaseService.h"
-#import "INgnContactService.h"
+#import "services/impl/NgnBaseService.h"
+#import "services/INgnContactService.h"
 
 @class NgnContact;
 

@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
 #import "iOSNgnConfig.h"
-#import "NgnBaseService.h"
-#import "INgnStorageService.h"
+#import "services/impl/NgnBaseService.h"
+#import "services/INgnStorageService.h"
 
 @interface NgnStorageService : NgnBaseService <INgnStorageService>{
 
