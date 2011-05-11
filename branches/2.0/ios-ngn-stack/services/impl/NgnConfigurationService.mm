@@ -1,6 +1,10 @@
 #import "NgnConfigurationService.h"
 #import "NgnConfigurationEntry.h"
 
+#undef TAG
+#define kTAG @"NgnConfigurationService///: "
+#define TAG kTAG
+
 @implementation NgnConfigurationService(Private)
 - (void)userDefaultsDidChangeNotification:(NSNotification *)note{
 	
@@ -44,6 +48,8 @@
 								  /* === SECURITY === */
 								  DEFAULT_SECURITY_IMSAKA_OPID, SECURITY_IMSAKA_OPID,
 								  
+								  /* === RCS === */
+								  [NSNumber numberWithBool:DEFAULT_RCS_AUTO_ACCEPT_PAGER_MODE_IM], RCS_AUTO_ACCEPT_PAGER_MODE_IM,
 								  
 								  nil];
 		
@@ -63,12 +69,14 @@
 //
 
 -(BOOL) start{
+	NgnNSLog(TAG, @"Start()");
 	[[NSNotificationCenter defaultCenter] addObserver: self 
 											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 	return YES;
 }
 
 -(BOOL) stop{
+	NgnNSLog(TAG, @"Stop()");
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	return YES;
 }

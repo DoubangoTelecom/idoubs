@@ -38,6 +38,33 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		EC6AD5C3136B1BDB00617B95 /* NgnStackEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6AD5C1136B1BDB00617B95 /* NgnStackEventArgs.h */; };
 		EC6AD5C4136B1BDB00617B95 /* NgnStackEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */; };
+		EC7D386B13798AC30052CE45 /* NgnMessagingSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D386913798AC30052CE45 /* NgnMessagingSession.h */; };
+		EC7D386C13798AC30052CE45 /* NgnMessagingSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7D386A13798AC30052CE45 /* NgnMessagingSession.mm */; };
+		EC7D388A1379A3300052CE45 /* NgnMessagingEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D38881379A3300052CE45 /* NgnMessagingEventArgs.h */; };
+		EC7D388B1379A3300052CE45 /* NgnMessagingEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7D38891379A3300052CE45 /* NgnMessagingEventArgs.m */; };
+		EC7D392C1379E7140052CE45 /* NgnContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D392B1379E7140052CE45 /* NgnContentType.h */; };
+		EC7D39651379ED7E0052CE45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7D39601379ED7E0052CE45 /* main.m */; };
+		EC7D39661379ED7E0052CE45 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7D39611379ED7E0052CE45 /* MainWindow.xib */; };
+		EC7D39671379ED7E0052CE45 /* TestMessaging.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7D39631379ED7E0052CE45 /* TestMessaging.mm */; };
+		EC7D39861379ED9C0052CE45 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libios_ngn_stack.a */; };
+		EC7D39871379ED9C0052CE45 /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */; };
+		EC7D39881379ED9C0052CE45 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
+		EC7D39891379ED9C0052CE45 /* libtinyIPSec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2767135E79B800E6A9A3 /* libtinyIPSec.a */; };
+		EC7D398A1379ED9C0052CE45 /* libtinyMEDIA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2CDE135E7C7D00E6A9A3 /* libtinyMEDIA.a */; };
+		EC7D398B1379ED9C0052CE45 /* libtinyMSRP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD279B135E7A0200E6A9A3 /* libtinyMSRP.a */; };
+		EC7D398C1379ED9C0052CE45 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
+		EC7D398D1379ED9C0052CE45 /* libtinyRTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2693135D5DDD00E6A9A3 /* libtinyRTP.a */; };
+		EC7D398E1379ED9C0052CE45 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
+		EC7D398F1379ED9C0052CE45 /* libtinySDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD25F7135D5CD100E6A9A3 /* libtinySDP.a */; };
+		EC7D39901379ED9C0052CE45 /* libtinySIGCOMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2D5A135E7CD800E6A9A3 /* libtinySIGCOMP.a */; };
+		EC7D39911379ED9C0052CE45 /* libtinySIP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E9A135E7D6D00E6A9A3 /* libtinySIP.a */; };
+		EC7D39921379ED9C0052CE45 /* libtinySMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E02135E7D1000E6A9A3 /* libtinySMS.a */; };
+		EC7D39931379ED9C0052CE45 /* libtinyWRAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD32AE135E821000E6A9A3 /* libtinyWRAP.a */; };
+		EC7D39941379ED9C0052CE45 /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E5B135E7D3600E6A9A3 /* libtinyXCAP.a */; };
+		EC7D39951379EDA80052CE45 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		EC7D39961379EDA80052CE45 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		EC7D39971379EDA80052CE45 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
+		EC7D39A61379F0360052CE45 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
 		EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */; };
 		EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */; };
 		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
@@ -134,6 +161,9 @@
 		EC8724751377EE0400C616F0 /* NgnContact.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8724731377EE0400C616F0 /* NgnContact.h */; };
 		EC8724761377EE0400C616F0 /* NgnContact.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8724741377EE0400C616F0 /* NgnContact.m */; };
 		EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		EC8725AC137830FE00C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		EC8726731378457900C616F0 /* NgnPhoneNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8726711378457900C616F0 /* NgnPhoneNumber.h */; };
+		EC8726741378457900C616F0 /* NgnPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8726721378457900C616F0 /* NgnPhoneNumber.m */; };
 		EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547F2136DC12100F4C113 /* NgnMediaType.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9547F1136DC12100F4C113 /* NgnMediaType.h */; };
@@ -1090,6 +1120,111 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC7D39681379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "ios-ngn-stack";
+		};
+		EC7D396A1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC7D396C1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC7D396E1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC7D39701379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
+			remoteInfo = tinyRTP;
+		};
+		EC7D39721379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC7D39741379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC7D39761379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
+			remoteInfo = tinyHTTP;
+		};
+		EC7D39781379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC7D397A1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC7D397C1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3;
+			remoteInfo = tinySMS;
+		};
+		EC7D397E1379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3;
+			remoteInfo = tinyXCAP;
+		};
+		EC7D39801379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3;
+			remoteInfo = tinySIP;
+		};
+		EC7D39821379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3;
+			remoteInfo = tinyDAV;
+		};
+		EC7D39841379ED980052CE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD32AD135E821000E6A9A3;
+			remoteInfo = tinyWRAP;
+		};
 		EC81BE3A136C8E0C0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -1721,6 +1856,17 @@
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6AD5C1136B1BDB00617B95 /* NgnStackEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnStackEventArgs.h; sourceTree = "<group>"; };
 		EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnStackEventArgs.m; sourceTree = "<group>"; };
+		EC7D386913798AC30052CE45 /* NgnMessagingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMessagingSession.h; sourceTree = "<group>"; };
+		EC7D386A13798AC30052CE45 /* NgnMessagingSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnMessagingSession.mm; sourceTree = "<group>"; };
+		EC7D38881379A3300052CE45 /* NgnMessagingEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMessagingEventArgs.h; sourceTree = "<group>"; };
+		EC7D38891379A3300052CE45 /* NgnMessagingEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnMessagingEventArgs.m; sourceTree = "<group>"; };
+		EC7D392B1379E7140052CE45 /* NgnContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContentType.h; sourceTree = "<group>"; };
+		EC7D39511379ED2A0052CE45 /* testMessaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testMessaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7D395F1379ED7E0052CE45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7D39601379ED7E0052CE45 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC7D39611379ED7E0052CE45 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		EC7D39621379ED7E0052CE45 /* TestMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMessaging.h; sourceTree = "<group>"; };
+		EC7D39631379ED7E0052CE45 /* TestMessaging.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestMessaging.mm; sourceTree = "<group>"; };
 		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audioqueue.c; sourceTree = "<group>"; };
@@ -1767,6 +1913,8 @@
 		EC8724731377EE0400C616F0 /* NgnContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContact.h; sourceTree = "<group>"; };
 		EC8724741377EE0400C616F0 /* NgnContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnContact.m; sourceTree = "<group>"; };
 		EC87251F1378101000C616F0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		EC8726711378457900C616F0 /* NgnPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPhoneNumber.h; sourceTree = "<group>"; };
+		EC8726721378457900C616F0 /* NgnPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnPhoneNumber.m; sourceTree = "<group>"; };
 		EC9547F1136DC12100F4C113 /* NgnMediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMediaType.h; sourceTree = "<group>"; };
 		EC954809136DCBC300F4C113 /* NgnPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPredicate.h; sourceTree = "<group>"; };
 		EC954859136DE0ED00F4C113 /* NgnUriUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnUriUtils.h; sourceTree = "<group>"; };
@@ -2885,6 +3033,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC7D394F1379ED2A0052CE45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7D39861379ED9C0052CE45 /* libios_ngn_stack.a in Frameworks */,
+				EC7D39871379ED9C0052CE45 /* libtinyDAV.a in Frameworks */,
+				EC7D39881379ED9C0052CE45 /* libtinyHTTP.a in Frameworks */,
+				EC7D39891379ED9C0052CE45 /* libtinyIPSec.a in Frameworks */,
+				EC7D398A1379ED9C0052CE45 /* libtinyMEDIA.a in Frameworks */,
+				EC7D398B1379ED9C0052CE45 /* libtinyMSRP.a in Frameworks */,
+				EC7D398C1379ED9C0052CE45 /* libtinyNET.a in Frameworks */,
+				EC7D398D1379ED9C0052CE45 /* libtinyRTP.a in Frameworks */,
+				EC7D398E1379ED9C0052CE45 /* libtinySAK.a in Frameworks */,
+				EC7D398F1379ED9C0052CE45 /* libtinySDP.a in Frameworks */,
+				EC7D39901379ED9C0052CE45 /* libtinySIGCOMP.a in Frameworks */,
+				EC7D39911379ED9C0052CE45 /* libtinySIP.a in Frameworks */,
+				EC7D39921379ED9C0052CE45 /* libtinySMS.a in Frameworks */,
+				EC7D39931379ED9C0052CE45 /* libtinyWRAP.a in Frameworks */,
+				EC7D39941379ED9C0052CE45 /* libtinyXCAP.a in Frameworks */,
+				EC7D39951379EDA80052CE45 /* AddressBook.framework in Frameworks */,
+				EC7D39961379EDA80052CE45 /* AudioToolbox.framework in Frameworks */,
+				EC7D39971379EDA80052CE45 /* CFNetwork.framework in Frameworks */,
+				EC7D39A61379F0360052CE45 /* libresolv.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC81BD4E136C5B3D0068BCB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2930,6 +3104,7 @@
 				EC83BC3C1369C57E00DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83BC3E1369C57E00DD3355 /* libresolv.dylib in Frameworks */,
 				EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */,
+				EC8725AC137830FE00C616F0 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3121,6 +3296,7 @@
 				EC83BA1C136990C800DD3355 /* testAudioCall.app */,
 				EC83BA27136990DA00DD3355 /* testVideoCall.app */,
 				EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */,
+				EC7D39511379ED2A0052CE45 /* testMessaging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3160,6 +3336,19 @@
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
+		};
+		EC7D395E1379ED7E0052CE45 /* testMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				EC7D395F1379ED7E0052CE45 /* Info.plist */,
+				EC7D39601379ED7E0052CE45 /* main.m */,
+				EC7D39611379ED7E0052CE45 /* MainWindow.xib */,
+				EC7D39621379ED7E0052CE45 /* TestMessaging.h */,
+				EC7D39631379ED7E0052CE45 /* TestMessaging.mm */,
+			);
+			name = testMessaging;
+			path = ../testMessaging;
+			sourceTree = SOURCE_ROOT;
 		};
 		EC81BD59136C5B570068BCB4 /* testAudioUnit */ = {
 			isa = PBXGroup;
@@ -3229,6 +3418,7 @@
 		EC83BA0F1369908500DD3355 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EC7D395E1379ED7E0052CE45 /* testMessaging */,
 				EC81BD59136C5B570068BCB4 /* testAudioUnit */,
 				EC83BA3A1369918A00DD3355 /* testVideoCall */,
 				EC83BA391369917C00DD3355 /* testAudioCall */,
@@ -3304,6 +3494,8 @@
 				EC6AD5C2136B1BDB00617B95 /* NgnStackEventArgs.m */,
 				EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */,
 				EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */,
+				EC7D38881379A3300052CE45 /* NgnMessagingEventArgs.h */,
+				EC7D38891379A3300052CE45 /* NgnMessagingEventArgs.m */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -3312,6 +3504,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9547F1136DC12100F4C113 /* NgnMediaType.h */,
+				EC7D392B1379E7140052CE45 /* NgnContentType.h */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -3321,6 +3514,8 @@
 			children = (
 				EC8724731377EE0400C616F0 /* NgnContact.h */,
 				EC8724741377EE0400C616F0 /* NgnContact.m */,
+				EC8726711378457900C616F0 /* NgnPhoneNumber.h */,
+				EC8726721378457900C616F0 /* NgnPhoneNumber.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3389,6 +3584,8 @@
 				ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */,
 				ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */,
 				ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */,
+				EC7D386913798AC30052CE45 /* NgnMessagingSession.h */,
+				EC7D386A13798AC30052CE45 /* NgnMessagingSession.mm */,
 			);
 			path = sip;
 			sourceTree = "<group>";
@@ -5781,6 +5978,10 @@
 				EC95485B136DE0ED00F4C113 /* NgnUriUtils.h in Headers */,
 				EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */,
 				EC8724751377EE0400C616F0 /* NgnContact.h in Headers */,
+				EC8726731378457900C616F0 /* NgnPhoneNumber.h in Headers */,
+				EC7D386B13798AC30052CE45 /* NgnMessagingSession.h in Headers */,
+				EC7D388A1379A3300052CE45 /* NgnMessagingEventArgs.h in Headers */,
+				EC7D392C1379E7140052CE45 /* NgnContentType.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6358,6 +6559,38 @@
 			productReference = D2AAC07E0554694100DB518D /* libios_ngn_stack.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		EC7D39501379ED2A0052CE45 /* testMessaging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7D39561379ED2B0052CE45 /* Build configuration list for PBXNativeTarget "testMessaging" */;
+			buildPhases = (
+				EC7D394D1379ED2A0052CE45 /* Resources */,
+				EC7D394E1379ED2A0052CE45 /* Sources */,
+				EC7D394F1379ED2A0052CE45 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7D39691379ED980052CE45 /* PBXTargetDependency */,
+				EC7D396B1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D396D1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D396F1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39711379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39731379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39751379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39771379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39791379ED980052CE45 /* PBXTargetDependency */,
+				EC7D397B1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D397D1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D397F1379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39811379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39831379ED980052CE45 /* PBXTargetDependency */,
+				EC7D39851379ED980052CE45 /* PBXTargetDependency */,
+			);
+			name = testMessaging;
+			productName = testMessaging;
+			productReference = EC7D39511379ED2A0052CE45 /* testMessaging.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC81BD58136C5B3E0068BCB4 /* Build configuration list for PBXNativeTarget "testAudioUnit" */;
@@ -6780,11 +7013,20 @@
 				EC83BA1B136990C800DD3355 /* testAudioCall */,
 				EC83BA26136990DA00DD3355 /* testVideoCall */,
 				EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */,
+				EC7D39501379ED2A0052CE45 /* testMessaging */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC7D394D1379ED2A0052CE45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7D39661379ED7E0052CE45 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC81BD4C136C5B3D0068BCB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -6851,6 +7093,18 @@
 				EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */,
 				EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */,
 				EC8724761377EE0400C616F0 /* NgnContact.m in Sources */,
+				EC8726741378457900C616F0 /* NgnPhoneNumber.m in Sources */,
+				EC7D386C13798AC30052CE45 /* NgnMessagingSession.mm in Sources */,
+				EC7D388B1379A3300052CE45 /* NgnMessagingEventArgs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7D394E1379ED2A0052CE45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7D39651379ED7E0052CE45 /* main.m in Sources */,
+				EC7D39671379ED7E0052CE45 /* TestMessaging.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7420,6 +7674,81 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC7D39691379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* ios-ngn-stack */;
+			targetProxy = EC7D39681379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D396B1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC7D396A1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D396D1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC7D396C1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D396F1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC7D396E1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39711379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			targetProxy = EC7D39701379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39731379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC7D39721379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39751379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC7D39741379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39771379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			targetProxy = EC7D39761379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39791379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC7D39781379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D397B1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			targetProxy = EC7D397A1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D397D1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			targetProxy = EC7D397C1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D397F1379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			targetProxy = EC7D397E1379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39811379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			targetProxy = EC7D39801379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39831379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			targetProxy = EC7D39821379ED980052CE45 /* PBXContainerItemProxy */;
+		};
+		EC7D39851379ED980052CE45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD32AD135E821000E6A9A3 /* tinyWRAP */;
+			targetProxy = EC7D39841379ED980052CE45 /* PBXContainerItemProxy */;
+		};
 		EC81BE3B136C8E0C0068BCB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
@@ -7945,6 +8274,61 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
+			};
+			name = Release;
+		};
+		EC7D39541379ED2B0052CE45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testMessaging/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
+				OTHER_LDFLAGS = (
+					"-lspeexdsp",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testMessaging;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC7D39551379ED2B0052CE45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "testMessaging-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testMessaging;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -8612,6 +8996,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7D39561379ED2B0052CE45 /* Build configuration list for PBXNativeTarget "testMessaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7D39541379ED2B0052CE45 /* Debug */,
+				EC7D39551379ED2B0052CE45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

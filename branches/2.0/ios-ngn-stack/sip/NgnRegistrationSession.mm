@@ -3,10 +3,23 @@
 
 #import "SipSession.h"
 
+#undef kSessions
+#define kSessions [NgnRegistrationSession getAllSessions]
+
+@interface NgnRegistrationSession (Private)
++(NSMutableDictionary*) getAllSessions;
+-(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack;
+@end
 
 @implementation NgnRegistrationSession (Private)
 
-static const NSMutableDictionary* kSessions = [[[NSMutableDictionary alloc]init] autorelease];
++(NSMutableDictionary*) getAllSessions{
+	static NSMutableDictionary* sessions = nil;
+	if(sessions == nil){
+		sessions = [[NSMutableDictionary alloc] init];
+	}
+	return sessions;
+}
 
 -(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack{
 	if((self = (NgnRegistrationSession*)[super initWithSipStack:sipStack])){
