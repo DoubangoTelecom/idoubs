@@ -640,6 +640,11 @@
 			ECA63E53137AA75B0031FC77 /* PBXTextBookmark */ = ECA63E53137AA75B0031FC77 /* PBXTextBookmark */;
 			ECA63E54137AA75B0031FC77 /* PBXTextBookmark */ = ECA63E54137AA75B0031FC77 /* PBXTextBookmark */;
 			ECA63E55137AA75B0031FC77 /* PBXTextBookmark */ = ECA63E55137AA75B0031FC77 /* PBXTextBookmark */;
+			ECA63E5A137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5A137AAB8C0031FC77 /* PBXTextBookmark */;
+			ECA63E5B137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5B137AAB8C0031FC77 /* PBXTextBookmark */;
+			ECA63E5C137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5C137AAB8C0031FC77 /* PBXTextBookmark */;
+			ECA63E5D137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5D137AAB8C0031FC77 /* PBXTextBookmark */;
+			ECA63E5E137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5E137AAB8C0031FC77 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD2399135D510C00E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -4199,7 +4204,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 98";
 		rLen = 0;
-		rLoc = 2423;
+		rLoc = 2444;
 		rType = 0;
 		vrLen = 726;
 		vrLoc = 1837;
@@ -5968,7 +5973,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 96";
 		rLen = 17;
-		rLoc = 2388;
+		rLoc = 2409;
 		rType = 0;
 		vrLen = 836;
 		vrLoc = 1757;
@@ -6013,6 +6018,56 @@
 		vrLen = 572;
 		vrLoc = 2861;
 	};
+	ECA63E5A137AAB8C0031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200921360E2BD00B0BFEB /* NgnContactService.mm */;
+		name = "NgnContactService.mm: 161";
+		rLen = 0;
+		rLoc = 3279;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 2861;
+	};
+	ECA63E5B137AAB8C0031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */;
+		name = "NgnEngine.h: 24";
+		rLen = 56;
+		rLoc = 864;
+		rType = 0;
+		vrLen = 974;
+		vrLoc = 0;
+	};
+	ECA63E5C137AAB8C0031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
+		name = "NgnContactService.h: 1";
+		rLen = 16;
+		rLoc = 4;
+		rType = 0;
+		vrLen = 405;
+		vrLoc = 0;
+	};
+	ECA63E5D137AAB8C0031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
+		name = "NgnEngine.mm: 96";
+		rLen = 17;
+		rLoc = 2409;
+		rType = 0;
+		vrLen = 859;
+		vrLoc = 1734;
+	};
+	ECA63E5E137AAB8C0031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
+		name = "NgnEngine.mm: 101";
+		rLen = 0;
+		rLoc = 2543;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 1884;
+	};
 	ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 2483}}";
@@ -6038,7 +6093,7 @@
 	ECF200911360E2BD00B0BFEB /* NgnContactService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{402, 0}";
+			sepNavSelRange = "{4, 16}";
 			sepNavVisRange = "{0, 405}";
 		};
 	};
@@ -6129,15 +6184,15 @@
 	ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{812, 24}";
+			sepNavSelRange = "{864, 56}";
 			sepNavVisRange = "{0, 974}";
 		};
 	};
 	ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1384, 1456}}";
-			sepNavSelRange = "{2388, 17}";
-			sepNavVisRange = "{1757, 836}";
+			sepNavIntBoundsRect = "{{0, 0}, {1384, 1508}}";
+			sepNavSelRange = "{2543, 0}";
+			sepNavVisRange = "{1884, 813}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};
 	};

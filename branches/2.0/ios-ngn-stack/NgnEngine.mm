@@ -92,10 +92,14 @@ static NgnEngine* sInstance = nil;
 }
 
 -(NgnBaseService<INgnContactService>*)getContactService{
+#if	TARGET_OS_IPHONE
 	if(mContactService == nil){
 		mContactService = [[NgnContactService alloc] init];
 	}
 	return mContactService;
+#else
+#	error "You must provide your own implementation of contact service"
+#endif
 }
 
 +(void)initialize{

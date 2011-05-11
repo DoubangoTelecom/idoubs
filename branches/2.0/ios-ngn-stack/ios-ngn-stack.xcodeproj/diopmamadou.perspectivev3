@@ -282,7 +282,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 750}, {316, 675}}</string>
+							<string>{{0, 783}, {316, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnContactService.mm</string>
+								<string>NgnEngine.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnContactService.mm</string>
+										<string>NgnEngine.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECA63E55137AA75B0031FC77</string>
+										<string>ECA63E5E137AAB8C0031FC77</string>
 										<key>history</key>
 										<array>
 											<string>EC8B21B313786A3200E07171</string>
@@ -395,20 +395,20 @@
 											<string>EC7D3AE5137A09940052CE45</string>
 											<string>ECA63DBB137A8CDB0031FC77</string>
 											<string>ECA63DBD137A8CDB0031FC77</string>
-											<string>ECA63DBE137A8CDB0031FC77</string>
 											<string>ECA63E47137AA75B0031FC77</string>
 											<string>ECA63E48137AA75B0031FC77</string>
 											<string>ECA63E49137AA75B0031FC77</string>
 											<string>ECA63E4A137AA75B0031FC77</string>
 											<string>ECA63E4C137AA75B0031FC77</string>
 											<string>ECA63E4D137AA75B0031FC77</string>
-											<string>ECA63E4E137AA75B0031FC77</string>
 											<string>ECA63E4F137AA75B0031FC77</string>
 											<string>ECA63E50137AA75B0031FC77</string>
-											<string>ECA63E51137AA75B0031FC77</string>
 											<string>ECA63E52137AA75B0031FC77</string>
 											<string>ECA63E53137AA75B0031FC77</string>
-											<string>ECA63E54137AA75B0031FC77</string>
+											<string>ECA63E5A137AAB8C0031FC77</string>
+											<string>ECA63E5B137AAB8C0031FC77</string>
+											<string>ECA63E5C137AAB8C0031FC77</string>
+											<string>ECA63E5D137AAB8C0031FC77</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
