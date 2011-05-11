@@ -3213,7 +3213,7 @@
 		isa = PBXTextBookmark;
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		rLen = 1;
-		rLoc = 36;
+		rLoc = 38;
 		rType = 1;
 	};
 	EC7D3A9C137A06250052CE45 /* PBXTextBookmark */ = {
@@ -3221,7 +3221,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 432;
@@ -3241,7 +3241,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 599;
@@ -3251,7 +3251,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 448;
@@ -3261,7 +3261,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 506;
@@ -3271,7 +3271,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 599;
@@ -3281,7 +3281,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 55";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1290;
 		vrLoc = 506;
@@ -3311,7 +3311,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 55";
 		rLen = 0;
-		rLoc = 1513;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 599;
@@ -4205,7 +4205,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 98";
 		rLen = 0;
-		rLoc = 2444;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 726;
 		vrLoc = 1837;
@@ -5944,7 +5944,7 @@
 		fRef = ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */;
 		name = "NgnEngine.h: 23";
 		rLen = 24;
-		rLoc = 812;
+		rLoc = 823;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 0;
@@ -5974,7 +5974,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 96";
 		rLen = 17;
-		rLoc = 2409;
+		rLoc = 2439;
 		rType = 0;
 		vrLen = 836;
 		vrLoc = 1757;
@@ -6034,7 +6034,7 @@
 		fRef = ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */;
 		name = "NgnEngine.h: 24";
 		rLen = 56;
-		rLoc = 864;
+		rLoc = 875;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 0;
@@ -6054,7 +6054,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 96";
 		rLen = 17;
-		rLoc = 2409;
+		rLoc = 2439;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 1734;
@@ -6064,7 +6064,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 101";
 		rLen = 0;
-		rLoc = 2475;
+		rLoc = 2505;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 1884;
@@ -6074,7 +6074,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 57";
 		rLen = 0;
-		rLoc = 1563;
+		rLoc = 1593;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 1884;
@@ -6195,14 +6195,14 @@
 	ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{864, 56}";
-			sepNavVisRange = "{0, 974}";
+			sepNavSelRange = "{234, 0}";
+			sepNavVisRange = "{0, 985}";
 		};
 	};
 	ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1384, 1508}}";
-			sepNavSelRange = "{1563, 0}";
+			sepNavSelRange = "{2283, 34}";
 			sepNavVisRange = "{1884, 756}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};

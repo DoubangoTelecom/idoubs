@@ -7,6 +7,7 @@
 #import "services/INgnContactService.h"
 
 @interface NgnEngine : NSObject {
+@protected
 	BOOL mStarted;
 	NgnBaseService<INgnSipService>* mSipService;
 	NgnBaseService<INgnConfigurationService>* mConfigurationService;
