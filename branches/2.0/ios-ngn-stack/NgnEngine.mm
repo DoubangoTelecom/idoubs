@@ -31,6 +31,8 @@ static NgnEngine* sInstance = nil;
 	
 	[mSipService release];
 	[mConfigurationService release];
+	[mContactService release];
+	
 	[super dealloc];
 }
 
