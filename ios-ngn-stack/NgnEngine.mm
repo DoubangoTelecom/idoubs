@@ -3,6 +3,11 @@
 #import "NgnSipService.h"
 #import "NgnConfigurationService.h"
 #import "NgnContactService.h"
+#import "NgnHttpClientService.h"
+#import "NgnHistoryService.h"
+#import "NgnSoundService.h"
+#import "NgnNetworkService.h"
+#import "NgnStorageService.h"
 
 #undef TAG
 #define kTAG @"NgnEngine///: "
@@ -58,7 +63,12 @@ static NgnEngine* sInstance = nil;
 	
 	bSuccess &= [self.configurationService start];
 	bSuccess &= [self.contactService start];
-	bSuccess &= [self.sipService start];
+	bSuccess &= [self.sipService start];	
+	bSuccess &= [self.httpClientService start];
+	bSuccess &= [self.historyService start];
+	bSuccess &= [self.soundService start];
+	bSuccess &= [self.networkService start];
+	bSuccess &= [self.storageService start];
 	
 	mStarted = TRUE;
 	return bSuccess;
@@ -74,6 +84,11 @@ static NgnEngine* sInstance = nil;
 	bSuccess &= [self.sipService stop];
 	bSuccess &= [self.contactService stop];
 	bSuccess &= [self.configurationService stop];
+	bSuccess &= [self.httpClientService stop];
+	bSuccess &= [self.historyService stop];
+	bSuccess &= [self.soundService stop];
+	bSuccess &= [self.networkService stop];
+	bSuccess &= [self.storageService stop];
 	
 	mStarted = FALSE;
 	return bSuccess;
@@ -102,6 +117,45 @@ static NgnEngine* sInstance = nil;
 #else
 	return nil;
 #endif
+}
+
+-(NgnBaseService<INgnHttpClientService>*) getHttpClientService{
+	if(mHttpClientService == nil){
+		mHttpClientService = [[NgnHttpClientService alloc] init];
+	}
+	return mHttpClientService;
+}
+
+-(NgnBaseService<INgnHistoryService>*)getHistoryService{
+#if	TARGET_OS_IPHONE
+	if(mHistoryService == nil){
+		mHistoryService = [[NgnHistoryService alloc] init];
+	}
+	return mHistoryService;
+#else
+	return nil;
+#endif
+}
+
+-(NgnBaseService<INgnSoundService>* )getSoundService{
+	if(mSoundService == nil){
+		mSoundService = [[NgnSoundService alloc] init];
+	}
+	return mSoundService;
+}
+
+-(NgnBaseService<INgnNetworkService>*)getNetworkService{
+	if(mNetworkService == nil){
+		mNetworkService = [[NgnNetworkService alloc] init];
+	}
+	return mNetworkService;
+}
+
+-(NgnBaseService<INgnStorageService>*)getStorageService{
+	if(mStorageService == nil){
+		mStorageService = [[NgnStorageService alloc] init];
+	}
+	return mStorageService;
 }
 
 +(void)initialize{
