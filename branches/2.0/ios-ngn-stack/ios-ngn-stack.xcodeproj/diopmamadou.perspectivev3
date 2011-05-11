@@ -268,23 +268,21 @@
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
 								<string>EC83BA0F1369908500DD3355</string>
-								<string>EC7D395E1379ED7E0052CE45</string>
-								<string>ECFD28FA135E7B2E00E6A9A3</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
+								<string>ECFD23C0135D534100E6A9A3</string>
+								<string>ECFD23C1135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>58</integer>
+									<integer>57</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {316, 675}}</string>
+							<string>{{0, 750}, {316, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TestMessaging.h</string>
+								<string>NgnContactService.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,18 +325,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TestMessaging.h</string>
+										<string>NgnContactService.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECA63E2D137A98C60031FC77</string>
+										<string>ECA63E55137AA75B0031FC77</string>
 										<key>history</key>
 										<array>
-											<string>EC8B21A1137868FE00E07171</string>
-											<string>EC8B21A4137868FE00E07171</string>
 											<string>EC8B21B313786A3200E07171</string>
 											<string>EC8B21E713786C5000E07171</string>
-											<string>EC8B220B1378717C00E07171</string>
 											<string>EC7D3701137954790052CE45</string>
 											<string>EC7D3703137954790052CE45</string>
 											<string>EC7D3704137954790052CE45</string>
@@ -391,7 +386,6 @@
 											<string>EC7D3A87137A05430052CE45</string>
 											<string>EC7D3A98137A06250052CE45</string>
 											<string>EC7D3A99137A06250052CE45</string>
-											<string>EC7D3AAD137A06AD0052CE45</string>
 											<string>EC7D3ABC137A07F90052CE45</string>
 											<string>EC7D3ABD137A07F90052CE45</string>
 											<string>EC7D3AE1137A09940052CE45</string>
@@ -400,11 +394,21 @@
 											<string>EC7D3AE4137A09940052CE45</string>
 											<string>EC7D3AE5137A09940052CE45</string>
 											<string>ECA63DBB137A8CDB0031FC77</string>
-											<string>ECA63DBC137A8CDB0031FC77</string>
 											<string>ECA63DBD137A8CDB0031FC77</string>
 											<string>ECA63DBE137A8CDB0031FC77</string>
-											<string>ECA63E1B137A94AE0031FC77</string>
-											<string>ECA63E1C137A94AE0031FC77</string>
+											<string>ECA63E47137AA75B0031FC77</string>
+											<string>ECA63E48137AA75B0031FC77</string>
+											<string>ECA63E49137AA75B0031FC77</string>
+											<string>ECA63E4A137AA75B0031FC77</string>
+											<string>ECA63E4C137AA75B0031FC77</string>
+											<string>ECA63E4D137AA75B0031FC77</string>
+											<string>ECA63E4E137AA75B0031FC77</string>
+											<string>ECA63E4F137AA75B0031FC77</string>
+											<string>ECA63E50137AA75B0031FC77</string>
+											<string>ECA63E51137AA75B0031FC77</string>
+											<string>ECA63E52137AA75B0031FC77</string>
+											<string>ECA63E53137AA75B0031FC77</string>
+											<string>ECA63E54137AA75B0031FC77</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -499,7 +503,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1102, 81}}</string>
+										<string>{{10, 27}, {1102, 84}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
