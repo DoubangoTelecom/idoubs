@@ -98,7 +98,7 @@ static NgnEngine* sInstance = nil;
 	}
 	return mContactService;
 #else
-#	error "You must provide your own implementation of contact service"
+	return nil;
 #endif
 }
 

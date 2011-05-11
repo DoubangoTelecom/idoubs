@@ -645,6 +645,7 @@
 			ECA63E5C137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5C137AAB8C0031FC77 /* PBXTextBookmark */;
 			ECA63E5D137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5D137AAB8C0031FC77 /* PBXTextBookmark */;
 			ECA63E5E137AAB8C0031FC77 /* PBXTextBookmark */ = ECA63E5E137AAB8C0031FC77 /* PBXTextBookmark */;
+			ECA63E5F137AAC590031FC77 /* PBXTextBookmark */ = ECA63E5F137AAC590031FC77 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD2399135D510C00E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -6063,9 +6064,19 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 101";
 		rLen = 0;
-		rLoc = 2543;
+		rLoc = 2475;
 		rType = 0;
 		vrLen = 813;
+		vrLoc = 1884;
+	};
+	ECA63E5F137AAC590031FC77 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
+		name = "NgnEngine.mm: 57";
+		rLen = 0;
+		rLoc = 1563;
+		rType = 0;
+		vrLen = 756;
 		vrLoc = 1884;
 	};
 	ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {
@@ -6191,8 +6202,8 @@
 	ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1384, 1508}}";
-			sepNavSelRange = "{2543, 0}";
-			sepNavVisRange = "{1884, 813}";
+			sepNavSelRange = "{1563, 0}";
+			sepNavVisRange = "{1884, 756}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};
 	};
