@@ -87,6 +87,7 @@
 #define RCS_USE_RLS @"RCS_USE_RLS"
 #define RCS_SMSC @"RCS_SMSC"
 #define RCS_STATUS  @"RCS_STATUS"
+#define RCS_AUTO_ACCEPT_PAGER_MODE_IM	@"RCS_AUTO_ACCEPT_PAGER_MODE_IM"
 
 
 //
@@ -181,6 +182,7 @@ tdav_codec_id_t.tdav_codec_id_h263.swigValue()*/
 #define DEFAULT_RCS_USE_RLS NO
 #define DEFAULT_RCS_SMSC @"sip:+331000000000@doubango.org"
 // static const NgnPresenceStatus DEFAULT_RCS_STATUS NgnPresenceStatus.Online
+#define DEFAULT_RCS_AUTO_ACCEPT_PAGER_MODE_IM YES
 
 
 #endif /* NGNCONFIGURATIONENTRY_H */

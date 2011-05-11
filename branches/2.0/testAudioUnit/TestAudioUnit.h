@@ -1,8 +1,6 @@
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
-@interface TestAudioUnit : NSObject <UIApplicationDelegate, AVAudioSessionDelegate> {
+@interface TestAudioUnit : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 }
 

@@ -1,8 +1,6 @@
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
-@interface TestVideoCall : NSObject <UIApplicationDelegate, AVAudioSessionDelegate> {
+@interface TestVideoCall : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 }
 
