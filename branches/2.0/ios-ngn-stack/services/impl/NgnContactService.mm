@@ -154,11 +154,11 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	return mLoading;
 }
 
--(NgnContactMutableArray*) contacts{
+-(NSMutableArray*) contacts{
 	return mContacts;
 }
 
--(NgnContactArray*) contactsWithPredicate: (NSPredicate*)predicate{
+-(NSArray*) contactsWithPredicate: (NSPredicate*)predicate{
 	return [mContacts filteredArrayUsingPredicate: predicate];
 }
 
