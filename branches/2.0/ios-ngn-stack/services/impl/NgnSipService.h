@@ -2,11 +2,11 @@
 
 #import "iOSNgnConfig.h"
 
-#import "NgnBaseService.h"
-#import "NgnSipPreferences.h"
+#import "sip/NgnSipPreferences.h"
 
-#import "INgnSipService.h"
-#import "INgnConfigurationService.h"
+#import "services/impl/NgnBaseService.h"
+#import "services/INgnSipService.h"
+#import "services/INgnConfigurationService.h"
 
 class _NgnSipCallback;
 @class NgnRegistrationSession;

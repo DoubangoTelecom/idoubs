@@ -1639,7 +1639,7 @@
 		isa = PBXTextBookmark;
 		fRef = ECF200A51360E32100B0BFEB /* NgnStorageService.h */;
 		name = "NgnStorageService.h: 3";
-		rLen = 26;
+		rLen = 40;
 		rLoc = 60;
 		rType = 0;
 		vrLen = 171;
@@ -4121,7 +4121,7 @@
 		fRef = ECF200A11360E31200B0BFEB /* NgnSoundService.h */;
 		name = "NgnSoundService.h: 3";
 		rLen = 0;
-		rLoc = 86;
+		rLoc = 100;
 		rType = 0;
 		vrLen = 165;
 		vrLoc = 0;
@@ -4141,7 +4141,7 @@
 		fRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */;
 		name = "NgnConfigurationService.h: 7";
 		rLen = 14;
-		rLoc = 206;
+		rLoc = 229;
 		rType = 0;
 		vrLen = 212;
 		vrLoc = 0;
@@ -4151,7 +4151,7 @@
 		fRef = ECF200951360E2D200B0BFEB /* NgnHistoryService.h */;
 		name = "NgnHistoryService.h: 9";
 		rLen = 0;
-		rLoc = 214;
+		rLoc = 237;
 		rType = 0;
 		vrLen = 172;
 		vrLoc = 0;
@@ -4161,7 +4161,7 @@
 		fRef = ECF200F01360ED1700B0BFEB /* NgnSipService.h */;
 		name = "NgnSipService.h: 24";
 		rLen = 42;
-		rLoc = 614;
+		rLoc = 646;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -4269,7 +4269,7 @@
 		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
 		name = "NgnContactService.h: 7";
 		rLen = 0;
-		rLoc = 195;
+		rLoc = 218;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 0;
@@ -4950,7 +4950,7 @@
 		fRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */;
 		name = "NgnConfigurationService.h: 7";
 		rLen = 14;
-		rLoc = 206;
+		rLoc = 229;
 		rType = 0;
 		vrLen = 212;
 		vrLoc = 0;
@@ -4960,7 +4960,7 @@
 		fRef = ECF200951360E2D200B0BFEB /* NgnHistoryService.h */;
 		name = "NgnHistoryService.h: 7";
 		rLen = 0;
-		rLoc = 211;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 173;
 		vrLoc = 0;
@@ -4970,7 +4970,7 @@
 		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
 		name = "NgnContactService.h: 13";
 		rLen = 22;
-		rLoc = 331;
+		rLoc = 354;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 0;
@@ -5028,7 +5028,7 @@
 		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
 		name = "NgnContactService.h: 13";
 		rLen = 0;
-		rLoc = 353;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 0;
@@ -5295,7 +5295,7 @@
 		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
 		name = "NgnContactService.h: 14";
 		rLen = 22;
-		rLoc = 331;
+		rLoc = 354;
 		rType = 0;
 		vrLen = 352;
 		vrLoc = 0;
@@ -5630,7 +5630,7 @@
 		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
 		name = "NgnContactService.h: 22";
 		rLen = 0;
-		rLoc = 402;
+		rLoc = 425;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 0;
@@ -5846,7 +5846,7 @@
 		fRef = ECF200951360E2D200B0BFEB /* NgnHistoryService.h */;
 		name = "NgnHistoryService.h: 7";
 		rLen = 0;
-		rLoc = 211;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 173;
 		vrLoc = 0;
@@ -6175,7 +6175,7 @@
 		isa = PBXTextBookmark;
 		fRef = ECF200A51360E32100B0BFEB /* NgnStorageService.h */;
 		name = "NgnStorageService.h: 3";
-		rLen = 26;
+		rLen = 40;
 		rLoc = 60;
 		rType = 0;
 		vrLen = 171;
@@ -6311,8 +6311,8 @@
 	ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{35, 24}";
-			sepNavVisRange = "{0, 237}";
+			sepNavSelRange = "{119, 0}";
+			sepNavVisRange = "{0, 260}";
 		};
 	};
 	ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {
@@ -6326,8 +6326,8 @@
 	ECF200911360E2BD00B0BFEB /* NgnContactService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{4, 16}";
-			sepNavVisRange = "{0, 405}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 428}";
 		};
 	};
 	ECF200921360E2BD00B0BFEB /* NgnContactService.mm */ = {
@@ -6340,22 +6340,22 @@
 	ECF200951360E2D200B0BFEB /* NgnHistoryService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{81, 0}";
-			sepNavVisRange = "{0, 251}";
+			sepNavSelRange = "{141, 0}";
+			sepNavVisRange = "{0, 274}";
 		};
 	};
 	ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{333, 0}";
+			sepNavSelRange = "{281, 0}";
 			sepNavVisRange = "{0, 334}";
 		};
 	};
 	ECF200991360E2E900B0BFEB /* NgnHttpClientService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{59, 0}";
-			sepNavVisRange = "{0, 205}";
+			sepNavSelRange = "{83, 0}";
+			sepNavVisRange = "{0, 228}";
 		};
 	};
 	ECF2009A1360E2E900B0BFEB /* NgnHttpClientService.mm */ = {
@@ -6368,8 +6368,8 @@
 	ECF2009D1360E2FF00B0BFEB /* NgnNetworkService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{59, 0}";
-			sepNavVisRange = "{0, 196}";
+			sepNavSelRange = "{83, 0}";
+			sepNavVisRange = "{0, 219}";
 		};
 	};
 	ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */ = {
@@ -6382,8 +6382,8 @@
 	ECF200A11360E31200B0BFEB /* NgnSoundService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{59, 0}";
-			sepNavVisRange = "{0, 190}";
+			sepNavSelRange = "{83, 0}";
+			sepNavVisRange = "{0, 213}";
 		};
 	};
 	ECF200A21360E31200B0BFEB /* NgnSoundService.mm */ = {
@@ -6396,8 +6396,8 @@
 	ECF200A51360E32100B0BFEB /* NgnStorageService.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 545}}";
-			sepNavSelRange = "{59, 0}";
-			sepNavVisRange = "{0, 196}";
+			sepNavSelRange = "{83, 0}";
+			sepNavVisRange = "{0, 219}";
 		};
 	};
 	ECF200A61360E32100B0BFEB /* NgnStorageService.mm */ = {
