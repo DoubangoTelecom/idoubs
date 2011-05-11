@@ -1,3 +1,5 @@
+#if TARGET_OS_IPHONE
+
 #import "NgnHistoryService.h"
 
 #undef TAG
@@ -21,3 +23,5 @@
 }
 
 @end
+
+#endif /* TARGET_OS_IPHONE */
