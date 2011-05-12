@@ -9,6 +9,7 @@
 @synthesize firstName;
 @synthesize lastName;
 @synthesize phoneNumbers;
+@synthesize picture;
 
 -(NgnContact*)initWithABRecordRef: (const ABRecordRef) record{
 	if((self = [super init]) && record){
@@ -18,6 +19,9 @@
 		self->displayName = (NSString *)ABRecordCopyCompositeName(record);
 		self->fisrtName = (NSString*)ABRecordCopyValue(record, kABPersonFirstNameProperty);
 		self->lastName = (NSString*)ABRecordCopyValue(record, kABPersonLastNameProperty);
+		if(ABPersonHasImageData(record)){
+			//--self->picture = (NSData*)ABPersonCopyImageData(record);
+		}
 		
 		CFStringRef phoneNumber, phoneNumberLabel;
 		NgnPhoneNumber* ngnPhoneNumber;
@@ -53,6 +57,7 @@
 	[self->displayName release];
 	[self->fisrtName release];
 	[self->lastName release];
+	[self->picture release];
 	
 	[self->phoneNumbers release];
 	

@@ -421,6 +421,13 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "ios-ngn-stack";
 		};
+		ECA63F30137AD3060031FC77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7D39511379ED2A0052CE45 /* testMessaging.app */;
+			remoteInfo = testMessaging;
+		};
 		ECB72B621373487900C4CA0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -599,6 +606,7 @@
 				EC83BA33136990F800DD3355 /* testAudioCall.app */,
 				EC83BA35136990F800DD3355 /* testVideoCall.app */,
 				EC81BD57136C5B3E0068BCB4 /* testAudioUnit.app */,
+				ECA63F31137AD3060031FC77 /* testMessaging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -805,6 +813,13 @@
 			fileType = archive.ar;
 			path = libtinyWRAP.a;
 			remoteRef = EC8EBF141368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ECA63F31137AD3060031FC77 /* testMessaging.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = testMessaging.app;
+			remoteRef = ECA63F30137AD3060031FC77 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

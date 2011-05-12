@@ -172,6 +172,35 @@
 		EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */; };
 		EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */; };
 		EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */; };
+		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */; };
+		ECDDB5D5137BFCF80027105F /* NgnProxyPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */; };
+		ECDDB5DE137C00330027105F /* NgnProxyPluginMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */; };
+		ECDDB5DF137C00330027105F /* NgnProxyPluginMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB5DD137C00330027105F /* NgnProxyPluginMgr.mm */; };
+		ECDDB640137C0C980027105F /* NgnProxyVideoProducer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */; };
+		ECDDB641137C0C980027105F /* NgnProxyVideoProducer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */; };
+		ECDDB644137C0CBB0027105F /* NgnProxyVideoConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */; };
+		ECDDB645137C0CBB0027105F /* NgnProxyVideoConsumer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */; };
+		ECDDB765137C35250027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
+		ECDDB76A137C353D0027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
+		ECDDB76B137C354B0027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
+		ECDDB76C137C35590027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
+		ECDDB76D137C35680027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
+		ECDDBB77137C9C630027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		ECDDBB9C137C9CB40027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECDDBB9D137C9CB40027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECDDBC1D137CA7440027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		ECDDBC1E137CA7440027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECDDBC1F137CA7440027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECDDBC22137CA7650027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		ECDDBC23137CA7650027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECDDBC24137CA7650027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECDDBC27137CA77C0027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECDDBC28137CA77C0027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECDDBC2B137CA7960027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
 		ECF200861360D9EA00B0BFEB /* NgnConfigurationEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */; };
 		ECF2008D1360E01500B0BFEB /* NgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */; };
 		ECF2008E1360E01500B0BFEB /* NgnConfigurationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */; };
@@ -1901,11 +1930,11 @@
 		EC83BA501369945B00DD3355 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC83BAF013699C4B00DD3355 /* TestVideoCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVideoCall.h; sourceTree = "<group>"; };
 		EC83BAF113699C4B00DD3355 /* TestVideoCall.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestVideoCall.mm; sourceTree = "<group>"; };
-		EC83BAF213699C4B00DD3355 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC83BAF213699C4B00DD3355 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EC83BAF313699C4B00DD3355 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC83BAF713699C5D00DD3355 /* TestAudioCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAudioCall.h; sourceTree = "<group>"; };
 		EC83BAF813699C5D00DD3355 /* TestAudioCall.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestAudioCall.mm; sourceTree = "<group>"; };
-		EC83BAF913699C5D00DD3355 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC83BAF913699C5D00DD3355 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EC83BAFA13699C5D00DD3355 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC83BC3D1369C57E00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
@@ -1921,6 +1950,17 @@
 		EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnUriUtils.m; sourceTree = "<group>"; };
 		EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnInviteEventArgs.h; sourceTree = "<group>"; };
 		EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnInviteEventArgs.m; sourceTree = "<group>"; };
+		ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
+		ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
+		ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
+		ECDDB5DD137C00330027105F /* NgnProxyPluginMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPluginMgr.mm; sourceTree = "<group>"; };
+		ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyVideoProducer.h; sourceTree = "<group>"; };
+		ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyVideoProducer.mm; sourceTree = "<group>"; };
+		ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyVideoConsumer.h; sourceTree = "<group>"; };
+		ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyVideoConsumer.mm; sourceTree = "<group>"; };
+		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationEntry.h; sourceTree = "<group>"; };
 		ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationService.h; sourceTree = "<group>"; };
 		ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnConfigurationService.mm; sourceTree = "<group>"; };
@@ -3056,6 +3096,10 @@
 				EC7D39961379EDA80052CE45 /* AudioToolbox.framework in Frameworks */,
 				EC7D39971379EDA80052CE45 /* CFNetwork.framework in Frameworks */,
 				EC7D39A61379F0360052CE45 /* libresolv.dylib in Frameworks */,
+				ECDDB76D137C35680027105F /* CoreGraphics.framework in Frameworks */,
+				ECDDBC2B137CA7960027105F /* AVFoundation.framework in Frameworks */,
+				ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */,
+				ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3079,6 +3123,9 @@
 				EC81BE63136C8E3B0068BCB4 /* CFNetwork.framework in Frameworks */,
 				EC81BE72136C8EF80068BCB4 /* AVFoundation.framework in Frameworks */,
 				EC81BE9D136C8FE60068BCB4 /* AudioToolbox.framework in Frameworks */,
+				ECDDB76C137C35590027105F /* CoreGraphics.framework in Frameworks */,
+				ECDDBC27137CA77C0027105F /* CoreMedia.framework in Frameworks */,
+				ECDDBC28137CA77C0027105F /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3105,6 +3152,10 @@
 				EC83BC3E1369C57E00DD3355 /* libresolv.dylib in Frameworks */,
 				EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */,
 				EC8725AC137830FE00C616F0 /* AddressBook.framework in Frameworks */,
+				ECDDB765137C35250027105F /* CoreGraphics.framework in Frameworks */,
+				ECDDBC1D137CA7440027105F /* AVFoundation.framework in Frameworks */,
+				ECDDBC1E137CA7440027105F /* CoreMedia.framework in Frameworks */,
+				ECDDBC1F137CA7440027105F /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3131,6 +3182,10 @@
 				EC83BC751369C66E00DD3355 /* libresolv.dylib in Frameworks */,
 				EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */,
 				EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */,
+				ECDDB76A137C353D0027105F /* CoreGraphics.framework in Frameworks */,
+				ECDDBC22137CA7650027105F /* AVFoundation.framework in Frameworks */,
+				ECDDBC23137CA7650027105F /* CoreMedia.framework in Frameworks */,
+				ECDDBC24137CA7650027105F /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3155,6 +3210,12 @@
 				EC83BCA41369C68700DD3355 /* libtinyXCAP.a in Frameworks */,
 				EC83BCA51369C6A000DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83BCA61369C6A000DD3355 /* libresolv.dylib in Frameworks */,
+				ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */,
+				ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */,
+				ECDDB76B137C354B0027105F /* CoreGraphics.framework in Frameworks */,
+				ECDDBB77137C9C630027105F /* AVFoundation.framework in Frameworks */,
+				ECDDBB9C137C9CB40027105F /* CoreMedia.framework in Frameworks */,
+				ECDDBB9D137C9CB40027105F /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3317,6 +3378,9 @@
 				EC81BE76136C8F3B0068BCB4 /* AudioUnit.framework */,
 				EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */,
 				EC87251F1378101000C616F0 /* AddressBook.framework */,
+				ECDDB764137C35250027105F /* CoreGraphics.framework */,
+				ECDDBB71137C9C3E0027105F /* CoreVideo.framework */,
+				ECDDBB9B137C9CB40027105F /* CoreMedia.framework */,
 			);
 			name = "ios-ngn-stack";
 			sourceTree = "<group>";
@@ -3505,6 +3569,14 @@
 			children = (
 				EC9547F1136DC12100F4C113 /* NgnMediaType.h */,
 				EC7D392B1379E7140052CE45 /* NgnContentType.h */,
+				ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */,
+				ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */,
+				ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */,
+				ECDDB5DD137C00330027105F /* NgnProxyPluginMgr.mm */,
+				ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */,
+				ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */,
+				ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */,
+				ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -5982,6 +6054,10 @@
 				EC7D386B13798AC30052CE45 /* NgnMessagingSession.h in Headers */,
 				EC7D388A1379A3300052CE45 /* NgnMessagingEventArgs.h in Headers */,
 				EC7D392C1379E7140052CE45 /* NgnContentType.h in Headers */,
+				ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */,
+				ECDDB5DE137C00330027105F /* NgnProxyPluginMgr.h in Headers */,
+				ECDDB640137C0C980027105F /* NgnProxyVideoProducer.h in Headers */,
+				ECDDB644137C0CBB0027105F /* NgnProxyVideoConsumer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7096,6 +7172,10 @@
 				EC8726741378457900C616F0 /* NgnPhoneNumber.m in Sources */,
 				EC7D386C13798AC30052CE45 /* NgnMessagingSession.mm in Sources */,
 				EC7D388B1379A3300052CE45 /* NgnMessagingEventArgs.m in Sources */,
+				ECDDB5D5137BFCF80027105F /* NgnProxyPlugin.mm in Sources */,
+				ECDDB5DF137C00330027105F /* NgnProxyPluginMgr.mm in Sources */,
+				ECDDB641137C0C980027105F /* NgnProxyVideoProducer.mm in Sources */,
+				ECDDB645137C0CBB0027105F /* NgnProxyVideoConsumer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8239,7 +8319,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
@@ -8256,6 +8336,9 @@
 					"-DHAVE_SPEEX_JB=1",
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
+					"-DHAVE_FFMPEG=1",
+					"-DHAVE_H264=1",
+					"-DHAVE_SWSSCALE=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -8295,6 +8378,14 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
 					"-lspeexdsp",
 					"-framework",
 					Foundation,
@@ -8347,6 +8438,14 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
 					"-lspeexdsp",
 					"-framework",
 					Foundation,
@@ -8403,6 +8502,14 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
 					"-lspeexdsp",
 					"-framework",
 					Foundation,
@@ -8458,6 +8565,14 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
 					"-lspeexdsp",
 					"-framework",
 					Foundation,
@@ -8511,7 +8626,17 @@
 				);
 				INFOPLIST_FILE = ../testVideoCall/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8960,6 +9085,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyWRAP;
