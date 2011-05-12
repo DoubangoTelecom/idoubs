@@ -160,6 +160,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 	 addObserver:self selector:@selector(onInviteEvent:) name:kNgnInviteEventArgs_Name object:nil];
 	
 	// take an instance of the engine
+	[NgnEngine initialize];
 	mEngine = [[NgnEngine getInstance] retain];
 	
 	// take needed services from the engine

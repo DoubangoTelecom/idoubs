@@ -1,16 +1,19 @@
 #import "NgnInviteSession.h"
 
+#import "MediaSessionMgr.h"
 
 @implementation NgnInviteSession
 
 -(NgnInviteSession*)initWithSipStack:(NgnSipStack *)sipStack{
 	if((self = (NgnInviteSession*)[super initWithSipStack:sipStack])){
 		mState = INVITE_STATE_NONE;
+		_mMediaSessionMgr = tsk_null;
 	}
 	return self;
 }
 
 -(void)dealloc{
+	_mMediaSessionMgr = tsk_null; // Not yours
 	[super dealloc];
 }
 
@@ -59,6 +62,21 @@
 
 -(void) setRemoteHold: (BOOL)held{
 	mRemoteHold = held;
+}
+
+-(const MediaSessionMgr*) getMediaSessionMgr{
+	if(!_mMediaSessionMgr){
+		const SipSession* _session = [self getSession];
+		if(!_session){
+			TSK_DEBUG_ERROR("Null session");
+		}
+		else {
+			_mMediaSessionMgr = dynamic_cast<InviteSession*>(
+															 const_cast<SipSession*>(_session)
+															 )->getMediaMgr();
+		}
+	}
+	return _mMediaSessionMgr;
 }
 
 @end

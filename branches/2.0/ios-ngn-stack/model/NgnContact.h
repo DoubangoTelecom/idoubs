@@ -19,6 +19,7 @@
 	NSString* fisrtName;
 	NSString* lastName;
 	NSMutableArray* phoneNumbers;
+	NSData* picture;
 }
 
 -(NgnContact*)initWithABRecordRef: (const ABRecordRef) record;
@@ -29,6 +30,7 @@
 @property(readonly) NSString* firstName;
 @property(readonly) NSString* lastName;
 @property(readonly) NSMutableArray* phoneNumbers;
+@property(readonly) NSData* picture;
 
 @end
 

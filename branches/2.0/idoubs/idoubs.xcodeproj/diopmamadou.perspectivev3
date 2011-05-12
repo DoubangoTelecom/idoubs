@@ -272,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>10</integer>
 									<integer>7</integer>
 								</array>
 							</array>
@@ -322,7 +322,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECE113E11376F7FE00096382</string>
+										<string>ECA63F26137AD3060031FC77</string>
 										<key>history</key>
 										<array>
 											<string>EC8EBE76136860A300DC70DF</string>
@@ -336,7 +336,7 @@
 											<string>EC83B8001369812100DD3355</string>
 											<string>EC83B85C13698B4900DD3355</string>
 											<string>ECB72C371373593300C4CA0C</string>
-											<string>ECB72C3D137363B900C4CA0C</string>
+											<string>ECE113E11376F7FE00096382</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -350,18 +350,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1117, 459}}</string>
+								<string>{{0, 0}, {1117, 452}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 141 1440 737 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>459pt</string>
+							<string>452pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>232pt</string>
+							<string>239pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -377,7 +377,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1117, 205}}</string>
+										<string>{{10, 27}, {1117, 212}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 141 1440 737 0 0 1440 878 </string>
 									</dict>
@@ -461,11 +461,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECE113C51376F68800096382</string>
+				<string>ECA63F27137AD3060031FC77</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECE113C61376F68800096382</string>
+				<string>ECA63F28137AD3060031FC77</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECE113C71376F68800096382</string>
+				<string>ECA63F29137AD3060031FC77</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
