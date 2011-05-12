@@ -3,9 +3,13 @@
 #import "NgnEngine.h"
 #import "NgnStringUtils.h"
 #import "NgnUriUtils.h"
+#import "NgnProxyPluginMgr.h"
 
 #import "SipSession.h"
 #import "SipMessage.h"
+#import "MediaSessionMgr.h"
+#import "ProxyConsumer.h"
+#import "ProxyProducer.h"
 
 #undef kSessions
 #define kSessions [NgnAVSession getAllSessions]
@@ -13,6 +17,9 @@
 @interface NgnAVSession (Private)
 +(NSMutableDictionary*) getAllSessions;
 -(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState;
+#if TARGET_OS_IPHONE
+-(BOOL)initializeConsumersAndProducers;
+#endif
 @end
 
 @implementation NgnAVSession (Private)
@@ -75,6 +82,42 @@
 	return self;
 }
 
+#if TARGET_OS_IPHONE
+  
+-(BOOL)initializeConsumersAndProducers{
+	if(mConsumersAndProducersInitialzed || !isVideoType(self.mediaType)){
+		return YES;
+	}
+	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+	if(_mediaMgr){
+		const ProxyPlugin* _videoConsumer = _mediaMgr->findProxyPluginConsumer(twrap_media_video);
+		if(_videoConsumer){
+			[mVideoConsumer release];
+			mVideoConsumer = [[NgnProxyPluginMgr getProxyPluginWithId: _videoConsumer->getId()] retain];
+			_videoConsumer = tsk_null;
+		}
+		else {
+			TSK_DEBUG_ERROR("Failed to find video consumer");
+		}
+
+		const ProxyPlugin* _videoProducer = _mediaMgr->findProxyPluginProducer(twrap_media_video);
+		if(_videoProducer){
+			[mVideoProducer release];
+			mVideoProducer = [[NgnProxyPluginMgr getProxyPluginWithId: _videoProducer->getId()] retain];
+			_videoProducer = tsk_null;
+		}
+		else {
+			TSK_DEBUG_ERROR("Failed to find video producer");
+		}
+		mConsumersAndProducersInitialzed = YES;
+		return YES;
+	}
+	TSK_DEBUG_ERROR("Cannot find media session manager");
+	return NO;
+}
+  
+#endif
+  
 @end
 
 
@@ -85,6 +128,11 @@
 	if(_mSession){
 		delete _mSession;
 	}
+	
+#if TARGET_OS_IPHONE
+	[mVideoConsumer release];
+	[mVideoProducer release];
+#endif
 	
 	[super dealloc];
 }
@@ -190,6 +238,42 @@
 	return [self resumeCallWithConfig: nil];
 }
 
+-(void) setState: (InviteState_t)newState{
+	[super setState: newState];
+	
+	switch(newState){
+		case INVITE_STATE_INCOMING:
+		{
+#if TARGET_OS_IPHONE
+			[self initializeConsumersAndProducers];
+#endif
+			break;
+		}
+			
+		case INVITE_STATE_INPROGRESS:
+		{
+#if TARGET_OS_IPHONE
+			[self initializeConsumersAndProducers];
+#endif
+			break;
+		}
+			
+		case INVITE_STATE_INCALL:
+		{
+#if TARGET_OS_IPHONE
+			[self initializeConsumersAndProducers];
+#endif
+			break;
+		}
+			
+		case INVITE_STATE_TERMINATED:
+		case INVITE_STATE_TERMINATING:
+		{
+			break;
+		}
+	}
+}
+
 -(BOOL) sendDTMF: (int) digit{
 	if(!_mSession){
 		TSK_DEBUG_ERROR("Null embedded session");
@@ -197,6 +281,26 @@
 	}
 	return _mSession->sendDTMF(digit);
 }
+
+#if TARGET_OS_IPHONE
+-(BOOL) setRemoteVideoDisplay: (UIImageView*)display{
+	if(mVideoConsumer){
+		[mVideoConsumer setDisplay: display];
+		return YES;
+	}
+	return NO;
+}
+
+-(BOOL) setLocalVideoDisplay: (UIView*)display{
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	if(mVideoProducer){
+		[mVideoProducer setPreview: display];
+		return YES;
+	}
+#endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
+	return NO;
+}
+#endif /* TARGET_OS_IPHONE */
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
 	NgnMediaType_t media;

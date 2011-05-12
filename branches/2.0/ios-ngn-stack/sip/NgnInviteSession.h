@@ -3,6 +3,8 @@
 #import "NgnSipSession.h"
 #import "media/NgnMediaType.h"
 
+class MediaSessionMgr;
+
 typedef enum InviteState_e{
 	INVITE_STATE_NONE,
 	INVITE_STATE_INCOMING,
@@ -20,6 +22,8 @@ InviteState_t;
     InviteState_t mState;
 	BOOL mRemoteHold;
     BOOL mLocalHold;
+	
+	const MediaSessionMgr* _mMediaSessionMgr;
 }
 
 @property(readonly) NgnMediaType_t mediaType;
@@ -35,5 +39,6 @@ InviteState_t;
 -(void) setLocalHold: (BOOL)held;
 -(BOOL) isRemoteHeld;
 -(void) setRemoteHold: (BOOL)held;
+-(const MediaSessionMgr*) getMediaSessionMgr;
 
 @end

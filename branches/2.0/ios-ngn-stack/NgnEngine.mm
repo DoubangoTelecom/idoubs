@@ -9,11 +9,16 @@
 #import "NgnNetworkService.h"
 #import "NgnStorageService.h"
 
+#if TARGET_OS_IPHONE
+#	import "NgnProxyPluginMgr.h"
+#endif
+
 #undef TAG
 #define kTAG @"NgnEngine///: "
 #define TAG kTAG
 
 static NgnEngine* sInstance = nil;
+static BOOL sMediaLayerInitialized = NO;
 
 @implementation NgnEngine(Private)
 
@@ -27,6 +32,7 @@ static NgnEngine* sInstance = nil;
 
 -(NgnEngine*)init{
 	if((self = [super init])){
+		[NgnEngine initialize];
 	}
 	return self;
 }
@@ -159,6 +165,12 @@ static NgnEngine* sInstance = nil;
 }
 
 +(void)initialize{
+	if(!sMediaLayerInitialized){
+#if TARGET_OS_IPHONE
+		[NgnProxyPluginMgr initialize];
+#endif
+		sMediaLayerInitialized = YES;
+	}
 }
 
 +(NgnEngine*) getInstance{

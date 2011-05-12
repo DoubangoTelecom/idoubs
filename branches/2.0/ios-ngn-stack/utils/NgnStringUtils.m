@@ -1,9 +1,12 @@
 #import "NgnStringUtils.h"
 
+#undef kStringEmpty
+#define kStringEmpty	@""
+
 @implementation NgnStringUtils
 
 +(const NSString*)emptyValue{
-	return @"";
+	return kStringEmpty;
 }
 
 +(const NSString*)nullValue{
@@ -11,7 +14,7 @@
 }
 
 +(BOOL)isNullOrEmpty:(NSString*)string{
-	return string == nil || string == [NgnStringUtils emptyValue];
+	return string == nil || [string isEqualToString: kStringEmpty];
 }
 
 +(BOOL)contains:(NSString*) string subString:(NSString*)subStr{

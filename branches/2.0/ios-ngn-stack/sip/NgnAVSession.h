@@ -2,7 +2,12 @@
 
 #import "services/INgnConfigurationService.h"
 #import "services/impl/NgnBaseService.h"
-#import "NgnInviteSession.h"
+#import "sip/NgnInviteSession.h"
+
+#if TARGET_OS_IPHONE
+#	import "media/NgnProxyVideoConsumer.h"
+#	import "media/NgnProxyVideoProducer.h"
+#endif
 
 #undef NgnAVSessionMutableArray
 #undef NgnAVSessionArray
@@ -16,6 +21,12 @@ class ActionConfig;
 @interface NgnAVSession : NgnInviteSession {
 	CallSession* _mSession;
 	NgnBaseService<INgnConfigurationService>* mConfigurationService;
+	
+#if TARGET_OS_IPHONE
+	BOOL mConsumersAndProducersInitialzed;
+	NgnProxyVideoConsumer* mVideoConsumer;
+	NgnProxyVideoProducer* mVideoProducer;
+#endif
 }
 
 -(BOOL) makeCall: (NSString*) remoteUri;
@@ -29,6 +40,10 @@ class ActionConfig;
 -(BOOL) resumeCallWithConfig: (ActionConfig*)config;
 -(BOOL) resumeCall;
 -(BOOL) sendDTMF: (int) digit;
+#if TARGET_OS_IPHONE
+-(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
+-(BOOL) setLocalVideoDisplay: (UIView*)display;
+#endif /* TARGET_OS_IPHONE */
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage;
 +(NgnAVSession*) createOutgoingSessionWithSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t) mediaType;
