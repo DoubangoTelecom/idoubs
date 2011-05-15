@@ -1,3 +1,23 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #if TARGET_OS_IPHONE
 
 #import "NgnProxyVideoProducer.h"
@@ -26,6 +46,7 @@
 - (void)startVideoCapture;
 - (void)stopVideoCapture;
 - (void)startPreview;
+- (void)stopPreview;
 @end
 #endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
 
@@ -115,7 +136,18 @@ private:
     }
 	
     mCaptureSession = [[AVCaptureSession alloc] init];
-    mCaptureSession.sessionPreset = AVCaptureSessionPresetLow;
+	if(mHeight <= 144){
+		mCaptureSession.sessionPreset = AVCaptureSessionPresetLow;
+	}
+	else if(mHeight <= 360){
+		mCaptureSession.sessionPreset = AVCaptureSessionPresetMedium;
+	}
+	else if(mHeight <= 480){
+		mCaptureSession.sessionPreset = AVCaptureSessionPresetHigh;
+	}
+	else {
+		mCaptureSession.sessionPreset = AVCaptureSessionPreset640x480;
+	}
     [mCaptureSession addInput:videoInput];
 	
     // Currently, the only supported key is kCVPixelBufferPixelFormatTypeKey. Recommended pixel format choices are 
@@ -124,7 +156,7 @@ private:
 	//
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              //[NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
+                             // [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
 							  [NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
                               [NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
 							  
@@ -133,6 +165,7 @@ private:
     avCaptureVideoDataOutput.videoSettings = settings;
     [settings release];
     avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
+	avCaptureVideoDataOutput.alwaysDiscardsLateVideoFrames = YES;
     
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
@@ -167,10 +200,20 @@ private:
 		AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: mCaptureSession];
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+		previewLayer.orientation = AVCaptureVideoOrientationPortrait;
+		
 		[mPreview.layer addSublayer: previewLayer];
 	 
 		if(![mCaptureSession isRunning]){
 			[mCaptureSession startRunning];
+		}
+	}
+}
+
+- (void)stopPreview{
+	if(mCaptureSession){		
+		if([mCaptureSession isRunning]){
+			[mCaptureSession stopRunning];
 		}
 	}
 }
@@ -181,10 +224,8 @@ private:
         UInt8 *bufferPtr = (UInt8 *)CVPixelBufferGetBaseAddress(pixelBuffer);
         size_t buffeSize = CVPixelBufferGetDataSize(pixelBuffer);
 		
-		// http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
+		// FIXME: http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
 		bufferPtr += 16 * sizeof(UInt8);
-		buffeSize -= 8 * sizeof(UInt8);
-		
 		
 		tmedia_producer_t* producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
 		
@@ -240,8 +281,9 @@ private:
 		if(_mProducer){
 			const_cast<ProxyVideoProducer*>(_mProducer)->setCallback(_mCallback);
 		}
-		
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 		mFirstFrame = YES;
+#endif
 		
 		mWidth = kDefaultVideoWidth;
 		mHeight = kDefaultVideoHeight;
@@ -300,13 +342,18 @@ private:
 	}
 }
 
-#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 -(void)setPreview: (UIView*)preview{
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 	[mPreview release];
-	mPreview = [preview retain];
-	[self startPreview];
-}
+	if((mPreview = [preview retain])){
+		[self startPreview];
+	}
+	else {
+		[self stopPreview];
+	}
+
 #endif
+}
 
 -(void)dealloc{
 	if(_mCallback){

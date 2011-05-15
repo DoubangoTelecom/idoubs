@@ -172,6 +172,12 @@
 		EC95485C136DE0ED00F4C113 /* NgnUriUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */; };
 		EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */; };
 		EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */; };
+		ECA6A629137D87700022AD09 /* NgnHistoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A627137D87700022AD09 /* NgnHistoryEvent.h */; };
+		ECA6A62A137D87700022AD09 /* NgnHistoryEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A628137D87700022AD09 /* NgnHistoryEvent.mm */; };
+		ECA6A633137D8AE50022AD09 /* NgnHistoryAVCallEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A631137D8AE50022AD09 /* NgnHistoryAVCallEvent.h */; };
+		ECA6A634137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */; };
+		ECA6A63F137D8DDF0022AD09 /* NgnHistorySMSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */; };
+		ECA6A640137D8DDF0022AD09 /* NgnHistorySMSEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */; };
 		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */; };
@@ -1950,6 +1956,14 @@
 		EC95485A136DE0ED00F4C113 /* NgnUriUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnUriUtils.m; sourceTree = "<group>"; };
 		EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnInviteEventArgs.h; sourceTree = "<group>"; };
 		EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnInviteEventArgs.m; sourceTree = "<group>"; };
+		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
+		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
+		ECA6A627137D87700022AD09 /* NgnHistoryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistoryEvent.h; sourceTree = "<group>"; };
+		ECA6A628137D87700022AD09 /* NgnHistoryEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryEvent.mm; sourceTree = "<group>"; };
+		ECA6A631137D8AE50022AD09 /* NgnHistoryAVCallEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistoryAVCallEvent.h; sourceTree = "<group>"; };
+		ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryAVCallEvent.mm; sourceTree = "<group>"; };
+		ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistorySMSEvent.h; sourceTree = "<group>"; };
+		ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistorySMSEvent.mm; sourceTree = "<group>"; };
 		ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
 		ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
 		ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
@@ -3365,6 +3379,7 @@
 		0867D691FE84028FC02AAC07 /* ios-ngn-stack */ = {
 			isa = PBXGroup;
 			children = (
+				ECA6A61B137D813D0022AD09 /* Resources */,
 				EC83BA0F1369908500DD3355 /* Tests */,
 				ECFD28FA135E7B2E00E6A9A3 /* Doubango */,
 				ECFD23BC135D532A00E6A9A3 /* Classes */,
@@ -3530,6 +3545,23 @@
 			path = ../testVideoCall;
 			sourceTree = SOURCE_ROOT;
 		};
+		ECA6A61B137D813D0022AD09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ECA6A624137D82670022AD09 /* storage */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ECA6A624137D82670022AD09 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				ECA6A626137D86FC0022AD09 /* NgnDataBase.db */,
+				ECA6A625137D829F0022AD09 /* NgnDataBase.sql */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
 		ECFD23BC135D532A00E6A9A3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -3588,6 +3620,12 @@
 				EC8724741377EE0400C616F0 /* NgnContact.m */,
 				EC8726711378457900C616F0 /* NgnPhoneNumber.h */,
 				EC8726721378457900C616F0 /* NgnPhoneNumber.m */,
+				ECA6A627137D87700022AD09 /* NgnHistoryEvent.h */,
+				ECA6A628137D87700022AD09 /* NgnHistoryEvent.mm */,
+				ECA6A631137D8AE50022AD09 /* NgnHistoryAVCallEvent.h */,
+				ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */,
+				ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */,
+				ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -6058,6 +6096,9 @@
 				ECDDB5DE137C00330027105F /* NgnProxyPluginMgr.h in Headers */,
 				ECDDB640137C0C980027105F /* NgnProxyVideoProducer.h in Headers */,
 				ECDDB644137C0CBB0027105F /* NgnProxyVideoConsumer.h in Headers */,
+				ECA6A629137D87700022AD09 /* NgnHistoryEvent.h in Headers */,
+				ECA6A633137D8AE50022AD09 /* NgnHistoryAVCallEvent.h in Headers */,
+				ECA6A63F137D8DDF0022AD09 /* NgnHistorySMSEvent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7176,6 +7217,9 @@
 				ECDDB5DF137C00330027105F /* NgnProxyPluginMgr.mm in Sources */,
 				ECDDB641137C0C980027105F /* NgnProxyVideoProducer.mm in Sources */,
 				ECDDB645137C0CBB0027105F /* NgnProxyVideoConsumer.mm in Sources */,
+				ECA6A62A137D87700022AD09 /* NgnHistoryEvent.mm in Sources */,
+				ECA6A634137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm in Sources */,
+				ECA6A640137D8DDF0022AD09 /* NgnHistorySMSEvent.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

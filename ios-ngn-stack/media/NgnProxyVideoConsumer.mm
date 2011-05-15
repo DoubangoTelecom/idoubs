@@ -1,3 +1,23 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #if TARGET_OS_IPHONE
 
 #import "NgnProxyVideoConsumer.h"
@@ -54,7 +74,10 @@ public:
 	}
 	
 	int bufferCopied(unsigned nCopiedSize, unsigned nAvailableSize) { 
-		return [mConsumer bufferCopiedWithSize: nCopiedSize andAvaileSize: nAvailableSize]; 
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		int ret = [mConsumer bufferCopiedWithSize: nCopiedSize andAvaileSize: nAvailableSize];
+		[pool release];
+		return ret;
 	}
 	
 	int start() { 
@@ -214,7 +237,8 @@ private:
 		mWidth = width;
 		mHeight = height;
 		CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-		mBitmapContext = CGBitmapContextCreate(_mBufferPtr, width, height, 8, width * 4, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+		mBitmapContext = CGBitmapContextCreate(_mBufferPtr, width, height, 8, width * 4, colorSpace, 
+											   kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
 		CGColorSpaceRelease(colorSpace);
 	
 		return 0;
@@ -224,18 +248,19 @@ private:
 -(void)drawVideoFrameOnMainThread:(id)arg{
 	@synchronized(self){
 		CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
+		//[UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationRight];
 		UIImage *image = [UIImage imageWithCGImage:imageRef];
 		CGImageRelease(imageRef);
 		
-		mDisplay.image =  image;
+		if(mDisplay){
+			mDisplay.image =  image;
+		}
 	}
 }
 
 -(int)drawFrame{
-	@synchronized(self){
-		if(mBitmapContext && mDisplay){
-			[self performSelectorOnMainThread:@selector(drawVideoFrameOnMainThread:) withObject:nil waitUntilDone:NO];
-		}
+	if(mBitmapContext && mDisplay){
+		[self performSelectorOnMainThread:@selector(drawVideoFrameOnMainThread:) withObject:nil waitUntilDone:YES];
 	}
 	return 0;
 }
