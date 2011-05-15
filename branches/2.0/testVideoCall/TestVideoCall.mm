@@ -1,3 +1,23 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #import "TestVideoCall.h"
 
 #undef TAG
@@ -13,16 +33,16 @@
 //static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
 //static const BOOL kEnableEarlyIMS = TRUE;
 
-static const NSString* kProxyHost = @"192.168.1.3";
+static const NSString* kProxyHost = @"10.139.246.147";
 static const int kProxyPort = 5060;
-static const NSString* kRealm = @"ims.tiscali.net";
+static const NSString* kRealm = @"10.139.246.147";
 static const NSString* kPassword = @"3497328625";
 static const NSString* kPrivateIdentity = @"3497328625";
 static const NSString* kPublicIdentity = @"sip:3497328625@ims.tiscali.net";
 static const BOOL kEnableEarlyIMS = TRUE;
 
 // remote party
-static const NSString* kRemoteParty = @"3701050596";
+static const NSString* kRemoteParty = @"1";
 
 
 //
