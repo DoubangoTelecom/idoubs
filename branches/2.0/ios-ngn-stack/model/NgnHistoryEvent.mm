@@ -24,6 +24,7 @@
 
 @implementation NgnHistoryEvent
 
+@synthesize id;
 @synthesize mediaType;
 @synthesize start;
 @synthesize end;
@@ -33,12 +34,12 @@
 
 -(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)_mediaType andRemoteParty: (NSString*)_remoteParty{
 	if((self = [super init])){
-		self->mediaType = _mediaType;
-		self->remoteParty = [_remoteParty retain];
+		self.mediaType = _mediaType;
+		self.remoteParty = [_remoteParty retain];
 		
-		self->start = [[NSDate date] timeIntervalSince1970];
-		self->end = self->start;
-		self->status = HistoryEventStatus_Missed;
+		self.start = [[NSDate date] timeIntervalSince1970];
+		self.end = self.start;
+		self.status = HistoryEventStatus_Missed;
 	}
 	return self;
 }

@@ -87,14 +87,15 @@ static BOOL sMediaLayerInitialized = NO;
 		NgnNSLog(TAG, @"NOT working in multithreaded mode :(");
 	}
 	
+	// Order is important
 	bSuccess &= [self.configurationService start];
+	bSuccess &= [self.storageService start];
 	bSuccess &= [self.contactService start];
 	bSuccess &= [self.sipService start];	
 	bSuccess &= [self.httpClientService start];
 	bSuccess &= [self.historyService start];
 	bSuccess &= [self.soundService start];
 	bSuccess &= [self.networkService start];
-	bSuccess &= [self.storageService start];
 	
 	mStarted = TRUE;
 	return bSuccess;
@@ -107,6 +108,7 @@ static BOOL sMediaLayerInitialized = NO;
 	
 	BOOL bSuccess = TRUE;
 	
+	// Order is important
 	bSuccess &= [self.sipService stop];
 	bSuccess &= [self.contactService stop];
 	bSuccess &= [self.configurationService stop];

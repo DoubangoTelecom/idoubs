@@ -42,7 +42,7 @@
 }
 
 +(NSString*) toNSString: (const char*)cstring{
-	return [NSString stringWithCString:cstring encoding: NSUTF8StringEncoding];
+	return cstring ? [NSString stringWithCString:cstring encoding: NSUTF8StringEncoding] : nil;
 }
 
 +(const char*) toCString: (NSString*)nsstring{

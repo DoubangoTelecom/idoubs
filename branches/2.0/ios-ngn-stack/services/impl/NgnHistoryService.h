@@ -1,5 +1,6 @@
-/* Copyright (C) 2010-2011, Mamadou Diop.
- * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+/* Copyright (C) 2010-2011, Mamadou Diop <diopmamadou(at)doubango(dot)org>.
+ * Copyright (C) 2011, Doubango Telecom <http://www.doubango.org>. 
+ * All rights reserved.
  *
  * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
  *       
@@ -23,11 +24,11 @@
 #import <Foundation/Foundation.h>
 
 #import "iOSNgnConfig.h"
-#import "services/impl/NgnBaseService.h"
-#import "services/INgnHistoryService.h"
+#import "NgnEngine.h"
+#import "model/NgnHistoryEvent.h"
 
 @interface NgnHistoryService : NgnBaseService <INgnHistoryService> {
-	
+	NgnHistoryEventMutableDictionary* mEvents;
 }
 
 @end

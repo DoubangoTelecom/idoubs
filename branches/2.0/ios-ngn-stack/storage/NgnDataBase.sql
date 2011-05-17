@@ -16,24 +16,10 @@ CREATE TABLE app_info(
 CREATE TABLE hist_event( 
 	id INTEGER PRIMARY KEY, 
 	seen TINYINT(1),
-	status TINYINT(1),
-	type TINYINT(1),
+	status TINYINT(8),
+	mediaType INTEGER,
 	remoteParty TEXT,
 	start DOUBLE,
-	end DOUBLE
-);
-
-CREATE TABLE hist_event_av(
-	id INTEGER PRIMARY KEY, 
-	hist_event_id INTEGER,
-	
-	FOREIGN KEY(hist_event_id) REFERENCES hist_event(id)
-);
-
-CREATE TABLE hist_event_msg(
-	id INTEGER PRIMARY KEY, 
-	hist_event_id INTEGER,
-	BLOB content,
-	
-	FOREIGN KEY(hist_event_id) REFERENCES hist_event(id)
+	end DOUBLE,
+	content BLOB
 );

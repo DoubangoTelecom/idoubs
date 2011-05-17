@@ -18,26 +18,28 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import "NgnHistorySMSEvent.h"
+#import "NgnHistoryEventArgs.h"
 
-@implementation NgnHistorySMSEvent
 
-@synthesize content;
+@implementation NgnHistoryEventArgs
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
-	return [self initWithStatus: _status andRemoteParty: _remoteParty andContent: nil];
-}
+@synthesize eventId;
+@synthesize eventType;
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
-	if((self = [self initWithStatus: _status andRemoteParty: _remoteParty])){
-		content = _content;
+-(NgnHistoryEventArgs*)initWithEventId: (long long)_eventId andEventType: (NgnHistoryEventTypes_t)_eventType{
+	if((self = [super init])){
+		self->eventId = _eventId;
+		self->eventType = _eventType;
 	}
+	
 	return self;
 }
 
+-(NgnHistoryEventArgs*)initWithEventType: (NgnHistoryEventTypes_t)_eventType{
+	return [self initWithEventId: 0 andEventType: _eventType];
+}
+
 -(void)dealloc{
-	[content release];
-	
 	[super dealloc];
 }
 

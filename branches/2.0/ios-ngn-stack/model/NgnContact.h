@@ -26,10 +26,9 @@
 #import "utils/NgnPredicate.h"
 #import "model/NgnPhoneNumber.h"
 
-#undef NgnContactMutableArray
-#undef NgnContactArray
-#define NgnContactMutableArray	NSMutableArray
-#define NgnContactArray	NSArray
+
+typedef NSMutableArray NgnContactMutableArray;
+typedef NSArray NgnContactArray;
 
 @class NgnPhoneNumber;
 
