@@ -18,27 +18,21 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import "NgnHistorySMSEvent.h"
+#import "NgnUriUtils.h"
 
-@implementation NgnHistorySMSEvent
+@implementation NgnUriUtils
 
-@synthesize content;
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
-	return [self initWithStatus: _status andRemoteParty: _remoteParty andContent: nil];
+
++(NSString*) getDisplayName:(NSString*)uri;
++(NSString*) getUserName: (NSString*)validUri;
++(BOOL) isValidSipUri: (NSString*)uri;
+
++(NSString*)makeValidSipUri: (NSString*)uri{
+	return uri;
 }
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
-	if((self = [self initWithStatus: _status andRemoteParty: _remoteParty])){
-		content = _content;
-	}
-	return self;
-}
++(NSString*) getValidPhoneNumber: (NSString*)uri;
 
--(void)dealloc{
-	[content release];
-	
-	[super dealloc];
-}
 
 @end

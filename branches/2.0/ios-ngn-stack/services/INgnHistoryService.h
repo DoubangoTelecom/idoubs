@@ -20,8 +20,19 @@
  */
 #import <Foundation/Foundation.h>
 
-#import "INgnBaseService.h"
+#import "services/INgnBaseService.h"
+#import "model/NgnHistoryEvent.h"
 
 @protocol INgnHistoryService <INgnBaseService>
+
+-(BOOL) load;
+-(BOOL) isLoading;
+-(BOOL) addEvent: (NgnHistoryEvent*) event;
+-(BOOL) updateEvent: (NgnHistoryEvent*) event;
+-(BOOL) deleteEvent: (NgnHistoryEvent*) event;
+-(BOOL) deleteEventAtLocation: (int) location;
+-(BOOL) deleteEvents: (NSPredicate*) predicate;
+-(BOOL) clear;
+-(NgnHistoryEventDictionary*) events;
 
 @end

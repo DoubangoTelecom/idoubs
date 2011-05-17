@@ -22,6 +22,12 @@
 
 #import "INgnBaseService.h"
 
-@protocol INgnStorageService <INgnBaseService>
+#if TARGET_OS_IPHONE
+#import <sqlite3.h>
+#endif
 
+@protocol INgnStorageService <INgnBaseService>
+#if TARGET_OS_IPHONE
+-(sqlite3 *) database;
+#endif
 @end

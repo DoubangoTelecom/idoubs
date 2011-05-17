@@ -23,7 +23,7 @@
 @implementation NgnHistoryAVCallEvent
 
 -(NgnHistoryAVCallEvent*) init: (BOOL) withVideoType withRemoteParty:(NSString*)_remoteParty{
-	if((self = (NgnHistoryAVCallEvent*)[super initWithMediaType: withVideoType ? MediaType_AudioVideo : MediaType_Video andRemoteParty: _remoteParty])){
+	if((self = (NgnHistoryAVCallEvent*)[super initWithMediaType: withVideoType ? MediaType_AudioVideo : MediaType_Audio andRemoteParty: _remoteParty])){
 	}
 	return self;
 }

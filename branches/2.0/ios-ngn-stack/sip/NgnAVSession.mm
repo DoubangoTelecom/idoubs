@@ -64,6 +64,8 @@
 		mMediaType = mediaType;
 		// commons
 		[super initialize];
+		// History event
+		mEvent = [[NgnHistoryEvent createAudioVideoEventWithRemoteParty: nil andVideo: isVideoType(mMediaType)] retain];
 		// SigComp
 		[super setSigCompId: [sipStack getSigCompId]];
 		// 100rel
@@ -153,6 +155,7 @@
 	[mVideoConsumer release];
 	[mVideoProducer release];
 #endif
+	[mEvent release];
 	
 	[super dealloc];
 }
@@ -168,6 +171,10 @@
 	mOutgoing = TRUE;
 	remoteUri = [NgnUriUtils makeValidSipUri: remoteUri];
 	[super setToUri: remoteUri];
+	
+	if(mEvent){
+		mEvent.remoteParty = remoteUri;
+	}
 	
 	// FIXME: Set bandwidth
 	ActionConfig* _config = new ActionConfig();
@@ -202,6 +209,11 @@
 	mOutgoing = TRUE;
 	remoteUri = [NgnUriUtils makeValidSipUri: remoteUri];
 	[super setToUri: remoteUri];
+	
+	if(mEvent){
+		mEvent.remoteParty = remoteUri;
+	}
+	
 	return _mSession->callVideo([NgnStringUtils toCString: remoteUri]);
 }
 
@@ -259,6 +271,10 @@
 }
 
 -(void) setState: (InviteState_t)newState{
+	if(mState == newState){
+		return;
+	}
+	
 	[super setState: newState];
 	
 	switch(newState){
@@ -446,8 +462,14 @@
 	return avSession;
 }
 
+// @Override
 -(SipSession*)getSession{
 	return _mSession;
+}
+
+// @Override
+-(NgnHistoryEvent*) getHistoryEvent{
+	return mEvent;
 }
 
 @end

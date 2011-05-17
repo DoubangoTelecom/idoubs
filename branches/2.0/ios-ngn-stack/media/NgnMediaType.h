@@ -22,6 +22,8 @@
 #define NGN_MEDIATYPE_H
 
 typedef enum NgnMediaType_e {
+	// Very Important: These values are stored in the data base and MUST never
+	// be changed. If you want to add new type, please add it after "MediaType_Msrp"
 	MediaType_None = 0,
 	MediaType_Audio = (0x01<<0),
 	MediaType_Video = (0x01<<1),
@@ -30,6 +32,7 @@ typedef enum NgnMediaType_e {
 	MediaType_Chat = (0x01<<3),
 	MediaType_FileTransfer = (0x01<<4),
 	MediaType_Msrp = MediaType_Chat | MediaType_FileTransfer,
+	// --- Add you media type after THIS LINE ---
 }
 NgnMediaType_t;
 

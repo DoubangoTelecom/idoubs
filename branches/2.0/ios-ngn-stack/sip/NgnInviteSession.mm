@@ -19,6 +19,7 @@
  *
  */
 #import "NgnInviteSession.h"
+#import "NgnEngine.h"
 
 #import "MediaSessionMgr.h"
 
@@ -40,22 +41,57 @@
 -(NgnMediaType_t) getMediaType{
 	return mMediaType;
 }
--(NgnMediaType_t) mediaType{
-	return [self getMediaType];
-}
 
 -(InviteState_t) getState{
 	return mState;
 }
--(InviteState_t) state{
-	return [self getState];
-}
 
 -(void) setState: (InviteState_t)newState{
+	if(mState == newState){
+		return;
+	}
 	mState = newState;
-}
--(void) state: (InviteState_t)newState{
-	[self setState: newState];
+	NgnHistoryEvent* event = [[self getHistoryEvent] retain];
+	
+	switch (mState) {
+		case INVITE_STATE_INCOMING:
+		{
+			if(event){
+				event.status = HistoryEventStatus_Incoming;
+			}
+			break;
+		}
+			
+		case INVITE_STATE_INPROGRESS:
+		{
+			if(event){
+				event.status = HistoryEventStatus_Outgoing;
+			}
+			break;
+		}
+			
+		case INVITE_STATE_INCALL:
+		{
+			if(event){
+				event.start = [[NSDate date] timeIntervalSince1970];
+				event.status = (event.status == HistoryEventStatus_Missed == HistoryEventStatus_Missed)
+								?  HistoryEventStatus_Incoming : event.status;
+			}
+			break;
+		}
+		case INVITE_STATE_TERMINATING:
+		case INVITE_STATE_TERMINATED:
+		{
+			if(event && !mEventAdded){
+				mEventAdded = YES;
+				event.end = [[NSDate date] timeIntervalSince1970];
+				[[NgnEngine getInstance].historyService addEvent: event];
+			}
+			break;
+		}
+	}
+	
+	[event release];
 }
 
 -(BOOL) isActive{
@@ -82,6 +118,12 @@
 
 -(void) setRemoteHold: (BOOL)held{
 	mRemoteHold = held;
+}
+
+-(NgnHistoryEvent*) getHistoryEvent{
+	[NSException raise:NSInternalInconsistencyException 
+				format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+	return nil;
 }
 
 -(const MediaSessionMgr*) getMediaSessionMgr{
