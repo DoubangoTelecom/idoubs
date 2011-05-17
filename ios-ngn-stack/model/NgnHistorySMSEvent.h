@@ -24,6 +24,8 @@
 	NSData* content;
 }
 
+@property(readwrite,retain) NSData* content;
+
 -(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty;
 -(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty andContent: (NSData*)content;
 

@@ -23,6 +23,7 @@
 #import "services/INgnConfigurationService.h"
 #import "services/impl/NgnBaseService.h"
 #import "sip/NgnInviteSession.h"
+#import "model/NgnHistoryAVCallEvent.h"
 
 #if TARGET_OS_IPHONE
 #	import "media/NgnProxyVideoConsumer.h"
@@ -41,6 +42,7 @@ class ActionConfig;
 @interface NgnAVSession : NgnInviteSession {
 	CallSession* _mSession;
 	NgnBaseService<INgnConfigurationService>* mConfigurationService;
+	NgnHistoryAVCallEvent* mEvent;
 	
 #if TARGET_OS_IPHONE
 	BOOL mConsumersAndProducersInitialzed;

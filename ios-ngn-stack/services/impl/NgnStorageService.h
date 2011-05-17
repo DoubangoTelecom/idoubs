@@ -25,7 +25,12 @@
 #import "services/INgnStorageService.h"
 
 @interface NgnStorageService : NgnBaseService <INgnStorageService>{
-
+#if TARGET_OS_IPHONE
+	sqlite3 * mDatabase;
+#endif
 }
+
+#if TARGET_OS_IPHONE
+#endif
 
 @end

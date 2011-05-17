@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NgnSipSession.h"
+#import "model/NgnHistoryEvent.h"
 #import "media/NgnMediaType.h"
 
 class MediaSessionMgr;
@@ -42,12 +43,13 @@ InviteState_t;
     InviteState_t mState;
 	BOOL mRemoteHold;
     BOOL mLocalHold;
+	BOOL mEventAdded;
 	
 	const MediaSessionMgr* _mMediaSessionMgr;
 }
 
-@property(readonly) NgnMediaType_t mediaType;
-@property(readwrite) InviteState_t state;
+@property(readonly,getter=getMediaType) NgnMediaType_t mediaType;
+@property(readwrite,getter=getState,setter=setState) InviteState_t state;
 @property(readonly) BOOL active;
 
 -(NgnInviteSession*) initWithSipStack: (NgnSipStack *)sipStack;
@@ -59,6 +61,7 @@ InviteState_t;
 -(void) setLocalHold: (BOOL)held;
 -(BOOL) isRemoteHeld;
 -(void) setRemoteHold: (BOOL)held;
+-(NgnHistoryEvent*) getHistoryEvent;
 -(const MediaSessionMgr*) getMediaSessionMgr;
 
 @end

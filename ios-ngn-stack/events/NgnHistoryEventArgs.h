@@ -18,27 +18,31 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import "NgnHistorySMSEvent.h"
+#import <Foundation/Foundation.h>
 
-@implementation NgnHistorySMSEvent
+#import "events/NgnEventArgs.h"
 
-@synthesize content;
-
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
-	return [self initWithStatus: _status andRemoteParty: _remoteParty andContent: nil];
-}
-
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
-	if((self = [self initWithStatus: _status andRemoteParty: _remoteParty])){
-		content = _content;
-	}
-	return self;
-}
-
--(void)dealloc{
-	[content release];
+typedef enum NgnHistoryEventTypes_e {
+	HISTORY_EVENT_ITEM_ADDED,
+	HISTORY_EVENT_ITEM_REMOVED,
+	HISTORY_EVENT_ITEM_UPDATED,
+	HISTORY_EVENT_ITEM_MOVED,
 	
-	[super dealloc];
+	HISTORY_EVENT_RESET,
 }
+NgnHistoryEventTypes_t;
+
+#define kNgnHistoryEventArgs_Name @"NgnHistoryEventArgs_Name"
+
+@interface NgnHistoryEventArgs : NgnEventArgs {
+	long long eventId;
+	NgnHistoryEventTypes_t eventType;
+}
+
+@property(readonly) long long eventId;
+@property(readonly) NgnHistoryEventTypes_t eventType;
+
+-(NgnHistoryEventArgs*)initWithEventId: (long long)eventId andEventType: (NgnHistoryEventTypes_t)eventType;
+-(NgnHistoryEventArgs*)initWithEventType: (NgnHistoryEventTypes_t)eventType;
 
 @end

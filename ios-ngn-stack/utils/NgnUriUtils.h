@@ -23,5 +23,12 @@
 @interface NgnUriUtils : NSObject {
 
 }
-+(NSString*)makeValidSipUri: (NSString*)uri;
+
+
++(NSString*) getDisplayName:(NSString*)uri;
++(NSString*) getUserName: (NSString*)validUri;
++(BOOL) isValidSipUri: (NSString*)uri;
++(NSString*) makeValidSipUri: (NSString*)uri;
++(NSString*) getValidPhoneNumber: (NSString*)uri;
+
 @end

@@ -33,6 +33,7 @@
 #import "events/NgnStackEventArgs.h"
 #import "events/NgnInviteEventArgs.h"
 #import "events/NgnMessagingEventArgs.h"
+#import "events/NgnHistoryEventArgs.h"
 
 #import "sip/NgnRegistrationSession.h"
 #import "sip/NgnAVSession.h"

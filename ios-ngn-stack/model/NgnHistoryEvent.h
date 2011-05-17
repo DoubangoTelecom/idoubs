@@ -20,6 +20,11 @@
  */
 #import "media/NgnMediaType.h"
 
+typedef	NSMutableArray NgnHistoryEventMutableArray;
+typedef NSArray	NgnHistoryEventArray;
+typedef	NSMutableDictionary NgnHistoryEventMutableDictionary;
+typedef	NSDictionary NgnHistoryEventDictionary;
+
 @class NgnHistoryAVCallEvent;
 @class NgnHistorySMSEvent;
 
@@ -32,6 +37,7 @@ typedef enum HistoryEventStatus_e{
 HistoryEventStatus_t;
 
 @interface NgnHistoryEvent : NSObject {
+	long long id;
 	NgnMediaType_t mediaType;
 	NSTimeInterval start;
 	NSTimeInterval end;
@@ -40,12 +46,13 @@ HistoryEventStatus_t;
 	HistoryEventStatus_t status;	
 }
 
-@property(readonly) NgnMediaType_t mediaType;
-@property(readonly) NSTimeInterval start;
-@property(readonly) NSTimeInterval end;
-@property(readonly) NSString* remoteParty;
-@property(readonly) BOOL seen;
-@property(readonly) HistoryEventStatus_t status;
+@property(readwrite) long long id;
+@property(readwrite) NgnMediaType_t mediaType;
+@property(readwrite) NSTimeInterval start;
+@property(readwrite) NSTimeInterval end;
+@property(readwrite,retain) NSString* remoteParty;
+@property(readwrite) BOOL seen;
+@property(readwrite) HistoryEventStatus_t status;
 
 -(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)type andRemoteParty: (NSString*)remoteParty;
 

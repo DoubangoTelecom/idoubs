@@ -33,12 +33,12 @@
 //static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
 //static const BOOL kEnableEarlyIMS = TRUE;
 
-static const NSString* kProxyHost = @"10.139.246.147";
+static const NSString* kProxyHost = @"192.168.0.13";
 static const int kProxyPort = 5060;
-static const NSString* kRealm = @"10.139.246.147";
+static const NSString* kRealm = @"doubango.org";
 static const NSString* kPassword = @"3497328625";
 static const NSString* kPrivateIdentity = @"3497328625";
-static const NSString* kPublicIdentity = @"sip:3497328625@ims.tiscali.net";
+static const NSString* kPublicIdentity = @"sip:3497328625@doubango.org";
 static const BOOL kEnableEarlyIMS = TRUE;
 
 // remote party
