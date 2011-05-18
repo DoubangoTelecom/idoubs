@@ -170,6 +170,15 @@ private:
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
     [mCaptureSession addOutput: avCaptureVideoDataOutput];
+	
+	// orientation
+	//for(int i = 0; i < [[avCaptureVideoDataOutput connections] count]; i++) {
+	//	AVCaptureConnection *captureConnection = [[avCaptureVideoDataOutput connections] objectAtIndex:i];
+	//	if(captureConnection.supportsVideoOrientation) {
+	//		captureConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
+	//	}
+	//}
+	
     [avCaptureVideoDataOutput release];
     dispatch_release(queue);
 	
@@ -200,7 +209,9 @@ private:
 		AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: mCaptureSession];
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-		previewLayer.orientation = AVCaptureVideoOrientationPortrait;
+		if(previewLayer.orientationSupported){
+			previewLayer.orientation = AVCaptureVideoOrientationPortrait;
+		}
 		
 		[mPreview.layer addSublayer: previewLayer];
 	 
