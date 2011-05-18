@@ -24,15 +24,19 @@ typedef	NSMutableArray NgnHistoryEventMutableArray;
 typedef NSArray	NgnHistoryEventArray;
 typedef	NSMutableDictionary NgnHistoryEventMutableDictionary;
 typedef	NSDictionary NgnHistoryEventDictionary;
+typedef NSArray NgnHistoryEventArray;
+typedef NSMutableArray NgnHistoryEventMutableArray;
 
 @class NgnHistoryAVCallEvent;
 @class NgnHistorySMSEvent;
 
 typedef enum HistoryEventStatus_e{
-	HistoryEventStatus_Outgoing,
-	HistoryEventStatus_Incoming,
-	HistoryEventStatus_Missed,
-	HistoryEventStatus_Failed
+	HistoryEventStatus_Outgoing = 0x01<<0,
+	HistoryEventStatus_Incoming = 0x01<<1,
+	HistoryEventStatus_Missed = 0x01<<2,
+	HistoryEventStatus_Failed = 0x01<<3,
+	
+	HistoryEventStatus_All = (HistoryEventStatus_Outgoing | HistoryEventStatus_Incoming | HistoryEventStatus_Missed | HistoryEventStatus_Failed)
 }
 HistoryEventStatus_t;
 
@@ -55,6 +59,9 @@ HistoryEventStatus_t;
 @property(readwrite) HistoryEventStatus_t status;
 
 -(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)type andRemoteParty: (NSString*)remoteParty;
+-(void) setRemotePartyWithValidUri: (NSString *)uri;
+-(NSComparisonResult)compare:(NgnHistoryEvent *)otherEvent;
+-(NSComparisonResult)compareHistoryEventByDate:(NgnHistoryEvent *)otherEvent;
 
 +(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)remoteParty andVideo: (BOOL)video;
 +(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty;

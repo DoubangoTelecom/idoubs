@@ -160,7 +160,7 @@
 	[super dealloc];
 }
 
--(BOOL) makeCall: (NSString*) remoteUri{
+-(BOOL) makeCall: (NSString*) validUri{
 	if(!_mSession){
 		TSK_DEBUG_ERROR("Null embedded session");
 		return FALSE;
@@ -169,11 +169,10 @@
 	BOOL ret;
 	
 	mOutgoing = TRUE;
-	remoteUri = [NgnUriUtils makeValidSipUri: remoteUri];
-	[super setToUri: remoteUri];
+	[super setToUri: validUri];
 	
 	if(mEvent){
-		mEvent.remoteParty = remoteUri;
+		[mEvent setRemotePartyWithValidUri: validUri];
 	}
 	
 	// FIXME: Set bandwidth
@@ -186,11 +185,11 @@
 	switch (super.mediaType){
 		case MediaType_AudioVideo:
 		case MediaType_Video:
-			ret = _mSession->callAudioVideo([NgnStringUtils toCString: remoteUri], _config);
+			ret = _mSession->callAudioVideo([NgnStringUtils toCString: validUri], _config);
 			break;
 		case MediaType_Audio:
 		default:
-			ret = _mSession->callAudio([NgnStringUtils toCString: remoteUri], _config);
+			ret = _mSession->callAudio([NgnStringUtils toCString: validUri], _config);
 			break;
 	}
 	if(_config){
@@ -200,21 +199,20 @@
 	return ret;
 }
 
--(BOOL) makeVideoSharingCall: (NSString*) remoteUri{
+-(BOOL) makeVideoSharingCall: (NSString*) validUri{
 	if(!_mSession){
 		TSK_DEBUG_ERROR("Null embedded session");
 		return FALSE;
 	}
 	
 	mOutgoing = TRUE;
-	remoteUri = [NgnUriUtils makeValidSipUri: remoteUri];
-	[super setToUri: remoteUri];
+	[super setToUri: validUri];
 	
 	if(mEvent){
-		mEvent.remoteParty = remoteUri;
+		[mEvent setRemotePartyWithValidUri: validUri];
 	}
 	
-	return _mSession->callVideo([NgnStringUtils toCString: remoteUri]);
+	return _mSession->callVideo([NgnStringUtils toCString: validUri]);
 }
 
 -(BOOL) acceptCallWithConfig: (ActionConfig*)config{
