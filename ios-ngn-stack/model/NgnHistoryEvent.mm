@@ -21,6 +21,7 @@
 #import "NgnHistoryEvent.h"
 #import "NgnHistoryAVCallEvent.h"
 #import "NgnHistorySMSEvent.h"
+#import "NgnUriUtils.h"
 
 @implementation NgnHistoryEvent
 
@@ -28,20 +29,37 @@
 @synthesize mediaType;
 @synthesize start;
 @synthesize end;
-@synthesize remoteParty;
 @synthesize seen;
 @synthesize status;
+@synthesize remoteParty;
 
 -(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)_mediaType andRemoteParty: (NSString*)_remoteParty{
 	if((self = [super init])){
 		self.mediaType = _mediaType;
-		self.remoteParty = [_remoteParty retain];
+		self.remoteParty = _remoteParty;
 		
 		self.start = [[NSDate date] timeIntervalSince1970];
 		self.end = self.start;
 		self.status = HistoryEventStatus_Missed;
 	}
 	return self;
+}
+
+-(void)setRemotePartyWithValidUri: (NSString *)uri{
+	[self->remoteParty release];
+	if(!(self->remoteParty = [[NgnUriUtils getUserName: uri] retain])){
+		self->remoteParty = [uri retain];
+	}
+}
+
+- (NSComparisonResult)compare:(NgnHistoryEvent *)otherEvent{
+	long long diff = self.id - otherEvent.id;
+	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedAscending : NSOrderedDescending);
+}
+
+-(NSComparisonResult)compareHistoryEventByDate:(NgnHistoryEvent *)otherEvent{
+	NSTimeInterval diff = self.start - otherEvent.start;
+	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedAscending : NSOrderedDescending);
 }
 
 +(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)_remoteParty andVideo: (BOOL)video{
@@ -59,7 +77,7 @@
 }
 
 -(void)dealloc{
-	[remoteParty release];
+	[self->remoteParty release];
 	
 	[super dealloc];
 }

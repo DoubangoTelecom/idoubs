@@ -18,22 +18,29 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import <Foundation/Foundation.h>
+#import "NgnDateTimeUtils.h"
 
-#import "INgnBaseService.h"
 
-#if TARGET_OS_IPHONE
-#	import "model/NgnContact.h"
-#endif
+@implementation NgnDateTimeUtils
 
-@protocol INgnContactService <INgnBaseService>
--(void) load: (BOOL) asyn;
--(BOOL) isLoading;
--(NSMutableArray*) contacts;
--(NSArray*) contactsWithPredicate: (NSPredicate*)predicate;
-#if TARGET_OS_IPHONE
--(NgnContact*) getContactByUri: (NSString*)uri;
--(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber;
-#endif /* TARGET_OS_IPHONE */
+static NSDateFormatter* hEventDuration = nil;
+static NSDateFormatter* hEventDate = nil;
+
++(NSDateFormatter*) historyEventDuration{
+	if(!hEventDuration){
+		hEventDuration = [[NSDateFormatter alloc] init];
+        [hEventDuration setDateFormat:@"mm:ss"];
+	}
+	return hEventDuration;
+}
+
++(NSDateFormatter*) historyEventDate{
+	if(!hEventDate){
+		hEventDate = [[NSDateFormatter alloc] init];
+        [hEventDate setTimeStyle:NSDateFormatterNoStyle];
+        [hEventDate setDateStyle:NSDateFormatterMediumStyle];
+	}
+	return hEventDate;
+}
+
 @end
-

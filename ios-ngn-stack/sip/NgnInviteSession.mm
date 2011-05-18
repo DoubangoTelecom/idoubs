@@ -56,17 +56,13 @@
 	switch (mState) {
 		case INVITE_STATE_INCOMING:
 		{
-			if(event){
-				event.status = HistoryEventStatus_Incoming;
-			}
+			mEventIncoming = YES;
 			break;
 		}
 			
 		case INVITE_STATE_INPROGRESS:
 		{
-			if(event){
-				event.status = HistoryEventStatus_Outgoing;
-			}
+			mEventIncoming = NO;
 			break;
 		}
 			
@@ -74,8 +70,8 @@
 		{
 			if(event){
 				event.start = [[NSDate date] timeIntervalSince1970];
-				event.status = (event.status == HistoryEventStatus_Missed == HistoryEventStatus_Missed)
-								?  HistoryEventStatus_Incoming : event.status;
+				event.end = event.start;
+				event.status = mEventIncoming ? HistoryEventStatus_Incoming : HistoryEventStatus_Outgoing;
 			}
 			break;
 		}
@@ -84,7 +80,9 @@
 		{
 			if(event && !mEventAdded){
 				mEventAdded = YES;
-				event.end = [[NSDate date] timeIntervalSince1970];
+				if(event.status != HistoryEventStatus_Missed){
+					event.end = [[NSDate date] timeIntervalSince1970];
+				}
 				[[NgnEngine getInstance].historyService addEvent: event];
 			}
 			break;

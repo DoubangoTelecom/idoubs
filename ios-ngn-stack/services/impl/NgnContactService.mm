@@ -182,6 +182,18 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	return [mContacts filteredArrayUsingPredicate: predicate];
 }
 
+#if TARGET_OS_IPHONE
+
+-(NgnContact*) getContactByUri: (NSString*)uri{
+	return nil;
+}
+
+-(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber{
+	return nil;
+}
+
+#endif /* TARGET_OS_IPHONE */
+
 @end
 
 #endif /* TARGET_OS_IPHONE */
