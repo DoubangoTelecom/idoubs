@@ -20,20 +20,12 @@
  */
 #import <Foundation/Foundation.h>
 
-#import "INgnBaseService.h"
 
-#if TARGET_OS_IPHONE
-#	import "model/NgnContact.h"
-#endif
+@interface NgnDateTimeUtils : NSObject {
 
-@protocol INgnContactService <INgnBaseService>
--(void) load: (BOOL) asyn;
--(BOOL) isLoading;
--(NSMutableArray*) contacts;
--(NSArray*) contactsWithPredicate: (NSPredicate*)predicate;
-#if TARGET_OS_IPHONE
--(NgnContact*) getContactByUri: (NSString*)uri;
--(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber;
-#endif /* TARGET_OS_IPHONE */
+}
+
++(NSDateFormatter*) historyEventDuration;
++(NSDateFormatter*) historyEventDate;
+
 @end
-

@@ -27,7 +27,9 @@
 
 #import "utils/NgnConfigurationEntry.h"
 #import "utils/NgnStringUtils.h"
+#import "utils/NgnUriUtils.h"
 #import "utils/NgnPredicate.h"
+#import "utils/NgnDateTimeUtils.h"
 
 #import "events/NgnRegistrationEventArgs.h"
 #import "events/NgnStackEventArgs.h"

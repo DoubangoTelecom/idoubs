@@ -274,6 +274,9 @@
 								<string>ECFD23BC135D532A00E6A9A3</string>
 								<string>ECFD23BD135D534100E6A9A3</string>
 								<string>ECFD23BF135D534100E6A9A3</string>
+								<string>ECFD23C0135D534100E6A9A3</string>
+								<string>ECFD23C1135D534100E6A9A3</string>
+								<string>ECFD23C2135D534100E6A9A3</string>
 								<string>ECFD23C3135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
@@ -281,14 +284,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>53</integer>
-									<integer>45</integer>
+									<integer>37</integer>
+									<integer>32</integer>
 									<integer>17</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 554}, {316, 675}}</string>
+							<string>{{0, 512}, {316, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnUriUtils.mm</string>
+								<string>NgnHistoryEvent.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,23 +334,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnUriUtils.mm</string>
+										<string>NgnHistoryEvent.h</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC94DFE1138317C8005B2C1B</string>
+										<string>EC94E115138339AF005B2C1B</string>
 										<key>history</key>
 										<array>
-											<string>EC8302261381EA5700060A9D</string>
-											<string>EC8302271381EA5700060A9D</string>
-											<string>EC8302281381EA5700060A9D</string>
-											<string>EC8302291381EA5700060A9D</string>
-											<string>EC94DFDB138317C8005B2C1B</string>
-											<string>EC94DFDC138317C8005B2C1B</string>
-											<string>EC94DFDD138317C8005B2C1B</string>
-											<string>EC94DFDE138317C8005B2C1B</string>
-											<string>EC94DFDF138317C8005B2C1B</string>
-											<string>EC94DFE0138317C8005B2C1B</string>
+											<string>EC94E10A138339AF005B2C1B</string>
+											<string>EC94E10B138339AF005B2C1B</string>
+											<string>EC94E10C138339AF005B2C1B</string>
+											<string>EC94E10D138339AF005B2C1B</string>
+											<string>EC94E10E138339AF005B2C1B</string>
+											<string>EC94E10F138339AF005B2C1B</string>
+											<string>EC94E110138339AF005B2C1B</string>
+											<string>EC94E112138339AF005B2C1B</string>
+											<string>EC94E113138339AF005B2C1B</string>
+											<string>EC94E114138339AF005B2C1B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -442,7 +445,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1102, 133}}</string>
+										<string>{{10, 27}, {1102, 138}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -623,14 +626,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC83FF4B13809D1200060A9D</string>
+				<string>EC94E116138339AF005B2C1B</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC83FF4C13809D1200060A9D</string>
-				<string>EC83FF4D13809D1200060A9D</string>
-				<string>EC83FF4E13809D1200060A9D</string>
-				<string>EC83FF4F13809D1200060A9D</string>
-				<string>ECFD23C5135D536300E6A9A3</string>
+				<string>EC94E117138339AF005B2C1B</string>
+				<string>EC94E118138339AF005B2C1B</string>
+				<string>EC94E119138339AF005B2C1B</string>
+				<string>EC94E11A138339AF005B2C1B</string>
+				<string>EC94E11B138339AF005B2C1B</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>

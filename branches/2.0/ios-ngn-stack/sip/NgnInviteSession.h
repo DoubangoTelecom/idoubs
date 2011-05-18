@@ -44,6 +44,7 @@ InviteState_t;
 	BOOL mRemoteHold;
     BOOL mLocalHold;
 	BOOL mEventAdded;
+	BOOL mEventIncoming;
 	
 	const MediaSessionMgr* _mMediaSessionMgr;
 }
@@ -51,6 +52,7 @@ InviteState_t;
 @property(readonly,getter=getMediaType) NgnMediaType_t mediaType;
 @property(readwrite,getter=getState,setter=setState) InviteState_t state;
 @property(readonly) BOOL active;
+@property(readonly,getter=getHistoryEvent) NgnHistoryEvent* historyEvent;
 
 -(NgnInviteSession*) initWithSipStack: (NgnSipStack *)sipStack;
 -(NgnMediaType_t) getMediaType;

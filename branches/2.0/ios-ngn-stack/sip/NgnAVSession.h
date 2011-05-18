@@ -51,8 +51,8 @@ class ActionConfig;
 #endif
 }
 
--(BOOL) makeCall: (NSString*) remoteUri;
--(BOOL) makeVideoSharingCall: (NSString*) remoteUri;
+-(BOOL) makeCall: (NSString*) validUri;
+-(BOOL) makeVideoSharingCall: (NSString*) validUri;
 -(BOOL) acceptCallWithConfig: (ActionConfig*)config;
 -(BOOL) acceptCall;
 -(BOOL) hangUpCallWithConfig: (ActionConfig*)config;
