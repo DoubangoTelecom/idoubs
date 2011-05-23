@@ -242,7 +242,7 @@ done:
 				sqlStatement = [sqlStatement stringByAppendingFormat:@" WHERE mediaType=%d", (int)mediaTypes[i]];
 			}
 			else {
-				sqlStatement = [sqlStatement stringByAppendingFormat:@" AND mediaType=%d", (int)mediaTypes[i]];
+				sqlStatement = [sqlStatement stringByAppendingFormat:@" OR mediaType=%d", (int)mediaTypes[i]];
 			}
 			first = NO;
 		}
