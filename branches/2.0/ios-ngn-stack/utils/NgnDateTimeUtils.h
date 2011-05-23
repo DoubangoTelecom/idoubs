@@ -27,5 +27,6 @@
 
 +(NSDateFormatter*) historyEventDuration;
 +(NSDateFormatter*) historyEventDate;
++(NSDateFormatter*) chatDate;
 
 @end

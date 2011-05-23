@@ -61,10 +61,13 @@ class ActionConfig;
 -(BOOL) holdCall;
 -(BOOL) resumeCallWithConfig: (ActionConfig*)config;
 -(BOOL) resumeCall;
+-(BOOL) toggleHoldResumeWithConfig: (ActionConfig*)config;
+-(BOOL) toggleHoldResume;
 -(BOOL) sendDTMF: (int) digit;
 #if TARGET_OS_IPHONE
 -(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;
+-(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
 #endif /* TARGET_OS_IPHONE */
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage;

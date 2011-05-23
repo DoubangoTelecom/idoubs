@@ -268,6 +268,17 @@
 	return [self resumeCallWithConfig: nil];
 }
 
+-(BOOL) toggleHoldResumeWithConfig: (ActionConfig*)config{
+	if([self isLocalHeld]){
+		return [self resumeCallWithConfig:config];
+	}
+	return [self holdCallWithConfig:config];
+}
+
+-(BOOL) toggleHoldResume{
+	return [self toggleHoldResumeWithConfig:nil];
+}
+
 -(void) setState: (InviteState_t)newState{
 	if(mState == newState){
 		return;
@@ -335,6 +346,16 @@
 	return NO;
 }
 #endif /* TARGET_OS_IPHONE */
+
+-(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation{
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	if(mVideoProducer){
+		[mVideoProducer setOrientation: orientation];
+		return YES;
+	}
+#endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
+	return NO;
+}
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
 	NgnMediaType_t media;
