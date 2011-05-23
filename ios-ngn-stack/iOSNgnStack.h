@@ -43,9 +43,13 @@
 
 #import "model/NgnContact.h"
 #import "model/NgnPhoneNumber.h"
+#import "model/NgnHistoryEvent.h"
+#import "model/NgnHistorySMSEvent.h"
+#import "model/NgnHistoryAVCallEvent.h"
 
 #import "media/NgnMediaType.h"
 #import "media/NgnContentType.h"
+
 
 
 #endif /* IOS_NGN_STACK_API_H */

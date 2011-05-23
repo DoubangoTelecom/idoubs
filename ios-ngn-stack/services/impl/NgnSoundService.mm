@@ -20,6 +20,8 @@
  */
 #import "NgnSoundService.h"
 
+#include <AudioToolbox/AudioToolbox.h>
+
 #undef TAG
 #define kTAG @"NgnSoundService///: "
 #define TAG kTAG
@@ -38,6 +40,19 @@
 -(BOOL) stop{
 	NgnNSLog(TAG, @"Stop()");
 	return YES;
+}
+
+
+//
+// INgnSoundService
+//
+-(BOOL) setSpeakerEnabled:(BOOL)enabled{
+#if TARGET_OS_IPHONE
+	UInt32 audioRouteOverride = enabled ? kAudioSessionOverrideAudioRoute_Speaker : kAudioSessionOverrideAudioRoute_None;
+	return (AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute, sizeof (audioRouteOverride),&audioRouteOverride) == 0);
+#else
+	return NO;
+#endif
 }
 
 @end

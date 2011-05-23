@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 #import "events/NgnEventArgs.h"
+#import "media/NgnMediaType.h"
 
 typedef enum NgnHistoryEventTypes_e {
 	HISTORY_EVENT_ITEM_ADDED,
@@ -37,10 +38,12 @@ NgnHistoryEventTypes_t;
 @interface NgnHistoryEventArgs : NgnEventArgs {
 	long long eventId;
 	NgnHistoryEventTypes_t eventType;
+	NgnMediaType_t mediaType;
 }
 
 @property(readonly) long long eventId;
 @property(readonly) NgnHistoryEventTypes_t eventType;
+@property(readwrite) NgnMediaType_t mediaType;
 
 -(NgnHistoryEventArgs*)initWithEventId: (long long)eventId andEventType: (NgnHistoryEventTypes_t)eventType;
 -(NgnHistoryEventArgs*)initWithEventType: (NgnHistoryEventTypes_t)eventType;
