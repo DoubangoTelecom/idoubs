@@ -29,14 +29,23 @@
 }
 
 -(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
-	if((self = [self initWithStatus: _status andRemoteParty: _remoteParty])){
-		content = _content;
+	if((self = (NgnHistorySMSEvent*)[super initWithMediaType:MediaType_SMS andRemoteParty: _remoteParty])){
+		self.status = _status;
+		self.content = _content;
 	}
 	return self;
 }
 
+-(NSString*)getContentAsString{
+	if(!contentAsString && content){
+		contentAsString = [[NSString alloc] initWithData:content encoding:NSUTF8StringEncoding];
+	}
+	return contentAsString;
+}
+
 -(void)dealloc{
 	[content release];
+	[contentAsString release];
 	
 	[super dealloc];
 }

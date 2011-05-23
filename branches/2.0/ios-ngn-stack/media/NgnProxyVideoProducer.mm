@@ -210,7 +210,7 @@ private:
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 		if(previewLayer.orientationSupported){
-			previewLayer.orientation = AVCaptureVideoOrientationPortrait;
+			previewLayer.orientation = mOrientation;
 		}
 		
 		[mPreview.layer addSublayer: previewLayer];
@@ -294,6 +294,7 @@ private:
 		}
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 		mFirstFrame = YES;
+		mOrientation = AVCaptureVideoOrientationPortrait;
 #endif
 		
 		mWidth = kDefaultVideoWidth;
@@ -322,6 +323,17 @@ private:
 	mStarted = YES;
 	
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	if(_mProducer){
+		switch (mOrientation) {
+			case AVCaptureVideoOrientationPortrait: 
+			case AVCaptureVideoOrientationPortraitUpsideDown:
+				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(90);
+				break;
+			default:
+				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(0);
+				break;
+		}
+	}
 	[self startVideoCapture];
 #endif
 	return 0;
@@ -365,6 +377,27 @@ private:
 
 #endif
 }
+
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+-(void) setOrientation: (AVCaptureVideoOrientation)orientation{
+	if(mOrientation != orientation){
+		mOrientation = orientation;
+		[self stopPreview];
+		[self startPreview];
+	}
+	if(_mProducer){
+		switch (mOrientation) {
+			case AVCaptureVideoOrientationPortrait: 
+			case AVCaptureVideoOrientationPortraitUpsideDown:
+				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(90);
+				break;
+			default:
+				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(0);
+				break;
+		}
+	}
+}
+#endif
 
 -(void)dealloc{
 	if(_mCallback){

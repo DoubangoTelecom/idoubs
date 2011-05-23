@@ -22,6 +22,7 @@
 
 #import "services/INgnBaseService.h"
 #import "model/NgnHistoryEvent.h"
+#import "media/NgnMediaType.h"
 
 @protocol INgnHistoryService <INgnBaseService>
 
@@ -31,7 +32,8 @@
 -(BOOL) updateEvent: (NgnHistoryEvent*) event;
 -(BOOL) deleteEvent: (NgnHistoryEvent*) event;
 -(BOOL) deleteEventAtLocation: (int) location;
--(BOOL) deleteEvents: (NSPredicate*) predicate;
+-(BOOL) deleteEventWithId: (long long) eventId;
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType;
 -(BOOL) clear;
 -(NgnHistoryEventDictionary*) events;
 

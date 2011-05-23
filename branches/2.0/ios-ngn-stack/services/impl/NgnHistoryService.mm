@@ -35,7 +35,8 @@
 -(BOOL) databaseLoad;
 -(BOOL) databaseAddEvent: (NgnHistoryEvent*)event;
 -(BOOL) databaseRemoveEvent: (NgnHistoryEvent*)event;
--(BOOL) databaseClearEvents;
+-(BOOL) databaseRemoveEventWithId: (long long)eventId;
+-(BOOL) databaseRemoveEvents: (NgnMediaType_t)mediaType;
 @end
 
 // NgnHistoryService (DataBase)
@@ -148,7 +149,8 @@ done:
 			[mEvents setObject: event forKey: [NSNumber numberWithLongLong: event.id]];
 			
 			// alert listeners
-			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_ADDED]; 
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_ADDED];
+			eargs.mediaType = event.mediaType;
 			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
 			[eargs release];
 		}
@@ -160,6 +162,14 @@ done:
 done:
 	[storageService release];
 	return ok;
+}
+
+-(BOOL) databaseRemoveEventWithId: (long long)eventId{
+	NgnHistoryEvent* event = [mEvents objectForKey: [NSNumber numberWithLongLong: eventId]];
+	if(event){
+		return [self databaseRemoveEvent: event];
+	}
+	return NO;
 }
 
 -(BOOL) databaseRemoveEvent: (NgnHistoryEvent*)event{
@@ -178,18 +188,17 @@ done:
 	if((ret = sqlite3_prepare_v2([storageService database], sqlStatement, -1, &compiledStatement, NULL)) == SQLITE_OK) {
 		sqlite3_bind_int(compiledStatement, 1, event.id);
 		ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
-		if(ok){
-			ok = ((ret = sqlite3_step(compiledStatement))==SQLITE_DONE);
-		}
 	}
 	sqlite3_finalize(compiledStatement);
 	
 	if(ok){
+		NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_REMOVED];
+		eargs.mediaType = event.mediaType;
+		
 		// clear events
 		[mEvents removeObjectForKey: [NSNumber numberWithLongLong: event.id]];
 		
 		// alert listeners
-		NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_REMOVED]; 
 		[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
 		[eargs release];
 	}
@@ -199,10 +208,24 @@ done:
 	return ok;
 }
 
--(BOOL) databaseClearEvents{
+-(BOOL) databaseRemoveEvents: (NgnMediaType_t)mediaType{
+	if(mediaType == MediaType_None){
+		return YES;
+	}
+	
 	BOOL ok = YES;      
+	BOOL first = YES;
 	sqlite3_stmt *compiledStatement;
-	static const char* sqlStatement =  "DELETE FROM hist_event";
+	NSString* sqlStatement =  @"DELETE FROM hist_event";
+	static NgnMediaType_t mediaTypes[] = {
+		MediaType_Audio,
+		MediaType_Video,
+		MediaType_AudioVideo,
+		MediaType_SMS,
+		MediaType_Chat,
+		MediaType_FileTransfer,
+		MediaType_Msrp,
+	};
 	int ret;
 	
 	NgnBaseService<INgnStorageService>* storageService = [[NgnEngine getInstance].storageService retain];
@@ -212,20 +235,43 @@ done:
 		goto done;
 	}
 	
+	// Complete the request
+	for(int i=0; i<sizeof(mediaTypes)/sizeof(NgnMediaType_t); i++){
+		if((mediaType & mediaTypes[i])){
+			if(first){
+				sqlStatement = [sqlStatement stringByAppendingFormat:@" WHERE mediaType=%d", (int)mediaTypes[i]];
+			}
+			else {
+				sqlStatement = [sqlStatement stringByAppendingFormat:@" AND mediaType=%d", (int)mediaTypes[i]];
+			}
+			first = NO;
+		}
+	}
 	
-	if((ret = sqlite3_prepare_v2([storageService database], sqlStatement, -1, &compiledStatement, NULL)) == SQLITE_OK) {
+	
+	if((ret = sqlite3_prepare_v2([storageService database], [NgnStringUtils toCString:sqlStatement], -1, &compiledStatement, NULL)) == SQLITE_OK) {
 		ok = ((ret = sqlite3_step(compiledStatement))==SQLITE_DONE);
 	}
 	sqlite3_finalize(compiledStatement);
 	
 	if(ok){
-		// clear events
-		[mEvents removeAllObjects];
+		// remove events
+		NSArray* values = [mEvents allValues];
+		NSMutableArray* keysToRemove = [NSMutableArray array];
+		for (NgnHistoryEvent* event in values) {
+			if((event.mediaType & mediaType)){
+				[keysToRemove addObject:[NSNumber numberWithLongLong: event.id]];
+			}
+		}
+		[mEvents removeObjectsForKeys: keysToRemove];
 		
 		// alert listeners
-		NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET]; 
-		[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
-		[eargs release];
+		if([keysToRemove count] > 0){
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
+			eargs.mediaType = mediaType;
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+		}
 	}
 	
 done:
@@ -311,16 +357,29 @@ done:
 }
 
 -(BOOL) deleteEventAtLocation: (int) location{
+	@synchronized(self){
+		if([mEvents count] > location){
+			return NO;
+		}
+	}
 	return NO;
 }
 
--(BOOL) deleteEvents: (NSPredicate*) predicate{
-	return NO;
+-(BOOL) deleteEventWithId: (long long) eventId{
+	@synchronized(self){
+		return [self databaseRemoveEventWithId:eventId];
+	}	
+}
+
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType{
+	@synchronized(self){
+		return [self databaseRemoveEvents:mediaType];
+	}	
 }
 
 -(BOOL) clear{
 	@synchronized(self){
-		return [self databaseClearEvents];
+		return [self databaseRemoveEvents:MediaType_All];
 	}
 }
 

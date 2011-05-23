@@ -48,25 +48,64 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
-		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		EC6AD68B136B3A8E00617B95 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6AD68A136B3A8E00617B95 /* MainWindow.xib */; };
-		EC83B7F4136980CC00DD3355 /* idoubsAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */; };
+		EC7E2F7F138968E50020EB89 /* AudioCallOverlay.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F4F138968E50020EB89 /* AudioCallOverlay.mm */; };
+		EC7E2F80138968E50020EB89 /* AudioCallOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F50138968E50020EB89 /* AudioCallOverlay.xib */; };
+		EC7E2F81138968E50020EB89 /* AudioCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F51138968E50020EB89 /* AudioCallView.xib */; };
+		EC7E2F82138968E50020EB89 /* AudioCallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */; };
+		EC7E2F83138968E50020EB89 /* BaloonCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F55138968E50020EB89 /* BaloonCell.mm */; };
+		EC7E2F84138968E50020EB89 /* BaloonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F56138968E50020EB89 /* BaloonCell.xib */; };
+		EC7E2F85138968E50020EB89 /* CallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F58138968E50020EB89 /* CallViewController.mm */; };
+		EC7E2F86138968E50020EB89 /* ChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F59138968E50020EB89 /* ChatView.xib */; };
+		EC7E2F87138968E50020EB89 /* ChatViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F5B138968E50020EB89 /* ChatViewController.mm */; };
+		EC7E2F88138968E50020EB89 /* ContactDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F5C138968E50020EB89 /* ContactDetails.xib */; };
+		EC7E2F89138968E50020EB89 /* ContactDetailsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */; };
+		EC7E2F8A138968E50020EB89 /* ContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F5F138968E50020EB89 /* ContactsView.xib */; };
+		EC7E2F8B138968E50020EB89 /* ContactsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F61138968E50020EB89 /* ContactsViewController.mm */; };
+		EC7E2F8C138968E50020EB89 /* ContactViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F63138968E50020EB89 /* ContactViewCell.mm */; };
+		EC7E2F8D138968E50020EB89 /* ContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F64138968E50020EB89 /* ContactViewCell.xib */; };
+		EC7E2F8E138968E50020EB89 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F65138968E50020EB89 /* InfoView.xib */; };
+		EC7E2F8F138968E50020EB89 /* InfoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F67138968E50020EB89 /* InfoViewController.mm */; };
+		EC7E2F90138968E50020EB89 /* MessageCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F69138968E50020EB89 /* MessageCell.mm */; };
+		EC7E2F91138968E50020EB89 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F6A138968E50020EB89 /* MessageCell.xib */; };
+		EC7E2F92138968E50020EB89 /* MessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F6B138968E50020EB89 /* MessagesView.xib */; };
+		EC7E2F93138968E50020EB89 /* MessagesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F6D138968E50020EB89 /* MessagesViewController.mm */; };
+		EC7E2F96138968E50020EB89 /* NumpadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F71138968E50020EB89 /* NumpadView.xib */; };
+		EC7E2F97138968E50020EB89 /* NumpadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F73138968E50020EB89 /* NumpadViewController.mm */; };
+		EC7E2F98138968E50020EB89 /* RecentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F75138968E50020EB89 /* RecentCell.mm */; };
+		EC7E2F99138968E50020EB89 /* RecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F76138968E50020EB89 /* RecentCell.xib */; };
+		EC7E2F9A138968E50020EB89 /* RecentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F77138968E50020EB89 /* RecentsView.xib */; };
+		EC7E2F9B138968E50020EB89 /* RecentsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F79138968E50020EB89 /* RecentsViewController.mm */; };
+		EC7E2F9C138968E50020EB89 /* TransparentToolbar.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F7B138968E50020EB89 /* TransparentToolbar.mm */; };
+		EC7E2F9D138968E50020EB89 /* VideoCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F7C138968E50020EB89 /* VideoCallView.xib */; };
+		EC7E2F9E138968E50020EB89 /* VideoCallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */; };
+		EC7E2FA51389696C0020EB89 /* idoubs2AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */; };
+		EC7E2FB113896B7A0020EB89 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7E2FB013896B7A0020EB89 /* AddressBook.framework */; };
+		EC7E2FB513896B900020EB89 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7E2FB413896B900020EB89 /* AudioToolbox.framework */; };
+		EC7E2FB913896BAE0020EB89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7E2FB813896BAE0020EB89 /* QuartzCore.framework */; };
+		EC7E2FE013896CFD0020EB89 /* NgnDataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2FDE13896CFD0020EB89 /* NgnDataBase.db */; };
+		EC7E31B01389D11D0020EB89 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A11389D11D0020EB89 /* keypad_0.png */; };
+		EC7E31B11389D11D0020EB89 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A21389D11D0020EB89 /* keypad_1.png */; };
+		EC7E31B21389D11D0020EB89 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A31389D11D0020EB89 /* keypad_2.png */; };
+		EC7E31B31389D11D0020EB89 /* keypad_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A41389D11D0020EB89 /* keypad_3.png */; };
+		EC7E31B41389D11D0020EB89 /* keypad_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A51389D11D0020EB89 /* keypad_4.png */; };
+		EC7E31B51389D11D0020EB89 /* keypad_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A61389D11D0020EB89 /* keypad_5.png */; };
+		EC7E31B61389D11D0020EB89 /* keypad_6.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A71389D11D0020EB89 /* keypad_6.png */; };
+		EC7E31B71389D11D0020EB89 /* keypad_7.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A81389D11D0020EB89 /* keypad_7.png */; };
+		EC7E31B81389D11D0020EB89 /* keypad_8.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31A91389D11D0020EB89 /* keypad_8.png */; };
+		EC7E31B91389D11D0020EB89 /* keypad_9.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AA1389D11D0020EB89 /* keypad_9.png */; };
+		EC7E31BA1389D11D0020EB89 /* keypad_Call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AB1389D11D0020EB89 /* keypad_Call.png */; };
+		EC7E31BB1389D11D0020EB89 /* keypad_del.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AC1389D11D0020EB89 /* keypad_del.png */; };
+		EC7E31BC1389D11D0020EB89 /* keypad_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AD1389D11D0020EB89 /* keypad_placeholder.png */; };
+		EC7E31BD1389D11D0020EB89 /* keypad_sharp.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AE1389D11D0020EB89 /* keypad_sharp.png */; };
+		EC7E31BE1389D11D0020EB89 /* keypad_star.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7E31AF1389D11D0020EB89 /* keypad_star.png */; };
+		EC7E32121389D9970020EB89 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7E32111389D9970020EB89 /* CoreMedia.framework */; };
+		EC7E32161389D9CE0020EB89 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7E32151389D9CE0020EB89 /* CoreVideo.framework */; };
 		EC83B88A13698CEA00DD3355 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88913698CEA00DD3355 /* AVFoundation.framework */; };
 		EC83B88C13698CEA00DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88B13698CEA00DD3355 /* CFNetwork.framework */; };
 		EC83B88E13698CEA00DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88D13698CEA00DD3355 /* libresolv.dylib */; };
 		EC83B89013698CEA00DD3355 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */; };
-		EC8EBE07136849E600DC70DF /* RecentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE06136849E600DC70DF /* RecentsView.xib */; };
-		EC8EBE09136849F700DC70DF /* NumPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE08136849F700DC70DF /* NumPadView.xib */; };
-		EC8EBE0B13684A0900DC70DF /* ContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE0A13684A0900DC70DF /* ContactsView.xib */; };
-		EC8EBE0D13684A1700DC70DF /* MessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE0C13684A1700DC70DF /* MessagesView.xib */; };
-		EC8EBE6413685F6200DC70DF /* RecentsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */; };
-		EC8EBE6713685F7600DC70DF /* NumPadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */; };
-		EC8EBE6A13685F8A00DC70DF /* ContactsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */; };
-		EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */; };
-		EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */; };
-		EC8EBE9E1368651200DC70DF /* OnlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EBE9C1368651200DC70DF /* OnlineView.xib */; };
 		ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */; };
 		ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFB1368921400DC70DF /* libtinySAK.a */; };
 		ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFD1368921400DC70DF /* libtinyNET.a */; };
@@ -425,7 +464,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EC7D39511379ED2A0052CE45 /* testMessaging.app */;
+			remoteGlobalIDString = EC7D39511379ED2A0052CE45;
 			remoteInfo = testMessaging;
 		};
 		ECB72B621373487900C4CA0C /* PBXContainerItemProxy */ = {
@@ -439,36 +478,87 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* idoubsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubsAppDelegate.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* idoubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idoubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
-		2840D7CD1179279E00D7F93C /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* idoubs_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubs_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EC6AD68A136B3A8E00617B95 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = idoubsAppDelegate.mm; sourceTree = "<group>"; };
+		EC7E2F4E138968E50020EB89 /* AudioCallOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCallOverlay.h; sourceTree = "<group>"; };
+		EC7E2F4F138968E50020EB89 /* AudioCallOverlay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioCallOverlay.mm; sourceTree = "<group>"; };
+		EC7E2F50138968E50020EB89 /* AudioCallOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCallOverlay.xib; sourceTree = "<group>"; };
+		EC7E2F51138968E50020EB89 /* AudioCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCallView.xib; sourceTree = "<group>"; };
+		EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCallViewController.h; sourceTree = "<group>"; };
+		EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioCallViewController.mm; sourceTree = "<group>"; };
+		EC7E2F54138968E50020EB89 /* BaloonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaloonCell.h; sourceTree = "<group>"; };
+		EC7E2F55138968E50020EB89 /* BaloonCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaloonCell.mm; sourceTree = "<group>"; };
+		EC7E2F56138968E50020EB89 /* BaloonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaloonCell.xib; sourceTree = "<group>"; };
+		EC7E2F57138968E50020EB89 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		EC7E2F58138968E50020EB89 /* CallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CallViewController.mm; sourceTree = "<group>"; };
+		EC7E2F59138968E50020EB89 /* ChatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatView.xib; sourceTree = "<group>"; };
+		EC7E2F5A138968E50020EB89 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		EC7E2F5B138968E50020EB89 /* ChatViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChatViewController.mm; sourceTree = "<group>"; };
+		EC7E2F5C138968E50020EB89 /* ContactDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetails.xib; sourceTree = "<group>"; };
+		EC7E2F5D138968E50020EB89 /* ContactDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailsController.h; sourceTree = "<group>"; };
+		EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactDetailsController.mm; sourceTree = "<group>"; };
+		EC7E2F5F138968E50020EB89 /* ContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsView.xib; sourceTree = "<group>"; };
+		EC7E2F60138968E50020EB89 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		EC7E2F61138968E50020EB89 /* ContactsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactsViewController.mm; sourceTree = "<group>"; };
+		EC7E2F62138968E50020EB89 /* ContactViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewCell.h; sourceTree = "<group>"; };
+		EC7E2F63138968E50020EB89 /* ContactViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactViewCell.mm; sourceTree = "<group>"; };
+		EC7E2F64138968E50020EB89 /* ContactViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewCell.xib; sourceTree = "<group>"; };
+		EC7E2F65138968E50020EB89 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		EC7E2F66138968E50020EB89 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		EC7E2F67138968E50020EB89 /* InfoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InfoViewController.mm; sourceTree = "<group>"; };
+		EC7E2F68138968E50020EB89 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		EC7E2F69138968E50020EB89 /* MessageCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessageCell.mm; sourceTree = "<group>"; };
+		EC7E2F6A138968E50020EB89 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		EC7E2F6B138968E50020EB89 /* MessagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesView.xib; sourceTree = "<group>"; };
+		EC7E2F6C138968E50020EB89 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		EC7E2F6D138968E50020EB89 /* MessagesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessagesViewController.mm; sourceTree = "<group>"; };
+		EC7E2F71138968E50020EB89 /* NumpadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumpadView.xib; sourceTree = "<group>"; };
+		EC7E2F72138968E50020EB89 /* NumpadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumpadViewController.h; sourceTree = "<group>"; };
+		EC7E2F73138968E50020EB89 /* NumpadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumpadViewController.mm; sourceTree = "<group>"; };
+		EC7E2F74138968E50020EB89 /* RecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentCell.h; sourceTree = "<group>"; };
+		EC7E2F75138968E50020EB89 /* RecentCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecentCell.mm; sourceTree = "<group>"; };
+		EC7E2F76138968E50020EB89 /* RecentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCell.xib; sourceTree = "<group>"; };
+		EC7E2F77138968E50020EB89 /* RecentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentsView.xib; sourceTree = "<group>"; };
+		EC7E2F78138968E50020EB89 /* RecentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsViewController.h; sourceTree = "<group>"; };
+		EC7E2F79138968E50020EB89 /* RecentsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecentsViewController.mm; sourceTree = "<group>"; };
+		EC7E2F7A138968E50020EB89 /* TransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentToolbar.h; sourceTree = "<group>"; };
+		EC7E2F7B138968E50020EB89 /* TransparentToolbar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TransparentToolbar.mm; sourceTree = "<group>"; };
+		EC7E2F7C138968E50020EB89 /* VideoCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallView.xib; sourceTree = "<group>"; };
+		EC7E2F7D138968E50020EB89 /* VideoCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCallViewController.h; sourceTree = "<group>"; };
+		EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCallViewController.mm; sourceTree = "<group>"; };
+		EC7E2FA21389696C0020EB89 /* idoubs2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubs2AppDelegate.h; sourceTree = "<group>"; };
+		EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = idoubs2AppDelegate.mm; sourceTree = "<group>"; };
+		EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubs2Constants.h; sourceTree = "<group>"; };
+		EC7E2FB013896B7A0020EB89 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		EC7E2FB413896B900020EB89 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EC7E2FB813896BAE0020EB89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EC7E2FDE13896CFD0020EB89 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
+		EC7E31A11389D11D0020EB89 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
+		EC7E31A21389D11D0020EB89 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
+		EC7E31A31389D11D0020EB89 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
+		EC7E31A41389D11D0020EB89 /* keypad_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_3.png; sourceTree = "<group>"; };
+		EC7E31A51389D11D0020EB89 /* keypad_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_4.png; sourceTree = "<group>"; };
+		EC7E31A61389D11D0020EB89 /* keypad_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_5.png; sourceTree = "<group>"; };
+		EC7E31A71389D11D0020EB89 /* keypad_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_6.png; sourceTree = "<group>"; };
+		EC7E31A81389D11D0020EB89 /* keypad_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_7.png; sourceTree = "<group>"; };
+		EC7E31A91389D11D0020EB89 /* keypad_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_8.png; sourceTree = "<group>"; };
+		EC7E31AA1389D11D0020EB89 /* keypad_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_9.png; sourceTree = "<group>"; };
+		EC7E31AB1389D11D0020EB89 /* keypad_Call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_Call.png; sourceTree = "<group>"; };
+		EC7E31AC1389D11D0020EB89 /* keypad_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_del.png; sourceTree = "<group>"; };
+		EC7E31AD1389D11D0020EB89 /* keypad_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_placeholder.png; sourceTree = "<group>"; };
+		EC7E31AE1389D11D0020EB89 /* keypad_sharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_sharp.png; sourceTree = "<group>"; };
+		EC7E31AF1389D11D0020EB89 /* keypad_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_star.png; sourceTree = "<group>"; };
+		EC7E32111389D9970020EB89 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EC7E32151389D9CE0020EB89 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		EC83B88913698CEA00DD3355 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EC83B88B13698CEA00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC83B88D13698CEA00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		EC8EBE06136849E600DC70DF /* RecentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentsView.xib; sourceTree = "<group>"; };
-		EC8EBE08136849F700DC70DF /* NumPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPadView.xib; sourceTree = "<group>"; };
-		EC8EBE0A13684A0900DC70DF /* ContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsView.xib; sourceTree = "<group>"; };
-		EC8EBE0C13684A1700DC70DF /* MessagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesView.xib; sourceTree = "<group>"; };
-		EC8EBE6213685F6200DC70DF /* RecentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsViewController.h; sourceTree = "<group>"; };
-		EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecentsViewController.mm; sourceTree = "<group>"; };
-		EC8EBE6513685F7600DC70DF /* NumPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumPadViewController.h; sourceTree = "<group>"; };
-		EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumPadViewController.mm; sourceTree = "<group>"; };
-		EC8EBE6813685F8A00DC70DF /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactsViewController.mm; sourceTree = "<group>"; };
-		EC8EBE6B13685F9900DC70DF /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
-		EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessagesViewController.mm; sourceTree = "<group>"; };
-		EC8EBE9A1368651200DC70DF /* OnlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineViewController.h; sourceTree = "<group>"; };
-		EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OnlineViewController.mm; sourceTree = "<group>"; };
-		EC8EBE9C1368651200DC70DF /* OnlineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OnlineView.xib; path = Classes/OnlineView.xib; sourceTree = "<group>"; };
 		EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-ngn-stack.xcodeproj"; path = "../ios-ngn-stack/ios-ngn-stack.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -499,6 +589,11 @@
 				EC83B88C13698CEA00DD3355 /* CFNetwork.framework in Frameworks */,
 				EC83B88E13698CEA00DD3355 /* libresolv.dylib in Frameworks */,
 				EC83B89013698CEA00DD3355 /* libsqlite3.0.dylib in Frameworks */,
+				EC7E2FB113896B7A0020EB89 /* AddressBook.framework in Frameworks */,
+				EC7E2FB513896B900020EB89 /* AudioToolbox.framework in Frameworks */,
+				EC7E2FB913896BAE0020EB89 /* QuartzCore.framework in Frameworks */,
+				EC7E32121389D9970020EB89 /* CoreMedia.framework in Frameworks */,
+				EC7E32161389D9CE0020EB89 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,18 +603,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EC83B7F3136980CC00DD3355 /* idoubsAppDelegate.mm */,
-				1D3623240D0F684500981E51 /* idoubsAppDelegate.h */,
-				EC8EBE6213685F6200DC70DF /* RecentsViewController.h */,
-				EC8EBE6313685F6200DC70DF /* RecentsViewController.mm */,
-				EC8EBE6513685F7600DC70DF /* NumPadViewController.h */,
-				EC8EBE6613685F7600DC70DF /* NumPadViewController.mm */,
-				EC8EBE6813685F8A00DC70DF /* ContactsViewController.h */,
-				EC8EBE6913685F8A00DC70DF /* ContactsViewController.mm */,
-				EC8EBE6B13685F9900DC70DF /* MessagesViewController.h */,
-				EC8EBE6C13685F9900DC70DF /* MessagesViewController.mm */,
-				EC8EBE9A1368651200DC70DF /* OnlineViewController.h */,
-				EC8EBE9B1368651200DC70DF /* OnlineViewController.mm */,
+				EC7E2FA21389696C0020EB89 /* idoubs2AppDelegate.h */,
+				EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */,
+				EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -536,11 +622,17 @@
 			isa = PBXGroup;
 			children = (
 				EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */,
+				EC7E2F4D138968E50020EB89 /* UI */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				EC7E2FB013896B7A0020EB89 /* AddressBook.framework */,
+				EC7E2FB413896B900020EB89 /* AudioToolbox.framework */,
+				EC7E2FB813896BAE0020EB89 /* QuartzCore.framework */,
+				EC7E32111389D9970020EB89 /* CoreMedia.framework */,
+				EC7E32151389D9CE0020EB89 /* CoreVideo.framework */,
 			);
 			name = idoubs;
 			sourceTree = "<group>";
@@ -557,14 +649,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EC8EBE9C1368651200DC70DF /* OnlineView.xib */,
-				2840D7CD1179279E00D7F93C /* FirstView.xib */,
-				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
+				EC7E2FDD13896CFD0020EB89 /* storage */,
+				EC7E2F14138968D40020EB89 /* keypad */,
 				8D1107310486CEB800E47090 /* idoubs-Info.plist */,
-				EC8EBE06136849E600DC70DF /* RecentsView.xib */,
-				EC8EBE08136849F700DC70DF /* NumPadView.xib */,
-				EC8EBE0A13684A0900DC70DF /* ContactsView.xib */,
-				EC8EBE0C13684A1700DC70DF /* MessagesView.xib */,
 				EC6AD68A136B3A8E00617B95 /* MainWindow.xib */,
 			);
 			name = Resources;
@@ -582,6 +669,99 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC7E2F14138968D40020EB89 /* keypad */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E31A11389D11D0020EB89 /* keypad_0.png */,
+				EC7E31A21389D11D0020EB89 /* keypad_1.png */,
+				EC7E31A31389D11D0020EB89 /* keypad_2.png */,
+				EC7E31A41389D11D0020EB89 /* keypad_3.png */,
+				EC7E31A51389D11D0020EB89 /* keypad_4.png */,
+				EC7E31A61389D11D0020EB89 /* keypad_5.png */,
+				EC7E31A71389D11D0020EB89 /* keypad_6.png */,
+				EC7E31A81389D11D0020EB89 /* keypad_7.png */,
+				EC7E31A91389D11D0020EB89 /* keypad_8.png */,
+				EC7E31AA1389D11D0020EB89 /* keypad_9.png */,
+				EC7E31AB1389D11D0020EB89 /* keypad_Call.png */,
+				EC7E31AC1389D11D0020EB89 /* keypad_del.png */,
+				EC7E31AD1389D11D0020EB89 /* keypad_placeholder.png */,
+				EC7E31AE1389D11D0020EB89 /* keypad_sharp.png */,
+				EC7E31AF1389D11D0020EB89 /* keypad_star.png */,
+			);
+			name = keypad;
+			path = images/keypad;
+			sourceTree = "<group>";
+		};
+		EC7E2F4D138968E50020EB89 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E2FF313896EE10020EB89 /* Cells */,
+				EC7E2F4E138968E50020EB89 /* AudioCallOverlay.h */,
+				EC7E2F4F138968E50020EB89 /* AudioCallOverlay.mm */,
+				EC7E2F50138968E50020EB89 /* AudioCallOverlay.xib */,
+				EC7E2F51138968E50020EB89 /* AudioCallView.xib */,
+				EC7E2F52138968E50020EB89 /* AudioCallViewController.h */,
+				EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */,
+				EC7E2F57138968E50020EB89 /* CallViewController.h */,
+				EC7E2F58138968E50020EB89 /* CallViewController.mm */,
+				EC7E2F59138968E50020EB89 /* ChatView.xib */,
+				EC7E2F5A138968E50020EB89 /* ChatViewController.h */,
+				EC7E2F5B138968E50020EB89 /* ChatViewController.mm */,
+				EC7E2F5C138968E50020EB89 /* ContactDetails.xib */,
+				EC7E2F5D138968E50020EB89 /* ContactDetailsController.h */,
+				EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */,
+				EC7E2F5F138968E50020EB89 /* ContactsView.xib */,
+				EC7E2F60138968E50020EB89 /* ContactsViewController.h */,
+				EC7E2F61138968E50020EB89 /* ContactsViewController.mm */,
+				EC7E2F65138968E50020EB89 /* InfoView.xib */,
+				EC7E2F66138968E50020EB89 /* InfoViewController.h */,
+				EC7E2F67138968E50020EB89 /* InfoViewController.mm */,
+				EC7E2F6B138968E50020EB89 /* MessagesView.xib */,
+				EC7E2F6C138968E50020EB89 /* MessagesViewController.h */,
+				EC7E2F6D138968E50020EB89 /* MessagesViewController.mm */,
+				EC7E2F71138968E50020EB89 /* NumpadView.xib */,
+				EC7E2F72138968E50020EB89 /* NumpadViewController.h */,
+				EC7E2F73138968E50020EB89 /* NumpadViewController.mm */,
+				EC7E2F77138968E50020EB89 /* RecentsView.xib */,
+				EC7E2F78138968E50020EB89 /* RecentsViewController.h */,
+				EC7E2F79138968E50020EB89 /* RecentsViewController.mm */,
+				EC7E2F7A138968E50020EB89 /* TransparentToolbar.h */,
+				EC7E2F7B138968E50020EB89 /* TransparentToolbar.mm */,
+				EC7E2F7C138968E50020EB89 /* VideoCallView.xib */,
+				EC7E2F7D138968E50020EB89 /* VideoCallViewController.h */,
+				EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EC7E2FDD13896CFD0020EB89 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E2FDE13896CFD0020EB89 /* NgnDataBase.db */,
+			);
+			name = storage;
+			path = "../ios-ngn-stack/storage";
+			sourceTree = SOURCE_ROOT;
+		};
+		EC7E2FF313896EE10020EB89 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E2F68138968E50020EB89 /* MessageCell.h */,
+				EC7E2F69138968E50020EB89 /* MessageCell.mm */,
+				EC7E2F62138968E50020EB89 /* ContactViewCell.h */,
+				EC7E2F63138968E50020EB89 /* ContactViewCell.mm */,
+				EC7E2F64138968E50020EB89 /* ContactViewCell.xib */,
+				EC7E2F6A138968E50020EB89 /* MessageCell.xib */,
+				EC7E2F54138968E50020EB89 /* BaloonCell.h */,
+				EC7E2F55138968E50020EB89 /* BaloonCell.mm */,
+				EC7E2F56138968E50020EB89 /* BaloonCell.xib */,
+				EC7E2F74138968E50020EB89 /* RecentCell.h */,
+				EC7E2F75138968E50020EB89 /* RecentCell.mm */,
+				EC7E2F76138968E50020EB89 /* RecentCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		EC8EBEE61368921400DC70DF /* Products */ = {
@@ -829,14 +1009,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
-				2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */,
-				EC8EBE07136849E600DC70DF /* RecentsView.xib in Resources */,
-				EC8EBE09136849F700DC70DF /* NumPadView.xib in Resources */,
-				EC8EBE0B13684A0900DC70DF /* ContactsView.xib in Resources */,
-				EC8EBE0D13684A1700DC70DF /* MessagesView.xib in Resources */,
-				EC8EBE9E1368651200DC70DF /* OnlineView.xib in Resources */,
 				EC6AD68B136B3A8E00617B95 /* MainWindow.xib in Resources */,
+				EC7E2F80138968E50020EB89 /* AudioCallOverlay.xib in Resources */,
+				EC7E2F81138968E50020EB89 /* AudioCallView.xib in Resources */,
+				EC7E2F84138968E50020EB89 /* BaloonCell.xib in Resources */,
+				EC7E2F86138968E50020EB89 /* ChatView.xib in Resources */,
+				EC7E2F88138968E50020EB89 /* ContactDetails.xib in Resources */,
+				EC7E2F8A138968E50020EB89 /* ContactsView.xib in Resources */,
+				EC7E2F8D138968E50020EB89 /* ContactViewCell.xib in Resources */,
+				EC7E2F8E138968E50020EB89 /* InfoView.xib in Resources */,
+				EC7E2F91138968E50020EB89 /* MessageCell.xib in Resources */,
+				EC7E2F92138968E50020EB89 /* MessagesView.xib in Resources */,
+				EC7E2F96138968E50020EB89 /* NumpadView.xib in Resources */,
+				EC7E2F99138968E50020EB89 /* RecentCell.xib in Resources */,
+				EC7E2F9A138968E50020EB89 /* RecentsView.xib in Resources */,
+				EC7E2F9D138968E50020EB89 /* VideoCallView.xib in Resources */,
+				EC7E2FE013896CFD0020EB89 /* NgnDataBase.db in Resources */,
+				EC7E31B01389D11D0020EB89 /* keypad_0.png in Resources */,
+				EC7E31B11389D11D0020EB89 /* keypad_1.png in Resources */,
+				EC7E31B21389D11D0020EB89 /* keypad_2.png in Resources */,
+				EC7E31B31389D11D0020EB89 /* keypad_3.png in Resources */,
+				EC7E31B41389D11D0020EB89 /* keypad_4.png in Resources */,
+				EC7E31B51389D11D0020EB89 /* keypad_5.png in Resources */,
+				EC7E31B61389D11D0020EB89 /* keypad_6.png in Resources */,
+				EC7E31B71389D11D0020EB89 /* keypad_7.png in Resources */,
+				EC7E31B81389D11D0020EB89 /* keypad_8.png in Resources */,
+				EC7E31B91389D11D0020EB89 /* keypad_9.png in Resources */,
+				EC7E31BA1389D11D0020EB89 /* keypad_Call.png in Resources */,
+				EC7E31BB1389D11D0020EB89 /* keypad_del.png in Resources */,
+				EC7E31BC1389D11D0020EB89 /* keypad_placeholder.png in Resources */,
+				EC7E31BD1389D11D0020EB89 /* keypad_sharp.png in Resources */,
+				EC7E31BE1389D11D0020EB89 /* keypad_star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,12 +1051,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				EC8EBE6413685F6200DC70DF /* RecentsViewController.mm in Sources */,
-				EC8EBE6713685F7600DC70DF /* NumPadViewController.mm in Sources */,
-				EC8EBE6A13685F8A00DC70DF /* ContactsViewController.mm in Sources */,
-				EC8EBE6D13685F9900DC70DF /* MessagesViewController.mm in Sources */,
-				EC8EBE9D1368651200DC70DF /* OnlineViewController.mm in Sources */,
-				EC83B7F4136980CC00DD3355 /* idoubsAppDelegate.mm in Sources */,
+				EC7E2F7F138968E50020EB89 /* AudioCallOverlay.mm in Sources */,
+				EC7E2F82138968E50020EB89 /* AudioCallViewController.mm in Sources */,
+				EC7E2F83138968E50020EB89 /* BaloonCell.mm in Sources */,
+				EC7E2F85138968E50020EB89 /* CallViewController.mm in Sources */,
+				EC7E2F87138968E50020EB89 /* ChatViewController.mm in Sources */,
+				EC7E2F89138968E50020EB89 /* ContactDetailsController.mm in Sources */,
+				EC7E2F8B138968E50020EB89 /* ContactsViewController.mm in Sources */,
+				EC7E2F8C138968E50020EB89 /* ContactViewCell.mm in Sources */,
+				EC7E2F8F138968E50020EB89 /* InfoViewController.mm in Sources */,
+				EC7E2F90138968E50020EB89 /* MessageCell.mm in Sources */,
+				EC7E2F93138968E50020EB89 /* MessagesViewController.mm in Sources */,
+				EC7E2F97138968E50020EB89 /* NumpadViewController.mm in Sources */,
+				EC7E2F98138968E50020EB89 /* RecentCell.mm in Sources */,
+				EC7E2F9B138968E50020EB89 /* RecentsViewController.mm in Sources */,
+				EC7E2F9C138968E50020EB89 /* TransparentToolbar.mm in Sources */,
+				EC7E2F9E138968E50020EB89 /* VideoCallViewController.mm in Sources */,
+				EC7E2FA51389696C0020EB89 /* idoubs2AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,6 +1255,14 @@
 					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
 					"-lspeexdsp",
 					"-framework",
 					Foundation,

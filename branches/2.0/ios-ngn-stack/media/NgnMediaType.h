@@ -32,7 +32,12 @@ typedef enum NgnMediaType_e {
 	MediaType_Chat = (0x01<<3),
 	MediaType_FileTransfer = (0x01<<4),
 	MediaType_Msrp = MediaType_Chat | MediaType_FileTransfer,
+	
 	// --- Add you media type after THIS LINE ---
+	
+	// --- Add you media type before THIS LINE ---
+	
+	MediaType_All = MediaType_AudioVideo | MediaType_Msrp
 }
 NgnMediaType_t;
 

@@ -24,4 +24,6 @@
 
 @protocol INgnSoundService <INgnBaseService>
 
+-(BOOL) setSpeakerEnabled:(BOOL)enabled;
+
 @end

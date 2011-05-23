@@ -23,24 +23,33 @@
 
 @implementation NgnDateTimeUtils
 
-static NSDateFormatter* hEventDuration = nil;
-static NSDateFormatter* hEventDate = nil;
 
 +(NSDateFormatter*) historyEventDuration{
-	if(!hEventDuration){
-		hEventDuration = [[NSDateFormatter alloc] init];
-        [hEventDuration setDateFormat:@"mm:ss"];
+	static NSDateFormatter* sHistoryEventDuration = nil;
+	if(!sHistoryEventDuration){
+		sHistoryEventDuration = [[NSDateFormatter alloc] init];
+        [sHistoryEventDuration setDateFormat:@"mm:ss"];
 	}
-	return hEventDuration;
+	return sHistoryEventDuration;
 }
 
 +(NSDateFormatter*) historyEventDate{
-	if(!hEventDate){
-		hEventDate = [[NSDateFormatter alloc] init];
-        [hEventDate setTimeStyle:NSDateFormatterNoStyle];
-        [hEventDate setDateStyle:NSDateFormatterMediumStyle];
+	static NSDateFormatter* sHistoryEventDate = nil;
+	if(!sHistoryEventDate){
+		sHistoryEventDate = [[NSDateFormatter alloc] init];
+        [sHistoryEventDate setTimeStyle:NSDateFormatterNoStyle];
+        [sHistoryEventDate setDateStyle:NSDateFormatterMediumStyle];
 	}
-	return hEventDate;
+	return sHistoryEventDate;
+}
+
++(NSDateFormatter*) chatDate{
+	static NSDateFormatter* sChatDate = nil;
+	if(!sChatDate){
+		sChatDate = [[NSDateFormatter alloc] init];
+        [sChatDate setDateFormat:@"MMMM dd, yyyy HH:mm"];
+	}
+	return sChatDate;
 }
 
 @end
