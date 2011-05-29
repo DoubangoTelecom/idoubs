@@ -379,7 +379,7 @@
 					<object class="IBUIButton" id="911968629">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{1, 345}, {105, 69}}</string>
+						<string key="NSFrame">{{1, 345}, {105, 66}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="236610008"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -392,10 +392,13 @@
 							<double key="NSSize">24</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<string key="IBUINormalTitle">Video</string>
 						<reference key="IBUIHighlightedTitleColor" ref="847917818"/>
 						<reference key="IBUINormalTitleColor" ref="589362818"/>
 						<reference key="IBUINormalTitleShadowColor" ref="589362818"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">visio_call_48.png</string>
+						</object>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="68896213">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">keypad_Call.png</string>
@@ -404,7 +407,7 @@
 					<object class="IBUIButton" id="764386401">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{107, 345}, {107, 68}}</string>
+						<string key="NSFrame">{{107, 345}, {107, 66}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="236610008"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -414,10 +417,13 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="883950978"/>
 						<string key="IBUISelectedTitle">Audio</string>
-						<string key="IBUINormalTitle">Audio</string>
 						<reference key="IBUIHighlightedTitleColor" ref="847917818"/>
 						<reference key="IBUINormalTitleColor" ref="589362818"/>
 						<reference key="IBUINormalTitleShadowColor" ref="589362818"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">voice_call_48.png</string>
+						</object>
 						<reference key="IBUINormalBackgroundImage" ref="68896213"/>
 					</object>
 					<object class="IBUIButton" id="425348119">
@@ -861,8 +867,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="654702740"/>
-							<reference ref="80361928"/>
 							<reference ref="990925962"/>
+							<reference ref="80361928"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -933,11 +939,6 @@
 						<string key="objectName">Sharp</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">34</int>
-						<reference key="object" ref="80361928"/>
-						<reference key="parent" ref="846572854"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
 						<reference key="object" ref="654702740"/>
 						<reference key="parent" ref="846572854"/>
@@ -983,6 +984,11 @@
 						<reference key="object" ref="903073854"/>
 						<reference key="parent" ref="191373211"/>
 						<string key="objectName">Number</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">34</int>
+						<reference key="object" ref="80361928"/>
+						<reference key="parent" ref="846572854"/>
 					</object>
 				</object>
 			</object>
@@ -1040,7 +1046,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>NumpadViewController</string>
 					<string>UIResponder</string>
-					<string>{{635, 247}, {320, 480}}</string>
+					<string>{{581, 247}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -1498,6 +1504,8 @@
 				<string>keypad_placeholder.png</string>
 				<string>keypad_sharp.png</string>
 				<string>keypad_star.png</string>
+				<string>visio_call_48.png</string>
+				<string>voice_call_48.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1516,6 +1524,8 @@
 				<string>{319, 71}</string>
 				<string>{106, 68}</string>
 				<string>{106, 68}</string>
+				<string>{48, 48}</string>
+				<string>{48, 48}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">141</string>

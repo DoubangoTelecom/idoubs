@@ -36,6 +36,7 @@
 
 @interface NgnAVSession (Private)
 +(NSMutableDictionary*) getAllSessions;
++(NgnAVSession*) makeCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t)mType;
 -(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState;
 #if TARGET_OS_IPHONE
 -(BOOL)initializeConsumersAndProducers;
@@ -50,6 +51,20 @@
 		sessions = [[NSMutableDictionary alloc] init];
 	}
 	return sessions;
+}
+
++(NgnAVSession*) makeCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t)mType{
+	NSString* validUri = [NgnUriUtils makeValidSipUri: remoteUri];
+	if(validUri){
+		NgnAVSession* avSession = [NgnAVSession createOutgoingSessionWithSipStack: sipStack andMediaType: mType];
+		if(avSession){
+			if(![avSession makeCall: [NgnUriUtils makeValidSipUri: validUri]]){
+				[NgnAVSession releaseSession: &avSession];
+			}
+		}
+		return avSession;
+	}
+	return nil;
 }
 
 -(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState{
@@ -461,24 +476,25 @@
 	return nil;
 }
 
-+(NgnAVSession*) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{
-	NgnAVSession* avSession = [NgnAVSession createOutgoingSessionWithSipStack: sipStack andMediaType: MediaType_Audio];
-	if(avSession){
-		if(![avSession makeCall: [NgnUriUtils makeValidSipUri: remoteUri]]){
-			[NgnAVSession releaseSession: &avSession];
++(int) getNumberOfActiveCalls:(BOOL) countOnHold{
+	int number = 0;
+	@synchronized (kSessions){
+		NSArray* values = [kSessions allValues];
+		for(NgnAVSession* value in values){
+			if([value isActive] && (countOnHold || (![value isLocalHeld] && ![value isRemoteHeld]))){
+				++number;
+			}
 		}
 	}
-	return avSession;
+	return number;
+}
+
++(NgnAVSession*) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{
+	return [NgnAVSession makeCallWithRemoteParty:remoteUri andSipStack: sipStack andMediaType:MediaType_Audio];
 }
 
 +(NgnAVSession*) makeAudioVideoCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{
-	NgnAVSession* avSession = [NgnAVSession createOutgoingSessionWithSipStack: sipStack andMediaType: MediaType_AudioVideo];
-	if(avSession){
-		if(![avSession makeCall: [NgnUriUtils makeValidSipUri: remoteUri]]){
-			[NgnAVSession releaseSession: &avSession];
-		}
-	}
-	return avSession;
+	return [NgnAVSession makeCallWithRemoteParty:remoteUri andSipStack: sipStack andMediaType:MediaType_AudioVideo];
 }
 
 // @Override

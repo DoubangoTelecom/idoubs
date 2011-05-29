@@ -241,6 +241,7 @@ static const NSString* kRemoteParty = @"1";
 		case CONN_STATE_TERMINATING:
 			mScheduleRegistration = TRUE;
 			[mSipService unRegisterIdentity];
+			break;
 		case CONN_STATE_CONNECTED:
 			break;
 	}

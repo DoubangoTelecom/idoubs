@@ -102,8 +102,12 @@
 							</object>
 						</object>
 						<object class="NSColor" key="IBUITintColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
+							<int key="NSColorSpace">5</int>
+							<bytes key="NSCMYK">MSAwLjk4NzkwMzIzNzMgMCAwAA</bytes>
+							<object class="NSColorSpace" key="NSCustomColorSpace">
+								<int key="NSID">3</int>
+							</object>
+							<characters key="NSComponents">1 0.9879032258 0 0 1</characters>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="792993993">
@@ -698,7 +702,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../wiPhone.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../idoubs.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">141</string>
 	</data>

@@ -17,9 +17,19 @@ CREATE TABLE hist_event(
 	id INTEGER PRIMARY KEY, 
 	seen TINYINT(1),
 	status TINYINT(8),
-	mediaType INTEGER,
+	mediaType TINYINT(8),
 	remoteParty TEXT,
 	start DOUBLE,
 	end DOUBLE,
 	content BLOB
+);
+
+--			--
+--	Favorites --
+--			--
+
+CREATE TABLE favorites( 
+	id INTEGER PRIMARY KEY, 
+	number TEXT,
+	mediaType TINYINT(8)
 );

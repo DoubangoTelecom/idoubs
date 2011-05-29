@@ -1,3 +1,23 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #import "CallViewController.h"
 
 #import "idoubs2AppDelegate.h"
@@ -47,32 +67,46 @@
 
 +(BOOL) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{
 	if(![NgnStringUtils isNullOrEmpty:remoteUri]){
-		idoubs2AppDelegate* appDelegate = (idoubs2AppDelegate*) [[UIApplication sharedApplication] delegate];
 		NgnAVSession* audioSession = [[NgnAVSession makeAudioCallWithRemoteParty: remoteUri
 																 andSipStack: [[NgnEngine getInstance].sipService getSipStack]] retain];
 		if(audioSession){
-			appDelegate.audioCallController.sessionId = audioSession.id;
-			[appDelegate.tabBarController presentModalViewController: appDelegate.audioCallController animated: YES];
+			[idoubs2AppDelegate sharedInstance].audioCallController.sessionId = audioSession.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
 			[audioSession release];
-			return TRUE;
+			return YES;
 		}
 	}
-	return FALSE;
+	return NO;
 }
 
 +(BOOL) makeAudioVideoCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack{
 	if(![NgnStringUtils isNullOrEmpty:remoteUri]){
-		idoubs2AppDelegate* appDelegate = (idoubs2AppDelegate*) [[UIApplication sharedApplication] delegate];
 		NgnAVSession* videoSession = [[NgnAVSession makeAudioVideoCallWithRemoteParty: remoteUri
 																	 andSipStack: [[NgnEngine getInstance].sipService getSipStack]] retain];
 		if(videoSession){
-			appDelegate.videoCallController.sessionId = videoSession.id;
-			[appDelegate.tabBarController presentModalViewController: appDelegate.videoCallController animated: YES];
+			[idoubs2AppDelegate sharedInstance].videoCallController.sessionId = videoSession.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
 			[videoSession release];
-			return TRUE;
+			return YES;
 		}
 	}
-	return FALSE;
+	return NO;
+}
+
++(BOOL) receiveIncomingCall: (NgnAVSession*)session{
+	if(session){
+		if(isVideoType(session.mediaType)){
+			[idoubs2AppDelegate sharedInstance].videoCallController.sessionId = session.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
+			return YES;
+		}
+		else if(isAudioType(session.mediaType)){
+			[idoubs2AppDelegate sharedInstance].audioCallController.sessionId = session.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
+			return YES;
+		}
+	}
+	return NO;
 }
 
 - (void)dealloc {

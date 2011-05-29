@@ -36,6 +36,8 @@
 #import "events/NgnInviteEventArgs.h"
 #import "events/NgnMessagingEventArgs.h"
 #import "events/NgnHistoryEventArgs.h"
+#import "events/NgnFavoriteEventArgs.h"
+#import "events/NgnContactEventArgs.h"
 
 #import "sip/NgnRegistrationSession.h"
 #import "sip/NgnAVSession.h"
@@ -46,6 +48,7 @@
 #import "model/NgnHistoryEvent.h"
 #import "model/NgnHistorySMSEvent.h"
 #import "model/NgnHistoryAVCallEvent.h"
+#import "model/NgnFavorite.h"
 
 #import "media/NgnMediaType.h"
 #import "media/NgnContentType.h"

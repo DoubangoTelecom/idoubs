@@ -78,6 +78,7 @@ class ActionConfig;
 +(BOOL) hasSessionWithId:(long) sessionId;
 +(BOOL) hasActiveSession;
 +(NgnAVSession*) getFirstActiveCallAndNot:(long) sessionId;
++(int) getNumberOfActiveCalls:(BOOL) countOnHold;
 +(NgnAVSession*) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack;
 +(NgnAVSession*) makeAudioVideoCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack;
 

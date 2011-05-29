@@ -61,7 +61,8 @@ HistoryEventStatus_t;
 -(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)type andRemoteParty: (NSString*)remoteParty;
 -(void) setRemotePartyWithValidUri: (NSString *)uri;
 -(NSComparisonResult)compare:(NgnHistoryEvent *)otherEvent;
--(NSComparisonResult)compareHistoryEventByDate:(NgnHistoryEvent *)otherEvent;
+-(NSComparisonResult)compareHistoryEventByDateASC:(NgnHistoryEvent *)otherEvent;
+-(NSComparisonResult)compareHistoryEventByDateDESC:(NgnHistoryEvent *)otherEvent;
 
 +(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)remoteParty andVideo: (BOOL)video;
 +(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty;

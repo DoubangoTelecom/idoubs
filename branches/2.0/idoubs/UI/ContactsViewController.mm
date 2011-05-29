@@ -1,23 +1,48 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #import "ContactsViewController.h"
+
+//
+// private implementation
+//
 
 @interface ContactsViewController(Private)
 -(void) refreshData;
+-(void) onContactEvent:(NSNotification*)notification;
 @end
 
 @implementation ContactsViewController(Private)
 
 -(void) refreshData{
-	@synchronized(mContacts){
-		[mContacts removeAllObjects];
-		NgnContactMutableArray* contacts = [[mContactService contacts] retain];
+	@synchronized(contacts){
+		[contacts removeAllObjects];
+		NgnContactMutableArray* contacts_ = [[[NgnEngine getInstance].contactService contacts] retain];
 		NSString *lastGroup = @"$", *group;
 		NSMutableArray* lastArray = nil;
-		for (NgnContact* contact in contacts) {
+		for (NgnContact* contact in contacts_) {
 			if(!contact || [NgnStringUtils isNullOrEmpty: contact.displayName] || (![NgnStringUtils isNullOrEmpty: searchBar.text] && [contact.displayName rangeOfString: searchBar.text].location == NSNotFound)){
 				continue;
 			}
 			// filter: FIXME
-			if(mFilterGroup != FilterGroupAll){
+			if(filterGroup != FilterGroupAll){
 				continue;
 			}
 			
@@ -27,20 +52,40 @@
 				// NSLog(@"group=%@", group);
 				[lastArray release];
 				lastArray = [[NSMutableArray alloc] init];
-				[mContacts setObject: lastArray forKey: lastGroup];
+				[contacts setObject: lastArray forKey: lastGroup];
 			}
 			[lastArray addObject: contact];
 		}
 		
 		[lastArray release];
-		[contacts release];
+		[contacts_ release];
 		
 		[orderedSections release];
-		orderedSections = [[[mContacts allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] retain];
+		orderedSections = [[[contacts allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] retain];
+	}
+}
+
+-(void) onContactEvent:(NSNotification*)notification{
+	NgnContactEventArgs* eargs = [notification object];
+	
+	switch (eargs.eventType) {
+		case CONTACT_RESET_ALL:
+		{
+			// was mutated while being enumerated.
+			// [self refreshData];
+			break;
+		}
+		default:
+			break;
 	}
 }
 
 @end
+
+
+//
+// default implementation
+//
 
 @implementation ContactsViewController
 
@@ -48,6 +93,7 @@
 @synthesize toolBar;
 @synthesize searchBar;
 @synthesize viewToolbar;
+@synthesize labelDisplayMode;
 @synthesize barButtonItemAll;
 @synthesize barButtonItemWiphone;
 @synthesize barButtonItemOnline;
@@ -65,17 +111,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	mFilterGroup = FilterGroupAll;
+	filterGroup = FilterGroupAll;
 	
-	if(!mContacts){
-		mContacts = [[NSMutableDictionary alloc] init];
+	if(!contacts){
+		contacts = [[NSMutableDictionary alloc] init];
 	}
 	
-	// get contact service instance
-	mContactService = [[NgnEngine getInstance].contactService retain];
-	
-	// load data
+	// load data and register for notifications
 	[self refreshData];
+	[[NSNotificationCenter defaultCenter]
+	 addObserver:self selector:@selector(onContactEvent:) name:kNgnContactEventArgs_Name object:nil];
 	
 	self.navigationItem.title = @"Contacts";
 	
@@ -101,13 +146,13 @@
 		sender.style = UIBarButtonItemStyleDone;
 		
 		if(sender.tag == barButtonItemAll.tag){
-			mFilterGroup = FilterGroupAll;
+			filterGroup = FilterGroupAll;
 		}
 		else if(sender.tag == barButtonItemWiphone.tag){
-			mFilterGroup = FilterGroupWiPhone;
+			filterGroup = FilterGroupWiPhone;
 		}
 		else if(sender.tag == barButtonItemOnline.tag){
-			mFilterGroup = FilterGroupOnline;
+			filterGroup = FilterGroupOnline;
 		}
 		
 		[self refreshData];
@@ -119,7 +164,7 @@
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
-    [mContacts removeAllObjects];
+    [contacts removeAllObjects];
 	[self.tableView reloadData];
 }
 
@@ -128,10 +173,12 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 	
-	[mContactDetailsController release], mContactDetailsController = nil;
-	[mContactService release];
-	[mContacts release];
-	[orderedSections release];
+	[[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+	[super viewWillAppear: animated];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -145,6 +192,20 @@
 }
 
 - (void)dealloc {
+	[tableView release];
+	[toolBar release];
+	[searchBar release];
+	[viewToolbar release];
+	[labelDisplayMode release];
+	[barButtonItemAll release];
+	[barButtonItemWiphone release];
+	[barButtonItemOnline release];
+	[barButtonItemAdd release];
+	
+	[contactDetailsController release], contactDetailsController = nil;
+	[contacts release];
+	[orderedSections release];
+	
     [super dealloc];
 }
 
@@ -207,9 +268,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	@synchronized(mContacts){
+	@synchronized(contacts){
 		if([orderedSections count] > section){
-			NSMutableArray* values = [mContacts objectForKey: [orderedSections objectAtIndex: section]];
+			NSMutableArray* values = [contacts objectForKey: [orderedSections objectAtIndex: section]];
 			return [values count];
 		}
 	}
@@ -217,7 +278,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	@synchronized(mContacts){
+	@synchronized(contacts){
 		return [orderedSections objectAtIndex: section];
 	}
 }
@@ -232,9 +293,9 @@
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"ContactViewCell" owner:self options:nil] lastObject];
 	}
 	
-	@synchronized(mContacts){
+	@synchronized(contacts){
 		if([orderedSections count] > indexPath.section){
-			NSMutableArray* values = [mContacts objectForKey: [orderedSections objectAtIndex: indexPath.section]];
+			NSMutableArray* values = [contacts objectForKey: [orderedSections objectAtIndex: indexPath.section]];
 			NgnContact* contact = [values objectAtIndex: indexPath.row];
 			if(contact && contact.displayName){
 				[cell setDisplayName: contact.displayName];
@@ -254,7 +315,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
 	NSInteger i = 0;
-	@synchronized(mContacts){
+	@synchronized(contacts){
 		for(NSString *title_ in orderedSections){
 			if([title_ isEqualToString: title]){
 				return i;
@@ -266,16 +327,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	@synchronized(mContacts){
+	@synchronized(contacts){
 		if([orderedSections count] > indexPath.section){
-			NSMutableArray* values = [mContacts objectForKey: [orderedSections objectAtIndex: indexPath.section]];
+			NSMutableArray* values = [contacts objectForKey: [orderedSections objectAtIndex: indexPath.section]];
 			NgnContact* contact = [values objectAtIndex: indexPath.row];
 			if(contact && contact.displayName){
-				if(!mContactDetailsController){
-					mContactDetailsController = [[ContactDetailsController alloc] initWithNibName: @"ContactDetails" bundle:nil];
+				if(!contactDetailsController){
+					contactDetailsController = [[ContactDetailsController alloc] initWithNibName: @"ContactDetails" bundle:nil];
 				}
-				[mContactDetailsController setContact: contact];
-				[self.navigationController pushViewController: mContactDetailsController  animated: TRUE];
+				contactDetailsController.contact = contact;
+				[self.navigationController pushViewController: contactDetailsController  animated: TRUE];
 			}
 		}
 	}
