@@ -269,20 +269,19 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>EC7E2F4D138968E50020EB89</string>
-								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>38</integer>
-									<integer>0</integer>
+									<integer>21</integer>
+									<integer>20</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 170}, {247, 675}}</string>
+							<string>{{0, 0}, {247, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -315,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PeoplePicker.mm</string>
+								<string>tdav_producer_audiounit.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,23 +322,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PeoplePicker.mm</string>
+										<string>tdav_producer_audiounit.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC90756013930F7F00E14556</string>
+										<string>EC9076611393282B00E14556</string>
 										<key>history</key>
 										<array>
-											<string>EC90735B1392D07100E14556</string>
-											<string>EC9073451392CDD800E14556</string>
-											<string>EC9073C81392DD2300E14556</string>
-											<string>EC9073EF1392E42600E14556</string>
-											<string>EC90742A1392EF5700E14556</string>
-											<string>EC90742B1392EF5700E14556</string>
-											<string>EC90755C13930F7F00E14556</string>
-											<string>EC90755D13930F7F00E14556</string>
-											<string>EC90755E13930F7F00E14556</string>
-											<string>EC90755F13930F7F00E14556</string>
+											<string>EC90761B13931D5300E14556</string>
+											<string>EC90761C13931D5300E14556</string>
+											<string>EC90761D13931D5300E14556</string>
+											<string>EC90761E13931D5300E14556</string>
+											<string>EC90761F13931D5300E14556</string>
+											<string>EC90762013931D5300E14556</string>
+											<string>EC90762113931D5300E14556</string>
+											<string>EC90762413931EC600E14556</string>
+											<string>EC90764B1393225F00E14556</string>
+											<string>EC9076601393282400E14556</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -379,6 +378,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1162, 130}}</string>
+										<key>RubberWindowFrame</key>
+										<string>9 144 1431 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -433,8 +434,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1162, 130}}</string>
-										<key>RubberWindowFrame</key>
-										<string>9 144 1431 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
