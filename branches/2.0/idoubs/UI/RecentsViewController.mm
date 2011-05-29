@@ -1,4 +1,25 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #import "RecentsViewController.h"
+#import "CallViewController.h"
 
 #import "RecentCell.h"
 
@@ -17,7 +38,7 @@
 -(void) refreshData{
 	@synchronized(mEvents){
 		[mEvents removeAllObjects];
-		NSArray* events = [[[mHistoryService events] allValues] sortedArrayUsingSelector:@selector(compareHistoryEventByDate:)];
+		NSArray* events = [[[mHistoryService events] allValues] sortedArrayUsingSelector:@selector(compareHistoryEventByDateASC:)];
 		for (NgnHistoryEvent* event in events) {
 			if(!event || !(event.mediaType & MediaType_AudioVideo) || !(event.status & mStatusFilter)){
 				continue;
@@ -227,18 +248,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	@synchronized(mEvents){
-		/*
-		if([orderedSessions count] > indexPath.section){
-			NSMutableArray* values = [mContacts objectForKey: [orderedSessions objectAtIndex: indexPath.section]];
-			NgnContact* contact = [values objectAtIndex: indexPath.row];
-			if(contact && contact.displayName){
-				if(!mContactDetailsController){
-					mContactDetailsController = [[ContactDetailsController alloc] initWithNibName: @"ContactDetails" bundle:nil];
-				}
-				[mContactDetailsController setContact: contact];
-				[self.navigationController pushViewController: mContactDetailsController  animated: TRUE];
-			}
-		}*/
+		NgnHistoryEvent* event = [mEvents objectAtIndex: indexPath.row];
+        if (event) {
+			[CallViewController makeAudioCallWithRemoteParty: event.remoteParty andSipStack: [[NgnEngine getInstance].sipService getSipStack]];
+		}
 	}
 }
 

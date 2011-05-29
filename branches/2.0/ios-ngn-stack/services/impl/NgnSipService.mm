@@ -24,6 +24,7 @@
 #import "NgnNotificationCenter.h"
 #import "NgnStringUtils.h"
 #import "NgnContentType.h"
+#import "NgnUriUtils.h"
 
 #import "NgnRegistrationEventArgs.h"
 #import "NgnStackEventArgs.h"
@@ -390,6 +391,7 @@ done:
 																  andEvenType: INVITE_EVENT_RINGING 
 																 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
 																 andSipPhrase: phrase];
+						[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_REMOTE_RINGING];
 						[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 					}
 				}
@@ -584,11 +586,14 @@ done:
 				}
 				else {
 					eargs = [[NgnMessagingEventArgs alloc] 
-							 initWithSessionId: _session->getId() 
+							 initWithSessionId: ngnSession.id 
 							 andEventType: MESSAGING_EVENT_INCOMING
 							 andPhrase: [NgnStringUtils toNSString: _phrase] 
 							 andPayload: [NSData dataWithBytes: _content length: _content_length]];
-					[eargs putExtraWithKey:kExtraMessagingEventArgsFrom andValue:[NgnStringUtils toNSString: _from]];
+					NSString *fromUri = [NgnStringUtils toNSString:_from];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsFromUri andValue:fromUri];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsFromUserName andValue:[NgnUriUtils getUserName:fromUri]];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsFromDisplayname andValue:[NgnUriUtils getDisplayName:fromUri]];
 					[eargs putExtraWithKey:kExtraMessagingEventArgsContentType andValue: ctype];
 				}
 
@@ -609,7 +614,7 @@ tsip_i_message_done:
 		}
 		
 		if(eargs){
-			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 		}
 		
 done:

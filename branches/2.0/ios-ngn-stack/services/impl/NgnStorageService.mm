@@ -19,6 +19,9 @@
  *
  */
 #import "NgnStorageService.h"
+#import "NgnStringUtils.h"
+#import "NgnFavoriteEventArgs.h"
+#import "NgnNotificationCenter.h"
 
 #undef TAG
 #define kTAG @"NgnStorageService///: "
@@ -29,12 +32,19 @@
 #undef kDataBaseName
 #define kDataBaseName @"NgnDataBase.db"
 
+#define kFavoritesTableName @"favorites"
+#define kFavoritesColIdName @"id"
+#define kFavoritesColMediaTypeName @"mediaType"
+#define kFavoritesColNumberName @"number"
+
 static BOOL sDataBaseInitialized = NO;
 static NSString* sDataBasePath = nil;
 
 @interface NgnStorageService (DataBase)
 +(BOOL) databaseCheckAndCopy;
 -(BOOL) databaseOpen;
+-(BOOL) databaseLoadData;
+-(BOOL) databaseExecSQL: (NSString*)sqlQuery;
 -(BOOL) databaseClose;
 @end
 
@@ -51,8 +61,8 @@ static NSString* sDataBasePath = nil;
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if([fileManager fileExistsAtPath: sDataBasePath]){
-		//[fileManager removeItemAtPath:self->databasePath error:nil];
-		// for example you can remove the database if the app_database_version is different
+		//[fileManager removeItemAtPath:sDataBasePath error:nil];
+		// for example you can remove the database if the "app_database_version" is different
 		sDataBaseInitialized = YES;
 		return YES;
 	}
@@ -74,19 +84,75 @@ static NSString* sDataBasePath = nil;
 }
 
 -(BOOL) databaseOpen{
-	if(!mDatabase && sqlite3_open([sDataBasePath UTF8String], &mDatabase) != SQLITE_OK){
+	if(!self->database && sqlite3_open([sDataBasePath UTF8String], &self->database) != SQLITE_OK){
 		NgnNSLog(TAG,@"Failed to open history database from: %@", sDataBasePath);
 		return NO;
 	}
 	return YES;
 }
 
+-(BOOL) databaseLoadData{
+	BOOL ok = YES;
+	int ret;
+	sqlite3_stmt *compiledStatement = nil;
+	NSString* sqlQueryFavorites = [@"select " stringByAppendingFormat:@"%@,%@,%@ from %@", 
+								   kFavoritesColIdName, kFavoritesColNumberName, kFavoritesColMediaTypeName, kFavoritesTableName];
+	NSLog(@"sql=%@",sqlQueryFavorites);
+	/* === Load favorites === */
+	[self->favorites removeAllObjects];
+	if((ret = sqlite3_prepare_v2(self->database, [NgnStringUtils toCString:sqlQueryFavorites], -1, &compiledStatement, NULL)) == SQLITE_OK) {
+		long long id_;
+		NSString* number;
+		NgnMediaType_t mediaType;
+		while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+			id_ = sqlite3_column_int(compiledStatement, 0);
+			number = [NgnStringUtils toNSString: (char *)sqlite3_column_text(compiledStatement, 1)];
+			mediaType = (NgnMediaType_t)sqlite3_column_int(compiledStatement, 2);
+			NgnFavorite* favorite = [[NgnFavorite alloc] initWithId:id_ 
+														  andNumber:number
+													   andMediaType:mediaType];
+			if(favorite){
+				[self->favorites setObject:favorite forKey:[NSNumber numberWithLongLong: favorite.id]];
+				[favorite release];
+			}
+		}
+	}
+	sqlite3_finalize(compiledStatement), compiledStatement = nil;
+	
+	return ok;
+}
+
 -(BOOL) databaseClose{
-	if(mDatabase){
-		sqlite3_close(mDatabase);
-		mDatabase = nil;
+	if(self->database){
+		sqlite3_close(self->database);
+		self->database = nil;
 	}
 	return YES;
+}
+
+
+-(BOOL) databaseExecSQL: (NSString*)sqlQuery{
+	BOOL ok = YES;
+	int ret;
+	sqlite3_stmt *compiledStatement;
+	
+	if(!self->database){
+		NgnNSLog(TAG, @"Invalid database");
+		ok = NO;
+		goto done;
+	}
+	
+	if((ret = sqlite3_prepare_v2(self->database, [sqlQuery UTF8String], -1, &compiledStatement, NULL)) == SQLITE_OK) {
+		ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
+	}
+	else {
+		ok = NO;
+	}
+
+	sqlite3_finalize(compiledStatement);
+	
+done:
+	return ok;
 }
 
 @end
@@ -95,6 +161,19 @@ static NSString* sDataBasePath = nil;
 
 
 @implementation NgnStorageService
+
+-(NgnStorageService*) init{
+	if((self = [super init])){
+		self-> favorites = [[NSMutableDictionary alloc] init]; 
+	}
+	return self;
+}
+
+-(void) dealloc{
+	[self->favorites release];
+	
+	[super dealloc];
+}
 
 //
 // INgnBaseService
@@ -106,7 +185,9 @@ static NSString* sDataBasePath = nil;
 	
 #if TARGET_OS_IPHONE
 	if([NgnStorageService databaseCheckAndCopy]){
-		ok = [self databaseOpen];
+		if((ok = [self databaseOpen])){
+			ok &= [self databaseLoadData];
+		}
 	}
 #endif
 	return ok;
@@ -129,8 +210,69 @@ static NSString* sDataBasePath = nil;
 
 #if TARGET_OS_IPHONE
 -(sqlite3 *) database{
-	return mDatabase;
+	return self->database;
 }
-#endif
+
+-(BOOL) execSQL: (NSString*)sqlQuery{
+	return [self databaseExecSQL: sqlQuery];
+}	
+
+-(NSMutableDictionary*) favorites{
+	return self->favorites;
+}
+
+-(BOOL) addFavorite: (NgnFavorite*) favorite{
+	if(favorite){
+		NSString* sqlStatement = [[@"insert into " stringByAppendingFormat:@"%@ (%@,%@) values", kFavoritesTableName, kFavoritesColNumberName, kFavoritesColMediaTypeName]
+								  stringByAppendingFormat:@"('%@',%d)", favorite.number, (int)favorite.mediaType
+								  ];
+        if([self databaseExecSQL:sqlStatement]){
+			favorite.id = (long long)sqlite3_last_insert_rowid(self->database);
+			[self->favorites setObject:favorite forKey: [NSNumber numberWithLongLong: favorite.id]];
+			
+			NgnFavoriteEventArgs *eargs = [[[NgnFavoriteEventArgs alloc] initWithFavoriteId:favorite.id andEventType:FAVORITE_ITEM_ADDED andMediaType:favorite.mediaType] autorelease];
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnFavoriteEventArgs_Name object:eargs];
+			
+			return YES;
+		}
+	}
+	return NO;
+}
+
+-(BOOL) deleteFavorite: (NgnFavorite*) favorite{
+	if(favorite){
+		NSString* sqlStatement = [[@"delete from " stringByAppendingFormat:@"%@", kFavoritesTableName]
+								  stringByAppendingFormat:@" where %@=%lld", kFavoritesColIdName, favorite.id];
+		if([self databaseExecSQL:sqlStatement]){
+			[self->favorites removeObjectForKey:[NSNumber numberWithLongLong:favorite.id]];
+			
+			NgnFavoriteEventArgs *eargs = [[[NgnFavoriteEventArgs alloc] initWithFavoriteId:favorite.id andEventType:FAVORITE_ITEM_REMOVED andMediaType:favorite.mediaType] autorelease];
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnFavoriteEventArgs_Name object:eargs];
+			
+			return YES;
+		}
+	}
+	return NO;
+}
+
+-(BOOL) deleteFavoriteWithId: (long long) id_{
+	NgnFavorite* favorite = [self->favorites objectForKey:[NSNumber numberWithLongLong:id_]];
+	return [self deleteFavorite:favorite];
+}
+
+-(BOOL) clearFavorites{
+	NSString* sqlStatement = [@"delete from " stringByAppendingFormat:@"%@", kFavoritesTableName];
+	if([self databaseExecSQL:sqlStatement]){
+		[self->favorites removeAllObjects];
+		
+		NgnFavoriteEventArgs *eargs = [[[NgnFavoriteEventArgs alloc] initWithType:FAVORITE_RESET andMediaType: MediaType_All] autorelease];
+		[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnFavoriteEventArgs_Name object:eargs];
+		
+		return YES;
+	}
+	return NO;
+}
+
+#endif /* TARGET_OS_IPHONE */
 
 @end

@@ -44,6 +44,9 @@ NgnMediaType_t;
 static bool isAudioVideoType(NgnMediaType_t type){
 	return (type & MediaType_AudioVideo);
 }
+static bool isAudioType(NgnMediaType_t type){
+	return (type & MediaType_Audio);
+}
 static bool isVideoType(NgnMediaType_t type){
 	return (type & MediaType_Video);
 }

@@ -26,7 +26,8 @@
 
 @interface NgnStorageService : NgnBaseService <INgnStorageService>{
 #if TARGET_OS_IPHONE
-	sqlite3 * mDatabase;
+	sqlite3 * database;
+	NSMutableDictionary* favorites;
 #endif
 }
 

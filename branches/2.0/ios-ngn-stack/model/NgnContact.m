@@ -43,17 +43,19 @@
 			//--self->picture = (NSData*)ABPersonCopyImageData(record);
 		}
 		
-		CFStringRef phoneNumber, phoneNumberLabel;
+		CFStringRef phoneNumber, phoneNumberLabel, phoneNumberLabelValue;
 		NgnPhoneNumber* ngnPhoneNumber;
 		ABMutableMultiValueRef multi = ABRecordCopyValue(record, kABPersonPhoneProperty);
 		for (CFIndex i = 0; i < ABMultiValueGetCount(multi); i++) {
 			phoneNumberLabel = ABMultiValueCopyLabelAtIndex(multi, i);
+			phoneNumberLabelValue = ABAddressBookCopyLocalizedLabel(phoneNumberLabel);
 			phoneNumber      = ABMultiValueCopyValueAtIndex(multi, i);
 			
-			ngnPhoneNumber = [[NgnPhoneNumber alloc] initWithNumber: (NSString*)phoneNumber andDescription: (NSString*)phoneNumberLabel];
+			ngnPhoneNumber = [[NgnPhoneNumber alloc] initWithNumber: (NSString*)phoneNumber andDescription: (NSString*)phoneNumberLabelValue];
 			[self->phoneNumbers addObject: ngnPhoneNumber];
 			
 			[ngnPhoneNumber release];
+			CFRelease(phoneNumberLabelValue);
 			CFRelease(phoneNumberLabel);
 			CFRelease(phoneNumber);
 		}

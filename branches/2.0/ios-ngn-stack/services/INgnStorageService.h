@@ -24,10 +24,19 @@
 
 #if TARGET_OS_IPHONE
 #import <sqlite3.h>
+#import "model/NgnFavorite.h"
 #endif
 
 @protocol INgnStorageService <INgnBaseService>
+
 #if TARGET_OS_IPHONE
 -(sqlite3 *) database;
-#endif
+-(BOOL) execSQL: (NSString*)sqlQuery;
+-(NSMutableDictionary*) favorites;
+-(BOOL) addFavorite: (NgnFavorite*) favorite;
+-(BOOL) deleteFavorite: (NgnFavorite*) favorite;
+-(BOOL) deleteFavoriteWithId: (long long) id;
+-(BOOL) clearFavorites;
+#endif /* TARGET_OS_IPHONE */
+
 @end

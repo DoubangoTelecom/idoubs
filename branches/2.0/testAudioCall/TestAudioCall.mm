@@ -257,6 +257,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 		case CONN_STATE_TERMINATING:
 			mScheduleRegistration = TRUE;
 			[mSipService unRegisterIdentity];
+			break;
 		case CONN_STATE_CONNECTED:
 			break;
 	}
