@@ -31,9 +31,10 @@
 -(BOOL) addEvent: (NgnHistoryEvent*) event;
 -(BOOL) updateEvent: (NgnHistoryEvent*) event;
 -(BOOL) deleteEvent: (NgnHistoryEvent*) event;
--(BOOL) deleteEventAtLocation: (int) location;
+-(BOOL) deleteEventAtIndex: (int) location;
 -(BOOL) deleteEventWithId: (long long) eventId;
 -(BOOL) deleteEvents: (NgnMediaType_t) mediaType;
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType withRemoteParty: (NSString*)remoteParty;
 -(BOOL) clear;
 -(NgnHistoryEventDictionary*) events;
 

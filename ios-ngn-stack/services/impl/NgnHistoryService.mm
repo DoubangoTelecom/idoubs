@@ -27,16 +27,15 @@
 #import "NgnHistorySMSEvent.h"
 
 #undef TAG
+#undef kHistoryTableName
 #define kTAG @"NgnHistoryService///: "
 #define TAG kTAG
+#define kHistoryTableName "hist_event"
 
 // NgnHistoryService (DataBase)
 @interface NgnHistoryService (DataBase)
 -(BOOL) databaseLoad;
 -(BOOL) databaseAddEvent: (NgnHistoryEvent*)event;
--(BOOL) databaseRemoveEvent: (NgnHistoryEvent*)event;
--(BOOL) databaseRemoveEventWithId: (long long)eventId;
--(BOOL) databaseRemoveEvents: (NgnMediaType_t)mediaType;
 @end
 
 // NgnHistoryService (DataBase)
@@ -74,10 +73,10 @@
 				case MediaType_Audio:
 				case MediaType_Video:
 				case MediaType_AudioVideo:
-					event = (NgnHistoryEvent*)[NgnHistoryEvent createAudioVideoEventWithRemoteParty: remoteParty andVideo: isVideoType(mediaType)];
+					event = [(NgnHistoryEvent*)[NgnHistoryEvent createAudioVideoEventWithRemoteParty: remoteParty andVideo: isVideoType(mediaType)] retain];
 					break;
 				case MediaType_SMS:
-					event = (NgnHistoryEvent*)[NgnHistoryEvent createSMSEventWithStatus: status andRemoteParty: remoteParty andContent: [NSData dataWithBytes: content length: contentLength]]; 
+					event = [(NgnHistoryEvent*)[NgnHistoryEvent createSMSEventWithStatus: status andRemoteParty: remoteParty andContent: [NSData dataWithBytes: content length: contentLength]] retain]; 
 					break;
 				case MediaType_Chat:
 				case MediaType_FileTransfer:
@@ -95,7 +94,7 @@
 				event.end = end;
 			
 				[mEvents setObject: event forKey: [NSNumber numberWithLongLong: event.id]];
-				event = nil; // createXXX is "autorelease"
+				[event release];
 			}
 		}
 	}
@@ -164,120 +163,7 @@ done:
 	return ok;
 }
 
--(BOOL) databaseRemoveEventWithId: (long long)eventId{
-	NgnHistoryEvent* event = [mEvents objectForKey: [NSNumber numberWithLongLong: eventId]];
-	if(event){
-		return [self databaseRemoveEvent: event];
-	}
-	return NO;
-}
 
--(BOOL) databaseRemoveEvent: (NgnHistoryEvent*)event{
-	BOOL ok = YES;      
-	sqlite3_stmt *compiledStatement;
-	static const char* sqlStatement =  "DELETE FROM hist_event WHERE id=?";
-	int ret;
-	
-	NgnBaseService<INgnStorageService>* storageService = [[NgnEngine getInstance].storageService retain];
-	if(![storageService database]){
-		NgnNSLog(TAG, @"Invalid database");
-		ok = NO;
-		goto done;
-	}
-	
-	if((ret = sqlite3_prepare_v2([storageService database], sqlStatement, -1, &compiledStatement, NULL)) == SQLITE_OK) {
-		sqlite3_bind_int(compiledStatement, 1, event.id);
-		ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
-	}
-	sqlite3_finalize(compiledStatement);
-	
-	if(ok){
-		NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_REMOVED];
-		eargs.mediaType = event.mediaType;
-		
-		// clear events
-		[mEvents removeObjectForKey: [NSNumber numberWithLongLong: event.id]];
-		
-		// alert listeners
-		[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
-		[eargs release];
-	}
-	
-done:
-	[storageService release];
-	return ok;
-}
-
--(BOOL) databaseRemoveEvents: (NgnMediaType_t)mediaType{
-	if(mediaType == MediaType_None){
-		return YES;
-	}
-	
-	BOOL ok = YES;      
-	BOOL first = YES;
-	sqlite3_stmt *compiledStatement;
-	NSString* sqlStatement =  @"DELETE FROM hist_event";
-	static NgnMediaType_t mediaTypes[] = {
-		MediaType_Audio,
-		MediaType_Video,
-		MediaType_AudioVideo,
-		MediaType_SMS,
-		MediaType_Chat,
-		MediaType_FileTransfer,
-		MediaType_Msrp,
-	};
-	int ret;
-	
-	NgnBaseService<INgnStorageService>* storageService = [[NgnEngine getInstance].storageService retain];
-	if(![storageService database]){
-		NgnNSLog(TAG, @"Invalid database");
-		ok = NO;
-		goto done;
-	}
-	
-	// Complete the request
-	for(int i=0; i<sizeof(mediaTypes)/sizeof(NgnMediaType_t); i++){
-		if((mediaType & mediaTypes[i])){
-			if(first){
-				sqlStatement = [sqlStatement stringByAppendingFormat:@" WHERE mediaType=%d", (int)mediaTypes[i]];
-			}
-			else {
-				sqlStatement = [sqlStatement stringByAppendingFormat:@" OR mediaType=%d", (int)mediaTypes[i]];
-			}
-			first = NO;
-		}
-	}
-	
-	
-	if((ret = sqlite3_prepare_v2([storageService database], [NgnStringUtils toCString:sqlStatement], -1, &compiledStatement, NULL)) == SQLITE_OK) {
-		ok = ((ret = sqlite3_step(compiledStatement))==SQLITE_DONE);
-	}
-	sqlite3_finalize(compiledStatement);
-	
-	if(ok){
-		// remove events
-		NSArray* values = [mEvents allValues];
-		NSMutableArray* keysToRemove = [NSMutableArray array];
-		for (NgnHistoryEvent* event in values) {
-			if((event.mediaType & mediaType)){
-				[keysToRemove addObject:[NSNumber numberWithLongLong: event.id]];
-			}
-		}
-		[mEvents removeObjectsForKeys: keysToRemove];
-		
-		// alert listeners
-		if([keysToRemove count] > 0){
-			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
-			eargs.mediaType = mediaType;
-			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
-			[eargs release];
-		}
-	}
-	
-done:
-	[storageService release];
-	return ok;
-}
 
 @end
 
@@ -347,19 +233,19 @@ done:
 }
 
 -(BOOL) deleteEvent: (NgnHistoryEvent*) event{
-	if(!event){
-		NgnNSLog(TAG,@"Null event object");
-		return NO;
+	if(event){
+		return [self deleteEventWithId:event.id];
 	}
-	@synchronized(self){
-		return [self databaseRemoveEvent: event];
-	}
+	return NO;
 }
 
--(BOOL) deleteEventAtLocation: (int) location{
+-(BOOL) deleteEventAtIndex: (int) index{
 	@synchronized(self){
-		if([mEvents count] > location){
-			return NO;
+		if([mEvents count] > index){
+			NgnHistoryEvent* event = [[mEvents allValues] objectAtIndex:index];
+			if(event){
+				return [self deleteEvent:event];
+			}
 		}
 	}
 	return NO;
@@ -367,20 +253,101 @@ done:
 
 -(BOOL) deleteEventWithId: (long long) eventId{
 	@synchronized(self){
-		return [self databaseRemoveEventWithId:eventId];
+		NSString* sqlStatement =  [@"delete from hist_event where " stringByAppendingFormat:@"id=%lld", eventId];
+		NgnHistoryEvent* event = [mEvents objectForKey: [NSNumber numberWithLongLong: eventId]];
+		if(event && [[NgnEngine getInstance].storageService execSQL:sqlStatement]){
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_REMOVED];
+			eargs.mediaType = event.mediaType;
+			
+			// clear events
+			[mEvents removeObjectForKey: [NSNumber numberWithLongLong: event.id]];
+			
+			// alert listeners
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+			
+			return YES;
+		}
+		return NO;
 	}	
 }
 
 -(BOOL) deleteEvents: (NgnMediaType_t) mediaType{
 	@synchronized(self){
-		return [self databaseRemoveEvents:mediaType];
+		return [self deleteEvents:mediaType withRemoteParty:nil];
 	}	
+}
+
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType withRemoteParty: (NSString*)remoteParty{
+	NSString* sqlStatement =  @"delete from hist_event";
+	BOOL whereAdded = NO;
+	static NgnMediaType_t mediaTypes[] = {
+		MediaType_Audio,
+		MediaType_Video,
+		MediaType_AudioVideo,
+		MediaType_SMS,
+		MediaType_Chat,
+		MediaType_FileTransfer,
+		MediaType_Msrp,
+	};
+	
+	// Complete the request
+	for(int i=0; i<sizeof(mediaTypes)/sizeof(NgnMediaType_t); i++){
+		if((mediaType & mediaTypes[i])){
+			if(!whereAdded){
+				sqlStatement = [sqlStatement stringByAppendingFormat:@" where (mediaType=%d", (int)mediaTypes[i]];
+			}
+			else {
+				sqlStatement = [sqlStatement stringByAppendingFormat:@" or mediaType=%d", (int)mediaTypes[i]];
+			}
+			whereAdded = YES;
+		}
+	}
+	if (whereAdded) {
+		sqlStatement = [sqlStatement stringByAppendingString:@")"];
+	}
+	
+	if(remoteParty){
+		sqlStatement = [sqlStatement stringByAppendingFormat:whereAdded ? @" and remoteParty='%@'" : @" where remoteParty=%@", remoteParty];
+	}
+	
+	BOOL ok = [[NgnEngine getInstance].storageService execSQL:sqlStatement];
+	
+	if(ok){
+		// remove events
+		NSArray* values = [mEvents allValues];
+		NSMutableArray* keysToRemove = [NSMutableArray array];
+		for (NgnHistoryEvent* event in values) {
+			if((event.mediaType & mediaType) && (!remoteParty || ([event.remoteParty isEqualToString:remoteParty]))){
+				[keysToRemove addObject:[NSNumber numberWithLongLong: event.id]];
+			}
+		}
+		[mEvents removeObjectsForKeys: keysToRemove];
+		
+		// alert listeners
+		if([keysToRemove count] > 0){
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
+			eargs.mediaType = mediaType;
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+		}
+	}
+	
+	return ok;
 }
 
 -(BOOL) clear{
 	@synchronized(self){
-		return [self databaseRemoveEvents:MediaType_All];
+		NSString *sqlStatement = @"delete from hist_event";
+		if([[NgnEngine getInstance].storageService execSQL:sqlStatement]){
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
+			eargs.mediaType = MediaType_All;
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+			return YES;
+		}
 	}
+	return NO;
 }
 
 -(NgnHistoryEventDictionary*) events{

@@ -19,13 +19,21 @@
  *
  */
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVAudioPlayer.h>
+#include <AudioToolbox/AudioToolbox.h>
 
 #import "iOSNgnConfig.h"
 #import "services/impl/NgnBaseService.h"
 #import "services/INgnSoundService.h"
 
 @interface NgnSoundService : NgnBaseService <INgnSoundService>{
-
+	AVAudioPlayer  *playerRingBackTone;
+	AVAudioPlayer  *playerRingTone;
+	AVAudioPlayer  *playerEvent;
+	AVAudioPlayer  *playerConn;
+	SystemSoundID dtmfLastSoundId;
+	
+	BOOL speakerOn;
 }
 
 @end

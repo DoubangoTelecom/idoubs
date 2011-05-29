@@ -34,6 +34,7 @@
 	BOOL mLoading;
 	BOOL mStarted;
 	NgnContactMutableArray* mContacts;
+	ABAddressBookRef addressBook;
 }
 
 @end

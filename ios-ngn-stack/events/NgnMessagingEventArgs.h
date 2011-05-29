@@ -38,7 +38,10 @@ NgnMessagingEventTypes_t;
 #define kNgnMessagingEventArgs_Name @"NgnMessagingEventArgs_Name"
 
 #define kExtraMessagingEventArgsCode @"code"
-#define kExtraMessagingEventArgsFrom @"from"
+#define kExtraMessagingEventArgsFrom @"from" // For backward compatibility do not remove
+#define kExtraMessagingEventArgsFromUri kExtraMessagingEventArgsFrom
+#define kExtraMessagingEventArgsFromUserName @"username"
+#define kExtraMessagingEventArgsFromDisplayname @"displayname"
 #define kExtraMessagingEventArgsDate @"date"
 #define kExtraMessagingEventArgsContentType @"contentType"
 

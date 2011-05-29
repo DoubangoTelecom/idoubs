@@ -25,5 +25,15 @@
 @protocol INgnSoundService <INgnBaseService>
 
 -(BOOL) setSpeakerEnabled:(BOOL)enabled;
+-(BOOL) isSpeakerEnabled;
+-(BOOL) playRingTone;
+-(BOOL) stopRingTone;
+-(BOOL) playRingBackTone;
+-(BOOL) stopRingBackTone;
+-(BOOL) playDtmf:(int)digit;
+
+#if TARGET_OS_IPHONE
+-(BOOL) vibrate;
+#endif /* TARGET_OS_IPHONE */
 
 @end

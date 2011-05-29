@@ -22,6 +22,8 @@
 
 #import "NgnContactService.h"
 #import "model/NgnContact.h"
+#import "events/NgnContactEventArgs.h"
+#import "utils/NgnNotificationCenter.h"
 
 #undef TAG
 #undef kNameSpace
@@ -31,6 +33,11 @@
 
 #undef NgnCFRelease
 #define NgnCFRelease(x) if(x)CFRelease(x), x=NULL;
+
+static void NgnAddressBookExternalChangeCallback (ABAddressBookRef addressBook, CFDictionaryRef info, void *context){
+	NgnContactService *self_ = (NgnContactService*)context;
+	[self_ load:YES];
+}
 
 @interface NgnContactService(Private)
 
@@ -43,13 +50,13 @@
 
 static void NgnAddressBookCallbackForElements(const void *value, void *context)
 {
-	NgnContactService* _self = (NgnContactService*)context;
-	if(!_self.started){
+	NgnContactService* self_ = (NgnContactService*)context;
+	if(!self_.started){
 		return;
 	}
 	const ABRecordRef* record = (const ABRecordRef*)value;
 	NgnContact* contact = [[NgnContact alloc] initWithABRecordRef: record];
-	[[_self contacts] addObject: contact];
+	[[self_ contacts] addObject: contact];
 	[contact release];
 }
 
@@ -86,8 +93,12 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 -(void)syncLoad{
 	mLoading = TRUE;
 	[mContacts removeAllObjects];
-	ABAddressBookRef addressBook;
-	if((addressBook = ABAddressBookCreate())){
+	
+	if(addressBook == nil){
+		addressBook = ABAddressBookCreate();
+	}
+	
+	if(addressBook){
 		CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
 		CFMutableArrayRef peopleMutable = CFArrayCreateMutableCopy(
 										   kCFAllocatorDefault,
@@ -105,10 +116,12 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 		CFArrayApplyFunction(peopleMutable, CFRangeMake(0, CFArrayGetCount(peopleMutable)), NgnAddressBookCallbackForElements, self);
 		
 		NgnCFRelease(peopleMutable);
-		NgnCFRelease(addressBook);
 		NgnCFRelease(people);		
 	}
 	mLoading = FALSE;
+	
+	NgnContactEventArgs *eargs = [[[NgnContactEventArgs alloc] initWithType:CONTACT_RESET_ALL] autorelease];
+	[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnContactEventArgs_Name object:eargs];
 }
 
 @end
@@ -119,6 +132,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	if((self = [super init])){
 		mLoaderQueue = dispatch_queue_create(kNameSpace, NULL);
 		mContacts = [[NgnContactMutableArray alloc] init];
+		addressBook = nil;
 	}
 	return self;
 }
@@ -132,6 +146,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	mStarted = TRUE;
 	
 	[self load: FALSE];
+	ABAddressBookRegisterExternalChangeCallback(addressBook, NgnAddressBookExternalChangeCallback, self);
 	
 	return YES;
 }
@@ -139,6 +154,9 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 -(BOOL) stop{
 	NgnNSLog(TAG, @"Stop()");
 	mStarted = FALSE;
+	
+	[mContacts removeAllObjects];
+	ABAddressBookUnregisterExternalChangeCallback(addressBook, NgnAddressBookExternalChangeCallback, self);
 	
 	return YES;
 }
@@ -149,6 +167,9 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 		dispatch_release(mLoaderQueue), mLoaderQueue = NULL;
 	}
 	[mContacts release];
+	
+	NgnCFRelease(addressBook);
+	
 	[super dealloc];
 }
 
@@ -188,7 +209,19 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	return nil;
 }
 
+// FIXME: should be optimized
 -(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber{
+	if(phoneNumber){
+		@synchronized(mContacts){
+			for(NgnContact* contact in mContacts){
+				for(NgnPhoneNumber* pn in contact.phoneNumbers){
+					if(pn && [pn.number isEqualToString: phoneNumber]){
+						return contact;
+					}
+				}
+			}
+		}
+	}
 	return nil;
 }
 

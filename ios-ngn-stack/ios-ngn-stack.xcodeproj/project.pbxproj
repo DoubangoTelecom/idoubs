@@ -168,6 +168,9 @@
 		EC8725AC137830FE00C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
 		EC8726731378457900C616F0 /* NgnPhoneNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8726711378457900C616F0 /* NgnPhoneNumber.h */; };
 		EC8726741378457900C616F0 /* NgnPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8726721378457900C616F0 /* NgnPhoneNumber.m */; };
+		EC9075D21393193D00E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
+		EC9075D91393197400E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
+		EC9075E01393199700E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
 		EC94DFDA138317AD005B2C1B /* NgnUriUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC94DFD9138317AD005B2C1B /* NgnUriUtils.mm */; };
 		EC94E18A13834266005B2C1B /* NgnDateTimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC94E18813834266005B2C1B /* NgnDateTimeUtils.h */; };
 		EC94E18B13834266005B2C1B /* NgnDateTimeUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC94E18913834266005B2C1B /* NgnDateTimeUtils.mm */; };
@@ -178,6 +181,8 @@
 		EC95485B136DE0ED00F4C113 /* NgnUriUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC954859136DE0ED00F4C113 /* NgnUriUtils.h */; };
 		EC954871136DE4DC00F4C113 /* NgnInviteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */; };
 		EC954872136DE4DC00F4C113 /* NgnInviteEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */; };
+		EC967D051391CE0C006187D3 /* NgnContactEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC967D031391CE0C006187D3 /* NgnContactEventArgs.h */; };
+		EC967D061391CE0C006187D3 /* NgnContactEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC967D041391CE0C006187D3 /* NgnContactEventArgs.mm */; };
 		ECA6A629137D87700022AD09 /* NgnHistoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A627137D87700022AD09 /* NgnHistoryEvent.h */; };
 		ECA6A62A137D87700022AD09 /* NgnHistoryEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A628137D87700022AD09 /* NgnHistoryEvent.mm */; };
 		ECA6A633137D8AE50022AD09 /* NgnHistoryAVCallEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A631137D8AE50022AD09 /* NgnHistoryAVCallEvent.h */; };
@@ -185,6 +190,10 @@
 		ECA6A63F137D8DDF0022AD09 /* NgnHistorySMSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */; };
 		ECA6A640137D8DDF0022AD09 /* NgnHistorySMSEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */; };
 		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		ECB96666138FC22800961D3A /* NgnFavoriteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */; };
+		ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */; };
+		ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB966C7138FF2C200961D3A /* NgnFavorite.h */; };
+		ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB966C8138FF2C200961D3A /* NgnFavorite.mm */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */; };
 		ECDDB5D5137BFCF80027105F /* NgnProxyPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */; };
@@ -213,6 +222,7 @@
 		ECDDBC2B137CA7960027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
 		ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
 		ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */; };
 		ECF200861360D9EA00B0BFEB /* NgnConfigurationEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */; };
 		ECF2008D1360E01500B0BFEB /* NgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */; };
 		ECF2008E1360E01500B0BFEB /* NgnConfigurationService.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */; };
@@ -1959,6 +1969,20 @@
 		EC87251F1378101000C616F0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		EC8726711378457900C616F0 /* NgnPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPhoneNumber.h; sourceTree = "<group>"; };
 		EC8726721378457900C616F0 /* NgnPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnPhoneNumber.m; sourceTree = "<group>"; };
+		EC9072211392BAB000E14556 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
+		EC9072221392BAB000E14556 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
+		EC9072231392BAB000E14556 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
+		EC9072241392BAB000E14556 /* dtmf-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-3.wav"; sourceTree = "<group>"; };
+		EC9072251392BAB000E14556 /* dtmf-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-4.wav"; sourceTree = "<group>"; };
+		EC9072261392BAB000E14556 /* dtmf-5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-5.wav"; sourceTree = "<group>"; };
+		EC9072271392BAB000E14556 /* dtmf-6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-6.wav"; sourceTree = "<group>"; };
+		EC9072281392BAB000E14556 /* dtmf-7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-7.wav"; sourceTree = "<group>"; };
+		EC9072291392BAB000E14556 /* dtmf-8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-8.wav"; sourceTree = "<group>"; };
+		EC90722A1392BAB000E14556 /* dtmf-9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-9.wav"; sourceTree = "<group>"; };
+		EC90722B1392BAB000E14556 /* dtmf-pound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-pound.wav"; sourceTree = "<group>"; };
+		EC90722C1392BAB000E14556 /* dtmf-star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-star.wav"; sourceTree = "<group>"; };
+		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
+		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
 		EC94DFD9138317AD005B2C1B /* NgnUriUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnUriUtils.mm; sourceTree = "<group>"; };
 		EC94E18813834266005B2C1B /* NgnDateTimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnDateTimeUtils.h; sourceTree = "<group>"; };
 		EC94E18913834266005B2C1B /* NgnDateTimeUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnDateTimeUtils.mm; sourceTree = "<group>"; };
@@ -1967,6 +1991,8 @@
 		EC954859136DE0ED00F4C113 /* NgnUriUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnUriUtils.h; sourceTree = "<group>"; };
 		EC95486F136DE4DC00F4C113 /* NgnInviteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnInviteEventArgs.h; sourceTree = "<group>"; };
 		EC954870136DE4DC00F4C113 /* NgnInviteEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnInviteEventArgs.m; sourceTree = "<group>"; };
+		EC967D031391CE0C006187D3 /* NgnContactEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContactEventArgs.h; sourceTree = "<group>"; };
+		EC967D041391CE0C006187D3 /* NgnContactEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnContactEventArgs.mm; sourceTree = "<group>"; };
 		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
 		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
 		ECA6A627137D87700022AD09 /* NgnHistoryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistoryEvent.h; sourceTree = "<group>"; };
@@ -1975,6 +2001,10 @@
 		ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryAVCallEvent.mm; sourceTree = "<group>"; };
 		ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistorySMSEvent.h; sourceTree = "<group>"; };
 		ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistorySMSEvent.mm; sourceTree = "<group>"; };
+		ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavoriteEventArgs.h; sourceTree = "<group>"; };
+		ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavoriteEventArgs.mm; sourceTree = "<group>"; };
+		ECB966C7138FF2C200961D3A /* NgnFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavorite.h; sourceTree = "<group>"; };
+		ECB966C8138FF2C200961D3A /* NgnFavorite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavorite.mm; sourceTree = "<group>"; };
 		ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
 		ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
 		ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
@@ -1986,6 +2016,7 @@
 		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport_cfsocket.c; sourceTree = "<group>"; };
 		ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationEntry.h; sourceTree = "<group>"; };
 		ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnConfigurationService.h; sourceTree = "<group>"; };
 		ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnConfigurationService.mm; sourceTree = "<group>"; };
@@ -3125,6 +3156,7 @@
 				ECDDBC2B137CA7960027105F /* AVFoundation.framework in Frameworks */,
 				ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */,
+				EC9075E01393199700E14556 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3181,6 +3213,7 @@
 				ECDDBC1D137CA7440027105F /* AVFoundation.framework in Frameworks */,
 				ECDDBC1E137CA7440027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC1F137CA7440027105F /* CoreVideo.framework in Frameworks */,
+				EC9075D91393197400E14556 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3211,6 +3244,7 @@
 				ECDDBC22137CA7650027105F /* AVFoundation.framework in Frameworks */,
 				ECDDBC23137CA7650027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC24137CA7650027105F /* CoreVideo.framework in Frameworks */,
+				EC9075D21393193D00E14556 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3558,9 +3592,31 @@
 			path = ../testVideoCall;
 			sourceTree = SOURCE_ROOT;
 		};
+		EC9072201392BAB000E14556 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				EC9072211392BAB000E14556 /* dtmf-0.wav */,
+				EC9072221392BAB000E14556 /* dtmf-1.wav */,
+				EC9072231392BAB000E14556 /* dtmf-2.wav */,
+				EC9072241392BAB000E14556 /* dtmf-3.wav */,
+				EC9072251392BAB000E14556 /* dtmf-4.wav */,
+				EC9072261392BAB000E14556 /* dtmf-5.wav */,
+				EC9072271392BAB000E14556 /* dtmf-6.wav */,
+				EC9072281392BAB000E14556 /* dtmf-7.wav */,
+				EC9072291392BAB000E14556 /* dtmf-8.wav */,
+				EC90722A1392BAB000E14556 /* dtmf-9.wav */,
+				EC90722B1392BAB000E14556 /* dtmf-pound.wav */,
+				EC90722C1392BAB000E14556 /* dtmf-star.wav */,
+				EC90722D1392BAB000E14556 /* ringbacktone.wav */,
+				EC90722E1392BAB000E14556 /* ringtone.mp3 */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
 		ECA6A61B137D813D0022AD09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC9072201392BAB000E14556 /* sound */,
 				ECA6A624137D82670022AD09 /* storage */,
 			);
 			name = Resources;
@@ -3607,6 +3663,10 @@
 				EC7D38891379A3300052CE45 /* NgnMessagingEventArgs.m */,
 				EC83FF141380911100060A9D /* NgnHistoryEventArgs.h */,
 				EC83FF151380911100060A9D /* NgnHistoryEventArgs.mm */,
+				ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */,
+				ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */,
+				EC967D031391CE0C006187D3 /* NgnContactEventArgs.h */,
+				EC967D041391CE0C006187D3 /* NgnContactEventArgs.mm */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -3631,6 +3691,8 @@
 		ECFD23BF135D534100E6A9A3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				ECB966C7138FF2C200961D3A /* NgnFavorite.h */,
+				ECB966C8138FF2C200961D3A /* NgnFavorite.mm */,
 				EC8724731377EE0400C616F0 /* NgnContact.h */,
 				EC8724741377EE0400C616F0 /* NgnContact.m */,
 				EC8726711378457900C616F0 /* NgnPhoneNumber.h */,
@@ -3879,6 +3941,7 @@
 				ECFD2A16135E7B8500E6A9A3 /* tnet_transport.h */,
 				ECFD2A17135E7B8500E6A9A3 /* tnet_transport_poll.c */,
 				ECFD2A18135E7B8500E6A9A3 /* tnet_transport_win32.c */,
+				ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */,
 				ECFD2A19135E7B8500E6A9A3 /* tnet_types.h */,
 				ECFD2A1A135E7B8500E6A9A3 /* tnet_utils.c */,
 				ECFD2A1B135E7B8500E6A9A3 /* tnet_utils.h */,
@@ -6118,6 +6181,9 @@
 				ECA6A63F137D8DDF0022AD09 /* NgnHistorySMSEvent.h in Headers */,
 				EC83FF161380911100060A9D /* NgnHistoryEventArgs.h in Headers */,
 				EC94E18A13834266005B2C1B /* NgnDateTimeUtils.h in Headers */,
+				ECB96666138FC22800961D3A /* NgnFavoriteEventArgs.h in Headers */,
+				ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */,
+				EC967D051391CE0C006187D3 /* NgnContactEventArgs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7242,6 +7308,9 @@
 				EC83FF171380911100060A9D /* NgnHistoryEventArgs.mm in Sources */,
 				EC94DFDA138317AD005B2C1B /* NgnUriUtils.mm in Sources */,
 				EC94E18B13834266005B2C1B /* NgnDateTimeUtils.mm in Sources */,
+				ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */,
+				ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */,
+				EC967D061391CE0C006187D3 /* NgnContactEventArgs.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7372,6 +7441,7 @@
 				ECFD2A89135E7B8500E6A9A3 /* tnet_turn.c in Sources */,
 				ECFD2A8B135E7B8500E6A9A3 /* tnet_turn_attribute.c in Sources */,
 				ECFD2A8D135E7B8500E6A9A3 /* tnet_turn_message.c in Sources */,
+				ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

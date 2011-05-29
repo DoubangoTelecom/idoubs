@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="12"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -114,6 +114,14 @@
 										<int key="IBUIStyle">1</int>
 										<reference key="IBUIToolbar" ref="451289072"/>
 									</object>
+								</object>
+								<object class="NSColor" key="IBUITintColor">
+									<int key="NSColorSpace">5</int>
+									<bytes key="NSCMYK">MSAwLjk4NzkwMzIzNzMgMCAwAA</bytes>
+									<object class="NSColorSpace" key="NSCustomColorSpace">
+										<int key="NSID">3</int>
+									</object>
+									<characters key="NSComponents">1 0.9879032258 0 0 1</characters>
 								</object>
 							</object>
 						</object>
@@ -327,7 +335,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>RecentsViewController</string>
 					<string>UIResponder</string>
-					<string>{{467, 198}, {320, 480}}</string>
+					<string>{{491, 194}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

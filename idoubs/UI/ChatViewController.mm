@@ -1,3 +1,23 @@
+/* Copyright (C) 2010-2011, Mamadou Diop.
+ * Copyright (c) 2011, Doubango Telecom. All rights reserved.
+ *
+ * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ *       
+ * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
+ *
+ * idoubs is free software: you can redistribute it and/or modify it under the terms of 
+ * the GNU General Public License as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ *       
+ * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * See the GNU General Public License for more details.
+ *       
+ * You should have received a copy of the GNU General Public License along 
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
 #import "ChatViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -40,12 +60,11 @@
 -(void) refreshData{
 	@synchronized(messages){
 		[messages removeAllObjects];
-		NSArray* events = [[[[NgnEngine getInstance].historyService events] allValues] sortedArrayUsingSelector:@selector(compareHistoryEventByDate:)];
+		NSArray* events = [[[[NgnEngine getInstance].historyService events] allValues] sortedArrayUsingSelector:@selector(compareHistoryEventByDateDESC:)];
 		for (NgnHistoryEvent* event in events) {
-			if(!event || !(event.mediaType & MediaType_SMS)){
+			if(!event || !(event.mediaType & MediaType_SMS) || ![event.remoteParty isEqualToString: self.remoteParty]){
 				continue;
 			}
-			// FIXME: only data related to this user => compare remote party
 			[messages addObject:event];
 		}
 	}
@@ -76,9 +95,8 @@
 		case HISTORY_EVENT_ITEM_ADDED:
 		{
 			if((eargs.mediaType & MediaType_SMS)){
-				//FIXME: compare remote party
 				NgnHistoryEvent* event = [[[NgnEngine getInstance].historyService events] objectForKey: [NSNumber numberWithLongLong: eargs.eventId]];
-				if(event){
+				if(event && [event.remoteParty isEqualToString: self.remoteParty]){
 					[messages addObject: event];
 					[self reloadData];
 				}
@@ -180,16 +198,31 @@
 // Default implementation
 //
 
+// private properties
+@interface ChatViewController()
+@property(nonatomic,retain) NgnContact *contact;
+@property(nonatomic,retain) NSString* remotePartyUri;
+@end
+
 @implementation ChatViewController
+
 @synthesize tableView;
+@synthesize buttonSend;
+@synthesize buttonAudioCall;
+@synthesize buttonVideoCall;
+@synthesize buttonContactInfo;
 @synthesize viewTableHeader;
 @synthesize textView;
 @synthesize viewFooter;
 @synthesize barBtnMessagesOrClear;
+@synthesize remotePartyUri;
+
+@synthesize contact;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+		messages = [[NSMutableArray alloc] init];
 	}
     return self;
 }
@@ -197,9 +230,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	if(!messages){
-		messages = [[NSMutableArray alloc] init];
-	}
+	self.buttonSend.layer.borderWidth = 2.f;
+	self.buttonSend.layer.borderColor = [[UIColor grayColor] CGColor];
+	self.buttonSend.layer.cornerRadius = 10.f;
 	
 	if(self.navigationItem){
 		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" 
@@ -217,6 +250,7 @@
 	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	tableView.delegate = self;
 	tableView.dataSource = self;
+	
 	[self refreshDataAndReload];
 	
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -254,7 +288,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
 	if(self.navigationItem){
-		self.navigationItem.title = @"François";
+		self.navigationItem.title = (self->contact && self->contact.displayName) ? self->contact.displayName : 
+				(self.remoteParty ? self.remoteParty : @"Unknown");
+		[self refreshDataAndReload];
 		
 	}
 }
@@ -293,28 +329,70 @@
 	[tableView reloadData];
 }
 
+- (IBAction) onButtonClick: (id)sender{
+	if(sender == buttonSend){
+		NSString* text = textView.text;
+		[textView resignFirstResponder];
+		textView.text = @"";
+		
+		[self resizeTextView];
+		
+		if(![NgnStringUtils isNullOrEmpty:text]){
+			NgnHistorySMSEvent* event = [NgnHistoryEvent createSMSEventWithStatus:HistoryEventStatus_Outgoing
+															   andRemoteParty: self.remoteParty
+																   andContent:[text dataUsingEncoding:NSUTF8StringEncoding]];
+			NgnMessagingSession* session = [NgnMessagingSession createOutgoingSessionWithStack:[[NgnEngine getInstance].sipService getSipStack] 
+																				  andToUri: self.remotePartyUri];
+			event.status = [session sendTextMessage:text contentType: kContentTypePlainText] ? HistoryEventStatus_Outgoing : HistoryEventStatus_Failed;
+			[[NgnEngine getInstance].historyService addEvent: event];
+		}
+	}
+	else if(sender == buttonAudioCall){
+		[CallViewController makeAudioCallWithRemoteParty:self.remotePartyUri andSipStack:[[NgnEngine getInstance].sipService getSipStack]];
+	}
+	else if(sender == buttonVideoCall){
+		[CallViewController makeAudioVideoCallWithRemoteParty:self.remotePartyUri andSipStack:[[NgnEngine getInstance].sipService getSipStack]];
+	}
+	else if(sender == buttonContactInfo){
+		ContactDetailsController* contactDetails = [[ContactDetailsController alloc] initWithNibName:@"ContactDetails" bundle:nil];
+		contactDetails.contact = self.contact;
+		[self.navigationController pushViewController:contactDetails animated:YES];
+		[contactDetails release];
+	}
+}
 
-- (IBAction) onButtonSendClick: (id)sender{
-	NSString* text = textView.text;
-	[textView resignFirstResponder];
-	textView.text = @"";
-	
-	[self resizeTextView];
-	
-	NgnHistorySMSEvent* event = [NgnHistoryEvent createSMSEventWithStatus:HistoryEventStatus_Outgoing
-								andRemoteParty:[NSString stringWithFormat:@"%ld", [[NSDate date] timeIntervalSince1970]] 
-								andContent:[text dataUsingEncoding:NSUTF8StringEncoding]];
-	event.status = HistoryEventStatus_Outgoing;
-	[[NgnEngine getInstance].historyService addEvent: event];
+-(void)setRemoteParty:(NSString *) remoteParty_{
+	[remoteParty release];
+	remoteParty = [remoteParty_ retain];
+	self.contact = [[NgnEngine getInstance].contactService getContactByPhoneNumber: remoteParty];
+	self.remotePartyUri = [NgnUriUtils makeValidSipUri:self.remoteParty];
+}
+
+-(void)setRemoteParty:(NSString *)remoteParty_ andContact:(NgnContact*)contact_{
+	[self->remoteParty release];
+	self->remoteParty = [remoteParty_ retain];
+	self.contact = contact_;
+	self.remotePartyUri = [NgnUriUtils makeValidSipUri:self.remoteParty];
+}
+
+-(NSString*)remoteParty{
+	return self->remoteParty;
 }
 
 - (void)dealloc {
 	[tableView release];
 	[viewFooter release];
 	[textView release];
+	[buttonSend release];
+	[buttonAudioCall release];
+	[buttonVideoCall release];
+	[buttonContactInfo release];
 	[viewTableHeader release];
 	[barBtnMessagesOrClear release];
 	[messages release];
+	[remoteParty release];
+	[remotePartyUri release];
+	[contact release];
 	
     [super dealloc];
 }

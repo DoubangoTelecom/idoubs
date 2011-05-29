@@ -57,9 +57,14 @@
 	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedAscending : NSOrderedDescending);
 }
 
--(NSComparisonResult)compareHistoryEventByDate:(NgnHistoryEvent *)otherEvent{
+-(NSComparisonResult)compareHistoryEventByDateASC:(NgnHistoryEvent *)otherEvent{
 	NSTimeInterval diff = self.start - otherEvent.start;
 	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedAscending : NSOrderedDescending);
+}
+
+-(NSComparisonResult)compareHistoryEventByDateDESC:(NgnHistoryEvent *)otherEvent{
+	NSTimeInterval diff = self.start - otherEvent.start;
+	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedDescending : NSOrderedAscending);
 }
 
 +(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)_remoteParty andVideo: (BOOL)video{
