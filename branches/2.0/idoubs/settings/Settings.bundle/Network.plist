@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Network</string>
+	<key>StringsTable</key>
+	<string>Network</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Type</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>WiFi</string>
+			<key>Key</key>
+			<string>NETWORK_USE_WIFI</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>3G/2.5G</string>
+			<key>Key</key>
+			<string>NETWORK_USE_3G</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Connection</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Proxy Host</string>
+			<key>Key</key>
+			<string>NETWORK_PCSCF_HOST</string>
+			<key>DefaultValue</key>
+			<string>127.0.0.1</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Proxy Port</string>
+			<key>Key</key>
+			<string>NETWORK_PCSCF_PORT</string>
+			<key>DefaultValue</key>
+			<integer>5060</integer>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Transport</string>
+			<key>Key</key>
+			<string>NETWORK_TRANSPORT</string>
+			<key>DefaultValue</key>
+			<string>UDP</string>
+			<key>Titles</key>
+			<array>
+				<string>UDP</string>
+				<string>TCP</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>UDP</string>
+				<string>TCP</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enable SigComp</string>
+			<key>Key</key>
+			<string>NETWORK_USE_SIGCOMP</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>
