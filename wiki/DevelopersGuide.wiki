@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" />
 
-= Introduction =
+ = Introduction =
 This is a short but useful developer's guide to help you starting to write VoIP applications for iOS (iPhone, iPod Touch and iPad) using our NGN (Next Generation Network) Stack. <br />
 If you haven't already configured your development environment then please take a look at the [http://code.google.com/p/idoubs/wiki/Building_iDoubs_v2_x this page] which explain how to build both the NGN Stack and the test VoIP client (*iDoubs v2.x*). In the next sections we'll consider that you have successfully built the NGN library. <br />
 
@@ -136,7 +136,7 @@ To listen to the registration events:
 	}
 }
 
-// listen to the events
+// start listening
 [[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onRegistrationEvent:) name:kNgnRegistrationEventArgs_Name object:nil];
 }}}
@@ -146,3 +146,62 @@ To register to your server:
 BOOL success = [[NgnEngine getInstance].sipService registerIdentity]; // Asynchronous function. 'YES' if request sent and 'NO'
 }}}
 *-registerIdentity* function will try to register the identity defined via the *NgnConfigurationService*.
+Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the registration events.
+To get started we recommend taking a look at the *testRegistration* project.
+
+==== Sending/Receiving IM ====
+Here we consider that you have already started the NGN engine and successfully registered to your SIP/IMS server.
+
+First, you should listen to events related to the SIP Pager Mode IM (SIP MESSAGE). To do this:
+{{{
+// target function
+-(void) onMessagingEvent:(NSNotification*)notification {
+	NgnMessagingEventArgs* eargs = [notification object];
+	
+	switch (eargs.eventType) {
+		case MESSAGING_EVENT_CONNECTING:
+		case MESSAGING_EVENT_CONNECTED:
+		case MESSAGING_EVENT_TERMINATING:
+		case MESSAGING_EVENT_TERMINATED:
+		case MESSAGING_EVENT_FAILURE:
+		case MESSAGING_EVENT_SUCCESS:
+		case MESSAGING_EVENT_OUTGOING:
+		default:
+		{
+			break;
+		}
+			
+		case MESSAGING_EVENT_INCOMING:
+		{
+			if(eargs.payload){
+				// The payload is a NSData object which means that it could contain binary data
+				// here I consider that it's utf8 text message
+				NSString* contentType = [eargs getExtraWithKey: kExtraMessagingEventArgsContentType];
+				NSString* from = [eargs getExtraWithKey: kExtraMessagingEventArgsFrom];
+				NSString* content = [NSString stringWithUTF8String: (const char*)[eargs.payload bytes]];
+				messageTextView.text = 
+				NSLog(@"Incoming message from:%@\n with ctype:%@\n and content:%@",
+				 from, contentType, content);
+				// If the configuration entry "RCS_AUTO_ACCEPT_PAGER_MODE_IM" (BOOL) is equal to false then
+				// you must accept() or reject() the message like this:
+				// NgnMessagingSession* imSession = [[NgnMessagingSession getSessionWithId: eargs.sessionId] retain];
+				// if(session){
+				//	[imSession accept]; // or [imSession reject];
+				//	[imSession release];
+				//}
+				
+			}
+			break;
+		}
+	}
+}
+
+
+// start listening
+[[NSNotificationCenter defaultCenter]
+	 addObserver:self selector:@selector(onMessagingEvent:) name:kNgnMessagingEventArgs_Name object:nil];
+}}}
+
+Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the messaging events.
+
+To get started we recommend taking a look at the *testMessaging* project.
