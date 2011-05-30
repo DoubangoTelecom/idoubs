@@ -1,0 +1,6 @@
+#summary Building iDoubs v2.x
+
+<wiki:toc max_depth="3" />
+
+== Introduction ==
+iDoubs v2.x is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [/code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while iDoubs v1.x (alpha version) is based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
