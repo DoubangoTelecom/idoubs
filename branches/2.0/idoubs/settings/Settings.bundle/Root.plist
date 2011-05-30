@@ -24,6 +24,14 @@
 			<key>File</key>
 			<string>Network</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>NAT Traversal</string>
+			<key>File</key>
+			<string>NATT</string>
+		</dict>
 	</array>
 </dict>
 </plist>
