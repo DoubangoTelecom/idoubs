@@ -61,7 +61,7 @@ As stated in the *Introduction* section, *iDoubs v2.x* depends on the NGN Stack 
 	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
 	# build the NGN stack: Right click on *ios-ngn-stack* target and select *Build ios-ngn-stack*
 
-You are know ready to build the test applications if you want:
+You are now ready to build the test applications if you want:
  # *testRegistration:* to  test SIP registration
  # *testAudioCall:* to test audio calls
  # *testVideoCall:* to test video calls
