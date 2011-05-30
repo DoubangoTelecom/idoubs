@@ -50,6 +50,8 @@ Now that the client is correctly configured you are ready to start it. Go to the
 If you have correctly set your credentials then the color of status bar should be green otherwise it'll be grey. <br />
 
 == Managing your favorites ==
+=== Adding favorites ===
+=== Deleting favorites ===
 
 == Making Voice calls ==
 
