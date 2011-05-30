@@ -1,4 +1,5 @@
 #summary Developer's Guide
+#labels Phase-Implementation,Featured
 
 <wiki:toc max_depth="4" />
 
@@ -231,3 +232,105 @@ NgnMessagingSession* imSession = [[NgnMessagingSession sendTextMessageWithSipSta
 Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the messaging events.
 
 To get started we recommend taking a look at the *testMessaging* project.
+
+=== Storage Service ===
+*Note*: You *MUST* start the NGN Engine before using any function from this service. For more information on how to start the NGN engine, please see above.
+The *NgnStorageService* is used to read/write date from/to the embedded SQLite3 database (*NgnDatabase.db*). For example, this service is used to store the 'favorites'. For the history events (call-log), please take a look at the *NgnHistoryService*.<br />
+ ====Protocol definition====
+{{{
+@protocol INgnStorageService <INgnBaseService>
+
+#if TARGET_OS_IPHONE
+-(sqlite3 *) database;
+-(BOOL) execSQL: (NSString*)sqlQuery;
+-(NSMutableDictionary*) favorites;
+-(BOOL) addFavorite: (NgnFavorite*) favorite;
+-(BOOL) deleteFavorite: (NgnFavorite*) favorite;
+-(BOOL) deleteFavoriteWithId: (long long) id;
+-(BOOL) clearFavorites;
+#endif /* TARGET_OS_IPHONE */
+
+@end
+}}}
+
+In order to get notified when the 'favorites' changes you must listen to these events like this:
+{{{
+// target function
+-(void) onFavoritesEvent:(NSNotification*)notification{
+	NgnFavoriteEventArgs* eargs = [notification object];
+	
+	switch (eargs.eventType) {
+		case FAVORITE_ITEM_ADDED:			
+		case HISTORY_EVENT_ITEM_MOVED:
+		case HISTORY_EVENT_ITEM_UPDATED:
+		case HISTORY_EVENT_ITEM_REMOVED:			
+		case HISTORY_EVENT_RESET:
+		default:
+		{
+			break;
+		}
+	}
+}
+
+// start listening
+[[NSNotificationCenter defaultCenter]
+			addObserver:self selector:@selector(onFavoritesEvent:) name:kNgnFavoriteEventArgs_Name object:nil];
+}}}
+
+Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the 'favorites' events.
+
+
+=== History Service ===
+*Note*: You *MUST* start the NGN Engine before using any function from this service. For more information on how to start the NGN engine, please see above.
+This service is used to manage the call-log events. This service uses the *NgnStorageService* in order to write/read data to/from the embedded SQLite3 database.
+ ====Protocol definition====
+{{{
+@protocol INgnHistoryService <INgnBaseService>
+
+-(BOOL) load;
+-(BOOL) isLoading;
+-(BOOL) addEvent: (NgnHistoryEvent*) event;
+-(BOOL) updateEvent: (NgnHistoryEvent*) event;
+-(BOOL) deleteEvent: (NgnHistoryEvent*) event;
+-(BOOL) deleteEventAtIndex: (int) location;
+-(BOOL) deleteEventWithId: (long long) eventId;
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType;
+-(BOOL) deleteEvents: (NgnMediaType_t) mediaType withRemoteParty: (NSString*)remoteParty;
+-(BOOL) clear;
+-(NgnHistoryEventDictionary*) events;
+
+@end
+}}}
+
+In order to get notified when the 'call-log' changes you must listen to these events like this:
+{{{
+// target function
+-(void) onHistoryEvent:(NSNotification*)notification{
+	NgnHistoryEventArgs* eargs = [notification object];
+	
+	switch (eargs.eventType) {
+		case HISTORY_EVENT_ITEM_ADDED:
+		case HISTORY_EVENT_ITEM_MOVED:
+		case HISTORY_EVENT_ITEM_UPDATED:		
+		case HISTORY_EVENT_ITEM_REMOVED:
+		case HISTORY_EVENT_RESET:
+		default:
+		{
+			break;
+		}
+	}
+}
+
+@end
+
+
+// start listening
+[[NSNotificationCenter defaultCenter]
+		addObserver:self selector:@selector(onHistoryEvent:) name:kNgnHistoryEventArgs_Name object:nil];
+}}}
+
+Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the 'call-log' events.
+
+=== Contact Service ===
+
+=== HTTP Service ===
