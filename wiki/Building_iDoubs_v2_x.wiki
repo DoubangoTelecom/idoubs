@@ -1,4 +1,5 @@
 #summary Building iDoubs v2.x
+#labels Phase-Support
 
 <wiki:toc max_depth="3" />
 
@@ -6,8 +7,8 @@
 *iDoubs v2.x* is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while *iDoubs v1.x* (alpha version) is based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
 
 This new version is now split in two parts: *iDoubs v2.x* and *ios-ngn-stack*. <br />
- # *iDoubs v2.x* is the VoIP client and mostly contain UI related code.
- # *ios-ngn-stack* is our NGN (Next Generation Network)  Framework and contains wrappers Objective-C wrappers for *Doubango* (ANSI-C).  This framework contains wrappers for the protocol stacks (SIP, MSRP, HTTP, RTP ...), utility services (Database storage, Call log management, Address Book ...). <br />
+ # *iDoubs v2.x* is the VoIP client and mostly contain UI related code. It depends on *ios-ngn-stack* project (see below).
+ # *ios-ngn-stack* is our NGN (Next Generation Network)  Framework and contains Objective-C wrappers (around ANSI-C) for *Doubango*.  This framework contains wrappers for the protocol stacks (SIP, MSRP, HTTP, RTP ...), utility services (Database storage, Call log management, Address Book ...). <br />
 
 == Checking out the source code ==
 
@@ -48,10 +49,34 @@ cd ../..
 chmod -R 777 mydoubs/*
 }}}
 
-== Building the NGN Stack ==
+== Building the source code ==
 
- * open mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack.xcodeproj
-	1) Very Important: make sure that the right base sdk is selected (iOS SDK x.y): Right click on "ios-ngn-stack" => "Get Info" => "Build" tab => From "Architectures" group adjust "Base SDK" and select "iOS x.y".
-	2) build Doubango: Right click on "Doubango" aggregated target and select "Build Doubango"
-	3) build the NGN stack: Right click on "ios-ngn-stack" target and select "Build ios-ngn-stack"
-	4) build the audio test application: Right click on "testAudioCall" and select "Build testAudioCall". For now don't try to run the test application. See next section for more information.
+== Building the NGN Stack ==
+As stated in the *Introduction* section, *iDoubs v2.x* depends on the NGN Stack which means that you *MUST* build this target before building *iDoubs* target. <br />
+*Note:* *iDoubs* project already contains a reference to the NGN Stack (*ios-ngn-stack*) which means that you can build it directly from *iDoubs*. This is not advised if you are building *iDoubs* for the first time. <br />
+
+  * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
+	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK.
+	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
+	# build the NGN stack: Right click on *ios-ngn-stack* target and select *Build ios-ngn-stack*
+
+You are know ready to build the test applications if you want:
+ # *testRegistration:* to  test SIP registration
+ # *testAudioCall:* to test audio calls
+ # *testVideoCall:* to test video calls
+ # *testMessaging:* to test Instant Messaging (SIP Pager Mode IM)
+
+== Building iDoubs ==
+*iDoubs* is the VoIP client and depends on *ios-ngn-target*. <br />
+
+  * open *mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj*
+	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK.
+	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
+	# build the NGN stack: Right click on *Ngn* target and select *Build Ngn*
+	# build the iDoubs: Right click on *iDoubs* target and select *Build iDoubs*
+<br />
+Et voilà. You can now run iDoubs. <br />
+*Note:* As you have remarked, it's possible to build both the NGN stack and Doubango projects from *iDoubs*. <br />
+Before starting to use iDoubs, please take a look at the user guide in order to understand how to configure the client.
+
+  
