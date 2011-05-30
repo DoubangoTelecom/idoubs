@@ -1,5 +1,5 @@
 #summary Building the source code
-#labels Featured,Phase-Implementation
+#labels Featured,Phase-Implementation,Deprecated
 
 To build the source code you need: xcode, iOS SDK (3.2 or later) and svn tools.
 
