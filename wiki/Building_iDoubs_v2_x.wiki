@@ -1,5 +1,5 @@
 #summary Building iDoubs v2.x
-#labels Phase-Support
+#labels Phase-Support,Featured
 
 <wiki:toc max_depth="3" />
 
