@@ -21,7 +21,7 @@ In the next section I will consider that the user is using our private IMS netwo
 
 ==All In One==
 Below you have a screenshot showing an overview of the configuration process.<br/>
-[http://idoubs.googlecode.com/svn/branches/2.0/screenshots/settings_allinone]
+[http://idoubs.googlecode.com/svn/branches/2.0/screenshots/settings_allinone.png]
 
 ==Configuring your credentials==
  * From the springboard select *Settings*, scroll down and select *idoubs* from the list as shown below. <br />
@@ -52,6 +52,8 @@ Now that the client is correctly configured you are ready to start it. Go to the
 [http://idoubs.googlecode.com/svn/branches/2.0/screenshots/goto_idoubs.png].
 <br />
 If you have correctly set your credentials then the color of status bar should be green otherwise it'll be grey. <br />
+
+==Configuring NAT Traversal==
 
 == Managing your favorites ==
 === Adding favorites ===
