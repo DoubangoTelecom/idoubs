@@ -4,7 +4,7 @@
 <wiki:toc max_depth="3" />
 
 == Introduction ==
-*iDoubs v2.x* is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while *iDoubs v1.x* (alpha version) is based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
+*iDoubs v2.x* is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while *iDoubs v1.x* (alpha version) was based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
 
 This new version is now split in two parts: *iDoubs v2.x* and *ios-ngn-stack*. <br />
  # *iDoubs v2.x* is the VoIP client and mostly contain UI related code. It depends on *ios-ngn-stack* project (see below).
