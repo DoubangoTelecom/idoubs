@@ -48,3 +48,13 @@ Now that the client is correctly configured you are ready to start it. Go to the
 [http://idoubs.googlecode.com/svn/branches/2.0/screenshots/goto_idoubs.png].
 <br />
 If you have correctly set your credentials then the color of status bar should be green otherwise it'll be grey. <br />
+
+== Managing your favorites ==
+
+== Making Voice calls ==
+
+== Making Video calls ==
+
+== Sending/Receiving files ==
+
+== Sending/Receiving Instant Messages ==
