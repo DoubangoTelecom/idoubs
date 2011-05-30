@@ -1,5 +1,5 @@
 #summary UserGuide For iDoubs
-#labels Phase-Requirements
+#labels Phase-Requirements,Featured
 
 <wiki:toc max_depth="3" />
 
