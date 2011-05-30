@@ -19,6 +19,10 @@ If you are a newbie and don't have a SIP account I recommend using *sip2sip.info
 To create an account: [https://mdns.sipthor.net/register_sip_account.phtml https://mdns.sipthor.net/register_sip_account.phtml].<br />
 In the next section I will consider that the user is using our private IMS network: *doubango.org*.
 
+==All In One==
+Below you have a screenshot showing an overview of the configuration process.<br/>
+[http://idoubs.googlecode.com/svn/branches/2.0/screenshots/settings_allinone]
+
 ==Configuring your credentials==
  * From the springboard select *Settings*, scroll down and select *idoubs* from the list as shown below. <br />
 [http://idoubs.googlecode.com/svn/branches/2.0/screenshots/goto_settings.png]
