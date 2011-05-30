@@ -202,6 +202,32 @@ First, you should listen to events related to the SIP Pager Mode IM (SIP MESSAGE
 	 addObserver:self selector:@selector(onMessagingEvent:) name:kNgnMessagingEventArgs_Name object:nil];
 }}}
 
+To send SIP Pager Mode IM (SIP MESSAGE):
+{{{
+ActionConfig* actionConfig = new ActionConfig();
+if(actionConfig){
+	// add some SIP headers       
+	actionConfig->addHeader("Organization", "Doubango Telecom");
+	actionConfig->addHeader("Subject", "testing iOS NGN Stack");
+}
+// Send UTF-8 message (Null-terminated string)
+// Please use 'sendDataWithSipStack: andToUri: andData: data andContentType:' in order to send binary content
+const NSString *kRemoteParty = @"sip:bob@doubango.org";
+const NSString* kMessageBody = @"Hello world!";
+NgnMessagingSession* imSession = [[NgnMessagingSession sendTextMessageWithSipStack: [[NgnEngine getInstance].sipService getSipStack] 
+											andToUri: kRemoteParty											        
+                                                                                       andMessage: kMessageBody
+											andContentType: kContentTypePlainText
+											andActionConfig: actionConfig
+									   ] retain]; // Do not retain the session if you don't want it
+// do whatever you want with the session
+	if(actionConfig){
+		delete actionConfig, actionConfig = tsk_null;
+	}
+      // Release the session
+	[NgnMessagingSession releaseSession: &imSession];
+}}}
+
 Don't forget to use [http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender] if you no longer need to listen to the messaging events.
 
 To get started we recommend taking a look at the *testMessaging* project.
