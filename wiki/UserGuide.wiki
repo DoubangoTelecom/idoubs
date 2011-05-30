@@ -43,4 +43,8 @@ Go back to the settings the select *Network* and fill the fields like this (off 
      # *Transport*: The transport type (TCP or UDP) to use. You should use TCP in order to be able to receive incoming calls when the application is running in the background unless you enable the *"Keep-Awake"* option for UDP.
      # *Enable SigComp*: Whether to enable SIP Signaling Compression. You MUST not enable this option unless your Server supports this feature.
 
-
+= Running the client =
+Now that the client is correctly configured you are ready to start it. Go to the Springboard and select *iDoubs* in order to run the client. <br />
+[http://idoubs.googlecode.com/svn/branches/2.0/screenshots/goto_idoubs.png].
+<br />
+If you have correctly set your credentials then the color of status bar should be green otherwise it'll be grey. <br />
