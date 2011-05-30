@@ -4,3 +4,36 @@
 
 == Introduction ==
 iDoubs v2.x is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while iDoubs v1.x (alpha version) is based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
+
+== Building the source code ==
+
+To build the source code you will need: xcode 3.x or later, iOS SDK 4.x or later and svn tools.<br />
+<br />
+  # open new Terminal (Applications => Utilities => Terminal)
+
+ # from the command line, login as root
+{{{
+sudo -i
+}}}
+
+ # Create new directory named mydoubs anywhere in your disk
+{{{
+mkdir mydoubs
+cd mydoubs
+}}}
+
+ # checkout doubango source code (both trunk and branches) into *mydoubs*. __*Important:*__ The destination folder MUST be named *doubango*:
+{{{
+svn checkout http://doubango.googlecode.com/svn/ doubango
+}}}
+
+ # create new folder named *iPhone* into *mydoubs*:
+{{{
+mkdir iPhone
+cd iPhone
+}}}
+
+ # checkout ios-ngn-stack source code into *iPhone* folder. *Important:* The destination folder MUST be named *idoubs*:
+{{{
+svn checkout http://idoubs.googlecode.com/svn/ idoubs
+}}}
