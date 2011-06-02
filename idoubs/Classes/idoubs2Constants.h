@@ -35,6 +35,22 @@
 #define kColorBaloonInBottom	0xBEBEBE
 #define kColorBaloonInBorder	0xBCBCBC
 
+#define kColorsDarkBlack [NSArray arrayWithObjects: \
+(id)[[UIColor colorWithRed:.1f green:.1f blue:.1f alpha:0.7] CGColor], \
+(id)[[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.7] CGColor], \
+nil]
+#define kColorsBlue [NSArray arrayWithObjects: \
+(id)[[UIColor colorWithRed:.0f green:.0f blue:.5f alpha:0.7] CGColor], \
+(id)[[UIColor colorWithRed:0.f green:0.f blue:1.f alpha:0.7] CGColor], \
+nil]
+#define kColorsLightBlack [NSArray arrayWithObjects: \
+(id)[[UIColor colorWithRed:.2f green:.2f blue:.2f alpha:0.7] CGColor], \
+(id)[[UIColor colorWithRed:.1f green:.1f blue:.1f alpha:0.7] CGColor], \
+(id)[[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.7] CGColor], \
+nil]
+
+#define kButtonStateAll (UIControlStateSelected | UIControlStateNormal || UIControlStateHighlighted)
+
 
 #define kCallTimerSuicide	1.5f
 

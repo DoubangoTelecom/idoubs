@@ -50,6 +50,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		EC6AD68B136B3A8E00617B95 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6AD68A136B3A8E00617B95 /* MainWindow.xib */; };
+		EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994D1396BA62006A8F91 /* visio_call.png */; };
+		EC7D99501396BA62006A8F91 /* voice_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994E1396BA62006A8F91 /* voice_call.png */; };
 		EC7E2F81138968E50020EB89 /* AudioCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7E2F51138968E50020EB89 /* AudioCallView.xib */; };
 		EC7E2F82138968E50020EB89 /* AudioCallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */; };
 		EC7E2F83138968E50020EB89 /* BaloonCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7E2F55138968E50020EB89 /* BaloonCell.mm */; };
@@ -112,6 +114,7 @@
 		EC9073191392CB3D00E14556 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9073131392CB3D00E14556 /* Icon.png */; };
 		EC90731A1392CB3D00E14556 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9073141392CB3D00E14556 /* Icon@2x.png */; };
 		EC90731D1392CB8700E14556 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90731C1392CB8700E14556 /* Default.png */; };
+		EC90766A13932A4800E14556 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC90766913932A4800E14556 /* Settings.bundle */; };
 		EC967A5F1391845C006187D3 /* PeoplePicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC967A5E1391845C006187D3 /* PeoplePicker.mm */; };
 		EC967A6E13918698006187D3 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC967A6D13918698006187D3 /* AddressBookUI.framework */; };
 		EC967C771391BB8B006187D3 /* tab_messages.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C751391BB8B006187D3 /* tab_messages.png */; };
@@ -119,7 +122,6 @@
 		EC967C7B1391BDBD006187D3 /* type_audio.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C791391BDBD006187D3 /* type_audio.png */; };
 		EC967C7C1391BDBD006187D3 /* type_sms.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7A1391BDBD006187D3 /* type_sms.png */; };
 		EC967C7F1391BECF006187D3 /* type_video.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7E1391BECF006187D3 /* type_video.png */; };
-		ECB40E43138E6E4A00EB92A3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECB40E42138E6E4A00EB92A3 /* Settings.bundle */; };
 		ECB40EDA138E76F600EB92A3 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECA138E76F600EB92A3 /* keypad_0.png */; };
 		ECB40EDB138E76F600EB92A3 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECB138E76F600EB92A3 /* keypad_1.png */; };
 		ECB40EDC138E76F600EB92A3 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECC138E76F600EB92A3 /* keypad_2.png */; };
@@ -142,6 +144,8 @@
 		ECB5B98B138F2B4200093FB5 /* hold.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB5B98A138F2B4200093FB5 /* hold.png */; };
 		ECB5B993138F2E1000093FB5 /* visio_call_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB5B992138F2E1000093FB5 /* visio_call_48.png */; };
 		ECB5B995138F2E6500093FB5 /* voice_call_48.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB5B994138F2E6500093FB5 /* voice_call_48.png */; };
+		ECB9279A1395C99900EAE632 /* facetime_hangup.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB927981395C99900EAE632 /* facetime_hangup.png */; };
+		ECB9279B1395C99900EAE632 /* facetime_mute.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB927991395C99900EAE632 /* facetime_mute.png */; };
 		ECB9661B138FB0C600961D3A /* FavoritesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB96619138FB0C600961D3A /* FavoritesViewController.mm */; };
 		ECB9661C138FB0C600961D3A /* FavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECB9661A138FB0C600961D3A /* FavoritesView.xib */; };
 		ECB9662C138FB15700961D3A /* FavoriteCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB9662B138FB15700961D3A /* FavoriteCell.mm */; };
@@ -528,6 +532,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EC6AD68A136B3A8E00617B95 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		EC7D994D1396BA62006A8F91 /* visio_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visio_call.png; sourceTree = "<group>"; };
+		EC7D994E1396BA62006A8F91 /* voice_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_call.png; sourceTree = "<group>"; };
 		EC7E2F51138968E50020EB89 /* AudioCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCallView.xib; sourceTree = "<group>"; };
 		EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCallViewController.h; sourceTree = "<group>"; };
 		EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioCallViewController.mm; sourceTree = "<group>"; };
@@ -608,6 +614,7 @@
 		EC9073131392CB3D00E14556 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EC9073141392CB3D00E14556 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EC90731C1392CB8700E14556 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EC90766913932A4800E14556 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EC967987139163C4006187D3 /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
 		EC967A4813918048006187D3 /* PickerViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewControllerDelegate.h; sourceTree = "<group>"; };
 		EC967A5D1391845C006187D3 /* PeoplePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePicker.h; sourceTree = "<group>"; };
@@ -618,7 +625,6 @@
 		EC967C791391BDBD006187D3 /* type_audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_audio.png; sourceTree = "<group>"; };
 		EC967C7A1391BDBD006187D3 /* type_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_sms.png; sourceTree = "<group>"; };
 		EC967C7E1391BECF006187D3 /* type_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_video.png; sourceTree = "<group>"; };
-		ECB40E42138E6E4A00EB92A3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		ECB40ECA138E76F600EB92A3 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
 		ECB40ECB138E76F600EB92A3 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
 		ECB40ECC138E76F600EB92A3 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
@@ -642,6 +648,8 @@
 		ECB5B98A138F2B4200093FB5 /* hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hold.png; sourceTree = "<group>"; };
 		ECB5B992138F2E1000093FB5 /* visio_call_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visio_call_48.png; sourceTree = "<group>"; };
 		ECB5B994138F2E6500093FB5 /* voice_call_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_call_48.png; sourceTree = "<group>"; };
+		ECB927981395C99900EAE632 /* facetime_hangup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facetime_hangup.png; sourceTree = "<group>"; };
+		ECB927991395C99900EAE632 /* facetime_mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facetime_mute.png; sourceTree = "<group>"; };
 		ECB96618138FB0C600961D3A /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		ECB96619138FB0C600961D3A /* FavoritesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FavoritesViewController.mm; sourceTree = "<group>"; };
 		ECB9661A138FB0C600961D3A /* FavoritesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesView.xib; sourceTree = "<group>"; };
@@ -746,9 +754,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC90766813932A4800E14556 /* settings */,
 				EC90728E1392C04A00E14556 /* sound */,
 				ECB40EC8138E76F600EB92A3 /* images */,
-				ECB40E41138E6E4A00EB92A3 /* settings */,
 				EC7E2FDD13896CFD0020EB89 /* storage */,
 				8D1107310486CEB800E47090 /* idoubs-Info.plist */,
 				EC6AD68A136B3A8E00617B95 /* MainWindow.xib */,
@@ -895,10 +903,10 @@
 			path = "../ios-ngn-stack/sound";
 			sourceTree = SOURCE_ROOT;
 		};
-		ECB40E41138E6E4A00EB92A3 /* settings */ = {
+		EC90766813932A4800E14556 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				ECB40E42138E6E4A00EB92A3 /* Settings.bundle */,
+				EC90766913932A4800E14556 /* Settings.bundle */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -906,6 +914,10 @@
 		ECB40EC8138E76F600EB92A3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EC7D994D1396BA62006A8F91 /* visio_call.png */,
+				EC7D994E1396BA62006A8F91 /* voice_call.png */,
+				ECB927981395C99900EAE632 /* facetime_hangup.png */,
+				ECB927991395C99900EAE632 /* facetime_mute.png */,
 				EC90731C1392CB8700E14556 /* Default.png */,
 				EC90730F1392CB3D00E14556 /* Icon-72.png */,
 				EC9073101392CB3D00E14556 /* Icon-Small-50.png */,
@@ -1188,7 +1200,6 @@
 				EC7E2F9A138968E50020EB89 /* RecentsView.xib in Resources */,
 				EC7E2F9D138968E50020EB89 /* VideoCallView.xib in Resources */,
 				EC7E2FE013896CFD0020EB89 /* NgnDataBase.db in Resources */,
-				ECB40E43138E6E4A00EB92A3 /* Settings.bundle in Resources */,
 				ECB40EDA138E76F600EB92A3 /* keypad_0.png in Resources */,
 				ECB40EDB138E76F600EB92A3 /* keypad_1.png in Resources */,
 				ECB40EDC138E76F600EB92A3 /* keypad_2.png in Resources */,
@@ -1243,6 +1254,11 @@
 				EC9073191392CB3D00E14556 /* Icon.png in Resources */,
 				EC90731A1392CB3D00E14556 /* Icon@2x.png in Resources */,
 				EC90731D1392CB8700E14556 /* Default.png in Resources */,
+				EC90766A13932A4800E14556 /* Settings.bundle in Resources */,
+				ECB9279A1395C99900EAE632 /* facetime_hangup.png in Resources */,
+				ECB9279B1395C99900EAE632 /* facetime_mute.png in Resources */,
+				EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */,
+				EC7D99501396BA62006A8F91 /* voice_call.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1437,6 +1453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mamadou DIOP (89JZ5C3KM4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1476,6 +1493,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8E7D569F-CDCE-46BD-83D6-9FF80E3B7715";
 			};
 			name = Debug;
 		};
@@ -1499,7 +1517,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
@@ -1511,6 +1529,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IOS_NGN_STACK_HOME = "../ios-ngn-stack";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

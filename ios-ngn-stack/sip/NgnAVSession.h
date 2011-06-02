@@ -48,6 +48,7 @@ class ActionConfig;
 	BOOL mConsumersAndProducersInitialzed;
 	NgnProxyVideoConsumer* mVideoConsumer;
 	NgnProxyVideoProducer* mVideoProducer;
+	BOOL mMute;
 #endif
 }
 
@@ -68,6 +69,8 @@ class ActionConfig;
 -(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
+-(BOOL) setMute: (BOOL)mute;
+-(BOOL) isMuted;
 #endif /* TARGET_OS_IPHONE */
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage;

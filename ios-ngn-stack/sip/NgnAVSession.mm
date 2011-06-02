@@ -372,6 +372,22 @@
 	return NO;
 }
 
+-(BOOL) setMute: (BOOL)mute{
+	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+	if(_mediaMgr){
+		if(const_cast<MediaSessionMgr*>(_mediaMgr)->producerSetInt32(twrap_media_audio, "mute", mute ? 1 : 0)){
+			mMute = mute;
+			return YES;
+		}
+	}
+	TSK_DEBUG_ERROR("Failed to mute/unmute the session");
+	return NO;
+}
+
+-(BOOL) isMuted{
+	return mMute;
+}
+
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
 	NgnMediaType_t media;
 	

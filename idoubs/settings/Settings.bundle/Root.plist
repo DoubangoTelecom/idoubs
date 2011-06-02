@@ -32,6 +32,14 @@
 			<key>File</key>
 			<string>NATT</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Codecs</string>
+			<key>File</key>
+			<string>Codecs</string>
+		</dict>
 	</array>
 </dict>
 </plist>

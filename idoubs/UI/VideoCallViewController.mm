@@ -20,13 +20,18 @@
  */
 #import "VideoCallViewController.h"
 
+#import <QuartzCore/QuartzCore.h> /* cornerRadius... */
+
 #import "idoubs2AppDelegate.h"
 #import "idoubs2Constants.h"
 
 /*=== VideoCallViewController (Private) ===*/
 @interface VideoCallViewController(Private)
++(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_;
+-(void) showBottomView: (UIView*)view_ shouldRefresh:(BOOL)refresh;
+-(void) hideBottomView:(UIView*)view_;
+-(void) updateViewAndState;
 -(void) closeView;
--(void) updateStatus;
 @end
 /*=== VideoCallViewController (Timers) ===*/
 @interface VideoCallViewController (Timers)
@@ -44,43 +49,145 @@
 //
 @implementation VideoCallViewController(Private)
 
--(void) closeView{
-	idoubs2AppDelegate* appDelegate = (idoubs2AppDelegate*) [[UIApplication sharedApplication] delegate];
-	[appDelegate.tabBarController dismissModalViewControllerAnimated: NO];
++(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_{
+	for(CALayer *ly in view_.layer.sublayers){
+		if([ly isKindOfClass: [CAGradientLayer class]]){
+			[ly removeFromSuperlayer];
+			break;
+		}
+	}
+	
+	if(colors){
+		CAGradientLayer *gradient = [CAGradientLayer layer];
+		gradient.colors = colors;
+		gradient.frame = CGRectMake(0.f, 0.f, view_.frame.size.width, view_.frame.size.height);
+		
+		view_.backgroundColor = [UIColor clearColor];
+		[view_.layer insertSublayer:gradient atIndex:0];
+	}
 }
 
--(void) updateStatus{
+-(void) showBottomView: (UIView*)view_ shouldRefresh:(BOOL)refresh{
+	if(!view_.superview){
+		[self.view addSubview:view_];
+		refresh = YES;
+	}
+	
+	if(refresh){
+		CGRect frame = CGRectMake(0.f, self.view.frame.size.height - view_.frame.size.height, 
+								  self.view.frame.size.width, view_.frame.size.height);
+		view_.frame = frame;
+		[VideoCallViewController applyGradienWithColors:kColorsDarkBlack forView:view_];
+		if(view_ == self.viewPickHangUp){
+			// update content
+		}
+		else if(view_ == self.viewToolbar){
+			// update content
+			[VideoCallViewController applyGradienWithColors:self->sendingVideo?kColorsBlue:nil forView:self.buttonToolBarVideo];
+			[VideoCallViewController applyGradienWithColors:[videoSession isMuted]?kColorsBlue:nil forView:self.buttonToolBarMute];
+		}
+
+	}
+	view_.hidden = NO;
+}
+
+-(void) hideBottomView:(UIView*)view_{
+	view_.hidden = YES;
+}
+
+-(void) updateViewAndState{
 	if(videoSession){
 		switch (videoSession.state) {
 			case INVITE_STATE_INPROGRESS:
 			{
-				//labelStatus.text = @"Calling...";
+				self.viewTop.hidden = NO;
+				self.viewToolbar.hidden = NO;
+				self.labelStatus.text = @"Video Call...";
+				self.viewLocalVideo.hidden = YES;
+				
+				[self hideBottomView:self.viewToolbar];
+				
+				[self showBottomView:self.viewPickHangUp shouldRefresh:NO];
+				self.buttonPick.hidden = YES;
+				self.buttonHangUp.hidden = NO;
+				self.buttonHangUp.frame = CGRectMake(self.buttonHangUp.frame.origin.x, 
+													 self.buttonHangUp.frame.origin.y, 
+													 self.viewPickHangUp.frame.size.width - (2* self.buttonHangUp.frame.origin.x), 
+													 self.buttonHangUp.frame.size.height);
+				[self.buttonHangUp setTitle:@"End" forState:kButtonStateAll];
+				
 				break;
 			}
 			case INVITE_STATE_INCOMING:
 			{
-				//labelStatus.text = @"Incoming call...";
+				self.viewTop.hidden = NO;
+				self.viewLocalVideo.hidden = YES;
+				self.labelStatus.text = @"whould like Video Call...";
+				
+				[self hideBottomView:self.viewToolbar];
+				
+				[self showBottomView:self.viewPickHangUp shouldRefresh:NO];
+				self.buttonPick.hidden = NO;
+				[self.buttonPick setTitle:@"Accept" forState:kButtonStateAll];
+				self.buttonHangUp.hidden = NO;
+				self.buttonHangUp.frame = CGRectMake(self.buttonHangUp.frame.origin.x, 
+													 self.buttonHangUp.frame.origin.y, 
+													 self.buttonPick.frame.size.width, 
+													 self.buttonHangUp.frame.size.height);
+				[self.buttonHangUp setTitle:@"Decline" forState:kButtonStateAll];
+				
 				break;
 			}
 			case INVITE_STATE_REMOTE_RINGING:
 			{
-				//labelStatus.text = @"Remote is ringing";
+				self.viewTop.hidden = NO;
+				self.viewLocalVideo.hidden = YES;
+				self.labelStatus.text = @"Video Call...";
+				
+				[self hideBottomView:self.viewToolbar];
+				
+				[self showBottomView:self.viewPickHangUp shouldRefresh:NO];
+				self.buttonPick.hidden = YES;
+				self.buttonHangUp.hidden = NO;
+				self.buttonHangUp.frame = CGRectMake(self.buttonHangUp.frame.origin.x, 
+													 self.buttonHangUp.frame.origin.y, 
+													 self.viewPickHangUp.frame.size.width - (2* self.buttonHangUp.frame.origin.x), 
+													 self.buttonHangUp.frame.size.height);
+				[self.buttonHangUp setTitle:@"End" forState:kButtonStateAll];
+				break;
 			}
 			case INVITE_STATE_INCALL:
 			{
-				//labelStatus.text = @"In Call";
+				self.viewTop.hidden = YES;
+				self.viewLocalVideo.hidden = NO;
+				
+				[self showBottomView:self.viewToolbar shouldRefresh:NO];
+				
+				[self hideBottomView:self.viewPickHangUp];
+				
 				break;
 			}
 			case INVITE_STATE_TERMINATED:
 			case INVITE_STATE_TERMINATING:
 			{
-				//labelStatus.text = @"Terminating...";
+				self.viewTop.hidden = NO;
+				self.labelStatus.text = @"Terminating...";
+				self.viewLocalVideo.hidden = YES;
+				
+				[self hideBottomView:self.viewToolbar];
+				
+				[self hideBottomView:self.viewPickHangUp];
 				break;
 			}
 			default:
 				break;
 		}
 	}
+}
+
+-(void) closeView{
+	[NgnCamera setPreview:nil];
+	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated: NO];
 }
 
 @end
@@ -105,17 +212,29 @@
 		default:
 		{
 			// updates status info
-			[self updateStatus];
+			[self updateViewAndState];
+			
+			// video session
+			[NgnCamera setPreview:imageViewRemoteVideo];
+			if(sendingVideo){
+				[videoSession setRemoteVideoDisplay: nil];
+				[videoSession setLocalVideoDisplay: nil];
+			}
 			break;
 		}
 			
 		case INVITE_EVENT_CONNECTED:
 		case INVITE_EVENT_EARLY_MEDIA:
 		{
-			[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
+			// updates status info
+			[self updateViewAndState];
+			
+			// video session
 			if(sendingVideo){
+				[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
 				[videoSession setLocalVideoDisplay: viewLocalVideo];
 			}
+			[NgnCamera setPreview:nil];
 			break;
 		}
 
@@ -123,11 +242,16 @@
 		case INVITE_EVENT_TERMINATED:
 		case INVITE_EVENT_TERMWAIT:
 		{
-			[videoSession setRemoteVideoDisplay: nil];
-			[videoSession setLocalVideoDisplay: nil];
-			
 			// updates status info
-			[self updateStatus];
+			[self updateViewAndState];
+			
+			// video session
+			if(videoSession){
+				[videoSession setRemoteVideoDisplay: nil];
+				[videoSession setLocalVideoDisplay: nil];
+			}
+			[NgnCamera setPreview:imageViewRemoteVideo];
+			
 			// releases session
 			[NgnAVSession releaseSession: &videoSession];
 			// starts timer suicide
@@ -161,11 +285,31 @@
 
 @implementation VideoCallViewController
 
+@synthesize imageViewRemoteVideo;
+@synthesize viewLocalVideo;
+@synthesize barItemVideoOnOff;
+
+@synthesize viewTop;
+@synthesize labelRemoteParty;
+@synthesize labelStatus;
+
+@synthesize viewToolbar;
+@synthesize buttonToolBarMute;
+@synthesize buttonToolBarEnd;
+@synthesize buttonToolBarSwitch;
+@synthesize buttonToolBarVideo;
+
+@synthesize viewPickHangUp;
+@synthesize buttonPick;
+@synthesize buttonHangUp;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 		self.modalPresentationStyle = UIModalPresentationFullScreen;
+		
+		self->sendingVideo = YES;
     }
     return self;
 }
@@ -174,10 +318,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	viewLocalVideo.layer.borderWidth = 2.f;
-	viewLocalVideo.layer.borderColor = [[UIColor whiteColor] CGColor];
-	viewLocalVideo.layer.cornerRadius = 0.f;
+	self.viewLocalVideo.layer.borderWidth = 2.f;
+	self.viewLocalVideo.layer.borderColor = [[UIColor whiteColor] CGColor];
+	self.viewLocalVideo.layer.cornerRadius = 0.f;
 	
+	self.buttonToolBarEnd.backgroundColor = 
+	self.buttonToolBarMute.backgroundColor =
+	self.buttonToolBarSwitch.backgroundColor =
+	self.buttonToolBarVideo.backgroundColor =
+	[UIColor clearColor];
+	
+	//[self.buttonToolBarMute setImage:[UIImage imageNamed:@"facetime_mute"] forState:UIControlStateNormal];
+	//[self.buttonToolBarEnd setImage:[UIImage imageNamed:@"facetime_hangup"] forState:UIControlStateNormal];
+	
+	// self.buttonPick.backgroundColor = self.buttonHangUp.backgroundColor = [UIColor clearColor];
+	self.buttonPick.layer.borderWidth = self.buttonHangUp.layer.borderWidth = 2.f;
+	self.buttonPick.layer.borderColor = self.buttonHangUp.layer.borderColor = [[UIColor grayColor] CGColor];
+	self.buttonPick.layer.cornerRadius = self.buttonHangUp.layer.cornerRadius = 8.f;
+	
+	// apply light-black gradiens
+	[VideoCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewTop];
+	
+	// listen to the events
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onInviteEvent:) name:kNgnInviteEventArgs_Name object:nil];
 }
@@ -187,8 +349,9 @@
 	videoSession = [[NgnAVSession getSessionWithId: self.sessionId] retain];
 	if(videoSession && [videoSession isConnected]){
 		[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
-		[videoSession setLocalVideoDisplay: viewLocalVideo];
+		[videoSession setLocalVideoDisplay: self.viewLocalVideo];
 	}
+	[self updateViewAndState];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -200,6 +363,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	[super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 	if(videoSession){
 		switch (interfaceOrientation) {
 			case UIInterfaceOrientationPortrait: [videoSession setOrientation: AVCaptureVideoOrientationPortrait]; break;
@@ -208,7 +372,18 @@
 			case UIInterfaceOrientationLandscapeRight: [videoSession setOrientation: AVCaptureVideoOrientationLandscapeLeft]; break;
 		}
 	}
+	
     return YES;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+	if(!self.viewToolbar.hidden){
+		[self showBottomView:self.viewToolbar shouldRefresh:YES];
+	}
+	if(!self.viewPickHangUp.hidden){
+		[self showBottomView:self.viewPickHangUp shouldRefresh:YES];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -224,23 +399,44 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (IBAction) onButtonHangUpClick: (id)sender{
-	if(videoSession){
+- (IBAction) onButtonClick: (id)sender{
+	if(videoSession && sender == self.buttonToolBarVideo){
+		sendingVideo = !sendingVideo;
+		[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo : nil];
+		[self showBottomView:self.viewToolbar shouldRefresh:YES];
+	}
+	else if(videoSession && sender == self.buttonToolBarMute){
+		[videoSession setMute:![videoSession isMuted]];
+		[self showBottomView:self.viewToolbar shouldRefresh:YES];
+	}
+
+	else if(videoSession && sender == self.buttonToolBarEnd || sender == self.buttonHangUp) {
 		[videoSession hangUpCall];
 	}
-}
-
-- (IBAction) onButtonVideoOnOffClick: (id)sender{
-	if(videoSession){
-		if(videoSession){
-			sendingVideo = !sendingVideo;
-			[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo : nil];
-			barItemVideoOnOff.style = sendingVideo ? UIBarButtonItemStyleDone : UIBarButtonItemStyleBordered;
-		}
+	else if(videoSession && sender == self.buttonPick){
+		[videoSession acceptCall];
 	}
 }
 
 - (void)dealloc {
+	[self.imageViewRemoteVideo release];
+	[self.viewLocalVideo release];
+	[self.barItemVideoOnOff release];
+	
+	[self.viewToolbar release];
+	[self.labelRemoteParty release];
+	[self.labelStatus release];
+	
+	[self.viewTop release];
+	[self.buttonToolBarMute release];
+	[self.buttonToolBarEnd release];
+	[self.buttonToolBarSwitch release];
+	[self.buttonToolBarVideo release];
+	
+	[self.viewPickHangUp release];
+	[self.buttonPick release];
+	[self.buttonHangUp release];
+	
     [super dealloc];
 }
 
