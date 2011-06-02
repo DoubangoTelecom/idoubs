@@ -7,7 +7,7 @@
 		activeSDKPreference = iphoneos4.3;
 		activeTarget = EC83BA26136990DA00DD3355 /* testVideoCall */;
 		addToTargets = (
-			D2AAC07D0554694100DB518D /* ios-ngn-stack */,
+			ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */,
 		);
 		breakpoints = (
 		);
@@ -87,7 +87,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					863,
+					842,
 					20,
 					48,
 					43,
@@ -149,7 +149,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					823,
+					802,
 					60,
 					20,
 					48,
@@ -166,32 +166,26 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 328406600;
-			PBXWorkspaceStateSaveDate = 328406600;
+			PBXPerProjectTemplateStateSaveDate = 328719498;
+			PBXWorkspaceStateSaveDate = 328719498;
 		};
 		perUserProjectItems = {
-			EC9072311392BB6100E14556 /* PBXTextBookmark */ = EC9072311392BB6100E14556 /* PBXTextBookmark */;
-			EC90727C1392BF4700E14556 /* PBXTextBookmark */ = EC90727C1392BF4700E14556 /* PBXTextBookmark */;
-			EC9072BB1392C1D900E14556 /* PBXTextBookmark */ = EC9072BB1392C1D900E14556 /* PBXTextBookmark */;
-			EC9072F71392C5F700E14556 /* PBXTextBookmark */ = EC9072F71392C5F700E14556 /* PBXTextBookmark */;
-			EC9072F81392C5F700E14556 /* PBXTextBookmark */ = EC9072F81392C5F700E14556 /* PBXTextBookmark */;
-			EC90740B1392EA1D00E14556 /* PBXTextBookmark */ = EC90740B1392EA1D00E14556 /* PBXTextBookmark */;
-			EC90740C1392EA1D00E14556 /* PBXTextBookmark */ = EC90740C1392EA1D00E14556 /* PBXTextBookmark */;
-			EC90740D1392EA1D00E14556 /* PBXTextBookmark */ = EC90740D1392EA1D00E14556 /* PBXTextBookmark */;
-			EC90740E1392EA1D00E14556 /* PBXTextBookmark */ = EC90740E1392EA1D00E14556 /* PBXTextBookmark */;
-			EC90740F1392EA1D00E14556 /* PBXTextBookmark */ = EC90740F1392EA1D00E14556 /* PBXTextBookmark */;
-			EC9074341392FE7B00E14556 /* PBXTextBookmark */ = EC9074341392FE7B00E14556 /* PBXTextBookmark */;
-			EC9075FD13931B5E00E14556 /* PBXTextBookmark */ = EC9075FD13931B5E00E14556 /* PBXTextBookmark */;
-			EC9075FE13931B5E00E14556 /* PBXTextBookmark */ = EC9075FE13931B5E00E14556 /* PBXTextBookmark */;
-			EC9075FF13931B5E00E14556 /* PBXTextBookmark */ = EC9075FF13931B5E00E14556 /* PBXTextBookmark */;
-			EC90760013931B5E00E14556 /* PBXTextBookmark */ = EC90760013931B5E00E14556 /* PBXTextBookmark */;
-			EC90760113931B5E00E14556 /* PBXTextBookmark */ = EC90760113931B5E00E14556 /* PBXTextBookmark */;
-			EC90760213931B5E00E14556 /* PBXTextBookmark */ = EC90760213931B5E00E14556 /* PBXTextBookmark */;
-			EC90760313931B5E00E14556 /* PBXTextBookmark */ = EC90760313931B5E00E14556 /* PBXTextBookmark */;
-			EC90763A139320E600E14556 /* PBXTextBookmark */ = EC90763A139320E600E14556 /* PBXTextBookmark */;
-			EC90763C139320E600E14556 /* PBXTextBookmark */ = EC90763C139320E600E14556 /* PBXTextBookmark */;
-			EC90763D139320E600E14556 /* PBXTextBookmark */ = EC90763D139320E600E14556 /* PBXTextBookmark */;
-			EC90763E139320E600E14556 /* PBXTextBookmark */ = EC90763E139320E600E14556 /* PBXTextBookmark */;
+			EC7D06311397E3A30066943C /* PBXTextBookmark */ = EC7D06311397E3A30066943C /* PBXTextBookmark */;
+			EC7D06321397E3A30066943C /* PBXTextBookmark */ = EC7D06321397E3A30066943C /* PBXTextBookmark */;
+			EC7D06331397E3A30066943C /* PBXTextBookmark */ = EC7D06331397E3A30066943C /* PBXTextBookmark */;
+			EC7D06341397E3A30066943C /* PBXTextBookmark */ = EC7D06341397E3A30066943C /* PBXTextBookmark */;
+			EC7D06351397E3A30066943C /* PBXTextBookmark */ = EC7D06351397E3A30066943C /* PBXTextBookmark */;
+			EC7D9B4413971ABF006A8F91 = EC7D9B4413971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B4513971ABF006A8F91 = EC7D9B4513971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B4613971ABF006A8F91 = EC7D9B4613971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B4713971ABF006A8F91 = EC7D9B4713971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B4813971ABF006A8F91 = EC7D9B4813971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B4913971ABF006A8F91 = EC7D9B4913971ABF006A8F91 /* PBXTextBookmark */;
+			EC7D9B5213971BB9006A8F91 = EC7D9B5213971BB9006A8F91 /* PBXTextBookmark */;
+			EC7D9B5C13971C19006A8F91 = EC7D9B5C13971C19006A8F91 /* PBXTextBookmark */;
+			EC7D9B6B13971CE8006A8F91 = EC7D9B6B13971CE8006A8F91 /* PBXTextBookmark */;
+			EC7D9B7513971D3D006A8F91 = EC7D9B7513971D3D006A8F91 /* PBXTextBookmark */;
+			EC7D9B8513972E92006A8F91 = EC7D9B8513972E92006A8F91 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD2399135D510C00E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -214,6 +208,56 @@
 			sepNavVisRange = "{0, 1374}";
 		};
 	};
+	EC7D06311397E3A30066943C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */;
+		name = "NgnConfigurationService.mm: 19";
+		rLen = 0;
+		rLoc = 972;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	EC7D06321397E3A30066943C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */;
+		name = "NgnConfigurationService.h: 17";
+		rLen = 0;
+		rLoc = 857;
+		rType = 0;
+		vrLen = 1239;
+		vrLoc = 0;
+	};
+	EC7D06331397E3A30066943C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD2FAF135E7D8900E6A9A3 /* tsip_dialog_invite.client.c */;
+		name = "tsip_dialog_invite.client.c: 189";
+		rLen = 0;
+		rLoc = 8240;
+		rType = 0;
+		vrLen = 2330;
+		vrLoc = 3120;
+	};
+	EC7D06341397E3A30066943C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */;
+		name = "tsip_dialog_invite.c: 671";
+		rLen = 42;
+		rLoc = 25221;
+		rType = 0;
+		vrLen = 1610;
+		vrLoc = 25266;
+	};
+	EC7D06351397E3A30066943C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */;
+		name = "tsip_dialog_invite.c: 671";
+		rLen = 42;
+		rLoc = 25221;
+		rType = 0;
+		vrLen = 1809;
+		vrLoc = 25266;
+	};
 	EC7D386913798AC30052CE45 /* NgnMessagingSession.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 936}}";
@@ -223,9 +267,9 @@
 	};
 	EC7D386A13798AC30052CE45 /* NgnMessagingSession.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 2977}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{1274, 1026}";
+			sepNavIntBoundsRect = "{{0, 0}, {1468, 2769}}";
+			sepNavSelRange = "{4755, 127}";
+			sepNavVisRange = "{4446, 1708}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};
 	};
@@ -247,7 +291,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 585}}";
 			sepNavSelRange = "{1040, 21}";
-			sepNavVisRange = "{441, 1591}";
+			sepNavVisRange = "{343, 1689}";
 		};
 	};
 	EC7D39501379ED2A0052CE45 /* testMessaging */ = {
@@ -304,10 +348,153 @@
 	};
 	EC7D39631379ED7E0052CE45 /* TestMessaging.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 3302}}";
-			sepNavSelRange = "{3293, 1360}";
-			sepNavVisRange = "{3377, 1382}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 3276}}";
+			sepNavSelRange = "{7511, 27}";
+			sepNavVisRange = "{7109, 1139}";
 		};
+	};
+	EC7D98E01396A619006A8F91 /* NgnCamera.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 559}}";
+			sepNavSelRange = "{1024, 0}";
+			sepNavVisRange = "{107, 1252}";
+		};
+	};
+	EC7D98E11396A619006A8F91 /* NgnCamera.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1755}}";
+			sepNavSelRange = "{2934, 0}";
+			sepNavVisRange = "{1904, 973}";
+		};
+	};
+	EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 518}}";
+			sepNavSelRange = "{907, 138}";
+			sepNavVisRange = "{0, 1084}";
+		};
+	};
+	EC7D9AF813970960006A8F91 /* tmedia_defaults.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 518}}";
+			sepNavSelRange = "{763, 38}";
+			sepNavVisRange = "{0, 1018}";
+		};
+	};
+	EC7D9B4413971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31EC135E7DBC00E6A9A3 /* tdav_codec_mp4ves.c */;
+		name = "tdav_codec_mp4ves.c: 421";
+		rLen = 0;
+		rLoc = 13282;
+		rType = 0;
+		vrLen = 1180;
+		vrLoc = 12336;
+	};
+	EC7D9B4513971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200921360E2BD00B0BFEB /* NgnContactService.mm */;
+		name = "NgnContactService.mm: 38";
+		rLen = 0;
+		rLoc = 1517;
+		rType = 0;
+		vrLen = 1114;
+		vrLoc = 1138;
+	};
+	EC7D9B4613971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200911360E2BD00B0BFEB /* NgnContactService.h */;
+		name = "NgnContactService.h: 36";
+		rLen = 22;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 0;
+	};
+	EC7D9B4713971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD3434135EB27500E6A9A3 /* NgnNotificationCenter.m */;
+		name = "NgnNotificationCenter.m: 20";
+		rLen = 0;
+		rLoc = 974;
+		rType = 0;
+		vrLen = 1812;
+		vrLoc = 0;
+	};
+	EC7D9B4813971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */;
+		name = "NgnConfigurationService.h: 28";
+		rLen = 0;
+		rLoc = 1231;
+		rType = 0;
+		vrLen = 1239;
+		vrLoc = 0;
+	};
+	EC7D9B4913971ABF006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */;
+		name = "NgnConfigurationEntry.h: 179";
+		rLen = 556;
+		rLoc = 6978;
+		rType = 0;
+		vrLen = 1563;
+		vrLoc = 6263;
+	};
+	EC7D9B5213971BB9006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD32D2135E824700E6A9A3 /* SipStack.h */;
+		name = "SipStack.h: 84";
+		rLen = 49;
+		rLoc = 2905;
+		rType = 0;
+		vrLen = 1202;
+		vrLoc = 2304;
+	};
+	EC7D9B5C13971C19006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC81BDE8136C73DF0068BCB4 /* tdav_consumer_audiounit.c */;
+		name = "tdav_consumer_audiounit.c: 29";
+		rLen = 0;
+		rLoc = 1094;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 1902;
+	};
+	EC7D9B6213971C3A006A8F91 /* NSUserDefaults.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSUserDefaults.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserDefaults.h;
+		sourceTree = "<absolute>";
+	};
+	EC7D9B6B13971CE8006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7D9B6213971C3A006A8F91 /* NSUserDefaults.h */;
+		name = "NSUserDefaults.h: 73";
+		rLen = 72;
+		rLoc = 2560;
+		rType = 0;
+		vrLen = 1757;
+		vrLoc = 536;
+	};
+	EC7D9B7513971D3D006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'codecs' was not declared in this scope";
+		fRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */;
+		rLen = 1;
+		rLoc = 85;
+		rType = 1;
+	};
+	EC7D9B8513972E92006A8F91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */;
+		name = "NgnConfigurationService.mm: 74";
+		rLen = 0;
+		rLoc = 2527;
+		rType = 0;
+		vrLen = 1336;
+		vrLoc = 0;
 	};
 	EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {
 		uiCtxt = {
@@ -332,9 +519,9 @@
 	};
 	EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1608, 3289}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1608, 3029}}";
 			sepNavSelRange = "{106, 55}";
-			sepNavVisRange = "{0, 1272}";
+			sepNavVisRange = "{1704, 1457}";
 		};
 	};
 	EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */ = {
@@ -398,16 +585,17 @@
 	};
 	EC81BDE6136C73CF0068BCB4 /* tdav_consumer_audiounit.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 858}}";
-			sepNavSelRange = "{1183, 0}";
-			sepNavVisRange = "{1043, 659}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 897}}";
+			sepNavSelRange = "{1534, 9}";
+			sepNavVisRange = "{860, 821}";
 		};
 	};
 	EC81BDE8136C73DF0068BCB4 /* tdav_consumer_audiounit.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1244, 4953}}";
-			sepNavSelRange = "{7404, 0}";
-			sepNavVisRange = "{0, 1394}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = \"uint32_t frame_duration\";\n            r = \"{5116, 27}\";\n            s = 1;\n        },\n                {\n            l = \"uint32_t channels\";\n            r = \"{5145, 21}\";\n            s = 1;\n        },\n                {\n            l = \"uint32_t quality\";\n            r = \"{5168, 20}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 12738}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1358, 5109}}";
+			sepNavSelRange = "{1094, 0}";
+			sepNavVisRange = "{1902, 831}";
 		};
 	};
 	EC81BDEA136C73F70068BCB4 /* tdav_producer_audiounit.h */ = {
@@ -419,23 +607,23 @@
 	};
 	EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1244, 6071}}";
-			sepNavSelRange = "{5535, 0}";
-			sepNavVisRange = "{5288, 1329}";
+			sepNavIntBoundsRect = "{{0, 0}, {1244, 5733}}";
+			sepNavSelRange = "{9705, 0}";
+			sepNavVisRange = "{7691, 1676}";
 		};
 	};
 	EC81BDEE136C74220068BCB4 /* tdav_audiounit.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 650}}";
-			sepNavSelRange = "{957, 0}";
-			sepNavVisRange = "{756, 965}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 663}}";
+			sepNavSelRange = "{1503, 79}";
+			sepNavVisRange = "{480, 1321}";
 		};
 	};
 	EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 3692}}";
-			sepNavSelRange = "{5686, 41}";
-			sepNavVisRange = "{0, 1304}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 3952}}";
+			sepNavSelRange = "{4927, 0}";
+			sepNavVisRange = "{6860, 1125}";
 		};
 	};
 	EC824AED136ECE9F004FC3A8 /* tdav_apple.h */ = {
@@ -447,9 +635,9 @@
 	};
 	EC83B77C1369768A00DD3355 /* iOSNgnStack.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 780}}";
-			sepNavSelRange = "{1508, 0}";
-			sepNavVisRange = "{691, 1181}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 793}}";
+			sepNavSelRange = "{1931, 0}";
+			sepNavVisRange = "{977, 958}";
 		};
 	};
 	EC83BA13136990B700DD3355 /* testRegistration */ = {
@@ -643,9 +831,9 @@
 	};
 	EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 486}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1132}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 481}}";
+			sepNavSelRange = "{1181, 0}";
+			sepNavVisRange = "{0, 1319}";
 		};
 	};
 	EC83FF141380911100060A9D /* NgnHistoryEventArgs.h */ = {
@@ -692,238 +880,6 @@
 	};
 	EC8EBCDD136832D600DC70DF /* Doubango */ = {
 		activeExec = 0;
-	};
-	EC9072311392BB6100E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC9072321392BB6100E14556 /* MacTypes.h */;
-		name = "MacTypes.h: 270";
-		rLen = 50;
-		rLoc = 9992;
-		rType = 0;
-		vrLen = 2397;
-		vrLoc = 9128;
-	};
-	EC9072321392BB6100E14556 /* MacTypes.h */ = {
-		isa = PBXFileReference;
-		name = MacTypes.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/MacTypes.h;
-		sourceTree = "<absolute>";
-	};
-	EC90727C1392BF4700E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200961360E2D200B0BFEB /* NgnHistoryService.mm */;
-		name = "NgnHistoryService.mm: 311";
-		rLen = 0;
-		rLoc = 9151;
-		rType = 0;
-		vrLen = 518;
-		vrLoc = 6253;
-	};
-	EC9072BB1392C1D900E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200A51360E32100B0BFEB /* NgnStorageService.h */;
-		name = "NgnStorageService.h: 29";
-		rLen = 0;
-		rLoc = 1227;
-		rType = 0;
-		vrLen = 1306;
-		vrLoc = 0;
-	};
-	EC9072F71392C5F700E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF201281360F83D00B0BFEB /* NgnAVSession.h */;
-		name = "NgnAVSession.h: 81";
-		rLen = 19;
-		rLoc = 3170;
-		rType = 0;
-		vrLen = 1798;
-		vrLoc = 1618;
-	};
-	EC9072F81392C5F700E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF201291360F83D00B0BFEB /* NgnAVSession.mm */;
-		name = "NgnAVSession.mm: 489";
-		rLen = 0;
-		rLoc = 13774;
-		rType = 0;
-		vrLen = 1226;
-		vrLoc = 12998;
-	};
-	EC90740B1392EA1D00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200F11360ED1700B0BFEB /* NgnSipService.mm */;
-		name = "NgnSipService.mm: 394";
-		rLen = 0;
-		rLoc = 15436;
-		rType = 0;
-		vrLen = 1235;
-		vrLoc = 14732;
-	};
-	EC90740C1392EA1D00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECFD3317135E868300E6A9A3 /* NgnSipSession.h */;
-		name = "NgnSipSession.h: 28";
-		rLen = 112;
-		rLoc = 1094;
-		rType = 0;
-		vrLen = 1309;
-		vrLoc = 1093;
-	};
-	EC90740D1392EA1D00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECFD23E5135D545100E6A9A3 /* INgnSoundService.h */;
-		name = "INgnSoundService.h: 28";
-		rLen = 25;
-		rLoc = 1128;
-		rType = 0;
-		vrLen = 1353;
-		vrLoc = 0;
-	};
-	EC90740E1392EA1D00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200A11360E31200B0BFEB /* NgnSoundService.h */;
-		name = "NgnSoundService.h: 36";
-		rLen = 9;
-		rLoc = 1428;
-		rType = 0;
-		vrLen = 1447;
-		vrLoc = 0;
-	};
-	EC90740F1392EA1D00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200A21360E31200B0BFEB /* NgnSoundService.mm */;
-		name = "NgnSoundService.mm: 102";
-		rLen = 0;
-		rLoc = 2371;
-		rType = 0;
-		vrLen = 950;
-		vrLoc = 1809;
-	};
-	EC9074341392FE7B00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200A21360E31200B0BFEB /* NgnSoundService.mm */;
-		name = "NgnSoundService.mm: 95";
-		rLen = 23;
-		rLoc = 2122;
-		rType = 0;
-		vrLen = 948;
-		vrLoc = 1853;
-	};
-	EC9075FD13931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200A21360E31200B0BFEB /* NgnSoundService.mm */;
-		name = "NgnSoundService.mm: 95";
-		rLen = 23;
-		rLoc = 2122;
-		rType = 0;
-		vrLen = 973;
-		vrLoc = 1852;
-	};
-	EC9075FE13931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */;
-		name = "NgnConfigurationEntry.h: 128";
-		rLen = 0;
-		rLoc = 4936;
-		rType = 0;
-		vrLen = 1503;
-		vrLoc = 4551;
-	};
-	EC9075FF13931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECFD2A17135E7B8500E6A9A3 /* tnet_transport_poll.c */;
-		name = "tnet_transport_poll.c: 38";
-		rLen = 0;
-		rLoc = 1082;
-		rType = 0;
-		vrLen = 847;
-		vrLoc = 775;
-	};
-	EC90760013931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */;
-		name = "tnet_transport_cfsocket.c: 39";
-		rLen = 0;
-		rLoc = 1305;
-		rType = 0;
-		vrLen = 1349;
-		vrLoc = 0;
-	};
-	EC90760113931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */;
-		name = "tdav_producer_audiounit.c: 168";
-		rLen = 0;
-		rLoc = 5875;
-		rType = 0;
-		vrLen = 1338;
-		vrLoc = 5503;
-	};
-	EC90760213931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
-		name = "tdav_audiounit.c: 136";
-		rLen = 0;
-		rLoc = 3924;
-		rType = 0;
-		vrLen = 1699;
-		vrLoc = 4536;
-	};
-	EC90760313931B5E00E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
-		name = "tdav_audiounit.c: 169";
-		rLen = 36;
-		rLoc = 5531;
-		rType = 0;
-		vrLen = 1707;
-		vrLoc = 4536;
-	};
-	EC90763A139320E600E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC90763B139320E600E14556 /* speex_buffer.h */;
-		name = "speex_buffer.h: 54";
-		rLen = 61;
-		rLoc = 1968;
-		rType = 0;
-		vrLen = 1314;
-		vrLoc = 837;
-	};
-	EC90763B139320E600E14556 /* speex_buffer.h */ = {
-		isa = PBXFileReference;
-		name = speex_buffer.h;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/thirdparties/iphone/include/speex/speex_buffer.h;
-		sourceTree = "<absolute>";
-	};
-	EC90763C139320E600E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDEC136C74090068BCB4 /* tdav_producer_audiounit.c */;
-		name = "tdav_producer_audiounit.c: 156";
-		rLen = 0;
-		rLoc = 5535;
-		rType = 0;
-		vrLen = 1329;
-		vrLoc = 5288;
-	};
-	EC90763D139320E600E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
-		name = "tdav_audiounit.c: 170";
-		rLen = 0;
-		rLoc = 5630;
-		rType = 0;
-		vrLen = 1707;
-		vrLoc = 4536;
-	};
-	EC90763E139320E600E14556 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
-		name = "tdav_audiounit.c: 171";
-		rLen = 41;
-		rLoc = 5686;
-		rType = 0;
-		vrLen = 1893;
-		vrLoc = 4099;
 	};
 	EC94DFD9138317AD005B2C1B /* NgnUriUtils.mm */ = {
 		uiCtxt = {
@@ -1074,103 +1030,103 @@
 	};
 	ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 767}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 676}}";
 			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1213}";
+			sepNavVisRange = "{0, 1215}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};
 	};
 	ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 910}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 975}}";
 			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1281}";
+			sepNavVisRange = "{1055, 683}";
 		};
 	};
 	ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 494}}";
 			sepNavSelRange = "{976, 0}";
-			sepNavVisRange = "{0, 1220}";
+			sepNavVisRange = "{0, 1222}";
 		};
 	};
 	ECDDB5DD137C00330027105F /* NgnProxyPluginMgr.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 2678}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1286}";
+			sepNavSelRange = "{3783, 0}";
+			sepNavVisRange = "{4162, 1000}";
 		};
 	};
 	ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 819}}";
-			sepNavSelRange = "{1770, 12}";
-			sepNavVisRange = "{1143, 910}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 832}}";
+			sepNavSelRange = "{1289, 0}";
+			sepNavVisRange = "{999, 1063}";
 		};
 	};
 	ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 5837}}";
-			sepNavSelRange = "{10977, 0}";
-			sepNavVisRange = "{0, 1258}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 5356}}";
+			sepNavSelRange = "{2965, 0}";
+			sepNavVisRange = "{2716, 1066}";
 		};
 	};
 	ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 676}}";
-			sepNavSelRange = "{1590, 0}";
-			sepNavVisRange = "{757, 871}";
+			sepNavSelRange = "{0, 1023}";
+			sepNavVisRange = "{0, 1364}";
 		};
 	};
 	ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 3692}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1300}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 3861}}";
+			sepNavSelRange = "{3855, 0}";
+			sepNavVisRange = "{7065, 936}";
 		};
 	};
 	ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 11219}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 11245}}";
 			sepNavSelRange = "{1305, 0}";
-			sepNavVisRange = "{0, 1349}";
+			sepNavVisRange = "{0, 1491}";
 			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
 		};
 	};
 	ECF200841360D9EA00B0BFEB /* NgnConfigurationEntry.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 2704}}";
-			sepNavSelRange = "{4936, 0}";
-			sepNavVisRange = "{4551, 1503}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 3055}}";
+			sepNavSelRange = "{6978, 556}";
+			sepNavVisRange = "{6263, 1563}";
 		};
 	};
 	ECF2008B1360E01500B0BFEB /* NgnConfigurationService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 472}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1235}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 504}}";
+			sepNavSelRange = "{857, 0}";
+			sepNavVisRange = "{0, 1239}";
 		};
 	};
 	ECF2008C1360E01500B0BFEB /* NgnConfigurationService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1104, 1872}}";
-			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{3557, 662}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 2626}}";
+			sepNavSelRange = "{972, 0}";
+			sepNavVisRange = "{0, 1337}";
 			sepNavWindowFrame = "{{245, 105}, {750, 558}}";
 		};
 	};
 	ECF200911360E2BD00B0BFEB /* NgnContactService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 559}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 559}}";
 			sepNavSelRange = "{1331, 22}";
-			sepNavVisRange = "{0, 1407}";
+			sepNavVisRange = "{0, 1399}";
 		};
 	};
 	ECF200921360E2BD00B0BFEB /* NgnContactService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 2639}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 2665}}";
 			sepNavSelRange = "{1517, 0}";
-			sepNavVisRange = "{1138, 1228}";
+			sepNavVisRange = "{1138, 1114}";
 		};
 	};
 	ECF200951360E2D200B0BFEB /* NgnHistoryService.h */ = {
@@ -1245,16 +1201,16 @@
 	};
 	ECF200AA1360E34C00B0BFEB /* INgnSipService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 494}}";
-			sepNavSelRange = "{1279, 0}";
-			sepNavVisRange = "{107, 1337}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 520}}";
+			sepNavSelRange = "{1108, 336}";
+			sepNavVisRange = "{0, 1444}";
 		};
 	};
 	ECF200EA1360E9EB00B0BFEB /* NgnEngine.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 923}}";
-			sepNavSelRange = "{1550, 0}";
-			sepNavVisRange = "{251, 1830}";
+			sepNavSelRange = "{2574, 97}";
+			sepNavVisRange = "{1377, 1835}";
 		};
 	};
 	ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {
@@ -1274,23 +1230,23 @@
 	};
 	ECF200F11360ED1700B0BFEB /* NgnSipService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1216, 11934}}";
-			sepNavSelRange = "{15436, 0}";
-			sepNavVisRange = "{14732, 1235}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 11687}}";
+			sepNavSelRange = "{15531, 0}";
+			sepNavVisRange = "{14823, 1514}";
 		};
 	};
 	ECF201281360F83D00B0BFEB /* NgnAVSession.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 1118}}";
-			sepNavSelRange = "{3170, 19}";
-			sepNavVisRange = "{1618, 1798}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 1157}}";
+			sepNavSelRange = "{2543, 0}";
+			sepNavVisRange = "{1713, 1644}";
 		};
 	};
 	ECF201291360F83D00B0BFEB /* NgnAVSession.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1223, 6695}}";
-			sepNavSelRange = "{13774, 0}";
-			sepNavVisRange = "{12998, 1226}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 7202}}";
+			sepNavSelRange = "{10955, 0}";
+			sepNavVisRange = "{10372, 1007}";
 		};
 	};
 	ECF2012C1360F84E00B0BFEB /* NgnInviteSession.h */ = {
@@ -1400,9 +1356,9 @@
 	};
 	ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 472}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 481}}";
 			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1034}";
+			sepNavVisRange = "{0, 1036}";
 		};
 	};
 	ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */ = {
@@ -1414,8 +1370,8 @@
 	};
 	ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 491}}";
-			sepNavSelRange = "{974, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 520}}";
+			sepNavSelRange = "{1041, 467}";
 			sepNavVisRange = "{0, 1509}";
 		};
 	};
@@ -1428,8 +1384,8 @@
 	};
 	ECFD23D9135D541500E6A9A3 /* INgnHistoryService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 533}}";
-			sepNavSelRange = "{1360, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 574}}";
+			sepNavSelRange = "{1115, 509}";
 			sepNavVisRange = "{0, 1624}";
 		};
 	};
@@ -1456,9 +1412,9 @@
 	};
 	ECFD23E9135D546400E6A9A3 /* INgnStorageService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 546}}";
-			sepNavSelRange = "{1220, 7}";
-			sepNavVisRange = "{0, 1481}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 574}}";
+			sepNavSelRange = "{1120, 365}";
+			sepNavVisRange = "{0, 1485}";
 			sepNavWindowFrame = "{{15, 182}, {1667, 991}}";
 		};
 	};
@@ -1506,9 +1462,9 @@
 	};
 	ECFD290E135E7B5200E6A9A3 /* tsk_common.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1080, 923}}";
-			sepNavSelRange = "{1482, 85}";
-			sepNavVisRange = "{977, 972}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 936}}";
+			sepNavSelRange = "{1336, 0}";
+			sepNavVisRange = "{926, 1174}";
 		};
 	};
 	ECFD290F135E7B5200E6A9A3 /* tsk_condwait.c */ = {
@@ -1625,9 +1581,9 @@
 	};
 	ECFD292C135E7B5200E6A9A3 /* tsk_runnable.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 3081}}";
-			sepNavSelRange = "{5586, 0}";
-			sepNavVisRange = "{3543, 917}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 3120}}";
+			sepNavSelRange = "{4183, 44}";
+			sepNavVisRange = "{3493, 1130}";
 		};
 	};
 	ECFD292D135E7B5200E6A9A3 /* tsk_runnable.h */ = {
@@ -1770,19 +1726,33 @@
 			sepNavVisRange = "{0, 1781}";
 		};
 	};
+	ECFD2A13135E7B8500E6A9A3 /* tnet_socket.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1454, 4043}}";
+			sepNavSelRange = "{4278, 17}";
+			sepNavVisRange = "{3428, 1385}";
+		};
+	};
 	ECFD2A15135E7B8500E6A9A3 /* tnet_transport.c */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = \"void * \";\n            r = \"{1363, 11}\";\n            s = 1;\n        },\n                {\n            l = \"const void * \";\n            r = \"{1376, 17}\";\n            s = 1;\n        },\n                {\n            l = \"tsk_size_t \";\n            r = \"{1395, 15}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 13334}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 6305}}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = \"void * \";\n            r = \"{1363, 11}\";\n            s = 1;\n        },\n                {\n            l = \"const void * \";\n            r = \"{1376, 17}\";\n            s = 1;\n        },\n                {\n            l = \"tsk_size_t \";\n            r = \"{1395, 15}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 13340}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 6227}}";
+			sepNavSelRange = "{9609, 24}";
+			sepNavVisRange = "{533, 1597}";
+		};
+	};
+	ECFD2A16135E7B8500E6A9A3 /* tnet_transport.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1188, 1872}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1208}";
+			sepNavVisRange = "{3739, 1421}";
 		};
 	};
 	ECFD2A17135E7B8500E6A9A3 /* tnet_transport_poll.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 10972}}";
-			sepNavSelRange = "{1082, 0}";
-			sepNavVisRange = "{775, 846}";
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 10933}}";
+			sepNavSelRange = "{13945, 0}";
+			sepNavVisRange = "{13616, 612}";
 		};
 	};
 	ECFD2A18135E7B8500E6A9A3 /* tnet_transport_win32.c */ = {
@@ -1794,9 +1764,9 @@
 	};
 	ECFD2A1A135E7B8500E6A9A3 /* tnet_utils.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 20605}}";
-			sepNavSelRange = "{36435, 0}";
-			sepNavVisRange = "{36659, 1198}";
+			sepNavIntBoundsRect = "{{0, 0}, {1573, 20982}}";
+			sepNavSelRange = "{42966, 15}";
+			sepNavVisRange = "{42366, 771}";
 		};
 	};
 	ECFD2A9F135E7BAF00E6A9A3 /* sdp.abnf */ = {
@@ -1850,9 +1820,9 @@
 	};
 	ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 6539}}";
-			sepNavSelRange = "{11126, 0}";
-			sepNavVisRange = "{10794, 799}";
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 7501}}";
+			sepNavSelRange = "{14359, 0}";
+			sepNavVisRange = "{13675, 1111}";
 		};
 	};
 	ECFD2BE5135E7C3400E6A9A3 /* tmsrp_header_Authorization.c */ = {
@@ -1872,25 +1842,32 @@
 			sepNavVisRange = "{1702, 1259}";
 		};
 	};
+	ECFD2CF0135E7CAC00E6A9A3 /* tmedia.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1586}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1068}";
+		};
+	};
 	ECFD2CF1135E7CAC00E6A9A3 /* tmedia_codec.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1118, 4212}}";
-			sepNavSelRange = "{4578, 0}";
-			sepNavVisRange = "{5790, 1328}";
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 4082}}";
+			sepNavSelRange = "{891, 115}";
+			sepNavVisRange = "{163, 1106}";
 		};
 	};
 	ECFD2CF2135E7CAC00E6A9A3 /* tmedia_codec_dummy.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 1027}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1027}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1185, 803}";
+			sepNavVisRange = "{1068, 920}";
 		};
 	};
 	ECFD2CF3135E7CAC00E6A9A3 /* tmedia_common.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 1586}}";
-			sepNavSelRange = "{2322, 65}";
-			sepNavVisRange = "{1736, 1087}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1573}}";
+			sepNavSelRange = "{2795, 22}";
+			sepNavVisRange = "{1936, 1261}";
 		};
 	};
 	ECFD2CF4135E7CAC00E6A9A3 /* tmedia_consumer.h */ = {
@@ -1907,11 +1884,25 @@
 			sepNavVisRange = "{1393, 1843}";
 		};
 	};
+	ECFD2CF7135E7CAC00E6A9A3 /* tmedia_params.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1560}}";
+			sepNavSelRange = "{1510, 20}";
+			sepNavVisRange = "{1062, 842}";
+		};
+	};
 	ECFD2CF8135E7CAC00E6A9A3 /* tmedia_producer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 1768}}";
 			sepNavSelRange = "{2383, 6}";
 			sepNavVisRange = "{2209, 830}";
+		};
+	};
+	ECFD2CFA135E7CAC00E6A9A3 /* tmedia_resampler.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 1118}}";
+			sepNavSelRange = "{2142, 0}";
+			sepNavVisRange = "{1319, 1645}";
 		};
 	};
 	ECFD2CFB135E7CAC00E6A9A3 /* tmedia_session.h */ = {
@@ -1928,6 +1919,13 @@
 			sepNavVisRange = "{987, 654}";
 		};
 	};
+	ECFD2CFF135E7CAC00E6A9A3 /* tinymedia.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 741}}";
+			sepNavSelRange = "{1341, 0}";
+			sepNavVisRange = "{547, 1102}";
+		};
+	};
 	ECFD2D07135E7CAC00E6A9A3 /* tmedia_content.c */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1272, 4524}}";
@@ -1935,11 +1933,18 @@
 			sepNavVisRange = "{766, 1745}";
 		};
 	};
+	ECFD2D0B135E7CAC00E6A9A3 /* tmedia.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 3497}}";
+			sepNavSelRange = "{900, 0}";
+			sepNavVisRange = "{375, 1059}";
+		};
+	};
 	ECFD2D0C135E7CAC00E6A9A3 /* tmedia_codec.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1195, 7462}}";
-			sepNavSelRange = "{13639, 0}";
-			sepNavVisRange = "{3295, 717}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 7748}}";
+			sepNavSelRange = "{891, 35}";
+			sepNavVisRange = "{107, 1230}";
 		};
 	};
 	ECFD2D0D135E7CAC00E6A9A3 /* tmedia_codec_dummy.c */ = {
@@ -1972,9 +1977,9 @@
 	};
 	ECFD2D16135E7CAC00E6A9A3 /* tmedia_session.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 16939}}";
-			sepNavSelRange = "{36940, 0}";
-			sepNavVisRange = "{0, 1080}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 16887}}";
+			sepNavSelRange = "{1019, 0}";
+			sepNavVisRange = "{0, 1169}";
 		};
 	};
 	ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */ = {
@@ -2003,11 +2008,32 @@
 			sepNavVisRange = "{1789, 1231}";
 		};
 	};
+	ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 18005}}";
+			sepNavSelRange = "{25221, 42}";
+			sepNavVisRange = "{25266, 1798}";
+		};
+	};
+	ECFD2FAE135E7D8900E6A9A3 /* tsip_dialog_invite.cdiv.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 625}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 0}";
+		};
+	};
 	ECFD2FAF135E7D8900E6A9A3 /* tsip_dialog_invite.client.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 3653}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1566, 3341}}";
 			sepNavSelRange = "{8240, 0}";
-			sepNavVisRange = "{7980, 1039}";
+			sepNavVisRange = "{3120, 2330}";
+		};
+	};
+	ECFD2FB4135E7D8900E6A9A3 /* tsip_dialog_invite.server.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1440, 8944}}";
+			sepNavSelRange = "{12404, 0}";
+			sepNavVisRange = "{11742, 1128}";
 		};
 	};
 	ECFD2FB7135E7D8900E6A9A3 /* tsip_dialog_message.c */ = {
@@ -2029,6 +2055,20 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1503, 8580}}";
 			sepNavSelRange = "{15354, 471}";
 			sepNavVisRange = "{14910, 1166}";
+		};
+	};
+	ECFD3022135E7D8900E6A9A3 /* tsip_parser_uri.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 8957}}";
+			sepNavSelRange = "{13043, 0}";
+			sepNavVisRange = "{12465, 1041}";
+		};
+	};
+	ECFD3026135E7D8900E6A9A3 /* tsip_transac.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1580, 1859}}";
+			sepNavSelRange = "{3778, 0}";
+			sepNavVisRange = "{2672, 1244}";
 		};
 	};
 	ECFD3031135E7D8900E6A9A3 /* tsip.c */ = {
@@ -2085,9 +2125,9 @@
 	};
 	ECFD3188135E7DBB00E6A9A3 /* tdav_speex_resampler.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 741}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 741}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1126}";
+			sepNavVisRange = "{0, 1184}";
 		};
 	};
 	ECFD31B2135E7DBB00E6A9A3 /* tdav.h */ = {
@@ -2120,31 +2160,38 @@
 	};
 	ECFD31C4135E7DBB00E6A9A3 /* tdav_consumer_dsound.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1412, 4927}}";
-			sepNavSelRange = "{10154, 0}";
-			sepNavVisRange = "{1483, 1219}";
+			sepNavIntBoundsRect = "{{0, 0}, {1412, 5252}}";
+			sepNavSelRange = "{3008, 158}";
+			sepNavVisRange = "{2545, 868}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
 	ECFD31C5135E7DBB00E6A9A3 /* tdav_producer_dsound.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 4420}}";
-			sepNavSelRange = "{8414, 0}";
-			sepNavVisRange = "{7602, 1048}";
+			sepNavIntBoundsRect = "{{0, 0}, {1461, 4225}}";
+			sepNavSelRange = "{2949, 158}";
+			sepNavVisRange = "{2563, 912}";
 		};
 	};
 	ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 3016}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3042}}";
 			sepNavSelRange = "{4636, 102}";
-			sepNavVisRange = "{4550, 1297}";
+			sepNavVisRange = "{4768, 1100}";
+		};
+	};
+	ECFD31C9135E7DBB00E6A9A3 /* tdav_producer_audio.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1521}}";
+			sepNavSelRange = "{2547, 453}";
+			sepNavVisRange = "{2151, 967}";
 		};
 	};
 	ECFD31CA135E7DBB00E6A9A3 /* tdav_session_audio.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1580, 12454}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1580, 11882}}";
 			sepNavSelRange = "{3223, 0}";
-			sepNavVisRange = "{2273, 1324}";
+			sepNavVisRange = "{2136, 1250}";
 		};
 	};
 	ECFD31CB135E7DBB00E6A9A3 /* tdav_speakup_jitterbuffer.c */ = {
@@ -2156,16 +2203,23 @@
 	};
 	ECFD31CC135E7DBB00E6A9A3 /* tdav_speex_denoise.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 2795}}";
-			sepNavSelRange = "{4749, 0}";
-			sepNavVisRange = "{306, 1135}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 2665}}";
+			sepNavSelRange = "{2471, 0}";
+			sepNavVisRange = "{2244, 1775}";
 		};
 	};
 	ECFD31CD135E7DBB00E6A9A3 /* tdav_speex_jitterbuffer.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 2600}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 2613}}";
 			sepNavSelRange = "{3581, 0}";
-			sepNavVisRange = "{3091, 824}";
+			sepNavVisRange = "{4203, 973}";
+		};
+	};
+	ECFD31CE135E7DBB00E6A9A3 /* tdav_speex_resampler.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 1794}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1244}";
 		};
 	};
 	ECFD31D0135E7DBB00E6A9A3 /* tdav_consumer_waveapi.c */ = {
@@ -2177,16 +2231,16 @@
 	};
 	ECFD31E5135E7DBC00E6A9A3 /* tdav_codec_h263.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 16107}}";
-			sepNavSelRange = "{3980, 0}";
-			sepNavVisRange = "{3638, 845}";
+			sepNavIntBoundsRect = "{{0, 0}, {1370, 16302}}";
+			sepNavSelRange = "{15520, 4}";
+			sepNavVisRange = "{14872, 1119}";
 		};
 	};
 	ECFD31E7135E7DBC00E6A9A3 /* tdav_codec_h264.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 11336}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 10816}}";
 			sepNavSelRange = "{4609, 0}";
-			sepNavVisRange = "{0, 1069}";
+			sepNavVisRange = "{0, 1184}";
 		};
 	};
 	ECFD31E8135E7DBC00E6A9A3 /* tdav_codec_h264_rtp.c */ = {
@@ -2196,11 +2250,25 @@
 			sepNavVisRange = "{9526, 650}";
 		};
 	};
+	ECFD31EC135E7DBC00E6A9A3 /* tdav_codec_mp4ves.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1111, 8593}}";
+			sepNavSelRange = "{13282, 0}";
+			sepNavVisRange = "{12336, 1180}";
+		};
+	};
+	ECFD31F3135E7DBC00E6A9A3 /* tdav_codec_theora.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 9035}}";
+			sepNavSelRange = "{17416, 0}";
+			sepNavVisRange = "{16642, 1005}";
+		};
+	};
 	ECFD31F8135E7DBC00E6A9A3 /* tdav.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 6214}}";
-			sepNavSelRange = "{3306, 0}";
-			sepNavVisRange = "{3032, 606}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 6526}}";
+			sepNavSelRange = "{3557, 11}";
+			sepNavVisRange = "{2892, 1092}";
 		};
 	};
 	ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */ = {
@@ -2219,9 +2287,9 @@
 	};
 	ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1426, 8190}}";
-			sepNavSelRange = "{3854, 0}";
-			sepNavVisRange = "{1082, 1487}";
+			sepNavIntBoundsRect = "{{0, 0}, {1461, 8528}}";
+			sepNavSelRange = "{20228, 0}";
+			sepNavVisRange = "{1269, 1534}";
 		};
 	};
 	ECFD32AD135E821000E6A9A3 /* tinyWRAP */ = {
@@ -2229,9 +2297,9 @@
 	};
 	ECFD32B3135E824700E6A9A3 /* ActionConfig.cxx */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1100, 1183}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 1196}}";
 			sepNavSelRange = "{1481, 67}";
-			sepNavVisRange = "{1082, 918}";
+			sepNavVisRange = "{1050, 953}";
 		};
 	};
 	ECFD32B4135E824700E6A9A3 /* ActionConfig.h */ = {
@@ -2258,8 +2326,8 @@
 	ECFD32BC135E824700E6A9A3 /* MediaSessionMgr.cxx */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1041, 1794}}";
-			sepNavSelRange = "{3661, 10}";
-			sepNavVisRange = "{2926, 1194}";
+			sepNavSelRange = "{1593, 97}";
+			sepNavVisRange = "{1110, 1188}";
 		};
 	};
 	ECFD32BD135E824700E6A9A3 /* MediaSessionMgr.h */ = {
@@ -2299,9 +2367,9 @@
 	};
 	ECFD32C5135E824700E6A9A3 /* ProxyProducer.cxx */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 6305}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 6409}}";
 			sepNavSelRange = "{12665, 18}";
-			sepNavVisRange = "{12212, 1045}";
+			sepNavVisRange = "{10335, 1457}";
 		};
 	};
 	ECFD32C6135E824700E6A9A3 /* ProxyProducer.h */ = {
@@ -2369,14 +2437,14 @@
 	};
 	ECFD32D2135E824700E6A9A3 /* SipStack.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 1417}}";
-			sepNavSelRange = "{1233, 0}";
-			sepNavVisRange = "{793, 1158}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 1430}}";
+			sepNavSelRange = "{2905, 49}";
+			sepNavVisRange = "{2304, 1202}";
 		};
 	};
 	ECFD32D4135E824700E6A9A3 /* SipUri.cxx */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 1339}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 1339}}";
 			sepNavSelRange = "{1678, 35}";
 			sepNavVisRange = "{1257, 602}";
 		};
@@ -2453,9 +2521,9 @@
 	};
 	ECFD3434135EB27500E6A9A3 /* NgnNotificationCenter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 507}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 507}}";
 			sepNavSelRange = "{974, 0}";
-			sepNavVisRange = "{0, 1810}";
+			sepNavVisRange = "{0, 1812}";
 		};
 	};
 	ECFD3437135EB3AD00E6A9A3 /* NgnEventArgs.h */ = {

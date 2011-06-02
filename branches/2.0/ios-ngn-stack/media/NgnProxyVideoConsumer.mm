@@ -131,6 +131,10 @@ private:
 
 -(void) setDisplay: (UIImageView*)display{
 	@synchronized(self){
+		if(mDisplay && !display){
+			mDisplay.image = nil;
+		}
+		
 		[mDisplay release];
 		mDisplay = [display retain];
 	}

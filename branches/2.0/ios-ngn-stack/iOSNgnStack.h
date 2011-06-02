@@ -52,6 +52,7 @@
 
 #import "media/NgnMediaType.h"
 #import "media/NgnContentType.h"
+#import "media/NgnCamera.h"
 
 
 

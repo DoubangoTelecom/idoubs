@@ -25,6 +25,8 @@
 	UILabel *labelStatus;
 	UILabel *labelRemoteParty;
 	UIView *viewCenter;
+	UIView *viewTop;
+	UIView *viewBottom;
 	UIButton *buttonHangup;
 	UIButton *buttonAccept;
 	UIButton *buttonMute;
@@ -43,6 +45,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *labelStatus;
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
 @property (retain, nonatomic) IBOutlet UIView *viewCenter;
+@property (retain, nonatomic) IBOutlet UIView *viewTop;
+@property (retain, nonatomic) IBOutlet UIView *viewBottom;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangup;
 @property (retain, nonatomic) IBOutlet UIButton *buttonAccept;
 @property (retain, nonatomic) IBOutlet UIButton *buttonMute;

@@ -85,7 +85,7 @@ public:
 		const long _sessionId = _session->getId();
 		NgnSipSession* ngnSipSession = nil;
 		
-		TSK_DEBUG_INFO("OnDialogEvent(%s, %ld)", _phrase, sessionId);
+		TSK_DEBUG_INFO("OnDialogEvent(%s, %ld)", _phrase, _sessionId);
 		
 		switch (_code) {
 			//== Connecting ==
@@ -367,6 +367,7 @@ done:
 															 andEvenType: INVITE_EVENT_INCOMING 
 															 andMediaType: ngnAVSession.mediaType
 															 andSipPhrase: phrase];
+							[ngnAVSession setState:INVITE_STATE_INCOMING];
 							[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 						}
 						break;
@@ -385,13 +386,13 @@ done:
 			
 			case tsip_ao_request:
 			{
-				if (_code == 180 && _session != tsk_null){
+				if ((_code == 180 || _code == 183) && _session != tsk_null){
 					if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
 						eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-																  andEvenType: INVITE_EVENT_RINGING 
+																  andEvenType: _code==180 ? INVITE_EVENT_RINGING : INVITE_EVENT_INPROGRESS
 																 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
 																 andSipPhrase: phrase];
-						[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_REMOTE_RINGING];
+						[((NgnInviteSession*)ngnSipSession) setState:_code==180 ? INVITE_STATE_REMOTE_RINGING : INVITE_STATE_INPROGRESS];
 						[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 					}
 				}

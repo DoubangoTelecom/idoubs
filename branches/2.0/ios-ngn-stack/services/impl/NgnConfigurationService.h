@@ -25,6 +25,6 @@
 #import "services/INgnConfigurationService.h"
 
 @interface NgnConfigurationService : NgnBaseService<INgnConfigurationService> {
-	NSUserDefaults* mPrefs;
+	NSUserDefaults* defaults;
 }
 @end

@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>AMR-NB-OA</string>
 			<key>Key</key>
-			<string>codecs_amr_nb_oa</string>
+			<string>MEDIA_CODEC_USE_AMR_NB_OA</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -28,7 +28,7 @@
 			<key>Title</key>
 			<string>AMR-NB-BE</string>
 			<key>Key</key>
-			<string>codecs_amr_nb_be</string>
+			<string>MEDIA_CODEC_USE_AMR_NB_BE</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -38,7 +38,7 @@
 			<key>Title</key>
 			<string>GSM</string>
 			<key>Key</key>
-			<string>codecs_gsm</string>
+			<string>MEDIA_CODEC_USE_GSM</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -48,7 +48,7 @@
 			<key>Title</key>
 			<string>PCMA</string>
 			<key>Key</key>
-			<string>codecs_pcma</string>
+			<string>MEDIA_CODEC_USE_PCMA</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -58,7 +58,7 @@
 			<key>Title</key>
 			<string>PCMU</string>
 			<key>Key</key>
-			<string>codecs_pcmu</string>
+			<string>MEDIA_CODEC_USE_PCMU</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -68,7 +68,7 @@
 			<key>Title</key>
 			<string>Speex-NB</string>
 			<key>Key</key>
-			<string>codecs_speex_nb</string>
+			<string>MEDIA_CODEC_USE_SPEEX_NB</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -84,7 +84,7 @@
 			<key>Title</key>
 			<string>H.263</string>
 			<key>Key</key>
-			<string>codecs_h263</string>
+			<string>MEDIA_CODEC_USE_H263</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -94,7 +94,7 @@
 			<key>Title</key>
 			<string>H.263-1998</string>
 			<key>Key</key>
-			<string>codecs_h263p</string>
+			<string>MEDIA_CODEC_USE_H263P</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -104,9 +104,9 @@
 			<key>Title</key>
 			<string>H.264-BP10</string>
 			<key>Key</key>
-			<string>codecs_h264_bp10</string>
+			<string>MEDIA_CODEC_USE_H264BP10</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -114,9 +114,9 @@
 			<key>Title</key>
 			<string>H.264-BP20</string>
 			<key>Key</key>
-			<string>codecs_h264_bp20</string>
+			<string>MEDIA_CODEC_USE_H264BP20</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -124,9 +124,9 @@
 			<key>Title</key>
 			<string>H.264-BP30</string>
 			<key>Key</key>
-			<string>codecs_h264_bp30</string>
+			<string>MEDIA_CODEC_USE_H264BP30</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -134,7 +134,17 @@
 			<key>Title</key>
 			<string>Theora</string>
 			<key>Key</key>
-			<string>codecs_theora</string>
+			<string>MEDIA_CODEC_USE_THEORA</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>MP4V-ES</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_MP4VES</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
