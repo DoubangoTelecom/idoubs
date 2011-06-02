@@ -24,10 +24,9 @@
 #import "idoubs2AppDelegate.h"
 #import "idoubs2Constants.h"
 
-#define kButtonStateAll (UIControlStateSelected | UIControlStateNormal || UIControlStateHighlighted)
-
 /*=== AudioCallViewController (Private) ===*/
 @interface AudioCallViewController(Private)
++(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_ withBorder:(BOOL)border;
 -(void) closeView;
 -(void) updateViewAndState;
 @end
@@ -47,6 +46,29 @@
 //	AudioCallViewController(Private)
 //
 @implementation AudioCallViewController(Private)
+
++(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_ withBorder:(BOOL)border{
+	for(CALayer *ly in view_.layer.sublayers){
+		if([ly isKindOfClass: [CAGradientLayer class]]){
+			[ly removeFromSuperlayer];
+			break;
+		}
+	}
+	
+	if(colors){
+		CAGradientLayer *gradient = [CAGradientLayer layer];
+		gradient.colors = colors;
+		gradient.frame = CGRectMake(0.f, 0.f, view_.frame.size.width, view_.frame.size.height);
+		if(border){
+			gradient.cornerRadius = 8.f;
+			gradient.borderWidth = 2.f;
+			gradient.borderColor = [[UIColor grayColor] CGColor];
+		}
+		
+		view_.backgroundColor = [UIColor clearColor];
+		[view_.layer insertSublayer:gradient atIndex:0];
+	}
+}
 
 -(void) closeView{
 	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated: NO];
@@ -103,14 +125,14 @@
 			}
 			case INVITE_STATE_INCALL:
 			{
-				labelStatus.text = @"In Call";
+				self.labelStatus.text = @"In Call";
 				
-				buttonAccept.hidden = YES;
+				self.buttonAccept.hidden = YES;
 				
-				[buttonHangup setTitle:@"End" forState:kButtonStateAll];
-				buttonHangup.hidden = NO;
-				buttonHangup.frame = CGRectMake(buttonHangup.frame.origin.x, buttonHangup.frame.origin.y, 
-												buttonHangupWidth + buttonHangupWidth, buttonHangup.frame.size.height);
+				[self.buttonHangup setTitle:@"End" forState:kButtonStateAll];
+				self.buttonHangup.hidden = NO;
+				self.buttonHangup.frame = CGRectMake(self.buttonHangup.frame.origin.x, self.buttonHangup.frame.origin.y, 
+												buttonHangupWidth + buttonHangupWidth, self.buttonHangup.frame.size.height);
 				
 				[[NgnEngine getInstance].soundService stopRingBackTone];
 				[[NgnEngine getInstance].soundService stopRingTone];
@@ -119,10 +141,10 @@
 			case INVITE_STATE_TERMINATED:
 			case INVITE_STATE_TERMINATING:
 			{
-				labelStatus.text = @"Terminating...";
+				self.labelStatus.text = @"Terminating...";
 				
-				buttonAccept.hidden = YES;
-				buttonHangup.hidden = YES;
+				self.buttonAccept.hidden = YES;
+				self.buttonHangup.hidden = YES;
 				
 				[[NgnEngine getInstance].soundService stopRingBackTone];
 				[[NgnEngine getInstance].soundService stopRingTone];
@@ -132,8 +154,12 @@
 				break;
 		}
 		
-		buttonSpeaker.backgroundColor = [[NgnEngine getInstance].soundService isSpeakerEnabled] ? [UIColor blueColor] : [UIColor blackColor];
-		buttonHold.backgroundColor = [audioSession isLocalHeld] ? [UIColor blueColor] : [UIColor blackColor];
+		[AudioCallViewController applyGradienWithColors: [[NgnEngine getInstance].soundService isSpeakerEnabled] ? kColorsBlue : nil
+												forView:self.buttonSpeaker withBorder:NO];
+		[AudioCallViewController applyGradienWithColors: [audioSession isLocalHeld] ? kColorsBlue : nil
+												forView:self.buttonHold withBorder:NO];
+		[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
+												forView:self.buttonMute withBorder:NO];
 	}
 }
 
@@ -217,6 +243,8 @@
 @synthesize viewOptions;
 @synthesize viewNumpad;
 @synthesize viewCenter;
+@synthesize viewTop;
+@synthesize viewBottom;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -239,16 +267,13 @@
 	buttonAcceptWidth = buttonAccept.frame.size.width;
 	buttonHangupWidth = buttonHangup.frame.size.width;
 	
+	[self.viewCenter addSubview:viewOptions];
 	
-	viewOptions.layer.cornerRadius = 8;
-	viewOptions.layer.borderWidth = 2.f;
-	viewOptions.layer.borderColor = [[UIColor whiteColor] CGColor];
 	
-	viewNumpad.layer.cornerRadius = 8;
-	viewNumpad.layer.borderWidth = 2.f;
-	viewNumpad.layer.borderColor = [[UIColor whiteColor] CGColor];
-	
-	[viewCenter addSubview:viewOptions];
+	// apply gradients
+	[AudioCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewOptions withBorder:YES];
+	[AudioCallViewController applyGradienWithColors:kColorsDarkBlack forView:self.viewTop withBorder:NO];
+	[AudioCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewBottom withBorder:NO];
 	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onInviteEvent:) name:kNgnInviteEventArgs_Name object:nil];
@@ -291,11 +316,16 @@
 			[audioSession acceptCall];
 		}
 		else if(sender == buttonMute){
-			
+			if([audioSession setMute:![audioSession isMuted]]){
+				[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
+													forView:self.buttonMute withBorder:NO];
+			}
 		}
 		else if(sender == buttonSpeaker){
-			[[NgnEngine getInstance].soundService setSpeakerEnabled:![[NgnEngine getInstance].soundService isSpeakerEnabled]];
-			 buttonSpeaker.backgroundColor = [[NgnEngine getInstance].soundService isSpeakerEnabled] ? [UIColor blueColor] : [UIColor blackColor];
+			if([[NgnEngine getInstance].soundService setSpeakerEnabled:![[NgnEngine getInstance].soundService isSpeakerEnabled]]){
+				[AudioCallViewController applyGradienWithColors: [[NgnEngine getInstance].soundService isSpeakerEnabled] ? kColorsBlue : nil
+													forView:self.buttonSpeaker withBorder:NO];
+			}
 		}
 		else if(sender == buttonHold){
 			[audioSession toggleHoldResume];
@@ -320,6 +350,8 @@
 	[buttonSpeaker release];
 	[buttonHold release];
 	[viewCenter release];
+	[viewTop release];
+	[viewBottom release];
 	[viewNumpad release];
 	[viewOptions release];
 	

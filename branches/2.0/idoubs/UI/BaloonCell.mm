@@ -19,7 +19,7 @@
  *
  */
 #import "BaloonCell.h"
-#import <QuartzCore/QuartzCore.h> /* cornerRadius */
+#import <QuartzCore/QuartzCore.h> /* cornerRadius... */
 
 #import "idoubs2Constants.h"
 
@@ -127,8 +127,8 @@
 										self.contentView.frame.size.height);
 }
 
-#define kCellTopHeight		15.f
-#define kCellBottomHeight	15.f
+#define kCellTopHeight		20.f
+#define kCellBottomHeight	20.f
 #define kCellDateHeight		20.f
 #define kCellContentFontSize 17.f
 

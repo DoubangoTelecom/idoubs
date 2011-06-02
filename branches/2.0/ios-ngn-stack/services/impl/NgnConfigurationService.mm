@@ -21,25 +21,86 @@
 #import "NgnConfigurationService.h"
 #import "NgnConfigurationEntry.h"
 
+#import "tinydav.h"
+#import "SipStack.h"
+
 #undef TAG
 #define kTAG @"NgnConfigurationService///: "
 #define TAG kTAG
 
-@implementation NgnConfigurationService(Private)
-- (void)userDefaultsDidChangeNotification:(NSNotification *)note{
-	
-}
+//
+// private implementation
+// 
+
+@interface NgnConfigurationService(Private)
+- (void)userDefaultsDidChangeNotification:(NSNotification *)note;
+- (void)computeCodecs;
 @end
 
+@implementation NgnConfigurationService(Private)
+
+- (void)userDefaultsDidChangeNotification:(NSNotification *)note{
+	[self computeCodecs];
+}
+
+- (void)computeCodecs{
+	
+	typedef struct codec_value_pair_s {
+		NSString* name;
+		tdav_codec_id_t _id;
+	}
+	codec_value_pair_t;
+	
+	tdav_codec_id_t oldCodecs = (tdav_codec_id_t)[self getIntWithKey:MEDIA_CODECS];
+	tdav_codec_id_t newCodecs = tdav_codec_id_none;
+	
+	codec_value_pair_t codec_value_pairs[] = 
+	{
+		{ MEDIA_CODEC_USE_AMR_NB_OA, tdav_codec_id_amr_nb_oa },
+		{ MEDIA_CODEC_USE_AMR_NB_BE, tdav_codec_id_amr_nb_be },
+		{ MEDIA_CODEC_USE_GSM, tdav_codec_id_gsm },
+		{ MEDIA_CODEC_USE_PCMA, tdav_codec_id_pcma },
+		{ MEDIA_CODEC_USE_PCMU, tdav_codec_id_pcmu },
+		{ MEDIA_CODEC_USE_SPEEX_NB, tdav_codec_id_speex_nb },
+		{ MEDIA_CODEC_USE_H263, tdav_codec_id_h263 },
+		{ MEDIA_CODEC_USE_H263P, tdav_codec_id_h263p },
+		{ MEDIA_CODEC_USE_H264BP10, tdav_codec_id_h264_bp10 },
+		{ MEDIA_CODEC_USE_H264BP20, tdav_codec_id_h264_bp20 },
+		{ MEDIA_CODEC_USE_H264BP30, tdav_codec_id_h264_bp30 },
+		{ MEDIA_CODEC_USE_THEORA, tdav_codec_id_theora },
+		{ MEDIA_CODEC_USE_MP4VES, tdav_codec_id_mp4ves_es },
+	};
+	
+	for (int i = 0; i < sizeof(codec_value_pairs)/sizeof(codec_value_pair_t); ++i) {
+		if([self getBoolWithKey:codec_value_pairs[i].name]){
+			newCodecs = (tdav_codec_id_t)(newCodecs | codec_value_pairs[i]._id);
+		}
+	}
+	
+	if(oldCodecs != newCodecs){ // avoid stack overflow
+		// write to the settings
+		[self setIntWithKey:MEDIA_CODECS andValue:(int)newCodecs];
+	}
+	
+	// configure the stack
+	SipStack::setCodecs(newCodecs);
+}
+
+@end
+
+
+//
+//	default implementation
+//
 
 @implementation NgnConfigurationService
 
 -(NgnConfigurationService*)init{
 	if((self = [super init])){
-		mPrefs = [NSUserDefaults standardUserDefaults];
+		defaults = [NSUserDefaults standardUserDefaults];
 		
 		// FIXME: First time for Simulator
-		NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
+		NSDictionary *defaults_ = [NSDictionary dictionaryWithObjectsAndKeys:
 								  
 								  
 								  /* === IDENTITY === */
@@ -59,6 +120,22 @@
 								  [NSNumber numberWithBool:DEFAULT_NETWORK_USE_WIFI], NETWORK_USE_WIFI,
 								  DEFAULT_NETWORK_TRANSPORT, NETWORK_TRANSPORT,
 								  
+								  /* === MEDIA === */
+								  [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_OA], MEDIA_CODEC_USE_AMR_NB_OA,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_BE], MEDIA_CODEC_USE_AMR_NB_BE,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_GSM], MEDIA_CODEC_USE_GSM,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMA], MEDIA_CODEC_USE_PCMA,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMU], MEDIA_CODEC_USE_PCMU,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_SPEEX_NB], MEDIA_CODEC_USE_SPEEX_NB,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263], MEDIA_CODEC_USE_H263,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263P], MEDIA_CODEC_USE_H263P,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP10], MEDIA_CODEC_USE_H264BP10,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP20], MEDIA_CODEC_USE_H264BP20,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP30], MEDIA_CODEC_USE_H264BP30,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_THEORA], MEDIA_CODEC_USE_THEORA,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_MP4VES], MEDIA_CODEC_USE_MP4VES,
+								  
 								  /* === NATT === */
 								  [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN], NATT_USE_STUN,
 								  [NSNumber numberWithBool:DEFAULT_NATT_STUN_DISCO], NATT_STUN_DISCO,
@@ -73,7 +150,9 @@
 								  
 								  nil];
 		
-		[mPrefs registerDefaults:defaults];
+		[defaults registerDefaults:defaults_];
+		
+		[self computeCodecs];
 	}
 	return self;
 }
@@ -90,6 +169,7 @@
 
 -(BOOL) start{
 	NgnNSLog(TAG, @"Start()");
+	[self computeCodecs];
 	[[NSNotificationCenter defaultCenter] addObserver: self 
 											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 	return YES;
@@ -107,37 +187,37 @@
 //
 
 -(NSString*)getStringWithKey: (NSString*)key{
-	return [mPrefs stringForKey:key];
+	return [defaults stringForKey:key];
 }
 
 -(int)getIntWithKey: (NSString*)key{
-	return [mPrefs integerForKey:key];
+	return [defaults integerForKey:key];
 }
 
 
 -(float)getFloatWithKey: (NSString*)key{
-	return [mPrefs floatForKey:key];
+	return [defaults floatForKey:key];
 }
 
 
 -(BOOL)getBoolWithKey: (NSString*)key{
-	return [mPrefs boolForKey:key];
+	return [defaults boolForKey:key];
 }
 
 -(void)setStringWithKey: (NSString*)key andValue:(NSString*)value{
-	[mPrefs setObject:value forKey:key];
+	[defaults setObject:value forKey:key];
 }
 
 -(void)setIntWithKey: (NSString*)key andValue:(int)value{
-	[mPrefs setInteger:value forKey:key];
+	[defaults setInteger:value forKey:key];
 }
 
 -(void)setFloatWithKey: (NSString*)key andValue:(float)value{
-	[mPrefs setFloat:value forKey:key];
+	[defaults setFloat:value forKey:key];
 }
 
 -(void)setBoolWithKey: (NSString*)key andValue:(BOOL)value{
-	[mPrefs setBool:value forKey:key];
+	[defaults setBool:value forKey:key];
 }
 
 @end

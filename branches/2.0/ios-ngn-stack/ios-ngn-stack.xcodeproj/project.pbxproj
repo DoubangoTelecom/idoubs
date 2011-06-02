@@ -65,6 +65,10 @@
 		EC7D39961379EDA80052CE45 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC7D39971379EDA80052CE45 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC7D39A61379F0360052CE45 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
+		EC7D98E21396A619006A8F91 /* NgnCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D98E01396A619006A8F91 /* NgnCamera.h */; };
+		EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7D98E11396A619006A8F91 /* NgnCamera.mm */; };
+		EC7D9AF71397094E006A8F91 /* tmedia_defaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */; };
+		EC7D9AF913970960006A8F91 /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC7D9AF813970960006A8F91 /* tmedia_defaults.c */; };
 		EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */; };
 		EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */; };
 		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
@@ -1918,6 +1922,10 @@
 		EC7D39611379ED7E0052CE45 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		EC7D39621379ED7E0052CE45 /* TestMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMessaging.h; sourceTree = "<group>"; };
 		EC7D39631379ED7E0052CE45 /* TestMessaging.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestMessaging.mm; sourceTree = "<group>"; };
+		EC7D98E01396A619006A8F91 /* NgnCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnCamera.h; sourceTree = "<group>"; };
+		EC7D98E11396A619006A8F91 /* NgnCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnCamera.mm; sourceTree = "<group>"; };
+		EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_defaults.h; sourceTree = "<group>"; };
+		EC7D9AF813970960006A8F91 /* tmedia_defaults.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_defaults.c; sourceTree = "<group>"; };
 		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audioqueue.c; sourceTree = "<group>"; };
@@ -3684,6 +3692,8 @@
 				ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */,
 				ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */,
 				ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */,
+				EC7D98E01396A619006A8F91 /* NgnCamera.h */,
+				EC7D98E11396A619006A8F91 /* NgnCamera.mm */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -4688,6 +4698,7 @@
 			children = (
 				ECFD2CEB135E7CAC00E6A9A3 /* content */,
 				ECFD2CF0135E7CAC00E6A9A3 /* tmedia.h */,
+				EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */,
 				ECFD2CF1135E7CAC00E6A9A3 /* tmedia_codec.h */,
 				ECFD2CF2135E7CAC00E6A9A3 /* tmedia_codec_dummy.h */,
 				ECFD2CF3135E7CAC00E6A9A3 /* tmedia_common.h */,
@@ -4731,6 +4742,7 @@
 			children = (
 				ECFD2D06135E7CAC00E6A9A3 /* content */,
 				ECFD2D0B135E7CAC00E6A9A3 /* tmedia.c */,
+				EC7D9AF813970960006A8F91 /* tmedia_defaults.c */,
 				ECFD2D0C135E7CAC00E6A9A3 /* tmedia_codec.c */,
 				ECFD2D0D135E7CAC00E6A9A3 /* tmedia_codec_dummy.c */,
 				ECFD2D0E135E7CAC00E6A9A3 /* tmedia_common.c */,
@@ -6184,6 +6196,7 @@
 				ECB96666138FC22800961D3A /* NgnFavoriteEventArgs.h in Headers */,
 				ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */,
 				EC967D051391CE0C006187D3 /* NgnContactEventArgs.h in Headers */,
+				EC7D98E21396A619006A8F91 /* NgnCamera.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6437,6 +6450,7 @@
 				ECFD2D38135E7CAC00E6A9A3 /* tmedia_vad.h in Headers */,
 				ECFD2D39135E7CAC00E6A9A3 /* tinymedia.h in Headers */,
 				ECFD2D3A135E7CAC00E6A9A3 /* tinymedia_config.h in Headers */,
+				EC7D9AF71397094E006A8F91 /* tmedia_defaults.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7311,6 +7325,7 @@
 				ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */,
 				ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */,
 				EC967D061391CE0C006187D3 /* NgnContactEventArgs.mm in Sources */,
+				EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7591,6 +7606,7 @@
 				ECFD2D4B135E7CAC00E6A9A3 /* tmedia_session_dummy.c in Sources */,
 				ECFD2D4C135E7CAC00E6A9A3 /* tmedia_session_ghost.c in Sources */,
 				ECFD2D4D135E7CAC00E6A9A3 /* tmedia_vad.c in Sources */,
+				EC7D9AF913970960006A8F91 /* tmedia_defaults.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8452,7 +8468,7 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
@@ -8467,6 +8483,7 @@
 				HEADER_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = (
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_ERROR",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=0",
 					"-DHAVE_SPEEX_JB=1",

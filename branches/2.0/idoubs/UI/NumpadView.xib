@@ -397,7 +397,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="589362818"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">visio_call_48.png</string>
+							<string key="NSResourceName">visio_call.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="68896213">
 							<string key="NSClassName">NSImage</string>
@@ -422,7 +422,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="589362818"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">voice_call_48.png</string>
+							<string key="NSResourceName">voice_call.png</string>
 						</object>
 						<reference key="IBUINormalBackgroundImage" ref="68896213"/>
 					</object>
@@ -1504,8 +1504,8 @@
 				<string>keypad_placeholder.png</string>
 				<string>keypad_sharp.png</string>
 				<string>keypad_star.png</string>
-				<string>visio_call_48.png</string>
-				<string>voice_call_48.png</string>
+				<string>visio_call.png</string>
+				<string>voice_call.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1524,8 +1524,8 @@
 				<string>{319, 71}</string>
 				<string>{106, 68}</string>
 				<string>{106, 68}</string>
-				<string>{48, 48}</string>
-				<string>{48, 48}</string>
+				<string>{212, 126}</string>
+				<string>{212, 126}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">141</string>

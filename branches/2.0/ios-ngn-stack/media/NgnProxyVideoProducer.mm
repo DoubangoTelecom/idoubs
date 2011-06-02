@@ -42,7 +42,6 @@
 
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 @interface NgnProxyVideoProducer (VideoCapture)
-- (AVCaptureDevice *)frontFacingCamera;
 - (void)startVideoCapture;
 - (void)stopVideoCapture;
 - (void)startPreview;
@@ -105,15 +104,6 @@ private:
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 @implementation NgnProxyVideoProducer(VideoCapture)
 
-- (AVCaptureDevice *)frontFacingCamera{
-	NSArray *cameras = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for (AVCaptureDevice *device in cameras){
-        if (device.position == AVCaptureDevicePositionFront){
-            return device;
-        }
-    }
-    return [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-}
 
 - (void)startVideoCapture{
 	NgnNSLog(TAG,@"Starting Video stream");
@@ -122,7 +112,7 @@ private:
 		return;
 	}
 	
-	if(!(mCaptureDevice = [[self frontFacingCamera] retain])){
+	if(!(mCaptureDevice = [[NgnCamera frontFacingCamera] retain])){
 		NgnNSLog(TAG,@"Failed to get valide capture device");
 		return;
 	}
@@ -367,12 +357,27 @@ private:
 
 -(void)setPreview: (UIView*)preview{
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
-	[mPreview release];
-	if((mPreview = [preview retain])){
-		[self startPreview];
+	
+	if(preview == nil){
+		// stop preview
+		[self stopPreview];
+		// remove layers
+		if(mPreview){
+			for(CALayer *ly in mPreview.layer.sublayers){
+				if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+					[ly removeFromSuperlayer];
+					break;
+				}
+			}
+			[mPreview release], mPreview = nil;
+		}
 	}
 	else {
-		[self stopPreview];
+		// start preview
+		[mPreview release];
+		if((mPreview = [preview retain])){
+			[self startPreview];
+		}
 	}
 
 #endif

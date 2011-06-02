@@ -24,16 +24,46 @@
 #import "TransparentToolbar.h"
 
 @interface VideoCallViewController : CallViewController {
-	IBOutlet TransparentToolbar* toolbar;
-	IBOutlet UIImageView* imageViewRemoteVideo;
-	IBOutlet UIView* viewLocalVideo;
-	IBOutlet UIBarButtonItem* barItemVideoOnOff;
+	UIImageView *imageViewRemoteVideo;
+	UIView *viewLocalVideo;
+	UIBarButtonItem *barItemVideoOnOff;
+	
+	UIView *viewTop;
+	UILabel *labelRemoteParty;
+	UILabel *labelStatus;
+	
+	UIView *viewToolbar;
+	UIButton *buttonToolBarMute;
+	UIButton *buttonToolBarEnd;
+	UIButton *buttonToolBarSwitch;
+	UIButton *buttonToolBarVideo;
+	
+	UIView *viewPickHangUp;
+	UIButton *buttonPick;
+	UIButton *buttonHangUp;
 	
 	NgnAVSession* videoSession;
 	BOOL sendingVideo;
 }
 
-- (IBAction) onButtonHangUpClick: (id)sender;
-- (IBAction) onButtonVideoOnOffClick: (id)sender;
+@property (retain, nonatomic) IBOutlet UIImageView* imageViewRemoteVideo;
+@property (retain, nonatomic) IBOutlet UIView* viewLocalVideo;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem* barItemVideoOnOff;
+
+@property (retain, nonatomic) IBOutlet UIView* viewTop;
+@property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
+@property (retain, nonatomic) IBOutlet UILabel *labelStatus;
+
+@property (retain, nonatomic) IBOutlet UIView* viewToolbar;
+@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarMute;
+@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarEnd;
+@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarSwitch;
+@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarVideo;
+
+@property (retain, nonatomic) IBOutlet UIView *viewPickHangUp;
+@property (retain, nonatomic) IBOutlet UIButton *buttonPick;
+@property (retain, nonatomic) IBOutlet UIButton *buttonHangUp;
+
+- (IBAction) onButtonClick: (id)sender;
 
 @end
