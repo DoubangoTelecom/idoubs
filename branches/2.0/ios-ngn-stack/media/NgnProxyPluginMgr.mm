@@ -26,6 +26,7 @@
 #import "ProxyConsumer.h"
 #import "ProxyProducer.h"
 #import "ProxyPluginMgr.h"
+#import "MediaSessionMgr.h"
 
 #import "NgnProxyVideoConsumer.h"
 #import "NgnProxyVideoProducer.h"
@@ -192,6 +193,18 @@ done:
 	if(!_sPluginMgr && _sMyProxyPluginMgrCallback){
 		_sPluginMgr = ProxyPluginMgr::createInstance(_sMyProxyPluginMgrCallback);
 	}
+	
+	
+	MediaSessionMgr::defaultsSetBandwidthLevel(tmedia_bl_unrestricted);
+	MediaSessionMgr::defaultsSetNoiseSuppEnabled(YES);
+	MediaSessionMgr::defaultsSetVadEnabled(NO);
+#if HAVE_COREAUDIO_AUDIO_UNIT // already has AGC, Echo canceller, ... 
+	MediaSessionMgr::defaultsSetAgcEnabled(NO);
+	MediaSessionMgr::defaultsSetEchoSuppEnabled(NO);
+#else
+	MediaSessionMgr::defaultsSetAgcEnabled(YES);
+	MediaSessionMgr::defaultsSetEchoSuppEnabled(YES);
+#endif
 }
 
 +(NgnProxyPlugin*) getProxyPluginWithId: (uint64_t)_id{
