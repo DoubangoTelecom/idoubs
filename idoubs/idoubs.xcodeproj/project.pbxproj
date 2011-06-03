@@ -276,104 +276,6 @@
 			remoteGlobalIDString = ECFD32AD135E821000E6A9A3;
 			remoteInfo = tinyWRAP;
 		};
-		EC83B8071369822300DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
-			remoteInfo = tinySAK;
-		};
-		EC83B8171369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
-			remoteInfo = tinyNET;
-		};
-		EC83B8191369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
-			remoteInfo = tinySDP;
-		};
-		EC83B81B1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
-			remoteInfo = tinyRTP;
-		};
-		EC83B81D1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
-			remoteInfo = tinyIPSec;
-		};
-		EC83B81F1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
-			remoteInfo = tinyMSRP;
-		};
-		EC83B8211369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
-			remoteInfo = tinyHTTP;
-		};
-		EC83B8231369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
-			remoteInfo = tinyMEDIA;
-		};
-		EC83B8251369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
-			remoteInfo = tinySIGCOMP;
-		};
-		EC83B8271369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3;
-			remoteInfo = tinySMS;
-		};
-		EC83B8291369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3;
-			remoteInfo = tinyXCAP;
-		};
-		EC83B82B1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3;
-			remoteInfo = tinySIP;
-		};
-		EC83B82D1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3;
-			remoteInfo = tinyDAV;
-		};
-		EC83B82F1369851A00DD3355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ECFD32AD135E821000E6A9A3;
-			remoteInfo = tinyWRAP;
-		};
 		EC83BA30136990F800DD3355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -499,13 +401,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = ECFD32AE135E821000E6A9A3;
 			remoteInfo = tinyWRAP;
-		};
-		EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = "ios-ngn-stack";
 		};
 		ECA63F30137AD3060031FC77 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -981,21 +876,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EC8EBF1D136893A500DC70DF /* PBXTargetDependency */,
-				EC83B8181369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8081369822300DD3355 /* PBXTargetDependency */,
-				EC83B81A1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B81C1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B81E1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8201369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8221369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8241369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8261369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8281369851A00DD3355 /* PBXTargetDependency */,
-				EC83B82A1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B82C1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B82E1369851A00DD3355 /* PBXTargetDependency */,
-				EC83B8301369851A00DD3355 /* PBXTargetDependency */,
 			);
 			name = idoubs;
 			productName = idoubs;
@@ -1366,81 +1246,6 @@
 			name = tinyWRAP;
 			targetProxy = EC83B7E513697BA900DD3355 /* PBXContainerItemProxy */;
 		};
-		EC83B8081369822300DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinySAK;
-			targetProxy = EC83B8071369822300DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8181369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyNET;
-			targetProxy = EC83B8171369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B81A1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinySDP;
-			targetProxy = EC83B8191369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B81C1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyRTP;
-			targetProxy = EC83B81B1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B81E1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyIPSec;
-			targetProxy = EC83B81D1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8201369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyMSRP;
-			targetProxy = EC83B81F1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8221369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyHTTP;
-			targetProxy = EC83B8211369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8241369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyMEDIA;
-			targetProxy = EC83B8231369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8261369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinySIGCOMP;
-			targetProxy = EC83B8251369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8281369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinySMS;
-			targetProxy = EC83B8271369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B82A1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyXCAP;
-			targetProxy = EC83B8291369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B82C1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinySIP;
-			targetProxy = EC83B82B1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B82E1369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyDAV;
-			targetProxy = EC83B82D1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC83B8301369851A00DD3355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = tinyWRAP;
-			targetProxy = EC83B82F1369851A00DD3355 /* PBXContainerItemProxy */;
-		};
-		EC8EBF1D136893A500DC70DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ios-ngn-stack";
-			targetProxy = EC8EBF1C136893A500DC70DF /* PBXContainerItemProxy */;
-		};
 		ECB72B631373487900C4CA0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ios-ngn-stack";
@@ -1504,10 +1309,38 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					$IOS_NGN_STACK_HOME,
+					$DOUBANGO_HOME/bindings/_common,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinySMS/include,
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO/HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+					$DOUBANGO_HOME/tinyDAV/include,
+				);
 				INFOPLIST_FILE = "idoubs-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../ios-ngn-stack/build/Debug-iphonesimulator\"",
+					$DOUBANGO_LIBS,
+				);
+				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
 				VALIDATE_PRODUCT = YES;
@@ -1517,7 +1350,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
@@ -1528,9 +1361,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IOS_NGN_STACK_HOME = "../ios-ngn-stack";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1539,12 +1374,20 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IOS_NGN_STACK_HOME = "../ios-ngn-stack";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

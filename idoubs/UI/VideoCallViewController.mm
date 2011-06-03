@@ -215,7 +215,7 @@
 			[self updateViewAndState];
 			
 			// video session
-			[NgnCamera setPreview:imageViewRemoteVideo];
+  			[NgnCamera setPreview:imageViewRemoteVideo];
 			if(sendingVideo){
 				[videoSession setRemoteVideoDisplay: nil];
 				[videoSession setLocalVideoDisplay: nil];
