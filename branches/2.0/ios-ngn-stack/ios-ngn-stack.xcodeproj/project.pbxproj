@@ -68,7 +68,6 @@
 		EC7D98E21396A619006A8F91 /* NgnCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D98E01396A619006A8F91 /* NgnCamera.h */; };
 		EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC7D98E11396A619006A8F91 /* NgnCamera.mm */; };
 		EC7D9AF71397094E006A8F91 /* tmedia_defaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */; };
-		EC7D9AF913970960006A8F91 /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC7D9AF813970960006A8F91 /* tmedia_defaults.c */; };
 		EC81BD29136C55420068BCB4 /* tdav_consumer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */; };
 		EC81BD2B136C55670068BCB4 /* tdav_producer_audioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */; };
 		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
@@ -166,6 +165,7 @@
 		EC83FF171380911100060A9D /* NgnHistoryEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC83FF151380911100060A9D /* NgnHistoryEventArgs.mm */; };
 		EC83FF7613809E5F00060A9D /* NgnDataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = ECA6A626137D86FC0022AD09 /* NgnDataBase.db */; };
 		EC83FF961380A29F00060A9D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
+		EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC858FC313999E360017BB9F /* tmedia_defaults.c */; };
 		EC8724751377EE0400C616F0 /* NgnContact.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8724731377EE0400C616F0 /* NgnContact.h */; };
 		EC8724761377EE0400C616F0 /* NgnContact.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8724741377EE0400C616F0 /* NgnContact.m */; };
 		EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
@@ -1925,7 +1925,6 @@
 		EC7D98E01396A619006A8F91 /* NgnCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnCamera.h; sourceTree = "<group>"; };
 		EC7D98E11396A619006A8F91 /* NgnCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnCamera.mm; sourceTree = "<group>"; };
 		EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_defaults.h; sourceTree = "<group>"; };
-		EC7D9AF813970960006A8F91 /* tmedia_defaults.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_defaults.c; sourceTree = "<group>"; };
 		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_audioqueue.c; sourceTree = "<group>"; };
@@ -1972,6 +1971,7 @@
 		EC83FF141380911100060A9D /* NgnHistoryEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistoryEventArgs.h; sourceTree = "<group>"; };
 		EC83FF151380911100060A9D /* NgnHistoryEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryEventArgs.mm; sourceTree = "<group>"; };
 		EC83FF951380A29F00060A9D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EC858FC313999E360017BB9F /* tmedia_defaults.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_defaults.c; sourceTree = "<group>"; };
 		EC8724731377EE0400C616F0 /* NgnContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContact.h; sourceTree = "<group>"; };
 		EC8724741377EE0400C616F0 /* NgnContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnContact.m; sourceTree = "<group>"; };
 		EC87251F1378101000C616F0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -4742,7 +4742,7 @@
 			children = (
 				ECFD2D06135E7CAC00E6A9A3 /* content */,
 				ECFD2D0B135E7CAC00E6A9A3 /* tmedia.c */,
-				EC7D9AF813970960006A8F91 /* tmedia_defaults.c */,
+				EC858FC313999E360017BB9F /* tmedia_defaults.c */,
 				ECFD2D0C135E7CAC00E6A9A3 /* tmedia_codec.c */,
 				ECFD2D0D135E7CAC00E6A9A3 /* tmedia_codec_dummy.c */,
 				ECFD2D0E135E7CAC00E6A9A3 /* tmedia_common.c */,
@@ -7606,7 +7606,7 @@
 				ECFD2D4B135E7CAC00E6A9A3 /* tmedia_session_dummy.c in Sources */,
 				ECFD2D4C135E7CAC00E6A9A3 /* tmedia_session_ghost.c in Sources */,
 				ECFD2D4D135E7CAC00E6A9A3 /* tmedia_vad.c in Sources */,
-				EC7D9AF913970960006A8F91 /* tmedia_defaults.c in Sources */,
+				EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8433,7 +8433,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ios_ngn_stack.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8455,11 +8454,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/ios_ngn_stack.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios_ngn_stack_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					.,
+					$DOUBANGO_INCLUDES,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ios_ngn_stack;
 			};
@@ -8468,7 +8470,7 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
@@ -8481,11 +8483,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DDEBUG_LEVEL=DEBUG_LEVEL_ERROR",
 					"-DHAVE_SPEEX_DSP=1",
-					"-DHAVE_SPEEX_DENOISE=0",
+					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_SPEEX_JB=1",
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
@@ -8497,6 +8501,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -8504,12 +8509,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
+				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = (
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_ERROR",
+					"-DHAVE_SPEEX_DSP=1",
+					"-DHAVE_SPEEX_DENOISE=1",
+					"-DHAVE_SPEEX_JB=1",
+					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
+					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
+					"-DHAVE_FFMPEG=1",
+					"-DHAVE_H264=1",
+					"-DHAVE_SWSSCALE=1",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -8547,7 +8573,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testMessaging;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -8561,9 +8586,23 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "testMessaging-Info.plist";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testMessaging/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8571,7 +8610,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testMessaging;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -8608,7 +8646,6 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = testAudioUnit;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -8622,9 +8659,20 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "testAudioUnit-Info.plist";
+				HEADER_SEARCH_PATHS = $DOUBANGO_INCLUDES;
+				INFOPLIST_FILE = ../testAudioUnit/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8632,7 +8680,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testAudioUnit;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -8671,7 +8718,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testRegistration;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -8685,9 +8731,23 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "testRegistration-Info.plist";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testRegistration/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8695,7 +8755,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testRegistration;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -8734,7 +8793,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testAudioCall;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -8748,9 +8806,23 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "testAudioCall-Info.plist";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testAudioCall/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8758,7 +8830,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testAudioCall;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -8797,7 +8868,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testVideoCall;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -8811,9 +8881,23 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "testVideoCall-Info.plist";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testVideoCall/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lspeexdsp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -8821,7 +8905,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testVideoCall;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -8898,6 +8981,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/tinyNET/src,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
 				ZERO_LINK = NO;
@@ -8911,7 +8998,10 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = $DOUBANGO_HOME/tinySDP/include;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/tinySDP/include,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySDP;
 			};
@@ -8924,6 +9014,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/tinySDP/include,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySDP;
 				ZERO_LINK = NO;
@@ -8953,6 +9047,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
 				ZERO_LINK = NO;
@@ -9008,6 +9106,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(DOUBANGO_HOME)/tinyNET/src",
+					"$(DOUBANGO_HOME)/tinyHTTP/include",
+					"$(DOUBANGO_HOME)/tinyMSRP/include",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMSRP;
 				ZERO_LINK = NO;
@@ -9037,6 +9140,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(DOUBANGO_HOME)/tinyNET/src",
+					"$(DOUBANGO_HOME)/tinyHTTP/include",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyHTTP;
 				ZERO_LINK = NO;
@@ -9067,6 +9174,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMEDIA;
 				ZERO_LINK = NO;
@@ -9118,6 +9230,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = $DOUBANGO_HOME/tinySMS/include;
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySMS;
 				ZERO_LINK = NO;
@@ -9148,6 +9261,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinyXCAP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
 				ZERO_LINK = NO;
@@ -9180,6 +9298,13 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinySIP/include,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySIP;
 				ZERO_LINK = NO;
@@ -9214,6 +9339,15 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyDAV;
 				ZERO_LINK = NO;
@@ -9252,6 +9386,19 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/tinySMS/include,
+					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO_HOME/tinyXCAP/include,
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyWRAP;
 				ZERO_LINK = NO;
