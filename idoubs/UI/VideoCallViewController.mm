@@ -32,6 +32,7 @@
 -(void) hideBottomView:(UIView*)view_;
 -(void) updateViewAndState;
 -(void) closeView;
+-(void) updateVideoOrientation;
 @end
 /*=== VideoCallViewController (Timers) ===*/
 @interface VideoCallViewController (Timers)
@@ -190,6 +191,29 @@
 	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated: NO];
 }
 
+-(void) updateVideoOrientation{
+	if(videoSession){
+		if(![videoSession isConnected]){
+			[NgnCamera setPreview:imageViewRemoteVideo];
+		}
+		
+		switch ([UIDevice currentDevice].orientation) {
+			case UIInterfaceOrientationPortrait:
+				[videoSession setOrientation: AVCaptureVideoOrientationPortrait];
+				break;
+			case UIInterfaceOrientationPortraitUpsideDown:
+				[videoSession setOrientation: AVCaptureVideoOrientationPortraitUpsideDown];
+				break;
+			case UIInterfaceOrientationLandscapeLeft:
+				[videoSession setOrientation: AVCaptureVideoOrientationLandscapeLeft];
+				break;
+			case UIInterfaceOrientationLandscapeRight:
+				[videoSession setOrientation: AVCaptureVideoOrientationLandscapeRight];
+				break;
+		}
+	}
+}
+
 @end
 
 
@@ -230,10 +254,11 @@
 			[self updateViewAndState];
 			
 			// video session
+			[self updateVideoOrientation];
 			if(sendingVideo){
-				[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
 				[videoSession setLocalVideoDisplay: viewLocalVideo];
 			}
+			[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
 			[NgnCamera setPreview:nil];
 			break;
 		}
@@ -331,7 +356,6 @@
 	//[self.buttonToolBarMute setImage:[UIImage imageNamed:@"facetime_mute"] forState:UIControlStateNormal];
 	//[self.buttonToolBarEnd setImage:[UIImage imageNamed:@"facetime_hangup"] forState:UIControlStateNormal];
 	
-	// self.buttonPick.backgroundColor = self.buttonHangUp.backgroundColor = [UIColor clearColor];
 	self.buttonPick.layer.borderWidth = self.buttonHangUp.layer.borderWidth = 2.f;
 	self.buttonPick.layer.borderColor = self.buttonHangUp.layer.borderColor = [[UIColor grayColor] CGColor];
 	self.buttonPick.layer.cornerRadius = self.buttonHangUp.layer.cornerRadius = 8.f;
@@ -352,6 +376,7 @@
 		[videoSession setLocalVideoDisplay: self.viewLocalVideo];
 	}
 	[self updateViewAndState];
+	[self updateVideoOrientation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -363,21 +388,15 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	[super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
-	if(videoSession){
-		switch (interfaceOrientation) {
-			case UIInterfaceOrientationPortrait: [videoSession setOrientation: AVCaptureVideoOrientationPortrait]; break;
-			case UIInterfaceOrientationPortraitUpsideDown: [videoSession setOrientation: AVCaptureVideoOrientationPortraitUpsideDown]; break;
-			case UIInterfaceOrientationLandscapeLeft: [videoSession setOrientation: AVCaptureVideoOrientationLandscapeRight]; break;
-			case UIInterfaceOrientationLandscapeRight: [videoSession setOrientation: AVCaptureVideoOrientationLandscapeLeft]; break;
-		}
-	}
-	
+	[NgnCamera setPreview:nil];
     return YES;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+	
+	[self updateVideoOrientation];
+	
 	if(!self.viewToolbar.hidden){
 		[self showBottomView:self.viewToolbar shouldRefresh:YES];
 	}

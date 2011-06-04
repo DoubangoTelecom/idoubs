@@ -117,7 +117,12 @@
 		previewLayer.frame = sPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 		if(previewLayer.orientationSupported){
-			// previewLayer.orientation = mOrientation;
+			switch ([UIDevice currentDevice].orientation) {
+				case UIInterfaceOrientationPortrait: previewLayer.orientation = AVCaptureVideoOrientationPortrait; break;
+				case UIInterfaceOrientationPortraitUpsideDown: previewLayer.orientation = AVCaptureVideoOrientationPortraitUpsideDown; break;
+				case UIInterfaceOrientationLandscapeLeft: previewLayer.orientation = AVCaptureVideoOrientationLandscapeLeft; break;
+				case UIInterfaceOrientationLandscapeRight: previewLayer.orientation = AVCaptureVideoOrientationLandscapeRight; break;
+			}
 		}
 			
 		[sPreview.layer addSublayer: previewLayer];

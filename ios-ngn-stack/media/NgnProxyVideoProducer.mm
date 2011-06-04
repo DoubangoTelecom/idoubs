@@ -29,8 +29,8 @@
 #define kTAG @"NgnProxyVideoProducer///: "
 #define TAG kTAG
 
-#define kDefaultVideoWidth		176
-#define kDefaultVideoHeight		144
+#define kDefaultVideoWidth		352
+#define kDefaultVideoHeight		288
 #define kDefaultVideoFrameRate	15
 
 @interface NgnProxyVideoProducer(Private)
@@ -215,6 +215,16 @@ private:
 	if(mCaptureSession){		
 		if([mCaptureSession isRunning]){
 			[mCaptureSession stopRunning];
+			
+			// remove all sublayers
+			if(mPreview){
+				for(CALayer *ly in mPreview.layer.sublayers){
+					if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+						[ly removeFromSuperlayer];
+						break;
+					}
+				}
+			}
 		}
 	}
 }
@@ -225,7 +235,7 @@ private:
         UInt8 *bufferPtr = (UInt8 *)CVPixelBufferGetBaseAddress(pixelBuffer);
         size_t buffeSize = CVPixelBufferGetDataSize(pixelBuffer);
 		
-		// FIXME: http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
+		// http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
 		bufferPtr += 16 * sizeof(UInt8);
 		
 		tmedia_producer_t* producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
