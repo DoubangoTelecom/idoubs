@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -267,32 +269,18 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
-								<string>ECFD28FA135E7B2E00E6A9A3</string>
-								<string>ECFD32B1135E821900E6A9A3</string>
-								<string>EC81BDA9136C6BC60068BCB4</string>
-								<string>ECFD3174135E7DBB00E6A9A3</string>
-								<string>ECFD31BD135E7DBB00E6A9A3</string>
-								<string>ECFD31BE135E7DBB00E6A9A3</string>
-								<string>ECFD31C3135E7DBB00E6A9A3</string>
-								<string>ECFD31FA135E7DBC00E6A9A3</string>
-								<string>ECFD2CE7135E7CAC00E6A9A3</string>
-								<string>ECFD2CE9135E7CAC00E6A9A3</string>
-								<string>ECFD2CEA135E7CAC00E6A9A3</string>
-								<string>ECFD2D05135E7CAC00E6A9A3</string>
-								<string>ECFD23BC135D532A00E6A9A3</string>
-								<string>ECFD23BE135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>160</integer>
-									<integer>144</integer>
+									<integer>37</integer>
+									<integer>19</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2283}, {316, 675}}</string>
+							<string>{{0, 138}, {316, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,14 +308,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnAVSession.mm</string>
+								<string>tdav_codec_speex.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -335,15 +321,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnAVSession.mm</string>
+										<string>tdav_codec_speex.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC84E4FE139AC72900B47153</string>
+										<string>EC84E520139ACDFD00B47153</string>
 										<key>history</key>
 										<array>
-											<string>EC84E4F4139AC72900B47153</string>
-											<string>EC84E4F5139AC72900B47153</string>
 											<string>EC84E4F6139AC72900B47153</string>
 											<string>EC84E4F7139AC72900B47153</string>
 											<string>EC84E4F8139AC72900B47153</string>
@@ -351,7 +335,9 @@
 											<string>EC84E4FA139AC72900B47153</string>
 											<string>EC84E4FB139AC72900B47153</string>
 											<string>EC84E4FC139AC72900B47153</string>
-											<string>EC84E4FD139AC72900B47153</string>
+											<string>EC84E506139ACBBD00B47153</string>
+											<string>EC84E511139ACD1000B47153</string>
+											<string>EC84E512139ACD1000B47153</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -391,6 +377,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1081, 170}}</string>
+										<key>RubberWindowFrame</key>
+										<string>-1 144 1419 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -445,8 +433,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1081, 170}}</string>
-										<key>RubberWindowFrame</key>
-										<string>-1 144 1419 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
