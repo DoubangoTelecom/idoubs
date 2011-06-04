@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC84E4F2139AC72900B47153</string>
+										<string>EC84E504139ACBBC00B47153</string>
 										<key>history</key>
 										<array>
 											<string>EC84E3F6139AA70200B47153</string>
@@ -339,7 +339,7 @@
 											<string>EC84E4BB139AC11200B47153</string>
 											<string>EC84E4D6139AC3E500B47153</string>
 											<string>EC84E4F0139AC72900B47153</string>
-											<string>EC84E4F1139AC72900B47153</string>
+											<string>EC84E503139ACBA300B47153</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -656,7 +656,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC84E4F3139AC72900B47153</string>
+		<string>EC84E505139ACBBC00B47153</string>
 		<string>EC84E286139A7FE600B47153</string>
 		<string>EC84E288139A7FE600B47153</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
