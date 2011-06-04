@@ -38,6 +38,7 @@ class _NgnProxyVideoConsumerCallback;
 	int mWidth;
 	int mHeight;
 	int mFps;
+	BOOL mFlip;
 	
 	UIImageView* mDisplay;
 	CGContextRef mBitmapContext;

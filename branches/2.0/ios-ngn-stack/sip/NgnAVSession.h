@@ -65,6 +65,8 @@ class ActionConfig;
 -(BOOL) toggleHoldResumeWithConfig: (ActionConfig*)config;
 -(BOOL) toggleHoldResume;
 -(BOOL) sendDTMF: (int) digit;
+-(BOOL) setFlipEncodedVideo: (BOOL) flip;
+-(BOOL) setFlipDecodedVideo: (BOOL) flip;
 #if TARGET_OS_IPHONE
 -(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;

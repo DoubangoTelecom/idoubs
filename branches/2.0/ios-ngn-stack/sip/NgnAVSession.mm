@@ -34,6 +34,10 @@
 #undef kSessions
 #define kSessions [NgnAVSession getAllSessions]
 
+//
+// private implementation
+//
+
 @interface NgnAVSession (Private)
 +(NSMutableDictionary*) getAllSessions;
 +(NgnAVSession*) makeCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t)mType;
@@ -41,6 +45,7 @@
 #if TARGET_OS_IPHONE
 -(BOOL)initializeConsumersAndProducers;
 #endif
+-(BOOL) setFlipVideo: (BOOL) flip forConsumer: (BOOL)consumer_;
 @end
 
 @implementation NgnAVSession (Private)
@@ -119,6 +124,23 @@
 	return self;
 }
 
+-(BOOL) setFlipVideo: (BOOL) flip forConsumer: (BOOL)consumer_{
+	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+	if(_mediaMgr){
+		if(consumer_){
+			const_cast<MediaSessionMgr*>(_mediaMgr)->consumerSetInt32(twrap_media_video, "flip", flip ? 1 : 0);
+		}
+		else{
+			const_cast<MediaSessionMgr*>(_mediaMgr)->producerSetInt32(twrap_media_video, "flip", flip ? 1 : 0);
+		}
+		return YES;
+	}
+	else {
+		TSK_DEBUG_ERROR("Failed to find session manager");
+		return NO;
+	}
+}
+
 #if TARGET_OS_IPHONE
   
 -(BOOL)initializeConsumersAndProducers{
@@ -157,6 +179,11 @@
   
 @end
 
+
+
+//
+//	default implementation
+//
 
 @implementation NgnAVSession
 
@@ -342,6 +369,14 @@
 	return _mSession->sendDTMF(digit);
 }
 
+-(BOOL) setFlipEncodedVideo: (BOOL) flip{
+	return [self setFlipVideo:flip forConsumer:NO];
+}
+
+-(BOOL) setFlipDecodedVideo: (BOOL) flip{
+	return [self setFlipVideo:flip forConsumer:YES];
+}
+
 #if TARGET_OS_IPHONE
 -(BOOL) setRemoteVideoDisplay: (UIImageView*)display{
 	if(mVideoConsumer){
@@ -364,6 +399,14 @@
 
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation{
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	// alert the codecs
+	switch (orientation) {
+		case AVCaptureVideoOrientationPortrait: [self setFlipEncodedVideo:NO]; break;
+		case AVCaptureVideoOrientationPortraitUpsideDown: [self setFlipEncodedVideo:NO]; break;
+		case AVCaptureVideoOrientationLandscapeLeft: [self setFlipEncodedVideo:NO]; break;
+		case AVCaptureVideoOrientationLandscapeRight: [self setFlipEncodedVideo:YES]; break;
+	}
+	// alert the producer
 	if(mVideoProducer){
 		[mVideoProducer setOrientation: orientation];
 		return YES;
