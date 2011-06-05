@@ -29,6 +29,7 @@
 +(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_ withBorder:(BOOL)border;
 -(void) closeView;
 -(void) updateViewAndState;
+-(void) animateViewCenter;
 @end
 /*=== AudioCallViewController (Timers) ===*/
 @interface AudioCallViewController (Timers)
@@ -39,6 +40,11 @@
 /*=== AudioCallViewController (SipCallbackEvents) ===*/
 @interface AudioCallViewController(SipCallbackEvents)
 -(void) onInviteEvent:(NSNotification*)notification;
+@end
+
+// private properties
+@interface AudioCallViewController()
+@property(nonatomic) BOOL numpadIsVisible;
 @end
 
 
@@ -79,29 +85,42 @@
 		switch (audioSession.state) {
 			case INVITE_STATE_INPROGRESS:
 			{
-				labelStatus.text = @"Calling...";
+				self.labelStatus.text = @"Calling...";
 				
-				buttonAccept.hidden = YES;
+				self.buttonAccept.hidden = YES;
 				
-				[buttonHangup setTitle:@"End" forState:kButtonStateAll];
-				buttonHangup.hidden = NO;
-				buttonHangup.frame = CGRectMake(buttonHangup.frame.origin.x, buttonHangup.frame.origin.y, 
-												buttonAcceptWidth + buttonHangupWidth, buttonHangup.frame.size.height);
+				self.buttonHideNumpad.hidden = !self->numpadIsVisible;
+				
+				[self.buttonHangup setTitle:@"End" forState:kButtonStateAll];
+				self.buttonHangup.hidden = NO;
+				CGFloat pad = self.buttonHideNumpad.hidden ? self->bottomButtonsPadding : self->bottomButtonsPadding/2;
+				self.buttonHangup.frame = CGRectMake(self.buttonHangup.frame.origin.x, 
+													 self.buttonHangup.frame.origin.y, 
+													 self.buttonHideNumpad.hidden ? 
+														(self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
+													 self.buttonHangup.frame.size.height);
 				break;
 			}
 			case INVITE_STATE_INCOMING:
 			{
-				labelStatus.text = @"Incoming call...";
+				self.labelStatus.text = @"Incoming call...";
 				
-				[buttonAccept setTitle:@"Accept" forState:kButtonStateAll];
-				buttonAccept.hidden = NO;
-				buttonAccept.frame = CGRectMake(buttonAccept.frame.origin.x, buttonAccept.frame.origin.y, 
-												buttonAcceptWidth, buttonAccept.frame.size.height);
+				CGFloat pad = self->bottomButtonsPadding;
 				
-				[buttonHangup setTitle:@"End" forState:kButtonStateAll];
-				buttonHangup.hidden = NO;
-				buttonHangup.frame = CGRectMake(buttonHangup.frame.origin.x, buttonHangup.frame.origin.y, 
-												buttonHangupWidth, buttonHangup.frame.size.height);
+				self.numpadIsVisible = NO;
+				[self.buttonHangup setTitle:@"End" forState:kButtonStateAll];
+				self.buttonHangup.hidden = NO;
+				self.buttonHangup.frame = CGRectMake(pad/2,
+													 self.buttonHangup.frame.origin.y, 
+													 self.viewBottom.frame.size.width/2 - pad, 
+													 self.buttonHangup.frame.size.height);
+				
+				[self.buttonAccept setTitle:@"Accept" forState:kButtonStateAll];
+				self.buttonAccept.hidden = NO;
+				self.buttonAccept.frame = CGRectMake(pad/2 + self.buttonHangup.frame.size.width + pad/2, 
+												self.buttonAccept.frame.origin.y, 
+												self.buttonHangup.frame.size.width, 
+												self.buttonAccept.frame.size.height);
 				
 				[[NgnEngine getInstance].soundService playRingTone];
 				
@@ -109,16 +128,19 @@
 			}
 			case INVITE_STATE_REMOTE_RINGING:
 			{
-				labelStatus.text = @"Remote is ringing";
+				self.labelStatus.text = @"Remote is ringing";
 				
-				buttonAccept.hidden = YES;
-				buttonAccept.frame = CGRectMake(buttonAccept.frame.origin.x, buttonAccept.frame.origin.y, 
-												buttonAcceptWidth, buttonAccept.frame.size.height);
+				self.buttonAccept.hidden = YES;
+				self.buttonHideNumpad.hidden = !self->numpadIsVisible;
 				
-				[buttonHangup setTitle:@"End" forState:kButtonStateAll];
-				buttonHangup.hidden = NO;
-				buttonHangup.frame = CGRectMake(buttonHangup.frame.origin.x, buttonHangup.frame.origin.y, 
-												buttonHangupWidth + buttonHangupWidth, buttonHangup.frame.size.height);
+				[self.buttonHangup setTitle:@"End" forState:kButtonStateAll];
+				self.buttonHangup.hidden = NO;
+				CGFloat pad = self.buttonHideNumpad.hidden ? self->bottomButtonsPadding : self->bottomButtonsPadding/2;
+				self.buttonHangup.frame = CGRectMake(self.buttonHangup.frame.origin.x, 
+													 self.buttonHangup.frame.origin.y, 
+													 self.buttonHideNumpad.hidden ? 
+													 (self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
+													 self.buttonHangup.frame.size.height);
 				
 				[[NgnEngine getInstance].soundService playRingBackTone];
 				break;
@@ -128,11 +150,18 @@
 				self.labelStatus.text = @"In Call";
 				
 				self.buttonAccept.hidden = YES;
+				self.buttonHideNumpad.hidden = !self->numpadIsVisible;
 				
 				[self.buttonHangup setTitle:@"End" forState:kButtonStateAll];
 				self.buttonHangup.hidden = NO;
-				self.buttonHangup.frame = CGRectMake(self.buttonHangup.frame.origin.x, self.buttonHangup.frame.origin.y, 
-												buttonHangupWidth + buttonHangupWidth, self.buttonHangup.frame.size.height);
+				CGFloat pad = self.buttonHideNumpad.hidden ? self->bottomButtonsPadding : self->bottomButtonsPadding/2;
+				self.buttonHangup.frame = CGRectMake(self.buttonHangup.frame.origin.x, 
+													 self.buttonHangup.frame.origin.y, 
+													 self.buttonHideNumpad.hidden ? 
+													 (self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
+													 self.buttonHangup.frame.size.height);
+				
+				
 				
 				[[NgnEngine getInstance].soundService stopRingBackTone];
 				[[NgnEngine getInstance].soundService stopRingTone];
@@ -145,6 +174,7 @@
 				
 				self.buttonAccept.hidden = YES;
 				self.buttonHangup.hidden = YES;
+				self.buttonHideNumpad.hidden = YES;
 				
 				[[NgnEngine getInstance].soundService stopRingBackTone];
 				[[NgnEngine getInstance].soundService stopRingTone];
@@ -154,13 +184,26 @@
 				break;
 		}
 		
-		[AudioCallViewController applyGradienWithColors: [[NgnEngine getInstance].soundService isSpeakerEnabled] ? kColorsBlue : nil
+		[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
 												forView:self.buttonSpeaker withBorder:NO];
 		[AudioCallViewController applyGradienWithColors: [audioSession isLocalHeld] ? kColorsBlue : nil
 												forView:self.buttonHold withBorder:NO];
 		[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
 												forView:self.buttonMute withBorder:NO];
 	}
+}
+
+-(void) animateViewCenter{
+	[UIView beginAnimations:@"animateViewCenter" context:nil];
+	[UIView setAnimationDuration:1.0];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
+						   forView:self.viewCenter
+							 cache:YES];
+	for(UIView *view in self.viewCenter.subviews){
+		[view removeFromSuperview];
+	}
+	[self.viewCenter addSubview:numpadIsVisible ? self.viewNumpad : self.viewOptions];
+	[UIView commitAnimations];
 }
 
 @end
@@ -230,10 +273,12 @@
 //
 //	AudioCallViewController
 //
+
 @implementation AudioCallViewController
 
 @synthesize buttonHangup;
 @synthesize buttonAccept;
+@synthesize buttonHideNumpad;
 @synthesize buttonMute;
 @synthesize buttonNumpad;
 @synthesize buttonSpeaker;
@@ -246,12 +291,16 @@
 @synthesize viewTop;
 @synthesize viewBottom;
 
+@synthesize numpadIsVisible;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		
 		self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 		self.modalPresentationStyle = UIModalPresentationFullScreen;
+		
+		numpadIsVisible = NO;
     }
     return self;
 }
@@ -260,18 +309,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	buttonHangup.layer.cornerRadius = buttonAccept.layer.cornerRadius = 10;
-	buttonHangup.layer.borderWidth = buttonAccept.layer.borderWidth = 2.f;
-	buttonHangup.layer.borderColor = buttonAccept.layer.borderColor = [[UIColor grayColor] CGColor];
+	self.buttonHangup.layer.cornerRadius = 
+	self.buttonAccept.layer.cornerRadius = 
+	self.buttonHideNumpad.layer.cornerRadius = 
+	10;
+	self.buttonHangup.layer.borderWidth = 
+	self.buttonAccept.layer.borderWidth = 
+	self.buttonHideNumpad.layer.borderWidth = 
+	2.f;
+	self.buttonHangup.layer.borderColor = 
+	self.buttonAccept.layer.borderColor = 
+	self.buttonHideNumpad.layer.borderColor = 
+	[[UIColor grayColor] CGColor];
 	
-	buttonAcceptWidth = buttonAccept.frame.size.width;
-	buttonHangupWidth = buttonHangup.frame.size.width;
-	
+	self->numpadIsVisible = NO;
+	self->bottomButtonsPadding = self.buttonHangup.frame.origin.x;
 	[self.viewCenter addSubview:viewOptions];
 	
 	
 	// apply gradients
 	[AudioCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewOptions withBorder:YES];
+	[AudioCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewNumpad withBorder:YES];
 	[AudioCallViewController applyGradienWithColors:kColorsDarkBlack forView:self.viewTop withBorder:NO];
 	[AudioCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewBottom withBorder:NO];
 	
@@ -283,9 +341,8 @@
 	[audioSession release];
 	audioSession = [[NgnAVSession getSessionWithId: self.sessionId] retain];
 	if(audioSession){
-		labelRemoteParty.text = (audioSession.historyEvent && audioSession.historyEvent.remoteParty) ?
-		audioSession.historyEvent.remoteParty : (audioSession.remotePartyUri ? audioSession.remotePartyUri : [NgnStringUtils nullValue]);
-		
+		labelRemoteParty.text = (audioSession.historyEvent) ? audioSession.historyEvent.remotePartyDisplayName : [NgnStringUtils nullValue];
+		[[NgnEngine getInstance].soundService setSpeakerEnabled:[audioSession isSpeakerEnabled]];
 		[self updateViewAndState];
 	}
 }
@@ -307,6 +364,31 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+-(void) setNumpadIsVisible:(BOOL)visible{
+	self->numpadIsVisible = visible;
+	self.buttonHideNumpad.hidden = !visible;
+	[self animateViewCenter];
+	if(visible){
+		CGFloat pad = self->bottomButtonsPadding/2;
+		self.buttonHangup.frame = CGRectMake(pad, 
+											 self.buttonHangup.frame.origin.y, 
+											 (self.viewBottom.frame.size.width/2) - (pad + pad/2), 
+											 self.buttonHangup.frame.size.height);
+		self.buttonHideNumpad.frame = CGRectMake(pad + self.buttonHangup.frame.size.width + pad/2 + 2.f, 
+											 self.buttonHideNumpad.frame.origin.y, 
+											 self.buttonHangup.frame.size.width, 
+											 self.buttonHideNumpad.frame.size.height);
+	}
+	else {
+		self.buttonHangup.frame = CGRectMake(self->bottomButtonsPadding, 
+											 self.buttonHideNumpad.frame.origin.y, 
+											 self.viewBottom.frame.size.width - (2*self->bottomButtonsPadding), 
+											 self.buttonHangup.frame.size.height);
+		
+	}
+
+}
+
 - (IBAction) onButtonClick: (id)sender{
 	if(audioSession){
 		if(sender == buttonHangup){
@@ -322,8 +404,9 @@
 			}
 		}
 		else if(sender == buttonSpeaker){
-			if([[NgnEngine getInstance].soundService setSpeakerEnabled:![[NgnEngine getInstance].soundService isSpeakerEnabled]]){
-				[AudioCallViewController applyGradienWithColors: [[NgnEngine getInstance].soundService isSpeakerEnabled] ? kColorsBlue : nil
+			[audioSession setSpeakerEnabled:![audioSession isSpeakerEnabled]];
+			if([[NgnEngine getInstance].soundService setSpeakerEnabled:[audioSession isSpeakerEnabled]]){
+				[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
 													forView:self.buttonSpeaker withBorder:NO];
 			}
 		}
@@ -331,11 +414,19 @@
 			[audioSession toggleHoldResume];
 		}
 		else if(sender == buttonNumpad){
-			for(UIView *view in self.viewCenter.subviews){
-				// [view removeFromSuperview];
-			}
-			// [self.viewCenter addSubview: self.viewNumpad];
+			self.numpadIsVisible = YES;
 		}
+		else if(sender == buttonHideNumpad){
+			self.numpadIsVisible = NO;
+		}
+	}
+}
+
+- (IBAction) onButtonNumpadClick: (id)sender{
+	if(audioSession){
+		int tag = ((UIButton*)sender).tag;
+		[audioSession sendDTMF:tag];
+		[[NgnEngine getInstance].soundService playDtmf:tag];
 	}
 }
 
@@ -344,7 +435,7 @@
 	[labelRemoteParty release];
 	[buttonHangup release];
 	[buttonAccept release];
-	[buttonAccept release];
+	[buttonHideNumpad release];
 	[buttonMute release];
 	[buttonNumpad release];
 	[buttonSpeaker release];

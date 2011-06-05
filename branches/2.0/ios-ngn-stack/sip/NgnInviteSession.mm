@@ -124,6 +124,14 @@
 	return nil;
 }
 
+// override from SipSession
+-(void)setRemotePartyUri:(NSString*)uri{
+	[super setRemotePartyUri:uri];
+	if([self getHistoryEvent]){
+		[[self getHistoryEvent] setRemotePartyWithValidUri:uri];
+	}
+}
+
 -(const MediaSessionMgr*) getMediaSessionMgr{
 	if(!_mMediaSessionMgr){
 		const SipSession* _session = [self getSession];

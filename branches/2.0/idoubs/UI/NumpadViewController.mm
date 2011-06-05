@@ -147,6 +147,11 @@
 	[mConfigurationService release];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+	[super viewDidAppear:animated];
+	[[NgnEngine getInstance].soundService setSpeakerEnabled:YES];
+}
+
 - (IBAction) onButtonNumpadDown: (id) sender event: (UIEvent*) e{
 	NSInteger tag = ((UIButton*)sender).tag;
 	

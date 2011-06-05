@@ -22,6 +22,9 @@
 #import "NgnHistoryAVCallEvent.h"
 #import "NgnHistorySMSEvent.h"
 #import "NgnUriUtils.h"
+#import "NgnContact.h"
+#import "NgnEngine.h"
+#import "NgnStringUtils.h"
 
 @implementation NgnHistoryEvent
 
@@ -43,6 +46,22 @@
 		self.status = HistoryEventStatus_Missed;
 	}
 	return self;
+}
+
+-(NSString*)remotePartyDisplayName{
+	if(self->remotePartyDisplayName == nil){
+		NgnContact* contact = [[NgnEngine getInstance].contactService getContactByPhoneNumber: self.remoteParty];
+		if(contact && contact.displayName){
+			self->remotePartyDisplayName = [contact.displayName retain];
+		}
+		else if(self.remoteParty){
+			self->remotePartyDisplayName = [self.remoteParty retain];
+		}
+		else {
+			self->remotePartyDisplayName = [[NgnStringUtils nullValue] retain];
+		}
+	}
+	return self->remotePartyDisplayName;
 }
 
 -(void)setRemotePartyWithValidUri: (NSString *)uri{
@@ -83,6 +102,7 @@
 
 -(void)dealloc{
 	[self->remoteParty release];
+	[self->remotePartyDisplayName release];
 	
 	[super dealloc];
 }

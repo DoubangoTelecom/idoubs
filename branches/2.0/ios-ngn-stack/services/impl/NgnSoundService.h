@@ -32,6 +32,9 @@
 	AVAudioPlayer  *playerEvent;
 	AVAudioPlayer  *playerConn;
 	SystemSoundID dtmfLastSoundId;
+#if TARGET_OS_IPHONE
+	AVAudioPlayer *playerKeepAwake;
+#endif
 	
 	BOOL speakerOn;
 }

@@ -46,6 +46,7 @@ HistoryEventStatus_t;
 	NSTimeInterval start;
 	NSTimeInterval end;
 	NSString* remoteParty;
+	NSString* remotePartyDisplayName;
 	BOOL seen;
 	HistoryEventStatus_t status;	
 }
@@ -54,6 +55,7 @@ HistoryEventStatus_t;
 @property(readwrite) NgnMediaType_t mediaType;
 @property(readwrite) NSTimeInterval start;
 @property(readwrite) NSTimeInterval end;
+@property(readonly) NSString* remotePartyDisplayName;
 @property(readwrite,retain) NSString* remoteParty;
 @property(readwrite) BOOL seen;
 @property(readwrite) HistoryEventStatus_t status;

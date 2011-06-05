@@ -32,6 +32,10 @@
 #import "services/INgnStorageService.h"
 
 @interface NgnEngine : NSObject {
+@private
+#if TARGET_OS_IPHONE
+	NSTimer		*keepAwakeTimer;
+#endif /* TARGET_OS_IPHONE */
 @protected
 	BOOL mStarted;
 	NgnBaseService<INgnSipService>* mSipService;
@@ -63,6 +67,11 @@
 -(NgnBaseService<INgnSoundService>* )getSoundService;
 -(NgnBaseService<INgnNetworkService>*)getNetworkService;
 -(NgnBaseService<INgnStorageService>*)getStorageService;
+
+#if TARGET_OS_IPHONE
+-(BOOL) startKeepAwake;
+-(BOOL) stopKeepAwake;
+#endif /* TARGET_OS_IPHONE */
 
 +(void)initialize;
 +(NgnEngine*) getInstance;

@@ -72,16 +72,17 @@
 	return nil;
 }
 
--(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType andState: (InviteState_t) callState{
+-(NgnAVSession*) internalInit: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (NgnMediaType_t) mediaType_ andState: (InviteState_t) callState{
 	if((self = (NgnAVSession*)[super initWithSipStack: sipStack])){
-		mConfigurationService = [[[NgnEngine getInstance] getConfigurationService] retain];
+		mMediaType = mediaType_;
+		mSpeakerOn = isVideoType(mMediaType);
+		mMute = NO;
 		if(session && *session){
 			_mSession = *session, *session = tsk_null;
 		}
 		else {
 			_mSession = new CallSession([sipStack getStack]);
 		}
-		mMediaType = mediaType;
 		// commons
 		[super initialize];
 		// History event
@@ -91,9 +92,9 @@
 		// 100rel
 		_mSession->set100rel(true); // will add "Supported: 100rel"
         // Session timers
-		if([mConfigurationService getBoolWithKey:QOS_USE_SESSION_TIMERS]){
-			int timeout = [mConfigurationService getIntWithKey:QOS_SIP_CALLS_TIMEOUT];
-			NSString* refresher = [mConfigurationService getStringWithKey:QOS_REFRESHER];
+		if([[NgnEngine getInstance].configurationService getBoolWithKey:QOS_USE_SESSION_TIMERS]){
+			int timeout = [[NgnEngine getInstance].configurationService getIntWithKey:QOS_SIP_CALLS_TIMEOUT];
+			NSString* refresher = [[NgnEngine getInstance].configurationService getStringWithKey:QOS_REFRESHER];
 			_mSession->setSessionTimer((unsigned)timeout, [NgnStringUtils toCString: refresher]);
 		}
         // Precondition (FIXME)
@@ -118,7 +119,6 @@
 		[super addHeaderWithName: @"Accept-Contact" andValue: @"*;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3A3gpp-service.ims.icsi.mmtel\""];
 		[super addHeaderWithName:@"P-Preferred-Service" andValue: @"urn:urn-7:3gpp-service.ims.icsi.mmtel"];
 		
-		//-- mHistoryEvent = new NgnHistoryAVCallEvent((mediaType == NgnMediaType.AudioVideo || mediaType == NgnMediaType.Video), null);
 		[super setState:callState];
 	}
 	return self;
@@ -188,7 +188,6 @@
 @implementation NgnAVSession
 
 -(void)dealloc{
-	[mConfigurationService release];
 	if(_mSession){
 		delete _mSession;
 	}
@@ -431,6 +430,15 @@
 	return mMute;
 }
 
+-(BOOL) setSpeakerEnabled: (BOOL)speakerOn{
+	mSpeakerOn = speakerOn;
+	return YES;
+}
+
+-(BOOL) isSpeakerEnabled{
+	return mSpeakerOn;
+}
+
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
 	NgnMediaType_t media;
 	
@@ -454,9 +462,9 @@
 													   andState: INVITE_STATE_INCOMING] autorelease];
 		if(avSession){
 			if (sipMessage){
-				char* fHeaderValue = const_cast<SipMessage*>(sipMessage)->getSipHeaderValue("f");
-				[avSession setRemotePartyUri: [NgnStringUtils toNSString: fHeaderValue]];
-				TSK_FREE(fHeaderValue);
+				char* _fHeaderValue = const_cast<SipMessage*>(sipMessage)->getSipHeaderValue("f");
+				[avSession setRemotePartyUri: [NgnStringUtils toNSString: _fHeaderValue]];
+				TSK_FREE(_fHeaderValue);
 			}
 			[kSessions setObject: avSession forKey:[avSession getIdAsNumber]];
 			return avSession;

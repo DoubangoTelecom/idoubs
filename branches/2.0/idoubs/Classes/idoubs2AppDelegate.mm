@@ -115,10 +115,12 @@
 		case INVITE_EVENT_INCOMING:
 		{
 			NgnAVSession* incomingSession = [[NgnAVSession getSessionWithId: eargs.sessionId] retain];
-			if ([UIApplication sharedApplication].applicationState ==  UIApplicationStateBackground) {
+			if (incomingSession && [UIApplication sharedApplication].applicationState ==  UIApplicationStateBackground) {
 				UILocalNotification* localNotif = [[[UILocalNotification alloc] init] autorelease];
 				if (localNotif){
-					localNotif.alertBody =[NSString  stringWithFormat:@"Call from %@", [incomingSession getRemotePartyUri]];
+					bool _isVideoCall = isVideoType(incomingSession.mediaType);
+					NSString *remoteParty = incomingSession.historyEvent ? incomingSession.historyEvent.remotePartyDisplayName : [incomingSession getRemotePartyUri];
+					localNotif.alertBody =[NSString  stringWithFormat:@"%@ call from\n %@", _isVideoCall ? @"Video" : @"Audio", remoteParty];
 					localNotif.soundName = UILocalNotificationDefaultSoundName; 
 					localNotif.applicationIconBadgeNumber = ++[UIApplication sharedApplication].applicationIconBadgeNumber;
 					localNotif.repeatInterval = 0;
@@ -130,7 +132,7 @@
 					[[UIApplication sharedApplication]  presentLocalNotificationNow:localNotif];
 				}
 			}
-			else {
+			else if(incomingSession){
 				[CallViewController receiveIncomingCall:incomingSession];
 			}
 
@@ -172,9 +174,6 @@
 	// start the engine
 	[[NgnEngine getInstance] start];
 	
-	// Initialize some default values
-	[[NgnEngine getInstance].soundService setSpeakerEnabled: NO];
-	
 	// Set the tab bar controller as the window's root view controller and display.
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -185,15 +184,17 @@
 	// Try to register the default identity
 	[[NgnEngine getInstance].sipService registerIdentity];
 	
+	// enable the speaker: for errors, ringtone, numpad, ...
+	// shoud be done after the SipStack is initialized (thanks to tdav_init() which will initialize the audio system)
+	[[NgnEngine getInstance].soundService setSpeakerEnabled: YES];
+	
 	multitaskingSupported = [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported];
 	backgroundTask = UIBackgroundTaskInvalid;
 	expirationHandler = ^{
-		idoubs2AppDelegate *app = (idoubs2AppDelegate*)[UIApplication sharedApplication];
-		if(app->multitaskingSupported){
-			[(UIApplication*)app endBackgroundTask:app->backgroundTask];
-			app->backgroundTask = UIBackgroundTaskInvalid;
-			
-			app->backgroundTask = [(UIApplication*)app beginBackgroundTaskWithExpirationHandler:app->expirationHandler];
+		NSLog(@"Background task completed");
+		// keep awake
+		if([[NgnEngine getInstance].sipService isRegistered]){
+			[[NgnEngine getInstance] startKeepAwake];
 		}
     };
 	
@@ -219,6 +220,7 @@
 		ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
 		if(registrationState == CONN_STATE_CONNECTING || registrationState == CONN_STATE_CONNECTED){
 			NSLog(@"applicationDidEnterBackground (Registered or Regitering)");
+			// request for 10min to complete the work (registration, computation ...)
 			self->backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:self->expirationHandler];
 			//[application setKeepAliveTimeout:600 handler: ^{
 			//	NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
@@ -237,11 +239,16 @@
     ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
 	NgnNSLog(TAG, @"applicationWillEnterForeground and RegistrationState=%d", registrationState);
 	
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
 	// terminate background task
 	if(self->backgroundTask != UIBackgroundTaskInvalid){
 		[(UIApplication*)app endBackgroundTask:app->backgroundTask];
 		app->backgroundTask = UIBackgroundTaskInvalid;
 	}
+	// stop keepAwake
+	[[NgnEngine getInstance] stopKeepAwake];
+	
+#endif /* __IPHONE_OS_VERSION_MIN_REQUIRED */
 	
 	// register if not already done
 	switch (registrationState) {
