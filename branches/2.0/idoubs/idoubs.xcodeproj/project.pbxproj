@@ -91,6 +91,7 @@
 		EC83B88C13698CEA00DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88B13698CEA00DD3355 /* CFNetwork.framework */; };
 		EC83B88E13698CEA00DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88D13698CEA00DD3355 /* libresolv.dylib */; };
 		EC83B89013698CEA00DD3355 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */; };
+		EC84E587139AE82400B47153 /* keepawake.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC84E586139AE82400B47153 /* keepawake.wav */; };
 		EC90707C13928E2700E14556 /* numpad.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90707A13928E2700E14556 /* numpad.png */; };
 		EC90707D13928E2700E14556 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90707B13928E2700E14556 /* speaker.png */; };
 		EC90729D1392C04A00E14556 /* dtmf-0.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC90728F1392C04A00E14556 /* dtmf-0.wav */; };
@@ -485,6 +486,7 @@
 		EC83B88B13698CEA00DD3355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC83B88D13698CEA00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		EC83B88F13698CEA00DD3355 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EC84E586139AE82400B47153 /* keepawake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = keepawake.wav; sourceTree = "<group>"; };
 		EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-ngn-stack.xcodeproj"; path = "../ios-ngn-stack/ios-ngn-stack.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		EC90707A13928E2700E14556 /* numpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numpad.png; sourceTree = "<group>"; };
 		EC90707B13928E2700E14556 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 		EC90728E1392C04A00E14556 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				EC84E586139AE82400B47153 /* keepawake.wav */,
 				EC90728F1392C04A00E14556 /* dtmf-0.wav */,
 				EC9072901392C04A00E14556 /* dtmf-1.wav */,
 				EC9072911392C04A00E14556 /* dtmf-2.wav */,
@@ -1139,6 +1142,7 @@
 				ECB9279B1395C99900EAE632 /* facetime_mute.png in Resources */,
 				EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */,
 				EC7D99501396BA62006A8F91 /* voice_call.png in Resources */,
+				EC84E587139AE82400B47153 /* keepawake.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

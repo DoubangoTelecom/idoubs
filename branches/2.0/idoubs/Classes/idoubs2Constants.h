@@ -49,7 +49,7 @@ nil]
 (id)[[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.7] CGColor], \
 nil]
 
-#define kButtonStateAll (UIControlStateSelected | UIControlStateNormal || UIControlStateHighlighted)
+#define kButtonStateAll (UIControlStateSelected | UIControlStateNormal | UIControlStateHighlighted | UIControlStateDisabled | UIControlStateApplication)
 
 
 #define kCallTimerSuicide	1.5f

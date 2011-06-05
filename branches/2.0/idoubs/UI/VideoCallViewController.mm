@@ -115,12 +115,14 @@
 													 self.buttonHangUp.frame.origin.y, 
 													 self.viewPickHangUp.frame.size.width - (2* self.buttonHangUp.frame.origin.x), 
 													 self.buttonHangUp.frame.size.height);
-				[self.buttonHangUp setTitle:@"End" forState:kButtonStateAll];
+				[self.buttonHangUp setTitle:@"End" forState:UIControlStateNormal];
 				
 				break;
 			}
 			case INVITE_STATE_INCOMING:
 			{
+				CGFloat pad = self.buttonHangUp.frame.origin.x/2;
+				
 				self.viewTop.hidden = NO;
 				self.viewLocalVideo.hidden = YES;
 				self.labelStatus.text = @"whould like Video Call...";
@@ -128,14 +130,23 @@
 				[self hideBottomView:self.viewToolbar];
 				
 				[self showBottomView:self.viewPickHangUp shouldRefresh:NO];
-				self.buttonPick.hidden = NO;
-				[self.buttonPick setTitle:@"Accept" forState:kButtonStateAll];
+				
 				self.buttonHangUp.hidden = NO;
-				self.buttonHangUp.frame = CGRectMake(self.buttonHangUp.frame.origin.x, 
+				self.buttonHangUp.frame = CGRectMake(pad, 
 													 self.buttonHangUp.frame.origin.y, 
-													 self.buttonPick.frame.size.width, 
+													 self.viewPickHangUp.frame.size.width/2 - (2*pad), 
 													 self.buttonHangUp.frame.size.height);
-				[self.buttonHangUp setTitle:@"Decline" forState:kButtonStateAll];
+				[self.buttonHangUp setTitle:@"Decline" forState:UIControlStateNormal];
+				
+				self.buttonPick.hidden = NO;
+				[self.buttonPick setTitle:@"Accept" forState:UIControlStateNormal];
+				self.buttonPick.frame = CGRectMake(pad + self.buttonHangUp.frame.size.width + pad +2.f, 
+														self.buttonHangUp.frame.origin.y, 
+														self.buttonHangUp.frame.size.width, 
+														self.buttonHangUp.frame.size.height);
+				
+				
+				
 				
 				break;
 			}
@@ -154,7 +165,7 @@
 													 self.buttonHangUp.frame.origin.y, 
 													 self.viewPickHangUp.frame.size.width - (2* self.buttonHangUp.frame.origin.x), 
 													 self.buttonHangUp.frame.size.height);
-				[self.buttonHangUp setTitle:@"End" forState:kButtonStateAll];
+				[self.buttonHangUp setTitle:@"End" forState:UIControlStateNormal];
 				break;
 			}
 			case INVITE_STATE_INCALL:
@@ -371,9 +382,13 @@
 - (void)viewWillAppear:(BOOL)animated{
 	[videoSession release];
 	videoSession = [[NgnAVSession getSessionWithId: self.sessionId] retain];
-	if(videoSession && [videoSession isConnected]){
-		[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
-		[videoSession setLocalVideoDisplay: self.viewLocalVideo];
+	if(videoSession){
+		if([videoSession isConnected]){
+			[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
+			[videoSession setLocalVideoDisplay: self.viewLocalVideo];
+		}
+		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName : [NgnStringUtils nullValue];
+		[[NgnEngine getInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
 	}
 	[self updateViewAndState];
 	[self updateVideoOrientation];

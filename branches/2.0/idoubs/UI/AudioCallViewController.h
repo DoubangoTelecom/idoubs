@@ -22,6 +22,7 @@
 #import "CallViewController.h"
 
 @interface AudioCallViewController : CallViewController {
+@private
 	UILabel *labelStatus;
 	UILabel *labelRemoteParty;
 	UIView *viewCenter;
@@ -29,6 +30,7 @@
 	UIView *viewBottom;
 	UIButton *buttonHangup;
 	UIButton *buttonAccept;
+	UIButton *buttonHideNumpad;
 	UIButton *buttonMute;
 	UIButton *buttonNumpad;
 	UIButton *buttonSpeaker;
@@ -37,9 +39,8 @@
 	UIView *viewNumpad;
 	
 	NgnAVSession* audioSession;
-	
-	CGFloat buttonHangupWidth;
-	CGFloat buttonAcceptWidth;
+	BOOL numpadIsVisible;
+	CGFloat bottomButtonsPadding;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *labelStatus;
@@ -49,6 +50,7 @@
 @property (retain, nonatomic) IBOutlet UIView *viewBottom;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangup;
 @property (retain, nonatomic) IBOutlet UIButton *buttonAccept;
+@property (retain, nonatomic) IBOutlet UIButton *buttonHideNumpad;
 @property (retain, nonatomic) IBOutlet UIButton *buttonMute;
 @property (retain, nonatomic) IBOutlet UIButton *buttonNumpad;
 @property (retain, nonatomic) IBOutlet UIButton *buttonSpeaker;
@@ -57,5 +59,6 @@
 @property (retain, nonatomic) IBOutlet UIView *viewNumpad;
 
 - (IBAction) onButtonClick: (id)sender;
+- (IBAction) onButtonNumpadClick: (id)sender;
 
 @end

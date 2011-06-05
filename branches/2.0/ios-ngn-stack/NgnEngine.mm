@@ -40,14 +40,42 @@
 static NgnEngine* sInstance = nil;
 static BOOL sMediaLayerInitialized = NO;
 
+//
+//	private implementation
+//
+
+@interface NgnEngine(Private)
+-(void)dummyCoCoaThread;
+#if TARGET_OS_IPHONE
+-(void)keepAwakeCallback;
+#endif
+@end
+
 @implementation NgnEngine(Private)
 
 -(void)dummyCoCoaThread {
 	NgnNSLog(TAG, @"dummyCoCoaThread()");
 }
 
+#if TARGET_OS_IPHONE
+-(void)keepAwakeCallback{
+	[self.soundService playKeepAwakeSoundLooping:
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
+									YES
+#else
+									NO
+#endif
+									];
+	NSLog(@"keepAwakeCallback");
+}
+#endif
+
 @end
 
+
+//
+//	default implementation
+//
 @implementation NgnEngine
 
 -(NgnEngine*)init{
@@ -185,6 +213,47 @@ static BOOL sMediaLayerInitialized = NO;
 	}
 	return mStorageService;
 }
+
+
+#if TARGET_OS_IPHONE
+
+-(BOOL) startKeepAwake{
+	if(!keepAwakeTimer){
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
+		BOOL iOS4Plus = YES;
+#else
+		BOOL iOS4Plus = NO;
+#endif
+		// the iOS4 device will sleep after 10seconds of inactivity
+		// On iOS4, playing the sound each 10seconds doesn't work as the system will imediately frozen  
+		// if you stop playing the sound. The only solution is to play it in loop. This is why
+		// the 'repeats' parameter is equal to 'NO'.
+		keepAwakeTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:0]
+													interval:6.f
+													target:self
+													selector:@selector(keepAwakeCallback)
+													userInfo:nil
+												   repeats: iOS4Plus ? NO : YES];
+		[[NSRunLoop currentRunLoop] addTimer:keepAwakeTimer forMode:NSRunLoopCommonModes];
+		[keepAwakeTimer release];
+		if(iOS4Plus){
+			keepAwakeTimer = nil;
+		}
+	}
+	return YES;
+}
+
+-(BOOL) stopKeepAwake{
+	if(keepAwakeTimer){
+		[keepAwakeTimer invalidate];
+		// already released
+		keepAwakeTimer = nil;
+	}
+	[self.soundService stopKeepAwakeSound];
+	return YES;
+}
+
+#endif /* TARGET_OS_IPHONE */
 
 +(void)initialize{
 	if(!sMediaLayerInitialized){

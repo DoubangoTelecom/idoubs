@@ -19,11 +19,39 @@
  *
  */
 #import "NgnSoundService.h"
+#import <AVFoundation/AVFoundation.h>
 
 #undef TAG
 #define kTAG @"NgnSoundService///: "
 #define TAG kTAG
 
+//
+// private implementation
+//
+@interface NgnSoundService(Private)
++(AVAudioPlayer*) initPlayerWithPath:(NSString*)path;
+@end
+
+@implementation NgnSoundService(Private)
+
++(AVAudioPlayer*) initPlayerWithPath:(NSString*)path{
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], path]];
+		
+	NSError *error;
+	AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+	if (player == nil){
+		NSLog(@"Failed to create audio player(%@): %@", path, error);
+	}
+	
+	return player;
+}
+
+@end
+
+
+//
+// default implementation
+//
 @implementation NgnSoundService
 
 -(NgnSoundService*)init{
@@ -39,6 +67,14 @@
 		AudioServicesDisposeSystemSoundID(dtmfLastSoundId);
 		dtmfLastSoundId = 0;
 	}
+#if TARGET_OS_IPHONE
+	if(playerKeepAwake){
+		if(playerKeepAwake.playing){
+			[playerKeepAwake stop];
+		}
+		[playerKeepAwake release];
+	}
+#endif
 	
 	if(playerRingBackTone){
 		if(playerRingBackTone.playing){
@@ -108,20 +144,14 @@
 
 -(BOOL) playRingTone{
 	if(!playerRingTone){
-		NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/ringtone.mp3", [[NSBundle mainBundle] resourcePath]]];
-		
-		NSError *error;
-		playerRingTone = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-		if (playerRingTone == nil){
-			NSLog(@"Failed to create audio player (RingTone): %@", error);
-			return NO;
-		}
+		playerRingTone = [NgnSoundService initPlayerWithPath:@"ringtone.mp3"];
 	}
-	
-	playerRingTone.numberOfLoops = -1;
-	[playerRingTone play];
-	
-	return YES;
+	if(playerRingTone){
+		playerRingTone.numberOfLoops = -1;
+		[playerRingTone play];
+		return YES;
+	}
+	return NO;
 }
 
 -(BOOL) stopRingTone{
@@ -133,19 +163,14 @@
 
 -(BOOL) playRingBackTone{
 	if(!playerRingBackTone){
-		NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/ringbacktone.wav", [[NSBundle mainBundle] resourcePath]]];
-		
-		NSError *error;
-		playerRingBackTone = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-		if (playerRingBackTone == nil){
-			NSLog(@"Failed to create audio player(RingBackTone): %@", error);
-			return NO;
-		}
+		playerRingBackTone = [NgnSoundService initPlayerWithPath:@"ringbacktone.wav"];
 	}
-	
-	playerRingBackTone.numberOfLoops = -1;
-	[playerRingBackTone play];
-	return YES;
+	if(playerRingBackTone){
+		playerRingBackTone.numberOfLoops = -1;
+		[playerRingBackTone play];
+		return YES;
+	}
+	return NO;
 }
 
 -(BOOL) stopRingBackTone{
@@ -189,6 +214,30 @@
 
 -(BOOL) vibrate{
 	AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+	return YES;
+}
+
+-(BOOL) playKeepAwakeSoundLooping: (BOOL)looping{
+	
+	if(!playerKeepAwake){
+		playerKeepAwake = [NgnSoundService initPlayerWithPath:@"keepawake.wav"];
+	}
+	if(playerKeepAwake){
+		UInt32 doSetProperty = 1;
+		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: nil];
+		AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(doSetProperty), &doSetProperty);
+		
+		playerKeepAwake.numberOfLoops = looping ? -1 : +1;
+		[playerKeepAwake play];
+		return YES;
+	}
+	return NO;
+}
+
+-(BOOL) stopKeepAwakeSound{
+	if(playerKeepAwake && playerKeepAwake.playing){
+		[playerKeepAwake stop];
+	}
 	return YES;
 }
 
