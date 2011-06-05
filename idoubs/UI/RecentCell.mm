@@ -50,9 +50,7 @@
 
 -(void)setEvent: (NgnHistoryEvent*)event{
 	if(event){
-		NgnContact* contact = [[NgnEngine getInstance].contactService getContactByPhoneNumber: event.remoteParty];
-		labelDisplayName.text = (contact && contact.displayName) ? contact.displayName :
-									(event.remoteParty ? event.remoteParty : @"Unknown");
+		labelDisplayName.text = event.remotePartyDisplayName;
 		// status
 		switch (event.status) {
 			case HistoryEventStatus_Missed:

@@ -34,6 +34,8 @@
 
 #if TARGET_OS_IPHONE
 -(BOOL) vibrate;
+-(BOOL) playKeepAwakeSoundLooping: (BOOL)looping;
+-(BOOL) stopKeepAwakeSound;
 #endif /* TARGET_OS_IPHONE */
 
 @end

@@ -41,7 +41,6 @@ class ActionConfig;
 
 @interface NgnAVSession : NgnInviteSession {
 	CallSession* _mSession;
-	NgnBaseService<INgnConfigurationService>* mConfigurationService;
 	NgnHistoryAVCallEvent* mEvent;
 	
 #if TARGET_OS_IPHONE
@@ -49,6 +48,7 @@ class ActionConfig;
 	NgnProxyVideoConsumer* mVideoConsumer;
 	NgnProxyVideoProducer* mVideoProducer;
 	BOOL mMute;
+	BOOL mSpeakerOn;
 #endif
 }
 
@@ -73,6 +73,8 @@ class ActionConfig;
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
 -(BOOL) setMute: (BOOL)mute;
 -(BOOL) isMuted;
+-(BOOL) setSpeakerEnabled: (BOOL)speakerOn;
+-(BOOL) isSpeakerEnabled;
 #endif /* TARGET_OS_IPHONE */
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage;
