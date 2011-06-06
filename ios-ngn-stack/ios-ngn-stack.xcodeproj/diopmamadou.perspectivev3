@@ -267,22 +267,29 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>ECFD28FA135E7B2E00E6A9A3</string>
+								<string>ECFD3174135E7DBB00E6A9A3</string>
+								<string>ECFD3176135E7DBB00E6A9A3</string>
+								<string>ECFD3177135E7DBB00E6A9A3</string>
+								<string>ECFD31BD135E7DBB00E6A9A3</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
-								<string>ECFD23C2135D534100E6A9A3</string>
+								<string>ECFD23C0135D534100E6A9A3</string>
+								<string>ECFD23C1135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>9</integer>
-									<integer>4</integer>
+									<integer>55</integer>
+									<integer>41</integer>
+									<integer>40</integer>
+									<integer>36</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 17}, {316, 675}}</string>
+							<string>{{0, 510}, {316, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnAVSession.mm</string>
+								<string>AudioServices.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,23 +332,21 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnAVSession.mm</string>
+										<string>AudioServices.h</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECA67F1C139C2EF0009ED494</string>
+										<string>ECA6803C139C6161009ED494</string>
 										<key>history</key>
 										<array>
-											<string>EC84E7A3139B339900B47153</string>
-											<string>ECA67EB5139C1DC8009ED494</string>
-											<string>ECA67EB7139C1DC8009ED494</string>
-											<string>ECA67EB8139C1DC8009ED494</string>
 											<string>ECA67EB9139C1DC8009ED494</string>
 											<string>ECA67F17139C2EF0009ED494</string>
 											<string>ECA67F18139C2EF0009ED494</string>
 											<string>ECA67F19139C2EF0009ED494</string>
-											<string>ECA67F1A139C2EF0009ED494</string>
-											<string>ECA67F1B139C2EF0009ED494</string>
+											<string>ECA68031139C60DE009ED494</string>
+											<string>ECA68032139C60DE009ED494</string>
+											<string>ECA68033139C60DE009ED494</string>
+											<string>ECA68034139C60DE009ED494</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
