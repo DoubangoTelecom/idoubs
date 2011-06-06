@@ -54,14 +54,15 @@
 	NgnPhoneNumber* ngnPhoneNumber = nil;
 	
 	//if(kABPersonPhoneProperty == property && kABPersonPhoneProperty == identifier){
-		ABMutableMultiValueRef multi = ABRecordCopyValue(person, property);
-		CFStringRef label = ABMultiValueCopyLabelAtIndex(multi, 0);
+		ABMultiValueRef phoneProperty = ABRecordCopyValue(person,property);
+		int idx = ABMultiValueGetIndexForIdentifier (phoneProperty, identifier);
+		CFStringRef label = ABMultiValueCopyLabelAtIndex(phoneProperty, idx);
 		CFStringRef description = (CFStringRef)ABAddressBookCopyLocalizedLabel(label);
-		CFStringRef number = (CFStringRef)ABMultiValueCopyValueAtIndex(multi, 0);
+		CFStringRef number = (CFStringRef)ABMultiValueCopyValueAtIndex(phoneProperty, idx);
 		
 		ngnPhoneNumber = [[NgnPhoneNumber alloc] initWithNumber: (NSString*)number andDescription: (NSString*)description];
 		
-		CFRelease(multi);
+		CFRelease(phoneProperty);
 		CFRelease(label);
 		CFRelease(description);
 		CFRelease(number);
