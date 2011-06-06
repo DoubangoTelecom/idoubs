@@ -166,19 +166,24 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 329017394;
-			PBXWorkspaceStateSaveDate = 329017394;
+			PBXPerProjectTemplateStateSaveDate = 329044967;
+			PBXWorkspaceStateSaveDate = 329044967;
 		};
 		perUserProjectItems = {
-			ECA67EB9139C1DC8009ED494 /* PBXTextBookmark */ = ECA67EB9139C1DC8009ED494 /* PBXTextBookmark */;
-			ECA67F17139C2EF0009ED494 /* PBXTextBookmark */ = ECA67F17139C2EF0009ED494 /* PBXTextBookmark */;
-			ECA67F18139C2EF0009ED494 /* PBXTextBookmark */ = ECA67F18139C2EF0009ED494 /* PBXTextBookmark */;
-			ECA67F19139C2EF0009ED494 /* PBXTextBookmark */ = ECA67F19139C2EF0009ED494 /* PBXTextBookmark */;
-			ECA68031139C60DE009ED494 /* PBXTextBookmark */ = ECA68031139C60DE009ED494 /* PBXTextBookmark */;
-			ECA68032139C60DE009ED494 /* PBXTextBookmark */ = ECA68032139C60DE009ED494 /* PBXTextBookmark */;
-			ECA68033139C60DE009ED494 /* PBXTextBookmark */ = ECA68033139C60DE009ED494 /* PBXTextBookmark */;
-			ECA68034139C60DE009ED494 /* PBXTextBookmark */ = ECA68034139C60DE009ED494 /* PBXTextBookmark */;
-			ECA6803C139C6161009ED494 /* PBXTextBookmark */ = ECA6803C139C6161009ED494 /* PBXTextBookmark */;
+			EC9ED81A139CD3ED0067EB59 /* PBXTextBookmark */ = EC9ED81A139CD3ED0067EB59 /* PBXTextBookmark */;
+			EC9ED852139CD49A0067EB59 /* PBXTextBookmark */ = EC9ED852139CD49A0067EB59 /* PBXTextBookmark */;
+			EC9ED85A139CD5480067EB59 /* PBXTextBookmark */ = EC9ED85A139CD5480067EB59 /* PBXTextBookmark */;
+			ECA67EB9139C1DC8009ED494 = ECA67EB9139C1DC8009ED494 /* PBXTextBookmark */;
+			ECA67F17139C2EF0009ED494 = ECA67F17139C2EF0009ED494 /* PBXTextBookmark */;
+			ECA67F18139C2EF0009ED494 = ECA67F18139C2EF0009ED494 /* PBXTextBookmark */;
+			ECA67F19139C2EF0009ED494 = ECA67F19139C2EF0009ED494 /* PBXTextBookmark */;
+			ECA68031139C60DE009ED494 = ECA68031139C60DE009ED494 /* PBXTextBookmark */;
+			ECA68032139C60DE009ED494 = ECA68032139C60DE009ED494 /* PBXTextBookmark */;
+			ECA68033139C60DE009ED494 = ECA68033139C60DE009ED494 /* PBXTextBookmark */;
+			ECA6815D139C80EC009ED494 = ECA6815D139C80EC009ED494 /* PBXTextBookmark */;
+			ECA6815E139C80EC009ED494 = ECA6815E139C80EC009ED494 /* PBXTextBookmark */;
+			ECA6815F139C80EC009ED494 = ECA6815F139C80EC009ED494 /* PBXTextBookmark */;
+			ECA68160139C80EC009ED494 = ECA68160139C80EC009ED494 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD2399135D510C00E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -779,6 +784,36 @@
 			sepNavVisRange = "{0, 1269}";
 		};
 	};
+	EC9ED81A139CD3ED0067EB59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */;
+		name = "tdav_consumer_audio.c: 181";
+		rLen = 0;
+		rLoc = 5641;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 4738;
+	};
+	EC9ED852139CD49A0067EB59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */;
+		name = "tdav_consumer_audio.c: 181";
+		rLen = 0;
+		rLoc = 5641;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 4738;
+	};
+	EC9ED85A139CD5480067EB59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */;
+		name = "tdav_consumer_audio.c: 181";
+		rLen = 0;
+		rLoc = 5641;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 4738;
+	};
 	ECA67EB9139C1DC8009ED494 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ECA6A628137D87700022AD09 /* NgnHistoryEvent.mm */;
@@ -849,40 +884,52 @@
 		vrLen = 925;
 		vrLoc = 3896;
 	};
-	ECA68034139C60DE009ED494 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA68035139C60DE009ED494 /* AudioServices.h */;
-		rLen = 1;
-		rLoc = 200;
-		rType = 1;
-	};
 	ECA68035139C60DE009ED494 /* AudioServices.h */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = sourcecode.c.h;
 		name = AudioServices.h;
 		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioServices.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1020, 15509}}";
-			sepNavSelRange = "{8655, 28}";
-			sepNavVisRange = "{8080, 1852}";
-		};
 	};
-	ECA6803C139C6161009ED494 /* PBXTextBookmark */ = {
+	ECA6815D139C80EC009ED494 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = ECA6803D139C6161009ED494 /* AudioServices.h */;
+		fRef = ECA68035139C60DE009ED494 /* AudioServices.h */;
 		name = "AudioServices.h: 201";
 		rLen = 28;
 		rLoc = 8655;
 		rType = 0;
-		vrLen = 1954;
+		vrLen = 1852;
 		vrLoc = 8080;
 	};
-	ECA6803D139C6161009ED494 /* AudioServices.h */ = {
-		isa = PBXFileReference;
-		name = AudioServices.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioServices.h;
-		sourceTree = "<absolute>";
+	ECA6815E139C80EC009ED494 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECDDB5DD137C00330027105F /* NgnProxyPluginMgr.mm */;
+		name = "NgnProxyPluginMgr.mm: 198";
+		rLen = 0;
+		rLoc = 5067;
+		rType = 0;
+		vrLen = 1101;
+		vrLoc = 4504;
+	};
+	ECA6815F139C80EC009ED494 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */;
+		name = "tdav_consumer_audio.c: 181";
+		rLen = 0;
+		rLoc = 5641;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 4636;
+	};
+	ECA68160139C80EC009ED494 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */;
+		name = "tdav_consumer_audio.c: 181";
+		rLen = 0;
+		rLoc = 5641;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 4636;
 	};
 	ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {
 		uiCtxt = {
@@ -2178,9 +2225,9 @@
 	};
 	ECFD31C7135E7DBB00E6A9A3 /* tdav_consumer_audio.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 3237}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3185}}";
 			sepNavSelRange = "{5641, 0}";
-			sepNavVisRange = "{4636, 1063}";
+			sepNavVisRange = "{4738, 961}";
 		};
 	};
 	ECFD31C9135E7DBB00E6A9A3 /* tdav_producer_audio.c */ = {
@@ -2206,9 +2253,9 @@
 	};
 	ECFD31CC135E7DBB00E6A9A3 /* tdav_speex_denoise.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1373, 3523}}";
-			sepNavSelRange = "{5370, 0}";
-			sepNavVisRange = "{5322, 687}";
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 3016}}";
+			sepNavSelRange = "{5257, 0}";
+			sepNavVisRange = "{3330, 753}";
 		};
 	};
 	ECFD31CD135E7DBB00E6A9A3 /* tdav_speex_jitterbuffer.c */ = {
