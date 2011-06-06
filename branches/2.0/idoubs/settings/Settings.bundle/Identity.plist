@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>IDENTITY_DISPLAY_NAME</string>
 			<key>DefaultValue</key>
-			<string>John Doe</string>
+			<string>001</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -24,7 +24,7 @@
 			<key>Key</key>
 			<string>IDENTITY_IMPU</string>
 			<key>DefaultValue</key>
-			<string>sip:johndoe@open-ims.test</string>
+			<string>sip:001@doubango.org</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -34,7 +34,7 @@
 			<key>Key</key>
 			<string>IDENTITY_IMPI</string>
 			<key>DefaultValue</key>
-			<string>johndoe@open-ims.test</string>
+			<string>001</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -54,7 +54,7 @@
 			<key>Key</key>
 			<string>NETWORK_REALM</string>
 			<key>DefaultValue</key>
-			<string>sip:open-ims.test</string>
+			<string>doubango.org</string>
 		</dict>
 		<dict>
 			<key>Type</key>

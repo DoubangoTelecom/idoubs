@@ -275,13 +275,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>37</integer>
-									<integer>2</integer>
-									<integer>0</integer>
+									<integer>57</integer>
+									<integer>56</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 207}, {287, 675}}</string>
+							<string>{{0, 532}, {287, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>VideoCallViewController.mm</string>
+								<string>PeoplePicker.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,23 +323,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>VideoCallViewController.mm</string>
+										<string>PeoplePicker.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECA6802D139C5D8E009ED494</string>
+										<string>ECA68143139C7000009ED494</string>
 										<key>history</key>
 										<array>
-											<string>ECA67FEF139C5640009ED494</string>
-											<string>ECA67FF0139C5640009ED494</string>
-											<string>ECA67F3C139C3167009ED494</string>
-											<string>ECA67FF9139C56A9009ED494</string>
-											<string>ECA67FE6139C559D009ED494</string>
-											<string>ECA67F62139C3F83009ED494</string>
-											<string>ECA68016139C5BE1009ED494</string>
-											<string>ECA68024139C5C79009ED494</string>
-											<string>ECA68025139C5C79009ED494</string>
-											<string>ECA68026139C5C79009ED494</string>
+											<string>ECA68099139C6563009ED494</string>
+											<string>ECA6809A139C6563009ED494</string>
+											<string>ECA6809B139C6563009ED494</string>
+											<string>ECA6809C139C6563009ED494</string>
+											<string>ECA6809D139C6563009ED494</string>
+											<string>ECA6809F139C6563009ED494</string>
+											<string>ECA68110139C6D87009ED494</string>
+											<string>ECA6812F139C6F10009ED494</string>
+											<string>ECA68131139C6F10009ED494</string>
+											<string>ECA68140139C6FDF009ED494</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -657,7 +656,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECA6802E139C5D8E009ED494</string>
+		<string>ECA68142139C6FDF009ED494</string>
 		<string>ECA67E88139C1853009ED494</string>
 		<string>ECA67E89139C1853009ED494</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
