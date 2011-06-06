@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECA6815A139C72DB009ED494</string>
+										<string>EC9ED828139CD3FA0067EB59</string>
 										<key>history</key>
 										<array>
 											<string>ECA6809A139C6563009ED494</string>
@@ -340,7 +340,7 @@
 											<string>ECA6812F139C6F10009ED494</string>
 											<string>ECA68131139C6F10009ED494</string>
 											<string>ECA68158139C72DB009ED494</string>
-											<string>ECA68159139C72DB009ED494</string>
+											<string>ECA6815C139C80EB009ED494</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -354,18 +354,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 522}}</string>
+								<string>{{0, 0}, {1125, 517}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>522pt</string>
+							<string>517pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>166pt</string>
+							<string>171pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -379,7 +379,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 139}}</string>
+										<string>{{10, 27}, {1125, 144}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
@@ -463,11 +463,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECA67E7F139C1853009ED494</string>
+				<string>EC9ED829139CD3FA0067EB59</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECA67E80139C1853009ED494</string>
+				<string>EC9ED82A139CD3FA0067EB59</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECA67E81139C1853009ED494</string>
+				<string>EC9ED82B139CD3FA0067EB59</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -657,8 +657,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECA67E88139C1853009ED494</string>
-		<string>ECA67E89139C1853009ED494</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
