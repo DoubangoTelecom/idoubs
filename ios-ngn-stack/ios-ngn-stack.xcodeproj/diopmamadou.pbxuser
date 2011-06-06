@@ -657,8 +657,8 @@
 	};
 	EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 481}}";
-			sepNavSelRange = "{1181, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 441}}";
+			sepNavSelRange = "{1267, 18}";
 			sepNavVisRange = "{0, 1319}";
 		};
 	};
@@ -1104,9 +1104,9 @@
 	};
 	ECF200921360E2BD00B0BFEB /* NgnContactService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1020, 2665}}";
-			sepNavSelRange = "{1517, 0}";
-			sepNavVisRange = "{1138, 1114}";
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 3523}}";
+			sepNavSelRange = "{5596, 0}";
+			sepNavVisRange = "{4995, 1006}";
 		};
 	};
 	ECF200951360E2D200B0BFEB /* NgnHistoryService.h */ = {
@@ -2180,6 +2180,13 @@
 			sepNavVisRange = "{0, 1184}";
 		};
 	};
+	ECFD3199135E7DBB00E6A9A3 /* tdav_codec_g729.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 1027}}";
+			sepNavSelRange = "{1289, 6}";
+			sepNavVisRange = "{1048, 933}";
+		};
+	};
 	ECFD31B2135E7DBB00E6A9A3 /* tdav.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1020, 1053}}";
@@ -2277,6 +2284,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1024, 5187}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 1006}";
+		};
+	};
+	ECFD31DF135E7DBB00E6A9A3 /* tdav_codec_g729.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1020, 6045}}";
+			sepNavSelRange = "{2190, 12}";
+			sepNavVisRange = "{1888, 690}";
 		};
 	};
 	ECFD31E3135E7DBC00E6A9A3 /* tdav_codec_h261.c */ = {

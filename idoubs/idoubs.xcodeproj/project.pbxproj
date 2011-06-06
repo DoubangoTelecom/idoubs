@@ -1262,7 +1262,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mamadou DIOP (89JZ5C3KM4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1295,6 +1294,7 @@
 					"-lavcore",
 					"-lavutil",
 					"-lavcodec",
+					"-lg729b",
 					"-lspeex",
 					"-lspeexdsp",
 					"-framework",
@@ -1303,7 +1303,6 @@
 					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8E7D569F-CDCE-46BD-83D6-9FF80E3B7715";
 			};
 			name = Debug;
 		};
@@ -1341,6 +1340,7 @@
 					"-lavcore",
 					"-lavutil",
 					"-lavcodec",
+					"-lg729b",
 					"-lspeex",
 					"-lspeexdsp",
 					"-framework",

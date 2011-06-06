@@ -133,6 +133,8 @@
 		};
 		perUserProjectItems = {
 			EC9ED828139CD3FA0067EB59 /* PBXTextBookmark */ = EC9ED828139CD3FA0067EB59 /* PBXTextBookmark */;
+			EC9ED88E139CDDD50067EB59 /* PBXTextBookmark */ = EC9ED88E139CDDD50067EB59 /* PBXTextBookmark */;
+			EC9ED897139CDF7B0067EB59 /* PBXTextBookmark */ = EC9ED897139CDF7B0067EB59 /* PBXTextBookmark */;
 			ECA6809A139C6563009ED494 = ECA6809A139C6563009ED494 /* PBXTextBookmark */;
 			ECA6809B139C6563009ED494 = ECA6809B139C6563009ED494 /* PBXTextBookmark */;
 			ECA6809C139C6563009ED494 = ECA6809C139C6563009ED494 /* PBXTextBookmark */;
@@ -182,7 +184,7 @@
 		ignoreCount = 0;
 		lineNumber = 334;
 		location = idoubs;
-		modificationTime = 329046002.488129;
+		modificationTime = 329050888.77981;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -196,7 +198,7 @@
 	EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1064, 6110}}";
-			sepNavSelRange = "{11144, 287}";
+			sepNavSelRange = "{11214, 0}";
 			sepNavVisRange = "{10137, 1496}";
 		};
 	};
@@ -459,6 +461,26 @@
 		vrLen = 1496;
 		vrLoc = 10137;
 	};
+	EC9ED88E139CDDD50067EB59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */;
+		name = "AudioCallViewController.mm: 351";
+		rLen = 0;
+		rLoc = 11214;
+		rType = 0;
+		vrLen = 1496;
+		vrLoc = 10137;
+	};
+	EC9ED897139CDF7B0067EB59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECA68130139C6F10009ED494 /* ABRecord.h */;
+		name = "ABRecord.h: 25";
+		rLen = 30;
+		rLoc = 495;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 336;
+	};
 	ECA6809A139C6563009ED494 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EC7E2FA21389696C0020EB89 /* idoubs2AppDelegate.h */;
@@ -561,6 +583,11 @@
 		name = ABRecord.h;
 		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AddressBook.framework/Headers/ABRecord.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 871}}";
+			sepNavSelRange = "{585, 0}";
+			sepNavVisRange = "{336, 1198}";
+		};
 	};
 	ECA68131139C6F10009ED494 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
