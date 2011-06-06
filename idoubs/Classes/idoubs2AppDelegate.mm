@@ -196,6 +196,7 @@
 		if([[NgnEngine getInstance].sipService isRegistered]){
 			[[NgnEngine getInstance] startKeepAwake];
 		}
+		[idoubs2AppDelegate sharedInstance]->backgroundTask = UIBackgroundTaskInvalid;
     };
 	
 	if(multitaskingSupported){
@@ -216,12 +217,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 	// application.idleTimerDisabled = YES;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
-	if(self->multitaskingSupported){
+	if([idoubs2AppDelegate sharedInstance]->multitaskingSupported){
 		ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
 		if(registrationState == CONN_STATE_CONNECTING || registrationState == CONN_STATE_CONNECTED){
 			NSLog(@"applicationDidEnterBackground (Registered or Regitering)");
 			// request for 10min to complete the work (registration, computation ...)
-			self->backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:self->expirationHandler];
+			[idoubs2AppDelegate sharedInstance]->backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:self->expirationHandler];
 			//[application setKeepAliveTimeout:600 handler: ^{
 			//	NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
 			//}];
@@ -234,16 +235,15 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 	// application.idleTimerDisabled = NO;
-	idoubs2AppDelegate *app = (idoubs2AppDelegate*)[UIApplication sharedApplication];
 	
     ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
 	NgnNSLog(TAG, @"applicationWillEnterForeground and RegistrationState=%d", registrationState);
 	
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
 	// terminate background task
-	if(self->backgroundTask != UIBackgroundTaskInvalid){
-		[(UIApplication*)app endBackgroundTask:app->backgroundTask];
-		app->backgroundTask = UIBackgroundTaskInvalid;
+	if([idoubs2AppDelegate sharedInstance]->backgroundTask != UIBackgroundTaskInvalid){
+		[application endBackgroundTask:[idoubs2AppDelegate sharedInstance]->backgroundTask]; // Using shared instance will crash the application
+		[idoubs2AppDelegate sharedInstance]->backgroundTask = UIBackgroundTaskInvalid;
 	}
 	// stop keepAwake
 	[[NgnEngine getInstance] stopKeepAwake];
