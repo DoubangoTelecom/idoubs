@@ -210,6 +210,11 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 }
 
 // FIXME: should be optimized
+// * Idea 1: create dictionary with the phone number as key and NgnContact as value
+// * Idea 2: Idea 1 but only fill the dictionary when this function succeed. The advantage
+// of this idea is that we will only store the most often searched contacts. If the contact
+// doesn't exist we shoud store 'nil' to avoid query for it again and again. 
+// Do not forget to clear the dictionary we the contacts are loaded again.
 -(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber{
 	if(phoneNumber){
 		@synchronized(mContacts){

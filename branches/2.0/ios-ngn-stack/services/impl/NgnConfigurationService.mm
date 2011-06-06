@@ -56,6 +56,7 @@
 	
 	codec_value_pair_t codec_value_pairs[] = 
 	{
+		{ MEDIA_CODEC_USE_G729AB, tdav_codec_id_g729ab },
 		{ MEDIA_CODEC_USE_AMR_NB_OA, tdav_codec_id_amr_nb_oa },
 		{ MEDIA_CODEC_USE_AMR_NB_BE, tdav_codec_id_amr_nb_be },
 		{ MEDIA_CODEC_USE_GSM, tdav_codec_id_gsm },
@@ -122,6 +123,7 @@
 								  
 								  /* === MEDIA === */
 								  [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
+								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
 								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_OA], MEDIA_CODEC_USE_AMR_NB_OA,
 								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_BE], MEDIA_CODEC_USE_AMR_NB_BE,
 								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_GSM], MEDIA_CODEC_USE_GSM,

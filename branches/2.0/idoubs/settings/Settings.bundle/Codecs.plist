@@ -16,6 +16,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>G.729</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_G729AB</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>AMR-NB-OA</string>
 			<key>Key</key>
 			<string>MEDIA_CODEC_USE_AMR_NB_OA</string>
