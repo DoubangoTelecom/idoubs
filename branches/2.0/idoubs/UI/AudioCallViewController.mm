@@ -347,8 +347,16 @@
 	}
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+	[super viewDidAppear:animated];
+	
+	[UIDevice currentDevice].proximityMonitoringEnabled = YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
 	[NgnAVSession releaseSession: &audioSession];
+	
+	[UIDevice currentDevice].proximityMonitoringEnabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
