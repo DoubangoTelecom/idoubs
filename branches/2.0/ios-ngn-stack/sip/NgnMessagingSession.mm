@@ -28,6 +28,10 @@
 #undef kSessions
 #define kSessions [NgnMessagingSession getAllSessions]
 
+//
+// private implementation
+//
+
 @interface NgnMessagingSession (Private)
 +(NSMutableDictionary*) getAllSessions;
 -(NgnMessagingSession*) internalInitWithSipStack: (NgnSipStack*)sipStack andSession: (MessagingSession**)session andRemotePartyUri: (NSString*)remoteUri;
@@ -224,7 +228,7 @@
 
 -(void)dealloc{
 	if(_mSession){
-		delete _mSession;
+		delete _mSession, _mSession = tsk_null;
 	}
 	
 	[super dealloc];

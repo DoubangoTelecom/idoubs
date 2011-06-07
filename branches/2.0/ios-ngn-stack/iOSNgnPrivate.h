@@ -18,13 +18,17 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import <Foundation/Foundation.h>
+#ifndef IOS_NGN_PRIVATE_H
+#define IOS_NGN_PRIVATE_H
 
-#import "INgnBaseService.h"
+#import "iOSNgnConfig.h"
 
-@protocol INgnHttpClientService <INgnBaseService>
+#import "services/impl/NgnConfigurationService.h"
+#import "services/impl/NgnContactService.h"
+#import "services/impl/NgnNetworkService.h"
+#import "services/impl/NgnHttpClientService.h"
 
--(NSData*) getSynchronously:(NSString*)uri;
--(NSData*) postSynchronously:(NSString*) uri withContentData:(NSData*)contentData withContentType:(NSString*)contentType;
+/* To be completed... */
 
-@end
+
+#endif /* IOS_NGN_PRIVATE_H */

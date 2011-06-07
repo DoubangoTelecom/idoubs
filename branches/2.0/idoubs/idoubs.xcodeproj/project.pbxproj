@@ -123,6 +123,7 @@
 		EC967C7B1391BDBD006187D3 /* type_audio.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C791391BDBD006187D3 /* type_audio.png */; };
 		EC967C7C1391BDBD006187D3 /* type_sms.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7A1391BDBD006187D3 /* type_sms.png */; };
 		EC967C7F1391BECF006187D3 /* type_video.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7E1391BECF006187D3 /* type_video.png */; };
+		EC9EDB81139D50B30067EB59 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC9EDB80139D50B30067EB59 /* Entitlements.plist */; };
 		ECB40EDA138E76F600EB92A3 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECA138E76F600EB92A3 /* keypad_0.png */; };
 		ECB40EDB138E76F600EB92A3 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECB138E76F600EB92A3 /* keypad_1.png */; };
 		ECB40EDC138E76F600EB92A3 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECC138E76F600EB92A3 /* keypad_2.png */; };
@@ -522,6 +523,7 @@
 		EC967C791391BDBD006187D3 /* type_audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_audio.png; sourceTree = "<group>"; };
 		EC967C7A1391BDBD006187D3 /* type_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_sms.png; sourceTree = "<group>"; };
 		EC967C7E1391BECF006187D3 /* type_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_video.png; sourceTree = "<group>"; };
+		EC9EDB80139D50B30067EB59 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		ECB40ECA138E76F600EB92A3 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
 		ECB40ECB138E76F600EB92A3 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
 		ECB40ECC138E76F600EB92A3 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				ECB40EC8138E76F600EB92A3 /* images */,
 				EC7E2FDD13896CFD0020EB89 /* storage */,
 				8D1107310486CEB800E47090 /* idoubs-Info.plist */,
+				EC9EDB80139D50B30067EB59 /* Entitlements.plist */,
 				EC6AD68A136B3A8E00617B95 /* MainWindow.xib */,
 			);
 			name = Resources;
@@ -678,6 +681,7 @@
 		EC7E2F4D138968E50020EB89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EC9EDB49139D3BD40067EB59 /* Utils */,
 				EC7E2FF313896EE10020EB89 /* Cells */,
 				EC7E2F51138968E50020EB89 /* AudioCallView.xib */,
 				EC7E2F52138968E50020EB89 /* AudioCallViewController.h */,
@@ -708,8 +712,6 @@
 				EC7E2F77138968E50020EB89 /* RecentsView.xib */,
 				EC7E2F78138968E50020EB89 /* RecentsViewController.h */,
 				EC7E2F79138968E50020EB89 /* RecentsViewController.mm */,
-				EC7E2F7A138968E50020EB89 /* TransparentToolbar.h */,
-				EC7E2F7B138968E50020EB89 /* TransparentToolbar.mm */,
 				EC7E2F7C138968E50020EB89 /* VideoCallView.xib */,
 				EC7E2F7D138968E50020EB89 /* VideoCallViewController.h */,
 				EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */,
@@ -807,6 +809,15 @@
 				EC90766913932A4800E14556 /* Settings.bundle */,
 			);
 			path = settings;
+			sourceTree = "<group>";
+		};
+		EC9EDB49139D3BD40067EB59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EC7E2F7A138968E50020EB89 /* TransparentToolbar.h */,
+				EC7E2F7B138968E50020EB89 /* TransparentToolbar.mm */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		ECB40EC8138E76F600EB92A3 /* images */ = {
@@ -1143,6 +1154,7 @@
 				EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */,
 				EC7D99501396BA62006A8F91 /* voice_call.png in Resources */,
 				EC84E587139AE82400B47153 /* keepawake.wav in Resources */,
+				EC9EDB81139D50B30067EB59 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,6 +1369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
@@ -1379,6 +1392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
@@ -1392,6 +1406,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -22,8 +22,18 @@
 
 #import "NgnSipSession.h"
 
-@interface NgnPublicationSession : NgnSipSession {
+class PublicationSession;
 
+@interface NgnPublicationSession : NgnSipSession {
+	PublicationSession *_mSession;
 }
+
+/*
++(NgnPublicationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri;
++(NgnPublicationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack;
++(NgnPublicationSession*) getSessionWithId: (long)sessionId;
++(BOOL) hasSessionWithId: (long)sessionId;
++(void) releaseSession: (NgnPublicationSession**) session;
+*/
 
 @end

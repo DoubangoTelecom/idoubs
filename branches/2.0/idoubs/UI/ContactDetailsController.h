@@ -25,9 +25,11 @@
 @interface ContactDetailsController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate> {
 	UILabel *labelDisplayName;
 	UIImageView *imageViewAvatar;
-	UITableView *tableViewPhones;
-	UITableView *tableViewEmails;
+	UITableView *tableView;
+	UIView *viewHeader;
+	UIView *viewFooter;
 	
+	UIButton *buttonInvite;
 	UIButton *buttonVideoCall;
 	UIButton *buttonTextMessage;
 	UIButton *buttonAddToFavorites;
@@ -39,9 +41,11 @@
 @property(nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property(nonatomic,retain) IBOutlet UILabel *labelDisplayName;
 @property(nonatomic,retain) IBOutlet UIImageView *imageViewAvatar;
-@property(nonatomic,retain) IBOutlet UITableView *tableViewPhones;
-@property(nonatomic,retain) IBOutlet UITableView *tableViewEmails;
+@property(nonatomic,retain) IBOutlet UITableView *tableView;
+@property(nonatomic,retain) IBOutlet UIView *viewHeader;
+@property(nonatomic,retain) IBOutlet UIView *viewFooter;
 
+@property(nonatomic,retain) IBOutlet UIButton *buttonInvite;
 @property(nonatomic,retain) IBOutlet UIButton *buttonVideoCall;
 @property(nonatomic,retain) IBOutlet UIButton *buttonTextMessage;
 @property(nonatomic,retain) IBOutlet UIButton *buttonAddToFavorites;

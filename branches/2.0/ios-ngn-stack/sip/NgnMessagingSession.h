@@ -27,7 +27,6 @@
 #define NgnMessagingSessionMutableArray	NSMutableArray
 #define NgnMessagingSessionArray	NSArray
 
-
 class MessagingSession;
 class ActionConfig;
 class SipMessage;

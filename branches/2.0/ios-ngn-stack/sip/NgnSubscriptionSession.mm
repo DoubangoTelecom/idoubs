@@ -20,6 +20,50 @@
  */
 #import "NgnSubscriptionSession.h"
 
+#undef kSessions
+#define kSessions [NgnSubscriptionSession getAllSessions]
+
+/*
+//
+//	private implementation
+//
+
+@interface NgnSubscriptionSession (Private)
++(NSMutableDictionary*) getAllSessions;
+-(NgnSubscriptionSession*) internalInit: (NgnSipStack*)sipStack;
+@end
+
+@implementation NgnSubscriptionSession (Private)
+
++(NSMutableDictionary*) getAllSessions{
+	
+}
+
+-(NgnSubscriptionSession*) internalInit: (NgnSipStack*)sipStack{
+	
+}
+
+@end
+*/
+
+
+//
+// default implementation
+//
+
 @implementation NgnSubscriptionSession
+
+-(void)dealloc{
+	if(_mSession){
+		delete _mSession, _mSession = tsk_null;
+	}
+	
+	[super dealloc];
+}
+
+// Override from NgnSipSession
+-(SipSession*)getSession{
+	return _mSession;
+}
 
 @end
