@@ -26,6 +26,11 @@
 #undef kSessions
 #define kSessions [NgnRegistrationSession getAllSessions]
 
+
+//
+//	private implementation
+//
+
 @interface NgnRegistrationSession (Private)
 +(NSMutableDictionary*) getAllSessions;
 -(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack;
@@ -81,6 +86,12 @@
 @end
 
 
+
+
+//
+// default implementation
+//
+
 @implementation NgnRegistrationSession
 
 +(NgnRegistrationSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri{
@@ -127,7 +138,7 @@
 
 -(void)dealloc{
 	if(_mSession){
-		delete _mSession;
+		delete _mSession, _mSession = tsk_null;
 	}
 	[super dealloc];
 }
@@ -148,6 +159,7 @@
 	return FALSE;
 }
 
+// Override from NgnSipSession
 -(SipSession*)getSession{
 	return _mSession;
 }

@@ -241,15 +241,15 @@
 		self.navigationItem.rightBarButtonItem.target = self;
 	}
 	
-	textView.layer.cornerRadius = 10.f;
-	textView.clipsToBounds = YES;
-	textView.layer.borderWidth = 1.0f;
-	textView.layer.borderColor = [[UIColor grayColor] CGColor];
+	self.textView.layer.cornerRadius = 10.f;
+	self.textView.clipsToBounds = YES;
+	self.textView.layer.borderWidth = 1.0f;
+	self.textView.layer.borderColor = [[UIColor grayColor] CGColor];
 	
-	tableView.tableHeaderView = viewTableHeader;
-	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	tableView.delegate = self;
-	tableView.dataSource = self;
+	self.tableView.tableHeaderView = self.viewTableHeader;
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
 	
 	[self refreshDataAndReload];
 	

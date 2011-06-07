@@ -35,9 +35,11 @@
 @synthesize reuseIdentifier;
 @synthesize labelDisplayName;
 @synthesize imageViewAvatar;
-@synthesize tableViewPhones;
-@synthesize tableViewEmails;
+@synthesize tableView;
+@synthesize viewHeader;
+@synthesize viewFooter;
 
+@synthesize buttonInvite;
 @synthesize buttonVideoCall;
 @synthesize buttonTextMessage;
 @synthesize buttonAddToFavorites;
@@ -55,8 +57,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.tableViewPhones.layer.cornerRadius = 10;
-	self.tableViewPhones.layer.cornerRadius = 10;
+	self.imageViewAvatar.layer.cornerRadius = 8.f;
+	self.buttonInvite.layer.cornerRadius = 8.f;
+	
+	self.tableView.tableHeaderView = self.viewHeader;
+	self.tableView.tableFooterView = self.viewFooter;
 }
 
 
@@ -79,17 +84,7 @@
 	
 	if(self.contact){
 		self.labelDisplayName.text = self.contact.displayName;
-		[self.tableViewEmails reloadData];
-		[self.tableViewPhones reloadData];
-		
-		CGRect rect = self.tableViewPhones.frame;
-		rect.size.height = self.tableViewPhones.contentSize.height;
-		self.tableViewPhones.frame = rect;
-		
-		rect = self.tableViewEmails.frame;
-		rect.size.height = self.tableViewEmails.contentSize.height;
-		rect.origin.y = self.tableViewPhones.frame.origin.y + self.tableViewPhones.frame.size.height + 12.f;
-		self.tableViewEmails.frame = rect;
+		[self.tableView reloadData];
 	}
 }
 
@@ -251,52 +246,38 @@
 //	UITableViewDelegate
 //
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if(tableView == self.tableViewPhones){
-		return self.contact ? [self.contact.phoneNumbers count] : 0;
-	}
-	else if(tableView == self.tableViewPhones){
-		return 0;
-	}
-	return 0;
+- (NSInteger)tableView:(UITableView *)tableView_ numberOfRowsInSection:(NSInteger)section {
+	return self.contact ? [self.contact.phoneNumbers count] : 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(tableView == self.tableViewPhones){
-		PhoneEntryCell* cell = (PhoneEntryCell*)[tableView dequeueReusableCellWithIdentifier: kPhoneEntryCellIdentifier];
-		if (cell == nil) {		
-			cell = [[[NSBundle mainBundle] loadNibNamed:@"PhoneEntryCell" owner:self options:nil] lastObject];
-		}
-		cell.number = [self.contact.phoneNumbers objectAtIndex: indexPath.row];
-		return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	PhoneEntryCell* cell = (PhoneEntryCell*)[tableView_ dequeueReusableCellWithIdentifier: kPhoneEntryCellIdentifier];
+	if (cell == nil) {		
+		cell = [[[NSBundle mainBundle] loadNibNamed:@"PhoneEntryCell" owner:self options:nil] lastObject];
 	}
-	else if(tableView == self.tableViewEmails){
-		return nil;
-	}
-	return nil;
+	cell.number = [self.contact.phoneNumbers objectAtIndex: indexPath.row];
+	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(tableView == self.tableViewPhones){
-		[CallViewController makeAudioCallWithRemoteParty: ((NgnPhoneNumber*)[self.contact.phoneNumbers objectAtIndex:indexPath.row]).number 
+- (void)tableView:(UITableView *)tableView_ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[CallViewController makeAudioCallWithRemoteParty: ((NgnPhoneNumber*)[self.contact.phoneNumbers objectAtIndex:indexPath.row]).number 
 												  andSipStack:[[NgnEngine getInstance].sipService getSipStack]];
-	}
-	else if(tableView == self.tableViewEmails){
-		
-	}
+	
 }
 
 - (void)dealloc {
-	[contact release];
+	[self.contact release];
 	
-	[labelDisplayName release];
-	[imageViewAvatar release];
-	[tableViewPhones release];
-	[tableViewEmails release];
+	[self.labelDisplayName release];
+	[self.imageViewAvatar release];
+	[self.tableView release];
+	[self.viewFooter release];
+	[self.viewHeader release];
 	
-	[buttonVideoCall release];
-	[buttonTextMessage release];
-	[buttonAddToFavorites release];
+	[self.buttonInvite release];
+	[self.buttonVideoCall release];
+	[self.buttonTextMessage release];
+	[self.buttonAddToFavorites release];
 	
     [super dealloc];
 }

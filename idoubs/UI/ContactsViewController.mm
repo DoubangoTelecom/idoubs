@@ -19,6 +19,7 @@
  *
  */
 #import "ContactsViewController.h"
+#import "idoubs2AppDelegate.h"
 
 //
 // private implementation
@@ -26,6 +27,8 @@
 
 @interface ContactsViewController(Private)
 -(void) refreshData;
+-(void) reloadData;
+-(void) refreshDataAndReload;
 -(void) onContactEvent:(NSNotification*)notification;
 @end
 
@@ -65,14 +68,34 @@
 	}
 }
 
+-(void) reloadData{
+	[self.tableView reloadData];
+}
+
+-(void) refreshDataAndReload{
+	[self refreshData];
+	[self reloadData];
+}
+
 -(void) onContactEvent:(NSNotification*)notification{
 	NgnContactEventArgs* eargs = [notification object];
 	
 	switch (eargs.eventType) {
 		case CONTACT_RESET_ALL:
 		{
-			// was mutated while being enumerated.
-			// [self refreshData];
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
+			switch ([UIApplication sharedApplication].applicationState) {
+				case UIApplicationStateActive:
+					[self refreshDataAndReload];
+					break;
+				case UIApplicationStateInactive:
+				case UIApplicationStateBackground:
+					self->nativeContactsChangedWhileInactive = YES;
+					break;
+			}
+#else
+			[self refreshDataAndReload];
+#endif
 			break;
 		}
 		default:
@@ -102,7 +125,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization.
+        self->nativeContactsChangedWhileInactive = NO;
     }
     return self;
 }
@@ -155,8 +178,7 @@
 			filterGroup = FilterGroupOnline;
 		}
 		
-		[self refreshData];
-		[self.tableView reloadData];
+		[self refreshDataAndReload];
 	}
 }
 
@@ -165,7 +187,7 @@
     [super didReceiveMemoryWarning];
     
     [contacts removeAllObjects];
-	[self.tableView reloadData];
+	[self reloadData];
 }
 
 - (void)viewDidUnload {
@@ -184,6 +206,11 @@
 - (void)viewDidAppear:(BOOL)animated{
 	[super viewDidAppear: animated];
 	[self.navigationController setNavigationBarHidden: YES];
+	
+	if(self->nativeContactsChangedWhileInactive){
+		self->nativeContactsChangedWhileInactive = NO;
+		[self refreshDataAndReload];
+	}
 }
 
 - (void)viewWillDisappear:(BOOL)animate{
@@ -226,7 +253,7 @@
     self.searchBar.showsCancelButton = YES;
 	
 	// disable indexes
-	[tableView reloadData];
+	[self reloadData];
 	
 	return YES;
 }  
@@ -254,8 +281,7 @@
 }
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
-	[self refreshData];
-	[tableView reloadData];
+	[self refreshDataAndReload];
 }
 
 

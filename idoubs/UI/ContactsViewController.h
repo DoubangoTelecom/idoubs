@@ -54,6 +54,7 @@ ContactsDisplayMode_t;
 	
 	ContactDetailsController* contactDetailsController;
 	
+	BOOL nativeContactsChangedWhileInactive;
 	BOOL searching;
 	BOOL letUserSelectRow;
 	NSMutableDictionary* contacts;
