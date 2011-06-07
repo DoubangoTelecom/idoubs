@@ -19,7 +19,44 @@
  *
  */
 #import "NgnPublicationSession.h"
+/*
+#undef kSessions
+#define kSessions [NgnPublicationSession getAllSessions]
 
+//
+//	private implementation
+//
+
+@interface NgnPublicationSession (Private)
++(NSMutableDictionary*) getAllSessions;
+-(NgnPublicationSession*) internalInit: (NgnSipStack*)sipStack;
+@end
+
+
+
+@implementation NgnPublicationSession (Private)
+
++(NSMutableDictionary*) getAllSessions{
+	
+}
+
+-(NgnPublicationSession*) internalInit: (NgnSipStack*)sipStack{
+	
+}
+
+@end
+*/
+
+
+//
+//	default implementation
+//
 @implementation NgnPublicationSession
+
+
+// Override from NgnSipSession
+-(SipSession*)getSession{
+	return _mSession;
+}
 
 @end

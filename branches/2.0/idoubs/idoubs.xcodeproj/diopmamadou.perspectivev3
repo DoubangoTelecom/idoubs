@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -267,15 +269,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>080E96DDFE201D6D7F000001</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
-									<integer>21</integer>
+									<integer>16</integer>
+									<integer>14</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -296,7 +297,7 @@
 							<real>287</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 143 1434 734 0 0 1440 878 </string>
+						<string>0 144 1434 734 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -307,14 +308,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>idoubs2AppDelegate.mm</string>
+								<string>idoubs-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,23 +321,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>idoubs2AppDelegate.mm</string>
+										<string>idoubs-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC9ED9D5139CFCB80067EB59</string>
+										<string>ECE58A90139E813300C521CE</string>
 										<key>history</key>
 										<array>
-											<string>EC9ED8E0139CEE750067EB59</string>
-											<string>EC9ED8E1139CEE750067EB59</string>
-											<string>EC9ED8E3139CEE750067EB59</string>
-											<string>EC9ED8E5139CEE750067EB59</string>
-											<string>EC9ED8E7139CEE750067EB59</string>
-											<string>EC9ED8E9139CEE750067EB59</string>
-											<string>EC9ED8EB139CEE750067EB59</string>
-											<string>EC9ED8ED139CEE750067EB59</string>
-											<string>EC9ED905139CF4030067EB59</string>
-											<string>EC9ED9D2139CFC9C0067EB59</string>
+											<string>EC9EDB84139D50DA0067EB59</string>
+											<string>EC9EDB85139D50DA0067EB59</string>
+											<string>EC9EDB86139D50DA0067EB59</string>
+											<string>EC9EDB87139D50DA0067EB59</string>
+											<string>EC9EDB88139D50DA0067EB59</string>
+											<string>EC9EDB89139D50DA0067EB59</string>
+											<string>EC9EDB8A139D50DA0067EB59</string>
+											<string>EC9EDBA5139D54E40067EB59</string>
+											<string>EC9EDBA6139D54E40067EB59</string>
+											<string>EC95C433139E5494008931F0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,18 +351,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 517}}</string>
+								<string>{{0, 0}, {1125, 507}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 143 1434 734 0 0 1440 878 </string>
+								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>517pt</string>
+							<string>507pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>171pt</string>
+							<string>181pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -377,9 +376,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 144}}</string>
+										<string>{{10, 27}, {1125, 154}}</string>
 										<key>RubberWindowFrame</key>
-										<string>0 143 1434 734 0 0 1440 878 </string>
+										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -461,11 +460,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9ED829139CD3FA0067EB59</string>
+				<string>ECE58A87139E80E100C521CE</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC9ED82A139CD3FA0067EB59</string>
+				<string>ECE58A88139E80E100C521CE</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>EC9ED82B139CD3FA0067EB59</string>
+				<string>ECE58A89139E80E100C521CE</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -655,12 +654,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC9ED895139CDDD50067EB59</string>
-		<string>EC9ED896139CDDD50067EB59</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 143 1434 734 0 0 1440 878 </string>
+	<string>0 144 1434 734 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

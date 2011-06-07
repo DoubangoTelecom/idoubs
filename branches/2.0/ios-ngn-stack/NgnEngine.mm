@@ -37,9 +37,6 @@
 #define kTAG @"NgnEngine///: "
 #define TAG kTAG
 
-static NgnEngine* sInstance = nil;
-static BOOL sMediaLayerInitialized = NO;
-
 //
 //	private implementation
 //
@@ -256,6 +253,8 @@ static BOOL sMediaLayerInitialized = NO;
 #endif /* TARGET_OS_IPHONE */
 
 +(void)initialize{
+	static BOOL sMediaLayerInitialized = NO;
+	
 	if(!sMediaLayerInitialized){
 #if TARGET_OS_IPHONE
 		[NgnProxyPluginMgr initialize];
@@ -265,6 +264,8 @@ static BOOL sMediaLayerInitialized = NO;
 }
 
 +(NgnEngine*) getInstance{
+	static NgnEngine* sInstance = nil;
+	
 	if(sInstance == nil){
 		sInstance = [[NgnEngine alloc] init];
 	}

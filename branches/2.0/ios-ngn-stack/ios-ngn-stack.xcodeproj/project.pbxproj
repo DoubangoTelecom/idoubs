@@ -262,6 +262,7 @@
 		ECF201431360F8C300B0BFEB /* NgnSipPreferences.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */; };
 		ECF201461360F8DF00B0BFEB /* NgnSubscriptionSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */; };
 		ECF201471360F8DF00B0BFEB /* NgnSubscriptionSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */; };
+		ECF64C06139EA03B004AF043 /* iOSNgnPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */; };
 		ECFD23CF135D53C500E6A9A3 /* INgnBaseService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */; };
 		ECFD23D0135D53C500E6A9A3 /* NgnBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */; };
 		ECFD23D3135D53F500E6A9A3 /* INgnConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */; };
@@ -2060,6 +2061,7 @@
 		ECF201411360F8C300B0BFEB /* NgnSipPreferences.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSipPreferences.mm; sourceTree = "<group>"; };
 		ECF201441360F8DF00B0BFEB /* NgnSubscriptionSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSubscriptionSession.h; sourceTree = "<group>"; };
 		ECF201451360F8DF00B0BFEB /* NgnSubscriptionSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnSubscriptionSession.mm; sourceTree = "<group>"; };
+		ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnPrivate.h; sourceTree = "<group>"; };
 		ECFD23CD135D53C500E6A9A3 /* INgnBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnBaseService.h; sourceTree = "<group>"; };
 		ECFD23CE135D53C500E6A9A3 /* NgnBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NgnBaseService.m; path = ../NgnBaseService.m; sourceTree = "<group>"; };
 		ECFD23D1135D53F500E6A9A3 /* INgnConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INgnConfigurationService.h; sourceTree = "<group>"; };
@@ -3652,6 +3654,7 @@
 				ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */,
 				EC83B77C1369768A00DD3355 /* iOSNgnStack.h */,
 				EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */,
+				ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -6197,6 +6200,7 @@
 				ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */,
 				EC967D051391CE0C006187D3 /* NgnContactEventArgs.h in Headers */,
 				EC7D98E21396A619006A8F91 /* NgnCamera.h in Headers */,
+				ECF64C06139EA03B004AF043 /* iOSNgnPrivate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
