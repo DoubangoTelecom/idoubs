@@ -23,6 +23,7 @@
 #import "INgnBaseService.h"
 
 @protocol INgnConfigurationService <INgnBaseService>
+-(NSDictionary*) getDefaults;
 -(NSString*)getStringWithKey: (NSString*)key;
 -(int)getIntWithKey: (NSString*)key;
 -(float)getFloatWithKey: (NSString*)key;

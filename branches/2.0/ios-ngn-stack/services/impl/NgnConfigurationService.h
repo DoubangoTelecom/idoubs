@@ -25,6 +25,8 @@
 #import "services/INgnConfigurationService.h"
 
 @interface NgnConfigurationService : NgnBaseService<INgnConfigurationService> {
+@protected
 	NSUserDefaults* defaults;
 }
+
 @end

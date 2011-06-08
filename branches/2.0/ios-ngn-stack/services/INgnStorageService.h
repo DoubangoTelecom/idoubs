@@ -30,6 +30,7 @@
 @protocol INgnStorageService <INgnBaseService>
 
 #if TARGET_OS_IPHONE
+-(int) databaseVersion;
 -(sqlite3 *) database;
 -(BOOL) execSQL: (NSString*)sqlQuery;
 -(NSMutableDictionary*) favorites;
