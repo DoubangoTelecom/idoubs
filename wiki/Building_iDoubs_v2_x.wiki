@@ -80,4 +80,16 @@ Et voilà. You can now run iDoubs. <br />
 *Note:* As you have remarked, it's possible to build both the NGN stack and Doubango projects from *iDoubs*. <br />
 Before starting to use iDoubs, please take a look at the user guide in order to understand how to configure the client.
 
+=== Building non-GPL version ===
+If you are license owner then, you can build a non-GPL version of Doubango and iDoubs like this:
+ * open *mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj*
+ * Right click on *idoubs* target => *Get Info* => *Build* tab => *Other Linker Flags* then:
+    # remove *-lx264*
+    # remove *lg729b* if you don't have required licenses
+    # replace *-lswscale*, *-lavcore*, *-lavutil* and *-lavcodec* with *-lswscale-lgpl*, *-lavcore-lgpl*, *-lavutil-lgpl* and *-lavcodec-lgpl* respectively
+
+ * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
+ * Right click on *ios-ngn-stack* target => *Get Info* => *Build* tab => *Other C Flags* then:
+    # replace *-DHAVE_H264=1* with *-DHAVE_H264=0*
+    # replace *-DHAVE_G729=1* with *-DHAVE_G729=0* if you don't have required licenses
   
