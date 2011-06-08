@@ -32,16 +32,22 @@
 #undef kDataBaseName
 #define kDataBaseName @"NgnDataBase.db"
 
+// 'kDataBaseVersion' defines the current version of the database on the source code (objective-c) view.
+// The database itself contains this reference. Each time the storage service is loaded we check that these
+// two values are identical. If these two values are different then, we delete the data base stored in the device
+// and replace it with the new one.
+// You should increment this value if you change the database version and don't forget to do the same in the .sql file.
+// If you are not using iDoubs test project then, please provide your own version id by subclassing '-databaseVersion'
+#define kDataBaseVersion 0
+
 #define kFavoritesTableName @"favorites"
 #define kFavoritesColIdName @"id"
 #define kFavoritesColMediaTypeName @"mediaType"
 #define kFavoritesColNumberName @"number"
 
-static BOOL sDataBaseInitialized = NO;
-static NSString* sDataBasePath = nil;
-
 @interface NgnStorageService (DataBase)
-+(BOOL) databaseCheckAndCopy;
++(BOOL) databaseCheckAndCopy:(NgnBaseService<INgnStorageService>*) service;
++(int) databaseVersion: (sqlite3 *)db;
 -(BOOL) databaseOpen;
 -(BOOL) databaseLoadData;
 -(BOOL) databaseExecSQL: (NSString*)sqlQuery;
@@ -50,25 +56,49 @@ static NSString* sDataBasePath = nil;
 
 @implementation NgnStorageService (DataBase)
 
-+(BOOL) databaseCheckAndCopy{
+static NSString* sDataBasePath = nil;
+static BOOL sDataBaseInitialized = NO;
+
++(BOOL) databaseCheckAndCopy:(NgnBaseService<INgnStorageService>*) service{
 	if(sDataBaseInitialized){
 		return YES;
 	}
 	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDir = [documentPaths objectAtIndex:0];
 	sDataBasePath = [documentsDir stringByAppendingPathComponent: kDataBaseName];
-	NgnNSLog(TAG, @"datasePath:%@", sDataBasePath);
+	sqlite3 *db = nil;
+	
+	NgnNSLog(TAG, @"databasePath:%@", sDataBasePath);
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if([fileManager fileExistsAtPath: sDataBasePath]){
-		//[fileManager removeItemAtPath:sDataBasePath error:nil];
-		// for example you can remove the database if the "app_database_version" is different
-		sDataBaseInitialized = YES;
-		return YES;
+		// query for the database version
+		if(sqlite3_open([sDataBasePath UTF8String], &db) != SQLITE_OK){
+			NgnNSLog(TAG,@"Failed to open database from: %@", sDataBasePath);
+			return NO;
+		}
+		int storedVersion = [NgnStorageService databaseVersion:db];
+		int sourceCodeVersion = [service databaseVersion];
+		sqlite3_close(db), db = nil;
+		if(storedVersion != sourceCodeVersion){
+			NgnNSLog(TAG,@"database v-stored=%i and database v-code=%i", storedVersion, sourceCodeVersion);
+			// remove the file (database already closed)
+			[fileManager removeItemAtPath:sDataBasePath error:nil];
+		}
+		else {
+			NgnNSLog(TAG,@"No changes: database v-current=%i", storedVersion);
+			sDataBaseInitialized = YES;
+			// database already closed
+			return YES;
+		}
 	}
 	
+	//
+	// if we are here this means that the database has been upgraded/downgraded or this is a new installation
+	//
+	
 	NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: kDataBaseName];
-	NgnNSLog(TAG, @"databasePathFromApp:%@", databasePathFromApp);
+	NgnNSLog(TAG, @"creating (copy) new database from:%@", databasePathFromApp);
 	
 	NSError* error = nil;
 	if(![fileManager copyItemAtPath:databasePathFromApp toPath: sDataBasePath error:&error]){
@@ -83,9 +113,27 @@ static NSString* sDataBasePath = nil;
 	return YES;
 }
 
++(int) databaseVersion: (sqlite3 *)db {
+    static sqlite3_stmt *compiledStatement = nil;
+    int databaseVersion = -1;
+	
+    if(sqlite3_prepare_v2(db, "PRAGMA user_version;", -1, &compiledStatement, NULL) == SQLITE_OK) {
+        while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+            databaseVersion = sqlite3_column_int(compiledStatement, 0);
+            NgnNSLog(TAG,@"found databaseVersion=%d", databaseVersion);
+        }
+        NgnNSLog(TAG,@"used databaseVersion=%d", databaseVersion);
+    } else {
+        NgnNSLog(TAG,@"Failed to get databaseVersion %s", sqlite3_errmsg(db) );
+    }
+    sqlite3_finalize(compiledStatement);
+	
+    return databaseVersion;
+}
+
 -(BOOL) databaseOpen{
 	if(!self->database && sqlite3_open([sDataBasePath UTF8String], &self->database) != SQLITE_OK){
-		NgnNSLog(TAG,@"Failed to open history database from: %@", sDataBasePath);
+		NgnNSLog(TAG,@"Failed to open database from: %@", sDataBasePath);
 		return NO;
 	}
 	return YES;
@@ -184,7 +232,7 @@ done:
 	BOOL ok = YES;
 	
 #if TARGET_OS_IPHONE
-	if([NgnStorageService databaseCheckAndCopy]){
+	if([NgnStorageService databaseCheckAndCopy:self]){
 		if((ok = [self databaseOpen])){
 			ok &= [self databaseLoadData];
 		}
@@ -209,6 +257,11 @@ done:
 //
 
 #if TARGET_OS_IPHONE
+
+-(int) databaseVersion{
+	return kDataBaseVersion;
+}
+
 -(sqlite3 *) database{
 	return self->database;
 }

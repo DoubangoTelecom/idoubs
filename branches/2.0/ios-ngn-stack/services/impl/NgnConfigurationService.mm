@@ -98,63 +98,7 @@
 
 -(NgnConfigurationService*)init{
 	if((self = [super init])){
-		defaults = [NSUserDefaults standardUserDefaults];
-		
-		// FIXME: First time for Simulator
-		NSDictionary *defaults_ = [NSDictionary dictionaryWithObjectsAndKeys:
-								  
-								  
-								  /* === IDENTITY === */
-								  DEFAULT_IDENTITY_DISPLAY_NAME, IDENTITY_DISPLAY_NAME,
-								  DEFAULT_IDENTITY_IMPI, IDENTITY_IMPI,
-								  DEFAULT_IDENTITY_IMPU, IDENTITY_IMPU,
-								  DEFAULT_IDENTITY_PASSWORD, IDENTITY_PASSWORD,
-								  
-								  /* === NETWORK === */
-								  [NSNumber numberWithBool:DEFAULT_NETWORK_USE_EARLY_IMS], NETWORK_USE_EARLY_IMS,
-								  DEFAULT_NETWORK_IP_VERSION, NETWORK_IP_VERSION,
-								  DEFAULT_NETWORK_PCSCF_HOST, NETWORK_PCSCF_HOST,
-								  [NSNumber numberWithInt:DEFAULT_NETWORK_PCSCF_PORT], NETWORK_PCSCF_PORT,
-								  DEFAULT_NETWORK_REALM, NETWORK_REALM,
-								  [NSNumber numberWithBool:DEFAULT_NETWORK_USE_SIGCOMP], NETWORK_USE_SIGCOMP,
-								  [NSNumber numberWithBool:DEFAULT_NETWORK_USE_3G], NETWORK_USE_3G,
-								  [NSNumber numberWithBool:DEFAULT_NETWORK_USE_WIFI], NETWORK_USE_WIFI,
-								  DEFAULT_NETWORK_TRANSPORT, NETWORK_TRANSPORT,
-								  
-								  /* === MEDIA === */
-								  [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_OA], MEDIA_CODEC_USE_AMR_NB_OA,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_BE], MEDIA_CODEC_USE_AMR_NB_BE,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_GSM], MEDIA_CODEC_USE_GSM,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMA], MEDIA_CODEC_USE_PCMA,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMU], MEDIA_CODEC_USE_PCMU,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_SPEEX_NB], MEDIA_CODEC_USE_SPEEX_NB,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263], MEDIA_CODEC_USE_H263,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263P], MEDIA_CODEC_USE_H263P,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP10], MEDIA_CODEC_USE_H264BP10,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP20], MEDIA_CODEC_USE_H264BP20,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP30], MEDIA_CODEC_USE_H264BP30,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_THEORA], MEDIA_CODEC_USE_THEORA,
-								  [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_MP4VES], MEDIA_CODEC_USE_MP4VES,
-								  
-								  /* === NATT === */
-								  [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN], NATT_USE_STUN,
-								  [NSNumber numberWithBool:DEFAULT_NATT_STUN_DISCO], NATT_STUN_DISCO,
-								  DEFAULT_NATT_STUN_SERVER, NATT_STUN_SERVER,
-								  [NSNumber numberWithInt:DEFAULT_NATT_STUN_PORT], NATT_STUN_PORT,
-								  
-								  /* === SECURITY === */
-								  DEFAULT_SECURITY_IMSAKA_OPID, SECURITY_IMSAKA_OPID,
-								  
-								  /* === RCS === */
-								  [NSNumber numberWithBool:DEFAULT_RCS_AUTO_ACCEPT_PAGER_MODE_IM], RCS_AUTO_ACCEPT_PAGER_MODE_IM,
-								  
-								  nil];
-		
-		[defaults registerDefaults:defaults_];
-		
-		[self computeCodecs];
+		//
 	}
 	return self;
 }
@@ -171,7 +115,14 @@
 
 -(BOOL) start{
 	NgnNSLog(TAG, @"Start()");
-	[self computeCodecs];
+	if(defaults == nil){
+		defaults = [NSUserDefaults standardUserDefaults];
+	
+		NSDictionary *defaults_ = [self getDefaults];
+		[defaults registerDefaults:defaults_];
+	}
+	
+	[self computeCodecs];// in case the configuration change will the service was stopped
 	[[NSNotificationCenter defaultCenter] addObserver: self 
 											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 	return YES;
@@ -187,6 +138,59 @@
 //
 //	INgnConfigurationService
 //
+
+-(NSDictionary*) getDefaults{
+	return [NSDictionary dictionaryWithObjectsAndKeys:
+	 
+	 
+	 /* === IDENTITY === */
+	 DEFAULT_IDENTITY_DISPLAY_NAME, IDENTITY_DISPLAY_NAME,
+	 DEFAULT_IDENTITY_IMPI, IDENTITY_IMPI,
+	 DEFAULT_IDENTITY_IMPU, IDENTITY_IMPU,
+	 DEFAULT_IDENTITY_PASSWORD, IDENTITY_PASSWORD,
+	 
+	 /* === NETWORK === */
+	 [NSNumber numberWithBool:DEFAULT_NETWORK_USE_EARLY_IMS], NETWORK_USE_EARLY_IMS,
+	 DEFAULT_NETWORK_IP_VERSION, NETWORK_IP_VERSION,
+	 DEFAULT_NETWORK_PCSCF_HOST, NETWORK_PCSCF_HOST,
+	 [NSNumber numberWithInt:DEFAULT_NETWORK_PCSCF_PORT], NETWORK_PCSCF_PORT,
+	 DEFAULT_NETWORK_REALM, NETWORK_REALM,
+	 [NSNumber numberWithBool:DEFAULT_NETWORK_USE_SIGCOMP], NETWORK_USE_SIGCOMP,
+	 [NSNumber numberWithBool:DEFAULT_NETWORK_USE_3G], NETWORK_USE_3G,
+	 [NSNumber numberWithBool:DEFAULT_NETWORK_USE_WIFI], NETWORK_USE_WIFI,
+	 DEFAULT_NETWORK_TRANSPORT, NETWORK_TRANSPORT,
+	 
+	 /* === MEDIA === */
+	 [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_OA], MEDIA_CODEC_USE_AMR_NB_OA,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_BE], MEDIA_CODEC_USE_AMR_NB_BE,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_GSM], MEDIA_CODEC_USE_GSM,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMA], MEDIA_CODEC_USE_PCMA,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_PCMU], MEDIA_CODEC_USE_PCMU,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_SPEEX_NB], MEDIA_CODEC_USE_SPEEX_NB,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263], MEDIA_CODEC_USE_H263,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263P], MEDIA_CODEC_USE_H263P,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP10], MEDIA_CODEC_USE_H264BP10,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP20], MEDIA_CODEC_USE_H264BP20,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP30], MEDIA_CODEC_USE_H264BP30,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_THEORA], MEDIA_CODEC_USE_THEORA,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_MP4VES], MEDIA_CODEC_USE_MP4VES,
+	 
+	 /* === NATT === */
+	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN], NATT_USE_STUN,
+	 [NSNumber numberWithBool:DEFAULT_NATT_STUN_DISCO], NATT_STUN_DISCO,
+	 DEFAULT_NATT_STUN_SERVER, NATT_STUN_SERVER,
+	 [NSNumber numberWithInt:DEFAULT_NATT_STUN_PORT], NATT_STUN_PORT,
+	 
+	 /* === SECURITY === */
+	 DEFAULT_SECURITY_IMSAKA_OPID, SECURITY_IMSAKA_OPID,
+	 
+	 /* === RCS === */
+	 [NSNumber numberWithBool:DEFAULT_RCS_AUTO_ACCEPT_PAGER_MODE_IM], RCS_AUTO_ACCEPT_PAGER_MODE_IM,
+	 
+	 nil];
+}
 
 -(NSString*)getStringWithKey: (NSString*)key{
 	return [defaults stringForKey:key];
