@@ -1,6 +1,14 @@
 -- sqlite3 NgnDataBase.db && .read ./NgnDataBase.sql
 
 --					--
+-- Database Version: Must be synchronized with 'kDataBaseVersion' from NgnDataBaseService
+-- off course we can change this value from objective-c but it will be too easy for you.
+-- To be honest, it is done like this to force you to only change 'kDataBaseVersion' if required :)
+-- See also '-databaseVersion' from INgnStorageService
+--					--
+PRAGMA user_version = 0;
+
+--					--
 -- Application Info --
 --					--
 CREATE TABLE app_info(

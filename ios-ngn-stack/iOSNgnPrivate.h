@@ -27,6 +27,7 @@
 #import "services/impl/NgnContactService.h"
 #import "services/impl/NgnNetworkService.h"
 #import "services/impl/NgnHttpClientService.h"
+#import "services/impl/NgnStorageService.h"
 
 /* To be completed... */
 
