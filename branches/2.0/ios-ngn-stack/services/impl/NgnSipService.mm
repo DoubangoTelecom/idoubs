@@ -627,10 +627,31 @@ done:
 	/* == OnOptionsEvent == */
 	int OnOptionsEvent(const OptionsEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
-		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
-		//done:
-		//		[pool release];
+		tsip_options_event_type_t _type = _e->getType();
+		const SipSession *_sipSession = _e->getSession();
+		
+		switch (_type) {
+			case tsip_i_options:
+			{
+				if(!_sipSession){// New session
+					OptionsSession *_newSipSession = tsk_null;
+					if((_newSipSession = _e->takeSessionOwnership())){
+						_newSipSession->accept();
+						delete _newSipSession;
+					}
+				}
+				break;
+			}
+				
+			default:
+			{
+				break;
+			}
+		}
+done:
+		[pool release];
 		return 0; 
 	}
 	
