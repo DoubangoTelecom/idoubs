@@ -29,7 +29,7 @@
 @protocol INgnContactService <INgnBaseService>
 -(void) load: (BOOL) asyn;
 -(BOOL) isLoading;
--(NSMutableArray*) contacts;
+-(NSArray*) contacts;
 -(NSArray*) contactsWithPredicate: (NSPredicate*)predicate;
 #if TARGET_OS_IPHONE
 -(NgnContact*) getContactByUri: (NSString*)uri;

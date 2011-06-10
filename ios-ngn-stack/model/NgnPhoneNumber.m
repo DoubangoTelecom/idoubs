@@ -24,7 +24,7 @@
 
 @synthesize number;
 @synthesize description;
-
+@synthesize opaque;
 
 -(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption{
 	if((self = [super init])){
@@ -37,6 +37,8 @@
 -(void)dealloc{
 	[self->number release];
 	[self->description release];
+	
+	[self->opaque release];
 	
 	[super dealloc];
 }

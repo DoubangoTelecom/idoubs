@@ -30,6 +30,7 @@
 @synthesize lastName;
 @synthesize phoneNumbers;
 @synthesize picture;
+@synthesize opaque;
 
 -(NgnContact*)initWithABRecordRef: (const ABRecordRef) record{
 	if((self = [super init]) && record){
@@ -83,6 +84,7 @@
 	
 	[self->phoneNumbers release];
 	
+	[self->opaque release];
 	[super dealloc];
 }
 
