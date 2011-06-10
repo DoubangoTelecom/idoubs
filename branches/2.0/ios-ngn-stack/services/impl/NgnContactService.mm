@@ -56,7 +56,7 @@ static void NgnAddressBookCallbackForElements(const void *value, void *context)
 	}
 	const ABRecordRef* record = (const ABRecordRef*)value;
 	NgnContact* contact = [[NgnContact alloc] initWithABRecordRef: record];
-	[[self_ contacts] addObject: contact];
+	[(NSMutableArray*)[self_ contacts] addObject: contact];
 	[contact release];
 }
 
@@ -195,7 +195,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	return mLoading;
 }
 
--(NSMutableArray*) contacts{
+-(NSArray*) contacts{
 	return mContacts;
 }
 

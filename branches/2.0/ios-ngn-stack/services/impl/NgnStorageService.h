@@ -32,6 +32,7 @@
 }
 
 #if TARGET_OS_IPHONE
+-(BOOL) load;
 #endif
 
 @end

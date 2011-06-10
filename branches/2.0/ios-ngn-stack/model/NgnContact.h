@@ -33,12 +33,17 @@ typedef NSArray NgnContactArray;
 @class NgnPhoneNumber;
 
 @interface NgnContact : NSObject {
+@protected
 	int32_t id;
 	NSString* displayName;
 	NSString* fisrtName;
 	NSString* lastName;
 	NSMutableArray* phoneNumbers;
 	NSData* picture;
+	
+@private
+	// to be used for any purpose (e.g. category)
+	id opaque;
 }
 
 -(NgnContact*)initWithABRecordRef: (const ABRecordRef) record;
@@ -50,6 +55,7 @@ typedef NSArray NgnContactArray;
 @property(readonly) NSString* lastName;
 @property(readonly) NSMutableArray* phoneNumbers;
 @property(readonly) NSData* picture;
+@property(readwrite, retain, nonatomic) id opaque;
 
 @end
 

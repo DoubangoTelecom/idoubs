@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>15</integer>
 									<integer>14</integer>
 								</array>
 							</array>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>idoubs-Info.plist</string>
+								<string>tnet_dns_resolvconf.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,15 +321,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>idoubs-Info.plist</string>
+										<string>tnet_dns_resolvconf.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECE58A90139E813300C521CE</string>
+										<string>EC955AB113A14FC4002A6BD2</string>
 										<key>history</key>
 										<array>
-											<string>EC9EDB84139D50DA0067EB59</string>
-											<string>EC9EDB85139D50DA0067EB59</string>
 											<string>EC9EDB86139D50DA0067EB59</string>
 											<string>EC9EDB87139D50DA0067EB59</string>
 											<string>EC9EDB88139D50DA0067EB59</string>
@@ -337,7 +335,9 @@
 											<string>EC9EDB8A139D50DA0067EB59</string>
 											<string>EC9EDBA5139D54E40067EB59</string>
 											<string>EC9EDBA6139D54E40067EB59</string>
-											<string>EC95C433139E5494008931F0</string>
+											<string>EC955AAC13A14FC4002A6BD2</string>
+											<string>EC955AAD13A14FC4002A6BD2</string>
+											<string>EC955AAF13A14FC4002A6BD2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -351,18 +351,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 507}}</string>
+								<string>{{0, 0}, {1125, 501}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>507pt</string>
+							<string>501pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>181pt</string>
+							<string>187pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -376,9 +376,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 154}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 144 1434 734 0 0 1440 878 </string>
+										<string>{{10, 27}, {1125, 160}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -432,7 +430,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 144}}</string>
+										<string>{{10, 27}, {1125, 160}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -460,11 +460,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECE58A87139E80E100C521CE</string>
+				<string>EC955AB313A14FC4002A6BD2</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECE58A88139E80E100C521CE</string>
+				<string>EC955AB413A14FC4002A6BD2</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECE58A89139E80E100C521CE</string>
+				<string>EC955AB513A14FC4002A6BD2</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -613,14 +613,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9ED88F139CDDD50067EB59</string>
+				<string>EC955AB613A14FC4002A6BD2</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC9ED890139CDDD50067EB59</string>
-				<string>EC9ED891139CDDD50067EB59</string>
-				<string>EC9ED892139CDDD50067EB59</string>
-				<string>EC9ED893139CDDD50067EB59</string>
-				<string>EC9ED894139CDDD50067EB59</string>
+				<string>EC955AB713A14FC4002A6BD2</string>
+				<string>EC955AB813A14FC4002A6BD2</string>
+				<string>EC955AB913A14FC4002A6BD2</string>
+				<string>EC955ABA13A14FC4002A6BD2</string>
+				<string>EC955ABB13A14FC4002A6BD2</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -654,6 +654,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>EC955ABC13A14FC4002A6BD2</string>
+		<string>EC955ABD13A14FC4002A6BD2</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

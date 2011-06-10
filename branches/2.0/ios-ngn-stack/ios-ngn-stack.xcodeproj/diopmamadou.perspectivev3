@@ -332,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC9558B813A0C866002A6BD2</string>
+										<string>EC9377C213A2191200E12E13</string>
 										<key>history</key>
 										<array>
 											<string>ECF64D6F139EDDBF004AF043</string>
@@ -344,7 +344,7 @@
 											<string>ECA371DA139FC55F00862B70</string>
 											<string>ECA371DB139FC55F00862B70</string>
 											<string>ECA371DC139FC55F00862B70</string>
-											<string>ECA37343139FFCB100862B70</string>
+											<string>EC9558B813A0C866002A6BD2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -358,18 +358,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1079, 423}}</string>
+								<string>{{0, 0}, {1079, 415}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1419 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>423pt</string>
+							<string>415pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>265pt</string>
+							<string>273pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -383,7 +383,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 238}}</string>
+										<string>{{10, 27}, {1079, 246}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1419 734 0 0 1440 878 </string>
 									</dict>
@@ -467,11 +467,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9558B913A0C866002A6BD2</string>
+				<string>EC9377C313A2191200E12E13</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC9558BA13A0C866002A6BD2</string>
+				<string>EC9377C413A2191200E12E13</string>
 				<string>ECFD23C5135D536300E6A9A3</string>
-				<string>EC9558BB13A0C866002A6BD2</string>
+				<string>EC9377C513A2191200E12E13</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
