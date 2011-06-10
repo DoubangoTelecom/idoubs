@@ -630,16 +630,16 @@ done:
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
 		tsip_options_event_type_t _type = _e->getType();
-		const SipSession *_sipSession = _e->getSession();
+		const OptionsSession *_sipSession = _e->getSession();
 		
 		switch (_type) {
 			case tsip_i_options:
 			{
 				if(!_sipSession){// New session
-					OptionsSession *_newSipSession = tsk_null;
+					OptionsSession *_newSipSession;
 					if((_newSipSession = _e->takeSessionOwnership())){
 						_newSipSession->accept();
-						delete _newSipSession;
+						delete _newSipSession, _newSipSession = tsk_null;
 					}
 				}
 				break;

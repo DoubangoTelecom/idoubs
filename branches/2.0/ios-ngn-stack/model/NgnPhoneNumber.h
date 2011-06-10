@@ -21,12 +21,18 @@
 #import <Foundation/Foundation.h>
 
 @interface NgnPhoneNumber : NSObject {
+@protected
 	NSString* number;
 	NSString* description;
+	
+@private
+	// to be used for any purpose (e.g. category)
+	id opaque;
 }
 
 @property(readonly) NSString* number;
 @property(readonly) NSString* description;
+@property(readwrite, retain, nonatomic) id opaque;
 
 -(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption;
 @end

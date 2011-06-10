@@ -145,7 +145,7 @@ static BOOL sDataBaseInitialized = NO;
 	sqlite3_stmt *compiledStatement = nil;
 	NSString* sqlQueryFavorites = [@"select " stringByAppendingFormat:@"%@,%@,%@ from %@", 
 								   kFavoritesColIdName, kFavoritesColNumberName, kFavoritesColMediaTypeName, kFavoritesTableName];
-	NSLog(@"sql=%@",sqlQueryFavorites);
+	
 	/* === Load favorites === */
 	[self->favorites removeAllObjects];
 	if((ret = sqlite3_prepare_v2(self->database, [NgnStringUtils toCString:sqlQueryFavorites], -1, &compiledStatement, NULL)) == SQLITE_OK) {
@@ -223,6 +223,15 @@ done:
 	[super dealloc];
 }
 
+#if TARGET_OS_IPHONE
+
+// to be overrided: used by Telekom, Tiscali and Alcated-Lucent
+-(BOOL) load{
+	return [self databaseLoadData];
+}
+
+#endif
+
 //
 // INgnBaseService
 //
@@ -234,7 +243,7 @@ done:
 #if TARGET_OS_IPHONE
 	if([NgnStorageService databaseCheckAndCopy:self]){
 		if((ok = [self databaseOpen])){
-			ok &= [self databaseLoadData];
+			ok &= [self load];
 		}
 	}
 #endif
