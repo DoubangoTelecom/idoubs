@@ -30,6 +30,7 @@
 #import "utils/NgnUriUtils.h"
 #import "utils/NgnPredicate.h"
 #import "utils/NgnDateTimeUtils.h"
+#import "utils/NgnNotificationCenter.h"
 
 #import "events/NgnRegistrationEventArgs.h"
 #import "events/NgnStackEventArgs.h"

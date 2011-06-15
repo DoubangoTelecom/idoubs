@@ -185,6 +185,9 @@
 	 
 	 /* === SECURITY === */
 	 DEFAULT_SECURITY_IMSAKA_OPID, SECURITY_IMSAKA_OPID,
+			
+	 /* === XCAP === */
+	[NSNumber numberWithBool:DEFAULT_XCAP_ENABLED], XCAP_ENABLED,
 	 
 	 /* === RCS === */
 	 [NSNumber numberWithBool:DEFAULT_RCS_AUTO_ACCEPT_PAGER_MODE_IM], RCS_AUTO_ACCEPT_PAGER_MODE_IM,
@@ -212,18 +215,30 @@
 
 -(void)setStringWithKey: (NSString*)key andValue:(NSString*)value{
 	[defaults setObject:value forKey:key];
+	if(![NSThread isMainThread]){
+		[defaults synchronize];
+	}
 }
 
 -(void)setIntWithKey: (NSString*)key andValue:(int)value{
 	[defaults setInteger:value forKey:key];
+	if(![NSThread isMainThread]){
+		[defaults synchronize];
+	}
 }
 
 -(void)setFloatWithKey: (NSString*)key andValue:(float)value{
 	[defaults setFloat:value forKey:key];
+	if(![NSThread isMainThread]){
+		[defaults synchronize];
+	}
 }
 
 -(void)setBoolWithKey: (NSString*)key andValue:(BOOL)value{
 	[defaults setBool:value forKey:key];
+	if(![NSThread isMainThread]){
+		[defaults synchronize];
+	}
 }
 
 @end

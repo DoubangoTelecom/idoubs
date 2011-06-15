@@ -34,6 +34,7 @@
 	BOOL mLoading;
 	BOOL mStarted;
 	NgnContactMutableArray* mContacts;
+	NSMutableDictionary *mNumbers2ContacstMapper;
 	ABAddressBookRef addressBook;
 }
 

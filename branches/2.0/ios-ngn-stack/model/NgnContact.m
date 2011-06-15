@@ -43,6 +43,7 @@
 		if(ABPersonHasImageData(record)){
 			//--self->picture = (NSData*)ABPersonCopyImageData(record);
 		}
+		// kABPersonModificationDateProperty
 		
 		CFStringRef phoneNumber, phoneNumberLabel, phoneNumberLabelValue;
 		NgnPhoneNumber* ngnPhoneNumber;

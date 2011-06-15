@@ -84,7 +84,7 @@
 	
 	// perform the query
 	data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-	NgnNSLog(TAG, @"getSynchronously() returned %i", [((NSHTTPURLResponse *)response) statusCode]);
+	NgnNSLog(TAG, @"postSynchronously() returned %i", [((NSHTTPURLResponse *)response) statusCode]);
 	
 	return data;
 }

@@ -56,8 +56,15 @@ static void NgnAddressBookCallbackForElements(const void *value, void *context)
 	}
 	const ABRecordRef* record = (const ABRecordRef*)value;
 	NgnContact* contact = [[NgnContact alloc] initWithABRecordRef: record];
-	[(NSMutableArray*)[self_ contacts] addObject: contact];
-	[contact release];
+	if(contact){
+		for(NgnPhoneNumber *phoneNumber in contact.phoneNumbers){
+			if(phoneNumber.number){
+				[(NSMutableDictionary*)[self_ numbers2ContactsMapper] setObject:contact forKey:phoneNumber.number];
+			}
+		}
+		[(NSMutableArray*)[self_ contacts] addObject: contact];
+		[contact release];
+	}
 }
 
 static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef person1, ABRecordRef person2, ABPersonSortOrdering ordering)
@@ -93,6 +100,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 -(void)syncLoad{
 	mLoading = TRUE;
 	[mContacts removeAllObjects];
+	[mNumbers2ContacstMapper removeAllObjects];
 	
 	if(addressBook == nil){
 		addressBook = ABAddressBookCreate();
@@ -132,6 +140,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	if((self = [super init])){
 		mLoaderQueue = dispatch_queue_create(kNameSpace, NULL);
 		mContacts = [[NgnContactMutableArray alloc] init];
+		mNumbers2ContacstMapper = [[NSMutableDictionary alloc] init];
 		addressBook = nil;
 	}
 	return self;
@@ -167,6 +176,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 		dispatch_release(mLoaderQueue), mLoaderQueue = NULL;
 	}
 	[mContacts release];
+	[mNumbers2ContacstMapper release];
 	
 	NgnCFRelease(addressBook);
 	
@@ -199,6 +209,10 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	return mContacts;
 }
 
+-(NSDictionary*) numbers2ContactsMapper{
+	return mNumbers2ContacstMapper;
+}
+
 -(NSArray*) contactsWithPredicate: (NSPredicate*)predicate{
 	return [mContacts filteredArrayUsingPredicate: predicate];
 }
@@ -214,18 +228,10 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 // * Idea 2: Idea 1 but only fill the dictionary when this function succeed. The advantage
 // of this idea is that we will only store the most often searched contacts. If the contact
 // doesn't exist we shoud store 'nil' to avoid query for it again and again. 
-// Do not forget to clear the dictionary we the contacts are loaded again.
+// Do not forget to clear the dictionary when the contacts are loaded again.
 -(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber{
 	if(phoneNumber){
-		@synchronized(mContacts){
-			for(NgnContact* contact in mContacts){
-				for(NgnPhoneNumber* pn in contact.phoneNumbers){
-					if(pn && [pn.number isEqualToString: phoneNumber]){
-						return contact;
-					}
-				}
-			}
-		}
+		return [mNumbers2ContacstMapper objectForKey:phoneNumber];
 	}
 	return nil;
 }

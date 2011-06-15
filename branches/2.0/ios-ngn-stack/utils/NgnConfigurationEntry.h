@@ -206,7 +206,7 @@
 #define DEFAULT_XCAP_ENABLED NO
 #define DEFAULT_XCAP_ROOT @"http://doubango.org:8080/services"
 #define DEFAULT_XCAP_USERNAME @"sip:johndoe@doubango.org"
-#define DEFAULT_XCAP_PASSWORD nil
+#define DEFAULT_XCAP_PASSWORD @""
 
 // RCS (Rich Communication Suite)
 #define DEFAULT_RCS_AVATAR_PATH @""
