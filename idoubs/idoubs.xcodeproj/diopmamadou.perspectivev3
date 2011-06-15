@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,6 +267,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>EC7E2F4D138968E50020EB89</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
@@ -276,7 +275,8 @@
 							<array>
 								<array>
 									<integer>15</integer>
-									<integer>14</integer>
+									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -308,12 +308,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>tnet_dns_resolvconf.c</string>
+								<string>ContactDetailsController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,14 +323,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>tnet_dns_resolvconf.c</string>
+										<string>ContactDetailsController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC955AB113A14FC4002A6BD2</string>
+										<string>EC83428A13A2D29B00E1B64A</string>
 										<key>history</key>
 										<array>
-											<string>EC9EDB86139D50DA0067EB59</string>
 											<string>EC9EDB87139D50DA0067EB59</string>
 											<string>EC9EDB88139D50DA0067EB59</string>
 											<string>EC9EDB89139D50DA0067EB59</string>
@@ -337,7 +338,8 @@
 											<string>EC9EDBA6139D54E40067EB59</string>
 											<string>EC955AAC13A14FC4002A6BD2</string>
 											<string>EC955AAD13A14FC4002A6BD2</string>
-											<string>EC955AAF13A14FC4002A6BD2</string>
+											<string>EC83428813A2D29B00E1B64A</string>
+											<string>EC83428913A2D29B00E1B64A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -351,18 +353,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 501}}</string>
+								<string>{{0, 0}, {1125, 489}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>501pt</string>
+							<string>489pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>187pt</string>
+							<string>199pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -376,7 +378,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 160}}</string>
+										<string>{{10, 27}, {1125, 172}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -431,8 +435,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1125, 160}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -460,11 +462,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC955AB313A14FC4002A6BD2</string>
+				<string>EC83428B13A2D29B00E1B64A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC955AB413A14FC4002A6BD2</string>
+				<string>EC83428C13A2D29B00E1B64A</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>EC955AB513A14FC4002A6BD2</string>
+				<string>EC83428D13A2D29B00E1B64A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -654,8 +656,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC955ABC13A14FC4002A6BD2</string>
-		<string>EC955ABD13A14FC4002A6BD2</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

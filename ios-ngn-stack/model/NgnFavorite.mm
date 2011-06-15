@@ -29,6 +29,7 @@
 @synthesize id;
 @synthesize number;
 @synthesize mediaType;
+@synthesize opaque;
 
 -(NgnFavorite*) initWithId: (long long) id_ andNumber: (NSString*)number_ andMediaType: (NgnMediaType_t)mediatype_{
 	if((self = [super init])){
@@ -63,6 +64,7 @@
 -(void)dealloc{
 	[number release];
 	[contact release];
+	[opaque release];
 	
 	[super dealloc];
 }

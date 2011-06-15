@@ -41,7 +41,7 @@
 		NSString *lastGroup = @"$", *group;
 		NSMutableArray* lastArray = nil;
 		for (NgnContact* contact in contacts_) {
-			if(!contact || [NgnStringUtils isNullOrEmpty: contact.displayName] || (![NgnStringUtils isNullOrEmpty: searchBar.text] && [contact.displayName rangeOfString: searchBar.text].location == NSNotFound)){
+			if(!contact || [NgnStringUtils isNullOrEmpty: contact.displayName] || (![NgnStringUtils isNullOrEmpty: searchBar.text] && [contact.displayName rangeOfString:searchBar.text  options:NSCaseInsensitiveSearch].location == NSNotFound)){
 				continue;
 			}
 			// filter: FIXME
