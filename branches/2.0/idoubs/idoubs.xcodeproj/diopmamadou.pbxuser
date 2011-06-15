@@ -23,8 +23,6 @@
 			1D6058900D05DD3D006BFB54 /* idoubs */,
 		);
 		breakpoints = (
-			EC7D98AF1396A0F0006A8F91 /* NgnAVSession.mm:334 */,
-			EC9EDA16139D04960067EB59 /* ContactsViewController.mm:128 */,
 		);
 		codeSenseManager = ECFD23BB135D51A000E6A9A3 /* Code sense */;
 		executables = (
@@ -129,21 +127,21 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 329338352;
-			PBXWorkspaceStateSaveDate = 329338352;
+			PBXPerProjectTemplateStateSaveDate = 329438678;
+			PBXWorkspaceStateSaveDate = 329438678;
 		};
 		perUserProjectItems = {
-			EC955AAC13A14FC4002A6BD2 /* PlistBookmark */ = EC955AAC13A14FC4002A6BD2 /* PlistBookmark */;
-			EC955AAD13A14FC4002A6BD2 /* PBXTextBookmark */ = EC955AAD13A14FC4002A6BD2 /* PBXTextBookmark */;
-			EC955AAF13A14FC4002A6BD2 /* XCBuildMessageTextBookmark */ = EC955AAF13A14FC4002A6BD2 /* XCBuildMessageTextBookmark */;
-			EC955AB113A14FC4002A6BD2 /* PBXTextBookmark */ = EC955AB113A14FC4002A6BD2 /* PBXTextBookmark */;
-			EC9EDB86139D50DA0067EB59 /* PBXTextBookmark */ = EC9EDB86139D50DA0067EB59 /* PBXTextBookmark */;
-			EC9EDB87139D50DA0067EB59 /* PBXTextBookmark */ = EC9EDB87139D50DA0067EB59 /* PBXTextBookmark */;
-			EC9EDB88139D50DA0067EB59 /* PBXTextBookmark */ = EC9EDB88139D50DA0067EB59 /* PBXTextBookmark */;
-			EC9EDB89139D50DA0067EB59 /* PBXTextBookmark */ = EC9EDB89139D50DA0067EB59 /* PBXTextBookmark */;
-			EC9EDB8A139D50DA0067EB59 /* PBXTextBookmark */ = EC9EDB8A139D50DA0067EB59 /* PBXTextBookmark */;
-			EC9EDBA5139D54E40067EB59 /* PBXTextBookmark */ = EC9EDBA5139D54E40067EB59 /* PBXTextBookmark */;
-			EC9EDBA6139D54E40067EB59 /* PlistBookmark */ = EC9EDBA6139D54E40067EB59 /* PlistBookmark */;
+			EC83428813A2D29B00E1B64A = EC83428813A2D29B00E1B64A /* PBXTextBookmark */;
+			EC83428913A2D29B00E1B64A = EC83428913A2D29B00E1B64A /* PBXBookmark */;
+			EC83428A13A2D29B00E1B64A = EC83428A13A2D29B00E1B64A /* PBXTextBookmark */;
+			EC955AAC13A14FC4002A6BD2 = EC955AAC13A14FC4002A6BD2 /* PlistBookmark */;
+			EC955AAD13A14FC4002A6BD2 = EC955AAD13A14FC4002A6BD2 /* PBXTextBookmark */;
+			EC9EDB87139D50DA0067EB59 = EC9EDB87139D50DA0067EB59 /* PBXTextBookmark */;
+			EC9EDB88139D50DA0067EB59 = EC9EDB88139D50DA0067EB59 /* PBXTextBookmark */;
+			EC9EDB89139D50DA0067EB59 = EC9EDB89139D50DA0067EB59 /* PBXTextBookmark */;
+			EC9EDB8A139D50DA0067EB59 = EC9EDB8A139D50DA0067EB59 /* PBXTextBookmark */;
+			EC9EDBA5139D54E40067EB59 = EC9EDBA5139D54E40067EB59 /* PBXTextBookmark */;
+			EC9EDBA6139D54E40067EB59 = EC9EDBA6139D54E40067EB59 /* PlistBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -160,31 +158,6 @@
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 77}, {860, 798}}";
 		};
-	};
-	EC7D987013969BD1006A8F91 /* NgnAVSession.mm */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.objcpp;
-		name = NgnAVSession.mm;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/sip/NgnAVSession.mm";
-		sourceTree = "<absolute>";
-	};
-	EC7D98AF1396A0F0006A8F91 /* NgnAVSession.mm:334 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = EC7D987013969BD1006A8F91 /* NgnAVSession.mm */;
-		functionName = "-setState:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 334;
-		location = idoubs;
-		modificationTime = 329338768.429815;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
 	};
 	EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {
 		uiCtxt = {
@@ -251,9 +224,9 @@
 	};
 	EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1496, 3679}}";
-			sepNavSelRange = "{9361, 0}";
-			sepNavVisRange = "{8443, 1116}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 3900}}";
+			sepNavSelRange = "{2538, 0}";
+			sepNavVisRange = "{1931, 846}";
 		};
 	};
 	EC7E2F60138968E50020EB89 /* ContactsViewController.h */ = {
@@ -417,6 +390,30 @@
 			sepNavVisRange = "{970, 1388}";
 		};
 	};
+	EC83428813A2D29B00E1B64A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC955AB013A14FC4002A6BD2 /* tnet_dns_resolvconf.c */;
+		name = "tnet_dns_resolvconf.c: 142";
+		rLen = 55;
+		rLoc = 4001;
+		rType = 0;
+		vrLen = 935;
+		vrLoc = 3519;
+	};
+	EC83428913A2D29B00E1B64A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+	};
+	EC83428A13A2D29B00E1B64A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+		name = "ContactDetailsController.mm: 82";
+		rLen = 0;
+		rLoc = 2538;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 1906;
+	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
 	};
@@ -429,7 +426,7 @@
 		);
 		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	EC955AAD13A14FC4002A6BD2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -443,37 +440,14 @@
 	};
 	EC955AAE13A14FC4002A6BD2 /* NgnContactService.mm */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
 		name = NgnContactService.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/services/impl/NgnContactService.mm";
 		sourceTree = "<absolute>";
 	};
-	EC955AAF13A14FC4002A6BD2 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "Unused variable 'tdns_machine_resolvconf_en_main'";
-		fRef = EC955AB013A14FC4002A6BD2 /* tnet_dns_resolvconf.c */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 141;
-		rType = 1;
-	};
 	EC955AB013A14FC4002A6BD2 /* tnet_dns_resolvconf.c */ = {
 		isa = PBXFileReference;
-		name = tnet_dns_resolvconf.c;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyNET/src/dns/tnet_dns_resolvconf.c";
-		sourceTree = "<absolute>";
-	};
-	EC955AB113A14FC4002A6BD2 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC955AB213A14FC4002A6BD2 /* tnet_dns_resolvconf.c */;
-		name = "tnet_dns_resolvconf.c: 142";
-		rLen = 55;
-		rLoc = 4001;
-		rType = 0;
-		vrLen = 937;
-		vrLoc = 3519;
-	};
-	EC955AB213A14FC4002A6BD2 /* tnet_dns_resolvconf.c */ = {
-		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
 		name = tnet_dns_resolvconf.c;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyNET/src/dns/tnet_dns_resolvconf.c";
 		sourceTree = "<absolute>";
@@ -507,38 +481,10 @@
 			sepNavWindowFrame = "{{15, 77}, {860, 798}}";
 		};
 	};
-	EC9EDA16139D04960067EB59 /* ContactsViewController.mm:128 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = EC7E2F61138968E50020EB89 /* ContactsViewController.mm */;
-		functionName = "-initWithNibName:bundle:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 128;
-		location = idoubs;
-		modificationTime = 329338768.43118;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	EC9EDB80139D50B30067EB59 /* Entitlements.plist */ = {
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
 		};
-	};
-	EC9EDB86139D50DA0067EB59 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC967A5E1391845C006187D3 /* PeoplePicker.mm */;
-		name = "PeoplePicker.mm: 66";
-		rLen = 0;
-		rLoc = 2808;
-		rType = 0;
-		vrLen = 1570;
-		vrLoc = 1754;
 	};
 	EC9EDB87139D50DA0067EB59 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

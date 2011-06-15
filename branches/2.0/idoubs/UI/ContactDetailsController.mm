@@ -78,8 +78,8 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-	[super viewDidAppear: animated];
+- (void)viewWillAppear:(BOOL)animated{
+	[super viewWillAppear: animated];
 	self.navigationItem.title = @"Info";
 	
 	if(self.contact){

@@ -30,6 +30,7 @@
 -(void) load: (BOOL) asyn;
 -(BOOL) isLoading;
 -(NSArray*) contacts;
+-(NSDictionary*) numbers2ContactsMapper;
 -(NSArray*) contactsWithPredicate: (NSPredicate*)predicate;
 #if TARGET_OS_IPHONE
 -(NgnContact*) getContactByUri: (NSString*)uri;

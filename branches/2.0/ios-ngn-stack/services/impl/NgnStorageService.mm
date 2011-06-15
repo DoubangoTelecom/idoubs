@@ -73,6 +73,7 @@ static BOOL sDataBaseInitialized = NO;
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if([fileManager fileExistsAtPath: sDataBasePath]){
 		// query for the database version
+		
 		if(sqlite3_open([sDataBasePath UTF8String], &db) != SQLITE_OK){
 			NgnNSLog(TAG,@"Failed to open database from: %@", sDataBasePath);
 			return NO;
