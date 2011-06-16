@@ -18,19 +18,24 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#ifndef IOS_NGN_PRIVATE_H
-#define IOS_NGN_PRIVATE_H
+#ifndef NGN_EVENT_PACKAGE_TYPE_H
+#define NGN_EVENT_PACKAGE_TYPE_H
 
-#import "iOSNgnConfig.h"
+typedef enum NgnEventPackageType_e {
+	EventPackage_None,
+	
+	EventPackage_Conference, 
+	EventPackage_Dialog, 
+	EventPackage_MessageSummary, 
+	EventPackage_Presence, 
+	EventPackage_PresenceList, 
+	EventPackage_RegInfo, 
+	EventPackage_SipProfile, 
+	EventPackage_UAProfile, 
+	EventPackage_WInfo, 
+	EventPackage_XcapDiff
+}
+NgnEventPackageType_t;
 
-#import "services/impl/NgnConfigurationService.h"
-#import "services/impl/NgnContactService.h"
-#import "services/impl/NgnNetworkService.h"
-#import "services/impl/NgnHttpClientService.h"
-#import "services/impl/NgnStorageService.h"
-#import "services/impl/NgnSipService.h"
+#endif /* NGN_EVENT_PACKAGE_TYPE_H */
 
-/* To be completed... */
-
-
-#endif /* IOS_NGN_PRIVATE_H */

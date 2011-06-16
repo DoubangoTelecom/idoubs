@@ -20,7 +20,7 @@
  */
 #import <Foundation/Foundation.h>
 
-#import "NgnSipSession.h"
+#import "sip/NgnSipSession.h"
 #import "model/NgnHistoryEvent.h"
 #import "media/NgnMediaType.h"
 

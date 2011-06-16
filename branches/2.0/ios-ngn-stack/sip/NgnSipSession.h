@@ -50,6 +50,7 @@ ConnectionState_t;
 @property(readwrite, assign, getter=getRemotePartyUri, setter=setRemotePartyUri) NSString* remotePartyUri;
 @property(readonly, getter=getFromUri) NSString* fromUri;
 @property(readonly, getter=getToUri) NSString* toUri;
+@property(readonly, getter=isConnected) BOOL connected;
 
 -(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
 -(void)initialize;

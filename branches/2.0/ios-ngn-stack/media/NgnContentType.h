@@ -22,7 +22,7 @@
 #define NGN_CONTENT_TYPE_H
 
 #define kContentTypePlainText				@"text/plain"
-#define kContentTypeCOnferenceInfo			@"application/conference-info+xml"
+#define kContentTypeConferenceInfo			@"application/conference-info+xml"
 #define kContentTypeDialogInfo				@"application/dialog-info+xml"
 #define kContentTypeExternalBody			@"message/external-body"
 #define kContentTypeMessageSummary			@"application/simple-message-summary"

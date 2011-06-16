@@ -19,32 +19,125 @@
  *
  */
 #import "NgnSubscriptionSession.h"
+#import "NgnContentType.h"
 
 #undef kSessions
 #define kSessions [NgnSubscriptionSession getAllSessions]
 
-/*
+
 //
 //	private implementation
 //
 
 @interface NgnSubscriptionSession (Private)
 +(NSMutableDictionary*) getAllSessions;
--(NgnSubscriptionSession*) internalInit: (NgnSipStack*)sipStack;
+-(NgnSubscriptionSession*) internalInitWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package;
 @end
 
 @implementation NgnSubscriptionSession (Private)
 
 +(NSMutableDictionary*) getAllSessions{
-	
+	static NSMutableDictionary* sessions = nil;
+	if(sessions == nil){
+		sessions = [[NSMutableDictionary alloc] init];
+	}
+	return sessions;
 }
 
--(NgnSubscriptionSession*) internalInit: (NgnSipStack*)sipStack{
-	
+-(NgnSubscriptionSession*) internalInitWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package{
+	if((self = (NgnSubscriptionSession*)[super initWithSipStack:sipStack])){
+		if(!(_mSession = new SubscriptionSession([sipStack getStack]))){
+			TSK_DEBUG_ERROR("Failed to create session");
+			return self;
+		}
+		[super initialize];
+		[super setSigCompId: [sipStack getSigCompId]];
+		if(toUri_){
+			[super setToUri:toUri_];
+			[super setFromUri:toUri_];
+		}
+		
+		switch ((mPackage = package)) {
+			case EventPackage_Conference:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"conference"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeConferenceInfo];
+                break;
+			}
+			
+            case EventPackage_Dialog:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"dialog"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeDialogInfo];
+                break;
+			}
+			
+            case EventPackage_MessageSummary:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"message-summary"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeMessageSummary];
+				break;
+			}
+			
+            case EventPackage_Presence:
+            case EventPackage_PresenceList:
+            default:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"presence"];
+				if(mPackage == EventPackage_PresenceList){
+					[super addHeaderWithName:@"Supported" andValue:@"eventlist"];
+				}
+				[super addHeaderWithName:@"Accept" andValue:[NSString stringWithFormat:@"%@, %@, %@, %@",
+															 kContentTypeMultipartRelated,
+															 kContentTypePidf,
+															 kContentTypeRlmi,
+															 kContentTypeRpid
+															 ]
+ 				 ];
+                break;
+			}
+            case EventPackage_RegInfo:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"reg"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeRegInfo];
+                // 3GPP TS 24.229 5.1.1.6 User-initiated deregistration
+				_mSession->setSilentHangup(YES);
+                break;
+			}
+			
+            case EventPackage_SipProfile:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"sip-profile"];
+                [super addHeaderWithName:@"Accept" andValue:kContentTypeOMADeferredList];
+                break;
+			}
+			
+            case EventPackage_UAProfile:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"ua-profile"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeXcapDiff];
+                break;
+			}
+			
+            case EventPackage_WInfo:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"presence.winfo"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeWatcherInfo];
+                break;
+			}
+			
+            case EventPackage_XcapDiff:
+			{
+				[super addHeaderWithName:@"Event" andValue:@"xcap-diff"];
+				[super addHeaderWithName:@"Accept" andValue:kContentTypeXcapDiff];
+                break;
+			}
+		}
+	}
+	return self;
 }
 
 @end
-*/
 
 
 //
@@ -52,6 +145,74 @@
 //
 
 @implementation NgnSubscriptionSession
+
+-(NgnEventPackageType_t) eventPackage{
+	return mPackage;
+}
+
+-(BOOL)subscribe{
+	if(_mSession){
+		return _mSession->subscribe();
+	}
+	TSK_DEBUG_ERROR("Null session");
+	return NO;
+}
+
+-(BOOL)unSubscribe{
+	if(_mSession){
+		return _mSession->unSubscribe();
+	}
+	TSK_DEBUG_ERROR("Null session");
+	return NO;
+}
+
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package{
+	@synchronized(kSessions){
+		NgnSubscriptionSession* subSession = [[[NgnSubscriptionSession alloc] internalInitWithStack:sipStack 
+																						  andToUri:toUri_ 
+																						 andPackage:package] autorelease];
+		if(subSession){
+			[kSessions setObject: subSession forKey:[subSession getIdAsNumber]];
+		}
+		return subSession;
+	}
+}
+
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andPackage:(NgnEventPackageType_t)package{
+	return [NgnSubscriptionSession createOutgoingSessionWithStack:sipStack 
+														 andToUri:nil 
+													   andPackage:package];
+}
+
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack{
+	return [NgnSubscriptionSession createOutgoingSessionWithStack:sipStack 
+														 andToUri:nil 
+													   andPackage:EventPackage_PresenceList];
+}
+
++(NgnSubscriptionSession*) getSessionWithId: (long)sessionId{
+	@synchronized(kSessions){
+		return [kSessions objectForKey:[NSNumber numberWithLong:sessionId]];
+	}
+}
+
++(BOOL) hasSessionWithId: (long)sessionId{
+	return [NgnSubscriptionSession getSessionWithId:sessionId] != nil;
+}
+
++(void) releaseSession: (NgnSubscriptionSession**) session{
+	@synchronized (kSessions){
+		if (session && *session){
+			if ([(*session) retainCount] == 1) {
+				[kSessions removeObjectForKey: [*session getIdAsNumber]];
+			}
+			else {
+				[(*session) release];
+			}
+			*session = nil;
+		}
+	}	
+}
 
 -(void)dealloc{
 	if(_mSession){
