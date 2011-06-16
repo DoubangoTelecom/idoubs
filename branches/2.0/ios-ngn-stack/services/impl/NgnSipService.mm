@@ -30,11 +30,13 @@
 #import "NgnStackEventArgs.h"
 #import "NgnInviteEventArgs.h"
 #import "NgnMessagingEventArgs.h"
+#import "NgnSubscriptionEventArgs.h"
 
 #import "NgnRegistrationSession.h"
 #import "NgnAVSession.h"
 #import "NgnMsrpSession.h"
 #import "NgnMessagingSession.h"
+#import "NgnSubscriptionSession.h"
 
 #import "SipCallback.h"
 #import "SipEvent.h"
@@ -114,12 +116,22 @@ public:
 				// Messaging (PagerMode IM)
 				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
 					eargs = [[NgnMessagingEventArgs alloc] 
-							 initWithSessionId: _sessionId 
-							 andEventType: MESSAGING_EVENT_CONNECTING
-							 andPhrase: phrase 
-							 andPayload: nil];
+							 initWithSessionId:_sessionId 
+							 andEventType:MESSAGING_EVENT_CONNECTING
+							 andPhrase:phrase 
+							 andPayload:nil];
 					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
+				}
+				// Subscription
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
+																   andEventType:SUBSCRIPTION_INPROGRESS 
+																andSipCode:_code 
+																   andSipPhrase:phrase 
+																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
 				}
 				
 				break;
@@ -160,6 +172,16 @@ public:
 					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
+				// Subscription
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
+																   andEventType:SUBSCRIPTION_OK
+																	 andSipCode:_code 
+																   andSipPhrase:phrase 
+																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
+					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+				}
 				break;
 			}
 				
@@ -196,7 +218,16 @@ public:
 					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
-				
+				// Subscription
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
+																   andEventType:UNSUBSCRIPTION_INPROGRESS 
+																	 andSipCode:_code 
+																   andSipPhrase:phrase 
+																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+				}
 				break;
 			}
 				
@@ -243,10 +274,21 @@ public:
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 					[NgnMessagingSession releaseSession: (NgnMessagingSession**)&ngnSipSession];
 				}
+				// Subscription
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
+																   andEventType:UNSUBSCRIPTION_OK
+																	 andSipCode:_code 
+																   andSipPhrase:phrase 
+																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
+					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+					[NgnSubscriptionSession releaseSession: (NgnSubscriptionSession**)&ngnSipSession];
+				}
 				
 				break;
 			}
-				
+			
 			default:
 				break;
 		}
@@ -646,6 +688,7 @@ done:
 			}
 				
 			default:
+			case tsip_ao_options:
 			{
 				break;
 			}
@@ -678,10 +721,68 @@ done:
 	/* == OnSubscriptionEvent == */
 	int OnSubscriptionEvent(const SubscriptionEvent* _e) { 
 		// This is a POSIX thread but thanks to multithreading
-		//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
-		//done:
-		//		[pool release];
+		NgnSubscriptionEventArgs *eargs = nil;
+		tsip_subscribe_event_type_t _type = _e->getType();
+		const SubscriptionSession *_sipSession = _e->getSession();
+		
+		switch (_type) {
+			case tsip_i_notify:
+			{
+				if(_sipSession){
+					short _code = _e->getCode();
+					const char *_phrase = _e->getPhrase();
+					const SipMessage *_message = _e->getSipMessage();
+					if(!_message || !_sipSession){
+						TSK_DEBUG_ERROR("Invalid session");
+						return 0;
+					}
+					NgnSubscriptionSession *ngnSession = [NgnSubscriptionSession getSessionWithId:_sipSession->getId()];
+					if(!ngnSession){
+						TSK_DEBUG_ERROR("cannot find session with id=%u", _sipSession->getId());
+						return 0;
+					}
+					
+					char* _ctype = const_cast<SipMessage*>(_message)->getSipHeaderValue("c");
+					const void* _content = const_cast<SipMessage*>(_message)->getSipContentPtr();
+					unsigned _content_length = const_cast<SipMessage*>(_message)->getSipContentLength();
+					
+					NSData *content = nil;
+					if(_content && _content_length){
+						content = [NSData dataWithBytes:_content length:_content_length];
+					}
+					NSString* ctype = [NgnStringUtils toNSString:_ctype];
+					TSK_FREE(_ctype);
+					
+					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:ngnSession.id
+															andEventType:INCOMING_NOTIFY 
+															andSipCode:_code 
+															andSipPhrase:[NgnStringUtils toNSString:_phrase] 
+															andContent:content 
+															andContentType:ctype 
+															andEventPackage:ngnSession.eventPackage];
+				}
+				break;
+			}
+				
+			default:
+			case tsip_i_subscribe:
+			case tsip_ao_subscribe:
+			case tsip_i_unsubscribe:
+			case tsip_ao_unsubscribe:
+			case tsip_ao_notify:
+			{
+				break;
+			}
+		}
+done:
+		if(eargs){
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+		}
+		
+		[eargs autorelease];
+		[pool release];
 		return 0; 
 	}
 	
@@ -746,11 +847,22 @@ private:
 }
 
 -(NSString*)getDefaultIdentity{
-	return nil;
+	if(self->sipDefaultIdentity == nil){
+		if(self->sipStack){
+			self.defaultIdentity = self->sipStack.preferredIdentity;
+		}
+	}
+	if(self->sipDefaultIdentity){
+		return self->sipDefaultIdentity;
+	}
+	else {
+		return [[NgnEngine getInstance].configurationService getStringWithKey:IDENTITY_IMPU];
+	}
 }
 
 -(void)setDefaultIdentity: (NSString*)identity{
-	
+	[self->sipDefaultIdentity release];
+	self->sipDefaultIdentity = [identity retain];
 }
 
 -(NgnSipStack*)getSipStack{

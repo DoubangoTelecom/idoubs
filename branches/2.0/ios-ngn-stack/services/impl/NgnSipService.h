@@ -37,6 +37,7 @@ class _NgnSipCallback;
 	NgnSipPreferences* sipPreferences;
 	NgnBaseService<INgnConfigurationService>*mConfigurationService;
 	NgnSipStack* sipStack;
+	NSString *sipDefaultIdentity;
 }
 
 @property(readonly) NgnRegistrationSession* sipRegSession;

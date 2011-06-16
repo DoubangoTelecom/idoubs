@@ -35,9 +35,11 @@ STACK_STATE_T;
 
 -(NgnSipStack*) initWithSipCallback: (const SipCallback*) callback andRealmUri: (NSString*) realmUri andIMPIUri: (NSString*) impiUri andIMPUUri: (NSString*)impuUri;
 
+@property(readwrite,getter=getState,setter=setState) STACK_STATE_T state;
+@property(readonly,getter=getPreferredIdentity) NSString *preferredIdentity;
+
 -(STACK_STATE_T) getState;
 -(void) setState: (STACK_STATE_T)newState;
-@property(readwrite) STACK_STATE_T state;
 
 -(BOOL) start;
 -(BOOL) setRealm: (NSString *)realmUri;

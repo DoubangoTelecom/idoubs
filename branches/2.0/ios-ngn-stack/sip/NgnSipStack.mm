@@ -49,10 +49,6 @@
 	[super dealloc];
 }
 
--(STACK_STATE_T) state{
-	return [self getState];
-}
-
 -(STACK_STATE_T) getState{
 	return mState;
 }
