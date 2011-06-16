@@ -1173,6 +1173,37 @@
 		ECFD343A135EB3AD00E6A9A3 /* NgnEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD3438135EB3AD00E6A9A3 /* NgnEventArgs.m */; };
 		ECFD344B135EB65600E6A9A3 /* NgnRegistrationEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD3449135EB65600E6A9A3 /* NgnRegistrationEventArgs.h */; };
 		ECFD344C135EB65600E6A9A3 /* NgnRegistrationEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD344A135EB65600E6A9A3 /* NgnRegistrationEventArgs.m */; };
+		ECFDFAD813A955C700D4C62A /* NgnEventPackageType.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFDFAD713A955C700D4C62A /* NgnEventPackageType.h */; };
+		ECFDFAE613A95B6900D4C62A /* NgnSubscriptionEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFDFAE413A95B6900D4C62A /* NgnSubscriptionEventArgs.h */; };
+		ECFDFAE713A95B6900D4C62A /* NgnSubscriptionEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */; };
+		ECFDFB1F13A9677C00D4C62A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFDFB1A13A9677C00D4C62A /* main.m */; };
+		ECFDFB2013A9677C00D4C62A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFDFB1B13A9677C00D4C62A /* MainWindow.xib */; };
+		ECFDFB2113A9677C00D4C62A /* TestPresence.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECFDFB1D13A9677C00D4C62A /* TestPresence.mm */; };
+		ECFDFB2B13A968C900D4C62A /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libios_ngn_stack.a */; };
+		ECFDFB2C13A968C900D4C62A /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */; };
+		ECFDFB2D13A968C900D4C62A /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
+		ECFDFB2E13A968C900D4C62A /* libtinyIPSec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2767135E79B800E6A9A3 /* libtinyIPSec.a */; };
+		ECFDFB2F13A968C900D4C62A /* libtinyMEDIA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2CDE135E7C7D00E6A9A3 /* libtinyMEDIA.a */; };
+		ECFDFB3013A968C900D4C62A /* libtinyMSRP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD279B135E7A0200E6A9A3 /* libtinyMSRP.a */; };
+		ECFDFB3113A968C900D4C62A /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
+		ECFDFB3213A968C900D4C62A /* libtinyRTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2693135D5DDD00E6A9A3 /* libtinyRTP.a */; };
+		ECFDFB3313A968C900D4C62A /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
+		ECFDFB3413A968C900D4C62A /* libtinySDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD25F7135D5CD100E6A9A3 /* libtinySDP.a */; };
+		ECFDFB3513A968C900D4C62A /* libtinySIGCOMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2D5A135E7CD800E6A9A3 /* libtinySIGCOMP.a */; };
+		ECFDFB3613A968C900D4C62A /* libtinySIP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E9A135E7D6D00E6A9A3 /* libtinySIP.a */; };
+		ECFDFB3713A968C900D4C62A /* libtinySMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E02135E7D1000E6A9A3 /* libtinySMS.a */; };
+		ECFDFB3813A968C900D4C62A /* libtinyWRAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD32AE135E821000E6A9A3 /* libtinyWRAP.a */; };
+		ECFDFB3913A968C900D4C62A /* libtinyXCAP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2E5B135E7D3600E6A9A3 /* libtinyXCAP.a */; };
+		ECFDFB3A13A968DB00D4C62A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		ECFDFB3C13A968DB00D4C62A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFDFB3B13A968DB00D4C62A /* AddressBookUI.framework */; };
+		ECFDFB3D13A968DB00D4C62A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		ECFDFB4013A9693900D4C62A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
+		ECFDFB4113A9693900D4C62A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
+		ECFDFB4213A9693900D4C62A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
+		ECFDFB4313A9693900D4C62A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECFDFB4413A9693900D4C62A /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
+		ECFDFB4513A9693900D4C62A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
+		ECFDFB4813A9695D00D4C62A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3128,6 +3159,17 @@
 		ECFD3438135EB3AD00E6A9A3 /* NgnEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnEventArgs.m; sourceTree = "<group>"; };
 		ECFD3449135EB65600E6A9A3 /* NgnRegistrationEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnRegistrationEventArgs.h; sourceTree = "<group>"; };
 		ECFD344A135EB65600E6A9A3 /* NgnRegistrationEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnRegistrationEventArgs.m; sourceTree = "<group>"; };
+		ECFDFAD713A955C700D4C62A /* NgnEventPackageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnEventPackageType.h; sourceTree = "<group>"; };
+		ECFDFAE413A95B6900D4C62A /* NgnSubscriptionEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSubscriptionEventArgs.h; sourceTree = "<group>"; };
+		ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnSubscriptionEventArgs.m; sourceTree = "<group>"; };
+		ECFDFB0F13A9675700D4C62A /* testPresence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPresence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFDFB1113A9675700D4C62A /* testPresence-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testPresence-Info.plist"; sourceTree = "<group>"; };
+		ECFDFB1913A9677C00D4C62A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECFDFB1A13A9677C00D4C62A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECFDFB1B13A9677C00D4C62A /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		ECFDFB1C13A9677C00D4C62A /* TestPresence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPresence.h; sourceTree = "<group>"; };
+		ECFDFB1D13A9677C00D4C62A /* TestPresence.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPresence.mm; sourceTree = "<group>"; };
+		ECFDFB3B13A968DB00D4C62A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3402,6 +3444,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ECFDFB0D13A9675700D4C62A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFDFB2B13A968C900D4C62A /* libios_ngn_stack.a in Frameworks */,
+				ECFDFB2C13A968C900D4C62A /* libtinyDAV.a in Frameworks */,
+				ECFDFB2D13A968C900D4C62A /* libtinyHTTP.a in Frameworks */,
+				ECFDFB2E13A968C900D4C62A /* libtinyIPSec.a in Frameworks */,
+				ECFDFB2F13A968C900D4C62A /* libtinyMEDIA.a in Frameworks */,
+				ECFDFB3013A968C900D4C62A /* libtinyMSRP.a in Frameworks */,
+				ECFDFB3113A968C900D4C62A /* libtinyNET.a in Frameworks */,
+				ECFDFB3213A968C900D4C62A /* libtinyRTP.a in Frameworks */,
+				ECFDFB3313A968C900D4C62A /* libtinySAK.a in Frameworks */,
+				ECFDFB3413A968C900D4C62A /* libtinySDP.a in Frameworks */,
+				ECFDFB3513A968C900D4C62A /* libtinySIGCOMP.a in Frameworks */,
+				ECFDFB3613A968C900D4C62A /* libtinySIP.a in Frameworks */,
+				ECFDFB3713A968C900D4C62A /* libtinySMS.a in Frameworks */,
+				ECFDFB3813A968C900D4C62A /* libtinyWRAP.a in Frameworks */,
+				ECFDFB3913A968C900D4C62A /* libtinyXCAP.a in Frameworks */,
+				ECFDFB3A13A968DB00D4C62A /* AddressBook.framework in Frameworks */,
+				ECFDFB3C13A968DB00D4C62A /* AddressBookUI.framework in Frameworks */,
+				ECFDFB3D13A968DB00D4C62A /* AudioToolbox.framework in Frameworks */,
+				ECFDFB4013A9693900D4C62A /* AVFoundation.framework in Frameworks */,
+				ECFDFB4113A9693900D4C62A /* CFNetwork.framework in Frameworks */,
+				ECFDFB4213A9693900D4C62A /* CoreMedia.framework in Frameworks */,
+				ECFDFB4313A9693900D4C62A /* CoreVideo.framework in Frameworks */,
+				ECFDFB4413A9693900D4C62A /* libresolv.dylib in Frameworks */,
+				ECFDFB4513A9693900D4C62A /* libsqlite3.dylib in Frameworks */,
+				ECFDFB4813A9695D00D4C62A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -3428,6 +3502,7 @@
 				EC83BA27136990DA00DD3355 /* testVideoCall.app */,
 				EC81BD50136C5B3D0068BCB4 /* testAudioUnit.app */,
 				EC7D39511379ED2A0052CE45 /* testMessaging.app */,
+				ECFDFB0F13A9675700D4C62A /* testPresence.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3453,6 +3528,8 @@
 				ECDDBB71137C9C3E0027105F /* CoreVideo.framework */,
 				ECDDBB9B137C9CB40027105F /* CoreMedia.framework */,
 				EC83FF951380A29F00060A9D /* libsqlite3.dylib */,
+				ECFDFB1113A9675700D4C62A /* testPresence-Info.plist */,
+				ECFDFB3B13A968DB00D4C62A /* AddressBookUI.framework */,
 			);
 			name = "ios-ngn-stack";
 			sourceTree = "<group>";
@@ -3554,6 +3631,7 @@
 		EC83BA0F1369908500DD3355 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				ECFDFB1813A9677C00D4C62A /* testPresence */,
 				EC7D395E1379ED7E0052CE45 /* testMessaging */,
 				EC81BD59136C5B570068BCB4 /* testAudioUnit */,
 				EC83BA3A1369918A00DD3355 /* testVideoCall */,
@@ -3678,6 +3756,8 @@
 				ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */,
 				EC967D031391CE0C006187D3 /* NgnContactEventArgs.h */,
 				EC967D041391CE0C006187D3 /* NgnContactEventArgs.mm */,
+				ECFDFAE413A95B6900D4C62A /* NgnSubscriptionEventArgs.h */,
+				ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -3697,6 +3777,7 @@
 				ECDDB643137C0CBB0027105F /* NgnProxyVideoConsumer.mm */,
 				EC7D98E01396A619006A8F91 /* NgnCamera.h */,
 				EC7D98E11396A619006A8F91 /* NgnCamera.mm */,
+				ECFDFAD713A955C700D4C62A /* NgnEventPackageType.h */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -6131,6 +6212,19 @@
 			name = tinyWRAP;
 			sourceTree = "<group>";
 		};
+		ECFDFB1813A9677C00D4C62A /* testPresence */ = {
+			isa = PBXGroup;
+			children = (
+				ECFDFB1913A9677C00D4C62A /* Info.plist */,
+				ECFDFB1A13A9677C00D4C62A /* main.m */,
+				ECFDFB1B13A9677C00D4C62A /* MainWindow.xib */,
+				ECFDFB1C13A9677C00D4C62A /* TestPresence.h */,
+				ECFDFB1D13A9677C00D4C62A /* TestPresence.mm */,
+			);
+			name = testPresence;
+			path = ../testPresence;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -6201,6 +6295,8 @@
 				EC967D051391CE0C006187D3 /* NgnContactEventArgs.h in Headers */,
 				EC7D98E21396A619006A8F91 /* NgnCamera.h in Headers */,
 				ECF64C06139EA03B004AF043 /* iOSNgnPrivate.h in Headers */,
+				ECFDFAD813A955C700D4C62A /* NgnEventPackageType.h in Headers */,
+				ECFDFAE613A95B6900D4C62A /* NgnSubscriptionEventArgs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7190,6 +7286,23 @@
 			productReference = ECFD32AE135E821000E6A9A3 /* libtinyWRAP.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		ECFDFB0E13A9675700D4C62A /* testPresence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFDFB1413A9675800D4C62A /* Build configuration list for PBXNativeTarget "testPresence" */;
+			buildPhases = (
+				ECFDFB0B13A9675700D4C62A /* Resources */,
+				ECFDFB0C13A9675700D4C62A /* Sources */,
+				ECFDFB0D13A9675700D4C62A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testPresence;
+			productName = testPresence;
+			productReference = ECFDFB0F13A9675700D4C62A /* testPresence.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -7234,6 +7347,7 @@
 				EC83BA26136990DA00DD3355 /* testVideoCall */,
 				EC81BD4F136C5B3D0068BCB4 /* testAudioUnit */,
 				EC7D39501379ED2A0052CE45 /* testMessaging */,
+				ECFDFB0E13A9675700D4C62A /* testPresence */,
 			);
 		};
 /* End PBXProject section */
@@ -7277,6 +7391,14 @@
 			files = (
 				EC83FF7613809E5F00060A9D /* NgnDataBase.db in Resources */,
 				EC83BA401369927100DD3355 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFDFB0B13A9675700D4C62A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFDFB2013A9677C00D4C62A /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7330,6 +7452,7 @@
 				ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */,
 				EC967D061391CE0C006187D3 /* NgnContactEventArgs.mm in Sources */,
 				EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */,
+				ECFDFAE713A95B6900D4C62A /* NgnSubscriptionEventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7904,6 +8027,15 @@
 				ECFD32FF135E824700E6A9A3 /* SipUri.cxx in Sources */,
 				ECFD3302135E824700E6A9A3 /* SMSEncoder.cxx in Sources */,
 				ECFD3306135E824700E6A9A3 /* Xcap.cxx in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFDFB0C13A9675700D4C62A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFDFB1F13A9677C00D4C62A /* main.m in Sources */,
+				ECFDFB2113A9677C00D4C62A /* TestPresence.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9433,6 +9565,87 @@
 			};
 			name = Release;
 		};
+		ECFDFB1213A9675800D4C62A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testPresence/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
+				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lg729b",
+					"-lspeex",
+					"-lspeexdsp",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testPresence;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ECFDFB1313A9675800D4C62A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				HEADER_SEARCH_PATHS = (
+					"../ios-ngn-stack",
+					$DOUBANGO_INCLUDES,
+				);
+				INFOPLIST_FILE = ../testPresence/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
+				OTHER_LDFLAGS = (
+					"-ltheora",
+					"-lvorbis",
+					"-logg",
+					"-lx264",
+					"-lswscale",
+					"-lavcore",
+					"-lavutil",
+					"-lavcodec",
+					"-lg729b",
+					"-lspeex",
+					"-lspeexdsp",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = testPresence;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -9630,6 +9843,15 @@
 			buildConfigurations = (
 				ECFD32AF135E821000E6A9A3 /* Debug */,
 				ECFD32B0135E821000E6A9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFDFB1413A9675800D4C62A /* Build configuration list for PBXNativeTarget "testPresence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFDFB1213A9675800D4C62A /* Debug */,
+				ECFDFB1313A9675800D4C62A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

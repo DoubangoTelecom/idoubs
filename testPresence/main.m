@@ -18,19 +18,11 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#ifndef IOS_NGN_PRIVATE_H
-#define IOS_NGN_PRIVATE_H
+#import <UIKit/UIKit.h>
 
-#import "iOSNgnConfig.h"
-
-#import "services/impl/NgnConfigurationService.h"
-#import "services/impl/NgnContactService.h"
-#import "services/impl/NgnNetworkService.h"
-#import "services/impl/NgnHttpClientService.h"
-#import "services/impl/NgnStorageService.h"
-#import "services/impl/NgnSipService.h"
-
-/* To be completed... */
-
-
-#endif /* IOS_NGN_PRIVATE_H */
+int main(int argc, char *argv[]) {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    int retVal = UIApplicationMain(argc, argv, nil, nil);
+    [pool release];
+    return retVal;
+}

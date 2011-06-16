@@ -18,19 +18,31 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#ifndef IOS_NGN_PRIVATE_H
-#define IOS_NGN_PRIVATE_H
+#import <UIKit/UIKit.h>
 
-#import "iOSNgnConfig.h"
+#import "iOSNgnStack.h"
 
-#import "services/impl/NgnConfigurationService.h"
-#import "services/impl/NgnContactService.h"
-#import "services/impl/NgnNetworkService.h"
-#import "services/impl/NgnHttpClientService.h"
-#import "services/impl/NgnStorageService.h"
-#import "services/impl/NgnSipService.h"
+@interface TestPresence : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+	UIActivityIndicatorView* activityIndicator;
+	UIButton *buttonRegister;
+	UIButton *buttonSubscribe;
+	UIButton *buttonPublish;
+	UILabel *labelStatus;
+	
+	BOOL mScheduleRegistration;
+	
+	NgnSubscriptionSession *mSubSession;
+	NgnPublicationSession *mPubSession;
+}
 
-/* To be completed... */
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* activityIndicator;
+@property (retain, nonatomic) IBOutlet UIButton *buttonRegister;
+@property (retain, nonatomic) IBOutlet UIButton *buttonPublish;
+@property (retain, nonatomic) IBOutlet UIButton *buttonSubscribe;
+@property (retain, nonatomic) IBOutlet UILabel *labelStatus;
 
+- (IBAction) onButtonClick: (id)sender;
 
-#endif /* IOS_NGN_PRIVATE_H */
+@end
