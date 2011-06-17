@@ -16,32 +16,36 @@
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
  */
-#import <Foundation/Foundation.h>
+#import "NgnPublicationEventArgs.h"
 
-#import "events/NgnEventArgs.h"
 
-#define kNgnStackEventArgs_Name @"NgnStackEventArgs_Name"
+@implementation NgnPublicationEventArgs
 
-typedef enum NgnStackEventTypes_e {
-	STACK_EVENT_NONE,
+@synthesize sessionId;
+@synthesize eventType;
+@synthesize sipCode;
+@synthesize sipPhrase;
+
+-(NgnPublicationEventArgs*) initWithSessionId:(long)sessionId_
+								 andEventType:(NgnPublicationEventTypes_t)eventType_
+								   andSipCode:(short)sipCode_
+								 andSipPhrase:(NSString*)sipPhrase_
+{
+	if((self = [super init])){
+		self->sessionId = sessionId_;
+		self->eventType = eventType_;
+		self->sipCode = sipCode_;
+		self->sipPhrase = [sipPhrase_ retain];
+	}
+	return self;
+}
+
+-(void)dealloc{
+	[self.sipPhrase release];
 	
-	STACK_START_OK,
-    STACK_START_NOK,
-    STACK_STOP_OK,
-    STACK_STOP_NOK
+	[super dealloc];
 }
-NgnStackEventTypes_t;
-
-@interface NgnStackEventArgs : NgnEventArgs {
-	NgnStackEventTypes_t eventType;
-	NSString* phrase;
-}
-
-@property(readonly) NgnStackEventTypes_t eventType;
-@property(readonly,retain) NSString* phrase;
-
-
--(NgnStackEventArgs*)initWithEventType: (NgnStackEventTypes_t)_eventType andPhrase: (NSString*)_phrase;
 
 @end

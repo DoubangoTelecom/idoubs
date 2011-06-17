@@ -56,7 +56,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 -(BOOL) subscribe{
 	if(!mSubSession){
 		mSubSession = [[NgnSubscriptionSession createOutgoingSessionWithStack:[NgnEngine getInstance].sipService.stack 
-																	andToUri:[NgnEngine getInstance].sipService.defaultIdentity 
+																	andToUri:[NgnEngine getInstance].sipService.defaultIdentity
 																   andPackage:EventPackage_PresenceList] retain];
 	}
 	return [mSubSession subscribe];
@@ -77,10 +77,22 @@ static const BOOL kEnableEarlyIMS = TRUE;
 }
 
 -(BOOL) publish{
-	return NO;
+	if(!mPubSession){
+		mPubSession = [[NgnPublicationSession createOutgoingSessionWithStack:[NgnEngine getInstance].sipService.stack 
+																	andToUri:[NgnEngine getInstance].sipService.defaultIdentity] retain];
+		mPubSession.event = @"presence";
+		mPubSession.contentType = kContentTypePidf;
+	}
+	return [mPubSession publishContent: [NgnPublicationSession createPresenceContentWithEntityUri:mPubSession.fromUri 
+																					andStatus:PresenceStatus_Online 
+																					  andNote:@"hello"]
+			];
 }
 
 -(BOOL) unPublish{
+	if(mPubSession){
+		return [mPubSession unPublish];
+	}
 	return NO;
 }
 
@@ -185,6 +197,26 @@ static const BOOL kEnableEarlyIMS = TRUE;
 
 //== Publication events == //
 -(void) onPublicationEvent:(NSNotification*)notification{
+	NgnPublicationEventArgs* eargs = [notification object];
+	
+	// only process the event if it's ours
+	if(mPubSession && mPubSession.id == eargs.sessionId){
+		switch (eargs.eventType) {
+				[self.buttonPublish setTitle:mPubSession.connected ? @"UnPublish" : @"Publish" forState: UIControlStateNormal];
+				
+			default:
+			case PUBLICATION_OK:
+			case PUBLICATION_NOK:
+			case PUBLICATION_INPROGRESS:
+			case UNPUBLICATION_OK:
+			case UNPUBLICATION_NOK:
+			case UNPUBLICATION_INPROGRESS:
+			{
+				self.labelStatus.text = eargs.sipPhrase;
+				break;
+			}
+		}
+	}		
 }
 
 @end
@@ -212,8 +244,8 @@ static const BOOL kEnableEarlyIMS = TRUE;
 	 addObserver:self selector:@selector(onRegistrationEvent:) name:kNgnRegistrationEventArgs_Name object:nil];
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onSubscriptionEvent:) name:kNgnSubscriptionEventArgs_Name object:nil];
-	//[[NSNotificationCenter defaultCenter]
-	 //addObserver:self selector:@selector(onPublicationEvent:) name:kNgnP object:nil];
+	[[NSNotificationCenter defaultCenter]
+	 addObserver:self selector:@selector(onPublicationEvent:) name:kNgnPublicationEventArgs_Name object:nil];
 	
 	// start the engine
 	[[NgnEngine getInstance] start];

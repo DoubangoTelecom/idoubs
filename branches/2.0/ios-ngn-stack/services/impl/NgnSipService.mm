@@ -31,12 +31,14 @@
 #import "NgnInviteEventArgs.h"
 #import "NgnMessagingEventArgs.h"
 #import "NgnSubscriptionEventArgs.h"
+#import "NgnPublicationEventArgs.h"
 
 #import "NgnRegistrationSession.h"
 #import "NgnAVSession.h"
 #import "NgnMsrpSession.h"
 #import "NgnMessagingSession.h"
 #import "NgnSubscriptionSession.h"
+#import "NgnPublicationSession.h"
 
 #import "SipCallback.h"
 #import "SipEvent.h"
@@ -97,43 +99,51 @@ public:
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId 
-							 andEventType: REGISTRATION_INPROGRESS 
+							 andEventType:REGISTRATION_INPROGRESS 
 							 andSipCode:_code  
-							 andSipPhrase: phrase];
-					[mSipService.sipRegSession setConnectionState: CONN_STATE_CONNECTING];					
+							 andSipPhrase:phrase];
+					[mSipService.sipRegSession setConnectionState:CONN_STATE_CONNECTING];					
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
-				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
 					eargs = [[NgnInviteEventArgs alloc] 
 							 initWithSessionId: _sessionId andEvenType: 
 							 INVITE_EVENT_INPROGRESS andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
 							 andSipPhrase: phrase];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTING];
 					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INPROGRESS];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				// Messaging (PagerMode IM)
-				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnMessagingEventArgs alloc] 
 							 initWithSessionId:_sessionId 
 							 andEventType:MESSAGING_EVENT_CONNECTING
 							 andPhrase:phrase 
 							 andPayload:nil];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
 				// Subscription
-				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
 																   andEventType:SUBSCRIPTION_INPROGRESS 
 																andSipCode:_code 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTING];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
 				}
-				
+				// Publication
+				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
+					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
+																andEventType:PUBLICATION_INPROGRESS 
+																andSipCode:_code 
+																andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnPublicationEventArgs_Name object:eargs];
+				}
 				break;
 			}
 			
@@ -142,8 +152,10 @@ public:
 			{
 				// Registration
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
-					eargs = [[NgnRegistrationEventArgs alloc] 
-							 initWithSessionId:_sessionId andEventType: REGISTRATION_OK  andSipCode:_code  andSipPhrase: phrase];
+					eargs = [[NgnRegistrationEventArgs alloc] initWithSessionId:_sessionId 
+										andEventType:REGISTRATION_OK  
+										andSipCode:_code  
+										andSipPhrase:phrase];
 					[mSipService.sipRegSession setConnectionState: CONN_STATE_CONNECTED];
 					// Update default identity (vs barred)
 					NSString* defaultIdentity = [mSipService.sipStack getPreferredIdentity];
@@ -155,32 +167,42 @@ public:
 				// Audio/Video/MSRP(Chat, FileTransfer)
 				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
 					eargs = [[NgnInviteEventArgs alloc] 
-							 initWithSessionId: _sessionId andEvenType: 
-							 INVITE_EVENT_CONNECTED andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
-							 andSipPhrase: phrase];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
-					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_INCALL];
+							 initWithSessionId: _sessionId 
+							 andEvenType:INVITE_EVENT_CONNECTED 
+							 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTED];
+					[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_INCALL];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				// Messaging (PagerMode IM)
-				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
-					eargs = [[NgnMessagingEventArgs alloc] 
-							 initWithSessionId: _sessionId 
-							 andEventType: MESSAGING_EVENT_CONNECTED
-							 andPhrase: phrase 
-							 andPayload: nil];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId:_sessionId]) != nil){
+					eargs = [[NgnMessagingEventArgs alloc]
+							 initWithSessionId:_sessionId
+							 andEventType:MESSAGING_EVENT_CONNECTED
+							 andPhrase:phrase
+							 andPayload:nil];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
 				// Subscription
-				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
 																   andEventType:SUBSCRIPTION_OK
 																	 andSipCode:_code 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
-					[ngnSipSession setConnectionState: CONN_STATE_CONNECTED];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+				}
+				// Publication
+				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
+					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
+																  andEventType:PUBLICATION_OK
+																	andSipCode:_code 
+																  andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_CONNECTED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnPublicationEventArgs_Name object:eargs];
 				}
 				break;
 			}
@@ -192,41 +214,51 @@ public:
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId 
-							 andEventType: UNREGISTRATION_INPROGRESS  
+							 andEventType:UNREGISTRATION_INPROGRESS  
 							 andSipCode:_code  
-							 andSipPhrase: phrase];
-					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATING];					
+							 andSipPhrase:phrase];
+					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATING];					
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
-				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
 					eargs = [[NgnInviteEventArgs alloc] 
-							 initWithSessionId: _sessionId andEvenType: 
-							 INVITE_EVENT_TERMWAIT andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
-							 andSipPhrase: phrase];
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
-					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATING];
+							 initWithSessionId:_sessionId
+							 andEvenType:INVITE_EVENT_TERMWAIT
+							 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType 
+							 andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATING];
+					[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_TERMINATING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				// Messaging (PagerMode IM)
-				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnMessagingEventArgs alloc] 
-							 initWithSessionId: _sessionId 
-							 andEventType: MESSAGING_EVENT_TERMINATING
-							 andPhrase: phrase 
-							 andPayload: nil];
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
+							 initWithSessionId:_sessionId 
+							 andEventType:MESSAGING_EVENT_TERMINATING
+							 andPhrase:phrase 
+							 andPayload:nil];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
 				}
 				// Subscription
-				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
 																   andEventType:UNSUBSCRIPTION_INPROGRESS 
 																	 andSipCode:_code 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATING];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATING];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
+				}
+				// Publication
+				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
+					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
+																  andEventType:UNPUBLICATION_INPROGRESS
+																  andSipCode:_code 
+																  andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATING];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnPublicationEventArgs_Name object:eargs];
 				}
 				break;
 			}
@@ -238,54 +270,64 @@ public:
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId 
-							 andEventType: UNREGISTRATION_OK  
+							 andEventType:UNREGISTRATION_OK  
 							 andSipCode:_code  
-							 andSipPhrase: phrase];
-					[mSipService.sipRegSession setConnectionState: CONN_STATE_TERMINATED];					
+							 andSipPhrase:phrase];
+					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATED];					
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 					/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
 					[mSipService stopStack];
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
-				else if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+				else if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
 					eargs = [[NgnInviteEventArgs alloc] 
-							 initWithSessionId: _sessionId andEvenType: 
-							 INVITE_EVENT_TERMINATED andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType 
-							 andSipPhrase: phrase];
+							 initWithSessionId:_sessionId
+							 andEvenType:INVITE_EVENT_TERMINATED
+							 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+							 andSipPhrase:phrase];
 					
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
-					[((NgnInviteSession*)ngnSipSession) setState: INVITE_STATE_TERMINATED];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
+					[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_TERMINATED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
-					if([ngnSipSession isKindOfClass: [NgnAVSession class]]){
-						[NgnAVSession releaseSession: (NgnAVSession**)&ngnSipSession];
+					if([ngnSipSession isKindOfClass:[NgnAVSession class]]){
+						[NgnAVSession releaseSession:(NgnAVSession**)&ngnSipSession];
 					}
-					else if([ngnSipSession isKindOfClass: [NgnMsrpSession class]]){
-						[NgnMsrpSession releaseSession: (NgnMsrpSession**)&ngnSipSession];
+					else if([ngnSipSession isKindOfClass:[NgnMsrpSession class]]){
+						[NgnMsrpSession releaseSession:(NgnMsrpSession**)&ngnSipSession];
 					}
 				}
 				// Messaging (PagerMode IM)
-				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnMessagingSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnMessagingEventArgs alloc] 
-							 initWithSessionId: _sessionId 
-							 andEventType: MESSAGING_EVENT_TERMINATED
-							 andPhrase: phrase 
-							 andPayload: nil];
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
+							 initWithSessionId:_sessionId 
+							 andEventType:MESSAGING_EVENT_TERMINATED
+							 andPhrase:phrase 
+							 andPayload:nil];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnMessagingEventArgs_Name object:eargs];
-					[NgnMessagingSession releaseSession: (NgnMessagingSession**)&ngnSipSession];
+					[NgnMessagingSession releaseSession:(NgnMessagingSession**)&ngnSipSession];
 				}
 				// Subscription
-				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId: _sessionId]) != nil){
+				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
 																   andEventType:UNSUBSCRIPTION_OK
-																	 andSipCode:_code 
+																   andSipCode:_code 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
-					[ngnSipSession setConnectionState: CONN_STATE_TERMINATED];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnSubscriptionEventArgs_Name object:eargs];
 					[NgnSubscriptionSession releaseSession: (NgnSubscriptionSession**)&ngnSipSession];
 				}
-				
+				// Publication
+				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
+					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
+																  andEventType:UNPUBLICATION_OK
+																  andSipCode:_code 
+																  andSipPhrase:phrase];
+					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnPublicationEventArgs_Name object:eargs];
+					[NgnPublicationSession releaseSession: (NgnPublicationSession**)&ngnSipSession];
+				}
 				break;
 			}
 			

@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
  */
 #import "NgnRegistrationSession.h"
 #import <Foundation/NSDictionary.h>
@@ -48,7 +47,7 @@
 
 -(NgnRegistrationSession*) internalInit: (NgnSipStack*)sipStack{
 	if((self = (NgnRegistrationSession*)[super initWithSipStack:sipStack])){
-		if(!(_mSession = new RegistrationSession([sipStack getStack]))){
+		if(!(_mSession = new RegistrationSession(sipStack._stack))){
 			TSK_DEBUG_ERROR("Failed to create session");
 			return self;
 		}

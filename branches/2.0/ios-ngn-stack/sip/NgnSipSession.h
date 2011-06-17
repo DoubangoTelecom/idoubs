@@ -1,26 +1,25 @@
 /* Copyright (C) 2010-2011, Mamadou Diop.
  * Copyright (c) 2011, Doubango Telecom. All rights reserved.
- *
+ * 
  * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
- *       
+ * 
  * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
- *
+ * 
  * idoubs is free software: you can redistribute it and/or modify it under the terms of 
  * the GNU General Public License as published by the Free Software Foundation, either version 3 
  * of the License, or (at your option) any later version.
- *       
+ * 
  * idoubs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- *       
+ * 
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
  */
 #import <Foundation/Foundation.h>
 
-#import "NgnSipStack.h"
+#import "sip/NgnSipStack.h"
 
 #import "SipSession.h"
 
@@ -52,20 +51,20 @@ ConnectionState_t;
 @property(readonly, getter=getToUri) NSString* toUri;
 @property(readonly, getter=isConnected) BOOL connected;
 
--(NgnSipSession*) initWithSipStack: (NgnSipStack*)sipStack;
+-(NgnSipSession*)initWithSipStack:(NgnSipStack*)sipStack;
 -(void)initialize;
 -(long)getId;
 -(NSNumber*)getIdAsNumber;
 -(BOOL)isOutgoing;
 -(NgnSipStack*)getSipStack;
--(BOOL)addHeaderWithName: (NSString*)name andValue: (NSString*)value;
--(BOOL)removeHeaderWithName: (NSString*)name;
--(BOOL)addCapsWithName: (NSString*)name;
--(BOOL)addCapsWithName: (NSString*)name andValue: (NSString*)value;
--(BOOL)removeCapsWithName: (NSString*)name;
+-(BOOL)addHeaderWithName:(NSString*)name andValue:(NSString*)value;
+-(BOOL)removeHeaderWithName:(NSString*)name;
+-(BOOL)addCapsWithName:(NSString*)name;
+-(BOOL)addCapsWithName:(NSString*)name andValue:(NSString*)value;
+-(BOOL)removeCapsWithName:(NSString*)name;
 -(BOOL)isConnected;
 -(ConnectionState_t)getConnectionState;
--(void)setConnectionState: (ConnectionState_t)state;
+-(void)setConnectionState:(ConnectionState_t)state;
 -(NSString*)getFromUri;
 -(BOOL)setFromUri:(NSString*)uri;
 -(NSString*)getToUri;

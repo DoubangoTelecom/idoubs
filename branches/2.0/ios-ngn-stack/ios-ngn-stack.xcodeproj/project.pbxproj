@@ -193,6 +193,8 @@
 		ECA6A634137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */; };
 		ECA6A63F137D8DDF0022AD09 /* NgnHistorySMSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */; };
 		ECA6A640137D8DDF0022AD09 /* NgnHistorySMSEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */; };
+		ECA9F27713AAAD5500059FDA /* NgnPublicationEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */; };
+		ECA9F27813AAAD5500059FDA /* NgnPublicationEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */; };
 		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
 		ECB96666138FC22800961D3A /* NgnFavoriteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */; };
 		ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */; };
@@ -2041,6 +2043,8 @@
 		ECA6A632137D8AE50022AD09 /* NgnHistoryAVCallEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistoryAVCallEvent.mm; sourceTree = "<group>"; };
 		ECA6A63D137D8DDF0022AD09 /* NgnHistorySMSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnHistorySMSEvent.h; sourceTree = "<group>"; };
 		ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistorySMSEvent.mm; sourceTree = "<group>"; };
+		ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPublicationEventArgs.h; sourceTree = "<group>"; };
+		ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnPublicationEventArgs.m; sourceTree = "<group>"; };
 		ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavoriteEventArgs.h; sourceTree = "<group>"; };
 		ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavoriteEventArgs.mm; sourceTree = "<group>"; };
 		ECB966C7138FF2C200961D3A /* NgnFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavorite.h; sourceTree = "<group>"; };
@@ -3758,6 +3762,8 @@
 				EC967D041391CE0C006187D3 /* NgnContactEventArgs.mm */,
 				ECFDFAE413A95B6900D4C62A /* NgnSubscriptionEventArgs.h */,
 				ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */,
+				ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */,
+				ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -6297,6 +6303,7 @@
 				ECF64C06139EA03B004AF043 /* iOSNgnPrivate.h in Headers */,
 				ECFDFAD813A955C700D4C62A /* NgnEventPackageType.h in Headers */,
 				ECFDFAE613A95B6900D4C62A /* NgnSubscriptionEventArgs.h in Headers */,
+				ECA9F27713AAAD5500059FDA /* NgnPublicationEventArgs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7453,6 +7460,7 @@
 				EC967D061391CE0C006187D3 /* NgnContactEventArgs.mm in Sources */,
 				EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */,
 				ECFDFAE713A95B6900D4C62A /* NgnSubscriptionEventArgs.m in Sources */,
+				ECA9F27813AAAD5500059FDA /* NgnPublicationEventArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
