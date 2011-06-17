@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
  */
 #import "NgnSubscriptionSession.h"
 #import "NgnContentType.h"
@@ -46,7 +45,7 @@
 
 -(NgnSubscriptionSession*) internalInitWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package{
 	if((self = (NgnSubscriptionSession*)[super initWithSipStack:sipStack])){
-		if(!(_mSession = new SubscriptionSession([sipStack getStack]))){
+		if(!(_mSession = new SubscriptionSession(sipStack._stack))){
 			TSK_DEBUG_ERROR("Failed to create session");
 			return self;
 		}
@@ -166,7 +165,8 @@
 	return NO;
 }
 
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package{
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package
+{
 	@synchronized(kSessions){
 		NgnSubscriptionSession* subSession = [[[NgnSubscriptionSession alloc] internalInitWithStack:sipStack 
 																						  andToUri:toUri_ 
@@ -178,16 +178,18 @@
 	}
 }
 
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andPackage:(NgnEventPackageType_t)package{
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andPackage:(NgnEventPackageType_t)package
+{
 	return [NgnSubscriptionSession createOutgoingSessionWithStack:sipStack 
 														 andToUri:nil 
-													   andPackage:package];
+															andPackage:package];
 }
 
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack{
++(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack
+{
 	return [NgnSubscriptionSession createOutgoingSessionWithStack:sipStack 
 														 andToUri:nil 
-													   andPackage:EventPackage_PresenceList];
+														andPackage:EventPackage_PresenceList];
 }
 
 +(NgnSubscriptionSession*) getSessionWithId: (long)sessionId{
@@ -211,7 +213,12 @@
 			}
 			*session = nil;
 		}
-	}	
+	}
+}
+
+// Override from NgnSipSession
+-(SipSession*)getSession{
+	return _mSession;
 }
 
 -(void)dealloc{
@@ -220,11 +227,6 @@
 	}
 	
 	[super dealloc];
-}
-
-// Override from NgnSipSession
--(SipSession*)getSession{
-	return _mSession;
 }
 
 @end

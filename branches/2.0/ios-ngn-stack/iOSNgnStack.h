@@ -37,6 +37,7 @@
 #import "events/NgnInviteEventArgs.h"
 #import "events/NgnMessagingEventArgs.h"
 #import "events/NgnSubscriptionEventArgs.h"
+#import "events/NgnPublicationEventArgs.h"
 #import "events/NgnHistoryEventArgs.h"
 #import "events/NgnFavoriteEventArgs.h"
 #import "events/NgnContactEventArgs.h"
@@ -46,6 +47,7 @@
 #import "sip/NgnMessagingSession.h"
 #import "sip/NgnSubscriptionSession.h"
 #import "sip/NgnPublicationSession.h"
+#import "sip/NgnPresenceStatus.h"
 
 #import "model/NgnContact.h"
 #import "model/NgnPhoneNumber.h"
