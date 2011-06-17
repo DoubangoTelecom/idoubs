@@ -1,8 +1,8 @@
 /* Copyright (C) 2010-2011, Mamadou Diop.
  * Copyright (c) 2011, Doubango Telecom. All rights reserved.
- *
+ * 
  * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
- *       
+ * 
  * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
  *
  * idoubs is free software: you can redistribute it and/or modify it under the terms of 

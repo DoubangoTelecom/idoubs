@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
  */
 #import <Foundation/Foundation.h>
 
@@ -33,12 +32,12 @@ class SubscriptionSession;
 -(BOOL)subscribe;
 -(BOOL)unSubscribe;
 
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri andPackage:(NgnEventPackageType_t)package;
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andPackage:(NgnEventPackageType_t)package;
-+(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack;
++(NgnSubscriptionSession*) createOutgoingSessionWithStack:(NgnSipStack*)sipStack andToUri:(NSString*)toUri andPackage:(NgnEventPackageType_t)package;
++(NgnSubscriptionSession*) createOutgoingSessionWithStack:(NgnSipStack*)sipStack andPackage:(NgnEventPackageType_t)package;
++(NgnSubscriptionSession*) createOutgoingSessionWithStack:(NgnSipStack*)sipStack;
 +(NgnSubscriptionSession*) getSessionWithId: (long)sessionId;
-+(BOOL) hasSessionWithId: (long)sessionId;
-+(void) releaseSession: (NgnSubscriptionSession**) session;
++(BOOL) hasSessionWithId:(long)sessionId;
++(void) releaseSession:(NgnSubscriptionSession**)session;
 
 @property(readonly) NgnEventPackageType_t eventPackage;
 
