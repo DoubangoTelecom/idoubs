@@ -40,7 +40,7 @@
 	return [self initWithNumber:number_ andDescription:desciption_ andType:NgnPhoneNumberType_Mobile];
 }
 
--(BOOL) emailAdress{
+-(BOOL) emailAddress{
 	return (self->type == NgnPhoneNumberType_Email);
 }
 
