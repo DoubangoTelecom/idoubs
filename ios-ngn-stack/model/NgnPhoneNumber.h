@@ -41,7 +41,7 @@ NgnPhoneNumberType_t;
 }
 
 @property(readonly) NSString* number;
-@property(readonly) BOOL emailAdress;
+@property(readonly) BOOL emailAddress;
 @property(readonly) NgnPhoneNumberType_t type;
 @property(readonly) NSString* description;
 @property(readwrite, retain, nonatomic) id opaque;
