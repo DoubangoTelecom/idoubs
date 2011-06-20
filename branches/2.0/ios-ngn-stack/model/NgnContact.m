@@ -45,23 +45,35 @@
 		}
 		// kABPersonModificationDateProperty
 		
-		CFStringRef phoneNumber, phoneNumberLabel, phoneNumberLabelValue;
-		NgnPhoneNumber* ngnPhoneNumber;
-		ABMutableMultiValueRef multi = ABRecordCopyValue(record, kABPersonPhoneProperty);
-		for (CFIndex i = 0; i < ABMultiValueGetCount(multi); i++) {
-			phoneNumberLabel = ABMultiValueCopyLabelAtIndex(multi, i);
-			phoneNumberLabelValue = ABAddressBookCopyLocalizedLabel(phoneNumberLabel);
-			phoneNumber      = ABMultiValueCopyValueAtIndex(multi, i);
+		
+		//
+		//	Phone numbers
+		//
+		ABPropertyID properties[2] = { kABPersonPhoneProperty, kABPersonEmailProperty };
+#define kABPersonPhonePropertyIndex 0
+#define kABPersonEmailPropertyIndex 1
+		for(int k=0; k< sizeof(properties)/sizeof(ABPropertyID); k++){
+			CFStringRef phoneNumber, phoneNumberLabel, phoneNumberLabelValue;
+			NgnPhoneNumber* ngnPhoneNumber;
+			ABMutableMultiValueRef multi = ABRecordCopyValue(record, properties[k]);
+			for (CFIndex i = 0; i < ABMultiValueGetCount(multi); i++) {
+				phoneNumberLabel = ABMultiValueCopyLabelAtIndex(multi, i);
+				phoneNumberLabelValue = ABAddressBookCopyLocalizedLabel(phoneNumberLabel);
+				phoneNumber      = ABMultiValueCopyValueAtIndex(multi, i);
 			
-			ngnPhoneNumber = [[NgnPhoneNumber alloc] initWithNumber: (NSString*)phoneNumber andDescription: (NSString*)phoneNumberLabelValue];
-			[self->phoneNumbers addObject: ngnPhoneNumber];
+				ngnPhoneNumber = [[NgnPhoneNumber alloc] initWithNumber:(NSString*)phoneNumber 
+														 andDescription:(NSString*)phoneNumberLabelValue
+														 andType:(k==kABPersonEmailPropertyIndex) ? NgnPhoneNumberType_Email : NgnPhoneNumberType_Mobile
+								  ];
+				[self->phoneNumbers addObject: ngnPhoneNumber];
 			
-			[ngnPhoneNumber release];
-			CFRelease(phoneNumberLabelValue);
-			CFRelease(phoneNumberLabel);
-			CFRelease(phoneNumber);
+				[ngnPhoneNumber release];
+				CFRelease(phoneNumberLabelValue);
+				CFRelease(phoneNumberLabel);
+				CFRelease(phoneNumber);
+			}
+			CFRelease(multi);
 		}
-		CFRelease(multi);
 	}
 	return self;
 }

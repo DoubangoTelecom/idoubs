@@ -25,13 +25,23 @@
 @synthesize number;
 @synthesize description;
 @synthesize opaque;
+@synthesize type;
 
--(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption{
+-(NgnPhoneNumber*) initWithNumber: (NSString*) number_ andDescription: (NSString*) desciption_ andType:(NgnPhoneNumberType_t)type_{
 	if((self = [super init])){
-		self->number = [_number retain];
-		self->description = [_desciption retain];
+		self->number = [number_ retain];
+		self->description = [desciption_ retain];
+		self->type = type_;
 	}
 	return self;
+}
+
+-(NgnPhoneNumber*) initWithNumber: (NSString*) number_ andDescription: (NSString*) desciption_{
+	return [self initWithNumber:number_ andDescription:desciption_ andType:NgnPhoneNumberType_Mobile];
+}
+
+-(BOOL) emailAdress{
+	return (self->type == NgnPhoneNumberType_Email);
 }
 
 -(void)dealloc{

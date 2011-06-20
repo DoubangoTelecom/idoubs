@@ -20,10 +20,20 @@
  */
 #import <Foundation/Foundation.h>
 
+typedef enum NgnPhoneNumberType_e
+{
+	NgnPhoneNumberType_Unknown,
+	NgnPhoneNumberType_Mobile,
+	NgnPhoneNumberType_Email
+}
+NgnPhoneNumberType_t;
+
+
 @interface NgnPhoneNumber : NSObject {
 @protected
 	NSString* number;
 	NSString* description;
+	NgnPhoneNumberType_t type;
 	
 @private
 	// to be used for any purpose (e.g. category)
@@ -31,8 +41,12 @@
 }
 
 @property(readonly) NSString* number;
+@property(readonly) BOOL emailAdress;
+@property(readonly) NgnPhoneNumberType_t type;
 @property(readonly) NSString* description;
 @property(readwrite, retain, nonatomic) id opaque;
 
+-(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption andType:(NgnPhoneNumberType_t)type;
 -(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption;
+
 @end
