@@ -34,7 +34,7 @@
 }
 
 +(BOOL)isNullOrEmpty:(NSString*)string{
-	return string == nil || [string isEqualToString: kStringEmpty];
+	return string == nil || string==(id)[NSNull null] || [string isEqualToString: kStringEmpty];
 }
 
 +(BOOL)contains:(NSString*) string subString:(NSString*)subStr{
