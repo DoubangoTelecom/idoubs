@@ -23,7 +23,7 @@
 #import "NgnContact.h"
 
 
-#define NgnRelease(x) if(x){ NgnRelease(x),x=0; }
+#define NgnRelease(x) if(x){ NgnRelease(x),x=NULL; }
 
 @implementation NgnContact
 
