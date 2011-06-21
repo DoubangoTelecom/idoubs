@@ -22,6 +22,9 @@
 
 #import "NgnContact.h"
 
+
+#define NgnRelease(x) if(x){ NgnRelease(x),x=0; }
+
 @implementation NgnContact
 
 @synthesize id;
@@ -68,11 +71,11 @@
 				[self->phoneNumbers addObject: ngnPhoneNumber];
 			
 				[ngnPhoneNumber release];
-				CFRelease(phoneNumberLabelValue);
-				CFRelease(phoneNumberLabel);
-				CFRelease(phoneNumber);
+				NgnRelease(phoneNumberLabelValue);
+				NgnRelease(phoneNumberLabel);
+				NgnRelease(phoneNumber);
 			}
-			CFRelease(multi);
+			NgnRelease(multi);
 		}
 	}
 	return self;
