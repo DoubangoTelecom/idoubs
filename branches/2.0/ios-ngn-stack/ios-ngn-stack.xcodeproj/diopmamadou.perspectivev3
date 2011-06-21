@@ -326,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECCFB98C13AF5BBD004FE6DD</string>
+										<string>EC950AAB13B09BA700D5CEF6</string>
 										<key>history</key>
 										<array>
 											<string>EC982B0813AE41AC00B8102C</string>
@@ -338,7 +338,7 @@
 											<string>ECCFB93C13AF57D1004FE6DD</string>
 											<string>ECCFB93E13AF57D1004FE6DD</string>
 											<string>ECCFB98B13AF5BBD004FE6DD</string>
-											<string>ECCFB93D13AF57D1004FE6DD</string>
+											<string>ECCFB98C13AF5BBD004FE6DD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,18 +352,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1079, 534}}</string>
+								<string>{{0, 0}, {1079, 529}}</string>
 								<key>RubberWindowFrame</key>
 								<string>11 144 1419 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>534pt</string>
+							<string>529pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>154pt</string>
+							<string>159pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -377,7 +377,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 127}}</string>
+										<string>{{10, 27}, {1079, 132}}</string>
+										<key>RubberWindowFrame</key>
+										<string>11 144 1419 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -432,8 +434,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1079, 127}}</string>
-										<key>RubberWindowFrame</key>
-										<string>11 144 1419 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -461,11 +461,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECCFB94113AF57D1004FE6DD</string>
+				<string>EC950AAC13B09BA700D5CEF6</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECCFB94213AF57D1004FE6DD</string>
+				<string>EC950AAD13B09BA700D5CEF6</string>
 				<string>ECFD23C5135D536300E6A9A3</string>
-				<string>ECCFB94313AF57D1004FE6DD</string>
+				<string>EC950AAE13B09BA700D5CEF6</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>

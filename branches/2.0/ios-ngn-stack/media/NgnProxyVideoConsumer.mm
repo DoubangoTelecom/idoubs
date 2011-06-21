@@ -253,6 +253,7 @@ private:
 	@synchronized(self){
 		CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
 		//[UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationRight];
+		
 		UIImage *image = [UIImage imageWithCGImage:imageRef];
 		CGImageRelease(imageRef);
 		
