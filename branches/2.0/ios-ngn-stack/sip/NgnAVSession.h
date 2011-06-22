@@ -70,6 +70,7 @@ class ActionConfig;
 -(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
+-(BOOL) toggleCamera;
 -(BOOL) setMute: (BOOL)mute;
 -(BOOL) isMuted;
 -(BOOL) setSpeakerEnabled: (BOOL)speakerOn;
