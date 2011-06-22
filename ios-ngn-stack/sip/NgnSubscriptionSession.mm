@@ -53,7 +53,6 @@
 		[super setSigCompId: [sipStack getSigCompId]];
 		if(toUri_){
 			[super setToUri:toUri_];
-			[super setFromUri:toUri_];
 		}
 		
 		switch ((mPackage = package)) {
