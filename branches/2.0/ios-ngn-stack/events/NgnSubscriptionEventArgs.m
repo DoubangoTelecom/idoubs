@@ -44,7 +44,7 @@
 		self->eventType = eventType_;
 		self->sipCode = sipCode_;
 		self->sipPhrase = [sipPhrase_ retain];
-		self->content = [content retain];
+		self->content = [content_ retain];
 		self->contentType = [contentType_ retain];
 		self->eventPackage = eventPackage_;
 	}
