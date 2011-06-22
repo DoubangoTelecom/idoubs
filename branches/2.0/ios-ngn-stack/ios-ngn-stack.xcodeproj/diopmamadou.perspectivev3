@@ -267,10 +267,11 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>ECFD28FA135E7B2E00E6A9A3</string>
+								<string>ECFD32B1135E821900E6A9A3</string>
+								<string>EC81BDA9136C6BC60068BCB4</string>
+								<string>EC81BDA8136C6BC00068BCB4</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
-								<string>ECFD23BD135D534100E6A9A3</string>
-								<string>ECFD23C0135D534100E6A9A3</string>
-								<string>ECFD23C1135D534100E6A9A3</string>
 								<string>ECFD23C2135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
@@ -278,14 +279,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>5</integer>
-									<integer>4</integer>
-									<integer>0</integer>
+									<integer>124</integer>
+									<integer>107</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 52}, {318, 675}}</string>
+							<string>{{0, 1532}, {318, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnSubscriptionEventArgs.m</string>
+								<string>NgnAVSession.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,23 +327,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnSubscriptionEventArgs.m</string>
+										<string>NgnAVSession.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC9AC88513B1EC700051AFB5</string>
+										<string>EC9ACA1213B23C3F0051AFB5</string>
 										<key>history</key>
 										<array>
-											<string>EC950B3113B0AE8D00D5CEF6</string>
-											<string>EC950B3213B0AE8D00D5CEF6</string>
-											<string>EC950CB713B0F06500D5CEF6</string>
-											<string>EC950CB813B0F06500D5CEF6</string>
-											<string>EC950CB913B0F06500D5CEF6</string>
-											<string>EC950D6213B10A9600D5CEF6</string>
-											<string>EC950D6313B10A9600D5CEF6</string>
-											<string>EC950D7513B10B4000D5CEF6</string>
-											<string>EC950D7613B10B4000D5CEF6</string>
-											<string>EC950D7813B10B4000D5CEF6</string>
+											<string>EC9AC9E313B23A220051AFB5</string>
+											<string>EC9AC9E413B23A220051AFB5</string>
+											<string>EC9AC9E513B23A220051AFB5</string>
+											<string>EC9AC9E613B23A220051AFB5</string>
+											<string>EC9AC9E713B23A220051AFB5</string>
+											<string>EC9AC9E813B23A220051AFB5</string>
+											<string>EC9AC9E913B23A220051AFB5</string>
+											<string>EC9AC9EA13B23A220051AFB5</string>
+											<string>EC9AC9EB13B23A220051AFB5</string>
+											<string>EC9AC9EC13B23A220051AFB5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -439,7 +438,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 132}}</string>
+										<string>{{10, 27}, {1079, 137}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

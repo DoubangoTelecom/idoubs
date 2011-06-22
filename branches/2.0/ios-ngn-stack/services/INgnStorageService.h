@@ -33,7 +33,9 @@
 -(int) databaseVersion;
 -(sqlite3 *) database;
 -(BOOL) execSQL: (NSString*)sqlQuery;
--(NSMutableDictionary*) favorites;
+-(NSDictionary*) favorites;
+-(NgnFavorite*) favoriteWithNumber:(NSString*)number andMediaType:(NgnMediaType_t)mediaType;
+-(NgnFavorite*) favoriteWithNumber:(NSString*)number;
 -(BOOL) addFavorite: (NgnFavorite*) favorite;
 -(BOOL) deleteFavorite: (NgnFavorite*) favorite;
 -(BOOL) deleteFavoriteWithId: (long long) id;

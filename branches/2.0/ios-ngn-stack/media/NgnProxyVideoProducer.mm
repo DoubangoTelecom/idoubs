@@ -112,7 +112,8 @@ private:
 		return;
 	}
 	
-	if(!(mCaptureDevice = [[NgnCamera frontFacingCamera] retain])){
+	mCaptureDevice = mUseFrontCamera ? [[NgnCamera frontFacingCamera] retain] : [[NgnCamera backCamera] retain];
+	if(!mCaptureDevice){
 		NgnNSLog(TAG,@"Failed to get valide capture device");
 		return;
 	}
@@ -293,6 +294,7 @@ private:
 			const_cast<ProxyVideoProducer*>(_mProducer)->setCallback(_mCallback);
 		}
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+		mUseFrontCamera = YES;
 		mFirstFrame = YES;
 		mOrientation = AVCaptureVideoOrientationPortrait;
 #endif
@@ -410,6 +412,14 @@ private:
 				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(0);
 				break;
 		}
+	}
+}
+
+-(void) toggleCamera{
+	mUseFrontCamera = !mUseFrontCamera;
+	if(mCaptureDevice && mCaptureSession && [mCaptureSession isRunning]){
+		[self stopVideoCapture];
+		[self startVideoCapture];
 	}
 }
 #endif
