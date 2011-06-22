@@ -413,6 +413,16 @@
 	return NO;
 }
 
+-(BOOL) toggleCamera{
+#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	if(mVideoProducer){
+		[mVideoProducer toggleCamera];
+		return YES;
+	}
+#endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
+	return NO;
+}
+
 -(BOOL) setMute: (BOOL)mute{
 	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
 	if(_mediaMgr){

@@ -280,8 +280,26 @@ done:
 	return [self databaseExecSQL: sqlQuery];
 }	
 
--(NSMutableDictionary*) favorites{
+-(NSDictionary*) favorites{
 	return self->favorites;
+}
+
+-(NgnFavorite*) favoriteWithNumber:(NSString*)number andMediaType:(NgnMediaType_t)mediaType{
+	for (NgnFavorite *favorite in [self->favorites allValues]) {
+		if([favorite.number isEqualToString:number] && favorite.mediaType == mediaType){
+			return favorite;
+		}
+	}
+	return nil;
+}
+
+-(NgnFavorite*) favoriteWithNumber:(NSString*)number{
+	for (NgnFavorite *favorite in [self->favorites allValues]) {
+		if([favorite.number isEqualToString:number]){
+			return favorite;
+		}
+	}
+	return nil;
 }
 
 -(BOOL) addFavorite: (NgnFavorite*) favorite{

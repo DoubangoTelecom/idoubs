@@ -49,6 +49,7 @@ class _NgnProxyVideoProducerCallback;
 	AVCaptureSession* mCaptureSession;
 	AVCaptureDevice *mCaptureDevice;
 	BOOL mFirstFrame;
+	BOOL mUseFrontCamera;
 	AVCaptureVideoOrientation mOrientation;
 #endif
 }
@@ -56,7 +57,8 @@ class _NgnProxyVideoProducerCallback;
 -(NgnProxyVideoProducer*) initWithId: (uint64_t)identifier andProducer:(const ProxyVideoProducer *)_producer;
 -(void)setPreview: (UIView*)preview;
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
--(void) setOrientation: (AVCaptureVideoOrientation)orientation;
+-(void) setOrientation:(AVCaptureVideoOrientation)orientation;
+-(void) toggleCamera;
 #endif
 @end
 
