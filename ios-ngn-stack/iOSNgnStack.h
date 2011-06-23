@@ -41,6 +41,7 @@
 #import "events/NgnHistoryEventArgs.h"
 #import "events/NgnFavoriteEventArgs.h"
 #import "events/NgnContactEventArgs.h"
+#import "events/NgnNetworkEventArgs.h"
 
 #import "sip/NgnRegistrationSession.h"
 #import "sip/NgnAVSession.h"

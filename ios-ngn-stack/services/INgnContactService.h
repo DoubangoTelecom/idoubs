@@ -27,14 +27,14 @@
 #endif
 
 @protocol INgnContactService <INgnBaseService>
--(void) load: (BOOL) asyn;
+-(void) load:(BOOL) asyn;
 -(BOOL) isLoading;
 -(NSArray*) contacts;
 -(NSDictionary*) numbers2ContactsMapper;
--(NSArray*) contactsWithPredicate: (NSPredicate*)predicate;
+-(NSArray*) contactsWithPredicate:(NSPredicate*)predicate;
 #if TARGET_OS_IPHONE
--(NgnContact*) getContactByUri: (NSString*)uri;
--(NgnContact*) getContactByPhoneNumber: (NSString*)phoneNumber;
+-(NgnContact*) getContactByUri:(NSString*)uri;
+-(NgnContact*) getContactByPhoneNumber:(NSString*)phoneNumber;
 #endif /* TARGET_OS_IPHONE */
 @end
 

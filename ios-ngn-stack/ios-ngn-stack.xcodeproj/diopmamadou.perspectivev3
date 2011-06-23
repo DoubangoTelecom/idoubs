@@ -268,23 +268,27 @@
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
 								<string>ECFD28FA135E7B2E00E6A9A3</string>
-								<string>ECFD32B1135E821900E6A9A3</string>
-								<string>EC81BDA9136C6BC60068BCB4</string>
-								<string>EC81BDA8136C6BC00068BCB4</string>
-								<string>ECFD23BC135D532A00E6A9A3</string>
-								<string>ECFD23C2135D534100E6A9A3</string>
+								<string>ECFD2E9D135E7D8900E6A9A3</string>
+								<string>ECFD2F9E135E7D8900E6A9A3</string>
+								<string>ECFD2FAB135E7D8900E6A9A3</string>
+								<string>ECFD3025135E7D8900E6A9A3</string>
+								<string>ECFD302C135E7D8900E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>124</integer>
-									<integer>107</integer>
+									<integer>31</integer>
+									<integer>13</integer>
+									<integer>10</integer>
+									<integer>6</integer>
+									<integer>3</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1532}, {318, 675}}</string>
+							<string>{{0, 0}, {318, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnAVSession.mm</string>
+								<string>tsip_dialog_subscribe.client.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,23 +331,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnAVSession.mm</string>
+										<string>tsip_dialog_subscribe.client.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC9ACA1213B23C3F0051AFB5</string>
+										<string>EC90CAEA13B3C048000386CA</string>
 										<key>history</key>
 										<array>
-											<string>EC9AC9E313B23A220051AFB5</string>
-											<string>EC9AC9E413B23A220051AFB5</string>
-											<string>EC9AC9E513B23A220051AFB5</string>
-											<string>EC9AC9E613B23A220051AFB5</string>
-											<string>EC9AC9E713B23A220051AFB5</string>
-											<string>EC9AC9E813B23A220051AFB5</string>
-											<string>EC9AC9E913B23A220051AFB5</string>
-											<string>EC9AC9EA13B23A220051AFB5</string>
-											<string>EC9AC9EB13B23A220051AFB5</string>
-											<string>EC9AC9EC13B23A220051AFB5</string>
+											<string>EC90CA5613B3B208000386CA</string>
+											<string>EC90CA5713B3B208000386CA</string>
+											<string>EC90CA5813B3B208000386CA</string>
+											<string>EC90CA5913B3B208000386CA</string>
+											<string>EC90CAD313B3BF52000386CA</string>
+											<string>EC90CAD413B3BF52000386CA</string>
+											<string>EC90CAD513B3BF52000386CA</string>
+											<string>EC90CAD613B3BF52000386CA</string>
+											<string>EC90CADF13B3C00B000386CA</string>
+											<string>EC90CAE013B3C00B000386CA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -357,18 +361,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1079, 524}}</string>
+								<string>{{0, 0}, {1079, 547}}</string>
 								<key>RubberWindowFrame</key>
 								<string>11 144 1419 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>524pt</string>
+							<string>547pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>164pt</string>
+							<string>141pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -382,7 +386,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 137}}</string>
+										<string>{{10, 27}, {1079, 114}}</string>
 										<key>RubberWindowFrame</key>
 										<string>11 144 1419 734 0 0 1440 878 </string>
 									</dict>
@@ -438,7 +442,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 137}}</string>
+										<string>{{10, 27}, {1079, 114}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -466,11 +470,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9AC88613B1EC700051AFB5</string>
+				<string>EC90C84413B33CEF000386CA</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC9AC88713B1EC700051AFB5</string>
+				<string>EC90C84513B33CEF000386CA</string>
 				<string>ECFD23C5135D536300E6A9A3</string>
-				<string>EC9AC88813B1EC700051AFB5</string>
+				<string>EC90C84613B33CEF000386CA</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -619,14 +623,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC950B3513B0AE8D00D5CEF6</string>
+				<string>EC90C8ED13B36BD3000386CA</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC950B3613B0AE8D00D5CEF6</string>
-				<string>EC950B3713B0AE8D00D5CEF6</string>
-				<string>EC950B3813B0AE8D00D5CEF6</string>
-				<string>EC950B3913B0AE8D00D5CEF6</string>
-				<string>EC950B3A13B0AE8D00D5CEF6</string>
+				<string>EC90C8EE13B36BD3000386CA</string>
+				<string>EC90C8EF13B36BD3000386CA</string>
+				<string>EC90C8F013B36BD3000386CA</string>
+				<string>EC90C8F113B36BD3000386CA</string>
+				<string>EC90C8F213B36BD3000386CA</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -637,7 +641,7 @@
 	<key>PerspectivesBarVisible</key>
 	<true/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>ECA9F27313AAAD1500059FDA</string>
+	<string>EC90C90713B36DFA000386CA</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -662,6 +666,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>EC90C90413B36C7A000386CA</string>
+		<string>EC90C8F413B36BD3000386CA</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
