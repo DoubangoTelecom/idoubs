@@ -88,8 +88,6 @@
 		mEvent = [[NgnHistoryEvent createAudioVideoEventWithRemoteParty: nil andVideo: isVideoType(mMediaType)] retain];
 		// SigComp
 		[super setSigCompId: [sipStack getSigCompId]];
-		// 100rel
-		_mSession->set100rel(true); // will add "Supported: 100rel"
         // Session timers
 		if([[NgnEngine getInstance].configurationService getBoolWithKey:QOS_USE_SESSION_TIMERS]){
 			int timeout = [[NgnEngine getInstance].configurationService getIntWithKey:QOS_SIP_CALLS_TIMEOUT];

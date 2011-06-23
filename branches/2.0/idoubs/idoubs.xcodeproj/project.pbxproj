@@ -116,6 +116,7 @@
 		EC90731A1392CB3D00E14556 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9073141392CB3D00E14556 /* Icon@2x.png */; };
 		EC90731D1392CB8700E14556 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90731C1392CB8700E14556 /* Default.png */; };
 		EC90766A13932A4800E14556 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC90766913932A4800E14556 /* Settings.bundle */; };
+		EC90CA1F13B3A637000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90CA1E13B3A637000386CA /* SystemConfiguration.framework */; };
 		EC967A5F1391845C006187D3 /* PeoplePicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC967A5E1391845C006187D3 /* PeoplePicker.mm */; };
 		EC967A6E13918698006187D3 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC967A6D13918698006187D3 /* AddressBookUI.framework */; };
 		EC967C771391BB8B006187D3 /* tab_messages.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C751391BB8B006187D3 /* tab_messages.png */; };
@@ -404,6 +405,13 @@
 			remoteGlobalIDString = ECFD32AE135E821000E6A9A3;
 			remoteInfo = tinyWRAP;
 		};
+		EC90CA1913B3A5EA000386CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECFDFB0F13A9675700D4C62A /* testPresence.app */;
+			remoteInfo = testPresence;
+		};
 		ECA63F30137AD3060031FC77 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -513,6 +521,7 @@
 		EC9073141392CB3D00E14556 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EC90731C1392CB8700E14556 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		EC90766913932A4800E14556 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		EC90CA1E13B3A637000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EC967987139163C4006187D3 /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
 		EC967A4813918048006187D3 /* PickerViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewControllerDelegate.h; sourceTree = "<group>"; };
 		EC967A5D1391845C006187D3 /* PeoplePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePicker.h; sourceTree = "<group>"; };
@@ -593,6 +602,7 @@
 				EC7E32121389D9970020EB89 /* CoreMedia.framework in Frameworks */,
 				EC7E32161389D9CE0020EB89 /* CoreVideo.framework in Frameworks */,
 				EC967A6E13918698006187D3 /* AddressBookUI.framework in Frameworks */,
+				EC90CA1F13B3A637000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +647,7 @@
 				EC7E32111389D9970020EB89 /* CoreMedia.framework */,
 				EC7E32151389D9CE0020EB89 /* CoreVideo.framework */,
 				EC967A6D13918698006187D3 /* AddressBookUI.framework */,
+				EC90CA1E13B3A637000386CA /* SystemConfiguration.framework */,
 			);
 			name = idoubs;
 			sourceTree = "<group>";
@@ -776,6 +787,7 @@
 				EC83BA35136990F800DD3355 /* testVideoCall.app */,
 				EC81BD57136C5B3E0068BCB4 /* testAudioUnit.app */,
 				ECA63F31137AD3060031FC77 /* testMessaging.app */,
+				EC90CA1A13B3A5EA000386CA /* testPresence.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1063,6 +1075,13 @@
 			fileType = archive.ar;
 			path = libtinyWRAP.a;
 			remoteRef = EC8EBF141368921400DC70DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC90CA1A13B3A5EA000386CA /* testPresence.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = testPresence.app;
+			remoteRef = EC90CA1913B3A5EA000386CA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		ECA63F31137AD3060031FC77 /* testMessaging.app */ = {

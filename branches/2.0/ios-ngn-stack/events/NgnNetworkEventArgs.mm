@@ -18,23 +18,22 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
-#import <Foundation/Foundation.h>
+#import "NgnNetworkEventArgs.h"
 
-#import "events/NgnEventArgs.h"
+@implementation NgnNetworkEventArgs
 
-#define kNgnContactEventArgs_Name @"NgnContactEventArgs_Name"
+@synthesize eventType;
 
-typedef enum NgnContactEventTypes_e {
-	CONTACT_RESET_ALL,
-}
-NgnContactEventTypes_t;
-
-@interface NgnContactEventArgs : NgnEventArgs {
-	NgnContactEventTypes_t eventType;
+-(NgnNetworkEventArgs*) initWithType:(NgnNetworkEventTypes_t)eventType{
+	if((self = [super init])){
+		
+	}
+	return self;
 }
 
--(NgnContactEventArgs*) initWithType: (NgnContactEventTypes_t)eventType;
-
-@property(readonly) NgnContactEventTypes_t eventType;
+-(void)dealloc{
+	
+	[super dealloc];
+}
 
 @end

@@ -20,12 +20,21 @@
  */
 #import <Foundation/Foundation.h>
 
+#include <CoreFoundation/CoreFoundation.h>
+#include <SystemConfiguration/SystemConfiguration.h>
+
 #import "iOSNgnConfig.h"
 #import "services/impl/NgnBaseService.h"
 #import "services/INgnNetworkService.h"
 
 @interface NgnNetworkService : NgnBaseService <INgnNetworkService>{
-
+@private
+	BOOL mStarted;
+	SCNetworkReachabilityRef        mReachability;
+	SCNetworkReachabilityContext    mReachabilityContext;
+	NgnNetworkType_t mNetworkType;
+	NSString *mReachabilityHostName;
+	NgnNetworkReachability_t mNetworkReachability;
 }
 
 @end
