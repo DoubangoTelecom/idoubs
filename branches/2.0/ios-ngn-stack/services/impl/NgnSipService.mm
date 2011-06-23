@@ -472,11 +472,14 @@ done:
 			{
 				if ((_code == 180 || _code == 183) && _session != tsk_null){
 					if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+						const SipMessage* _message = _e->getSipMessage();
+						BOOL containsSdp = _message && const_cast<SipMessage*>(_message)->getSdpMessage();
+						
 						eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-																  andEvenType: _code==180 ? INVITE_EVENT_RINGING : INVITE_EVENT_INPROGRESS
+																  andEvenType: _code==180 ? INVITE_EVENT_RINGING : (containsSdp ? INVITE_EVENT_EARLY_MEDIA : INVITE_EVENT_INPROGRESS)
 																 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
 																 andSipPhrase: phrase];
-						[((NgnInviteSession*)ngnSipSession) setState:_code==180 ? INVITE_STATE_REMOTE_RINGING : INVITE_STATE_INPROGRESS];
+						[((NgnInviteSession*)ngnSipSession) setState:_code==180 ? INVITE_STATE_REMOTE_RINGING : (containsSdp ? INVITE_STATE_EARLY_MEDIA : INVITE_STATE_INPROGRESS)];
 						[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 					}
 				}

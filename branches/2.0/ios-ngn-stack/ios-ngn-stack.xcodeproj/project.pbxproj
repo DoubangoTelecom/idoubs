@@ -175,6 +175,14 @@
 		EC9075D21393193D00E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
 		EC9075D91393197400E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
 		EC9075E01393199700E14556 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
+		EC90C97113B395CD000386CA /* NgnNetworkEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = EC90C96F13B395CD000386CA /* NgnNetworkEventArgs.h */; };
+		EC90C97213B395CD000386CA /* NgnNetworkEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC90C97013B395CD000386CA /* NgnNetworkEventArgs.mm */; };
+		EC90C9C113B3A530000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
+		EC90C9C213B3A548000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
+		EC90C9C313B3A561000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
+		EC90C9C413B3A571000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
+		EC90C9C513B3A589000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
+		EC90C9C613B3A5A8000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
 		EC94DFDA138317AD005B2C1B /* NgnUriUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC94DFD9138317AD005B2C1B /* NgnUriUtils.mm */; };
 		EC94E18A13834266005B2C1B /* NgnDateTimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC94E18813834266005B2C1B /* NgnDateTimeUtils.h */; };
 		EC94E18B13834266005B2C1B /* NgnDateTimeUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC94E18913834266005B2C1B /* NgnDateTimeUtils.mm */; };
@@ -2025,6 +2033,9 @@
 		EC90722C1392BAB000E14556 /* dtmf-star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-star.wav"; sourceTree = "<group>"; };
 		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		EC90C96F13B395CD000386CA /* NgnNetworkEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnNetworkEventArgs.h; sourceTree = "<group>"; };
+		EC90C97013B395CD000386CA /* NgnNetworkEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnNetworkEventArgs.mm; sourceTree = "<group>"; };
+		EC90C9C013B3A530000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EC94DFD9138317AD005B2C1B /* NgnUriUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnUriUtils.mm; sourceTree = "<group>"; };
 		EC94E18813834266005B2C1B /* NgnDateTimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnDateTimeUtils.h; sourceTree = "<group>"; };
 		EC94E18913834266005B2C1B /* NgnDateTimeUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnDateTimeUtils.mm; sourceTree = "<group>"; };
@@ -3213,6 +3224,7 @@
 				ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */,
 				EC9075E01393199700E14556 /* libsqlite3.dylib in Frameworks */,
+				EC90C9C513B3A589000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3239,6 +3251,7 @@
 				ECDDB76C137C35590027105F /* CoreGraphics.framework in Frameworks */,
 				ECDDBC27137CA77C0027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC28137CA77C0027105F /* CoreVideo.framework in Frameworks */,
+				EC90C9C413B3A571000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3270,6 +3283,7 @@
 				ECDDBC1E137CA7440027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC1F137CA7440027105F /* CoreVideo.framework in Frameworks */,
 				EC9075D91393197400E14556 /* libsqlite3.dylib in Frameworks */,
+				EC90C9C113B3A530000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3301,6 +3315,7 @@
 				ECDDBC23137CA7650027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBC24137CA7650027105F /* CoreVideo.framework in Frameworks */,
 				EC9075D21393193D00E14556 /* libsqlite3.dylib in Frameworks */,
+				EC90C9C213B3A548000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3332,6 +3347,7 @@
 				ECDDBB9C137C9CB40027105F /* CoreMedia.framework in Frameworks */,
 				ECDDBB9D137C9CB40027105F /* CoreVideo.framework in Frameworks */,
 				EC83FF961380A29F00060A9D /* libsqlite3.dylib in Frameworks */,
+				EC90C9C313B3A561000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3477,6 +3493,7 @@
 				ECFDFB4413A9693900D4C62A /* libresolv.dylib in Frameworks */,
 				ECFDFB4513A9693900D4C62A /* libsqlite3.dylib in Frameworks */,
 				ECFDFB4813A9695D00D4C62A /* CoreGraphics.framework in Frameworks */,
+				EC90C9C613B3A5A8000386CA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3534,6 +3551,7 @@
 				EC83FF951380A29F00060A9D /* libsqlite3.dylib */,
 				ECFDFB1113A9675700D4C62A /* testPresence-Info.plist */,
 				ECFDFB3B13A968DB00D4C62A /* AddressBookUI.framework */,
+				EC90C9C013B3A530000386CA /* SystemConfiguration.framework */,
 			);
 			name = "ios-ngn-stack";
 			sourceTree = "<group>";
@@ -3764,6 +3782,8 @@
 				ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */,
 				ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */,
 				ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */,
+				EC90C96F13B395CD000386CA /* NgnNetworkEventArgs.h */,
+				EC90C97013B395CD000386CA /* NgnNetworkEventArgs.mm */,
 			);
 			path = events;
 			sourceTree = "<group>";
@@ -6304,6 +6324,7 @@
 				ECFDFAD813A955C700D4C62A /* NgnEventPackageType.h in Headers */,
 				ECFDFAE613A95B6900D4C62A /* NgnSubscriptionEventArgs.h in Headers */,
 				ECA9F27713AAAD5500059FDA /* NgnPublicationEventArgs.h in Headers */,
+				EC90C97113B395CD000386CA /* NgnNetworkEventArgs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7461,6 +7482,7 @@
 				EC7D98E31396A619006A8F91 /* NgnCamera.mm in Sources */,
 				ECFDFAE713A95B6900D4C62A /* NgnSubscriptionEventArgs.m in Sources */,
 				ECA9F27813AAAD5500059FDA /* NgnPublicationEventArgs.m in Sources */,
+				EC90C97213B395CD000386CA /* NgnNetworkEventArgs.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

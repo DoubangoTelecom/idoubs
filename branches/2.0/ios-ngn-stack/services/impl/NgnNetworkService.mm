@@ -19,25 +19,217 @@
  *
  */
 #import "NgnNetworkService.h"
+#import "NgnStringUtils.h"
+#import "NgnNetworkEventArgs.h"
+#import "NgnNotificationCenter.h"
+
+#define kReachabilityHostName @"google.com"
 
 #undef TAG
 #define kTAG @"NgnNetworkService///: "
 #define TAG kTAG
 
-@implementation NgnNetworkService
+
+@interface NgnNetworkService(Private)
+-(BOOL) startListening;
+-(BOOL) stopListening;
+-(void) setNetworkReachability:(NgnNetworkReachability_t)reachability_;
+-(void) setNetworkType:(NgnNetworkType_t)networkType_;
+@end
+
+
+static NgnNetworkReachability_t NgnConvertFlagsToReachability(SCNetworkConnectionFlags flags)
+{
+	NgnNetworkReachability_t reachability = NetworkReachability_None;
+	
+	if(flags & kSCNetworkFlagsTransientConnection) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_TransientConnection);
+	if(flags & kSCNetworkFlagsReachable) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_Reachable);
+	if(flags & kSCNetworkFlagsConnectionRequired) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_ConnectionRequired);
+	if(flags & kSCNetworkFlagsConnectionAutomatic) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_ConnectionAutomatic);
+	if(flags & kSCNetworkFlagsInterventionRequired) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_InterventionRequired);
+	if(flags & kSCNetworkFlagsIsLocalAddress) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_IsLocalAddress);
+	if(flags & kSCNetworkFlagsIsDirect) reachability = (NgnNetworkReachability_t)(reachability | NetworkReachability_IsDirect);
+	
+	return reachability;
+}
+
+static NgnNetworkType_t NgnConvertFlagsToNetworkType(SCNetworkConnectionFlags flags){
+	
+	NgnNetworkType_t networkType = NetworkType_None;
+	if(flags & kSCNetworkReachabilityFlagsIsWWAN){
+		networkType = (NgnNetworkType_t) (networkType | NetworkType_3G); // Ok, this is not true but iOS don't provide suchinformation
+	}
+	else {
+		networkType = (NgnNetworkType_t) (networkType | NetworkType_WLAN);
+	}
+	
+	return networkType;
+}
+
+static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkConnectionFlags flags, void *info)
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NgnNetworkService *self_ = (NgnNetworkService*)info;
+	
+	[self_ setNetworkReachability:NgnConvertFlagsToReachability(flags)];
+	[self_ setNetworkType:NgnConvertFlagsToNetworkType(flags)];
+	
+	/* raise event */
+	NgnNetworkEventArgs *eargs = [[[NgnNetworkEventArgs alloc] initWithType:NETWORK_EVENT_STATE_CHANGED] autorelease];
+	[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnNetworkEventArgs_Name object:eargs];
+	
+	[pool release];
+}
 
 //
-// INgnBaseService
+// private implementation
+//
+
+@implementation NgnNetworkService(Private)
+
+-(BOOL) startListening{
+	if([self stopListening]){
+		Boolean ok;
+		int err = 0;
+		mReachability = SCNetworkReachabilityCreateWithName(NULL, [NgnStringUtils toCString:self.reachabilityHostName]);
+		if (mReachability == NULL) {
+			err = SCError();
+		}
+		
+		// Set our callback and install on the runloop.
+		if (err == 0) {
+			ok = SCNetworkReachabilitySetCallback(mReachability, NgnNetworkReachabilityCallback, &mReachabilityContext);
+			if (! ok) {
+				err = SCError();
+			}
+		}
+		if (err == 0) {
+			ok = SCNetworkReachabilityScheduleWithRunLoop(mReachability, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+			if (! ok) {
+				err = SCError();
+			}
+		}
+		
+		if (err == 0) {
+			SCNetworkConnectionFlags flags = 0;
+			ok = SCNetworkReachabilityGetFlags(mReachability, &flags);
+			
+			if (ok) {
+				[self setNetworkReachability:NgnConvertFlagsToReachability(flags)];
+				[self setNetworkType:NgnConvertFlagsToNetworkType(flags)];
+			} else {
+				[self setNetworkReachability:NetworkReachability_None];
+				[self setNetworkType:NetworkType_None];
+				err = SCError();
+			}
+		}
+		return (err == 0);
+	}
+	return NO;
+}
+
+-(BOOL) stopListening{
+	if(mReachability){
+		(void) SCNetworkReachabilityUnscheduleFromRunLoop(
+													  mReachability,
+													  CFRunLoopGetCurrent(),
+													  kCFRunLoopDefaultMode
+													  );
+		CFRelease(mReachability), mReachability = NULL;
+	}
+	return YES;
+}
+
+-(void) setNetworkReachability:(NgnNetworkReachability_t)reachability_{
+	mNetworkReachability = reachability_;
+}
+
+-(void) setNetworkType:(NgnNetworkType_t)networkType_{
+	mNetworkType = networkType_;
+}
+
+@end
+
+
+
+//
+// default implementation
+//
+
+@implementation NgnNetworkService
+
+-(NgnNetworkService*)init{
+	if((self = [super init])){
+		mNetworkType = NetworkType_None;
+		mNetworkReachability = NetworkReachability_None;
+		NSString* hostName = kReachabilityHostName;
+		mReachabilityHostName = [hostName retain];
+		
+		mReachabilityContext.version         = 0;
+		mReachabilityContext.info            = self;
+		mReachabilityContext.retain          = NULL;
+		mReachabilityContext.release         = NULL;
+		mReachabilityContext.copyDescription = NULL;
+		
+	}
+	return self;
+}
+
+//
+// IBaseService
 //
 
 -(BOOL) start{
 	NgnNSLog(TAG, @"Start()");
-	return YES;
+	
+	// reset current values
+	mNetworkType = NetworkType_None;
+	mNetworkReachability = NetworkReachability_None;
+	
+	mStarted = [self startListening];
+	
+	return mStarted;
 }
 
 -(BOOL) stop{
 	NgnNSLog(TAG, @"Stop()");
 	return YES;
+}
+
+//
+// INgnNetworkService
+//
+
+-(NSString*)getReachabilityHostName{
+	return mReachabilityHostName;
+}
+
+-(void)setReachabilityHostName:(NSString*)hostName{
+	[mReachabilityHostName release];
+	mReachabilityHostName = [hostName retain];
+	
+	if(mStarted && mReachabilityHostName){
+		[self startListening];
+	}
+}
+
+-(NgnNetworkType_t) getNetworkType{
+	return mNetworkType;
+}
+
+-(NgnNetworkReachability_t) getReachability{
+	return mNetworkReachability;
+}
+-(BOOL) isReachable{
+	return (mNetworkReachability & NetworkReachability_Reachable);
+}
+
+-(void)dealloc{
+	[self stopListening];
+	
+	[mReachabilityHostName release];
+	
+	[super dealloc];
 }
 
 @end

@@ -22,19 +22,20 @@
 
 #import "events/NgnEventArgs.h"
 
-#define kNgnContactEventArgs_Name @"NgnContactEventArgs_Name"
+#define kNgnNetworkEventArgs_Name @"NgnNetworkEventArgs_Name"
 
-typedef enum NgnContactEventTypes_e {
-	CONTACT_RESET_ALL,
+typedef enum NgnNetworkEventTypes_e {
+	NETWORK_EVENT_STATE_CHANGED, /* reachability or/and network type */
+	/* to be completed */
 }
-NgnContactEventTypes_t;
+NgnNetworkEventTypes_t;
 
-@interface NgnContactEventArgs : NgnEventArgs {
-	NgnContactEventTypes_t eventType;
+@interface NgnNetworkEventArgs : NgnEventArgs {
+	NgnNetworkEventTypes_t eventType;
 }
 
--(NgnContactEventArgs*) initWithType: (NgnContactEventTypes_t)eventType;
+-(NgnNetworkEventArgs*) initWithType:(NgnNetworkEventTypes_t)eventType;
 
-@property(readonly) NgnContactEventTypes_t eventType;
+@property(readonly) NgnNetworkEventTypes_t eventType;
 
 @end
