@@ -24,11 +24,11 @@
 
 @synthesize content;
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
+-(NgnHistorySMSEvent*) initWithStatus:(HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
 	return [self initWithStatus: _status andRemoteParty: _remoteParty andContent: nil];
 }
 
--(NgnHistorySMSEvent*) initWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
+-(NgnHistorySMSEvent*) initWithStatus:(HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent:(NSData*)_content{
 	if((self = (NgnHistorySMSEvent*)[super initWithMediaType:MediaType_SMS andRemoteParty: _remoteParty])){
 		self.status = _status;
 		self.content = _content;

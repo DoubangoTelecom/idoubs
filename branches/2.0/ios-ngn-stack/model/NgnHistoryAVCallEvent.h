@@ -21,9 +21,9 @@
 #import "model/NgnHistoryEvent.h"
 
 @interface NgnHistoryAVCallEvent : NgnHistoryEvent {
-
+	
 }
 
--(NgnHistoryAVCallEvent*) init: (BOOL) withVideoType withRemoteParty:(NSString*)remoteParty;
+-(NgnHistoryAVCallEvent*) init:(BOOL)withVideoType withRemoteParty:(NSString*)remoteParty;
 
 @end

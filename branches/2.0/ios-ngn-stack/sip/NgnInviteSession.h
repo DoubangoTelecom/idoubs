@@ -44,6 +44,7 @@ InviteState_t;
     BOOL mLocalHold;
 	BOOL mEventAdded;
 	BOOL mEventIncoming;
+	BOOL mDidConnect;
 	
 	const MediaSessionMgr* _mMediaSessionMgr;
 }

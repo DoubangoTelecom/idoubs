@@ -195,6 +195,7 @@ static BOOL sDataBaseInitialized = NO;
 		ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
 	}
 	else {
+		NgnNSLog(TAG, @"error: %s", sqlite3_errmsg(self->database));
 		ok = NO;
 	}
 

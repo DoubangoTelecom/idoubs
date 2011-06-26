@@ -36,7 +36,7 @@
 @synthesize status;
 @synthesize remoteParty;
 
--(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)_mediaType andRemoteParty: (NSString*)_remoteParty{
+-(NgnHistoryEvent*) initWithMediaType:(NgnMediaType_t)_mediaType andRemoteParty:(NSString*)_remoteParty{
 	if((self = [super init])){
 		self.mediaType = _mediaType;
 		self.remoteParty = _remoteParty;
@@ -50,7 +50,7 @@
 
 -(NSString*)remotePartyDisplayName{
 	if(self->remotePartyDisplayName == nil){
-		NgnContact* contact = [[NgnEngine getInstance].contactService getContactByPhoneNumber: self.remoteParty];
+		NgnContact* contact = [[NgnEngine getInstance].contactService getContactByPhoneNumber:self.remoteParty];
 		if(contact && contact.displayName){
 			self->remotePartyDisplayName = [contact.displayName retain];
 		}
@@ -64,9 +64,9 @@
 	return self->remotePartyDisplayName;
 }
 
--(void)setRemotePartyWithValidUri: (NSString *)uri{
+-(void)setRemotePartyWithValidUri:(NSString *)uri{
 	[self->remoteParty release];
-	if(!(self->remoteParty = [[NgnUriUtils getUserName: uri] retain])){
+	if(!(self->remoteParty = [[NgnUriUtils getUserName:uri] retain])){
 		self->remoteParty = [uri retain];
 	}
 }
@@ -86,17 +86,17 @@
 	return diff==0 ? NSOrderedSame : (diff > 0 ? NSOrderedDescending : NSOrderedAscending);
 }
 
-+(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)_remoteParty andVideo: (BOOL)video{
-	NgnHistoryAVCallEvent* event = [[[NgnHistoryAVCallEvent alloc] init: video withRemoteParty: _remoteParty] autorelease];
++(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty:(NSString*)_remoteParty andVideo:(BOOL)video{
+	NgnHistoryAVCallEvent* event = [[[NgnHistoryAVCallEvent alloc] init:video withRemoteParty:_remoteParty] autorelease];
 	return event;
 }
 
 +(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty{
-	return [NgnHistoryEvent createSMSEventWithStatus: _status andRemoteParty: _remoteParty andContent: nil];
+	return [NgnHistoryEvent createSMSEventWithStatus:_status andRemoteParty:_remoteParty andContent:nil];
 }
 
 +(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) _status andRemoteParty:(NSString*)_remoteParty andContent: (NSData*)_content{
-	NgnHistorySMSEvent* event = [[[NgnHistorySMSEvent alloc] initWithStatus: _status andRemoteParty:_remoteParty andContent: _content] autorelease];
+	NgnHistorySMSEvent* event = [[[NgnHistorySMSEvent alloc] initWithStatus:_status andRemoteParty:_remoteParty andContent:_content] autorelease];
 	return event;
 }
 

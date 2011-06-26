@@ -127,13 +127,17 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 330540481;
-			PBXWorkspaceStateSaveDate = 330540481;
+			PBXPerProjectTemplateStateSaveDate = 330699269;
+			PBXWorkspaceStateSaveDate = 330699269;
 		};
 		perUserProjectItems = {
+			EC7F7B1013B61207005EB07B /* PBXTextBookmark */ = EC7F7B1013B61207005EB07B /* PBXTextBookmark */;
 			EC83428813A2D29B00E1B64A = EC83428813A2D29B00E1B64A /* PBXTextBookmark */;
 			EC83428913A2D29B00E1B64A = EC83428913A2D29B00E1B64A /* PBXBookmark */;
 			EC83428A13A2D29B00E1B64A = EC83428A13A2D29B00E1B64A /* PBXTextBookmark */;
+			EC8E603D13B48D3E00F95D36 = EC8E603D13B48D3E00F95D36 /* PBXTextBookmark */;
+			EC90CB9313B3E018000386CA = EC90CB9313B3E018000386CA /* PBXTextBookmark */;
+			EC90CBDC13B3E74E000386CA = EC90CBDC13B3E74E000386CA /* PBXTextBookmark */;
 			EC955AAC13A14FC4002A6BD2 = EC955AAC13A14FC4002A6BD2 /* PlistBookmark */;
 			EC955AAD13A14FC4002A6BD2 = EC955AAD13A14FC4002A6BD2 /* PBXTextBookmark */;
 			EC9EDB87139D50DA0067EB59 = EC9EDB87139D50DA0067EB59 /* PBXTextBookmark */;
@@ -225,8 +229,8 @@
 	EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1064, 3900}}";
-			sepNavSelRange = "{2538, 0}";
-			sepNavVisRange = "{1931, 846}";
+			sepNavSelRange = "{2331, 0}";
+			sepNavVisRange = "{1931, 844}";
 		};
 	};
 	EC7E2F60138968E50020EB89 /* ContactsViewController.h */ = {
@@ -390,6 +394,16 @@
 			sepNavVisRange = "{970, 1388}";
 		};
 	};
+	EC7F7B1013B61207005EB07B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+		name = "ContactDetailsController.mm: 72";
+		rLen = 0;
+		rLoc = 2331;
+		rType = 0;
+		vrLen = 844;
+		vrLoc = 1931;
+	};
 	EC83428813A2D29B00E1B64A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EC955AB013A14FC4002A6BD2 /* tnet_dns_resolvconf.c */;
@@ -414,8 +428,38 @@
 		vrLen = 871;
 		vrLoc = 1906;
 	};
+	EC8E603D13B48D3E00F95D36 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+		name = "ContactDetailsController.mm: 72";
+		rLen = 0;
+		rLoc = 2331;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1931;
+	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
+	};
+	EC90CB9313B3E018000386CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+		name = "ContactDetailsController.mm: 72";
+		rLen = 0;
+		rLoc = 2331;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1931;
+	};
+	EC90CBDC13B3E74E000386CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F5E138968E50020EB89 /* ContactDetailsController.mm */;
+		name = "ContactDetailsController.mm: 72";
+		rLen = 0;
+		rLoc = 2331;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1931;
 	};
 	EC955AAC13A14FC4002A6BD2 /* PlistBookmark */ = {
 		isa = PlistBookmark;

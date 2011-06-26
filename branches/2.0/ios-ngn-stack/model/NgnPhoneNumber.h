@@ -46,7 +46,7 @@ NgnPhoneNumberType_t;
 @property(readonly) NSString* description;
 @property(readwrite, retain, nonatomic) id opaque;
 
--(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption andType:(NgnPhoneNumberType_t)type;
--(NgnPhoneNumber*) initWithNumber: (NSString*) _number andDescription: (NSString*) _desciption;
+-(NgnPhoneNumber*) initWithNumber:(NSString*)_number andDescription:(NSString*)_desciption andType:(NgnPhoneNumberType_t)type;
+-(NgnPhoneNumber*) initWithNumber:(NSString*)_number andDescription:(NSString*)_desciption;
 
 @end

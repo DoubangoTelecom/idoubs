@@ -27,7 +27,7 @@
 @synthesize opaque;
 @synthesize type;
 
--(NgnPhoneNumber*) initWithNumber: (NSString*) number_ andDescription: (NSString*) desciption_ andType:(NgnPhoneNumberType_t)type_{
+-(NgnPhoneNumber*) initWithNumber:(NSString*)number_ andDescription:(NSString*)desciption_ andType:(NgnPhoneNumberType_t)type_{
 	if((self = [super init])){
 		self->number = [number_ retain];
 		self->description = [desciption_ retain];
@@ -36,7 +36,7 @@
 	return self;
 }
 
--(NgnPhoneNumber*) initWithNumber: (NSString*) number_ andDescription: (NSString*) desciption_{
+-(NgnPhoneNumber*) initWithNumber:(NSString*)number_ andDescription:(NSString*)desciption_{
 	return [self initWithNumber:number_ andDescription:desciption_ andType:NgnPhoneNumberType_Mobile];
 }
 
