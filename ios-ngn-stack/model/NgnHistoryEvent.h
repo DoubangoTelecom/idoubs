@@ -24,8 +24,6 @@ typedef	NSMutableArray NgnHistoryEventMutableArray;
 typedef NSArray	NgnHistoryEventArray;
 typedef	NSMutableDictionary NgnHistoryEventMutableDictionary;
 typedef	NSDictionary NgnHistoryEventDictionary;
-typedef NSArray NgnHistoryEventArray;
-typedef NSMutableArray NgnHistoryEventMutableArray;
 
 @class NgnHistoryAVCallEvent;
 @class NgnHistorySMSEvent;
@@ -48,26 +46,26 @@ HistoryEventStatus_t;
 	NSString* remoteParty;
 	NSString* remotePartyDisplayName;
 	BOOL seen;
-	HistoryEventStatus_t status;	
+	HistoryEventStatus_t status;
 }
 
-@property(readwrite) long long id;
-@property(readwrite) NgnMediaType_t mediaType;
-@property(readwrite) NSTimeInterval start;
-@property(readwrite) NSTimeInterval end;
-@property(readonly) NSString* remotePartyDisplayName;
-@property(readwrite,retain) NSString* remoteParty;
-@property(readwrite) BOOL seen;
-@property(readwrite) HistoryEventStatus_t status;
+@property(readwrite)long long id;
+@property(readwrite)NgnMediaType_t mediaType;
+@property(readwrite)NSTimeInterval start;
+@property(readwrite)NSTimeInterval end;
+@property(readonly)NSString* remotePartyDisplayName;
+@property(readwrite,retain)NSString* remoteParty;
+@property(readwrite)BOOL seen;
+@property(readwrite)HistoryEventStatus_t status;
 
--(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)type andRemoteParty: (NSString*)remoteParty;
--(void) setRemotePartyWithValidUri: (NSString *)uri;
+-(NgnHistoryEvent*) initWithMediaType: (NgnMediaType_t)type andRemoteParty:(NSString*)remoteParty;
+-(void) setRemotePartyWithValidUri:(NSString *)uri;
 -(NSComparisonResult)compare:(NgnHistoryEvent *)otherEvent;
 -(NSComparisonResult)compareHistoryEventByDateASC:(NgnHistoryEvent *)otherEvent;
 -(NSComparisonResult)compareHistoryEventByDateDESC:(NgnHistoryEvent *)otherEvent;
 
-+(NgnHistoryAVCallEvent*) createAudioVideoEventWithRemoteParty: (NSString*)remoteParty andVideo: (BOOL)video;
-+(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty;
-+(NgnHistorySMSEvent*) createSMSEventWithStatus: (HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty andContent: (NSData*)content;
++(NgnHistoryAVCallEvent*)createAudioVideoEventWithRemoteParty: (NSString*)remoteParty andVideo:(BOOL)video;
++(NgnHistorySMSEvent*)createSMSEventWithStatus:(HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty;
++(NgnHistorySMSEvent*)createSMSEventWithStatus:(HistoryEventStatus_t) status andRemoteParty:(NSString*)remoteParty andContent:(NSData*)content;
 
 @end

@@ -35,6 +35,7 @@
 -(BOOL) deleteEventWithId: (long long) eventId;
 -(BOOL) deleteEvents: (NgnMediaType_t) mediaType;
 -(BOOL) deleteEvents: (NgnMediaType_t) mediaType withRemoteParty: (NSString*)remoteParty;
+-(BOOL) deleteEventsArray: (NSArray*) events;
 -(BOOL) clear;
 -(NgnHistoryEventDictionary*) events;
 

@@ -321,10 +321,11 @@ done:
 				[keysToRemove addObject:[NSNumber numberWithLongLong: event.id]];
 			}
 		}
-		[mEvents removeObjectsForKeys: keysToRemove];
 		
-		// alert listeners
+		// remove and alert listeners
 		if([keysToRemove count] > 0){
+			[mEvents removeObjectsForKeys: keysToRemove];
+			
 			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
 			eargs.mediaType = mediaType;
 			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
@@ -333,6 +334,42 @@ done:
 	}
 	
 	return ok;
+}
+
+-(BOOL) deleteEventsArray: (NSArray*) events{
+	NSString* sqlStatement =  @"delete from hist_event";
+	BOOL whereAdded = NO;
+	
+	for (NgnHistoryEvent *event in events) {
+		if(!whereAdded){
+			sqlStatement = [sqlStatement stringByAppendingFormat:@" where id=%lld", event.id];
+		}
+		else {
+			sqlStatement = [sqlStatement stringByAppendingFormat:@" or id=%lld", event.id];
+		}
+		whereAdded = YES;
+	}
+	
+	if([[NgnEngine getInstance].storageService execSQL:sqlStatement]){
+		NgnMediaType_t mediaType = MediaType_None;
+		NSMutableArray* keysToRemove = [NSMutableArray array];
+		for (NgnHistoryEvent *event in events) {
+			[keysToRemove addObject:[NSNumber numberWithLongLong:event.id]];
+			mediaType = (NgnMediaType_t)(mediaType | event.mediaType);
+		}
+		
+		// remove and alert listeners
+		if([keysToRemove count] > 0){
+			[mEvents removeObjectsForKeys: keysToRemove];
+			
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventType: HISTORY_EVENT_RESET];
+			eargs.mediaType = mediaType;
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+		}
+		return YES;
+	}
+	return NO;
 }
 
 -(BOOL) clear{
