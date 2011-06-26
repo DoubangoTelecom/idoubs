@@ -409,7 +409,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = ECFDFB0F13A9675700D4C62A /* testPresence.app */;
+			remoteGlobalIDString = ECFDFB0F13A9675700D4C62A;
 			remoteInfo = testPresence;
 		};
 		ECA63F30137AD3060031FC77 /* PBXContainerItemProxy */ = {

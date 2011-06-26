@@ -28,6 +28,8 @@
 	if((self = (NgnInviteSession*)[super initWithSipStack:sipStack])){
 		mState = INVITE_STATE_NONE;
 		_mMediaSessionMgr = tsk_null;
+		
+		mDidConnect = NO;
 	}
 	return self;
 }
@@ -56,17 +58,24 @@
 		case INVITE_STATE_INCOMING:
 		{
 			mEventIncoming = YES;
+			if(event){
+				event.status = HistoryEventStatus_Incoming;
+			}
 			break;
 		}
 			
 		case INVITE_STATE_INPROGRESS:
 		{
 			mEventIncoming = NO;
+			if(event){
+				event.status = HistoryEventStatus_Outgoing;
+			}
 			break;
 		}
 			
 		case INVITE_STATE_INCALL:
 		{
+			mDidConnect = YES;
 			if(event){
 				event.start = [[NSDate date] timeIntervalSince1970];
 				event.end = event.start;
@@ -80,7 +89,7 @@
 			if(event && !mEventAdded){
 				mEventAdded = YES;
 				if(event.status != HistoryEventStatus_Missed){
-					event.end = [[NSDate date] timeIntervalSince1970];
+					event.end = mDidConnect ? [[NSDate date] timeIntervalSince1970] : event.start;
 				}
 				[[NgnEngine getInstance].historyService addEvent: event];
 			}

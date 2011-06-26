@@ -46,8 +46,8 @@ typedef NSArray NgnContactArray;
 	id opaque;
 }
 
--(NgnContact*)initWithABRecordRef: (const ABRecordRef) record;
--(NgnPhoneNumber*) getPhoneNumberWithPredicate: (NSPredicate*)predicate;
+-(NgnContact*)initWithABRecordRef:(const ABRecordRef)record;
+-(NgnPhoneNumber*)getPhoneNumberWithPredicate:(NSPredicate*)predicate;
 
 @property(readonly) int32_t id;
 @property(readonly) NSString* displayName;

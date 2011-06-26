@@ -267,16 +267,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>EC7E2F4D138968E50020EB89</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>16</integer>
 									<integer>15</integer>
-									<integer>2</integer>
-									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -327,7 +325,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC83428A13A2D29B00E1B64A</string>
+										<string>EC7F7B1013B61207005EB07B</string>
 										<key>history</key>
 										<array>
 											<string>EC9EDB87139D50DA0067EB59</string>
@@ -339,7 +337,7 @@
 											<string>EC955AAC13A14FC4002A6BD2</string>
 											<string>EC955AAD13A14FC4002A6BD2</string>
 											<string>EC83428813A2D29B00E1B64A</string>
-											<string>EC83428913A2D29B00E1B64A</string>
+											<string>EC8E603D13B48D3E00F95D36</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -353,18 +351,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 489}}</string>
+								<string>{{0, 0}, {1125, 471}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>489pt</string>
+							<string>471pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>199pt</string>
+							<string>217pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -378,7 +376,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 172}}</string>
+										<string>{{10, 27}, {1125, 190}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
@@ -462,11 +460,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC83428B13A2D29B00E1B64A</string>
+				<string>EC7F7B1113B61207005EB07B</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC83428C13A2D29B00E1B64A</string>
+				<string>EC7F7B1213B61207005EB07B</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>EC83428D13A2D29B00E1B64A</string>
+				<string>EC7F7B1313B61207005EB07B</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>

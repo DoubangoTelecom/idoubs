@@ -81,7 +81,7 @@
 	return self;
 }
 
--(NgnPhoneNumber*) getPhoneNumberWithPredicate: (NSPredicate*)predicate{
+-(NgnPhoneNumber*)getPhoneNumberWithPredicate:(NSPredicate*)predicate{
 	@synchronized(self.phoneNumbers){
 		for (NgnPhoneNumber*phoneNumber in self.phoneNumbers) {
 			if([predicate evaluateWithObject: phoneNumber]){
