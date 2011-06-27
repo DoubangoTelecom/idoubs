@@ -188,11 +188,7 @@ private:
 	}
 	[mCaptureDevice release], mCaptureDevice = nil;
 	
-	if(mPreview){
-		for (UIView *view in mPreview.subviews) {
-			[view removeFromSuperview];
-		}
-	}
+	[self stopPreview];
 }
 
 - (void)startPreview{
@@ -204,8 +200,18 @@ private:
 			previewLayer.orientation = mOrientation;
 		}
 		
-		[mPreview.layer addSublayer: previewLayer];
-	 
+		// remove all sublayers and add new one
+		if(mPreview){
+			for(CALayer *ly in mPreview.layer.sublayers){
+				if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+					[ly removeFromSuperlayer];
+					break;
+				}
+			}
+			
+			[mPreview.layer addSublayer:previewLayer];
+		}
+		
 		if(![mCaptureSession isRunning]){
 			[mCaptureSession startRunning];
 		}
@@ -216,15 +222,14 @@ private:
 	if(mCaptureSession){		
 		if([mCaptureSession isRunning]){
 			[mCaptureSession stopRunning];
-			
-			// remove all sublayers
-			if(mPreview){
-				for(CALayer *ly in mPreview.layer.sublayers){
-					if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
-						[ly removeFromSuperlayer];
-						break;
-					}
-				}
+		}
+	}
+	// remove all sublayers
+	if(mPreview){
+		for(CALayer *ly in mPreview.layer.sublayers){
+			if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+				[ly removeFromSuperlayer];
+				break;
 			}
 		}
 	}
@@ -373,8 +378,12 @@ private:
 	if(preview == nil){
 		// stop preview
 		[self stopPreview];
-		// remove layers
 		if(mPreview){
+			// remove views
+			for (UIView *view in mPreview.subviews) {
+				[view removeFromSuperview];
+			}
+			// remove layers
 			for(CALayer *ly in mPreview.layer.sublayers){
 				if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
 					[ly removeFromSuperlayer];
