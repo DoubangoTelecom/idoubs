@@ -26,7 +26,9 @@
 	if(!mExtras){
 		mExtras = [[NSMutableDictionary alloc] init];
 	}
-	[mExtras setObject:value forKey:key];
+	if(value){
+		[mExtras setObject:value forKey:key];
+	}
 }
 
 -(NSString*)getExtraWithKey: (NSString*)key{
