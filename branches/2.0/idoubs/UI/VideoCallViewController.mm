@@ -332,7 +332,7 @@
 @synthesize viewToolbar;
 @synthesize buttonToolBarMute;
 @synthesize buttonToolBarEnd;
-@synthesize buttonToolBarSwitch;
+@synthesize buttonToolBarToggle;
 @synthesize buttonToolBarVideo;
 
 @synthesize viewPickHangUp;
@@ -360,7 +360,7 @@
 	
 	self.buttonToolBarEnd.backgroundColor = 
 	self.buttonToolBarMute.backgroundColor =
-	self.buttonToolBarSwitch.backgroundColor =
+	self.buttonToolBarToggle.backgroundColor =
 	self.buttonToolBarVideo.backgroundColor =
 	[UIColor clearColor];
 	
@@ -450,6 +450,9 @@
 	else if(videoSession && sender == self.buttonPick){
 		[videoSession acceptCall];
 	}
+	else if(videoSession && sender == self.buttonToolBarToggle) {
+		[videoSession toggleCamera];
+	}
 }
 
 - (void)dealloc {
@@ -464,7 +467,7 @@
 	[self.viewTop release];
 	[self.buttonToolBarMute release];
 	[self.buttonToolBarEnd release];
-	[self.buttonToolBarSwitch release];
+	[self.buttonToolBarToggle release];
 	[self.buttonToolBarVideo release];
 	
 	[self.viewPickHangUp release];

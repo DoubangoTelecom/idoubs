@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="40"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -47,7 +47,8 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, -1}, {320, 461}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<int key="IBUIContentMode">1</int>
+						<reference key="NSWindow"/>
+						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -56,6 +57,7 @@
 						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{235, 4}, {80, 109}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="555920344">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
@@ -72,6 +74,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{7, 5}, {310, 41}}</string>
 								<reference key="NSSuperview" ref="929571566"/>
+								<reference key="NSWindow"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="542966152">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MCAwAA</bytes>
@@ -107,6 +110,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{7, 54}, {310, 29}}</string>
 								<reference key="NSSuperview" ref="929571566"/>
+								<reference key="NSWindow"/>
 								<reference key="IBUIBackgroundColor" ref="542966152"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -132,12 +136,14 @@
 						</object>
 						<string key="NSFrame">{{0, -1}, {320, 93}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="IBUIBackgroundColor" ref="555920344"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -149,7 +155,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="578364292">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">301</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -203,7 +209,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="851146327"/>
-						<string key="IBUINormalTitle">Switch</string>
+						<string key="IBUINormalTitle">Toggle</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1051356690"/>
 						<reference key="IBUINormalTitleColor" ref="1051356690"/>
 						<reference key="IBUINormalTitleShadowColor" ref="748176026"/>
@@ -226,6 +232,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 52}</string>
+				<reference key="NSSuperview"/>
 				<reference key="IBUIBackgroundColor" ref="555920344"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -359,14 +366,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">buttonToolBarSwitch</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="847902541"/>
-					</object>
-					<int key="connectionID">53</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">buttonToolBarVideo</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="271402768"/>
@@ -436,20 +435,28 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">onButtonClick:</string>
-						<reference key="source" ref="847902541"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">65</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">onButtonClick:</string>
 						<reference key="source" ref="271402768"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">buttonToolBarToggle</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="847902541"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">onButtonClick:</string>
+						<reference key="source" ref="847902541"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">68</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -674,7 +681,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">66</int>
+			<int key="maxID">68</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -710,7 +717,7 @@
 							<string>buttonPick</string>
 							<string>buttonToolBarEnd</string>
 							<string>buttonToolBarMute</string>
-							<string>buttonToolBarSwitch</string>
+							<string>buttonToolBarToggle</string>
 							<string>buttonToolBarVideo</string>
 							<string>imageViewRemoteVideo</string>
 							<string>labelRemoteParty</string>
@@ -747,7 +754,7 @@
 							<string>buttonPick</string>
 							<string>buttonToolBarEnd</string>
 							<string>buttonToolBarMute</string>
-							<string>buttonToolBarSwitch</string>
+							<string>buttonToolBarToggle</string>
 							<string>buttonToolBarVideo</string>
 							<string>imageViewRemoteVideo</string>
 							<string>labelRemoteParty</string>
@@ -780,7 +787,7 @@
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">buttonToolBarSwitch</string>
+								<string key="name">buttonToolBarToggle</string>
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">

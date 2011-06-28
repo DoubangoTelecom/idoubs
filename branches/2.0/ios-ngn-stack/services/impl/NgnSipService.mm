@@ -650,9 +650,12 @@ done:
 				const char* _phrase = _e->getPhrase();
 				char* _from = const_cast<SipMessage*>(_message)->getSipHeaderValue("f");
 				char* _ctype = const_cast<SipMessage*>(_message)->getSipHeaderValue("c");
+				char* _ctransfer_encoding = const_cast<SipMessage*>(_message)->getSipHeaderValue("content-transfer-encoding");
+				
 				const void* _content = const_cast<SipMessage*>(_message)->getSipContentPtr();
 				unsigned _content_length = const_cast<SipMessage*>(_message)->getSipContentLength();
-				NSString* ctype = nil;
+				NSString *ctype = nil;
+				NSString *contentTransferEncoding = nil;
 				
 				if(!_content || !_content_length){
 					TSK_DEBUG_ERROR("Invalid MESSAGE");
@@ -665,9 +668,11 @@ done:
 					[ngnSession accept];
 				}
 				
-				// parse data
-				ctype = [NgnStringUtils toNSString: _ctype];
 				
+				ctype = [NgnStringUtils toNSString: _ctype];
+				contentTransferEncoding = [NgnStringUtils toNSString: _ctransfer_encoding];
+				
+				// parse data
 				if([ctype caseInsensitiveCompare: kContentType3gppSMS] == NSOrderedSame){
 					TSK_DEBUG_ERROR("3GPP SMS Not implemented yet");
 					goto tsip_i_message_done;
@@ -683,6 +688,7 @@ done:
 					[eargs putExtraWithKey:kExtraMessagingEventArgsFromUserName andValue:[NgnUriUtils getUserName:fromUri]];
 					[eargs putExtraWithKey:kExtraMessagingEventArgsFromDisplayname andValue:[NgnUriUtils getDisplayName:fromUri]];
 					[eargs putExtraWithKey:kExtraMessagingEventArgsContentType andValue: ctype];
+					[eargs putExtraWithKey:kExtraMessagingEventArgsContentTransferEncoding andValue: contentTransferEncoding];
 				}
 
 				
@@ -692,7 +698,7 @@ tsip_i_message_done:
 				}
 				TSK_FREE(_from);
 				TSK_FREE(_ctype);
-				
+				TSK_FREE(_ctransfer_encoding);
 				
 				break;
 			}

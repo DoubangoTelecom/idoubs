@@ -158,6 +158,9 @@
 @synthesize contactsViewController;
 @synthesize messagesViewController;
 
+static UIBackgroundTaskIdentifier sBackgroundTask = UIBackgroundTaskInvalid;
+static dispatch_block_t sExpirationHandler = nil;
+
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -189,18 +192,19 @@
 	[[NgnEngine getInstance].soundService setSpeakerEnabled: YES];
 	
 	multitaskingSupported = [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported];
-	backgroundTask = UIBackgroundTaskInvalid;
-	expirationHandler = ^{
+	sBackgroundTask = UIBackgroundTaskInvalid;
+	sExpirationHandler = ^{
 		NSLog(@"Background task completed");
 		// keep awake
 		if([[NgnEngine getInstance].sipService isRegistered]){
 			[[NgnEngine getInstance] startKeepAwake];
 		}
-		[idoubs2AppDelegate sharedInstance]->backgroundTask = UIBackgroundTaskInvalid;
+		[[UIApplication sharedApplication] endBackgroundTask:sBackgroundTask];
+		sBackgroundTask = UIBackgroundTaskInvalid;
     };
 	
 	if(multitaskingSupported){
-		NSLog(@"Multitasking IS supported");
+		NgnNSLog(TAG, @"Multitasking IS supported");
 	}
 	
     return YES;
@@ -221,8 +225,14 @@
 		ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
 		if(registrationState == CONN_STATE_CONNECTING || registrationState == CONN_STATE_CONNECTED){
 			NSLog(@"applicationDidEnterBackground (Registered or Regitering)");
+			//if(registrationState == CONN_STATE_CONNECTING){
 			// request for 10min to complete the work (registration, computation ...)
-			[idoubs2AppDelegate sharedInstance]->backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:self->expirationHandler];
+			sBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:sExpirationHandler];
+			//}
+			if(registrationState == CONN_STATE_CONNECTED){
+				[[NgnEngine getInstance] startKeepAwake];
+			}
+			
 			//[application setKeepAliveTimeout:600 handler: ^{
 			//	NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
 			//}];
@@ -241,9 +251,9 @@
 	
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
 	// terminate background task
-	if([idoubs2AppDelegate sharedInstance]->backgroundTask != UIBackgroundTaskInvalid){
-		[application endBackgroundTask:[idoubs2AppDelegate sharedInstance]->backgroundTask]; // Using shared instance will crash the application
-		[idoubs2AppDelegate sharedInstance]->backgroundTask = UIBackgroundTaskInvalid;
+	if(sBackgroundTask != UIBackgroundTaskInvalid){
+		[[UIApplication sharedApplication] endBackgroundTask:sBackgroundTask]; // Using shared instance will crash the application
+		sBackgroundTask = UIBackgroundTaskInvalid;
 	}
 	// stop keepAwake
 	[[NgnEngine getInstance] stopKeepAwake];

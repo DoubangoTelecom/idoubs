@@ -44,6 +44,7 @@ NgnMessagingEventTypes_t;
 #define kExtraMessagingEventArgsFromDisplayname @"displayname"
 #define kExtraMessagingEventArgsDate @"date"
 #define kExtraMessagingEventArgsContentType @"contentType"
+#define kExtraMessagingEventArgsContentTransferEncoding @"contentTransferEncoding"
 
 @interface NgnMessagingEventArgs : NgnEventArgs {
 	long sessionId;

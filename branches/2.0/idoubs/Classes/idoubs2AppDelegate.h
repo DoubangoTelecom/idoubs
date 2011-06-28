@@ -38,8 +38,6 @@
 	
 	BOOL scheduleRegistration;
 	
-	UIBackgroundTaskIdentifier backgroundTask;
-	dispatch_block_t expirationHandler;
 	BOOL multitaskingSupported;
 }
 
