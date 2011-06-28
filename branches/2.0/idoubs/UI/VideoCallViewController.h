@@ -35,7 +35,7 @@
 	UIView *viewToolbar;
 	UIButton *buttonToolBarMute;
 	UIButton *buttonToolBarEnd;
-	UIButton *buttonToolBarSwitch;
+	UIButton *buttonToolBarToggle;
 	UIButton *buttonToolBarVideo;
 	
 	UIView *viewPickHangUp;
@@ -57,7 +57,7 @@
 @property (retain, nonatomic) IBOutlet UIView* viewToolbar;
 @property (retain, nonatomic) IBOutlet UIButton *buttonToolBarMute;
 @property (retain, nonatomic) IBOutlet UIButton *buttonToolBarEnd;
-@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarSwitch;
+@property (retain, nonatomic) IBOutlet UIButton *buttonToolBarToggle;
 @property (retain, nonatomic) IBOutlet UIButton *buttonToolBarVideo;
 
 @property (retain, nonatomic) IBOutlet UIView *viewPickHangUp;
