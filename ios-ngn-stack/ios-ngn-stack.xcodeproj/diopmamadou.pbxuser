@@ -10,8 +10,8 @@
 			D2AAC07D0554694100DB518D /* ios-ngn-stack */,
 		);
 		breakpoints = (
-			EC90C98013B399CA000386CA /* NgnNetworkService.mm:228 */,
-			EC90C98213B399CF000386CA /* NgnNetworkService.mm:133 */,
+			EC90C98013B399CA000386CA /* NgnNetworkService.mm:239 */,
+			EC90C98213B399CF000386CA /* NgnNetworkService.mm:144 */,
 		);
 		codeSenseManager = ECFD239A135D510C00E6A9A3 /* Code sense */;
 		executables = (
@@ -365,6 +365,10 @@
 			EC96C05D13BB44C1008A3310 /* PBXTextBookmark */ = EC96C05D13BB44C1008A3310 /* PBXTextBookmark */;
 			EC96C06813BB466D008A3310 /* PBXTextBookmark */ = EC96C06813BB466D008A3310 /* PBXTextBookmark */;
 			EC96C09713BB4ADC008A3310 /* PBXTextBookmark */ = EC96C09713BB4ADC008A3310 /* PBXTextBookmark */;
+			EC96C11913BB7BF8008A3310 /* PBXTextBookmark */ = EC96C11913BB7BF8008A3310 /* PBXTextBookmark */;
+			EC96C11A13BB7BF8008A3310 /* PBXTextBookmark */ = EC96C11A13BB7BF8008A3310 /* PBXTextBookmark */;
+			EC96C11B13BB7BF8008A3310 /* PBXTextBookmark */ = EC96C11B13BB7BF8008A3310 /* PBXTextBookmark */;
+			EC96C11C13BB7BF8008A3310 /* PBXTextBookmark */ = EC96C11C13BB7BF8008A3310 /* PBXTextBookmark */;
 			EC9AC9E313B23A220051AFB5 = EC9AC9E313B23A220051AFB5 /* PBXTextBookmark */;
 			EC9AC9E413B23A220051AFB5 = EC9AC9E413B23A220051AFB5 /* PBXTextBookmark */;
 			EC9AC9E513B23A220051AFB5 = EC9AC9E513B23A220051AFB5 /* PBXTextBookmark */;
@@ -1069,7 +1073,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1139;
 		vrLoc = 7474;
@@ -1079,7 +1083,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1246;
 		vrLoc = 7367;
@@ -1089,7 +1093,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 433";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 6408;
@@ -1780,7 +1784,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 91";
 		rLen = 0;
-		rLoc = 4675;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 970;
 		vrLoc = 2788;
@@ -1790,7 +1794,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 91";
 		rLen = 0;
-		rLoc = 4675;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 2788;
@@ -1820,7 +1824,7 @@
 		comments = "Invalid conversion from 'int' to 'NgnNetworkReachability_t'";
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		rLen = 1;
-		rLoc = 44;
+		rLoc = 46;
 		rType = 1;
 	};
 	EC90C90313B36C7A000386CA /* PBXTextBookmark */ = {
@@ -1828,7 +1832,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 39";
 		rLen = 0;
-		rLoc = 1687;
+		rLoc = 1729;
 		rType = 0;
 		vrLen = 1494;
 		vrLoc = 973;
@@ -1838,7 +1842,7 @@
 		comments = "Invalid conversion from 'int' to 'NgnNetworkReachability_t'";
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		rLen = 1;
-		rLoc = 45;
+		rLoc = 47;
 		rType = 1;
 	};
 	EC90C90B13B36E14000386CA /* PBXTextBookmark */ = {
@@ -1846,7 +1850,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 45";
 		rLen = 0;
-		rLoc = 2529;
+		rLoc = 2571;
 		rType = 0;
 		vrLen = 1650;
 		vrLoc = 973;
@@ -1856,7 +1860,7 @@
 		comments = "Unused variable 'self_'";
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		rLen = 0;
-		rLoc = 38;
+		rLoc = 40;
 		rType = 1;
 	};
 	EC90C92A13B3701D000386CA /* PBXTextBookmark */ = {
@@ -1864,7 +1868,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 32";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 757;
@@ -1874,7 +1878,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 32";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 757;
@@ -1884,7 +1888,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 32";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 757;
@@ -1894,7 +1898,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 28";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 757;
@@ -1904,7 +1908,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 28";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 757;
@@ -1914,7 +1918,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 28";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1254;
 		rType = 0;
 		vrLen = 1865;
 		vrLoc = 757;
@@ -1944,7 +1948,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 53";
 		rLen = 16;
-		rLoc = 2610;
+		rLoc = 2652;
 		rType = 0;
 		vrLen = 1806;
 		vrLoc = 1130;
@@ -1954,7 +1958,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 104";
 		rLen = 0;
-		rLoc = 4515;
+		rLoc = 4954;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 1952;
@@ -1973,7 +1977,7 @@
 			sepNavVisRange = "{0, 1238}";
 		};
 	};
-	EC90C98013B399CA000386CA /* NgnNetworkService.mm:228 */ = {
+	EC90C98013B399CA000386CA /* NgnNetworkService.mm:239 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1985,13 +1989,13 @@
 		functionName = "-dealloc";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 228;
+		lineNumber = 239;
 		location = wiPhone;
-		modificationTime = 331042302.533605;
+		modificationTime = 331058245.554511;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	EC90C98213B399CF000386CA /* NgnNetworkService.mm:133 */ = {
+	EC90C98213B399CF000386CA /* NgnNetworkService.mm:144 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2003,9 +2007,9 @@
 		functionName = "-stopListening";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 133;
+		lineNumber = 144;
 		location = wiPhone;
-		modificationTime = 331042302.573707;
+		modificationTime = 331058245.597898;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2074,7 +2078,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 128";
 		rLen = 23;
-		rLoc = 4849;
+		rLoc = 5288;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 4306;
@@ -2084,7 +2088,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 134";
 		rLen = 0;
-		rLoc = 5067;
+		rLoc = 5506;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 4306;
@@ -2094,7 +2098,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 128";
 		rLen = 0;
-		rLoc = 4871;
+		rLoc = 5310;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 6116;
@@ -2144,7 +2148,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 65";
 		rLen = 0;
-		rLoc = 3002;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 2207;
 		vrLoc = 1434;
@@ -2154,7 +2158,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 61";
 		rLen = 0;
-		rLoc = 2920;
+		rLoc = 2962;
 		rType = 0;
 		vrLen = 2207;
 		vrLoc = 1434;
@@ -2164,7 +2168,7 @@
 		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
 		name = "NgnNetworkService.mm: 61";
 		rLen = 0;
-		rLoc = 2920;
+		rLoc = 2962;
 		rType = 0;
 		vrLen = 2207;
 		vrLoc = 1434;
@@ -2662,7 +2666,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 7364;
@@ -2672,7 +2676,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 7364;
@@ -2682,7 +2686,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 7364;
@@ -2692,7 +2696,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 422";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 7364;
@@ -2922,7 +2926,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 398";
 		rLen = 0;
-		rLoc = 11544;
+		rLoc = 11542;
 		rType = 0;
 		vrLen = 723;
 		vrLoc = 10570;
@@ -2932,7 +2936,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 399";
 		rLen = 0;
-		rLoc = 11544;
+		rLoc = 11542;
 		rType = 0;
 		vrLen = 780;
 		vrLoc = 10590;
@@ -2942,7 +2946,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 399";
 		rLen = 0;
-		rLoc = 11544;
+		rLoc = 11542;
 		rType = 0;
 		vrLen = 780;
 		vrLoc = 10589;
@@ -2952,7 +2956,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 399";
 		rLen = 0;
-		rLoc = 11544;
+		rLoc = 11542;
 		rType = 0;
 		vrLen = 780;
 		vrLoc = 10593;
@@ -2962,10 +2966,50 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 408";
 		rLen = 0;
-		rLoc = 11544;
+		rLoc = 11542;
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 10810;
+	};
+	EC96C11913BB7BF8008A3310 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
+		name = "NgnProxyVideoProducer.mm: 408";
+		rLen = 0;
+		rLoc = 11542;
+		rType = 0;
+		vrLen = 791;
+		vrLoc = 10808;
+	};
+	EC96C11A13BB7BF8008A3310 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */;
+		name = "NgnNetworkService.mm: 62";
+		rLen = 0;
+		rLoc = 2970;
+		rType = 0;
+		vrLen = 1286;
+		vrLoc = 2451;
+	};
+	EC96C11B13BB7BF8008A3310 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
+		name = "NgnEngine.mm: 119";
+		rLen = 1;
+		rLoc = 3369;
+		rType = 0;
+		vrLen = 1233;
+		vrLoc = 5149;
+	};
+	EC96C11C13BB7BF8008A3310 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
+		name = "NgnEngine.mm: 117";
+		rLen = 0;
+		rLoc = 3247;
+		rType = 0;
+		vrLen = 994;
+		vrLoc = 3135;
 	};
 	EC9AC9E313B23A220051AFB5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3042,7 +3086,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 424";
 		rLen = 0;
-		rLoc = 12358;
+		rLoc = 12356;
 		rType = 0;
 		vrLen = 682;
 		vrLoc = 11314;
@@ -3072,7 +3116,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 431";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 6311;
@@ -3082,7 +3126,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 431";
 		rLen = 0;
-		rLoc = 12338;
+		rLoc = 12336;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 6311;
@@ -3122,7 +3166,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3132,7 +3176,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3142,7 +3186,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3152,7 +3196,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3162,7 +3206,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3172,7 +3216,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3192,7 +3236,7 @@
 		fRef = ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */;
 		name = "NgnEngine.mm: 119";
 		rLen = 1;
-		rLoc = 3327;
+		rLoc = 3369;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 5149;
@@ -3377,8 +3421,8 @@
 	ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1018, 6435}}";
-			sepNavSelRange = "{11544, 0}";
-			sepNavVisRange = "{10810, 791}";
+			sepNavSelRange = "{11542, 0}";
+			sepNavVisRange = "{10808, 791}";
 		};
 	};
 	ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */ = {
@@ -3476,9 +3520,9 @@
 	};
 	ECF2009E1360E2FF00B0BFEB /* NgnNetworkService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1069, 2574}}";
-			sepNavSelRange = "{2920, 0}";
-			sepNavVisRange = "{1528, 2113}";
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 2925}}";
+			sepNavSelRange = "{2928, 0}";
+			sepNavVisRange = "{2451, 1286}";
 			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
 		};
 	};
@@ -3526,9 +3570,9 @@
 	};
 	ECF200EB1360E9EB00B0BFEB /* NgnEngine.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1384, 3510}}";
-			sepNavSelRange = "{3327, 1}";
-			sepNavVisRange = "{5149, 1237}";
+			sepNavIntBoundsRect = "{{0, 0}, {1384, 3653}}";
+			sepNavSelRange = "{3247, 0}";
+			sepNavVisRange = "{3135, 994}";
 			sepNavWindowFrame = "{{15, 147}, {860, 726}}";
 		};
 	};

@@ -114,13 +114,13 @@
 	
 	// Order is important
 	bSuccess &= [self.configurationService start];
+	bSuccess &= [self.networkService start];
 	bSuccess &= [self.storageService start];
 	bSuccess &= [self.contactService start];
 	bSuccess &= [self.sipService start];	
 	bSuccess &= [self.httpClientService start];
 	bSuccess &= [self.historyService start];
 	bSuccess &= [self.soundService start];
-	bSuccess &= [self.networkService start];
 	
 	mStarted = TRUE;
 	return bSuccess;
