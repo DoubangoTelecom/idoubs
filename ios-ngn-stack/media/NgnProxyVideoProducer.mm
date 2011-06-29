@@ -119,7 +119,7 @@ private:
 	}
 	
 	NSError *error = nil;
-    AVCaptureDeviceInput *videoInput = [AVCaptureDeviceInput deviceInputWithDevice: mCaptureDevice error:&error];
+    AVCaptureDeviceInput *videoInput = [AVCaptureDeviceInput deviceInputWithDevice:mCaptureDevice error:&error];
     if (!videoInput){
         NgnNSLog(TAG,@"Failed to get video input: %@", error);
 		mCaptureDevice = nil;
@@ -160,7 +160,7 @@ private:
     
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
-    [mCaptureSession addOutput: avCaptureVideoDataOutput];
+    [mCaptureSession addOutput:avCaptureVideoDataOutput];
 	
 	// orientation
 	//for(int i = 0; i < [[avCaptureVideoDataOutput connections] count]; i++) {
@@ -175,7 +175,12 @@ private:
 	
 	mFirstFrame = YES;
 	
-	[self startPreview];
+	if([NSThread currentThread] != [NSThread mainThread]){// From Doubango worker thread?
+		[self performSelectorOnMainThread:@selector(startPreview) withObject:nil waitUntilDone:YES];
+	}
+	else {
+		[self startPreview];
+	}
 	
 	NgnNSLog(TAG, @"Video capture started");
 }
@@ -188,12 +193,17 @@ private:
 	}
 	[mCaptureDevice release], mCaptureDevice = nil;
 	
-	[self stopPreview];
+	if([NSThread currentThread] != [NSThread mainThread]){ // From Doubango worker thread?
+		[self performSelectorOnMainThread:@selector(stopPreview) withObject:nil waitUntilDone:YES];
+	}
+	else {
+		[self stopPreview];
+	}
 }
 
 - (void)startPreview{
 	if(mCaptureSession && mPreview && mStarted){
-		AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: mCaptureSession];
+		AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:mCaptureSession];
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 		if(previewLayer.orientationSupported){
@@ -203,7 +213,7 @@ private:
 		// remove all sublayers and add new one
 		if(mPreview){
 			for(CALayer *ly in mPreview.layer.sublayers){
-				if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+				if([ly isKindOfClass:[AVCaptureVideoPreviewLayer class]]){
 					[ly removeFromSuperlayer];
 					break;
 				}
@@ -227,7 +237,7 @@ private:
 	// remove all sublayers
 	if(mPreview){
 		for(CALayer *ly in mPreview.layer.sublayers){
-			if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+			if([ly isKindOfClass:[AVCaptureVideoPreviewLayer class]]){
 				[ly removeFromSuperlayer];
 				break;
 			}
