@@ -269,20 +269,21 @@
 								<string>0867D691FE84028FC02AAC07</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
 								<string>ECFD23BE135D534100E6A9A3</string>
+								<string>ECFD23C0135D534100E6A9A3</string>
+								<string>ECFD23C1135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>6</integer>
+									<integer>53</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {318, 675}}</string>
+							<string>{{0, 498}, {318, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnProxyVideoProducer.mm</string>
+								<string>NgnEngine.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,23 +326,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnProxyVideoProducer.mm</string>
+										<string>NgnEngine.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC96C09713BB4ADC008A3310</string>
+										<string>EC96C11C13BB7BF8008A3310</string>
 										<key>history</key>
 										<array>
-											<string>EC8303C113B93D25001091E9</string>
 											<string>EC8303C213B93D25001091E9</string>
 											<string>EC8303C313B93D25001091E9</string>
 											<string>EC9ACB2613BA284600E0500F</string>
-											<string>EC9ACD7A13BAB4AF00E0500F</string>
 											<string>EC9ACD7B13BAB4AF00E0500F</string>
 											<string>EC9ACD7C13BAB4AF00E0500F</string>
 											<string>EC9ACD7D13BAB4AF00E0500F</string>
 											<string>EC96C05A13BB446C008A3310</string>
-											<string>EC96C05B13BB446C008A3310</string>
+											<string>EC96C11913BB7BF8008A3310</string>
+											<string>EC96C11A13BB7BF8008A3310</string>
+											<string>EC96C11B13BB7BF8008A3310</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

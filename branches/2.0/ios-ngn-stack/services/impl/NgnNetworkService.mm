@@ -23,6 +23,8 @@
 #import "NgnNetworkEventArgs.h"
 #import "NgnNotificationCenter.h"
 
+#import <netinet/in.h> /* sockaddr_in */
+
 #define kReachabilityHostName @"google.com"
 
 #undef TAG
@@ -91,7 +93,16 @@ static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNe
 	if([self stopListening]){
 		Boolean ok;
 		int err = 0;
+#if 0 /* SCNetworkReachabilityCreateWithName won't returns the rigth flags imediately. We need to wait for the callback. */
 		mReachability = SCNetworkReachabilityCreateWithName(NULL, [NgnStringUtils toCString:self.reachabilityHostName]);
+#else
+		struct sockaddr_in fakeAddress;
+		bzero(&fakeAddress, sizeof(fakeAddress));
+		fakeAddress.sin_len = sizeof(fakeAddress);
+		fakeAddress.sin_family = AF_INET;
+		
+		mReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *) &fakeAddress);
+#endif
 		if (mReachability == NULL) {
 			err = SCError();
 		}
