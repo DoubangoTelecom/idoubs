@@ -229,7 +229,7 @@ private:
 }
 
 - (void)stopPreview{
-	if(mCaptureSession){		
+	if(mCaptureSession){
 		if([mCaptureSession isRunning]){
 			[mCaptureSession stopRunning];
 		}
