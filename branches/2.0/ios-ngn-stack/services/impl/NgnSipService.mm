@@ -276,7 +276,9 @@ public:
 					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATED];					
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
 					/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
-					[mSipService stopStack];
+#if 0 /* FIXME: won't work if network type or reachability change */
+					[mSipService stopStackAsynchronously];
+#endif
 				}
 				// Audio/Video/MSRP(Chat, FileTransfer)
 				else if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
@@ -846,15 +848,6 @@ private:
 //	NgnSipService
 //
 
-@implementation NgnSipService(Private)
-
--(void)asyncStackStop {
-	if(sipStack && (sipStack.state == STACK_STATE_STARTING || sipStack.state == STACK_STATE_STARTED)){
-		[sipStack stop];
-	}
-}
-
-@end
 
 @implementation NgnSipService
 
@@ -893,7 +886,7 @@ private:
 
 -(BOOL) stop{
 	NgnNSLog(TAG, @"Stop()");
-	[self stopStack]; // FIXME: async => should not
+	[self stopStackSynchronously];
 	return YES;
 }
 
@@ -942,9 +935,16 @@ private:
 	
 }
 
--(BOOL)stopStack{
-	[NSThread detachNewThreadSelector:@selector(asyncStackStop) toTarget:self withObject:nil];
-	return TRUE;
+-(BOOL)stopStackSynchronously{
+	if(sipStack && (sipStack.state == STACK_STATE_STARTING || sipStack.state == STACK_STATE_STARTED)){
+		return [sipStack stop];
+	}
+	return YES;
+}
+
+-(BOOL)stopStackAsynchronously{
+	[NSThread detachNewThreadSelector:@selector(stopStackSynchronously) toTarget:self withObject:nil];
+	return YES;
 }
 
 -(BOOL)registerIdentity{
@@ -1077,8 +1077,7 @@ private:
 
 -(BOOL)unRegisterIdentity{
 	// Instead of just unregistering, hangup all dialogs (INVITE, SUBSCRIBE, PUBLISH, MESSAGE, ...)
-	[NSThread detachNewThreadSelector:@selector(asyncStackStop) toTarget:self withObject:nil];
-	return YES;
+	return [self stopStackAsynchronously];
 }
 
 @end

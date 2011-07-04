@@ -32,7 +32,8 @@
 -(ConnectionState_t)getRegistrationState;
 -(int)getCodecs;
 -(void)setCodecs: (int)codecs;
--(BOOL)stopStack;
+-(BOOL)stopStackAsynchronously;
+-(BOOL)stopStackSynchronously;
 -(BOOL)registerIdentity;
 -(BOOL)unRegisterIdentity;
 
