@@ -28,6 +28,7 @@
 
 @protocol INgnContactService <INgnBaseService>
 -(void) load:(BOOL) asyn;
+-(void) unload;
 -(BOOL) isLoading;
 -(NSArray*) contacts;
 -(NSDictionary*) numbers2ContactsMapper;
