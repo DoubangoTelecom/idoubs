@@ -198,8 +198,12 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	else {
 		[self syncLoad];
 	}
+}			   
 
-}				   
+-(void) unload{
+	[mNumbers2ContacstMapper removeAllObjects];
+	[mContacts removeAllObjects];
+}
 
 -(BOOL) isLoading{
 	return mLoading;
