@@ -73,8 +73,8 @@
 		 */
         /* GSMA RCS phase 3 - 3.2 Registration */
         [super addCapsWithName:@"audio"];
-        [super addCapsWithName:@"+g.3gpp.icsi-ref" andValue: @"\"urn%3Aurn-7%3A3gpp-service.ims.icsi.mmtel\""];
-        [super addCapsWithName:@"+g.3gpp.icsi-ref" andValue: @"\"urn%3Aurn-7%3A3gpp-application.ims.iari.gsma-vs\""];
+        [super addCapsWithName:@"+g.3gpp.icsi-ref" andValue:@"\"urn%3Aurn-7%3A3gpp-service.ims.icsi.mmtel\""];
+        [super addCapsWithName:@"+g.3gpp.icsi-ref" andValue:@"\"urn%3Aurn-7%3A3gpp-application.ims.iari.gsma-vs\""];
         // In addition, in RCS Release 3 the BA Client when used as a primary device will indicate the capability to receive SMS 
         // messages over IMS by registering the SMS over IP feature tag in accordance with [24.341]:
         [super addCapsWithName:@"+g.3gpp.cs-voice"];
@@ -100,7 +100,7 @@
 			if(toUri){
 				[regSession setToUri:toUri];
 			}
-			[kSessions setObject: regSession forKey:[regSession getIdAsNumber]];
+			[kSessions setObject:regSession forKey:[regSession getIdAsNumber]];
 		}
 		return regSession;
 	}
@@ -124,7 +124,7 @@
 	@synchronized (kSessions){
 		if (session && *session){
 			if ([(*session) retainCount] == 1) {
-				[kSessions removeObjectForKey: [*session getIdAsNumber]];
+				[kSessions removeObjectForKey:[*session getIdAsNumber]];
 			}
 			else {
 				[(*session) release];

@@ -62,8 +62,8 @@
 	if(validUri){
 		NgnAVSession* avSession = [NgnAVSession createOutgoingSessionWithSipStack: sipStack andMediaType: mType];
 		if(avSession){
-			if(![avSession makeCall: [NgnUriUtils makeValidSipUri: validUri]]){
-				[NgnAVSession releaseSession: &avSession];
+			if(![avSession makeCall: [NgnUriUtils makeValidSipUri:validUri]]){
+				[NgnAVSession releaseSession:&avSession];
 			}
 		}
 		return avSession;
@@ -85,14 +85,14 @@
 		// commons
 		[super initialize];
 		// History event
-		mEvent = [[NgnHistoryEvent createAudioVideoEventWithRemoteParty: nil andVideo: isVideoType(mMediaType)] retain];
+		mEvent = [[NgnHistoryEvent createAudioVideoEventWithRemoteParty:nil andVideo:isVideoType(mMediaType)] retain];
 		// SigComp
 		[super setSigCompId: [sipStack getSigCompId]];
         // Session timers
 		if([[NgnEngine getInstance].configurationService getBoolWithKey:QOS_USE_SESSION_TIMERS]){
 			int timeout = [[NgnEngine getInstance].configurationService getIntWithKey:QOS_SIP_CALLS_TIMEOUT];
 			NSString* refresher = [[NgnEngine getInstance].configurationService getStringWithKey:QOS_REFRESHER];
-			_mSession->setSessionTimer((unsigned)timeout, [NgnStringUtils toCString: refresher]);
+			_mSession->setSessionTimer((unsigned)timeout, [NgnStringUtils toCString:refresher]);
 		}
         // Precondition (FIXME)
 		// mSession.setQoS(tmedia_qos_stype_t.valueOf(mConfigurationService
@@ -210,7 +210,7 @@
 	[super setToUri: validUri];
 	
 	if(mEvent){
-		[mEvent setRemotePartyWithValidUri: validUri];
+		[mEvent setRemotePartyWithValidUri:validUri];
 	}
 	
 	// FIXME: Set bandwidth
@@ -223,11 +223,11 @@
 	switch (super.mediaType){
 		case MediaType_AudioVideo:
 		case MediaType_Video:
-			ret = _mSession->callAudioVideo([NgnStringUtils toCString: validUri], _config);
+			ret = _mSession->callAudioVideo([NgnStringUtils toCString:validUri], _config);
 			break;
 		case MediaType_Audio:
 		default:
-			ret = _mSession->callAudio([NgnStringUtils toCString: validUri], _config);
+			ret = _mSession->callAudio([NgnStringUtils toCString:validUri], _config);
 			break;
 	}
 	if(_config){
@@ -244,13 +244,24 @@
 	}
 	
 	mOutgoing = TRUE;
-	[super setToUri: validUri];
+	[super setToUri:validUri];
 	
 	if(mEvent){
-		[mEvent setRemotePartyWithValidUri: validUri];
+		[mEvent setRemotePartyWithValidUri:validUri];
 	}
 	
-	return _mSession->callVideo([NgnStringUtils toCString: validUri]);
+	return _mSession->callVideo([NgnStringUtils toCString:validUri]);
+}
+
+-(BOOL) updateSession: (NgnMediaType_t)mediaType_{
+	if(!_mSession){
+		TSK_DEBUG_ERROR("Null embedded session");
+		return FALSE;
+	}
+	// check that it's a different mediaType
+	// check that we are connected
+	// check that it's an audio or video call.
+	return _mSession->callAudioVideo([NgnStringUtils toCString:self.toUri]);
 }
 
 -(BOOL) acceptCallWithConfig: (ActionConfig*)config{
@@ -355,6 +366,14 @@
 			break;
 		}
 	}
+}
+
+// override from InviteSession
+-(void) setMediaType:(NgnMediaType_t)mediaType_{
+	[super setMediaType:mediaType_];
+#if TARGET_OS_IPHONE
+	[self initializeConsumersAndProducers];
+#endif
 }
 
 -(BOOL) sendDTMF: (int) digit{
@@ -482,9 +501,9 @@
 
 +(NgnAVSession*) createOutgoingSessionWithSipStack: (NgnSipStack*) sipStack andMediaType: (NgnMediaType_t) media{
 	@synchronized (kSessions){
-		NgnAVSession* avSession = [[[NgnAVSession alloc] internalInit: sipStack andCallSession: tsk_null andMediaType: media andState: INVITE_STATE_INPROGRESS] autorelease];
+		NgnAVSession* avSession = [[[NgnAVSession alloc] internalInit:sipStack andCallSession:tsk_null andMediaType:media andState:INVITE_STATE_INPROGRESS] autorelease];
 		if(avSession){
-			[kSessions setObject: avSession forKey:[avSession getIdAsNumber]];
+			[kSessions setObject:avSession forKey:[avSession getIdAsNumber]];
 		}
 		return avSession;
 	}
@@ -494,7 +513,7 @@
 	@synchronized (kSessions){
 		if (session && *session){
 			if([(*session) retainCount] == 1){
-				[kSessions removeObjectForKey: [*session getIdAsNumber]];
+				[kSessions removeObjectForKey:[*session getIdAsNumber]];
 			}
 			else {
 				[(*session) release];
@@ -514,7 +533,7 @@
 	@synchronized(kSessions){
 		NSArray* values = [kSessions allValues];
 		for(NgnAVSession* value in values){
-			if([predicate evaluateWithObject: value]){
+			if([predicate evaluateWithObject:value]){
 				return value;
 			}
 		}
@@ -523,7 +542,7 @@
 }
 
 +(BOOL) hasSessionWithId:(long) sessionId{
-	return [NgnAVSession getSessionWithId: sessionId] != nil;
+	return [NgnAVSession getSessionWithId:sessionId] != nil;
 }
 
 +(BOOL) hasActiveSession{
