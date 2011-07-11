@@ -230,7 +230,7 @@
 													target:self
 													selector:@selector(keepAwakeCallback)
 													userInfo:nil
-												   repeats: iOS4Plus ? NO : YES];
+												   repeats:iOS4Plus ? NO : YES];
 		[[NSRunLoop currentRunLoop] addTimer:keepAwakeTimer forMode:NSRunLoopCommonModes];
 		[keepAwakeTimer release];
 		if(iOS4Plus){

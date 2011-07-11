@@ -43,6 +43,10 @@
 	return mMediaType;
 }
 
+-(void) setMediaType:(NgnMediaType_t)mediaType_{
+	mMediaType = mediaType_;
+}
+
 -(InviteState_t) getState{
 	return mState;
 }
