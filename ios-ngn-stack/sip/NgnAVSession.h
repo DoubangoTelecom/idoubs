@@ -53,6 +53,7 @@ class ActionConfig;
 
 -(BOOL) makeCall: (NSString*) validUri;
 -(BOOL) makeVideoSharingCall: (NSString*) validUri;
+-(BOOL) updateSession: (NgnMediaType_t)mediaType;
 -(BOOL) acceptCallWithConfig: (ActionConfig*)config;
 -(BOOL) acceptCall;
 -(BOOL) hangUpCallWithConfig: (ActionConfig*)config;

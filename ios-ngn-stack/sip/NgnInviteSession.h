@@ -56,6 +56,7 @@ InviteState_t;
 
 -(NgnInviteSession*) initWithSipStack: (NgnSipStack *)sipStack;
 -(NgnMediaType_t) getMediaType;
+-(void) setMediaType:(NgnMediaType_t)mediaType; // should only be called by the NgnSipService
 -(InviteState_t) getState;
 -(void) setState: (InviteState_t)newState;
 -(BOOL) isActive;

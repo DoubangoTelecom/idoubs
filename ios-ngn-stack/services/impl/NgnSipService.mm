@@ -499,25 +499,60 @@ done:
 				
 			case tsip_m_early_media:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_EARLY_MEDIA
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_EARLY_MEDIA
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
+			
+			case tsip_m_updating:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															 andEvenType:INVITE_EVENT_MEDIA_UPDATING
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
 			}
 				
+			case tsip_m_updated:
+			{
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					twrap_media_type_t _new_media_type = _e->getMediaType();
+					switch (_new_media_type) {
+						case twrap_media_audiovideo:
+							((NgnInviteSession*)ngnSipSession).mediaType = MediaType_AudioVideo;
+							break;
+						case twrap_media_video:
+							((NgnInviteSession*)ngnSipSession).mediaType = MediaType_Video;
+							break;
+						case twrap_media_audio:
+							((NgnInviteSession*)ngnSipSession).mediaType = MediaType_Audio;
+							break;
+					}
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_MEDIA_UPDATED
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															andSipPhrase:phrase];
+					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+				}
+				break;
+			}
 				
 			case tsip_m_local_hold_ok:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					[((NgnInviteSession*)ngnSipSession) setLocalHold: TRUE];
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_LOCAL_HOLD_OK
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setLocalHold:YES];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_LOCAL_HOLD_OK
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
@@ -525,57 +560,57 @@ done:
 			case tsip_m_local_hold_nok:
 			{
 				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_LOCAL_HOLD_NOK
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_LOCAL_HOLD_NOK
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
 			}
 			case tsip_m_local_resume_ok:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					[((NgnInviteSession*)ngnSipSession) setLocalHold: FALSE];
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_LOCAL_RESUME_OK
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setLocalHold:NO];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_LOCAL_RESUME_OK
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
 			}
 			case tsip_m_local_resume_nok:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_LOCAL_RESUME_NOK
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_LOCAL_RESUME_NOK
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
 			}
 			case tsip_m_remote_hold:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					[((NgnInviteSession*)ngnSipSession) setRemoteHold: TRUE];
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_REMOTE_HOLD
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setRemoteHold:YES];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_REMOTE_HOLD
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
 			}
 			case tsip_m_remote_resume:
 			{
-				if (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
-					[((NgnInviteSession*)ngnSipSession) setRemoteHold: FALSE];
-					eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-															  andEvenType: INVITE_EVENT_REMOTE_RESUME
-															 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-															 andSipPhrase: phrase];
+				if (((ngnSipSession = [NgnAVSession getSessionWithId:_sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil)){
+					[((NgnInviteSession*)ngnSipSession) setRemoteHold:NO];
+					eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+															  andEvenType:INVITE_EVENT_REMOTE_RESUME
+															 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+															 andSipPhrase:phrase];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 				}
 				break;
@@ -973,6 +1008,9 @@ private:
 			return FALSE;
 		}
 	}
+	
+	// [sipStack setLocalPort:80];
+	
 	
 	// set the Password
 	[sipStack setPassword: [mConfigurationService getStringWithKey:IDENTITY_PASSWORD]];

@@ -73,7 +73,7 @@
 																andSession: session 
 																andRemotePartyUri: [NgnStringUtils toNSString: _toUri]] autorelease];
 	if(imSession){
-		[kSessions setObject: imSession forKey:[imSession getIdAsNumber]];
+		[kSessions setObject:imSession forKey:[imSession getIdAsNumber]];
 	}
 	return imSession;
 }
@@ -82,7 +82,7 @@
 	@synchronized(kSessions){
 		NgnMessagingSession* imSession = [[[NgnMessagingSession alloc] internalInitWithSipStack: sipStack andSession: tsk_null andRemotePartyUri: _toUri] autorelease];
 		if(imSession){
-			[kSessions setObject: imSession forKey:[imSession getIdAsNumber]];
+			[kSessions setObject:imSession forKey:[imSession getIdAsNumber]];
 		}
 		return imSession;
 	}
@@ -102,7 +102,7 @@
 	@synchronized (kSessions){
 		if (session && *session){
 			if ([(*session) retainCount] == 1) {
-				[kSessions removeObjectForKey: [*session getIdAsNumber]];
+				[kSessions removeObjectForKey:[*session getIdAsNumber]];
 			}
 			else {
 				[(*session) release];
@@ -113,47 +113,47 @@
 }
 
 +(NgnMessagingSession*) sendBinaryMessageWithSipStack: (NgnSipStack*)sipStack andToUri: (NSString*)uri andMessage: (NSString*) asciiText smscValue: (NSString*) smsc{
-	NgnMessagingSession* imSession = [NgnMessagingSession createOutgoingSessionWithStack: sipStack andToUri: uri];
+	NgnMessagingSession* imSession = [NgnMessagingSession createOutgoingSessionWithStack:sipStack andToUri:uri];
 	if(imSession){
 	}
 	return imSession;
 }
 
 +(NgnMessagingSession*) sendDataWithSipStack: (NgnSipStack*)sipStack andToUri: (NSString*)uri andData: (NSData*) data andContentType: (NSString*) ctype andActionConfig: (ActionConfig*) config{
-	NgnMessagingSession* imSession = [NgnMessagingSession createOutgoingSessionWithStack: sipStack andToUri: uri];
+	NgnMessagingSession* imSession = [NgnMessagingSession createOutgoingSessionWithStack:sipStack andToUri:uri];
 	if(imSession){
-		if(![imSession sendData: data contentType: ctype actionConfig: config]){
-			[NgnMessagingSession releaseSession: &imSession];
+		if(![imSession sendData:data contentType:ctype actionConfig:config]){
+			[NgnMessagingSession releaseSession:&imSession];
 		}
 	}
 	return imSession;
 }
 
 +(NgnMessagingSession*) sendDataWithSipStack: (NgnSipStack*)sipStack andToUri: (NSString*)uri andData: (NSData*) data andContentType: (NSString*) ctype{
-	return [NgnMessagingSession sendDataWithSipStack: sipStack 
-								andToUri: uri 
-								andData: data 
-								andContentType: ctype
-								andActionConfig: nil
+	return [NgnMessagingSession sendDataWithSipStack:sipStack 
+								andToUri:uri 
+								andData:data 
+								andContentType:ctype
+								andActionConfig:nil
 			];
 }
 
 +(NgnMessagingSession*) sendTextMessageWithSipStack: (NgnSipStack*)sipStack andToUri: (NSString*)uri andMessage: (NSString*) asciiText andContentType: (NSString*) ctype andActionConfig: (ActionConfig*)config{
 	NgnMessagingSession* imSession = [NgnMessagingSession createOutgoingSessionWithStack: sipStack andToUri: uri];
 	if(imSession){
-		if(![imSession sendTextMessage: asciiText contentType: ctype actionConfig: config]){
-			[NgnMessagingSession releaseSession: &imSession];
+		if(![imSession sendTextMessage: asciiText contentType:ctype actionConfig:config]){
+			[NgnMessagingSession releaseSession:&imSession];
 		}
 	}
 	return imSession;
 }
 
 +(NgnMessagingSession*) sendTextMessageWithSipStack: (NgnSipStack*)sipStack andToUri: (NSString*)uri andMessage: (NSString*) asciiText andContentType: (NSString*) ctype{
-	return [NgnMessagingSession sendTextMessageWithSipStack: sipStack 
-									andToUri: uri 
-									andMessage: asciiText 
-									andContentType: ctype
-									andActionConfig: nil
+	return [NgnMessagingSession sendTextMessageWithSipStack:sipStack 
+									andToUri:uri 
+									andMessage:asciiText 
+									andContentType:ctype
+									andActionConfig:nil
 			];
 }
 
@@ -179,15 +179,15 @@
 }
 
 -(BOOL) sendTextMessage:(NSString*) asciiText contentType: (NSString*) ctype actionConfig: (ActionConfig*)config{
-	return [self sendData: [asciiText dataUsingEncoding: NSUTF8StringEncoding]
-			  contentType: ctype
-			  actionConfig: config
+	return [self sendData:[asciiText dataUsingEncoding:NSUTF8StringEncoding]
+			  contentType:ctype
+			  actionConfig:config
 			];
 }
 
 -(BOOL) sendTextMessage:(NSString*) asciiText contentType: (NSString*) ctype{
-	return [self sendData: [asciiText dataUsingEncoding: NSUTF8StringEncoding]
-			  contentType: ctype
+	return [self sendData:[asciiText dataUsingEncoding:NSUTF8StringEncoding]
+			  contentType:ctype
 			];
 }
 
