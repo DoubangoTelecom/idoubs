@@ -36,7 +36,7 @@ typedef NSArray NgnContactArray;
 @protected
 	int32_t id;
 	NSString* displayName;
-	NSString* fisrtName;
+	NSString* firstName;
 	NSString* lastName;
 	NSMutableArray* phoneNumbers;
 	NSData* picture;

@@ -41,7 +41,7 @@
 		
 		self->id = ABRecordGetRecordID(record);
 		self->displayName = (NSString *)ABRecordCopyCompositeName(record);
-		self->fisrtName = (NSString*)ABRecordCopyValue(record, kABPersonFirstNameProperty);
+		self->firstName = (NSString*)ABRecordCopyValue(record, kABPersonFirstNameProperty);
 		self->lastName = (NSString*)ABRecordCopyValue(record, kABPersonLastNameProperty);
 		if(ABPersonHasImageData(record)){
 			//--self->picture = (NSData*)ABPersonCopyImageData(record);
@@ -94,7 +94,7 @@
 
 -(void)dealloc{
 	[self->displayName release];
-	[self->fisrtName release];
+	[self->firstName release];
 	[self->lastName release];
 	[self->picture release];
 	
