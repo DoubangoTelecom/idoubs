@@ -52,6 +52,14 @@
 #define TAG kTAG
 
 //
+// NgnSipService private declaration
+//
+@interface  NgnSipService(Private)
+-(void)releaseSipRegSession;
+@end
+
+
+//
 //	NgnSipCallback
 //
 
@@ -273,8 +281,10 @@ public:
 							 andEventType:UNREGISTRATION_OK  
 							 andSipCode:_code  
 							 andSipPhrase:phrase];
-					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATED];					
+					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATED];
+					[mSipService releaseSipRegSession];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
+					
 					/* Stop the stack (as we are already in the stack-thread, then do it in a new thread) */
 #if 0 /* FIXME: won't work if network type or reachability change */
 					[mSipService stopStackAsynchronously];
@@ -883,6 +893,12 @@ private:
 //	NgnSipService
 //
 
+@implementation  NgnSipService(Private)
+-(void)releaseSipRegSession{
+	[NgnRegistrationSession releaseSession:&self->sipRegSession];
+}
+@end
+
 
 @implementation NgnSipService
 
@@ -985,6 +1001,17 @@ private:
 -(BOOL)registerIdentity{
 	NgnNSLog(TAG, @"register()");
 	
+#if defined(RECYCLE_STACK) && RECYCLE_STACK
+	if(self->sipStack && (!self->sipRegSession || !self->sipRegSession.connected)){//registration terminated but stack still not destroyed => create new stack
+		NgnNSLog(TAG,@"Recycling the stack");
+		if(self->sipStack.state != STACK_STATE_STOPPED && self->sipStack.state != STACK_STATE_STOPPING){
+			[self->sipStack stop];
+		}
+		[self->sipStack release]; self->sipStack = nil;
+		[self releaseSipRegSession];
+	}
+#endif
+	
 	sipPreferences.realm = [mConfigurationService getStringWithKey:NETWORK_REALM];
 	sipPreferences.impi = [mConfigurationService getStringWithKey:IDENTITY_IMPI];
 	sipPreferences.impu = [mConfigurationService getStringWithKey:IDENTITY_IMPU];
@@ -992,8 +1019,6 @@ private:
 	
 	if (sipStack == nil) {
 		sipStack = [[NgnSipStack alloc] initWithSipCallback:_mSipCallback andRealmUri:sipPreferences.realm andIMPIUri:sipPreferences.impi andIMPUUri:sipPreferences.impu];
-		//SipStack.setCodecs_2(mConfigurationService.getInt(NgnConfigurationEntry.MEDIA_CODECS, 
-		//												  NgnConfigurationEntry.DEFAULT_MEDIA_CODECS));
 	} else {
 		if (![sipStack setRealm:sipPreferences.realm]) {
 			TSK_DEBUG_ERROR("Failed to set realm");
@@ -1008,8 +1033,6 @@ private:
 			return FALSE;
 		}
 	}
-	
-	// [sipStack setLocalPort:80];
 	
 	
 	// set the Password
@@ -1071,7 +1094,7 @@ private:
 	[sipStack setDnsDiscovery:FALSE];           
 	
 	// enable/disable 3GPP early IMS
-	[sipStack setEarlyIMS: [mConfigurationService getBoolWithKey:NETWORK_USE_EARLY_IMS]];
+	[sipStack setEarlyIMS:[mConfigurationService getBoolWithKey:NETWORK_USE_EARLY_IMS]];
 	
 	// SigComp (only update compartment Id if changed)
 	if([mConfigurationService getBoolWithKey:NETWORK_USE_SIGCOMP]){
