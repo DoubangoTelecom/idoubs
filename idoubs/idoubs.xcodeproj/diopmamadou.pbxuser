@@ -136,6 +136,10 @@
 			ECB52C1D13D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C1D13D4CCF800A2D950 /* PBXTextBookmark */;
 			ECB52C1E13D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C1E13D4CCF800A2D950 /* PBXTextBookmark */;
 			ECB52C2013D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C2013D4CCF800A2D950 /* PBXTextBookmark */;
+			ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */;
 			ECEB4D1813CFE5F800E97948 = ECEB4D1813CFE5F800E97948 /* PBXTextBookmark */;
 			ECEB4D1913CFE5F800E97948 = ECEB4D1913CFE5F800E97948 /* PBXTextBookmark */;
 			ECEB4D2213CFE63A00E97948 = ECEB4D2213CFE63A00E97948 /* PBXTextBookmark */;
@@ -171,9 +175,9 @@
 	};
 	EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1373, 6214}}";
-			sepNavSelRange = "{2683, 0}";
-			sepNavVisRange = "{2715, 895}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 6188}}";
+			sepNavSelRange = "{13834, 0}";
+			sepNavVisRange = "{12908, 1196}";
 		};
 	};
 	EC7E2F54138968E50020EB89 /* BaloonCell.h */ = {
@@ -381,9 +385,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 7943}}";
-			sepNavSelRange = "{6162, 0}";
-			sepNavVisRange = "{5295, 1238}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 8021}}";
+			sepNavSelRange = "{6405, 17}";
+			sepNavVisRange = "{6239, 1025}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -510,7 +514,7 @@
 		fRef = ECB52C2113D4CCF800A2D950 /* NgnSipService.mm */;
 		name = "NgnSipService.mm: 299";
 		rLen = 0;
-		rLoc = 13089;
+		rLoc = 13176;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 11758;
@@ -520,6 +524,51 @@
 		name = NgnSipService.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/services/impl/NgnSipService.mm";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1223, 14339}}";
+			sepNavSelRange = "{13089, 0}";
+			sepNavVisRange = "{11758, 1902}";
+		};
+	};
+	ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB52C1F13D4CCF800A2D950 /* NgnSipService.mm */;
+		name = "NgnSipService.mm: 299";
+		rLen = 0;
+		rLoc = 13176;
+		rType = 0;
+		vrLen = 1902;
+		vrLoc = 11758;
+	};
+	ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F53138968E50020EB89 /* AudioCallViewController.mm */;
+		name = "AudioCallViewController.mm: 439";
+		rLen = 0;
+		rLoc = 13834;
+		rType = 0;
+		vrLen = 1196;
+		vrLoc = 12908;
+	};
+	ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 181";
+		rLen = 0;
+		rLoc = 6162;
+		rType = 0;
+		vrLen = 1264;
+		vrLoc = 5293;
+	};
+	ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 192";
+		rLen = 17;
+		rLoc = 6405;
+		rType = 0;
+		vrLen = 1025;
+		vrLoc = 6239;
 	};
 	ECB72B5F1373487500C4CA0C /* Ngn */ = {
 		activeExec = 0;

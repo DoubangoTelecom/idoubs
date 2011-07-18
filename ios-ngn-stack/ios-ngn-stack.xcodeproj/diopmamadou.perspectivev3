@@ -267,13 +267,11 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
-								<string>ECFD28FA135E7B2E00E6A9A3</string>
-								<string>ECFD3174135E7DBB00E6A9A3</string>
-								<string>ECFD31BD135E7DBB00E6A9A3</string>
-								<string>ECFD31D2135E7DBB00E6A9A3</string>
-								<string>ECFD31E6135E7DBC00E6A9A3</string>
-								<string>ECFD31FA135E7DBC00E6A9A3</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
+								<string>ECFD23BD135D534100E6A9A3</string>
+								<string>ECFD23C0135D534100E6A9A3</string>
+								<string>ECFD23C1135D534100E6A9A3</string>
+								<string>ECFD23C2135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 								<string>1C77FABC04509CD000000102</string>
@@ -281,17 +279,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
-									<integer>19</integer>
-									<integer>9</integer>
-									<integer>7</integer>
-									<integer>5</integer>
-									<integer>3</integer>
-									<integer>0</integer>
+									<integer>105</integer>
+									<integer>104</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {318, 675}}</string>
+							<string>{{0, 1688}, {318, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>tdav_session_video.c</string>
+								<string>NgnSipService.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,23 +327,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>tdav_session_video.c</string>
+										<string>NgnSipService.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECB52BB313D4C66000A2D950</string>
+										<string>ECB52C5F13D4D1E600A2D950</string>
 										<key>history</key>
 										<array>
-											<string>EC4628AB13CDE1E100F70D8F</string>
-											<string>EC4628BC13CDE84E00F70D8F</string>
-											<string>EC4628C213CE000D00F70D8F</string>
-											<string>EC4628D913CE045900F70D8F</string>
-											<string>EC4628DA13CE045900F70D8F</string>
-											<string>ECEB4FA713D16A3F00E97948</string>
-											<string>ECEB4FA813D16A3F00E97948</string>
 											<string>ECEB4FA913D16A3F00E97948</string>
 											<string>ECEB4FAA13D16A3F00E97948</string>
-											<string>ECEB4FAC13D16A3F00E97948</string>
+											<string>ECB52C5713D4D1E600A2D950</string>
+											<string>ECB52C5813D4D1E600A2D950</string>
+											<string>ECB52C5913D4D1E600A2D950</string>
+											<string>ECB52C5A13D4D1E600A2D950</string>
+											<string>ECB52C5B13D4D1E600A2D950</string>
+											<string>ECB52C5C13D4D1E600A2D950</string>
+											<string>ECB52C5D13D4D1E600A2D950</string>
+											<string>ECB52C5E13D4D1E600A2D950</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -445,7 +438,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1079, 246}}</string>
+										<string>{{10, 27}, {1079, 263}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

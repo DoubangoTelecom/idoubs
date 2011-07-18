@@ -282,7 +282,7 @@ public:
 				if (mSipService.sipRegSession && mSipService.sipRegSession.id == _sessionId){
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId 
-							 andEventType:UNREGISTRATION_OK  
+							 andEventType:mSipService.sipRegSession.connectionState == CONN_STATE_TERMINATING ? UNREGISTRATION_OK : REGISTRATION_NOK
 							 andSipCode:_sipCode  
 							 andSipPhrase:phrase];
 					if(_sipCode == 503 && _sipMesssage){//Tiscali on ZTE IMS networks
@@ -333,7 +333,7 @@ public:
 				// Subscription
 				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
-																   andEventType:UNSUBSCRIPTION_OK
+																   andEventType:ngnSipSession.connectionState ==CONN_STATE_TERMINATING ? UNSUBSCRIPTION_OK : SUBSCRIPTION_NOK
 																   andSipCode:_sipCode 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
@@ -344,7 +344,7 @@ public:
 				// Publication
 				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
 					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
-																  andEventType:UNPUBLICATION_OK
+																  andEventType:ngnSipSession.connectionState == CONN_STATE_TERMINATING ? UNPUBLICATION_OK : PUBLICATION_NOK
 																  andSipCode:_sipCode 
 																  andSipPhrase:phrase];
 					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
