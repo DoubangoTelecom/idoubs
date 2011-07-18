@@ -37,6 +37,7 @@
 	ChatViewController *chatViewController;
 	
 	BOOL scheduleRegistration;
+	BOOL nativeABChangedWhileInBackground;
 	
 	BOOL multitaskingSupported;
 }
