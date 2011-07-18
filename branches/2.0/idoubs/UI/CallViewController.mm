@@ -22,6 +22,33 @@
 
 #import "idoubs2AppDelegate.h"
 
+//
+// private implementation
+//
+@interface CallViewController(Private)
++(BOOL) presentSession: (NgnAVSession*)session;
+@end
+
+@implementation CallViewController(Private)
+
++(BOOL) presentSession: (NgnAVSession*)session{
+	if(session){
+		if(isVideoType(session.mediaType)){
+			[idoubs2AppDelegate sharedInstance].videoCallController.sessionId = session.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
+			return YES;
+		}
+		else if(isAudioType(session.mediaType)){
+			[idoubs2AppDelegate sharedInstance].audioCallController.sessionId = session.id;
+			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
+			return YES;
+		}
+	}
+	return NO;
+}
+
+@end
+
 @implementation CallViewController
 
 @synthesize sessionId;
@@ -94,17 +121,12 @@
 }
 
 +(BOOL) receiveIncomingCall: (NgnAVSession*)session{
+	return [CallViewController presentSession:session];
+}
+
++(BOOL) displayCall: (NgnAVSession*)session{
 	if(session){
-		if(isVideoType(session.mediaType)){
-			[idoubs2AppDelegate sharedInstance].videoCallController.sessionId = session.id;
-			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
-			return YES;
-		}
-		else if(isAudioType(session.mediaType)){
-			[idoubs2AppDelegate sharedInstance].audioCallController.sessionId = session.id;
-			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
-			return YES;
-		}
+		return [CallViewController presentSession:session];
 	}
 	return NO;
 }
