@@ -24,6 +24,8 @@
 
 #define kNgnRegistrationEventArgs_Name @"NgnRegistrationEventArgs_Name"
 
+#define kExtraRegistrationEventArgsRetryAfter @"retry-after"
+
 typedef enum NgnRegistrationEventTypes_e {
 	REGISTRATION_OK,
     REGISTRATION_NOK,

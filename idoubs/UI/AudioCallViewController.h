@@ -35,6 +35,7 @@
 	UIButton *buttonNumpad;
 	UIButton *buttonSpeaker;
 	UIButton *buttonHold;
+	UIButton *buttonVideo;
 	UIView *viewOptions;
 	UIView *viewNumpad;
 	
@@ -55,6 +56,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonNumpad;
 @property (retain, nonatomic) IBOutlet UIButton *buttonSpeaker;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHold;
+@property (retain, nonatomic) IBOutlet UIButton *buttonVideo;
 @property (retain, nonatomic) IBOutlet UIView *viewOptions;
 @property (retain, nonatomic) IBOutlet UIView *viewNumpad;
 

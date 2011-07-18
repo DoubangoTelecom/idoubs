@@ -31,5 +31,6 @@
 +(BOOL) makeAudioCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack;
 +(BOOL) makeAudioVideoCallWithRemoteParty: (NSString*) remoteUri andSipStack: (NgnSipStack*) sipStack;
 +(BOOL) receiveIncomingCall: (NgnAVSession*)session;
++(BOOL) displayCall: (NgnAVSession*)session;
 
 @end

@@ -77,7 +77,7 @@
 }
 
 -(void) closeView{
-	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated: NO];
+	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 -(void) updateViewAndState{
@@ -233,6 +233,19 @@
 			[self updateViewAndState];
 			break;
 		}
+		
+		// transilient events
+		case INVITE_EVENT_MEDIA_UPDATING:
+		{
+			self.labelStatus.text = @"Updating...";
+			break;
+		}
+		
+		case INVITE_EVENT_MEDIA_UPDATED:
+		{
+			self.labelStatus.text = @"Updated";
+			break;
+		}
 
 		case INVITE_EVENT_TERMINATED:
 		case INVITE_EVENT_TERMWAIT:
@@ -283,6 +296,7 @@
 @synthesize buttonNumpad;
 @synthesize buttonSpeaker;
 @synthesize buttonHold;
+@synthesize buttonVideo;
 @synthesize labelStatus;
 @synthesize labelRemoteParty;
 @synthesize viewOptions;
@@ -421,6 +435,10 @@
 		else if(sender == buttonHold){
 			[audioSession toggleHoldResume];
 		}
+		else if(sender == buttonVideo){
+			// [audioSession updateSession:MediaType_AudioVideo];
+		}
+
 		else if(sender == buttonNumpad){
 			self.numpadIsVisible = YES;
 		}
@@ -448,6 +466,7 @@
 	[buttonNumpad release];
 	[buttonSpeaker release];
 	[buttonHold release];
+	[buttonVideo release];
 	[viewCenter release];
 	[viewTop release];
 	[viewBottom release];

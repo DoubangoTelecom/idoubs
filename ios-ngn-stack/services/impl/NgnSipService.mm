@@ -82,12 +82,16 @@ public:
 	int OnDialogEvent(const DialogEvent* _e){
 		const char* _phrase = _e->getPhrase();
 		const short _code = _e->getCode();
+		short _sipCode;
 		const SipSession* _session = _e->getBaseSession();
+		const SipMessage* _sipMesssage = _e->getSipMessage();
 		
 		if(!_session){
 			TSK_DEBUG_ERROR("Null Sip session");
 			return -1;
 		}
+		
+		_sipCode = (_sipMesssage && const_cast<SipMessage*>(_sipMesssage)->isResponse()) ? const_cast<SipMessage*>(_sipMesssage)->getResponseCode() : _code;
 		
 		// This is a POSIX thread but thanks to multithreading
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -279,8 +283,15 @@ public:
 					eargs = [[NgnRegistrationEventArgs alloc] 
 							 initWithSessionId:_sessionId 
 							 andEventType:UNREGISTRATION_OK  
-							 andSipCode:_code  
+							 andSipCode:_sipCode  
 							 andSipPhrase:phrase];
+					if(_sipCode == 503 && _sipMesssage){//Tiscali on ZTE IMS networks
+						char* retry_after = const_cast<SipMessage*>(_sipMesssage)->getSipHeaderValue("retry-after", 0);
+						if(retry_after){
+							[eargs putExtraWithKey:kExtraRegistrationEventArgsRetryAfter andValue:[NgnStringUtils toNSString:retry_after]];
+							TSK_FREE(retry_after);
+						}
+					}
 					[mSipService.sipRegSession setConnectionState:CONN_STATE_TERMINATED];
 					[mSipService releaseSipRegSession];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnRegistrationEventArgs_Name object:eargs];
@@ -323,7 +334,7 @@ public:
 				else if ((ngnSipSession = [NgnSubscriptionSession getSessionWithId:_sessionId]) != nil){
 					eargs = [[NgnSubscriptionEventArgs alloc] initWithSessionId:_sessionId 
 																   andEventType:UNSUBSCRIPTION_OK
-																   andSipCode:_code 
+																   andSipCode:_sipCode 
 																   andSipPhrase:phrase 
 																andEventPackage:((NgnSubscriptionSession*)ngnSipSession).eventPackage];
 					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
@@ -334,7 +345,7 @@ public:
 				else if ((ngnSipSession = [NgnPublicationSession getSessionWithId:_sessionId]) != nil){
 					eargs = [(NgnPublicationEventArgs*)[NgnPublicationEventArgs alloc] initWithSessionId:_sessionId 
 																  andEventType:UNPUBLICATION_OK
-																  andSipCode:_code 
+																  andSipCode:_sipCode 
 																  andSipPhrase:phrase];
 					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
 					[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnPublicationEventArgs_Name object:eargs];
@@ -1001,7 +1012,7 @@ private:
 -(BOOL)registerIdentity{
 	NgnNSLog(TAG, @"register()");
 	
-#if defined(RECYCLE_STACK) && RECYCLE_STACK
+#if defined(RECYCLE_STACK) && RECYCLE_STACK // FIXME: This is a workaround because sometimes the client fails to register when you switch from network-1 or network-2
 	if(self->sipStack && (!self->sipRegSession || !self->sipRegSession.connected)){//registration terminated but stack still not destroyed => create new stack
 		NgnNSLog(TAG,@"Recycling the stack");
 		if(self->sipStack.state != STACK_STATE_STOPPED && self->sipStack.state != STACK_STATE_STOPPING){

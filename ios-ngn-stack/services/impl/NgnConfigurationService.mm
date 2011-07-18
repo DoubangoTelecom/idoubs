@@ -122,7 +122,7 @@
 		[defaults registerDefaults:defaults_];
 	}
 	
-	[self computeCodecs];// in case the configuration change will the service was stopped
+	[self computeCodecs];// in case the configuration change while the service was stopped
 	[[NSNotificationCenter defaultCenter] addObserver: self 
 											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 	return YES;
