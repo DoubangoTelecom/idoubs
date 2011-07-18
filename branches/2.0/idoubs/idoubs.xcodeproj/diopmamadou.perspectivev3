@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,13 +275,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>2</integer>
+									<integer>39</integer>
+									<integer>37</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {287, 675}}</string>
+							<string>{{0, 5}, {287, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -311,12 +309,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnSipService.mm</string>
+								<string>idoubs2AppDelegate.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,23 +324,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnSipService.mm</string>
+										<string>idoubs2AppDelegate.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECB52C2013D4CCF800A2D950</string>
+										<string>ECB52C6313D4D1E700A2D950</string>
 										<key>history</key>
 										<array>
-											<string>EC84EA3C13C74B0D0019BE68</string>
 											<string>ECEB4D1813CFE5F800E97948</string>
 											<string>ECEB4D1913CFE5F800E97948</string>
 											<string>ECEB4D2213CFE63A00E97948</string>
 											<string>ECEB4D3813CFE89D00E97948</string>
-											<string>ECEB4D3913CFE89D00E97948</string>
 											<string>ECEB4D4913CFE91B00E97948</string>
 											<string>ECEB4F9C13D16A3E00E97948</string>
 											<string>ECB52C1D13D4CCF800A2D950</string>
-											<string>ECB52C1E13D4CCF800A2D950</string>
+											<string>ECB52C6013D4D1E700A2D950</string>
+											<string>ECB52C6113D4D1E700A2D950</string>
+											<string>ECB52C6213D4D1E700A2D950</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
