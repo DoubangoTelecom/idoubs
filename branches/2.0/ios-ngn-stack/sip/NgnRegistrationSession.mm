@@ -19,6 +19,8 @@
  */
 #import "NgnRegistrationSession.h"
 #import <Foundation/NSDictionary.h>
+#import "NgnEngine.h"
+#import "NgnConfigurationEntry.h"
 
 #import "SipSession.h"
 
@@ -53,8 +55,7 @@
 		}
 		[super initialize];
 		[super setSigCompId: [sipStack getSigCompId]];
-		// FIXME: setExpires
-		_mSession->setExpires(3600);
+		[super setExpires:[[NgnEngine getInstance].configurationService getIntWithKey:NETWORK_REGISTRATION_TIMEOUT]];
 		/* support for 3GPP SMS over IP */
         [super addCapsWithName:@"+g.3gpp.smsip"];
         /* support for OMA Large message (as per OMA SIMPLE IM v1) */

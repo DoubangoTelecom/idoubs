@@ -127,19 +127,20 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 332711532;
-			PBXWorkspaceStateSaveDate = 332711532;
+			PBXPerProjectTemplateStateSaveDate = 332760650;
+			PBXWorkspaceStateSaveDate = 332760650;
 		};
 		perUserProjectItems = {
 			EC80A0CB13C5210300BBC760 = EC80A0CB13C5210300BBC760 /* PBXTextBookmark */;
+			EC824F2113D5864C00280505 /* PBXTextBookmark */ = EC824F2113D5864C00280505 /* PBXTextBookmark */;
 			EC84EA3C13C74B0D0019BE68 = EC84EA3C13C74B0D0019BE68 /* PBXTextBookmark */;
-			ECB52C1D13D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C1D13D4CCF800A2D950 /* PBXTextBookmark */;
-			ECB52C1E13D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C1E13D4CCF800A2D950 /* PBXTextBookmark */;
-			ECB52C2013D4CCF800A2D950 /* PBXTextBookmark */ = ECB52C2013D4CCF800A2D950 /* PBXTextBookmark */;
-			ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */;
-			ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */;
-			ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */;
-			ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */ = ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C1D13D4CCF800A2D950 = ECB52C1D13D4CCF800A2D950 /* PBXTextBookmark */;
+			ECB52C1E13D4CCF800A2D950 = ECB52C1E13D4CCF800A2D950 /* PBXTextBookmark */;
+			ECB52C2013D4CCF800A2D950 = ECB52C2013D4CCF800A2D950 /* PBXTextBookmark */;
+			ECB52C6013D4D1E700A2D950 = ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6113D4D1E700A2D950 = ECB52C6113D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6213D4D1E700A2D950 = ECB52C6213D4D1E700A2D950 /* PBXTextBookmark */;
+			ECB52C6313D4D1E700A2D950 = ECB52C6313D4D1E700A2D950 /* PBXTextBookmark */;
 			ECEB4D1813CFE5F800E97948 = ECEB4D1813CFE5F800E97948 /* PBXTextBookmark */;
 			ECEB4D1913CFE5F800E97948 = ECEB4D1913CFE5F800E97948 /* PBXTextBookmark */;
 			ECEB4D2213CFE63A00E97948 = ECEB4D2213CFE63A00E97948 /* PBXTextBookmark */;
@@ -385,9 +386,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 8021}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 8008}}";
 			sepNavSelRange = "{6405, 17}";
-			sepNavVisRange = "{6239, 1025}";
+			sepNavVisRange = "{6239, 1026}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -420,6 +421,16 @@
 		rType = 0;
 		vrLen = 1466;
 		vrLoc = 10085;
+	};
+	EC824F2113D5864C00280505 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 192";
+		rLen = 17;
+		rLoc = 6405;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 6239;
 	};
 	EC84EA3C13C74B0D0019BE68 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -521,14 +532,10 @@
 	};
 	ECB52C2113D4CCF800A2D950 /* NgnSipService.mm */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
 		name = NgnSipService.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/services/impl/NgnSipService.mm";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1223, 14339}}";
-			sepNavSelRange = "{13089, 0}";
-			sepNavVisRange = "{11758, 1902}";
-		};
 	};
 	ECB52C6013D4D1E700A2D950 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -732,11 +739,6 @@
 		name = tdav_codec_h264.c;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyDAV/src/codecs/h264/tdav_codec_h264.c;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1125, 11258}}";
-			sepNavSelRange = "{7716, 0}";
-			sepNavVisRange = "{6951, 997}";
-		};
 	};
 	ECFD23AB135D519D00E6A9A3 /* idoubs */ = {
 		isa = PBXExecutable;
