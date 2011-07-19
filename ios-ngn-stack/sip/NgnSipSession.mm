@@ -151,6 +151,10 @@
 	}
 }
 
+-(BOOL)setExpires:(unsigned)expires{
+	return [self getSession]->setExpires(expires);
+}
+
 -(SipSession*)getSession{
 	[NSException raise:NSInternalInconsistencyException
 				format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];

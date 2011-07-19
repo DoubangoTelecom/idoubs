@@ -72,6 +72,7 @@ ConnectionState_t;
 -(NSString*)getRemotePartyUri;
 -(void)setRemotePartyUri:(NSString*)uri;
 -(void)setSigCompId:(NSString*)compId;
+-(BOOL)setExpires:(unsigned)expires;
 -(SipSession*)getSession;
 
 @end
