@@ -29,6 +29,7 @@
 #import "services/impl/NgnHttpClientService.h"
 #import "services/impl/NgnStorageService.h"
 #import "services/impl/NgnSipService.h"
+#import "services/impl/NgnSoundService.h"
 
 /* To be completed... */
 
