@@ -27,6 +27,7 @@
 #import "services/INgnSoundService.h"
 
 @interface NgnSoundService : NgnBaseService <INgnSoundService>{
+@private
 	AVAudioPlayer  *playerRingBackTone;
 	AVAudioPlayer  *playerRingTone;
 	AVAudioPlayer  *playerEvent;
