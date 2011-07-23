@@ -51,6 +51,8 @@ class _NgnProxyVideoProducerCallback;
 	BOOL mFirstFrame;
 	BOOL mUseFrontCamera;
 	AVCaptureVideoOrientation mOrientation;
+	NSTimer* mTimerBlankPackets;
+	int mBlankPacketsSent;
 #endif
 }
 
