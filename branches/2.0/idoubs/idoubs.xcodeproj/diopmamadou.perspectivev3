@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC824F2113D5864C00280505</string>
+										<string>ECED2AC513D88D1200B07B4F</string>
 										<key>history</key>
 										<array>
 											<string>ECEB4D1813CFE5F800E97948</string>
@@ -340,7 +340,7 @@
 											<string>ECB52C1D13D4CCF800A2D950</string>
 											<string>ECB52C6013D4D1E700A2D950</string>
 											<string>ECB52C6113D4D1E700A2D950</string>
-											<string>ECB52C6313D4D1E700A2D950</string>
+											<string>ECA6EC4513D73EED00F8DB6F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -354,18 +354,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 540}}</string>
+								<string>{{0, 0}, {1125, 530}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>540pt</string>
+							<string>530pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>148pt</string>
+							<string>158pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -379,7 +379,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 121}}</string>
+										<string>{{10, 27}, {1125, 131}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
@@ -463,11 +463,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC824F2213D5864C00280505</string>
+				<string>ECED2AC613D88D1200B07B4F</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC824F2313D5864C00280505</string>
+				<string>ECED2AC713D88D1200B07B4F</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>EC824F2413D5864C00280505</string>
+				<string>ECED2AC813D88D1200B07B4F</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
