@@ -33,6 +33,8 @@
 #define kDefaultVideoHeight		288
 #define kDefaultVideoFrameRate	15
 
+#define BLANK_PACKETS_TO_SEND   3
+
 @interface NgnProxyVideoProducer(Private)
 -(int) prepareWithWidth:(int) width andHeight: (int)height andFps: (int) fps;
 -(int) start;
@@ -46,6 +48,9 @@
 - (void)stopVideoCapture;
 - (void)startPreview;
 - (void)stopPreview;
+- (void)startBlankPacketsTimer;
+- (void)stopBlankPacketsTimer;
+- (void)timerBlankPacketsTick:(NSTimer*)timer;
 @end
 #endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
 
@@ -245,6 +250,58 @@ private:
 	}
 }
 
+- (void)startBlankPacketsTimer{
+	if(!mTimerBlankPackets){
+		mBlankPacketsSent = 0;
+		mTimerBlankPackets = [NSTimer scheduledTimerWithTimeInterval:0.2
+														  target:self
+														selector:@selector(timerBlankPacketsTick:)
+														userInfo:nil
+														 repeats:YES];
+	}
+}
+
+- (void)stopBlankPacketsTimer{
+	if(mTimerBlankPackets){
+		[mTimerBlankPackets invalidate], mTimerBlankPackets = nil;
+	}
+}
+
+- (void)timerBlankPacketsTick:(NSTimer*)timer{
+	tmedia_producer_t *_producer;
+	if((_producer = (tmedia_producer_t *)tsk_object_ref((void*)_mProducer->getWrappedPlugin()))){
+		uint8_t* buffer_ptr = tsk_null;
+		float buffer_size = 0.f;
+		switch (TMEDIA_PRODUCER(_producer)->video.chroma) {
+			case tmedia_nv12:
+				buffer_size = 1.5f * mWidth * mHeight;
+				break;
+			case tmedia_uyvy422:
+				buffer_size = 2.f * mWidth * mHeight;
+				break;
+			case tmedia_rgb32:
+				buffer_size = 4.f * mWidth * mHeight;
+				break;
+		}
+		if(buffer_size){
+			NSLog(@"Sending Blank packet number %d", mBlankPacketsSent);
+			if((buffer_ptr = (uint8_t*)tsk_calloc(buffer_size, sizeof(uint8_t)))){
+				if(_producer->enc_cb.callback){
+					_producer->enc_cb.callback(_producer->enc_cb.callback_data, buffer_ptr, buffer_size);
+				}
+				TSK_FREE(buffer_ptr);
+			}
+		}
+		
+		tsk_object_unref(_producer);
+	}
+	
+	if(mBlankPacketsSent++ >= BLANK_PACKETS_TO_SEND){
+		[self stopBlankPacketsTimer];
+	}
+}
+
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
 	CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	if(CVPixelBufferLockBaseAddress(pixelBuffer, 0) == kCVReturnSuccess){
@@ -257,6 +314,9 @@ private:
 		tmedia_producer_t* producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
 		
 		if(mFirstFrame && producer){ // Hope will never change
+			// no longer need blank packets
+			[self stopBlankPacketsTimer];
+			
 			producer->video.width = CVPixelBufferGetWidth(pixelBuffer);
 			producer->video.height = CVPixelBufferGetHeight(pixelBuffer);
 			
@@ -312,6 +372,7 @@ private:
 		mUseFrontCamera = YES;
 		mFirstFrame = YES;
 		mOrientation = AVCaptureVideoOrientationPortrait;
+		mBlankPacketsSent = 0;
 #endif
 		
 		mWidth = kDefaultVideoWidth;
@@ -350,6 +411,9 @@ private:
 				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(0);
 				break;
 		}
+		
+		// send blank packets
+		[self performSelectorOnMainThread:@selector(startBlankPacketsTimer) withObject:nil waitUntilDone:NO];
 	}
 	[self startVideoCapture];
 #endif
@@ -367,6 +431,7 @@ private:
 	mStarted = NO;
 	
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+	[self performSelectorOnMainThread:@selector(stopBlankPacketsTimer) withObject:nil waitUntilDone:NO];
 	[self stopVideoCapture];
 #endif
 	return 0;
@@ -453,6 +518,9 @@ private:
 	[mCaptureSession release];
 	[mCaptureDevice release];
 	[mPreview release];
+	if(mTimerBlankPackets){
+		[mTimerBlankPackets invalidate], mTimerBlankPackets = nil;
+	}
 #endif
 	
 	[super dealloc];
