@@ -76,9 +76,29 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Speex-NB</string>
+			<string>Speex (8Khz)</string>
 			<key>Key</key>
 			<string>MEDIA_CODEC_USE_SPEEX_NB</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Speex (16Khz)</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_SPEEX_WB</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Speex (32Khz)</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_SPEEX_UWB</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
