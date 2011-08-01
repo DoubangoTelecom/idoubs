@@ -152,9 +152,9 @@ private:
 	//
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
-                             // [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
-							  [NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
-                              [NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
+                              // [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
+							[NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
+							[NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
 							  
 							  
 							  nil];
@@ -317,8 +317,8 @@ private:
 			// no longer need blank packets
 			[self stopBlankPacketsTimer];
 			
-			producer->video.width = CVPixelBufferGetWidth(pixelBuffer);
-			producer->video.height = CVPixelBufferGetHeight(pixelBuffer);
+			// alert the framework about the camera actual size
+			const_cast<ProxyVideoProducer*>(_mProducer)->setActualCameraOutputSize(CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
 			
 			int pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer);
 			switch (pixelFormat) {
