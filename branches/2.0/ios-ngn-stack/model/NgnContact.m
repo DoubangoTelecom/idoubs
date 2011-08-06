@@ -43,9 +43,9 @@
 		self->displayName = (NSString *)ABRecordCopyCompositeName(record);
 		self->firstName = (NSString*)ABRecordCopyValue(record, kABPersonFirstNameProperty);
 		self->lastName = (NSString*)ABRecordCopyValue(record, kABPersonLastNameProperty);
-		if(ABPersonHasImageData(record)){
-			//--self->picture = (NSData*)ABPersonCopyImageData(record);
-		}
+		//if(ABPersonHasImageData(record)){
+			// self->picture = (NSData*)ABPersonCopyImageData(record);
+		//}
 		// kABPersonModificationDateProperty
 		
 		
