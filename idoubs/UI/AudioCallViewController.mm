@@ -77,7 +77,7 @@
 }
 
 -(void) closeView{
-	[self.parentViewController dismissModalViewControllerAnimated:YES];
+    [[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated:NO];
 }
 
 -(void) updateViewAndState{
@@ -278,7 +278,7 @@
 }
 
 -(void)timerSuicideTick:(NSTimer*)timer{
-	[self closeView];
+    [self performSelectorOnMainThread:@selector(closeView) withObject:nil waitUntilDone:NO];
 }
 
 @end
