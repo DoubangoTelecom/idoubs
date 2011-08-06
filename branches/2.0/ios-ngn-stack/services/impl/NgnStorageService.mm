@@ -172,37 +172,41 @@ static BOOL sDataBaseInitialized = NO;
 }
 
 -(BOOL) databaseClose{
-	if(self->database){
-		sqlite3_close(self->database);
-		self->database = nil;
+	@synchronized(self){
+		if(self->database){
+			sqlite3_close(self->database);
+			self->database = nil;
+		}
 	}
 	return YES;
 }
 
 
 -(BOOL) databaseExecSQL: (NSString*)sqlQuery{
-	BOOL ok = YES;
-	int ret;
-	sqlite3_stmt *compiledStatement;
-	
-	if(!self->database){
-		NgnNSLog(TAG, @"Invalid database");
-		ok = NO;
-		goto done;
-	}
-	
-	if((ret = sqlite3_prepare_v2(self->database, [sqlQuery UTF8String], -1, &compiledStatement, NULL)) == SQLITE_OK) {
-		ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
-	}
-	else {
-		NgnNSLog(TAG, @"error: %s", sqlite3_errmsg(self->database));
-		ok = NO;
-	}
-
-	sqlite3_finalize(compiledStatement);
-	
+	@synchronized(self){
+		BOOL ok = YES;
+		int ret;
+		sqlite3_stmt *compiledStatement;
+		
+		if(!self->database){
+			NgnNSLog(TAG, @"Invalid database");
+			ok = NO;
+			goto done;
+		}
+		
+		if((ret = sqlite3_prepare_v2(self->database, [sqlQuery UTF8String], -1, &compiledStatement, NULL)) == SQLITE_OK) {
+			ok = (SQLITE_DONE == sqlite3_step(compiledStatement));
+		}
+		else {
+			NgnNSLog(TAG, @"error: %s", sqlite3_errmsg(self->database));
+			ok = NO;
+		}
+		
+		sqlite3_finalize(compiledStatement);
+		
 done:
-	return ok;
+		return ok;
+	}
 }
 
 @end

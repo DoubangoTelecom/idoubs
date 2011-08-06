@@ -199,7 +199,7 @@
 
 -(void) closeView{
 	[NgnCamera setPreview:nil];
-	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated: NO];
+	[[idoubs2AppDelegate sharedInstance].tabBarController dismissModalViewControllerAnimated:NO];
 }
 
 -(void) updateVideoOrientation{
@@ -314,7 +314,7 @@
 }
 
 -(void)timerSuicideTick:(NSTimer*)timer{
-	[self closeView];
+    [self performSelectorOnMainThread:@selector(closeView) withObject:nil waitUntilDone:NO];
 }
 
 @end

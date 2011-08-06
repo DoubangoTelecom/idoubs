@@ -14,6 +14,36 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>testAudioCall.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>testAudioUnit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>testMessaging.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>testPresence.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+		<key>testRegistration.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>testVideoCall.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 		<key>tinyDAV.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -92,7 +122,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>EC7D39501379ED2A0052CE45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC81BD4F136C5B3D0068BCB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC83BA13136990B700DD3355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC83BA1B136990C800DD3355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC83BA26136990DA00DD3355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EC84B4BB13613EEE00940BD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC8EBCDD136832D600DC70DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -163,6 +223,11 @@
 			<true/>
 		</dict>
 		<key>ECFD32AD135E821000E6A9A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECFDFB0E13A9675700D4C62A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
