@@ -323,10 +323,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.buttonHangup.layer.cornerRadius = 
-	self.buttonAccept.layer.cornerRadius = 
-	self.buttonHideNumpad.layer.cornerRadius = 
-	10;
+	//self.buttonHangup.layer.cornerRadius = 
+	//self.buttonAccept.layer.cornerRadius = 
+	//self.buttonHideNumpad.layer.cornerRadius = 
+	//10;
 	self.buttonHangup.layer.borderWidth = 
 	self.buttonAccept.layer.borderWidth = 
 	self.buttonHideNumpad.layer.borderWidth = 
@@ -421,15 +421,17 @@
 		}
 		else if(sender == buttonMute){
 			if([audioSession setMute:![audioSession isMuted]]){
-				[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
-													forView:self.buttonMute withBorder:NO];
+				self.buttonMute.selected = [audioSession isMuted];
+				//[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
+				//									forView:self.buttonMute withBorder:NO];
 			}
 		}
 		else if(sender == buttonSpeaker){
 			[audioSession setSpeakerEnabled:![audioSession isSpeakerEnabled]];
 			if([[NgnEngine getInstance].soundService setSpeakerEnabled:[audioSession isSpeakerEnabled]]){
-				[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
-													forView:self.buttonSpeaker withBorder:NO];
+				self.buttonSpeaker.selected = [audioSession isSpeakerEnabled];
+				//[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
+				//									forView:self.buttonSpeaker withBorder:NO];
 			}
 		}
 		else if(sender == buttonHold){
