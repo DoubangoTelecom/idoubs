@@ -84,8 +84,9 @@
 		}
 		else if(view_ == self.viewToolbar){
 			// update content
-			[VideoCallViewController applyGradienWithColors:self->sendingVideo?kColorsBlue:nil forView:self.buttonToolBarVideo];
-			[VideoCallViewController applyGradienWithColors:[videoSession isMuted]?kColorsBlue:nil forView:self.buttonToolBarMute];
+			self.buttonToolBarVideo.selected = self->sendingVideo;
+			self.buttonToolBarMute.selected = [videoSession isMuted];
+			
 		}
 
 	}
@@ -210,16 +211,16 @@
 		
 		switch ([UIDevice currentDevice].orientation) {
 			case UIInterfaceOrientationPortrait:
-				[videoSession setOrientation: AVCaptureVideoOrientationPortrait];
+				[videoSession setOrientation:AVCaptureVideoOrientationPortrait];
 				break;
 			case UIInterfaceOrientationPortraitUpsideDown:
-				[videoSession setOrientation: AVCaptureVideoOrientationPortraitUpsideDown];
+				[videoSession setOrientation:AVCaptureVideoOrientationPortraitUpsideDown];
 				break;
 			case UIInterfaceOrientationLandscapeLeft:
-				[videoSession setOrientation: AVCaptureVideoOrientationLandscapeLeft];
+				[videoSession setOrientation:AVCaptureVideoOrientationLandscapeLeft];
 				break;
 			case UIInterfaceOrientationLandscapeRight:
-				[videoSession setOrientation: AVCaptureVideoOrientationLandscapeRight];
+				[videoSession setOrientation:AVCaptureVideoOrientationLandscapeRight];
 				break;
 		}
 	}
@@ -252,8 +253,8 @@
 			// video session
   			[NgnCamera setPreview:imageViewRemoteVideo];
 			if(sendingVideo){
-				[videoSession setRemoteVideoDisplay: nil];
-				[videoSession setLocalVideoDisplay: nil];
+				[videoSession setRemoteVideoDisplay:nil];
+				[videoSession setLocalVideoDisplay:nil];
 			}
 			break;
 		}
@@ -267,9 +268,9 @@
 			// video session
 			[self updateVideoOrientation];
 			if(sendingVideo){
-				[videoSession setLocalVideoDisplay: viewLocalVideo];
+				[videoSession setLocalVideoDisplay:viewLocalVideo];
 			}
-			[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
+			[videoSession setRemoteVideoDisplay:imageViewRemoteVideo];
 			[NgnCamera setPreview:nil];
 			break;
 		}
@@ -283,19 +284,19 @@
 			
 			// video session
 			if(videoSession){
-				[videoSession setRemoteVideoDisplay: nil];
-				[videoSession setLocalVideoDisplay: nil];
+				[videoSession setRemoteVideoDisplay:nil];
+				[videoSession setLocalVideoDisplay:nil];
 			}
 			[NgnCamera setPreview:imageViewRemoteVideo];
 			
 			// releases session
-			[NgnAVSession releaseSession: &videoSession];
+			[NgnAVSession releaseSession:&videoSession];
 			// starts timer suicide
-			[NSTimer scheduledTimerWithTimeInterval: kCallTimerSuicide
-											 target: self 
-										   selector: @selector(timerSuicideTick:) 
-										   userInfo: nil 
-											repeats: NO];
+			[NSTimer scheduledTimerWithTimeInterval:kCallTimerSuicide
+											 target:self 
+										   selector:@selector(timerSuicideTick:) 
+										   userInfo:nil 
+											repeats:NO];
 			break;
 		}
 	}
@@ -356,7 +357,7 @@
 	
 	self.viewLocalVideo.layer.borderWidth = 2.f;
 	self.viewLocalVideo.layer.borderColor = [[UIColor whiteColor] CGColor];
-	self.viewLocalVideo.layer.cornerRadius = 0.f;
+	// self.viewLocalVideo.layer.cornerRadius = 0.f;
 	
 	self.buttonToolBarEnd.backgroundColor = 
 	self.buttonToolBarMute.backgroundColor =
@@ -369,7 +370,7 @@
 	
 	self.buttonPick.layer.borderWidth = self.buttonHangUp.layer.borderWidth = 2.f;
 	self.buttonPick.layer.borderColor = self.buttonHangUp.layer.borderColor = [[UIColor grayColor] CGColor];
-	self.buttonPick.layer.cornerRadius = self.buttonHangUp.layer.cornerRadius = 8.f;
+	// self.buttonPick.layer.cornerRadius = self.buttonHangUp.layer.cornerRadius = 8.f;
 	
 	// apply light-black gradiens
 	[VideoCallViewController applyGradienWithColors:kColorsLightBlack forView:self.viewTop];
@@ -384,10 +385,10 @@
 	videoSession = [[NgnAVSession getSessionWithId: self.sessionId] retain];
 	if(videoSession){
 		if([videoSession isConnected]){
-			[videoSession setRemoteVideoDisplay: imageViewRemoteVideo];
-			[videoSession setLocalVideoDisplay: self.viewLocalVideo];
+			[videoSession setRemoteVideoDisplay:imageViewRemoteVideo];
+			[videoSession setLocalVideoDisplay:self.viewLocalVideo];
 		}
-		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName : [NgnStringUtils nullValue];
+		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName :[NgnStringUtils nullValue];
 		[[NgnEngine getInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
 	}
 	[self updateViewAndState];
@@ -396,8 +397,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
 	if(videoSession && [videoSession isConnected]){
-		[videoSession setRemoteVideoDisplay: nil];
-		[videoSession setLocalVideoDisplay: nil];
+		[videoSession setRemoteVideoDisplay:nil];
+		[videoSession setLocalVideoDisplay:nil];
 	}
 	[NgnAVSession releaseSession: &videoSession];
 }
@@ -436,7 +437,7 @@
 - (IBAction) onButtonClick: (id)sender{
 	if(videoSession && sender == self.buttonToolBarVideo){
 		sendingVideo = !sendingVideo;
-		[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo : nil];
+		[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo :nil];
 		[self showBottomView:self.viewToolbar shouldRefresh:YES];
 	}
 	else if(videoSession && sender == self.buttonToolBarMute){

@@ -42,7 +42,7 @@ static const NSString* kPublicIdentity = @"sip:3497328625@doubango.org";
 static const BOOL kEnableEarlyIMS = TRUE;
 
 // remote party
-static const NSString* kRemoteParty = @"1";
+static const NSString* kRemoteParty = @"3";
 
 
 //

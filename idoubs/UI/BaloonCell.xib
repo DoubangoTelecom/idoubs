@@ -50,7 +50,7 @@
 							<object class="IBUILabel" id="723892955">
 								<reference key="NSNextResponder" ref="956928998"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 24}, {355, 41}}</string>
+								<string key="NSFrame">{{7, 25}, {355, 41}}</string>
 								<reference key="NSSuperview" ref="956928998"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="201808508">
 									<int key="NSColorSpace">3</int>
@@ -85,7 +85,7 @@
 							<object class="IBUILabel" id="837109248">
 								<reference key="NSNextResponder" ref="956928998"/>
 								<int key="NSvFlags">288</int>
-								<string key="NSFrameSize">{370, 21}</string>
+								<string key="NSFrame">{{0, -1}, {370, 21}}</string>
 								<reference key="NSSuperview" ref="956928998"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -214,7 +214,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>BaloonCell</string>
-					<string>{{456, 454}, {370, 71}}</string>
+					<string>{{496, 733}, {370, 71}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
@@ -443,7 +443,7 @@
 			<integer value="3100" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../wiPhone.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../idoubs.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">141</string>
 	</data>

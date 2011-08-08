@@ -144,7 +144,8 @@
 	return 0.0;
 }
 
-#define kBaloonMargin 20.f
+#define kBaloonOutSideMargin 20.f
+#define kBaloonInSideMargin 4.f
 #define kContentMarginLeft 10.f
 #define kContentMarginRight 10.f
 #define kCellEditMargin		 20.f
@@ -154,53 +155,47 @@
 		self.labelContent.text = event.contentAsString ? event.contentAsString : @"";
 		
 		CGSize constraintSize;
-		constraintSize.width = tableView.frame.size.width - kBaloonMargin /* right */ - (kBaloonMargin * 4) /* left */;
+		constraintSize.width = tableView.frame.size.width - kBaloonOutSideMargin /* right */ - (kBaloonOutSideMargin * 4) /* left */;
 		constraintSize.height = MAXFLOAT;
 		CGSize contentSize = [self.labelContent.text sizeWithFont:self.labelContent.font constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
 		contentSize.width += kContentMarginLeft + kContentMarginRight;
 		
+		UIImageView* imageView = nil;
+		
 		self.labelDate.text = [[NgnDateTimeUtils chatDate] stringFromDate:
 						  [NSDate dateWithTimeIntervalSince1970: event.start]];
-		
-		CAGradientLayer *gradient = [CAGradientLayer layer];
-		gradient.cornerRadius = kCornerRadius;
-		gradient.borderWidth = kBorderWidth;
 
 		switch (event.status) {
 			case HistoryEventStatus_Outgoing:
 			case HistoryEventStatus_Failed:
 			case HistoryEventStatus_Missed:
 			{
-				gradient.colors = [BaloonCell colorsOutgoing];
-				gradient.borderColor = [BaloonCell colorOutgoingBorder];
-				self.labelContent.frame = CGRectMake(tableView.frame.size.width - kBaloonMargin - contentSize.width - (tableView.editing ? + kCellEditMargin : 0.f), 
+				self.labelContent.frame = CGRectMake(kBaloonOutSideMargin + (tableView.editing ? + kCellEditMargin : 0.f), 
 													 self.labelContent.frame.origin.y, 
 													 contentSize.width, 
 													 contentSize.height);
+				imageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:kImageBaloonOut] stretchableImageWithLeftCapWidth:21 topCapHeight:14]];
 				break;
 			}
 			
 			case HistoryEventStatus_Incoming:
 			default:
 			{
-				gradient.colors = [BaloonCell colorsIncoming];
-				gradient.borderColor = [BaloonCell colorIncomingBorder];
-				self.labelContent.frame = CGRectMake(kBaloonMargin + (tableView.editing ? + kCellEditMargin : 0.f), 
+				self.labelContent.frame = CGRectMake(tableView.frame.size.width - kBaloonOutSideMargin - contentSize.width - (tableView.editing ? + kCellEditMargin : 0.f), 
 													 self.labelContent.frame.origin.y, 
 													 contentSize.width, 
 													 contentSize.height);
+				imageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:kImageBaloonIn] stretchableImageWithLeftCapWidth:21 topCapHeight:14]];
 				break;
 			}
 		}// end switch()
 		
-		gradient.frame = self.labelContent.frame;
-		for(CALayer *ly in self.layer.sublayers){
-			if([ly isKindOfClass: [CAGradientLayer class]]){
-				[ly removeFromSuperlayer];
-				break;
-			}
-		}
-		[self.layer insertSublayer:gradient atIndex:0];
+		imageView.frame = CGRectMake(self.labelContent.frame.origin.x - kBaloonInSideMargin, 
+									 self.labelContent.frame.origin.y - kBaloonInSideMargin, 
+									 self.labelContent.frame.size.width + kBaloonInSideMargin, 
+									 self.labelContent.frame.size.height + 2 * kBaloonInSideMargin);
+		[self insertSubview:imageView atIndex:0];
+		[imageView release];
 	}
 }
 
