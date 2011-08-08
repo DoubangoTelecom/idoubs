@@ -26,7 +26,6 @@
 @interface VideoCallViewController : CallViewController {
 	UIImageView *imageViewRemoteVideo;
 	UIView *viewLocalVideo;
-	UIBarButtonItem *barItemVideoOnOff;
 	
 	UIView *viewTop;
 	UILabel *labelRemoteParty;
@@ -48,7 +47,6 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView* imageViewRemoteVideo;
 @property (retain, nonatomic) IBOutlet UIView* viewLocalVideo;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem* barItemVideoOnOff;
 
 @property (retain, nonatomic) IBOutlet UIView* viewTop;
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;

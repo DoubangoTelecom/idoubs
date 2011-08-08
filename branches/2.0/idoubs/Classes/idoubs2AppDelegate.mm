@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along 
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
  */
 #import "idoubs2AppDelegate.h"
 
@@ -179,6 +178,12 @@
 			[[NgnEngine getInstance].soundService setSpeakerEnabled:YES];
 			// tdav_init() will reset codecs set when configurationService started
 			SipStack::setCodecs((tdav_codec_id_t)[[NgnEngine getInstance].configurationService getIntWithKey:MEDIA_CODECS]);
+			// audio codecs
+			SipStack::setCodecPriority(tdav_codec_id_speex_wb, 0);
+			// video codecs
+			SipStack::setCodecPriority(tdav_codec_id_h264_bp30, 0);
+			SipStack::setCodecPriority(tdav_codec_id_h264_bp20, 1);
+			SipStack::setCodecPriority(tdav_codec_id_h263p, 2);
 			break;
 		}
 		default:
