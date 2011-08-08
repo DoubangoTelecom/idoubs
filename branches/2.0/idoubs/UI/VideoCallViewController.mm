@@ -84,7 +84,7 @@
 		}
 		else if(view_ == self.viewToolbar){
 			// update content
-			self.buttonToolBarVideo.selected = self->sendingVideo;
+			self.buttonToolBarVideo.selected = !self->sendingVideo;
 			self.buttonToolBarMute.selected = [videoSession isMuted];
 			
 		}
@@ -324,7 +324,6 @@
 
 @synthesize imageViewRemoteVideo;
 @synthesize viewLocalVideo;
-@synthesize barItemVideoOnOff;
 
 @synthesize viewTop;
 @synthesize labelRemoteParty;
@@ -459,7 +458,6 @@
 - (void)dealloc {
 	[self.imageViewRemoteVideo release];
 	[self.viewLocalVideo release];
-	[self.barItemVideoOnOff release];
 	
 	[self.viewToolbar release];
 	[self.labelRemoteParty release];

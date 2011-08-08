@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="23"/>
 			<integer value="1"/>
+			<integer value="23"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -315,7 +315,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="679510819"/>
 						<reference key="IBUINormalTitleColor" ref="679510819"/>
 						<reference key="IBUINormalTitleShadowColor" ref="974934303"/>
-						<object class="NSCustomResource" key="IBUISelectedImage">
+						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">kp_padSel.png</string>
 						</object>
@@ -331,6 +331,7 @@
 						<reference key="NSSuperview" ref="871662870"/>
 						<reference key="IBUIBackgroundColor" ref="974934303"/>
 						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
@@ -377,6 +378,7 @@
 						<reference key="NSSuperview" ref="871662870"/>
 						<reference key="IBUIBackgroundColor" ref="974934303"/>
 						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
@@ -400,6 +402,7 @@
 						<reference key="NSSuperview" ref="871662870"/>
 						<reference key="IBUIBackgroundColor" ref="974934303"/>
 						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
