@@ -54,5 +54,12 @@ nil]
 
 #define kCallTimerSuicide	1.5f
 
+/* == Images for VideoCall Screen */
+#define kImageVCMute	@"mute"
+#define kImageVCMuteSel	@"muteSel"
+
+#define kImageBaloonIn @"baloon_in"
+#define kImageBaloonOut @"baloon_out"
+
 #endif /* WIPHONE_CONSTATNTS_H */
 

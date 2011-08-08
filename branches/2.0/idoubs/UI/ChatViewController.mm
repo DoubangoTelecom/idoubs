@@ -230,9 +230,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.buttonSend.layer.borderWidth = 2.f;
-	self.buttonSend.layer.borderColor = [[UIColor grayColor] CGColor];
-	self.buttonSend.layer.cornerRadius = 10.f;
+	//self.buttonSend.layer.borderWidth = 2.f;
+	//self.buttonSend.layer.borderColor = [[UIColor grayColor] CGColor];
+	//self.buttonSend.layer.cornerRadius = 10.f;
 	
 	if(self.navigationItem){
 		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" 
