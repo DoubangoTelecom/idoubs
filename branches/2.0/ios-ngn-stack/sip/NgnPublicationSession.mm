@@ -151,6 +151,10 @@
 												andEvent:(NSString*)event_
 												andContentType:(NSString*)contentType_
 {
+	if(!sipStack){
+		TSK_DEBUG_ERROR("Null Sip Stack");
+		return nil;
+	}
 	@synchronized(kSessions){
 		NgnPublicationSession *pubSession = [[NgnPublicationSession alloc] internalInitWithStack:sipStack 
 																					andToUri:toUri_];

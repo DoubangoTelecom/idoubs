@@ -208,6 +208,8 @@
 		ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */; };
 		ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB966C7138FF2C200961D3A /* NgnFavorite.h */; };
 		ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB966C8138FF2C200961D3A /* NgnFavorite.mm */; };
+		ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8813113F373E500A90212 /* tdav_codec_vp8.h */; };
+		ECC8813513F3740000A90212 /* tdav_codec_vp8.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8813413F3740000A90212 /* tdav_codec_vp8.c */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */; };
 		ECDDB5D5137BFCF80027105F /* NgnProxyPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */; };
@@ -2060,6 +2062,8 @@
 		ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavoriteEventArgs.mm; sourceTree = "<group>"; };
 		ECB966C7138FF2C200961D3A /* NgnFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavorite.h; sourceTree = "<group>"; };
 		ECB966C8138FF2C200961D3A /* NgnFavorite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavorite.mm; sourceTree = "<group>"; };
+		ECC8813113F373E500A90212 /* tdav_codec_vp8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_vp8.h; sourceTree = "<group>"; };
+		ECC8813413F3740000A90212 /* tdav_codec_vp8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_vp8.c; sourceTree = "<group>"; };
 		ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
 		ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
 		ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
@@ -3178,7 +3182,6 @@
 		ECFDFAE413A95B6900D4C62A /* NgnSubscriptionEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnSubscriptionEventArgs.h; sourceTree = "<group>"; };
 		ECFDFAE513A95B6900D4C62A /* NgnSubscriptionEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnSubscriptionEventArgs.m; sourceTree = "<group>"; };
 		ECFDFB0F13A9675700D4C62A /* testPresence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPresence.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECFDFB1113A9675700D4C62A /* testPresence-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testPresence-Info.plist"; sourceTree = "<group>"; };
 		ECFDFB1913A9677C00D4C62A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFDFB1A13A9677C00D4C62A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECFDFB1B13A9677C00D4C62A /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -3549,7 +3552,6 @@
 				ECDDBB71137C9C3E0027105F /* CoreVideo.framework */,
 				ECDDBB9B137C9CB40027105F /* CoreMedia.framework */,
 				EC83FF951380A29F00060A9D /* libsqlite3.dylib */,
-				ECFDFB1113A9675700D4C62A /* testPresence-Info.plist */,
 				ECFDFB3B13A968DB00D4C62A /* AddressBookUI.framework */,
 				EC90C9C013B3A530000386CA /* SystemConfiguration.framework */,
 			);
@@ -3739,6 +3741,22 @@
 				ECA6A625137D829F0022AD09 /* NgnDataBase.sql */,
 			);
 			path = storage;
+			sourceTree = "<group>";
+		};
+		ECC8813013F373E500A90212 /* vpx */ = {
+			isa = PBXGroup;
+			children = (
+				ECC8813113F373E500A90212 /* tdav_codec_vp8.h */,
+			);
+			path = vpx;
+			sourceTree = "<group>";
+		};
+		ECC8813313F3740000A90212 /* vpx */ = {
+			isa = PBXGroup;
+			children = (
+				ECC8813413F3740000A90212 /* tdav_codec_vp8.c */,
+			);
+			path = vpx;
 			sourceTree = "<group>";
 		};
 		ECFD23BC135D532A00E6A9A3 /* Classes */ = {
@@ -5763,6 +5781,7 @@
 		ECFD318C135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				ECC8813013F373E500A90212 /* vpx */,
 				ECFD318D135E7DBB00E6A9A3 /* amr */,
 				ECFD318F135E7DBB00E6A9A3 /* bv */,
 				ECFD3192135E7DBB00E6A9A3 /* dtmf */,
@@ -6036,6 +6055,7 @@
 		ECFD31D2135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				ECC8813313F3740000A90212 /* vpx */,
 				ECFD31D3135E7DBB00E6A9A3 /* amr */,
 				ECFD31D5135E7DBB00E6A9A3 /* bv */,
 				ECFD31D8135E7DBB00E6A9A3 /* dtmf */,
@@ -6851,6 +6871,7 @@
 				EC81BDEB136C73F70068BCB4 /* tdav_producer_audiounit.h in Headers */,
 				EC81BDEF136C74220068BCB4 /* tdav_audiounit.h in Headers */,
 				EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */,
+				ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8032,6 +8053,7 @@
 				EC81BDE9136C73DF0068BCB4 /* tdav_consumer_audiounit.c in Sources */,
 				EC81BDED136C74090068BCB4 /* tdav_producer_audiounit.c in Sources */,
 				EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */,
+				ECC8813513F3740000A90212 /* tdav_codec_vp8.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8663,6 +8685,7 @@
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
 					"-DHAVE_FFMPEG=1",
+					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
 				);
@@ -8700,6 +8723,7 @@
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
 					"-DHAVE_FFMPEG=1",
+					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
 				);
@@ -8732,6 +8756,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8771,6 +8796,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8808,6 +8834,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8845,6 +8872,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8885,6 +8913,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8924,6 +8953,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -8964,6 +8994,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -9003,6 +9034,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -9043,6 +9075,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -9082,6 +9115,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -9618,6 +9652,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
@@ -9658,6 +9693,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lvpx",
 					"-lx264",
 					"-lswscale",
 					"-lavcore",
