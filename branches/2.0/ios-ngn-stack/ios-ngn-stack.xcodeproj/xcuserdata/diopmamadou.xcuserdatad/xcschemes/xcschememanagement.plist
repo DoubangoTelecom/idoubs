@@ -79,6 +79,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>tinySAK copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
 		<key>tinySAK.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -118,6 +123,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D2AAC07D0554694100DB518D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC0B501013EDE8070042EB6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
