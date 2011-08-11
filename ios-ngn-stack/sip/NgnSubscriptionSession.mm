@@ -166,6 +166,11 @@
 
 +(NgnSubscriptionSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)toUri_ andPackage:(NgnEventPackageType_t)package
 {
+	if(!sipStack){
+		TSK_DEBUG_ERROR("Null Sip Stack");
+		return nil;
+	}
+	
 	@synchronized(kSessions){
 		NgnSubscriptionSession* subSession = [[[NgnSubscriptionSession alloc] internalInitWithStack:sipStack 
 																						  andToUri:toUri_ 

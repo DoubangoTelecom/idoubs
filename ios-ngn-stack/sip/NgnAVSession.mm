@@ -231,7 +231,7 @@
 			break;
 	}
 	if(_config){
-		delete _config;
+		delete _config, _config = tsk_null;
 	}
 	
 	return ret;

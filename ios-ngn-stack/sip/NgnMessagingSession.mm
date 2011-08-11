@@ -79,6 +79,10 @@
 }
 
 +(NgnMessagingSession*) createOutgoingSessionWithStack: (NgnSipStack*)sipStack andToUri: (NSString*)_toUri{
+	if(!sipStack){
+		TSK_DEBUG_ERROR("Null Sip Stack");
+		return nil;
+	}
 	@synchronized(kSessions){
 		NgnMessagingSession* imSession = [[[NgnMessagingSession alloc] internalInitWithSipStack: sipStack andSession: tsk_null andRemotePartyUri: _toUri] autorelease];
 		if(imSession){

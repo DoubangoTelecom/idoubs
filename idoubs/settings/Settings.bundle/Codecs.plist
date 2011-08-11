@@ -112,6 +112,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>VP8</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_VP8</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>H.263</string>
 			<key>Key</key>
 			<string>MEDIA_CODEC_USE_H263</string>

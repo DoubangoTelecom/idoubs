@@ -17,7 +17,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ECFD23AB135D519D00E6A9A3 /* idoubs */;
-		activeSDKPreference = iphoneos4.3;
+		activeSDKPreference = iphonesimulator4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* idoubs */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* idoubs */,
@@ -127,14 +127,19 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 334471334;
-			PBXWorkspaceStateSaveDate = 334471334;
+			PBXPerProjectTemplateStateSaveDate = 334721923;
+			PBXWorkspaceStateSaveDate = 334721923;
 		};
 		perUserProjectItems = {
-			ECA1830013EFA55000331E0C /* PBXTextBookmark */ = ECA1830013EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830213EFA55000331E0C /* PBXTextBookmark */ = ECA1830213EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830313EFA55000331E0C /* PBXTextBookmark */ = ECA1830313EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830513EFA5B500331E0C /* PBXTextBookmark */ = ECA1830513EFA5B500331E0C /* PBXTextBookmark */;
+			ECA1830013EFA55000331E0C = ECA1830013EFA55000331E0C /* PBXTextBookmark */;
+			ECA1830213EFA55000331E0C = ECA1830213EFA55000331E0C /* PBXTextBookmark */;
+			ECA1830313EFA55000331E0C = ECA1830313EFA55000331E0C /* PBXTextBookmark */;
+			ECA1830513EFA5B500331E0C = ECA1830513EFA5B500331E0C /* PBXTextBookmark */;
+			ECC8810913F3738700A90212 /* PBXTextBookmark */ = ECC8810913F3738700A90212 /* PBXTextBookmark */;
+			ECC881A813F37BCC00A90212 /* PBXTextBookmark */ = ECC881A813F37BCC00A90212 /* PBXTextBookmark */;
+			ECC881A913F37BCC00A90212 /* PBXTextBookmark */ = ECC881A913F37BCC00A90212 /* PBXTextBookmark */;
+			ECC881AB13F37BCC00A90212 /* PlistBookmark */ = ECC881AB13F37BCC00A90212 /* PlistBookmark */;
+			ECC881AD13F37BCC00A90212 /* PlistBookmark */ = ECC881AD13F37BCC00A90212 /* PlistBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -432,6 +437,7 @@
 	};
 	ECA1830113EFA55000331E0C /* NgnSipService.mm */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
 		name = NgnSipService.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/services/impl/NgnSipService.mm";
 		sourceTree = "<absolute>";
@@ -455,9 +461,15 @@
 	};
 	ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
 		name = tsip_dialog_invite.hold.c;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinySIP/src/dialogs/tsip_dialog_invite.hold.c;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 3497}}";
+			sepNavSelRange = "{6772, 0}";
+			sepNavVisRange = "{6249, 883}";
+		};
 	};
 	ECA1830513EFA5B500331E0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -471,6 +483,7 @@
 	};
 	ECA1830613EFA5B500331E0C /* tsip_dialog_invite.hold.c */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
 		name = tsip_dialog_invite.hold.c;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinySIP/src/dialogs/tsip_dialog_invite.hold.c;
 		sourceTree = "<absolute>";
@@ -519,6 +532,77 @@
 			sepNavSelRange = "{976, 0}";
 			sepNavVisRange = "{0, 1467}";
 		};
+	};
+	ECC8810913F3738700A90212 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */;
+		name = "tsip_dialog_invite.hold.c: 197";
+		rLen = 0;
+		rLoc = 6772;
+		rType = 0;
+		vrLen = 883;
+		vrLoc = 6249;
+	};
+	ECC881A813F37BCC00A90212 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */;
+		name = "tsip_dialog_invite.hold.c: 197";
+		rLen = 0;
+		rLoc = 6772;
+		rType = 0;
+		vrLen = 883;
+		vrLoc = 6249;
+	};
+	ECC881A913F37BCC00A90212 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC881AA13F37BCC00A90212 /* ProxyPluginMgr.h */;
+		name = "ProxyPluginMgr.h: 105";
+		rLen = 0;
+		rLoc = 3044;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 2614;
+	};
+	ECC881AA13F37BCC00A90212 /* ProxyPluginMgr.h */ = {
+		isa = PBXFileReference;
+		name = ProxyPluginMgr.h;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/bindings/_common/ProxyPluginMgr.h";
+		sourceTree = "<absolute>";
+	};
+	ECC881AB13F37BCC00A90212 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = ECC881AC13F37BCC00A90212 /* Codecs.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECC881AC13F37BCC00A90212 /* Codecs.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Codecs.plist;
+		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
+		sourceTree = "<absolute>";
+	};
+	ECC881AD13F37BCC00A90212 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = ECC881AE13F37BCC00A90212 /* Codecs.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECC881AE13F37BCC00A90212 /* Codecs.plist */ = {
+		isa = PBXFileReference;
+		name = Codecs.plist;
+		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
+		sourceTree = "<absolute>";
 	};
 	ECFD23AB135D519D00E6A9A3 /* idoubs */ = {
 		isa = PBXExecutable;
@@ -572,11 +656,5 @@
 		lastKnownFileType = sourcecode.c.c;
 		path = tsip_dialog_invite.hold.c;
 		sourceTree = "<group>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1377, 3328}}";
-			sepNavSelRange = "{5406, 20}";
-			sepNavVisRange = "{4837, 909}";
-			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
-		};
 	};
 }
