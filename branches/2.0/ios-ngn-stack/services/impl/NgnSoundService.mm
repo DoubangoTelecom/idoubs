@@ -223,9 +223,11 @@
 		playerKeepAwake = [NgnSoundService initPlayerWithPath:@"keepawake.wav"];
 	}
 	if(playerKeepAwake){
+#if 0
 		UInt32 doSetProperty = 1;
 		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: nil];
 		AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(doSetProperty), &doSetProperty);
+#endif
 		
 		playerKeepAwake.numberOfLoops = looping ? -1 : +1;
 		[playerKeepAwake play];

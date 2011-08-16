@@ -232,7 +232,11 @@ static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNe
 	return mNetworkReachability;
 }
 -(BOOL) isReachable{
-	return (mNetworkReachability & NetworkReachability_Reachable);
+	return (mNetworkReachability & NetworkReachability_Reachable)
+#if TARGET_OS_MAC || TARGET_IPHONE_SIMULATOR
+	&& !(mNetworkReachability & NetworkReachability_ConnectionRequired)
+#endif
+	;
 }
 
 -(void)dealloc{
