@@ -223,11 +223,9 @@
 		playerKeepAwake = [NgnSoundService initPlayerWithPath:@"keepawake.wav"];
 	}
 	if(playerKeepAwake){
-#if 0
-		UInt32 doSetProperty = 1;
+		UInt32 doSetProperty = TRUE;
 		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: nil];
 		AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(doSetProperty), &doSetProperty);
-#endif
 		
 		playerKeepAwake.numberOfLoops = looping ? -1 : +1;
 		[playerKeepAwake play];
@@ -238,6 +236,10 @@
 
 -(BOOL) stopKeepAwakeSound{
 	if(playerKeepAwake && playerKeepAwake.playing){
+		UInt32 doSetProperty = FALSE;
+		[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
+		AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(doSetProperty), &doSetProperty);
+		
 		[playerKeepAwake stop];
 	}
 	return YES;
