@@ -30,6 +30,8 @@
 #import "NgnProxyPlugin.h"
 #import "NgnCamera.h"
 
+#include "tsk_mutex.h"
+
 class ProxyVideoProducer;
 class _NgnProxyVideoProducerCallback;
 
@@ -40,6 +42,7 @@ class _NgnProxyVideoProducerCallback;
 {
 	_NgnProxyVideoProducerCallback* _mCallback;
 	const ProxyVideoProducer * _mProducer;
+	tsk_mutex_handle_t *_mSenderMutex;
 	
 	int mWidth;
 	int mHeight;

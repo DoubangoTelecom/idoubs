@@ -267,24 +267,25 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>ECFD28FA135E7B2E00E6A9A3</string>
+								<string>ECFD3174135E7DBB00E6A9A3</string>
+								<string>ECFD31BD135E7DBB00E6A9A3</string>
+								<string>ECFD31D2135E7DBB00E6A9A3</string>
+								<string>ECFD31E4135E7DBC00E6A9A3</string>
+								<string>ECFD31FA135E7DBC00E6A9A3</string>
 								<string>ECFD23BC135D532A00E6A9A3</string>
-								<string>ECFD23C0135D534100E6A9A3</string>
-								<string>ECFD23C1135D534100E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>9</integer>
-									<integer>8</integer>
-									<integer>4</integer>
-									<integer>0</integer>
+									<integer>94</integer>
+									<integer>78</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 212}, {290, 675}}</string>
+							<string>{{0, 1157}, {290, 675}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -301,7 +302,7 @@
 							<real>290</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-13 144 1440 734 0 0 1440 878 </string>
+						<string>0 144 1440 734 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23C5135D536300E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NgnSoundService.mm</string>
+								<string>tdav_converter_video.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,23 +328,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23C6135D536300E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NgnSoundService.mm</string>
+										<string>tdav_converter_video.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC82249413FB01D200A885F4</string>
+										<string>EC823FF613FDA30B00353156</string>
 										<key>history</key>
 										<array>
-											<string>EC8222F513FAC0E900A885F4</string>
-											<string>EC8222F713FAC0E900A885F4</string>
-											<string>EC8222F913FAC0E900A885F4</string>
 											<string>EC8222FA13FAC0E900A885F4</string>
 											<string>EC82243613FAF91E00A885F4</string>
-											<string>EC82243713FAF91E00A885F4</string>
-											<string>EC82243813FAF91E00A885F4</string>
-											<string>EC82243913FAF91E00A885F4</string>
 											<string>EC82243A13FAF91E00A885F4</string>
-											<string>EC82243B13FAF91E00A885F4</string>
+											<string>EC8224A113FC1CFC00A885F4</string>
+											<string>EC8225A813FC39DC00A885F4</string>
+											<string>EC8225AA13FC39DC00A885F4</string>
+											<string>EC8225AB13FC39DC00A885F4</string>
+											<string>EC82263213FC4CA500A885F4</string>
+											<string>EC82273B13FC81C500A885F4</string>
+											<string>EC82273D13FC81C500A885F4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -357,18 +358,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1128, 425}}</string>
+								<string>{{0, 0}, {1128, 575}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-13 144 1440 734 0 0 1440 878 </string>
+								<string>0 144 1440 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>425pt</string>
+							<string>575pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>263pt</string>
+							<string>113pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -382,9 +383,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1128, 236}}</string>
+										<string>{{10, 27}, {1128, 86}}</string>
 										<key>RubberWindowFrame</key>
-										<string>-13 144 1440 734 0 0 1440 878 </string>
+										<string>0 144 1440 734 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -438,7 +439,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1128, 236}}</string>
+										<string>{{10, 27}, {1128, 83}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -466,11 +467,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC82224613FA8AA800A885F4</string>
+				<string>EC823FE113FDA1F700353156</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC82224713FA8AA800A885F4</string>
+				<string>EC823FE213FDA1F700353156</string>
 				<string>ECFD23C5135D536300E6A9A3</string>
-				<string>EC82224813FA8AA800A885F4</string>
+				<string>EC823FE313FDA1F700353156</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -665,7 +666,7 @@
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-13 144 1440 734 0 0 1440 878 </string>
+	<string>0 144 1440 734 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
