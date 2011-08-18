@@ -35,6 +35,12 @@
 
 #define BLANK_PACKETS_TO_SEND   3
 
+// maxium size for a blank paket
+// under devices without camera there is no way to detect the video stream size
+// we also consider that the chroma is NV12 which is the default one on iPhone4 and 3GS
+// 640x480 => AVCaptureSessionPreset640x480
+static uint8_t kBlankPacketBuffer[(640*480*3)>>1] = { 0 };
+
 @interface NgnProxyVideoProducer(Private)
 -(int) prepareWithWidth:(int) width andHeight: (int)height andFps: (int) fps;
 -(int) start;
@@ -270,28 +276,30 @@ private:
 - (void)timerBlankPacketsTick:(NSTimer*)timer{
 	tmedia_producer_t *_producer;
 	if((_producer = (tmedia_producer_t *)tsk_object_ref((void*)_mProducer->getWrappedPlugin()))){
-		uint8_t* buffer_ptr = tsk_null;
 		float buffer_size = 0.f;
 		switch (TMEDIA_PRODUCER(_producer)->video.chroma) {
 			case tmedia_nv12:
-				buffer_size = 1.5f * mWidth * mHeight;
+				buffer_size = (mWidth * mHeight * 3)>>1;
 				break;
 			case tmedia_uyvy422:
-				buffer_size = 2.f * mWidth * mHeight;
+				buffer_size = (mWidth * mHeight)<<1;
 				break;
 			case tmedia_rgb32:
-				buffer_size = 4.f * mWidth * mHeight;
+				buffer_size = (mWidth * mHeight)<<2;
 				break;
 		}
-		if(buffer_size){
+		if(buffer_size<sizeof(kBlankPacketBuffer)){
 			NSLog(@"Sending Blank packet number %d", mBlankPacketsSent);
-			if((buffer_ptr = (uint8_t*)tsk_calloc(buffer_size, sizeof(uint8_t)))){
-				if(_producer->enc_cb.callback){
-					_producer->enc_cb.callback(_producer->enc_cb.callback_data, buffer_ptr, buffer_size);
-				}
-				TSK_FREE(buffer_ptr);
+			if(_producer->enc_cb.callback){
+				tsk_mutex_lock(_mSenderMutex);
+				_producer->enc_cb.callback(_producer->enc_cb.callback_data, kBlankPacketBuffer, buffer_size);
+				tsk_mutex_unlock(_mSenderMutex);
 			}
 		}
+		else {
+			TSK_DEBUG_ERROR("buffer too big");
+		}
+
 		
 		tsk_object_unref(_producer);
 	}
@@ -318,7 +326,9 @@ private:
 			[self stopBlankPacketsTimer];
 			
 			// alert the framework about the camera actual size
+			tsk_mutex_lock(_mSenderMutex);
 			const_cast<ProxyVideoProducer*>(_mProducer)->setActualCameraOutputSize(CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
+			tsk_mutex_unlock(_mSenderMutex);
 			
 			int pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer);
 			switch (pixelFormat) {
@@ -340,7 +350,9 @@ private:
 		
 		// Send data over the network
 		if(producer && bufferPtr && buffeSize && producer->enc_cb.callback){
+			tsk_mutex_lock(_mSenderMutex);
 			producer->enc_cb.callback(producer->enc_cb.callback_data, bufferPtr, buffeSize);
+			tsk_mutex_unlock(_mSenderMutex);
         }
 		
 		tsk_object_unref(producer);
@@ -374,7 +386,7 @@ private:
 		mOrientation = AVCaptureVideoOrientationPortrait;
 		mBlankPacketsSent = 0;
 #endif
-		
+		_mSenderMutex = tsk_mutex_create_2(tsk_false);
 		mWidth = kDefaultVideoWidth;
 		mHeight = kDefaultVideoHeight;
 		mFps = kDefaultVideoFrameRate;
@@ -513,6 +525,9 @@ private:
 		delete _mCallback, _mCallback = tsk_null;
 	}
 	_mProducer = tsk_null; // you're not the owner
+	if(_mSenderMutex){
+		tsk_mutex_destroy(&_mSenderMutex);
+	}
 	
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 	[mCaptureSession release];
