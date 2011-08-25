@@ -178,6 +178,7 @@
 				
 				[self hideBottomView:self.viewPickHangUp];
 				
+				[[NgnEngine getInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
 				break;
 			}
 			case INVITE_STATE_TERMINATED:
@@ -388,7 +389,6 @@
 			[videoSession setLocalVideoDisplay:self.viewLocalVideo];
 		}
 		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName :[NgnStringUtils nullValue];
-		[[NgnEngine getInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
 	}
 	[self updateViewAndState];
 	[self updateVideoOrientation];
