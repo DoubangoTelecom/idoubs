@@ -210,6 +210,11 @@
 		ECB966CA138FF2C200961D3A /* NgnFavorite.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB966C8138FF2C200961D3A /* NgnFavorite.mm */; };
 		ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8813113F373E500A90212 /* tdav_codec_vp8.h */; };
 		ECC8813513F3740000A90212 /* tdav_codec_vp8.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8813413F3740000A90212 /* tdav_codec_vp8.c */; };
+		ECC8C99614072BA300E0A500 /* g722_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C99314072BA200E0A500 /* g722_decode.c */; };
+		ECC8C99714072BA300E0A500 /* g722_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C99414072BA300E0A500 /* g722_encode.c */; };
+		ECC8C99814072BA300E0A500 /* tdav_codec_g722.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C99514072BA300E0A500 /* tdav_codec_g722.c */; };
+		ECC8C99B14072BB400E0A500 /* g722_enc_dec.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C99914072BB400E0A500 /* g722_enc_dec.h */; };
+		ECC8C99C14072BB400E0A500 /* tdav_codec_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C99A14072BB400E0A500 /* tdav_codec_g722.h */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB5D4137BFCF80027105F /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */; };
 		ECDDB5D5137BFCF80027105F /* NgnProxyPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */; };
@@ -2064,6 +2069,11 @@
 		ECB966C8138FF2C200961D3A /* NgnFavorite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavorite.mm; sourceTree = "<group>"; };
 		ECC8813113F373E500A90212 /* tdav_codec_vp8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_vp8.h; sourceTree = "<group>"; };
 		ECC8813413F3740000A90212 /* tdav_codec_vp8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_vp8.c; sourceTree = "<group>"; };
+		ECC8C99314072BA200E0A500 /* g722_decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_decode.c; sourceTree = "<group>"; };
+		ECC8C99414072BA300E0A500 /* g722_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_encode.c; sourceTree = "<group>"; };
+		ECC8C99514072BA300E0A500 /* tdav_codec_g722.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_g722.c; sourceTree = "<group>"; };
+		ECC8C99914072BB400E0A500 /* g722_enc_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g722_enc_dec.h; sourceTree = "<group>"; };
+		ECC8C99A14072BB400E0A500 /* tdav_codec_g722.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_g722.h; sourceTree = "<group>"; };
 		ECDDB5D2137BFCF80027105F /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
 		ECDDB5D3137BFCF80027105F /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
 		ECDDB5DC137C00330027105F /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
@@ -5839,6 +5849,8 @@
 		ECFD3197135E7DBB00E6A9A3 /* g722 */ = {
 			isa = PBXGroup;
 			children = (
+				ECC8C99914072BB400E0A500 /* g722_enc_dec.h */,
+				ECC8C99A14072BB400E0A500 /* tdav_codec_g722.h */,
 			);
 			path = g722;
 			sourceTree = "<group>";
@@ -6113,6 +6125,9 @@
 		ECFD31DD135E7DBB00E6A9A3 /* g722 */ = {
 			isa = PBXGroup;
 			children = (
+				ECC8C99314072BA200E0A500 /* g722_decode.c */,
+				ECC8C99414072BA300E0A500 /* g722_encode.c */,
+				ECC8C99514072BA300E0A500 /* tdav_codec_g722.c */,
 			);
 			path = g722;
 			sourceTree = "<group>";
@@ -6872,6 +6887,8 @@
 				EC81BDEF136C74220068BCB4 /* tdav_audiounit.h in Headers */,
 				EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */,
 				ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */,
+				ECC8C99B14072BB400E0A500 /* g722_enc_dec.h in Headers */,
+				ECC8C99C14072BB400E0A500 /* tdav_codec_g722.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8054,6 +8071,9 @@
 				EC81BDED136C74090068BCB4 /* tdav_producer_audiounit.c in Sources */,
 				EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */,
 				ECC8813513F3740000A90212 /* tdav_codec_vp8.c in Sources */,
+				ECC8C99614072BA300E0A500 /* g722_decode.c in Sources */,
+				ECC8C99714072BA300E0A500 /* g722_encode.c in Sources */,
+				ECC8C99814072BA300E0A500 /* tdav_codec_g722.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8669,7 +8689,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "";
@@ -8710,7 +8730,7 @@
 				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = (
 					"-DRECYCLE_STACK=1",

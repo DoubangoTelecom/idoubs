@@ -17,7 +17,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ECFD23AB135D519D00E6A9A3 /* idoubs */;
-		activeSDKPreference = iphonesimulator4.3;
+		activeSDKPreference = iphoneos4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* idoubs */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* idoubs */,
@@ -59,7 +59,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					1260,
+					774,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -127,19 +127,19 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 334721923;
-			PBXWorkspaceStateSaveDate = 334721923;
+			PBXPerProjectTemplateStateSaveDate = 335942075;
+			PBXWorkspaceStateSaveDate = 335942075;
 		};
 		perUserProjectItems = {
-			ECA1830013EFA55000331E0C = ECA1830013EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830213EFA55000331E0C = ECA1830213EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830313EFA55000331E0C = ECA1830313EFA55000331E0C /* PBXTextBookmark */;
-			ECA1830513EFA5B500331E0C = ECA1830513EFA5B500331E0C /* PBXTextBookmark */;
-			ECC8810913F3738700A90212 /* PBXTextBookmark */ = ECC8810913F3738700A90212 /* PBXTextBookmark */;
-			ECC881A813F37BCC00A90212 /* PBXTextBookmark */ = ECC881A813F37BCC00A90212 /* PBXTextBookmark */;
-			ECC881A913F37BCC00A90212 /* PBXTextBookmark */ = ECC881A913F37BCC00A90212 /* PBXTextBookmark */;
-			ECC881AB13F37BCC00A90212 /* PlistBookmark */ = ECC881AB13F37BCC00A90212 /* PlistBookmark */;
-			ECC881AD13F37BCC00A90212 /* PlistBookmark */ = ECC881AD13F37BCC00A90212 /* PlistBookmark */;
+			EC82254D13FC30A600A885F4 = EC82254D13FC30A600A885F4 /* PBXTextBookmark */;
+			EC82256013FC315100A885F4 = EC82256013FC315100A885F4 /* PBXTextBookmark */;
+			EC82269C13FC59BB00A885F4 = EC82269C13FC59BB00A885F4 /* PBXTextBookmark */;
+			EC8226A113FC59C200A885F4 = EC8226A113FC59C200A885F4 /* PBXTextBookmark */;
+			EC8226F613FC7A5B00A885F4 = EC8226F613FC7A5B00A885F4 /* PBXTextBookmark */;
+			EC82274113FC81C500A885F4 = EC82274113FC81C500A885F4 /* PBXTextBookmark */;
+			EC82403713FDD24400353156 = EC82403713FDD24400353156 /* PBXTextBookmark */;
+			ECC881A913F37BCC00A90212 = ECC881A913F37BCC00A90212 /* PBXTextBookmark */;
+			ECC8C98F14072B7200E0A500 /* PBXTextBookmark */ = ECC8C98F14072B7200E0A500 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -362,9 +362,9 @@
 	};
 	EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1859, 6032}}";
-			sepNavSelRange = "{1449, 0}";
-			sepNavVisRange = "{1071, 1069}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 6149}}";
+			sepNavSelRange = "{6082, 0}";
+			sepNavVisRange = "{5101, 1100}";
 		};
 	};
 	EC7E2FA21389696C0020EB89 /* idoubs2AppDelegate.h */ = {
@@ -376,9 +376,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 7995}}";
-			sepNavSelRange = "{6052, 186}";
-			sepNavVisRange = "{5295, 1238}";
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 7904}}";
+			sepNavSelRange = "{15428, 0}";
+			sepNavVisRange = "{14610, 1360}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -387,6 +387,130 @@
 			sepNavSelRange = "{2469, 14}";
 			sepNavVisRange = "{107, 2464}";
 		};
+	};
+	EC82254D13FC30A600A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82254E13FC30A600A885F4 /* tdav_codec_h263.c */;
+		name = "tdav_codec_h263.c: 1227";
+		rLen = 0;
+		rLoc = 37981;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 16663;
+	};
+	EC82254E13FC30A600A885F4 /* tdav_codec_h263.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = tdav_codec_h263.c;
+		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyDAV/src/codecs/h263/tdav_codec_h263.c;
+		sourceTree = "<absolute>";
+	};
+	EC82255413FC30A600A885F4 /* _string.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = _string.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/secure/_string.h;
+		sourceTree = "<absolute>";
+	};
+	EC82255913FC30EF00A885F4 /* imgconvert.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = imgconvert.c;
+		path = /Users/diopmamadou/Documents/tmp/ffmpeg/libavcodec/imgconvert.c;
+		sourceTree = "<absolute>";
+	};
+	EC82256013FC315100A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82255413FC30A600A885F4 /* _string.h */;
+		name = "_string.h: 161";
+		rLen = 0;
+		rLoc = 5124;
+		rType = 0;
+		vrLen = 1298;
+		vrLoc = 3826;
+	};
+	EC82269C13FC59BB00A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82255913FC30EF00A885F4 /* imgconvert.c */;
+		name = "imgconvert.c: 1011";
+		rLen = 406;
+		rLoc = 29741;
+		rType = 0;
+		vrLen = 1410;
+		vrLoc = 29298;
+	};
+	EC8226A113FC59C200A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82A5D013F4EE3B00BCCEAC /* swscale_template.c */;
+		name = "swscale_template.c: 2809";
+		rLen = 0;
+		rLoc = 131253;
+		rType = 0;
+		vrLen = 1829;
+		vrLoc = 130611;
+	};
+	EC8226F613FC7A5B00A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC8226F713FC7A5B00A885F4 /* tsk_common.h */;
+		name = "tsk_common.h: 47";
+		rLen = 58;
+		rLoc = 1124;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 839;
+	};
+	EC8226F713FC7A5B00A885F4 /* tsk_common.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = tsk_common.h;
+		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinySAK/src/tsk_common.h;
+		sourceTree = "<absolute>";
+	};
+	EC82274113FC81C500A885F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82A5CE13F4EE3B00BCCEAC /* swscale.c */;
+		name = "swscale.c: 1838";
+		rLen = 0;
+		rLoc = 67996;
+		rType = 0;
+		vrLen = 1134;
+		vrLoc = 67382;
+	};
+	EC82403713FDD24400353156 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82403813FDD24400353156 /* swscale.c */;
+		name = "swscale.c: 1838";
+		rLen = 0;
+		rLoc = 67996;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 67382;
+	};
+	EC82403813FDD24400353156 /* swscale.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = swscale.c;
+		path = /Users/diopmamadou/Documents/tmp/ffmpeg/libswscale/swscale.c;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 25818}}";
+			sepNavSelRange = "{67996, 0}";
+			sepNavVisRange = "{67382, 1132}";
+		};
+	};
+	EC82A5CE13F4EE3B00BCCEAC /* swscale.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = swscale.c;
+		path = /Users/diopmamadou/Documents/tmp/ffmpeg/libswscale/swscale.c;
+		sourceTree = "<absolute>";
+	};
+	EC82A5D013F4EE3B00BCCEAC /* swscale_template.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = swscale_template.c;
+		path = /Users/diopmamadou/Documents/tmp/ffmpeg/libswscale/swscale_template.c;
+		sourceTree = "<absolute>";
 	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
@@ -424,69 +548,6 @@
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
 		};
-	};
-	ECA1830013EFA55000331E0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA1830113EFA55000331E0C /* NgnSipService.mm */;
-		name = "NgnSipService.mm: 571";
-		rLen = 0;
-		rLoc = 24048;
-		rType = 0;
-		vrLen = 1574;
-		vrLoc = 23501;
-	};
-	ECA1830113EFA55000331E0C /* NgnSipService.mm */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.objcpp;
-		name = NgnSipService.mm;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/services/impl/NgnSipService.mm";
-		sourceTree = "<absolute>";
-	};
-	ECA1830213EFA55000331E0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECFD2FB2135E7D8900E6A9A3 /* tsip_dialog_invite.hold.c */;
-		rLen = 0;
-		rLoc = 196;
-		rType = 1;
-	};
-	ECA1830313EFA55000331E0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */;
-		name = "tsip_dialog_invite.hold.c: 197";
-		rLen = 0;
-		rLoc = 6772;
-		rType = 0;
-		vrLen = 943;
-		vrLoc = 6249;
-	};
-	ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = tsip_dialog_invite.hold.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinySIP/src/dialogs/tsip_dialog_invite.hold.c;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 3497}}";
-			sepNavSelRange = "{6772, 0}";
-			sepNavVisRange = "{6249, 883}";
-		};
-	};
-	ECA1830513EFA5B500331E0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA1830613EFA5B500331E0C /* tsip_dialog_invite.hold.c */;
-		name = "tsip_dialog_invite.hold.c: 197";
-		rLen = 0;
-		rLoc = 6772;
-		rType = 0;
-		vrLen = 943;
-		vrLoc = 6249;
-	};
-	ECA1830613EFA5B500331E0C /* tsip_dialog_invite.hold.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = tsip_dialog_invite.hold.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinySIP/src/dialogs/tsip_dialog_invite.hold.c;
-		sourceTree = "<absolute>";
 	};
 	ECB40EF4138E7ABA00EB92A3 /* PhoneEntryCell.h */ = {
 		uiCtxt = {
@@ -533,26 +594,6 @@
 			sepNavVisRange = "{0, 1467}";
 		};
 	};
-	ECC8810913F3738700A90212 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */;
-		name = "tsip_dialog_invite.hold.c: 197";
-		rLen = 0;
-		rLoc = 6772;
-		rType = 0;
-		vrLen = 883;
-		vrLoc = 6249;
-	};
-	ECC881A813F37BCC00A90212 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA1830413EFA55000331E0C /* tsip_dialog_invite.hold.c */;
-		name = "tsip_dialog_invite.hold.c: 197";
-		rLen = 0;
-		rLoc = 6772;
-		rType = 0;
-		vrLen = 883;
-		vrLoc = 6249;
-	};
 	ECC881A913F37BCC00A90212 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ECC881AA13F37BCC00A90212 /* ProxyPluginMgr.h */;
@@ -565,44 +606,20 @@
 	};
 	ECC881AA13F37BCC00A90212 /* ProxyPluginMgr.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = ProxyPluginMgr.h;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/bindings/_common/ProxyPluginMgr.h";
 		sourceTree = "<absolute>";
 	};
-	ECC881AB13F37BCC00A90212 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = ECC881AC13F37BCC00A90212 /* Codecs.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
+	ECC8C98F14072B7200E0A500 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC82403813FDD24400353156 /* swscale.c */;
+		name = "swscale.c: 1838";
 		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	ECC881AC13F37BCC00A90212 /* Codecs.plist */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.plist.xml;
-		name = Codecs.plist;
-		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
-		sourceTree = "<absolute>";
-	};
-	ECC881AD13F37BCC00A90212 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = ECC881AE13F37BCC00A90212 /* Codecs.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	ECC881AE13F37BCC00A90212 /* Codecs.plist */ = {
-		isa = PBXFileReference;
-		name = Codecs.plist;
-		path = /Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/settings/Settings.bundle/Codecs.plist;
-		sourceTree = "<absolute>";
+		rLoc = 67996;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 67382;
 	};
 	ECFD23AB135D519D00E6A9A3 /* idoubs */ = {
 		isa = PBXExecutable;
@@ -649,12 +666,5 @@
 	ECFD23BB135D51A000E6A9A3 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
-	};
-	ECFD2FB2135E7D8900E6A9A3 /* tsip_dialog_invite.hold.c */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = sourcecode.c.c;
-		path = tsip_dialog_invite.hold.c;
-		sourceTree = "<group>";
 	};
 }

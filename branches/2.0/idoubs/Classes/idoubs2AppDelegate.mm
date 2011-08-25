@@ -426,6 +426,8 @@ static dispatch_block_t sExpirationHandler = nil;
 		NgnNSLog(TAG, @"Multitasking IS supported");
 	}
 	
+	MediaSessionMgr::defaultsSetAudioGain(0, 0);
+	
     return YES;
 }
 

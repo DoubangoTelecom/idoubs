@@ -48,7 +48,7 @@ static tmedia_codec_t* codec = tsk_null;
 @synthesize buttonResume;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	
+    
 	// initialize media library
 	tdav_init();
 	// query for audio and video consumer and producer
