@@ -275,8 +275,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
-									<integer>15</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Codecs.plist</string>
+								<string>swscale.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,17 +321,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Codecs.plist</string>
+										<string>swscale.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECC881AD13F37BCC00A90212</string>
+										<string>ECC8C98F14072B7200E0A500</string>
 										<key>history</key>
 										<array>
-											<string>ECA1830013EFA55000331E0C</string>
-											<string>ECC881A813F37BCC00A90212</string>
+											<string>EC82254D13FC30A600A885F4</string>
+											<string>EC82256013FC315100A885F4</string>
+											<string>EC82269C13FC59BB00A885F4</string>
+											<string>EC8226A113FC59C200A885F4</string>
+											<string>EC8226F613FC7A5B00A885F4</string>
 											<string>ECC881A913F37BCC00A90212</string>
-											<string>ECC881AB13F37BCC00A90212</string>
+											<string>EC82403713FDD24400353156</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -345,18 +348,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 468}}</string>
+								<string>{{0, 0}, {1125, 516}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>468pt</string>
+							<string>516pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>220pt</string>
+							<string>172pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -370,7 +373,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 193}}</string>
+										<string>{{10, 27}, {1125, 145}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
@@ -426,7 +429,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 193}}</string>
+										<string>{{10, 27}, {1125, 135}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -454,11 +457,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECC8810A13F3738700A90212</string>
+				<string>ECC8C99014072B7200E0A500</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECC8810B13F3738700A90212</string>
+				<string>ECC8C99114072B7200E0A500</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECC8810C13F3738700A90212</string>
+				<string>ECC8C99214072B7200E0A500</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -607,14 +610,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECC881AF13F37BCC00A90212</string>
+				<string>EC82403C13FDD24400353156</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>ECC881B013F37BCC00A90212</string>
-				<string>ECC881B113F37BCC00A90212</string>
-				<string>ECC881B213F37BCC00A90212</string>
-				<string>ECC881B313F37BCC00A90212</string>
-				<string>ECC881B413F37BCC00A90212</string>
+				<string>EC82403D13FDD24400353156</string>
+				<string>EC82403E13FDD24400353156</string>
+				<string>EC82403F13FDD24400353156</string>
+				<string>EC82404013FDD24400353156</string>
+				<string>EC82404113FDD24400353156</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -648,8 +651,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECC881B513F37BCC00A90212</string>
-		<string>ECC881B613F37BCC00A90212</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
