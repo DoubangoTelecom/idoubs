@@ -204,6 +204,10 @@
 		ECA9F27713AAAD5500059FDA /* NgnPublicationEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */; };
 		ECA9F27813AAAD5500059FDA /* NgnPublicationEventArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */; };
 		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
+		ECB37088141815D4006E6811 /* tdav_consumer_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB37086141815D4006E6811 /* tdav_consumer_video.c */; };
+		ECB37089141815D4006E6811 /* tdav_video_jitterbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB37087141815D4006E6811 /* tdav_video_jitterbuffer.c */; };
+		ECB3708C141815EB006E6811 /* tdav_consumer_video.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3708A141815EB006E6811 /* tdav_consumer_video.h */; };
+		ECB3708D141815EB006E6811 /* tdav_video_jitterbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3708B141815EB006E6811 /* tdav_video_jitterbuffer.h */; };
 		ECB96666138FC22800961D3A /* NgnFavoriteEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */; };
 		ECB96667138FC22800961D3A /* NgnFavoriteEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */; };
 		ECB966C9138FF2C200961D3A /* NgnFavorite.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB966C7138FF2C200961D3A /* NgnFavorite.h */; };
@@ -2063,6 +2067,10 @@
 		ECA6A63E137D8DDF0022AD09 /* NgnHistorySMSEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnHistorySMSEvent.mm; sourceTree = "<group>"; };
 		ECA9F27513AAAD5500059FDA /* NgnPublicationEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnPublicationEventArgs.h; sourceTree = "<group>"; };
 		ECA9F27613AAAD5500059FDA /* NgnPublicationEventArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnPublicationEventArgs.m; sourceTree = "<group>"; };
+		ECB37086141815D4006E6811 /* tdav_consumer_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_video.c; sourceTree = "<group>"; };
+		ECB37087141815D4006E6811 /* tdav_video_jitterbuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_jitterbuffer.c; sourceTree = "<group>"; };
+		ECB3708A141815EB006E6811 /* tdav_consumer_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_video.h; sourceTree = "<group>"; };
+		ECB3708B141815EB006E6811 /* tdav_video_jitterbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_video_jitterbuffer.h; sourceTree = "<group>"; };
 		ECB96664138FC22800961D3A /* NgnFavoriteEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavoriteEventArgs.h; sourceTree = "<group>"; };
 		ECB96665138FC22800961D3A /* NgnFavoriteEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnFavoriteEventArgs.mm; sourceTree = "<group>"; };
 		ECB966C7138FF2C200961D3A /* NgnFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnFavorite.h; sourceTree = "<group>"; };
@@ -5956,6 +5964,8 @@
 		ECFD31B4135E7DBB00E6A9A3 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				ECB3708A141815EB006E6811 /* tdav_consumer_video.h */,
+				ECB3708B141815EB006E6811 /* tdav_video_jitterbuffer.h */,
 				ECFD31B5135E7DBB00E6A9A3 /* android */,
 				ECFD31B6135E7DBB00E6A9A3 /* directshow */,
 				ECFD31B7135E7DBB00E6A9A3 /* tdav_converter_video.h */,
@@ -6239,6 +6249,8 @@
 				ECFD31FD135E7DBC00E6A9A3 /* tdav_converter_video.c */,
 				ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */,
 				ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */,
+				ECB37086141815D4006E6811 /* tdav_consumer_video.c */,
+				ECB37087141815D4006E6811 /* tdav_video_jitterbuffer.c */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -6889,6 +6901,8 @@
 				ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */,
 				ECC8C99B14072BB400E0A500 /* g722_enc_dec.h in Headers */,
 				ECC8C99C14072BB400E0A500 /* tdav_codec_g722.h in Headers */,
+				ECB3708C141815EB006E6811 /* tdav_consumer_video.h in Headers */,
+				ECB3708D141815EB006E6811 /* tdav_video_jitterbuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8074,6 +8088,8 @@
 				ECC8C99614072BA300E0A500 /* g722_decode.c in Sources */,
 				ECC8C99714072BA300E0A500 /* g722_encode.c in Sources */,
 				ECC8C99814072BA300E0A500 /* tdav_codec_g722.c in Sources */,
+				ECB37088141815D4006E6811 /* tdav_consumer_video.c in Sources */,
+				ECB37089141815D4006E6811 /* tdav_video_jitterbuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

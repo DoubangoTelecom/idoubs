@@ -228,7 +228,52 @@ done:
 }
 
 -(BOOL) updateEvent: (NgnHistoryEvent*) event{
-	return NO;
+	BOOL ok = YES;
+	static const char* sqlStatement = "UPDATE hist_event SET seen = ?, status = ?, mediaType = ?, remoteParty = ?, start = ?, end = ?, content = ? WHERE id = ?";
+	sqlite3_stmt *compiledStatement;
+	int ret;
+	NgnBaseService<INgnStorageService>* storageService = [[NgnEngine getInstance].storageService retain];
+	if(![storageService database]){
+		NgnNSLog(TAG, @"Invalid database");
+		ok = NO;
+		goto done;
+	}
+	
+	if(sqlStatement){
+		if((ret = sqlite3_prepare_v2([storageService database], sqlStatement, -1, &compiledStatement, NULL)) == SQLITE_OK) {
+			sqlite3_bind_int(compiledStatement, 1, event.seen ? 1 : 0);
+			sqlite3_bind_int(compiledStatement, 2, (int)event.status);
+			sqlite3_bind_int(compiledStatement, 3, (int)event.mediaType);
+			sqlite3_bind_text(compiledStatement, 4, [NgnStringUtils toCString: event.remoteParty], -1, SQLITE_TRANSIENT);
+			sqlite3_bind_double(compiledStatement, 5, event.start);
+			sqlite3_bind_double(compiledStatement, 6, event.end);
+			if([event isKindOfClass: [NgnHistorySMSEvent class]]){
+				sqlite3_bind_blob(compiledStatement, 7, [((NgnHistorySMSEvent*)event).content bytes], [((NgnHistorySMSEvent*)event).content length], SQLITE_STATIC);
+			}
+			else {
+				sqlite3_bind_null(compiledStatement, 7);
+			}
+			sqlite3_bind_int(compiledStatement, 8, event.id);
+			
+			ok = ((ret = sqlite3_step(compiledStatement))==SQLITE_DONE);
+		}
+		sqlite3_finalize(compiledStatement);
+		
+		if(ok){
+			// alert listeners
+			NgnHistoryEventArgs *eargs = [[NgnHistoryEventArgs alloc] initWithEventId: event.id andEventType: HISTORY_EVENT_ITEM_UPDATED];
+			eargs.mediaType = event.mediaType;
+			[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnHistoryEventArgs_Name object:eargs];
+			[eargs release];
+		}
+	}
+	else {
+		ok = NO;
+	}
+	
+done:
+	[storageService release];
+	return ok;
 }
 
 -(BOOL) deleteEvent: (NgnHistoryEvent*) event{

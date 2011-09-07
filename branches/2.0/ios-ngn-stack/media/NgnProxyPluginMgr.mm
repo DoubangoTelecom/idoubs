@@ -180,9 +180,9 @@ done:
 @implementation NgnProxyPluginMgr
 
 +(void) initialize{
-	ProxyVideoConsumer::setDefaultChroma(tmedia_rgb32);
+	ProxyVideoConsumer::setDefaultChroma(tmedia_chroma_rgb32);
 	ProxyVideoConsumer::setDefaultAutoResizeDisplay(YES);
-	ProxyVideoProducer::setDefaultChroma(tmedia_nv12);
+	ProxyVideoProducer::setDefaultChroma(tmedia_chroma_nv12);
 	
 	ProxyVideoProducer::registerPlugin();
 	ProxyVideoConsumer::registerPlugin();
