@@ -63,7 +63,7 @@
 		{
 			mEventIncoming = YES;
 			if(event){
-				event.status = HistoryEventStatus_Incoming;
+				event.status = HistoryEventStatus_Missed;
 			}
 			break;
 		}

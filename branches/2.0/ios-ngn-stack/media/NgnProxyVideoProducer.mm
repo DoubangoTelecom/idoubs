@@ -278,13 +278,13 @@ private:
 	if((_producer = (tmedia_producer_t *)tsk_object_ref((void*)_mProducer->getWrappedPlugin()))){
 		float buffer_size = 0.f;
 		switch (TMEDIA_PRODUCER(_producer)->video.chroma) {
-			case tmedia_nv12:
+			case tmedia_chroma_nv12:
 				buffer_size = (mWidth * mHeight * 3)>>1;
 				break;
-			case tmedia_uyvy422:
+			case tmedia_chroma_uyvy422:
 				buffer_size = (mWidth * mHeight)<<1;
 				break;
-			case tmedia_rgb32:
+			case tmedia_chroma_rgb32:
 				buffer_size = (mWidth * mHeight)<<2;
 				break;
 		}
@@ -333,15 +333,15 @@ private:
 			int pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer);
 			switch (pixelFormat) {
 				case kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange:
-					producer->video.chroma = tmedia_nv12; // iPhone 3GS or 4
+					producer->video.chroma = tmedia_chroma_nv12; // iPhone 3GS or 4
 					NgnNSLog(TAG,@"Capture pixel format=NV12");
 					break;
 				case kCVPixelFormatType_422YpCbCr8:
-					producer->video.chroma = tmedia_uyvy422; // iPhone 3
+					producer->video.chroma = tmedia_chroma_uyvy422; // iPhone 3
 					NgnNSLog(TAG,@"Capture pixel format=UYUY422");
 					break;
 				default:
-					producer->video.chroma = tmedia_rgb32;
+					producer->video.chroma = tmedia_chroma_rgb32;
 					NgnNSLog(TAG,@"Capture pixel format=RGB32");
 					break;
 			}
