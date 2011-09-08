@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>tdav_converter_video.c</string>
+								<string>NgnProxyVideoProducer.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,12 +321,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>tdav_converter_video.c</string>
-										<key>history</key>
-										<array>
-											<string>EC82256013FC315100A885F4</string>
-											<string>EC82269C13FC59BB00A885F4</string>
-										</array>
+										<string>NgnProxyVideoProducer.mm</string>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>
@@ -339,18 +334,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1125, 500}}</string>
+								<string>{{0, 0}, {1125, 476}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 144 1434 734 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>500pt</string>
+							<string>476pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>188pt</string>
+							<string>212pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -364,7 +359,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 161}}</string>
+										<string>{{10, 27}, {1125, 185}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 144 1434 734 0 0 1440 878 </string>
 									</dict>
@@ -382,7 +377,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 134}}</string>
+										<string>{{10, 27}, {1125, 179}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -400,7 +395,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1125, 179}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXCVSModule</string>
@@ -420,7 +415,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1125, 150}}</string>
+										<string>{{10, 27}, {1125, 167}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -448,11 +443,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECB37044141813CA006E6811</string>
+				<string>EC85E5931419911B00675F7E</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECB37045141813CA006E6811</string>
+				<string>EC85E5941419911B00675F7E</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECB37046141813CA006E6811</string>
+				<string>EC85E5951419911B00675F7E</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -601,14 +596,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC8A3AC81416C3030017FEA4</string>
+				<string>EC85E5791419910C00675F7E</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC8A3AC91416C3030017FEA4</string>
-				<string>EC8A3ACA1416C3030017FEA4</string>
-				<string>EC8A3ACB1416C3030017FEA4</string>
-				<string>EC8A3ACC1416C3030017FEA4</string>
-				<string>ECFD23B4135D51A000E6A9A3</string>
+				<string>EC85E57A1419910C00675F7E</string>
+				<string>EC85E57B1419910C00675F7E</string>
+				<string>EC85E57C1419910C00675F7E</string>
+				<string>EC85E57D1419910C00675F7E</string>
+				<string>EC85E57E1419910C00675F7E</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>

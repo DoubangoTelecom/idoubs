@@ -57,6 +57,7 @@ static uint8_t kBlankPacketBuffer[(640*480*3)>>1] = { 0 };
 - (void)startBlankPacketsTimer;
 - (void)stopBlankPacketsTimer;
 - (void)timerBlankPacketsTick:(NSTimer*)timer;
+- (void)sendQueuedPacket;
 @end
 #endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
 
@@ -159,8 +160,8 @@ private:
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
                               // [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
-							[NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
-							[NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
+							  [NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
+							  [NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
 							  
 							  
 							  nil];
@@ -169,7 +170,7 @@ private:
     avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
 	avCaptureVideoDataOutput.alwaysDiscardsLateVideoFrames = YES;
     
-    dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs", NULL);
+    dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs.producer.captureoutput", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
     [mCaptureSession addOutput:avCaptureVideoDataOutput];
 	
@@ -179,6 +180,13 @@ private:
 	//	if(captureConnection.supportsVideoOrientation) {
 	//		captureConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
 	//	}
+	//}
+	
+	// torch
+	//if([mCaptureDevice isTorchModeSupported:AVCaptureTorchModeOn]) {  
+	//	[mCaptureDevice lockForConfiguration:nil];  
+	//	mCaptureDevice.torchMode=AVCaptureTorchModeOn;  
+	//	[mCaptureDevice unlockForConfiguration];  
 	//}
 	
     [avCaptureVideoDataOutput release];
@@ -260,10 +268,10 @@ private:
 	if(!mTimerBlankPackets){
 		mBlankPacketsSent = 0;
 		mTimerBlankPackets = [NSTimer scheduledTimerWithTimeInterval:0.2
-														  target:self
-														selector:@selector(timerBlankPacketsTick:)
-														userInfo:nil
-														 repeats:YES];
+															  target:self
+															selector:@selector(timerBlankPacketsTick:)
+															userInfo:nil
+															 repeats:YES];
 	}
 }
 
@@ -291,15 +299,17 @@ private:
 		if(buffer_size<sizeof(kBlankPacketBuffer)){
 			NSLog(@"Sending Blank packet number %d", mBlankPacketsSent);
 			if(_producer->enc_cb.callback){
-				tsk_mutex_lock(_mSenderMutex);
-				_producer->enc_cb.callback(_producer->enc_cb.callback_data, kBlankPacketBuffer, buffer_size);
-				tsk_mutex_unlock(_mSenderMutex);
+				dispatch_sync(_mSenderQueue, ^{
+					tsk_mutex_lock(_mSenderMutex);
+					_producer->enc_cb.callback(_producer->enc_cb.callback_data, kBlankPacketBuffer, buffer_size);
+					tsk_mutex_unlock(_mSenderMutex);
+				});
 			}
 		}
 		else {
 			TSK_DEBUG_ERROR("buffer too big");
 		}
-
+		
 		
 		tsk_object_unref(_producer);
 	}
@@ -309,6 +319,20 @@ private:
 	}
 }
 
+-(void)sendQueuedPacket{
+	tsk_list_lock(_mSenderPackets);
+	
+	tsk_list_item_t *item = tsk_list_pop_first_item(_mSenderPackets);
+	if(item){
+		tmedia_producer_t* _wrapped_producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
+		if(_wrapped_producer){
+			_wrapped_producer->enc_cb.callback(_wrapped_producer->enc_cb.callback_data, TSK_BUFFER_DATA(item->data), TSK_BUFFER_SIZE(item->data));
+		}
+		TSK_OBJECT_SAFE_FREE(item);
+	}
+	
+	tsk_list_unlock(_mSenderPackets);
+}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
 	CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
@@ -348,11 +372,16 @@ private:
 			mFirstFrame = NO;
 		}
 		
-		// Send data over the network
+		// create new packet and push it into the queue
+		tsk_buffer_t *_packet = tsk_buffer_create(bufferPtr, buffeSize);
+		tsk_list_push_back_data(_mSenderPackets, (void**)&_packet);
+		TSK_OBJECT_SAFE_FREE(_packet);
+		
+		// send data over the network
 		if(producer && bufferPtr && buffeSize && producer->enc_cb.callback){
-			tsk_mutex_lock(_mSenderMutex);
-			producer->enc_cb.callback(producer->enc_cb.callback_data, bufferPtr, buffeSize);
-			tsk_mutex_unlock(_mSenderMutex);
+			dispatch_sync(_mSenderQueue, ^{
+				[self sendQueuedPacket];
+			});
         }
 		
 		tsk_object_unref(producer);
@@ -385,8 +414,9 @@ private:
 		mFirstFrame = YES;
 		mOrientation = AVCaptureVideoOrientationPortrait;
 		mBlankPacketsSent = 0;
-#endif
 		_mSenderMutex = tsk_mutex_create_2(tsk_false);
+		_mSenderPackets = tsk_list_create();
+#endif
 		mWidth = kDefaultVideoWidth;
 		mHeight = kDefaultVideoHeight;
 		mFps = kDefaultVideoFrameRate;
@@ -426,6 +456,11 @@ private:
 		
 		// send blank packets
 		[self performSelectorOnMainThread:@selector(startBlankPacketsTimer) withObject:nil waitUntilDone:NO];
+	}
+	if(!_mSenderQueue){
+		_mSenderQueue = dispatch_queue_create("org.doubango.idoubs.producer.sender", NULL);
+		dispatch_queue_t high_prio_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+		dispatch_set_target_queue(_mSenderQueue, high_prio_queue);
 	}
 	[self startVideoCapture];
 #endif
@@ -487,7 +522,7 @@ private:
 			[self startPreview];
 		}
 	}
-
+	
 #endif
 }
 
@@ -525,9 +560,6 @@ private:
 		delete _mCallback, _mCallback = tsk_null;
 	}
 	_mProducer = tsk_null; // you're not the owner
-	if(_mSenderMutex){
-		tsk_mutex_destroy(&_mSenderMutex);
-	}
 	
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 	[mCaptureSession release];
@@ -536,6 +568,13 @@ private:
 	if(mTimerBlankPackets){
 		[mTimerBlankPackets invalidate], mTimerBlankPackets = nil;
 	}
+	if(_mSenderQueue){
+		dispatch_release(_mSenderQueue);
+	}
+	if(_mSenderMutex){
+		tsk_mutex_destroy(&_mSenderMutex);
+	}
+	TSK_OBJECT_SAFE_FREE(_mSenderPackets);
 #endif
 	
 	[super dealloc];
