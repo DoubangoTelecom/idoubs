@@ -175,8 +175,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 337122259;
-			PBXWorkspaceStateSaveDate = 337122259;
+			PBXPerProjectTemplateStateSaveDate = 337219897;
+			PBXWorkspaceStateSaveDate = 337219897;
 		};
 		perUserProjectItems = {
 			EC8225AB13FC39DC00A885F4 = EC8225AB13FC39DC00A885F4 /* PBXTextBookmark */;
@@ -185,21 +185,21 @@
 			EC82403213FDD24300353156 = EC82403213FDD24300353156 /* PBXTextBookmark */;
 			EC82403313FDD24300353156 = EC82403313FDD24300353156 /* PBXTextBookmark */;
 			EC82403413FDD24300353156 = EC82403413FDD24300353156 /* PBXTextBookmark */;
-			ECB370E114181C06006E6811 /* PBXTextBookmark */ = ECB370E114181C06006E6811 /* PBXTextBookmark */;
-			ECB370E214181C06006E6811 /* PBXTextBookmark */ = ECB370E214181C06006E6811 /* PBXTextBookmark */;
-			ECB370E314181C06006E6811 /* PBXTextBookmark */ = ECB370E314181C06006E6811 /* PBXTextBookmark */;
-			ECB370E414181C06006E6811 /* PBXTextBookmark */ = ECB370E414181C06006E6811 /* PBXTextBookmark */;
-			ECB370E514181C06006E6811 /* PBXTextBookmark */ = ECB370E514181C06006E6811 /* PBXTextBookmark */;
-			ECB370E614181C06006E6811 /* PBXTextBookmark */ = ECB370E614181C06006E6811 /* PBXTextBookmark */;
-			ECB370E714181C06006E6811 /* PBXTextBookmark */ = ECB370E714181C06006E6811 /* PBXTextBookmark */;
-			ECB370E814181C06006E6811 /* PBXTextBookmark */ = ECB370E814181C06006E6811 /* PBXTextBookmark */;
-			ECB370E914181C06006E6811 /* PBXTextBookmark */ = ECB370E914181C06006E6811 /* PBXTextBookmark */;
-			ECB370EA14181C07006E6811 /* PBXTextBookmark */ = ECB370EA14181C07006E6811 /* PBXTextBookmark */;
-			ECB370ED14181C5D006E6811 /* PBXTextBookmark */ = ECB370ED14181C5D006E6811 /* PBXTextBookmark */;
-			ECB370EE14181C5D006E6811 /* PBXTextBookmark */ = ECB370EE14181C5D006E6811 /* PBXTextBookmark */;
-			ECB370EF14181C5D006E6811 /* PBXTextBookmark */ = ECB370EF14181C5D006E6811 /* PBXTextBookmark */;
-			ECB370F014181CCF006E6811 /* PBXTextBookmark */ = ECB370F014181CCF006E6811 /* PBXTextBookmark */;
-			ECB370F114181CCF006E6811 /* PBXTextBookmark */ = ECB370F114181CCF006E6811 /* PBXTextBookmark */;
+			ECB370E114181C06006E6811 = ECB370E114181C06006E6811 /* PBXTextBookmark */;
+			ECB370E214181C06006E6811 = ECB370E214181C06006E6811 /* PBXTextBookmark */;
+			ECB370E314181C06006E6811 = ECB370E314181C06006E6811 /* PBXTextBookmark */;
+			ECB370E414181C06006E6811 = ECB370E414181C06006E6811 /* PBXTextBookmark */;
+			ECB370E514181C06006E6811 = ECB370E514181C06006E6811 /* PBXTextBookmark */;
+			ECB370E614181C06006E6811 = ECB370E614181C06006E6811 /* PBXTextBookmark */;
+			ECB370E714181C06006E6811 = ECB370E714181C06006E6811 /* PBXTextBookmark */;
+			ECB370E814181C06006E6811 = ECB370E814181C06006E6811 /* PBXTextBookmark */;
+			ECB370E914181C06006E6811 = ECB370E914181C06006E6811 /* PBXTextBookmark */;
+			ECB370EA14181C07006E6811 = ECB370EA14181C07006E6811 /* PBXTextBookmark */;
+			ECB370ED14181C5D006E6811 = ECB370ED14181C5D006E6811 /* PBXTextBookmark */;
+			ECB370EE14181C5D006E6811 = ECB370EE14181C5D006E6811 /* PBXTextBookmark */;
+			ECB370EF14181C5D006E6811 = ECB370EF14181C5D006E6811 /* PBXTextBookmark */;
+			ECB370F014181CCF006E6811 = ECB370F014181CCF006E6811 /* PBXTextBookmark */;
+			ECB370F114181CCF006E6811 = ECB370F114181CCF006E6811 /* PBXTextBookmark */;
 			ECC0A8331404348D00CE6E9E = ECC0A8331404348D00CE6E9E /* PBXTextBookmark */;
 			ECC0A8341404348D00CE6E9E = ECC0A8341404348D00CE6E9E /* PBXTextBookmark */;
 			ECC0A8351404348D00CE6E9E = ECC0A8351404348D00CE6E9E /* PBXTextBookmark */;
@@ -358,7 +358,7 @@
 		ignoreCount = 0;
 		lineNumber = 131;
 		location = idoubs;
-		modificationTime = 337127523.391389;
+		modificationTime = 337221517.303835;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -376,7 +376,7 @@
 		ignoreCount = 0;
 		lineNumber = 99;
 		location = idoubs;
-		modificationTime = 337127523.470439;
+		modificationTime = 337221517.394541;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -394,7 +394,7 @@
 		ignoreCount = 0;
 		lineNumber = 197;
 		location = idoubs;
-		modificationTime = 337127523.533429;
+		modificationTime = 337221517.443035;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -412,7 +412,7 @@
 		ignoreCount = 0;
 		lineNumber = 571;
 		location = idoubs;
-		modificationTime = 337127523.611224;
+		modificationTime = 337221517.514422;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -606,7 +606,7 @@
 		isa = PBXTextBookmark;
 		fRef = ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */;
 		name = "NgnProxyVideoProducer.h: 45";
-		rLen = 13;
+		rLen = 0;
 		rLoc = 1627;
 		rType = 0;
 		vrLen = 1024;
@@ -633,7 +633,7 @@
 		ignoreCount = 0;
 		lineNumber = 246;
 		location = idoubs;
-		modificationTime = 337127523.687803;
+		modificationTime = 337221517.588756;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -651,7 +651,7 @@
 		ignoreCount = 0;
 		lineNumber = 249;
 		location = idoubs;
-		modificationTime = 337127523.758462;
+		modificationTime = 337221517.662646;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -946,7 +946,7 @@
 		ignoreCount = 0;
 		lineNumber = 144;
 		location = idoubs;
-		modificationTime = 337127523.32823;
+		modificationTime = 337221517.24255;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1083,7 +1083,7 @@
 		ignoreCount = 0;
 		lineNumber = 235;
 		location = idoubs;
-		modificationTime = 337127523.822052;
+		modificationTime = 337221517.732849;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1180,7 +1180,7 @@
 		fRef = ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */;
 		name = "NgnProxyVideoProducer.mm: 101";
 		rLen = 0;
-		rLoc = 2990;
+		rLoc = 1598;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 2276;
@@ -1388,16 +1388,16 @@
 	};
 	ECDDB63E137C0C980027105F /* NgnProxyVideoProducer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1067, 923}}";
-			sepNavSelRange = "{1627, 13}";
-			sepNavVisRange = "{1239, 1024}";
+			sepNavIntBoundsRect = "{{0, 0}, {1067, 975}}";
+			sepNavSelRange = "{2011, 15}";
+			sepNavVisRange = "{1239, 948}";
 		};
 	};
 	ECDDB63F137C0C980027105F /* NgnProxyVideoProducer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1125, 7111}}";
-			sepNavSelRange = "{2990, 0}";
-			sepNavVisRange = "{2276, 831}";
+			sepNavIntBoundsRect = "{{0, 0}, {1067, 7592}}";
+			sepNavSelRange = "{15982, 0}";
+			sepNavVisRange = "{12712, 970}";
 		};
 	};
 	ECDDB642137C0CBB0027105F /* NgnProxyVideoConsumer.h */ = {

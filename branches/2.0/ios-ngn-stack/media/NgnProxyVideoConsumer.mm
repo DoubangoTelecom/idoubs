@@ -34,7 +34,7 @@
 #define kDefaultVideoFrameRate	15
 
 @interface NgnProxyVideoConsumer(Private)
--(int)drawFrame;
+-(int)drawFrameOnMainThread;
 -(int) prepareWithWidth:(int) width andHeight: (int)height andFps: (int) fps;
 -(int) start;
 -(int) bufferCopiedWithSize:(unsigned) copiedSize andAvaileSize: (unsigned) availableSize;
@@ -190,7 +190,7 @@ private:
 		return 0;
 	}
 	
-	return [self drawFrame];
+	return [self drawFrameOnMainThread];
 }
 
 -(int) consumeFrame: (const ProxyVideoFrame*) _frame{
@@ -200,7 +200,7 @@ private:
 	}
 	if(_mBufferPtr){
 		memcpy(_mBufferPtr, _frame->fastGetContent(), TSK_MIN(_frame->fastGetSize(), _mBufferSize));
-		return [self drawFrame];
+		return [self drawFrameOnMainThread];
 	}
 	return 0;
 }
@@ -249,23 +249,20 @@ private:
 	}
 }
 
--(void)drawVideoFrameOnMainThread:(id)arg{
+-(void)setImage:(id)image{
 	@synchronized(self){
-		CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
-		//[UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationRight];
-		
-		UIImage *image = [UIImage imageWithCGImage:imageRef];
-		CGImageRelease(imageRef);
-		
 		if(mDisplay){
 			mDisplay.image =  image;
 		}
 	}
 }
 
--(int)drawFrame{
+-(int)drawFrameOnMainThread{
 	if(mBitmapContext && mDisplay){
-		[self performSelectorOnMainThread:@selector(drawVideoFrameOnMainThread:) withObject:nil waitUntilDone:YES];
+		CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
+		UIImage *image = [UIImage imageWithCGImage:imageRef];
+		CGImageRelease(imageRef);
+		[self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
 	}
 	return 0;
 }
