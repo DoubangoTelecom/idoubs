@@ -31,6 +31,7 @@
 #import "NgnCamera.h"
 
 #include "tsk_mutex.h"
+#include "tsk_list.h"
 
 class ProxyVideoProducer;
 class _NgnProxyVideoProducerCallback;
@@ -42,7 +43,6 @@ class _NgnProxyVideoProducerCallback;
 {
 	_NgnProxyVideoProducerCallback* _mCallback;
 	const ProxyVideoProducer * _mProducer;
-	tsk_mutex_handle_t *_mSenderMutex;
 	
 	int mWidth;
 	int mHeight;
@@ -56,6 +56,10 @@ class _NgnProxyVideoProducerCallback;
 	AVCaptureVideoOrientation mOrientation;
 	NSTimer* mTimerBlankPackets;
 	int mBlankPacketsSent;
+	tsk_mutex_handle_t *_mSenderMutex;
+	dispatch_queue_t _mSenderQueue;
+	tsk_list_t *_mSenderPackets;
+	
 #endif
 }
 
