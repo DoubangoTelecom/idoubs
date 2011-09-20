@@ -1,10 +1,10 @@
-#summary Building iDoubs v2.x
+#summary Building iDoubs v2.x (iOS)
 #labels Phase-Support,Featured
 
 <wiki:toc max_depth="3" />
 
 == Introduction ==
-*iDoubs v2.x* is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while *iDoubs v1.x* (alpha version) was based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
+*iDoubs v2.x* is a beta version of our ([http://www.doubango.org/ Doubango Telecom]) VoIP client for iOS (iPhone, iPod Touch and iPad) and MAC OS X and is based on [http://code.google.com/p/doubango/source/browse/#svn%2Fbranches%2F2.0 Doubango v2.x] while *iDoubs v1.x* (alpha version) was based on [http://code.google.com/p/doubango/source/browse/#svn%2Ftrunk Doubango v1.x]. <br/>
 
 This new version is now split in two parts: *iDoubs v2.x* and *ios-ngn-stack*. <br />
  # *iDoubs v2.x* is the VoIP client and mostly contain UI related code. It depends on *ios-ngn-stack* project (see below).
@@ -70,7 +70,7 @@ You are now ready to build the test applications if you want:
 === Building iDoubs ===
 *iDoubs* is the VoIP client and depends on *ios-ngn-stack* target. <br />
 
-  * open *mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj*
+  * open *mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj*
 	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK.
 	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
 	# build the NGN stack: Right click on *Ngn* target and select *Build Ngn*
@@ -82,7 +82,7 @@ Before starting to use iDoubs, please take a look at the user guide in order to 
 
 === Building non-GPL version ===
 If you are license owner then, you can build a non-GPL version of Doubango and iDoubs like this:
- * open *mydoubs/iPhone/idoubs/branches/2.0/idoubs/idoubs.xcodeproj*
+ * open *mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj*
  * Right click on *idoubs* target => *Get Info* => *Build* tab => *Other Linker Flags* then:
     # remove *-lx264*
     # remove *lg729b* if you don't have required licenses
