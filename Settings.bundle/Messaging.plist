@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Messaging</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Ad-Hoc Conf Factory</string>
+			<key>Key</key>
+			<string>messaging_adhoc_conf</string>
+			<key>DefaultValue</key>
+			<string>sip:Conference-Factory@open-ims.test</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>SMS Center (SMSC)</string>
+			<key>Key</key>
+			<string>messaging_smsc</string>
+			<key>DefaultValue</key>
+			<string>sip:+331000000@open-ims.test</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Binary SMS (RP-DATA)</string>
+			<key>Key</key>
+			<string>messaging_rpdata</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>MSRP Success Reports</string>
+			<key>Key</key>
+			<string>messaging_msrp_success_reports</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>MSRP Failure Reports</string>
+			<key>Key</key>
+			<string>messaging_msrp_failure_reports</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>OMA Final Delivery Reports</string>
+			<key>Key</key>
+			<string>messaging_ofdr</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Check Voice Mail</string>
+			<key>Key</key>
+			<string>messaging_mwi</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>
