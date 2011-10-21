@@ -44,11 +44,13 @@
 
 -(void) setRealm:(NSString*)value {
 	[self->realm release], self->realm = nil;
-	if([NgnStringUtils contains:value subString:@":"]){
-		self->realm = [[@"sip:" stringByAppendingString:value] retain];
-	}
-	else{
-		self->realm = [value retain];
+	if(value){
+		if([NgnStringUtils contains:value subString:@":"]){
+			self->realm = [[@"sip:" stringByAppendingString:value] retain];
+		}
+		else{
+			self->realm = [value retain];
+		}
 	}
 }
 
