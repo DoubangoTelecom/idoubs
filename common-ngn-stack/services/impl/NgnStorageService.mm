@@ -62,12 +62,12 @@ static BOOL sDataBaseInitialized = NO;
 		return YES;
 	}
 // For backward compatibility, we have to continue to use diff folders
-#if TARGET_OS_MAC
-	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-	NSString *documentsDir = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"iDoubs"];
-#elif TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE
 	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDir = [documentPaths objectAtIndex:0];
+#elif TARGET_OS_MAC
+	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+	NSString *documentsDir = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"iDoubs"];
 #endif
 	sDataBasePath = [documentsDir stringByAppendingPathComponent:kDataBaseName];
 
@@ -79,7 +79,7 @@ static BOOL sDataBaseInitialized = NO;
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
 	
-#if TARGET_OS_MAC
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
 	// create the folder if it doesn't exist
 	BOOL isDirectory = NO;
 	BOOL exists = [fileManager fileExistsAtPath:documentsDir isDirectory:&isDirectory];
@@ -104,7 +104,7 @@ static BOOL sDataBaseInitialized = NO;
 		int sourceCodeVersion = [service databaseVersion];
 		sqlite3_close(db), db = nil;
 		if(storedVersion != sourceCodeVersion){
-			NgnNSLog(TAG,@"database v-stored=%i and database v-code=%i", storedVersion, sourceCodeVersion);
+			NgnNSLog(TAG,@"database changed v-stored=%i and database v-code=%i", storedVersion, sourceCodeVersion);
 			// remove the file (database already closed)
 			[fileManager removeItemAtPath:sDataBasePath error:nil];
 		}
