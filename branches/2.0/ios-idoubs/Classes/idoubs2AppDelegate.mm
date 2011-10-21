@@ -177,18 +177,6 @@
 			// this is the only place where we can be sure that the audio system is up
 			[[NgnEngine sharedInstance].soundService setSpeakerEnabled:YES];
 			
-			
-			//FIXME
-			
-			SipStack::setCodecs(tdav_codec_id_none);//HACK
-			// audio codecs
-			SipStack::setCodecPriority(tdav_codec_id_speex_wb, 0);
-			// video codecs
-			SipStack::setCodecPriority(tdav_codec_id_h264_bp30, 0);
-			SipStack::setCodecPriority(tdav_codec_id_h264_bp20, 1);
-			SipStack::setCodecPriority(tdav_codec_id_h263p, 2);
-			SipStack::setCodecs((tdav_codec_id_t)[[NgnEngine sharedInstance].configurationService getIntWithKey:MEDIA_CODECS]);
-			
 			break;
 		}
 		default:
@@ -431,7 +419,18 @@ static dispatch_block_t sExpirationHandler = nil;
 		NgnNSLog(TAG, @"Multitasking IS supported");
 	}
 	
+	// Set media parameters if you want
 	MediaSessionMgr::defaultsSetAudioGain(0, 0);
+	// Set some codec priorities
+	int prio = 0;
+	SipStack::setCodecPriority(tdav_codec_id_g722, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_speex_wb, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_pcma, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_pcmu, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_h264_bp30, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_h264_bp20, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_vp8, prio++);
+	//...etc etc etc
 	
     return YES;
 }
