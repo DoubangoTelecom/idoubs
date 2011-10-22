@@ -30,6 +30,7 @@
 #import "services/impl/NgnStorageService.h"
 #import "services/impl/NgnSipService.h"
 #import "services/impl/NgnSoundService.h"
+#import "services/impl/NgnHistoryService.h"
 
 /* To be completed... */
 
