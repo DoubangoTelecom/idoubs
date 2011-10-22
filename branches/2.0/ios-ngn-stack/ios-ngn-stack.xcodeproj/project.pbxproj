@@ -152,7 +152,6 @@
 		EC83BCA51369C6A000DD3355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3B1369C57E00DD3355 /* CFNetwork.framework */; };
 		EC83BCA61369C6A000DD3355 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83BC3D1369C57E00DD3355 /* libresolv.dylib */; };
 		EC83BD861369D05B00DD3355 /* iOSNgnConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */; };
-		EC83FF7613809E5F00060A9D /* NgnDataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = ECA6A626137D86FC0022AD09 /* NgnDataBase.db */; };
 		EC83FF961380A29F00060A9D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC83FF951380A29F00060A9D /* libsqlite3.dylib */; };
 		EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC858FC313999E360017BB9F /* tmedia_defaults.c */; };
 		EC8725201378101000C616F0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
@@ -7546,7 +7545,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC83FF7613809E5F00060A9D /* NgnDataBase.db in Resources */,
 				EC83BA401369927100DD3355 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8862,6 +8860,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -8902,6 +8901,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9019,6 +9019,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9059,6 +9060,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9100,6 +9102,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9140,6 +9143,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9181,6 +9185,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9221,6 +9226,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9758,6 +9764,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
@@ -9799,6 +9806,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				HEADER_SEARCH_PATHS = (
+					"../common-ngn-stack",
 					"../ios-ngn-stack",
 					$DOUBANGO_INCLUDES,
 				);
