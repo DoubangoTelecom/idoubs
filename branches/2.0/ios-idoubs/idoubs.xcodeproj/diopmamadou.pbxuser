@@ -17,7 +17,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ECFD23AB135D519D00E6A9A3 /* idoubs */;
-		activeSDKPreference = iphonesimulator4.3;
+		activeSDKPreference = iphoneos4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* idoubs */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* idoubs */,
@@ -35,11 +35,11 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					343,
+					338,
 					20,
-					241,
-					241,
-					171,
+					236,
+					236,
+					167,
 					20,
 				);
 				PBXFileTableDataSourceColumnsKey = (
@@ -148,6 +148,13 @@
 			EC4DC1B2141C58360024CBEF = EC4DC1B2141C58360024CBEF /* PBXTextBookmark */;
 			EC4DC1B3141C58360024CBEF = EC4DC1B3141C58360024CBEF /* PBXTextBookmark */;
 			EC4DC1B5141C58360024CBEF = EC4DC1B5141C58360024CBEF /* PBXTextBookmark */;
+			EC8D451414532A1C00856531 /* PBXTextBookmark */ = EC8D451414532A1C00856531 /* PBXTextBookmark */;
+			EC8D451614532A1C00856531 /* PBXTextBookmark */ = EC8D451614532A1C00856531 /* PBXTextBookmark */;
+			EC8D451814532A1C00856531 /* PBXTextBookmark */ = EC8D451814532A1C00856531 /* PBXTextBookmark */;
+			EC8D451A14532A1C00856531 /* PBXTextBookmark */ = EC8D451A14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451C14532A1C00856531 /* PBXTextBookmark */ = EC8D451C14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451D14532A1C00856531 /* PBXTextBookmark */ = EC8D451D14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451E14532A1C00856531 /* PBXTextBookmark */ = EC8D451E14532A1C00856531 /* PBXTextBookmark */;
 			ECB8A5D4145081730042907B = ECB8A5D4145081730042907B /* PBXTextBookmark */;
 			ECB8A5D5145081730042907B = ECB8A5D5145081730042907B /* PBXTextBookmark */;
 			ECB8A5D6145081730042907B = ECB8A5D6145081730042907B /* PBXTextBookmark */;
@@ -565,9 +572,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1045, 7826}}";
-			sepNavSelRange = "{6492, 0}";
-			sepNavVisRange = "{5475, 1279}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 8229}}";
+			sepNavSelRange = "{12823, 0}";
+			sepNavVisRange = "{11973, 931}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -576,6 +583,100 @@
 			sepNavSelRange = "{2469, 14}";
 			sepNavVisRange = "{107, 2464}";
 		};
+	};
+	EC8D451414532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC8D451514532A1C00856531 /* TargetConditionals.h */;
+		name = "TargetConditionals.h: 92";
+		rLen = 43;
+		rLoc = 4230;
+		rType = 0;
+		vrLen = 1408;
+		vrLoc = 3516;
+	};
+	EC8D451514532A1C00856531 /* TargetConditionals.h */ = {
+		isa = PBXFileReference;
+		name = TargetConditionals.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/TargetConditionals.h;
+		sourceTree = "<absolute>";
+	};
+	EC8D451614532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC8D451714532A1C00856531 /* NgnStorageService.mm */;
+		name = "NgnStorageService.mm: 84";
+		rLen = 0;
+		rLoc = 3378;
+		rType = 0;
+		vrLen = 1408;
+		vrLoc = 2352;
+	};
+	EC8D451714532A1C00856531 /* NgnStorageService.mm */ = {
+		isa = PBXFileReference;
+		name = NgnStorageService.mm;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/services/impl/NgnStorageService.mm";
+		sourceTree = "<absolute>";
+	};
+	EC8D451814532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC8D451914532A1C00856531 /* SipStack.h */;
+		name = "SipStack.h: 90";
+		rLen = 16;
+		rLoc = 3242;
+		rType = 0;
+		vrLen = 1226;
+		vrLoc = 2430;
+	};
+	EC8D451914532A1C00856531 /* SipStack.h */ = {
+		isa = PBXFileReference;
+		name = SipStack.h;
+		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/bindings/_common/SipStack.h;
+		sourceTree = "<absolute>";
+	};
+	EC8D451A14532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC8D451B14532A1C00856531 /* NgnSipStack.mm */;
+		name = "NgnSipStack.mm: 144";
+		rLen = 0;
+		rLoc = 4093;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 3547;
+	};
+	EC8D451B14532A1C00856531 /* NgnSipStack.mm */ = {
+		isa = PBXFileReference;
+		name = NgnSipStack.mm;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/sip/NgnSipStack.mm";
+		sourceTree = "<absolute>";
+	};
+	EC8D451C14532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB8A5A3145078ED0042907B /* SipStack.cxx */;
+		name = "SipStack.cxx: 448";
+		rLen = 0;
+		rLoc = 11251;
+		rType = 0;
+		vrLen = 1126;
+		vrLoc = 10637;
+	};
+	EC8D451D14532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 355";
+		rLen = 0;
+		rLoc = 12808;
+		rType = 0;
+		vrLen = 1006;
+		vrLoc = 11865;
+	};
+	EC8D451E14532A1C00856531 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 357";
+		rLen = 0;
+		rLoc = 12823;
+		rType = 0;
+		vrLen = 931;
+		vrLoc = 11973;
 	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
@@ -637,6 +738,11 @@
 		name = SipStack.cxx;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/bindings/_common/SipStack.cxx;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1045, 7254}}";
+			sepNavSelRange = "{11251, 0}";
+			sepNavVisRange = "{10637, 1126}";
+		};
 	};
 	ECB8A5A5145078ED0042907B /* tdav.c */ = {
 		isa = PBXFileReference;
@@ -687,7 +793,7 @@
 		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
 		name = "idoubs2AppDelegate.mm: 186";
 		rLen = 0;
-		rLoc = 6434;
+		rLoc = 6081;
 		rType = 0;
 		vrLen = 1279;
 		vrLoc = 5475;
@@ -697,7 +803,7 @@
 		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
 		name = "idoubs2AppDelegate.mm: 186";
 		rLen = 0;
-		rLoc = 6492;
+		rLoc = 6081;
 		rType = 0;
 		vrLen = 1279;
 		vrLoc = 5475;
