@@ -344,6 +344,18 @@
 			[NgnAVSession releaseSession:&session];
 			break;
 		}
+			
+		case INVITE_EVENT_TERMINATED:
+		{
+			if ([UIApplication sharedApplication].applicationState ==  UIApplicationStateBackground) {
+				// call terminated while in background
+				// if the application goes to background while in call then the keepAwake mechanism was not started
+				if([NgnEngine sharedInstance].sipService.registered && ![NgnAVSession hasActiveSession]){
+					[[NgnEngine sharedInstance] startKeepAwake];
+				}
+			}
+			break;
+		}
 		
 		default:
 		{
@@ -455,7 +467,9 @@ static dispatch_block_t sExpirationHandler = nil;
 			sBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:sExpirationHandler];
 			//}
 			if(registrationState == CONN_STATE_CONNECTED){
-				[[NgnEngine sharedInstance] startKeepAwake];
+				if(![NgnAVSession hasActiveSession]){
+					[[NgnEngine sharedInstance] startKeepAwake];
+				}
 			}
 			
 			//[application setKeepAliveTimeout:600 handler: ^{
