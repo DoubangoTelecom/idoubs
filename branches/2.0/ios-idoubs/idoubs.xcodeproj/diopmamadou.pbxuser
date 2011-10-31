@@ -127,8 +127,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 340890636;
-			PBXWorkspaceStateSaveDate = 340890636;
+			PBXPerProjectTemplateStateSaveDate = 341798611;
+			PBXWorkspaceStateSaveDate = 341798611;
 		};
 		perUserProjectItems = {
 			EC26C6751426F9670046BBB5 = EC26C6751426F9670046BBB5 /* PBXTextBookmark */;
@@ -148,18 +148,20 @@
 			EC4DC1B2141C58360024CBEF = EC4DC1B2141C58360024CBEF /* PBXTextBookmark */;
 			EC4DC1B3141C58360024CBEF = EC4DC1B3141C58360024CBEF /* PBXTextBookmark */;
 			EC4DC1B5141C58360024CBEF = EC4DC1B5141C58360024CBEF /* PBXTextBookmark */;
-			EC8D451414532A1C00856531 /* PBXTextBookmark */ = EC8D451414532A1C00856531 /* PBXTextBookmark */;
-			EC8D451614532A1C00856531 /* PBXTextBookmark */ = EC8D451614532A1C00856531 /* PBXTextBookmark */;
-			EC8D451814532A1C00856531 /* PBXTextBookmark */ = EC8D451814532A1C00856531 /* PBXTextBookmark */;
-			EC8D451A14532A1C00856531 /* PBXTextBookmark */ = EC8D451A14532A1C00856531 /* PBXTextBookmark */;
-			EC8D451C14532A1C00856531 /* PBXTextBookmark */ = EC8D451C14532A1C00856531 /* PBXTextBookmark */;
-			EC8D451D14532A1C00856531 /* PBXTextBookmark */ = EC8D451D14532A1C00856531 /* PBXTextBookmark */;
-			EC8D451E14532A1C00856531 /* PBXTextBookmark */ = EC8D451E14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451414532A1C00856531 = EC8D451414532A1C00856531 /* PBXTextBookmark */;
+			EC8D451614532A1C00856531 = EC8D451614532A1C00856531 /* PBXTextBookmark */;
+			EC8D451814532A1C00856531 = EC8D451814532A1C00856531 /* PBXTextBookmark */;
+			EC8D451A14532A1C00856531 = EC8D451A14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451C14532A1C00856531 = EC8D451C14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451D14532A1C00856531 = EC8D451D14532A1C00856531 /* PBXTextBookmark */;
+			EC8D451E14532A1C00856531 = EC8D451E14532A1C00856531 /* PBXTextBookmark */;
 			ECB8A5D4145081730042907B = ECB8A5D4145081730042907B /* PBXTextBookmark */;
 			ECB8A5D5145081730042907B = ECB8A5D5145081730042907B /* PBXTextBookmark */;
 			ECB8A5D6145081730042907B = ECB8A5D6145081730042907B /* PBXTextBookmark */;
 			ECB8A5D8145081730042907B = ECB8A5D8145081730042907B /* PBXTextBookmark */;
 			ECB8A5D9145081730042907B = ECB8A5D9145081730042907B /* PBXTextBookmark */;
+			ECD2846E145F6F5900EFE997 /* PBXTextBookmark */ = ECD2846E145F6F5900EFE997 /* PBXTextBookmark */;
+			ECD28476145F6F6600EFE997 /* PBXTextBookmark */ = ECD28476145F6F6600EFE997 /* PBXTextBookmark */;
 			ECDD35CA141EE35200D60AE2 = ECDD35CA141EE35200D60AE2 /* PBXTextBookmark */;
 			ECE7EA441428550300466331 = ECE7EA441428550300466331 /* PlistBookmark */;
 			ECE7EA7D1428557000466331 = ECE7EA7D1428557000466331 /* PBXTextBookmark */;
@@ -572,7 +574,7 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 8229}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 8268}}";
 			sepNavSelRange = "{12823, 0}";
 			sepNavVisRange = "{11973, 931}";
 		};
@@ -596,6 +598,7 @@
 	};
 	EC8D451514532A1C00856531 /* TargetConditionals.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = TargetConditionals.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/TargetConditionals.h;
 		sourceTree = "<absolute>";
@@ -612,6 +615,7 @@
 	};
 	EC8D451714532A1C00856531 /* NgnStorageService.mm */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
 		name = NgnStorageService.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/services/impl/NgnStorageService.mm";
 		sourceTree = "<absolute>";
@@ -628,6 +632,7 @@
 	};
 	EC8D451914532A1C00856531 /* SipStack.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = SipStack.h;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/bindings/_common/SipStack.h;
 		sourceTree = "<absolute>";
@@ -644,6 +649,7 @@
 	};
 	EC8D451B14532A1C00856531 /* NgnSipStack.mm */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
 		name = NgnSipStack.mm;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/sip/NgnSipStack.mm";
 		sourceTree = "<absolute>";
@@ -738,11 +744,6 @@
 		name = SipStack.cxx;
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/bindings/_common/SipStack.cxx;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1045, 7254}}";
-			sepNavSelRange = "{11251, 0}";
-			sepNavVisRange = "{10637, 1126}";
-		};
 	};
 	ECB8A5A5145078ED0042907B /* tdav.c */ = {
 		isa = PBXFileReference;
@@ -835,6 +836,26 @@
 			sepNavSelRange = "{976, 0}";
 			sepNavVisRange = "{0, 1467}";
 		};
+	};
+	ECD2846E145F6F5900EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 357";
+		rLen = 0;
+		rLoc = 12823;
+		rType = 0;
+		vrLen = 931;
+		vrLoc = 11973;
+	};
+	ECD28476145F6F6600EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 357";
+		rLen = 0;
+		rLoc = 12823;
+		rType = 0;
+		vrLen = 931;
+		vrLoc = 11973;
 	};
 	ECDD35CA141EE35200D60AE2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
