@@ -179,6 +179,10 @@
 		ECC8C99814072BA300E0A500 /* tdav_codec_g722.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C99514072BA300E0A500 /* tdav_codec_g722.c */; };
 		ECC8C99B14072BB400E0A500 /* g722_enc_dec.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C99914072BB400E0A500 /* g722_enc_dec.h */; };
 		ECC8C99C14072BB400E0A500 /* tdav_codec_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C99A14072BB400E0A500 /* tdav_codec_g722.h */; };
+		ECD2847C145F6FC200EFE997 /* tsip_dialog_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD2847B145F6FC200EFE997 /* tsip_dialog_info.h */; };
+		ECD2847E145F6FD900EFE997 /* tsip_dialog_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD2847D145F6FD900EFE997 /* tsip_dialog_info.c */; };
+		ECD2848A145F706100EFE997 /* tsip_api_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD28489145F706100EFE997 /* tsip_api_info.c */; };
+		ECD2848C145F707100EFE997 /* tsip_api_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD2848B145F707100EFE997 /* tsip_api_info.h */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB765137C35250027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
 		ECDDB76A137C353D0027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
@@ -2045,6 +2049,10 @@
 		ECC8C99514072BA300E0A500 /* tdav_codec_g722.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_g722.c; sourceTree = "<group>"; };
 		ECC8C99914072BB400E0A500 /* g722_enc_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g722_enc_dec.h; sourceTree = "<group>"; };
 		ECC8C99A14072BB400E0A500 /* tdav_codec_g722.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_g722.h; sourceTree = "<group>"; };
+		ECD2847B145F6FC200EFE997 /* tsip_dialog_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_dialog_info.h; sourceTree = "<group>"; };
+		ECD2847D145F6FD900EFE997 /* tsip_dialog_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_dialog_info.c; sourceTree = "<group>"; };
+		ECD28489145F706100EFE997 /* tsip_api_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_api_info.c; sourceTree = "<group>"; };
+		ECD2848B145F707100EFE997 /* tsip_api_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_api_info.h; sourceTree = "<group>"; };
 		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -5262,6 +5270,7 @@
 		ECFD2EA7135E7D8900E6A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2848B145F707100EFE997 /* tsip_api_info.h */,
 				ECFD2EA8135E7D8900E6A9A3 /* tsip_api_common.h */,
 				ECFD2EA9135E7D8900E6A9A3 /* tsip_api_invite.h */,
 				ECFD2EAA135E7D8900E6A9A3 /* tsip_api_message.h */,
@@ -5286,6 +5295,7 @@
 		ECFD2EB3135E7D8900E6A9A3 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2847B145F6FC200EFE997 /* tsip_dialog_info.h */,
 				ECFD2EB4135E7D8900E6A9A3 /* tsip_dialog.h */,
 				ECFD2EB5135E7D8900E6A9A3 /* tsip_dialog_invite.common.h */,
 				ECFD2EB6135E7D8900E6A9A3 /* tsip_dialog_invite.h */,
@@ -5575,6 +5585,7 @@
 		ECFD2F9F135E7D8900E6A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				ECD28489145F706100EFE997 /* tsip_api_info.c */,
 				ECFD2FA0135E7D8900E6A9A3 /* tsip_api_common.c */,
 				ECFD2FA1135E7D8900E6A9A3 /* tsip_api_invite.c */,
 				ECFD2FA2135E7D8900E6A9A3 /* tsip_api_message.c */,
@@ -5599,6 +5610,7 @@
 		ECFD2FAB135E7D8900E6A9A3 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2847D145F6FD900EFE997 /* tsip_dialog_info.c */,
 				ECFD2FAC135E7D8900E6A9A3 /* tsip_dialog.c */,
 				ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */,
 				ECFD2FAE135E7D8900E6A9A3 /* tsip_dialog_invite.cdiv.c */,
@@ -6924,6 +6936,8 @@
 				ECFD30CF135E7D8900E6A9A3 /* tinysip.h in Headers */,
 				ECFD30D0135E7D8900E6A9A3 /* tinysip_config.h in Headers */,
 				ECFD30D1135E7D8900E6A9A3 /* tsip.h in Headers */,
+				ECD2847C145F6FC200EFE997 /* tsip_dialog_info.h in Headers */,
+				ECD2848C145F707100EFE997 /* tsip_api_info.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8111,6 +8125,8 @@
 				ECFD315F135E7D8900E6A9A3 /* tsip_ssession.c in Sources */,
 				ECFD3160135E7D8900E6A9A3 /* tsip_timers.c in Sources */,
 				ECFD3161135E7D8900E6A9A3 /* tsip_uri.c in Sources */,
+				ECD2847E145F6FD900EFE997 /* tsip_dialog_info.c in Sources */,
+				ECD2848A145F706100EFE997 /* tsip_api_info.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
