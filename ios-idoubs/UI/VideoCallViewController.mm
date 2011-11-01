@@ -25,6 +25,8 @@
 #import "idoubs2AppDelegate.h"
 #import "idoubs2Constants.h"
 
+#define degreesToRadian(x) (M_PI * (x) / 180.0)
+
 /*=== VideoCallViewController (Private) ===*/
 @interface VideoCallViewController(Private)
 +(void) applyGradienWithColors: (NSArray*)colors forView: (UIView*)view_;
@@ -33,6 +35,8 @@
 -(void) updateViewAndState;
 -(void) closeView;
 -(void) updateVideoOrientation;
+-(void) updateRemoteDeviceInfo;
+-(void) sendDeviceInfo;
 @end
 /*=== VideoCallViewController (Timers) ===*/
 @interface VideoCallViewController (Timers)
@@ -227,6 +231,48 @@
 	}
 }
 
+-(void) updateRemoteDeviceInfo{
+	BOOL deviceOrientPortrait = [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown;
+	switch(videoSession.remoteDeviceInfo.orientation)
+	{
+		case NgnDeviceInfo_Orientation_Portrait:
+			[self.imageViewRemoteVideo setContentMode:UIViewContentModeScaleAspectFill];
+			if(!deviceOrientPortrait){
+#if 0
+#endif
+			}
+			break;
+		case NgnDeviceInfo_Orientation_Landscape:
+			[self.imageViewRemoteVideo setContentMode:UIViewContentModeCenter];
+			if(deviceOrientPortrait){
+#if 0
+				CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation(degreesToRadian(90));
+				landscapeTransform = CGAffineTransformTranslate(landscapeTransform, +90.0, +90.0);
+				[self.view setTransform:landscapeTransform];
+#endif
+			}
+			break;
+	}
+}
+
+-(void) sendDeviceInfo{
+	if([[NgnEngine sharedInstance].configurationService getBoolWithKey:GENERAL_SEND_DEVICE_INFO]){
+		if(videoSession){
+			NSString* content = nil;
+			switch ([[UIDevice currentDevice] orientation]) {
+				case UIDeviceOrientationPortrait:
+				case UIDeviceOrientationPortraitUpsideDown:
+					content = @"orientation:portrait\r\nlang:fr-FR\r\n";
+					break;
+				default:
+					content = @"orientation:landscape\r\nlang:fr-FR\r\n";
+					break;
+			}
+			[videoSession sendInfoWithContentString:content contentType:kContentDoubangoDeviceInfo];
+		}
+	}
+}
+
 @end
 
 
@@ -273,9 +319,17 @@
 			}
 			[videoSession setRemoteVideoDisplay:imageViewRemoteVideo];
 			[NgnCamera setPreview:nil];
+			
+			[self updateRemoteDeviceInfo];
+			[self sendDeviceInfo];
 			break;
 		}
-
+			
+		case INVITE_EVENT_REMOTE_DEVICE_INFO_CHANGED:
+		{
+			[self updateRemoteDeviceInfo];
+			break;
+		}
 			
 		case INVITE_EVENT_TERMINATED:
 		case INVITE_EVENT_TERMWAIT:
@@ -392,6 +446,7 @@
 	}
 	[self updateViewAndState];
 	[self updateVideoOrientation];
+	[self updateRemoteDeviceInfo];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -418,6 +473,8 @@
 	if(!self.viewPickHangUp.hidden){
 		[self showBottomView:self.viewPickHangUp shouldRefresh:YES];
 	}
+	
+	[self sendDeviceInfo];
 }
 
 - (void)didReceiveMemoryWarning {

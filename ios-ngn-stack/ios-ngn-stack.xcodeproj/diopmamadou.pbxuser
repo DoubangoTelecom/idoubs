@@ -7,7 +7,7 @@
 		activeSDKPreference = iphoneos4.3;
 		activeTarget = D2AAC07D0554694100DB518D /* ios-ngn-stack */;
 		addToTargets = (
-			ECFD2E99135E7D6D00E6A9A3 /* tinySIP */,
+			D2AAC07D0554694100DB518D /* ios-ngn-stack */,
 		);
 		breakpoints = (
 		);
@@ -337,9 +337,9 @@
 	};
 	EC83B77C1369768A00DD3355 /* iOSNgnStack.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1538, 897}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1453}";
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 910}}";
+			sepNavSelRange = "{2132, 0}";
+			sepNavVisRange = "{1292, 1024}";
 		};
 	};
 	EC83BA13136990B700DD3355 /* testRegistration */ = {
@@ -493,7 +493,7 @@
 		fRef = ECE7E8F014284CAC00466331 /* NgnSipService.mm */;
 		name = "NgnSipService.mm: 1108";
 		rLen = 21;
-		rLoc = 42081;
+		rLoc = 44243;
 		rType = 0;
 		vrLen = 1848;
 		vrLoc = 40377;
@@ -614,7 +614,7 @@
 		fRef = ECE7E8F014284CAC00466331 /* NgnSipService.mm */;
 		name = "NgnSipService.mm: 1155";
 		rLen = 0;
-		rLoc = 43478;
+		rLoc = 45640;
 		rType = 0;
 		vrLen = 1653;
 		vrLoc = 37466;
@@ -689,6 +689,20 @@
 		vrLen = 1191;
 		vrLoc = 7966;
 	};
+	ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 559}}";
+			sepNavSelRange = "{1056, 34}";
+			sepNavVisRange = "{176, 1362}";
+		};
+	};
+	ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 533}}";
+			sepNavSelRange = "{1111, 0}";
+			sepNavVisRange = "{42, 1165}";
+		};
+	};
 	ECDBBD0814489B1C00F663C1 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
@@ -733,6 +747,20 @@
 			sepNavVisRange = "{0, 1263}";
 		};
 	};
+	ECE7E8B814284CAC00466331 /* NgnInviteEventArgs.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1258, 806}}";
+			sepNavSelRange = "{1659, 0}";
+			sepNavVisRange = "{1072, 1136}";
+		};
+	};
+	ECE7E8C914284CAC00466331 /* NgnContentType.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 611}}";
+			sepNavSelRange = "{2008, 26}";
+			sepNavVisRange = "{499, 1563}";
+		};
+	};
 	ECE7E8CF14284CAC00466331 /* NgnProxyPluginMgr.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 3055}}";
@@ -761,6 +789,13 @@
 			sepNavVisRange = "{0, 1174}";
 		};
 	};
+	ECE7E8DE14284CAC00466331 /* NgnPhoneNumber.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 689}}";
+			sepNavSelRange = "{1518, 50}";
+			sepNavVisRange = "{970, 825}";
+		};
+	};
 	ECE7E8E014284CAC00466331 /* NgnEngine.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {800, 1040}}";
@@ -784,9 +819,9 @@
 	};
 	ECE7E8F014284CAC00466331 /* NgnSipService.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 15080}}";
-			sepNavSelRange = "{42081, 21}";
-			sepNavVisRange = "{40377, 1848}";
+			sepNavIntBoundsRect = "{{0, 0}, {1279, 15678}}";
+			sepNavSelRange = "{22716, 0}";
+			sepNavVisRange = "{21742, 1141}";
 		};
 	};
 	ECE7E8F214284CAC00466331 /* NgnSoundService.mm */ = {
@@ -810,6 +845,48 @@
 			sepNavVisRange = "{0, 1666}";
 		};
 	};
+	ECE7E90014284CAC00466331 /* NgnAVSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 1300}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1376}";
+		};
+	};
+	ECE7E90114284CAC00466331 /* NgnAVSession.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 7917}}";
+			sepNavSelRange = "{1137, 22}";
+			sepNavVisRange = "{176, 1221}";
+		};
+	};
+	ECE7E90214284CAC00466331 /* NgnInviteSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 1053}}";
+			sepNavSelRange = "{2555, 37}";
+			sepNavVisRange = "{0, 1322}";
+		};
+	};
+	ECE7E90314284CAC00466331 /* NgnInviteSession.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 3068}}";
+			sepNavSelRange = "{3572, 0}";
+			sepNavVisRange = "{3138, 722}";
+		};
+	};
+	ECE7E90414284CAC00466331 /* NgnMessagingSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1419, 767}}";
+			sepNavSelRange = "{1572, 110}";
+			sepNavVisRange = "{1027, 2178}";
+		};
+	};
+	ECE7E90514284CAC00466331 /* NgnMessagingSession.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1468, 2990}}";
+			sepNavSelRange = "{6721, 50}";
+			sepNavVisRange = "{6043, 1077}";
+		};
+	};
 	ECE7E90E14284CAC00466331 /* NgnSipPreferences.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 858}}";
@@ -817,11 +894,25 @@
 			sepNavVisRange = "{1031, 790}";
 		};
 	};
+	ECE7E90F14284CAC00466331 /* NgnSipSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 1040}}";
+			sepNavSelRange = "{1930, 0}";
+			sepNavVisRange = "{1490, 1293}";
+		};
+	};
 	ECE7E91214284CAC00466331 /* NgnSipStack.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1160, 3705}}";
 			sepNavSelRange = "{4056, 37}";
 			sepNavVisRange = "{3547, 1004}";
+		};
+	};
+	ECE7E91314284CAC00466331 /* NgnSubscriptionSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 585}}";
+			sepNavSelRange = "{1142, 13}";
+			sepNavVisRange = "{499, 1348}";
 		};
 	};
 	ECE7E92914284CAC00466331 /* NgnConfigurationEntry.h */ = {
@@ -1010,6 +1101,13 @@
 	};
 	ECFD32AD135E821000E6A9A3 /* tinyWRAP */ = {
 		activeExec = 0;
+	};
+	ECFD32CD135E824700E6A9A3 /* SipMessage.cxx */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 3601}}";
+			sepNavSelRange = "{5566, 80}";
+			sepNavVisRange = "{5228, 957}";
+		};
 	};
 	ECFD32D1135E824700E6A9A3 /* SipStack.cxx */ = {
 		uiCtxt = {

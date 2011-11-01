@@ -183,6 +183,8 @@
 		ECD2847E145F6FD900EFE997 /* tsip_dialog_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD2847D145F6FD900EFE997 /* tsip_dialog_info.c */; };
 		ECD2848A145F706100EFE997 /* tsip_api_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD28489145F706100EFE997 /* tsip_api_info.c */; };
 		ECD2848C145F707100EFE997 /* tsip_api_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD2848B145F707100EFE997 /* tsip_api_info.h */; };
+		ECD284A6145F771B00EFE997 /* NgnDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */; };
+		ECD284A7145F771B00EFE997 /* NgnDeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB765137C35250027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
 		ECDDB76A137C353D0027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
@@ -2053,6 +2055,8 @@
 		ECD2847D145F6FD900EFE997 /* tsip_dialog_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_dialog_info.c; sourceTree = "<group>"; };
 		ECD28489145F706100EFE997 /* tsip_api_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_api_info.c; sourceTree = "<group>"; };
 		ECD2848B145F707100EFE997 /* tsip_api_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_api_info.h; sourceTree = "<group>"; };
+		ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnDeviceInfo.h; sourceTree = "<group>"; };
+		ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnDeviceInfo.mm; sourceTree = "<group>"; };
 		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -3889,6 +3893,8 @@
 				ECE7E8DD14284CAC00466331 /* NgnHistorySMSEvent.mm */,
 				ECE7E8DE14284CAC00466331 /* NgnPhoneNumber.h */,
 				ECE7E8DF14284CAC00466331 /* NgnPhoneNumber.m */,
+				ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */,
+				ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */,
 			);
 			name = model;
 			path = "../common-ngn-stack/model";
@@ -6460,6 +6466,7 @@
 				ECE7E99D14284CAC00466331 /* NgnUriUtils.h in Headers */,
 				ECE7E99F14284CAC00466331 /* NSDate+Utilities.h in Headers */,
 				ECE7E9A314284CD300466331 /* iOSProxyVideoProducer.h in Headers */,
+				ECD284A6145F771B00EFE997 /* NgnDeviceInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7625,6 +7632,7 @@
 				ECE7E99E14284CAC00466331 /* NgnUriUtils.mm in Sources */,
 				ECE7E9A014284CAC00466331 /* NSDate+Utilities.m in Sources */,
 				ECE7E9A414284CD300466331 /* iOSProxyVideoProducer.mm in Sources */,
+				ECD284A7145F771B00EFE997 /* NgnDeviceInfo.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

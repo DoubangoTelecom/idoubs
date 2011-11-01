@@ -19,39 +19,49 @@
  */
 #import "NgnInviteSession.h"
 #import "NgnEngine.h"
+#import "NgnStringUtils.h"
 
 #import "MediaSessionMgr.h"
+ 
 
 @implementation NgnInviteSession
 
--(NgnInviteSession*)initWithSipStack:(NgnSipStack *)sipStack{
+-(NgnInviteSession*)initWithSipStack:(NgnSipStack *)sipStack
+{
 	if((self = (NgnInviteSession*)[super initWithSipStack:sipStack])){
 		mState = INVITE_STATE_NONE;
 		_mMediaSessionMgr = tsk_null;
+		mRemoteDeviceInfo = [[NgnDeviceInfo alloc] init];
 		
 		mDidConnect = NO;
 	}
 	return self;
 }
 
--(void)dealloc{
+-(void)dealloc
+{
 	_mMediaSessionMgr = tsk_null; // Not yours
+	[mRemoteDeviceInfo release];
 	[super dealloc];
 }
 
--(NgnMediaType_t) getMediaType{
+-(NgnMediaType_t) getMediaType
+{
 	return mMediaType;
 }
 
--(void) setMediaType:(NgnMediaType_t)mediaType_{
+-(void) setMediaType:(NgnMediaType_t)mediaType_
+{
 	mMediaType = mediaType_;
 }
 
--(InviteState_t) getState{
+-(InviteState_t) getState
+{
 	return mState;
 }
 
--(void) setState: (InviteState_t)newState{
+-(void) setState: (InviteState_t)newState
+{
 	if(mState == newState){
 		return;
 	}
@@ -104,21 +114,25 @@
 	[event release];
 }
 
--(BOOL) isActive{
+-(BOOL) isActive
+{
 	return mState != INVITE_STATE_NONE
 	&& mState != INVITE_STATE_TERMINATING 
 	&& mState != INVITE_STATE_TERMINATED;
 }
 
--(BOOL) active{
+-(BOOL) active
+{
 	return [self isActive];
 }
 
--(BOOL) isLocalHeld{
+-(BOOL) isLocalHeld
+{
 	return mLocalHold;
 }
 
--(void) setLocalHold: (BOOL)held{
+-(void) setLocalHold: (BOOL)held
+{
 	mLocalHold = held;
 }
 
@@ -126,41 +140,76 @@
 	return mRemoteHold;
 }
 
--(void) setRemoteHold: (BOOL)held{
+-(void) setRemoteHold: (BOOL)held
+{
 	mRemoteHold = held;
 }
 
--(NgnHistoryEvent*) getHistoryEvent{
+-(NgnHistoryEvent*) getHistoryEvent
+{
 	[NSException raise:NSInternalInconsistencyException 
 				format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 	return nil;
 }
 
--(NSString*)getRemotePartyDisplayName{
+-(NSString*)getRemotePartyDisplayName
+{
 	return self.historyEvent ? self.historyEvent.remotePartyDisplayName : self.remotePartyUri;
 }
 
+-(NgnDeviceInfo*)getRemoteDeviceInfo
+{
+	return mRemoteDeviceInfo;
+}
+
 // override from SipSession
--(void)setRemotePartyUri:(NSString*)uri{
+-(void)setRemotePartyUri:(NSString*)uri
+{
 	[super setRemotePartyUri:uri];
 	if([self getHistoryEvent]){
 		[[self getHistoryEvent] setRemotePartyWithValidUri:uri];
 	}
 }
 
--(const MediaSessionMgr*) getMediaSessionMgr{
+-(const MediaSessionMgr*) getMediaSessionMgr
+{
 	if(!_mMediaSessionMgr){
-		const SipSession* _session = [self getSession];
-		if(!_session){
+		if(!self.session){
 			TSK_DEBUG_ERROR("Null session");
 		}
 		else {
-			_mMediaSessionMgr = dynamic_cast<InviteSession*>(
-															 const_cast<SipSession*>(_session)
-															 )->getMediaMgr();
+			_mMediaSessionMgr = dynamic_cast<InviteSession*>(const_cast<SipSession*>(self.session))->getMediaMgr();
 		}
 	}
 	return _mMediaSessionMgr;
+}
+
+-(BOOL) sendInfoWithContentData:(NSData*)content contentType:(NSString*)ctype
+{
+	if(!self.session){
+		TSK_DEBUG_ERROR("Null session");
+		return NO;
+	}
+	if(!content || !ctype){
+		TSK_DEBUG_ERROR("Invalid parameter");
+		return NO;
+	}
+	
+	ActionConfig* _config= new ActionConfig();
+	_config->addHeader("Content-Type", [NgnStringUtils toCString:ctype]);
+	BOOL ret = dynamic_cast<InviteSession*>(self.session)->sendInfo([content bytes], [content length], _config);
+	delete _config;
+	
+	return ret;
+}
+
+-(BOOL) sendInfoWithContentString:(NSString*)content contentType:(NSString*)ctype
+{
+	if(!content || !ctype){
+		TSK_DEBUG_ERROR("Invalid parameter");
+		return NO;
+	}
+	return [self sendInfoWithContentData:[content dataUsingEncoding:NSUTF8StringEncoding] contentType:ctype];
 }
 
 @end

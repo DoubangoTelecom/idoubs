@@ -162,6 +162,17 @@
 			ECB8A5D9145081730042907B = ECB8A5D9145081730042907B /* PBXTextBookmark */;
 			ECD2846E145F6F5900EFE997 /* PBXTextBookmark */ = ECD2846E145F6F5900EFE997 /* PBXTextBookmark */;
 			ECD28476145F6F6600EFE997 /* PBXTextBookmark */ = ECD28476145F6F6600EFE997 /* PBXTextBookmark */;
+			ECD28509145F95C400EFE997 /* PBXTextBookmark */ = ECD28509145F95C400EFE997 /* PBXTextBookmark */;
+			ECD2850A145F95C400EFE997 /* PBXTextBookmark */ = ECD2850A145F95C400EFE997 /* PBXTextBookmark */;
+			ECD2850C145F95C400EFE997 /* PBXTextBookmark */ = ECD2850C145F95C400EFE997 /* PBXTextBookmark */;
+			ECD2850E145F95C400EFE997 /* PBXTextBookmark */ = ECD2850E145F95C400EFE997 /* PBXTextBookmark */;
+			ECD28510145F95C400EFE997 /* PBXTextBookmark */ = ECD28510145F95C400EFE997 /* PBXTextBookmark */;
+			ECD28512145F95C400EFE997 /* PBXTextBookmark */ = ECD28512145F95C400EFE997 /* PBXTextBookmark */;
+			ECD28513145F95C400EFE997 /* PBXTextBookmark */ = ECD28513145F95C400EFE997 /* PBXTextBookmark */;
+			ECD28514145F95C500EFE997 /* PBXTextBookmark */ = ECD28514145F95C500EFE997 /* PBXTextBookmark */;
+			ECD2857A145F992400EFE997 /* PBXTextBookmark */ = ECD2857A145F992400EFE997 /* PBXTextBookmark */;
+			ECD2857B145F992400EFE997 /* PBXTextBookmark */ = ECD2857B145F992400EFE997 /* PBXTextBookmark */;
+			ECD2857C145F992400EFE997 /* PBXTextBookmark */ = ECD2857C145F992400EFE997 /* PBXTextBookmark */;
 			ECDD35CA141EE35200D60AE2 = ECDD35CA141EE35200D60AE2 /* PBXTextBookmark */;
 			ECE7EA441428550300466331 = ECE7EA441428550300466331 /* PlistBookmark */;
 			ECE7EA7D1428557000466331 = ECE7EA7D1428557000466331 /* PBXTextBookmark */;
@@ -560,9 +571,9 @@
 	};
 	EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 6149}}";
-			sepNavSelRange = "{6082, 0}";
-			sepNavVisRange = "{5101, 1100}";
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 6734}}";
+			sepNavSelRange = "{8833, 0}";
+			sepNavVisRange = "{8271, 629}";
 		};
 	};
 	EC7E2FA21389696C0020EB89 /* idoubs2AppDelegate.h */ = {
@@ -574,9 +585,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 8268}}";
-			sepNavSelRange = "{12823, 0}";
-			sepNavVisRange = "{11973, 931}";
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 8125}}";
+			sepNavSelRange = "{16041, 0}";
+			sepNavVisRange = "{15039, 1527}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -856,6 +867,140 @@
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 11973;
+	};
+	ECD28509145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 357";
+		rLen = 0;
+		rLoc = 12823;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 11973;
+	};
+	ECD2850A145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECD2850B145F95C400EFE997 /* NgnSipService.mm */;
+		name = "NgnSipService.mm: 514";
+		rLen = 0;
+		rLoc = 21781;
+		rType = 0;
+		vrLen = 1833;
+		vrLoc = 21725;
+	};
+	ECD2850B145F95C400EFE997 /* NgnSipService.mm */ = {
+		isa = PBXFileReference;
+		name = NgnSipService.mm;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/services/impl/NgnSipService.mm";
+		sourceTree = "<absolute>";
+	};
+	ECD2850C145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECD2850D145F95C400EFE997 /* UIView.h */;
+		name = "UIView.h: 148";
+		rLen = 17;
+		rLoc = 6628;
+		rType = 0;
+		vrLen = 2497;
+		vrLoc = 5582;
+	};
+	ECD2850D145F95C400EFE997 /* UIView.h */ = {
+		isa = PBXFileReference;
+		name = UIView.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h;
+		sourceTree = "<absolute>";
+	};
+	ECD2850E145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECD2850F145F95C400EFE997 /* CGAffineTransform.h */;
+		name = "CGAffineTransform.h: 13";
+		rLen = 27;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 1010;
+		vrLoc = 0;
+	};
+	ECD2850F145F95C400EFE997 /* CGAffineTransform.h */ = {
+		isa = PBXFileReference;
+		name = CGAffineTransform.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGAffineTransform.h;
+		sourceTree = "<absolute>";
+	};
+	ECD28510145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECD28511145F95C400EFE997 /* UIDevice.h */;
+		name = "UIDevice.h: 49";
+		rLen = 36;
+		rLoc = 2329;
+		rType = 0;
+		vrLen = 2148;
+		vrLoc = 1297;
+	};
+	ECD28511145F95C400EFE997 /* UIDevice.h */ = {
+		isa = PBXFileReference;
+		name = UIDevice.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIDevice.h;
+		sourceTree = "<absolute>";
+	};
+	ECD28512145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */;
+		name = "VideoCallViewController.mm: 434";
+		rLen = 0;
+		rLoc = 13735;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 6807;
+	};
+	ECD28513145F95C400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */;
+		name = "VideoCallViewController.mm: 272";
+		rLen = 0;
+		rLoc = 8833;
+		rType = 0;
+		vrLen = 893;
+		vrLoc = 8007;
+	};
+	ECD28514145F95C500EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */;
+		name = "VideoCallViewController.mm: 272";
+		rLen = 0;
+		rLoc = 8833;
+		rType = 0;
+		vrLen = 629;
+		vrLoc = 8271;
+	};
+	ECD2857A145F992400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */;
+		name = "VideoCallViewController.mm: 259";
+		rLen = 24;
+		rLoc = 8364;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 8007;
+	};
+	ECD2857B145F992400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 357";
+		rLen = 0;
+		rLoc = 12823;
+		rType = 0;
+		vrLen = 935;
+		vrLoc = 11969;
+	};
+	ECD2857C145F992400EFE997 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
+		name = "idoubs2AppDelegate.mm: 446";
+		rLen = 0;
+		rLoc = 16041;
+		rType = 0;
+		vrLen = 1527;
+		vrLoc = 15039;
 	};
 	ECDD35CA141EE35200D60AE2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

@@ -195,6 +195,12 @@
 		ECC8C9D91407463B00E0A500 /* tdav_codec_g722.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D61407463B00E0A500 /* tdav_codec_g722.c */; };
 		ECC8C9DC1407464C00E0A500 /* g722_enc_dec.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C9DA1407464C00E0A500 /* g722_enc_dec.h */; };
 		ECC8C9DD1407464C00E0A500 /* tdav_codec_g722.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8C9DB1407464C00E0A500 /* tdav_codec_g722.h */; };
+		ECD28551145F987100EFE997 /* tsip_dialog_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD28550145F987100EFE997 /* tsip_dialog_info.c */; };
+		ECD28553145F988000EFE997 /* tsip_dialog_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD28552145F988000EFE997 /* tsip_dialog_info.h */; };
+		ECD28556145F98A300EFE997 /* NgnDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD28554145F98A300EFE997 /* NgnDeviceInfo.h */; };
+		ECD28557145F98A300EFE997 /* NgnDeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECD28555145F98A300EFE997 /* NgnDeviceInfo.mm */; };
+		ECD2855D145F98D700EFE997 /* tsip_api_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD2855C145F98D700EFE997 /* tsip_api_info.h */; };
+		ECD2855F145F98E400EFE997 /* tsip_api_info.c in Sources */ = {isa = PBXBuildFile; fileRef = ECD2855E145F98E400EFE997 /* tsip_api_info.c */; };
 		ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */; };
 		ECFD24F2135D58F700E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
 		ECFD2688135D5D8500E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
@@ -1478,6 +1484,12 @@
 		ECC8C9D61407463B00E0A500 /* tdav_codec_g722.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_g722.c; sourceTree = "<group>"; };
 		ECC8C9DA1407464C00E0A500 /* g722_enc_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g722_enc_dec.h; sourceTree = "<group>"; };
 		ECC8C9DB1407464C00E0A500 /* tdav_codec_g722.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_g722.h; sourceTree = "<group>"; };
+		ECD28550145F987100EFE997 /* tsip_dialog_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_dialog_info.c; sourceTree = "<group>"; };
+		ECD28552145F988000EFE997 /* tsip_dialog_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_dialog_info.h; sourceTree = "<group>"; };
+		ECD28554145F98A300EFE997 /* NgnDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnDeviceInfo.h; sourceTree = "<group>"; };
+		ECD28555145F98A300EFE997 /* NgnDeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnDeviceInfo.mm; sourceTree = "<group>"; };
+		ECD2855C145F98D700EFE997 /* tsip_api_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_api_info.h; sourceTree = "<group>"; };
+		ECD2855E145F98E400EFE997 /* tsip_api_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_api_info.c; sourceTree = "<group>"; };
 		ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport_cfsocket.c; sourceTree = "<group>"; };
 		ECFD2426135D584100E6A9A3 /* libtinySAK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinySAK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyNET.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2802,6 +2814,8 @@
 		EC54902D1428431D00FFA990 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				ECD28554145F98A300EFE997 /* NgnDeviceInfo.h */,
+				ECD28555145F98A300EFE997 /* NgnDeviceInfo.mm */,
 				EC54902E1428431D00FFA990 /* NgnContact.h */,
 				EC54902F1428431D00FFA990 /* NgnContact.m */,
 				EC5490301428431D00FFA990 /* NgnFavorite.h */,
@@ -4303,6 +4317,7 @@
 		ECFD2EA7135E7D8900E6A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2855C145F98D700EFE997 /* tsip_api_info.h */,
 				ECFD2EA8135E7D8900E6A9A3 /* tsip_api_common.h */,
 				ECFD2EA9135E7D8900E6A9A3 /* tsip_api_invite.h */,
 				ECFD2EAA135E7D8900E6A9A3 /* tsip_api_message.h */,
@@ -4327,6 +4342,7 @@
 		ECFD2EB3135E7D8900E6A9A3 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECD28552145F988000EFE997 /* tsip_dialog_info.h */,
 				ECFD2EB4135E7D8900E6A9A3 /* tsip_dialog.h */,
 				ECFD2EB5135E7D8900E6A9A3 /* tsip_dialog_invite.common.h */,
 				ECFD2EB6135E7D8900E6A9A3 /* tsip_dialog_invite.h */,
@@ -4616,6 +4632,7 @@
 		ECFD2F9F135E7D8900E6A9A3 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2855E145F98E400EFE997 /* tsip_api_info.c */,
 				ECFD2FA0135E7D8900E6A9A3 /* tsip_api_common.c */,
 				ECFD2FA1135E7D8900E6A9A3 /* tsip_api_invite.c */,
 				ECFD2FA2135E7D8900E6A9A3 /* tsip_api_message.c */,
@@ -4640,6 +4657,7 @@
 		ECFD2FAB135E7D8900E6A9A3 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECD28550145F987100EFE997 /* tsip_dialog_info.c */,
 				ECFD2FAC135E7D8900E6A9A3 /* tsip_dialog.c */,
 				ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */,
 				ECFD2FAE135E7D8900E6A9A3 /* tsip_dialog_invite.cdiv.c */,
@@ -5475,6 +5493,7 @@
 				EC5490F81428431D00FFA990 /* NSDate+Utilities.h in Headers */,
 				EC5491141428446800FFA990 /* NgnVideoView.h in Headers */,
 				EC54911A142844AB00FFA990 /* OSXProxyVideoProducer.h in Headers */,
+				ECD28556145F98A300EFE997 /* NgnDeviceInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5951,6 +5970,8 @@
 				ECFD30CF135E7D8900E6A9A3 /* tinysip.h in Headers */,
 				ECFD30D0135E7D8900E6A9A3 /* tinysip_config.h in Headers */,
 				ECFD30D1135E7D8900E6A9A3 /* tsip.h in Headers */,
+				ECD28553145F988000EFE997 /* tsip_dialog_info.h in Headers */,
+				ECD2855D145F98D700EFE997 /* tsip_api_info.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6406,6 +6427,7 @@
 				EC5490F71428431D00FFA990 /* NgnUriUtils.mm in Sources */,
 				EC5490F91428431D00FFA990 /* NSDate+Utilities.m in Sources */,
 				EC54911B142844AB00FFA990 /* OSXProxyVideoProducer.mm in Sources */,
+				ECD28557145F98A300EFE997 /* NgnDeviceInfo.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6861,6 +6883,8 @@
 				ECFD315F135E7D8900E6A9A3 /* tsip_ssession.c in Sources */,
 				ECFD3160135E7D8900E6A9A3 /* tsip_timers.c in Sources */,
 				ECFD3161135E7D8900E6A9A3 /* tsip_uri.c in Sources */,
+				ECD28551145F987100EFE997 /* tsip_dialog_info.c in Sources */,
+				ECD2855F145F98E400EFE997 /* tsip_api_info.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

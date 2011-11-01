@@ -21,6 +21,7 @@
 
 #import "sip/NgnSipSession.h"
 #import "model/NgnHistoryEvent.h"
+#import "model/NgnDeviceInfo.h"
 #import "media/NgnMediaType.h"
 
 class MediaSessionMgr;
@@ -45,6 +46,8 @@ InviteState_t;
 	BOOL mEventAdded;
 	BOOL mEventIncoming;
 	BOOL mDidConnect;
+	NgnDeviceInfo* mRemoteDeviceInfo;
+	
 	
 	const MediaSessionMgr* _mMediaSessionMgr;
 }
@@ -54,19 +57,24 @@ InviteState_t;
 @property(readonly) BOOL active;
 @property(readonly,getter=getHistoryEvent) NgnHistoryEvent* historyEvent;
 @property(readonly,getter=getRemotePartyDisplayName) NSString* remotePartyDisplayName;
+@property(readonly,getter=getRemoteDeviceInfo) NgnDeviceInfo* remoteDeviceInfo;
 
 -(NgnInviteSession*) initWithSipStack: (NgnSipStack *)sipStack;
--(NgnMediaType_t) getMediaType;
+-(NgnMediaType_t)getMediaType;
 -(void) setMediaType:(NgnMediaType_t)mediaType; // should only be called by the NgnSipService
 -(InviteState_t) getState;
--(void) setState: (InviteState_t)newState;
+-(void) setState:(InviteState_t)newState;
 -(BOOL) isActive;
 -(BOOL) isLocalHeld;
--(void) setLocalHold: (BOOL)held;
+-(void) setLocalHold:(BOOL)held;
 -(BOOL) isRemoteHeld;
--(void) setRemoteHold: (BOOL)held;
+-(void) setRemoteHold:(BOOL)held;
 -(NgnHistoryEvent*) getHistoryEvent;
 -(NSString*)getRemotePartyDisplayName;
--(const MediaSessionMgr*) getMediaSessionMgr;
+-(NgnDeviceInfo*)getRemoteDeviceInfo;
+-(const MediaSessionMgr*)getMediaSessionMgr;
+
+-(BOOL) sendInfoWithContentData:(NSData*)content contentType:(NSString*)ctype;
+-(BOOL) sendInfoWithContentString:(NSString*)content contentType:(NSString*)ctype;
 
 @end
