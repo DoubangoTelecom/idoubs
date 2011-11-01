@@ -146,6 +146,8 @@
 -(NSDictionary*) getDefaults{
 	return [NSDictionary dictionaryWithObjectsAndKeys:
 	 
+	 /* === GENERAL === */
+	[NSNumber numberWithBool:DEFAULT_GENERAL_SEND_DEVICE_INFO], GENERAL_SEND_DEVICE_INFO,
 	 
 	 /* === IDENTITY === */
 	 DEFAULT_IDENTITY_DISPLAY_NAME, IDENTITY_DISPLAY_NAME,

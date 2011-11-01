@@ -41,4 +41,6 @@
 
 #define kContentTypeJson					@"application/json"
 
+#define kContentDoubangoDeviceInfo			@"doubango/device-info"
+
 #endif /* NGN_CONTENT_TYPE_H */

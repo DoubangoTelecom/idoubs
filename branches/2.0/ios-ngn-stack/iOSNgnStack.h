@@ -56,6 +56,7 @@
 #import "model/NgnHistorySMSEvent.h"
 #import "model/NgnHistoryAVCallEvent.h"
 #import "model/NgnFavorite.h"
+#import "model/NgnDeviceInfo.h"
 
 #import "media/NgnMediaType.h"
 #import "media/NgnContentType.h"

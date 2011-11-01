@@ -510,6 +510,49 @@ done:
 			}
 				
 			case tsip_i_request:
+			{
+				const SipMessage* _message = _e->getSipMessage();
+				if(_message && (((ngnSipSession = [NgnAVSession getSessionWithId: _sessionId]) != nil) || ((ngnSipSession = [NgnMsrpSession getSessionWithId: _sessionId]) != nil))){
+					if(const_cast<SipMessage*>(_message)->getRequestType() == tsip_INFO){
+						const void* _content = const_cast<SipMessage*>(_message)->getSipContentPtr();
+						char* _content_type = const_cast<SipMessage*>(_message)->getSipHeaderValue("c");
+						if(_content && _content_type){
+							NSString* contentType = [NgnStringUtils toNSString:_content_type];
+							if([contentType isEqualToString:kContentDoubangoDeviceInfo]){
+								NSString* content = [NgnStringUtils toNSString:(const char*)_content];
+								NSArray* items = [content componentsSeparatedByString:@"\r\n"];
+								for (NSString* item in items) {
+									NSArray* info = [item componentsSeparatedByString:@":"];
+									if([info count] == 2){
+										// orientation
+										if([[info objectAtIndex:0] isEqualToString:@"orientation"]){
+											NSString* orientation = [info objectAtIndex:1];
+											if([orientation isEqualToString:@"portrait"]){
+												((NgnInviteSession*)ngnSipSession).remoteDeviceInfo.orientation = NgnDeviceInfo_Orientation_Portrait;
+											}
+											else if([orientation isEqualToString:@"landscape"]){
+												((NgnInviteSession*)ngnSipSession).remoteDeviceInfo.orientation = NgnDeviceInfo_Orientation_Landscape;
+											}
+										}
+										// lang
+										else if([[info objectAtIndex:0] isEqualToString:@"lang"]){
+											((NgnInviteSession*)ngnSipSession).remoteDeviceInfo.lang = [info objectAtIndex:1];
+										}
+									}
+								}
+								eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+																		  andEvenType:INVITE_EVENT_REMOTE_DEVICE_INFO_CHANGED
+																		 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+																		 andSipPhrase:phrase];
+								[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
+							}
+						}
+						TSK_FREE(_content_type);
+					}
+				}
+				break;
+			}
+				
 			case tsip_o_ect_ok:
 			case tsip_o_ect_nok:
 			case tsip_i_ect:

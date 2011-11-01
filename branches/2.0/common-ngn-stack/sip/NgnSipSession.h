@@ -50,6 +50,7 @@ ConnectionState_t;
 @property(readonly, getter=getFromUri) NSString* fromUri;
 @property(readonly, getter=getToUri) NSString* toUri;
 @property(readonly, getter=isConnected) BOOL connected;
+@property(readonly, getter=getSession) SipSession* session;
 
 -(NgnSipSession*)initWithSipStack:(NgnSipStack*)sipStack;
 -(void)initialize;
