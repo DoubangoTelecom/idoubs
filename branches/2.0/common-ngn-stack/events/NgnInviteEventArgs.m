@@ -25,16 +25,36 @@
 @synthesize eventType;
 @synthesize mediaType;
 @synthesize sipPhrase;
+@synthesize sipCode;
 
--(NgnInviteEventArgs*)initWithSessionId: (long)sId andEvenType: (NgnInviteEventTypes_t)eType andMediaType: (NgnMediaType_t)media andSipPhrase: (NSString*)phrase{
+-(NgnInviteEventArgs*)initWithSessionId:(long)sessionId_
+							andEvenType:(NgnInviteEventTypes_t)eventType_ 
+						   andMediaType:(NgnMediaType_t)mediaType_ 
+						   andSipPhrase:(NSString*)sipPhrase_
+{
+	return [self initWithSessionId:sessionId_
+				andEvenType:eventType_
+			   andMediaType:mediaType_
+			   andSipPhrase:sipPhrase_
+				 andSipCode:0];
+}
+
+-(NgnInviteEventArgs*)initWithSessionId:(long)sessionId_ 
+							andEvenType:(NgnInviteEventTypes_t)eventType_ 
+						   andMediaType:(NgnMediaType_t)mediaType_ 
+						   andSipPhrase:(NSString*)sipPhrase_
+							 andSipCode:(short)sipCode_
+{
 	if((self = [super init])){
-		self->sessionId = sId;
-		self->eventType = eType;
-		self->mediaType = media;
-        self->sipPhrase = [phrase retain];
+		self->sessionId = sessionId_;
+		self->eventType = eventType_;
+		self->mediaType = mediaType_;
+        self->sipPhrase = [sipPhrase_ retain];
+		self->sipCode = sipCode_;
 	}
 	return self;
 }
+
 
 -(void)dealloc{
 	[sipPhrase release];
