@@ -307,7 +307,8 @@ public:
 							 initWithSessionId:_sessionId
 							 andEvenType:INVITE_EVENT_TERMINATED
 							 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
-							 andSipPhrase:phrase];
+							 andSipPhrase:phrase
+							 andSipCode:_sipCode];
 					
 					[ngnSipSession setConnectionState:CONN_STATE_TERMINATED];
 					[((NgnInviteSession*)ngnSipSession) setState:INVITE_STATE_TERMINATED];
@@ -470,10 +471,10 @@ done:
 							delete _session;
 						}
 						if(ngnAVSession){
-							eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnAVSession.id 
-															 andEvenType: INVITE_EVENT_INCOMING 
-															 andMediaType: ngnAVSession.mediaType
-															 andSipPhrase: phrase];
+							eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnAVSession.id 
+															 andEvenType:INVITE_EVENT_INCOMING 
+															 andMediaType:ngnAVSession.mediaType
+															 andSipPhrase:phrase];
 							[ngnAVSession setState:INVITE_STATE_INCOMING];
 							[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 						}
@@ -498,10 +499,11 @@ done:
 						const SipMessage* _message = _e->getSipMessage();
 						BOOL containsSdp = _message && const_cast<SipMessage*>(_message)->getSdpMessage();
 						
-						eargs = [[NgnInviteEventArgs alloc] initWithSessionId: ngnSipSession.id 
-																  andEvenType: _code==180 ? INVITE_EVENT_RINGING : (containsSdp ? INVITE_EVENT_EARLY_MEDIA : INVITE_EVENT_INPROGRESS)
-																 andMediaType: ((NgnInviteSession*)ngnSipSession).mediaType
-																 andSipPhrase: phrase];
+						eargs = [[NgnInviteEventArgs alloc] initWithSessionId:ngnSipSession.id 
+																  andEvenType:_code==180 ? INVITE_EVENT_RINGING : (containsSdp ? INVITE_EVENT_EARLY_MEDIA : INVITE_EVENT_INPROGRESS)
+																 andMediaType:((NgnInviteSession*)ngnSipSession).mediaType
+																 andSipPhrase:phrase
+																 andSipCode:_code];
 						[((NgnInviteSession*)ngnSipSession) setState:_code==180 ? INVITE_STATE_REMOTE_RINGING : (containsSdp ? INVITE_STATE_EARLY_MEDIA : INVITE_STATE_INPROGRESS)];
 						[NgnNotificationCenter postNotificationOnMainThreadWithName:kNgnInviteEventArgs_Name object:eargs];
 					}
@@ -550,13 +552,6 @@ done:
 						TSK_FREE(_content_type);
 					}
 				}
-				break;
-			}
-				
-			case tsip_o_ect_ok:
-			case tsip_o_ect_nok:
-			case tsip_i_ect:
-			{
 				break;
 			}
 			

@@ -49,13 +49,23 @@ NgnInviteEventTypes_t;
     NgnInviteEventTypes_t eventType;
     NgnMediaType_t mediaType;
     NSString* sipPhrase;
+	short sipCode;
 }
 
--(NgnInviteEventArgs*)initWithSessionId: (long)sessionId andEvenType: (NgnInviteEventTypes_t)eventType andMediaType: (NgnMediaType_t)mediaType andSipPhrase: (NSString*)sipPhrase;
+-(NgnInviteEventArgs*)initWithSessionId:(long)sessionId 
+						   andEvenType:(NgnInviteEventTypes_t)eventType 
+						   andMediaType:(NgnMediaType_t)mediaType 
+						   andSipPhrase:(NSString*)sipPhrase;
+-(NgnInviteEventArgs*)initWithSessionId:(long)sessionId 
+						   andEvenType:(NgnInviteEventTypes_t)eventType 
+						   andMediaType:(NgnMediaType_t)mediaType 
+						   andSipPhrase:(NSString*)sipPhrase
+						   andSipCode:(short)sipCode;
 
 @property(readonly) long sessionId;
 @property(readonly) NgnInviteEventTypes_t eventType;
 @property(readonly) NgnMediaType_t mediaType;
 @property(readonly,retain) NSString* sipPhrase;
+@property(readonly) short sipCode;
 
 @end
