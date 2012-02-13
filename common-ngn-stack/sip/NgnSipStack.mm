@@ -253,6 +253,14 @@
 	return nil;
 }
 
+-(BOOL) setSSLCertificates: (NSString*)privKey andPubKey:(NSString*)pubKey andCAKey:(NSString*)caKey{
+	if(_mSipStack){
+		return _mSipStack->setSSLCretificates([privKey UTF8String], [pubKey UTF8String], [caKey UTF8String]);
+	}
+	TSK_DEBUG_ERROR("Null embedded SipStack");
+	return NO;
+}
+
 -(NSString*)getPreferredIdentity{
 	char* _preferredIdentity = _mSipStack->getPreferredIdentity();
 	NSString* preferredIdentity = [NgnStringUtils toNSString: _preferredIdentity];

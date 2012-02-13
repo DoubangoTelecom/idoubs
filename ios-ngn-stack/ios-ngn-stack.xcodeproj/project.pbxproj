@@ -8825,6 +8825,7 @@
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_OPENSSL_H=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -8864,6 +8865,7 @@
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_OPENSSL_H=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -8892,6 +8894,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -8933,6 +8937,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -8971,6 +8977,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9009,6 +9017,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9051,6 +9061,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9092,6 +9104,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9134,6 +9148,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9175,6 +9191,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9217,6 +9235,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9258,6 +9278,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9333,14 +9355,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 					$DOUBANGO_HOME/tinyNET/src,
 				);
-				OTHER_CFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
 			};
@@ -9796,6 +9815,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -9838,6 +9859,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",

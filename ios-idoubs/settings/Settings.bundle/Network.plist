@@ -73,11 +73,13 @@
 			<array>
 				<string>UDP</string>
 				<string>TCP</string>
+				<string>TLS</string>
 			</array>
 			<key>Values</key>
 			<array>
 				<string>UDP</string>
 				<string>TCP</string>
+				<string>TLS</string>
 			</array>
 		</dict>
 		<dict>

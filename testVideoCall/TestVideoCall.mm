@@ -203,7 +203,7 @@ static const NSString* kRemoteParty = @"3";
 	
 	// take an instance of the engine
 	[NgnEngine initialize];
-	mEngine = [[NgnEngine getInstance] retain];
+	mEngine = [[NgnEngine sharedInstance] retain];
 	
 	// take needed services from the engine
 	mSipService = [mEngine.sipService retain];

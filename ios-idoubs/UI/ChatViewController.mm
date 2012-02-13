@@ -403,7 +403,10 @@
 //
 
 - (void)textViewDidChange:(UITextView *)_textView{
-	if(_textView == textView){
+	if(_textView == self.textView){
+		if([self.textView hasText] == NO){
+			self.textView.contentInset = UIEdgeInsetsMake(0.f, 0.f, 3.1f, 3.1f);
+		}
 		[self resizeTextView];
 	}
 }

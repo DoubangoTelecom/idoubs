@@ -1132,6 +1132,15 @@ private:
 							 sipPreferences.transport,
 							 sipPreferences.ipVersion);
 	
+	// Set SSL certificates
+	if([sipPreferences.transport caseInsensitiveCompare:@"tls"] == NSOrderedSame ) {
+		if(![sipStack setSSLCertificates:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PRIV] 
+							   andPubKey:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PUB]
+								andCAKey:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_CA]]){
+			TSK_DEBUG_ERROR("setSSLCertificates() failed");
+		}
+	}
+	
 	if(![sipStack setProxyCSCFWithFQDN:sipPreferences.pcscfHost andPort:sipPreferences.pcscfPort andTransport:sipPreferences.transport 
 						   andIPVersion:sipPreferences.ipVersion]){
 		TSK_DEBUG_ERROR("Failed to set Proxy-CSCF parameters");

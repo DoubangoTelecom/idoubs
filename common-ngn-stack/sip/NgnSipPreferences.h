@@ -31,8 +31,8 @@
      NSString* realm;
      NSString* pcscfHost;
      int pcscfPort;
-     NSString* transport;
      NSString* ipVersion;
+	 NSString* transport;
      BOOL ipsecSecAgree;
      NSString* localIp;
      BOOL hackAoR;
