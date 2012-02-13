@@ -194,6 +194,13 @@
 									 self.labelContent.frame.origin.y - kBaloonInSideMargin, 
 									 self.labelContent.frame.size.width + kBaloonInSideMargin, 
 									 self.labelContent.frame.size.height + 2 * kBaloonInSideMargin);
+		
+		// remove previous subviews
+		for(UIView* view in self.subviews){
+			if([view isMemberOfClass:[UIImageView class]]){
+				[view removeFromSuperview];
+			}
+		}
 		[self insertSubview:imageView atIndex:0];
 		[imageView release];
 	}

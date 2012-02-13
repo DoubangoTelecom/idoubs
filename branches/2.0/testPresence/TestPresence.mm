@@ -55,8 +55,8 @@ static const BOOL kEnableEarlyIMS = TRUE;
 
 -(BOOL) subscribe{
 	if(!mSubSession){
-		mSubSession = [[NgnSubscriptionSession createOutgoingSessionWithStack:[NgnEngine getInstance].sipService.stack 
-																	andToUri:[NgnEngine getInstance].sipService.defaultIdentity
+		mSubSession = [[NgnSubscriptionSession createOutgoingSessionWithStack:[NgnEngine sharedInstance].sipService.stack 
+																	andToUri:[NgnEngine sharedInstance].sipService.defaultIdentity
 																   andPackage:EventPackage_PresenceList] retain];
 	}
 	return [mSubSession subscribe];
@@ -78,8 +78,8 @@ static const BOOL kEnableEarlyIMS = TRUE;
 
 -(BOOL) publish{
 	if(!mPubSession){
-		mPubSession = [[NgnPublicationSession createOutgoingSessionWithStack:[NgnEngine getInstance].sipService.stack 
-																	andToUri:[NgnEngine getInstance].sipService.defaultIdentity] retain];
+		mPubSession = [[NgnPublicationSession createOutgoingSessionWithStack:[NgnEngine sharedInstance].sipService.stack 
+																	andToUri:[NgnEngine sharedInstance].sipService.defaultIdentity] retain];
 		mPubSession.event = @"presence";
 		mPubSession.contentType = kContentTypePidf;
 	}
@@ -135,11 +135,11 @@ static const BOOL kEnableEarlyIMS = TRUE;
 		default:
 			break;
 	}
-	[buttonRegister setTitle: [NgnEngine getInstance].sipService.registered ? @"UnRegister" : @"Register" forState: UIControlStateNormal];
+	[buttonRegister setTitle: [NgnEngine sharedInstance].sipService.registered ? @"UnRegister" : @"Register" forState: UIControlStateNormal];
 	labelStatus.text = eargs.sipPhrase;
 	
 	// gets the new registration state
-	ConnectionState_t registrationState = [NgnEngine getInstance].sipService.registrationState;	
+	ConnectionState_t registrationState = [NgnEngine sharedInstance].sipService.registrationState;	
 	switch (registrationState) {
 		case CONN_STATE_NONE:
 		case CONN_STATE_TERMINATED:
@@ -147,7 +147,7 @@ static const BOOL kEnableEarlyIMS = TRUE;
 			[buttonRegister setTitle: @"Register" forState: UIControlStateNormal];
 			if(mScheduleRegistration){
 				mScheduleRegistration = FALSE;
-				[[NgnEngine getInstance].sipService registerIdentity];
+				[[NgnEngine sharedInstance].sipService registerIdentity];
 			}
 			labelStatus.backgroundColor = [UIColor redColor];
 			break;
@@ -248,37 +248,37 @@ static const BOOL kEnableEarlyIMS = TRUE;
 	 addObserver:self selector:@selector(onPublicationEvent:) name:kNgnPublicationEventArgs_Name object:nil];
 	
 	// start the engine
-	[[NgnEngine getInstance] start];
+	[[NgnEngine sharedInstance] start];
 	
 	// set credentials
-	[[NgnEngine getInstance].configurationService setStringWithKey:IDENTITY_IMPI andValue:kPrivateIdentity];
-	[[NgnEngine getInstance].configurationService setStringWithKey:IDENTITY_IMPU andValue:kPublicIdentity];
-	[[NgnEngine getInstance].configurationService setStringWithKey:IDENTITY_PASSWORD andValue:kPassword];
-	[[NgnEngine getInstance].configurationService setStringWithKey:NETWORK_REALM andValue:kRealm];
-	[[NgnEngine getInstance].configurationService setStringWithKey:NETWORK_PCSCF_HOST andValue:kProxyHost];
-	[[NgnEngine getInstance].configurationService setIntWithKey:NETWORK_PCSCF_PORT andValue:kProxyPort];
-	[[NgnEngine getInstance].configurationService setBoolWithKey:NETWORK_USE_EARLY_IMS andValue:kEnableEarlyIMS];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:IDENTITY_IMPI andValue:kPrivateIdentity];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:IDENTITY_IMPU andValue:kPublicIdentity];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:IDENTITY_PASSWORD andValue:kPassword];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:NETWORK_REALM andValue:kRealm];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:NETWORK_PCSCF_HOST andValue:kProxyHost];
+	[[NgnEngine sharedInstance].configurationService setIntWithKey:NETWORK_PCSCF_PORT andValue:kProxyPort];
+	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NETWORK_USE_EARLY_IMS andValue:kEnableEarlyIMS];
 	
     // Override point for customization after application launch
     [window makeKeyAndVisible];
 	
 	// Try to register the default identity
-	[[NgnEngine getInstance].sipService registerIdentity];
+	[[NgnEngine sharedInstance].sipService registerIdentity];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application{
-	ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];
+	ConnectionState_t registrationState = [[NgnEngine sharedInstance].sipService getRegistrationState];
 	NgnNSLog(TAG, @"applicationWillEnterForeground and RegistrationState=%d", registrationState);
 	
 	switch (registrationState) {
 		case CONN_STATE_NONE:
 		case CONN_STATE_TERMINATED:
-			[[NgnEngine getInstance].sipService registerIdentity];
+			[[NgnEngine sharedInstance].sipService registerIdentity];
 			break;
 		case CONN_STATE_CONNECTING:
 		case CONN_STATE_TERMINATING:
 			mScheduleRegistration = TRUE;
-			[[NgnEngine getInstance].sipService unRegisterIdentity];
+			[[NgnEngine sharedInstance].sipService unRegisterIdentity];
 		case CONN_STATE_CONNECTED:
 			break;
 	}
@@ -288,23 +288,23 @@ static const BOOL kEnableEarlyIMS = TRUE;
 	NgnNSLog(TAG, @"applicationWillTerminate");
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
-	[[NgnEngine getInstance] stop];
+	[[NgnEngine sharedInstance] stop];
 }
 
 - (IBAction) onButtonClick: (id)sender{
-	ConnectionState_t registrationState = [[NgnEngine getInstance].sipService getRegistrationState];	
+	ConnectionState_t registrationState = [[NgnEngine sharedInstance].sipService getRegistrationState];	
 	switch (registrationState) {
 		case CONN_STATE_NONE:
 		case CONN_STATE_TERMINATED:
 			if(sender == self.buttonRegister){
-				[[NgnEngine getInstance].sipService registerIdentity];
+				[[NgnEngine sharedInstance].sipService registerIdentity];
 			}
 			break;
 		case CONN_STATE_CONNECTING:
 		case CONN_STATE_TERMINATING:
 		case CONN_STATE_CONNECTED:
 			if(sender == self.buttonRegister){
-				[[NgnEngine getInstance].sipService unRegisterIdentity];
+				[[NgnEngine sharedInstance].sipService unRegisterIdentity];
 			}
 			break;
 	}
