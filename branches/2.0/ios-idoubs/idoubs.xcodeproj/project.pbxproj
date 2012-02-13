@@ -1522,6 +1522,8 @@
 					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
@@ -1570,6 +1572,8 @@
 					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
 					"-ltheora",
 					"-lvorbis",
 					"-logg",

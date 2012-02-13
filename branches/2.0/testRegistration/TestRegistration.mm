@@ -99,13 +99,14 @@ static const BOOL kEnableEarlyIMS = TRUE;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     NgnNSLog(TAG, @"applicationDidFinishLaunching");
-    
+		
+	
 	// add observers
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onRegistrationEvent:) name:kNgnRegistrationEventArgs_Name object:nil];
 	
 	// take an instance of the engine
-	mEngine = [[NgnEngine getInstance] retain];
+	mEngine = [[NgnEngine sharedInstance] retain];
 	[mEngine start];// start the engine
 	
 	// take needed services from the engine

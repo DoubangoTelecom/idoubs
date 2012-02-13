@@ -73,8 +73,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 341809038;
-			PBXWorkspaceStateSaveDate = 341809038;
+			PBXPerProjectTemplateStateSaveDate = 350799835;
+			PBXWorkspaceStateSaveDate = 350799835;
 		};
 		perUserProjectItems = {
 			EC26C3D01426D70C0046BBB5 /* PBXTextBookmark */ = EC26C3D01426D70C0046BBB5 /* PBXTextBookmark */;
@@ -91,8 +91,6 @@
 			EC54659C1427E6A700BFBF66 /* PBXTextBookmark */ = EC54659C1427E6A700BFBF66 /* PBXTextBookmark */;
 			EC5465EC1427F3E100BFBF66 /* PBXTextBookmark */ = EC5465EC1427F3E100BFBF66 /* PBXTextBookmark */;
 			EC5465F21427F4C600BFBF66 /* PBXTextBookmark */ = EC5465F21427F4C600BFBF66 /* PBXTextBookmark */;
-			EC54662F1428039000BFBF66 /* PBXTextBookmark */ = EC54662F1428039000BFBF66 /* PBXTextBookmark */;
-			ECD28571145F991700EFE997 /* PBXTextBookmark */ = ECD28571145F991700EFE997 /* PBXTextBookmark */;
 			ECE7EA001428541600466331 /* PBXTextBookmark */ = ECE7EA001428541600466331 /* PBXTextBookmark */;
 			ECE7EB94142882D900466331 /* PBXTextBookmark */ = ECE7EB94142882D900466331 /* PBXTextBookmark */;
 			ECE7EBA8142885FE00466331 /* PBXTextBookmark */ = ECE7EBA8142885FE00466331 /* PBXTextBookmark */;
@@ -101,9 +99,6 @@
 			ECE7EBC51428879600466331 /* PBXTextBookmark */ = ECE7EBC51428879600466331 /* PBXTextBookmark */;
 			ECE7EBD41428891400466331 /* PBXTextBookmark */ = ECE7EBD41428891400466331 /* PBXTextBookmark */;
 			ECE7EBD51428891400466331 /* PlistBookmark */ = ECE7EBD51428891400466331 /* PlistBookmark */;
-			ECE7EBDD1428899200466331 /* PBXTextBookmark */ = ECE7EBDD1428899200466331 /* PBXTextBookmark */;
-			ECE7EBDF1428899200466331 /* PBXTextBookmark */ = ECE7EBDF1428899200466331 /* PBXTextBookmark */;
-			ECE7EBE31428899900466331 /* PBXTextBookmark */ = ECE7EBE31428899900466331 /* PBXTextBookmark */;
 			ECE8000514282128002ABAA0 /* PBXTextBookmark */ = ECE8000514282128002ABAA0 /* PBXTextBookmark */;
 			ECE8000714282128002ABAA0 /* PBXTextBookmark */ = ECE8000714282128002ABAA0 /* PBXTextBookmark */;
 			ECE8001E142821EE002ABAA0 /* PBXTextBookmark */ = ECE8001E142821EE002ABAA0 /* PBXTextBookmark */;
@@ -483,39 +478,6 @@
 		vrLen = 1553;
 		vrLoc = 1365;
 	};
-	EC546625142802E500BFBF66 /* ProxyPluginMgr.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = ProxyPluginMgr.h;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-ngn-stack/../../../../../doubango/branches/2.0/doubango/bindings/_common/ProxyPluginMgr.h";
-		sourceTree = "<absolute>";
-	};
-	EC54662F1428039000BFBF66 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC546625142802E500BFBF66 /* ProxyPluginMgr.h */;
-		name = "ProxyPluginMgr.h: 115";
-		rLen = 68;
-		rLoc = 3293;
-		rType = 0;
-		vrLen = 1799;
-		vrLoc = 1857;
-	};
-	ECD28571145F991700EFE997 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECD28572145F991700EFE997 /* tdav_session_video.c */;
-		name = "tdav_session_video.c: 149";
-		rLen = 0;
-		rLoc = 6404;
-		rType = 0;
-		vrLen = 1317;
-		vrLoc = 5540;
-	};
-	ECD28572145F991700EFE997 /* tdav_session_video.c */ = {
-		isa = PBXFileReference;
-		name = tdav_session_video.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyDAV/src/video/tdav_session_video.c;
-		sourceTree = "<absolute>";
-	};
 	ECE7EA001428541600466331 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ECF1B07514214DEC0013CE44 /* UIPreferences.mm */;
@@ -614,50 +576,6 @@
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
-	ECE7EBDD1428899200466331 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE7EBDE1428899200466331 /* tdav_codec_h264_rtp.c */;
-		name = "tdav_codec_h264_rtp.c: 337";
-		rLen = 0;
-		rLoc = 10111;
-		rType = 0;
-		vrLen = 1422;
-		vrLoc = 8898;
-	};
-	ECE7EBDE1428899200466331 /* tdav_codec_h264_rtp.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = tdav_codec_h264_rtp.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyDAV/src/codecs/h264/tdav_codec_h264_rtp.c;
-		sourceTree = "<absolute>";
-	};
-	ECE7EBDF1428899200466331 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE7EBE01428899200466331 /* OSXProxyVideoProducer.mm */;
-		name = "OSXProxyVideoProducer.mm: 311";
-		rLen = 0;
-		rLoc = 9399;
-		rType = 0;
-		vrLen = 950;
-		vrLoc = 8819;
-	};
-	ECE7EBE01428899200466331 /* OSXProxyVideoProducer.mm */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.objcpp;
-		name = OSXProxyVideoProducer.mm;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-ngn-stack/OSXProxyVideoProducer.mm";
-		sourceTree = "<absolute>";
-	};
-	ECE7EBE31428899900466331 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE800251428225B002ABAA0 /* tdav_session_video.c */;
-		name = "tdav_session_video.c: 151";
-		rLen = 0;
-		rLoc = 6441;
-		rType = 0;
-		vrLen = 1897;
-		vrLoc = 5593;
-	};
 	ECE8000514282128002ABAA0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ECE8000614282128002ABAA0 /* tsk_fsm.c */;
@@ -718,18 +636,6 @@
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 37989;
-	};
-	ECE800251428225B002ABAA0 /* tdav_session_video.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = tdav_session_video.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyDAV/src/video/tdav_session_video.c;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1902, 8619}}";
-			sepNavSelRange = "{6441, 0}";
-			sepNavVisRange = "{5540, 1317}";
-		};
 	};
 	ECE800291428225B002ABAA0 /* tmedia_session.h */ = {
 		isa = PBXFileReference;
