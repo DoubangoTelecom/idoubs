@@ -38,6 +38,7 @@
 	UIButton *buttonVideo;
 	UIView *viewOptions;
 	UIView *viewNumpad;
+	UIImageView *imageSecure;
 	
 	NgnAVSession* audioSession;
 	BOOL numpadIsVisible;
@@ -59,6 +60,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonVideo;
 @property (retain, nonatomic) IBOutlet UIView *viewOptions;
 @property (retain, nonatomic) IBOutlet UIView *viewNumpad;
+@property (retain, nonatomic) IBOutlet UIImageView *imageSecure;
 
 - (IBAction) onButtonClick: (id)sender;
 - (IBAction) onButtonNumpadClick: (id)sender;

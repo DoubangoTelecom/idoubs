@@ -122,6 +122,8 @@
 													 self.buttonHangUp.frame.size.height);
 				[self.buttonHangUp setTitle:@"End" forState:UIControlStateNormal];
 				
+				self.imageSecure.hidden = ![videoSession isSecure];
+				
 				break;
 			}
 			case INVITE_STATE_INCOMING:
@@ -151,7 +153,7 @@
 														self.buttonHangUp.frame.size.height);
 				
 				
-				
+				self.imageSecure.hidden = ![videoSession isSecure];
 				
 				break;
 			}
@@ -181,6 +183,8 @@
 				[self showBottomView:self.viewToolbar shouldRefresh:NO];
 				
 				[self hideBottomView:self.viewPickHangUp];
+				
+				self.imageSecure.hidden = ![videoSession isSecure];
 				
 				[[NgnEngine sharedInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
 				break;
@@ -393,6 +397,8 @@
 @synthesize viewPickHangUp;
 @synthesize buttonPick;
 @synthesize buttonHangUp;
+
+@synthesize imageSecure;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -41,6 +41,8 @@
 	UIButton *buttonPick;
 	UIButton *buttonHangUp;
 	
+	UIImageView *imageSecure;
+	
 	NgnAVSession* videoSession;
 	BOOL sendingVideo;
 }
@@ -61,6 +63,8 @@
 @property (retain, nonatomic) IBOutlet UIView *viewPickHangUp;
 @property (retain, nonatomic) IBOutlet UIButton *buttonPick;
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangUp;
+
+@property (retain, nonatomic) IBOutlet UIImageView *imageSecure;
 
 - (IBAction) onButtonClick: (id)sender;
 

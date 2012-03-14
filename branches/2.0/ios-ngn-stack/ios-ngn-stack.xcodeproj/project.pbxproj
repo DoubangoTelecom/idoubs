@@ -167,6 +167,16 @@
 		EC90C9C613B3A5A8000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
 		EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		ECA0EFC815110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */; };
+		ECA0EFC915110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */; };
+		ECA0EFCA15110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC615110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */; };
+		ECA0EFCB15110C59005EF3BB /* thttp_header_Sec_WebSocket_Version.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC715110C59005EF3BB /* thttp_header_Sec_WebSocket_Version.h */; };
+		ECA0EFD015110C6C005EF3BB /* thttp_header_Sec_WebSocket_Accept.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EFCC15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */; };
+		ECA0EFD115110C6C005EF3BB /* thttp_header_Sec_WebSocket_Key.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EFCD15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Key.c */; };
+		ECA0EFD215110C6C005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EFCE15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */; };
+		ECA0EFD315110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EFCF15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c */; };
+		ECA0EFD915110CAF005EF3BB /* trtp_srtp.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EFD815110CAF005EF3BB /* trtp_srtp.c */; };
+		ECA0EFDB15110CC4005EF3BB /* trtp_srtp.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFDA15110CC4005EF3BB /* trtp_srtp.h */; };
 		ECACF05A137BF4D300E53A3D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87251F1378101000C616F0 /* AddressBook.framework */; };
 		ECB37088141815D4006E6811 /* tdav_consumer_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB37086141815D4006E6811 /* tdav_consumer_video.c */; };
 		ECB37089141815D4006E6811 /* tdav_video_jitterbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB37087141815D4006E6811 /* tdav_video_jitterbuffer.c */; };
@@ -2038,6 +2048,16 @@
 		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
 		EC90C9C013B3A530000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Accept.h; sourceTree = "<group>"; };
+		ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Key.h; sourceTree = "<group>"; };
+		ECA0EFC615110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Protocol.h; sourceTree = "<group>"; };
+		ECA0EFC715110C59005EF3BB /* thttp_header_Sec_WebSocket_Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Version.h; sourceTree = "<group>"; };
+		ECA0EFCC15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Accept.c; sourceTree = "<group>"; };
+		ECA0EFCD15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Key.c; sourceTree = "<group>"; };
+		ECA0EFCE15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Protocol.c; sourceTree = "<group>"; };
+		ECA0EFCF15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Version.c; sourceTree = "<group>"; };
+		ECA0EFD815110CAF005EF3BB /* trtp_srtp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trtp_srtp.c; sourceTree = "<group>"; };
+		ECA0EFDA15110CC4005EF3BB /* trtp_srtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trtp_srtp.h; sourceTree = "<group>"; };
 		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
 		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
 		ECB37086141815D4006E6811 /* tdav_consumer_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_video.c; sourceTree = "<group>"; };
@@ -4475,6 +4495,7 @@
 				ECFD2B36135E7BDC00E6A9A3 /* rtp */,
 				ECFD2B3A135E7BDC00E6A9A3 /* rtsp */,
 				ECFD2B3B135E7BDC00E6A9A3 /* trtp.h */,
+				ECA0EFDA15110CC4005EF3BB /* trtp_srtp.h */,
 				ECFD2B3C135E7BDC00E6A9A3 /* trtp_manager.h */,
 			);
 			path = tinyrtp;
@@ -4522,6 +4543,7 @@
 				ECFD2B4C135E7BDC00E6A9A3 /* rtp */,
 				ECFD2B50135E7BDC00E6A9A3 /* rtsp */,
 				ECFD2B51135E7BDC00E6A9A3 /* trtp.c */,
+				ECA0EFD815110CAF005EF3BB /* trtp_srtp.c */,
 				ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */,
 			);
 			path = src;
@@ -4813,6 +4835,10 @@
 		ECFD2C5B135E7C5E00E6A9A3 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */,
+				ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */,
+				ECA0EFC615110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */,
+				ECA0EFC715110C59005EF3BB /* thttp_header_Sec_WebSocket_Version.h */,
 				ECFD2C5C135E7C5E00E6A9A3 /* thttp_header.h */,
 				ECFD2C5D135E7C5E00E6A9A3 /* thttp_header_Authorization.h */,
 				ECFD2C5E135E7C5E00E6A9A3 /* thttp_header_Content_Length.h */,
@@ -4884,6 +4910,10 @@
 		ECFD2C84135E7C5E00E6A9A3 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				ECA0EFCC15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */,
+				ECA0EFCD15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Key.c */,
+				ECA0EFCE15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */,
+				ECA0EFCF15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c */,
 				ECFD2C85135E7C5E00E6A9A3 /* thttp_header.c */,
 				ECFD2C86135E7C5E00E6A9A3 /* thttp_header_Authorization.c */,
 				ECFD2C87135E7C5E00E6A9A3 /* thttp_header_Content_Length.c */,
@@ -6613,6 +6643,7 @@
 				ECFD2B69135E7BDC00E6A9A3 /* trtp_manager.h in Headers */,
 				ECFD2B6A135E7BDC00E6A9A3 /* tinyrtp.h in Headers */,
 				ECFD2B6B135E7BDC00E6A9A3 /* tinyrtp_config.h in Headers */,
+				ECA0EFDB15110CC4005EF3BB /* trtp_srtp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6692,6 +6723,10 @@
 				ECFD2CBA135E7C5E00E6A9A3 /* thttp_url.h in Headers */,
 				ECFD2CBB135E7C5E00E6A9A3 /* tinyhttp.h in Headers */,
 				ECFD2CBC135E7C5E00E6A9A3 /* tinyhttp_config.h in Headers */,
+				ECA0EFC815110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */,
+				ECA0EFC915110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */,
+				ECA0EFCA15110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */,
+				ECA0EFCB15110C59005EF3BB /* thttp_header_Sec_WebSocket_Version.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7814,6 +7849,7 @@
 				ECFD2B79135E7BDC00E6A9A3 /* trtp_rtp_session.c in Sources */,
 				ECFD2B7A135E7BDC00E6A9A3 /* trtp.c in Sources */,
 				ECFD2B7B135E7BDC00E6A9A3 /* trtp_manager.c in Sources */,
+				ECA0EFD915110CAF005EF3BB /* trtp_srtp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7887,6 +7923,10 @@
 				ECFD2CCF135E7C5E00E6A9A3 /* thttp_message.c in Sources */,
 				ECFD2CD0135E7C5E00E6A9A3 /* thttp_session.c in Sources */,
 				ECFD2CD1135E7C5E00E6A9A3 /* thttp_url.c in Sources */,
+				ECA0EFD015110C6C005EF3BB /* thttp_header_Sec_WebSocket_Accept.c in Sources */,
+				ECA0EFD115110C6C005EF3BB /* thttp_header_Sec_WebSocket_Key.c in Sources */,
+				ECA0EFD215110C6C005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c in Sources */,
+				ECA0EFD315110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8797,7 +8837,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
@@ -8826,6 +8866,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
 					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_SRTP=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -8841,7 +8882,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
@@ -8866,6 +8907,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_SWSSCALE=1",
 					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_SRTP=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -8894,6 +8936,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -8937,6 +8980,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -8977,6 +9021,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9017,6 +9062,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9061,6 +9107,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9104,6 +9151,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9148,6 +9196,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9191,6 +9240,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9235,6 +9285,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9278,6 +9329,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9425,6 +9477,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -9441,6 +9494,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -9760,6 +9814,7 @@
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyHTTP/include,
 					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
@@ -9785,6 +9840,7 @@
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyHTTP/include,
 					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
@@ -9815,6 +9871,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -9859,6 +9916,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",

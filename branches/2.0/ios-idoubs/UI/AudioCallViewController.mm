@@ -99,6 +99,8 @@
 													 self.buttonHideNumpad.hidden ? 
 														(self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
 													 self.buttonHangup.frame.size.height);
+				
+				self.imageSecure.hidden = ![audioSession isSecure];
 				break;
 			}
 			case INVITE_STATE_INCOMING:
@@ -121,6 +123,8 @@
 												self.buttonAccept.frame.origin.y, 
 												self.buttonHangup.frame.size.width, 
 												self.buttonAccept.frame.size.height);
+				
+				self.imageSecure.hidden = ![audioSession isSecure];
 				
 				[[NgnEngine sharedInstance].soundService playRingTone];
 				
@@ -161,7 +165,7 @@
 													 (self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
 													 self.buttonHangup.frame.size.height);
 				
-				
+				self.imageSecure.hidden = ![audioSession isSecure];
 				
 				[[NgnEngine sharedInstance].soundService stopRingBackTone];
 				[[NgnEngine sharedInstance].soundService stopRingTone];
@@ -304,6 +308,7 @@
 @synthesize viewCenter;
 @synthesize viewTop;
 @synthesize viewBottom;
+@synthesize imageSecure;
 
 @synthesize numpadIsVisible;
 

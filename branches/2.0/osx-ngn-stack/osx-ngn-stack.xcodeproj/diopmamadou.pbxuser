@@ -5,7 +5,7 @@
 		activeBuildConfigurationName = Release;
 		activeTarget = EC4DBE4A141C0B920024CBEF /* osx-ngn-stack */;
 		addToTargets = (
-			ECFD2E99135E7D6D00E6A9A3 /* tinySIP */,
+			ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */,
 		);
 		breakpoints = (
 		);
@@ -55,13 +55,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 350799891;
-			PBXWorkspaceStateSaveDate = 350799891;
+			PBXPerProjectTemplateStateSaveDate = 353445420;
+			PBXWorkspaceStateSaveDate = 353445420;
 		};
 		perUserProjectItems = {
 			EC37E79814E8C87000D77FE0 /* PBXTextBookmark */ = EC37E79814E8C87000D77FE0 /* PBXTextBookmark */;
-			EC37E79914E8C87000D77FE0 /* XCBuildMessageTextBookmark */ = EC37E79914E8C87000D77FE0 /* XCBuildMessageTextBookmark */;
-			EC37E79A14E8C87000D77FE0 /* PBXTextBookmark */ = EC37E79A14E8C87000D77FE0 /* PBXTextBookmark */;
+			ECA0F10F15112750005EF3BB /* PBXTextBookmark */ = ECA0F10F15112750005EF3BB /* PBXTextBookmark */;
+			ECA0F11015112750005EF3BB /* XCBuildMessageTextBookmark */ = ECA0F11015112750005EF3BB /* XCBuildMessageTextBookmark */;
+			ECA0F11115112750005EF3BB /* PBXTextBookmark */ = ECA0F11115112750005EF3BB /* PBXTextBookmark */;
 		};
 		sourceControlManager = EC4DBABE141BCEB20024CBEF /* Source Control */;
 		userBuildSettings = {
@@ -76,25 +77,6 @@
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 894;
-	};
-	EC37E79914E8C87000D77FE0 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "Expected identifier or '(' before numeric constant";
-		fRef = ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 44;
-		rType = 1;
-	};
-	EC37E79A14E8C87000D77FE0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */;
-		name = "tnet_tls.c: 45";
-		rLen = 0;
-		rLoc = 1234;
-		rType = 0;
-		vrLen = 718;
-		vrLoc = 934;
 	};
 	EC4DBABE141BCEB20024CBEF /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -270,6 +252,42 @@
 	EC8EBCDD136832D600DC70DF /* Doubango */ = {
 		activeExec = 0;
 	};
+	ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 4511}}";
+			sepNavSelRange = "{5061, 79}";
+			sepNavVisRange = "{4620, 1019}";
+		};
+	};
+	ECA0F10F15112750005EF3BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */;
+		name = "tnet_tls.c: 45";
+		rLen = 0;
+		rLoc = 1234;
+		rType = 0;
+		vrLen = 694;
+		vrLoc = 934;
+	};
+	ECA0F11015112750005EF3BB /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Unused variable 'thttp_machine_parser_header_Sec_WebSocket_Accept_en_main'";
+		fRef = ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 166;
+		rType = 1;
+	};
+	ECA0F11115112750005EF3BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */;
+		name = "thttp_header_Sec_WebSocket_Accept.c: 167";
+		rLen = 79;
+		rLoc = 5061;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 4620;
+	};
 	ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1534, 11258}}";
@@ -335,9 +353,9 @@
 	};
 	ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1122, 6318}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 6344}}";
 			sepNavSelRange = "{1234, 0}";
-			sepNavVisRange = "{934, 718}";
+			sepNavVisRange = "{934, 694}";
 		};
 	};
 	ECFD2A06135E7B8500E6A9A3 /* tnet_tls.h */ = {
