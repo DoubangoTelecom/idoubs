@@ -476,6 +476,14 @@
 	return mSpeakerOn;
 }
 
+-(BOOL) isSecure{
+	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+	if(_mediaMgr){
+		return (const_cast<MediaSessionMgr*>(_mediaMgr)->sessionGetInt32(twrap_media_audiovideo, "srtp-enabled") != 0);
+	}
+	return NO;
+}
+
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
 	NgnMediaType_t media;
 	

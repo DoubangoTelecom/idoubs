@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="44"/>
 			<integer value="55"/>
-			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -43,6 +43,18 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="IBUIImageView" id="1017134993">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{2, 2}, {16, 16}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">secure_16.png</string>
+						</object>
+					</object>
 					<object class="IBUIImageView" id="792993993">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
@@ -71,7 +83,7 @@
 							<object class="IBUILabel" id="604889352">
 								<reference key="NSNextResponder" ref="929571566"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 5}, {310, 41}}</string>
+								<string key="NSFrame">{{7, 5}, {310, 43}}</string>
 								<reference key="NSSuperview" ref="929571566"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="542966152">
 									<int key="NSColorSpace">3</int>
@@ -82,7 +94,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Zoncu</string>
+								<string key="IBUIText">John Doe</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica-Bold</string>
 									<double key="NSSize">36</double>
@@ -478,6 +490,14 @@
 					</object>
 					<int key="connectionID">68</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imageSecure</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1017134993"/>
+					</object>
+					<int key="connectionID">70</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -496,6 +516,7 @@
 							<reference ref="913287602"/>
 							<reference ref="792993993"/>
 							<reference ref="929571566"/>
+							<reference ref="1017134993"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -596,6 +617,11 @@
 						<reference key="object" ref="143851262"/>
 						<reference key="parent" ref="174230152"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">69</int>
+						<reference key="object" ref="1017134993"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -631,12 +657,13 @@
 					<string>56.IBViewBoundsToFrameTransform</string>
 					<string>57.IBPluginDependency</string>
 					<string>57.IBViewBoundsToFrameTransform</string>
+					<string>69.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>VideoCallViewController</string>
 					<string>UIResponder</string>
-					<string>{{384, 254}, {320, 480}}</string>
+					<string>{{485, 253}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -683,6 +710,7 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABDEgAAwpAAAA</bytes>
 					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -701,7 +729,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">68</int>
+			<int key="maxID">70</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -738,6 +766,7 @@
 							<string>buttonToolBarMute</string>
 							<string>buttonToolBarToggle</string>
 							<string>buttonToolBarVideo</string>
+							<string>imageSecure</string>
 							<string>imageViewRemoteVideo</string>
 							<string>labelRemoteParty</string>
 							<string>labelStatus</string>
@@ -754,6 +783,7 @@
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
+							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -773,6 +803,7 @@
 							<string>buttonToolBarMute</string>
 							<string>buttonToolBarToggle</string>
 							<string>buttonToolBarVideo</string>
+							<string>imageSecure</string>
 							<string>imageViewRemoteVideo</string>
 							<string>labelRemoteParty</string>
 							<string>labelStatus</string>
@@ -806,6 +837,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">buttonToolBarVideo</string>
 								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">imageSecure</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">imageViewRemoteVideo</string>
@@ -1082,6 +1117,7 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>bkg_btn_green.png</string>
 				<string>bkg_btn_red.png</string>
+				<string>secure_16.png</string>
 				<string>vc_end.png</string>
 				<string>vc_endSel.png</string>
 				<string>vc_mute.png</string>
@@ -1095,6 +1131,7 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{250, 44}</string>
 				<string>{250, 44}</string>
+				<string>{16, 16}</string>
 				<string>{80, 44}</string>
 				<string>{80, 44}</string>
 				<string>{80, 44}</string>

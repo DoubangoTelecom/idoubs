@@ -190,6 +190,14 @@
 		EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */; };
 		EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = EC824AED136ECE9F004FC3A8 /* tdav_apple.h */; };
 		EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC858FC313999E360017BB9F /* tmedia_defaults.c */; };
+		ECA0F0E915112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */; };
+		ECA0F0EA15112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */; };
+		ECA0F0EB15112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */; };
+		ECA0F0EC15112649005EF3BB /* thttp_header_Sec_WebSocket_Version.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E815112649005EF3BB /* thttp_header_Sec_WebSocket_Version.h */; };
+		ECA0F0F115112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */; };
+		ECA0F0F215112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0EE15112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c */; };
+		ECA0F0F315112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0EF15112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */; };
+		ECA0F0F415112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0F015112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c */; };
 		ECC8C9D71407463B00E0A500 /* g722_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D41407463B00E0A500 /* g722_decode.c */; };
 		ECC8C9D81407463B00E0A500 /* g722_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D51407463B00E0A500 /* g722_encode.c */; };
 		ECC8C9D91407463B00E0A500 /* tdav_codec_g722.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D61407463B00E0A500 /* tdav_codec_g722.c */; };
@@ -1477,6 +1485,14 @@
 		EC90722C1392BAB000E14556 /* dtmf-star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-star.wav"; sourceTree = "<group>"; };
 		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Accept.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Accept.h; sourceTree = "<group>"; };
+		ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Key.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Key.h; sourceTree = "<group>"; };
+		ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Protocol.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Protocol.h; sourceTree = "<group>"; };
+		ECA0F0E815112649005EF3BB /* thttp_header_Sec_WebSocket_Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Version.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Version.h; sourceTree = "<group>"; };
+		ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Accept.c; sourceTree = "<group>"; };
+		ECA0F0EE15112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Key.c; sourceTree = "<group>"; };
+		ECA0F0EF15112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Protocol.c; sourceTree = "<group>"; };
+		ECA0F0F015112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Version.c; sourceTree = "<group>"; };
 		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
 		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
 		ECC8C9D41407463B00E0A500 /* g722_decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_decode.c; sourceTree = "<group>"; };
@@ -3818,6 +3834,10 @@
 		ECFD2C55135E7C5E00E6A9A3 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */,
+				ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */,
+				ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */,
+				ECA0F0E815112649005EF3BB /* thttp_header_Sec_WebSocket_Version.h */,
 				ECFD2C56135E7C5E00E6A9A3 /* thttp.h */,
 				ECFD2C57135E7C5E00E6A9A3 /* tinyhttp */,
 				ECFD2C6E135E7C5E00E6A9A3 /* tinyhttp.h */,
@@ -3925,6 +3945,10 @@
 		ECFD2C84135E7C5E00E6A9A3 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				ECA0F0ED15112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c */,
+				ECA0F0EE15112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c */,
+				ECA0F0EF15112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */,
+				ECA0F0F015112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c */,
 				ECFD2C85135E7C5E00E6A9A3 /* thttp_header.c */,
 				ECFD2C86135E7C5E00E6A9A3 /* thttp_header_Authorization.c */,
 				ECFD2C87135E7C5E00E6A9A3 /* thttp_header_Content_Length.c */,
@@ -5719,6 +5743,10 @@
 				ECFD2CBA135E7C5E00E6A9A3 /* thttp_url.h in Headers */,
 				ECFD2CBB135E7C5E00E6A9A3 /* tinyhttp.h in Headers */,
 				ECFD2CBC135E7C5E00E6A9A3 /* tinyhttp_config.h in Headers */,
+				ECA0F0E915112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */,
+				ECA0F0EA15112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */,
+				ECA0F0EB15112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */,
+				ECA0F0EC15112649005EF3BB /* thttp_header_Sec_WebSocket_Version.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6637,6 +6665,10 @@
 				ECFD2CCF135E7C5E00E6A9A3 /* thttp_message.c in Sources */,
 				ECFD2CD0135E7C5E00E6A9A3 /* thttp_session.c in Sources */,
 				ECFD2CD1135E7C5E00E6A9A3 /* thttp_url.c in Sources */,
+				ECA0F0F115112659005EF3BB /* thttp_header_Sec_WebSocket_Accept.c in Sources */,
+				ECA0F0F215112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c in Sources */,
+				ECA0F0F315112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c in Sources */,
+				ECA0F0F415112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

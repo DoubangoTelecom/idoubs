@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,21 +267,17 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
-								<string>ECFD28FA135E7B2E00E6A9A3</string>
-								<string>ECFD29B6135E7B8500E6A9A3</string>
-								<string>ECFD29C4135E7B8500E6A9A3</string>
-								<string>ECFD2A04135E7B8500E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>83</integer>
-									<integer>67</integer>
+									<integer>33</integer>
+									<integer>18</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 877}, {235, 687}}</string>
+							<string>{{0, 0}, {235, 678}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -293,14 +287,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {252, 705}}</string>
+						<string>{{0, 0}, {252, 696}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>235</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>275 283 1440 746 0 0 1920 1178 </string>
+						<string>0 141 1440 737 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,7 +310,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC4DBB03141BCF720024CBEF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>tnet_tls.c</string>
+								<string>thttp_header_Sec_WebSocket_Accept.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,15 +318,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC4DBB04141BCF720024CBEF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>tnet_tls.c</string>
+										<string>thttp_header_Sec_WebSocket_Accept.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC37E79A14E8C87000D77FE0</string>
+										<string>ECA0F11115112750005EF3BB</string>
 										<key>history</key>
 										<array>
 											<string>EC37E79814E8C87000D77FE0</string>
-											<string>EC37E79914E8C87000D77FE0</string>
+											<string>ECA0F10F15112750005EF3BB</string>
+											<string>ECA0F11015112750005EF3BB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -346,18 +341,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1183, 483}}</string>
+								<string>{{0, 0}, {1183, 477}}</string>
 								<key>RubberWindowFrame</key>
-								<string>275 283 1440 746 0 0 1920 1178 </string>
+								<string>0 141 1440 737 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>483pt</string>
+							<string>477pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>217pt</string>
+							<string>214pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -371,7 +366,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1183, 190}}</string>
+										<string>{{10, 27}, {1183, 187}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -425,9 +420,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1183, 190}}</string>
+										<string>{{10, 27}, {1183, 187}}</string>
 										<key>RubberWindowFrame</key>
-										<string>275 283 1440 746 0 0 1920 1178 </string>
+										<string>0 141 1440 737 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -455,11 +450,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC37E79B14E8C87000D77FE0</string>
+				<string>ECA0F11215112750005EF3BB</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC37E79C14E8C87000D77FE0</string>
+				<string>ECA0F11315112750005EF3BB</string>
 				<string>EC4DBB03141BCF720024CBEF</string>
-				<string>EC37E79D14E8C87000D77FE0</string>
+				<string>ECA0F11415112750005EF3BB</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -652,7 +647,7 @@
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-ngn-stack/osx-ngn-stack.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>275 283 1440 746 0 0 1920 1178 </string>
+	<string>0 141 1440 737 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

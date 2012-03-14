@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
-		<string key="IBDocument.SystemVersion">10J869</string>
+		<string key="IBDocument.SystemVersion">10K549</string>
 		<string key="IBDocument.InterfaceBuilderVersion">851</string>
-		<string key="IBDocument.AppKitVersion">1038.35</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -255,6 +255,18 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="974934303"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+					<object class="IBUIImageView" id="938058283">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{0, 86}, {16, 16}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">secure_16.png</string>
+						</object>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -965,6 +977,14 @@
 					</object>
 					<int key="connectionID">90</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imageSecure</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="938058283"/>
+					</object>
+					<int key="connectionID">92</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -986,6 +1006,7 @@
 							<reference ref="111592878"/>
 							<reference ref="192143385"/>
 							<reference ref="949477128"/>
+							<reference ref="938058283"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">ViewMain</string>
@@ -1202,6 +1223,11 @@
 						<reference key="parent" ref="871662870"/>
 						<string key="objectName">Hold</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">91</int>
+						<reference key="object" ref="938058283"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1271,12 +1297,14 @@
 					<string>85.IBViewBoundsToFrameTransform</string>
 					<string>89.IBPluginDependency</string>
 					<string>89.IBViewBoundsToFrameTransform</string>
+					<string>91.IBPluginDependency</string>
+					<string>91.IBViewBoundsToFrameTransform</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>AudioCallViewController</string>
 					<string>UIResponder</string>
-					<string>{{368, 218}, {320, 480}}</string>
+					<string>{{471, 224}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -1389,6 +1417,10 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">AUK4AABC6AAAA</bytes>
 					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABAoAAAwoQAAA</bytes>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1407,7 +1439,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">90</int>
+			<int key="maxID">92</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1459,6 +1491,7 @@
 							<string>buttonNumpad</string>
 							<string>buttonSpeaker</string>
 							<string>buttonVideo</string>
+							<string>imageSecure</string>
 							<string>labelRemoteParty</string>
 							<string>labelStatus</string>
 							<string>viewBottom</string>
@@ -1477,6 +1510,7 @@
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
+							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UIView</string>
@@ -1498,6 +1532,7 @@
 							<string>buttonNumpad</string>
 							<string>buttonSpeaker</string>
 							<string>buttonVideo</string>
+							<string>imageSecure</string>
 							<string>labelRemoteParty</string>
 							<string>labelStatus</string>
 							<string>viewBottom</string>
@@ -1539,6 +1574,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">buttonVideo</string>
 								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">imageSecure</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">labelRemoteParty</string>
@@ -1836,6 +1875,7 @@
 				<string>kp_speakerSel.png</string>
 				<string>kp_video.png</string>
 				<string>kp_videoSel.png</string>
+				<string>secure_16.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1854,6 +1894,7 @@
 				<string>{94, 107}</string>
 				<string>{93, 114}</string>
 				<string>{93, 114}</string>
+				<string>{16, 16}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">141</string>

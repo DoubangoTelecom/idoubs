@@ -109,6 +109,7 @@
 		EC967C7C1391BDBD006187D3 /* type_sms.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7A1391BDBD006187D3 /* type_sms.png */; };
 		EC967C7F1391BECF006187D3 /* type_video.png in Resources */ = {isa = PBXBuildFile; fileRef = EC967C7E1391BECF006187D3 /* type_video.png */; };
 		EC9EDB81139D50B30067EB59 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC9EDB80139D50B30067EB59 /* Entitlements.plist */; };
+		ECA0F07615111F77005EF3BB /* secure_16.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA0F07515111F77005EF3BB /* secure_16.png */; };
 		ECB40EDA138E76F600EB92A3 /* keypad_0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECA138E76F600EB92A3 /* keypad_0.png */; };
 		ECB40EDB138E76F600EB92A3 /* keypad_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECB138E76F600EB92A3 /* keypad_1.png */; };
 		ECB40EDC138E76F600EB92A3 /* keypad_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB40ECC138E76F600EB92A3 /* keypad_2.png */; };
@@ -568,6 +569,7 @@
 		EC967C7A1391BDBD006187D3 /* type_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_sms.png; sourceTree = "<group>"; };
 		EC967C7E1391BECF006187D3 /* type_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_video.png; sourceTree = "<group>"; };
 		EC9EDB80139D50B30067EB59 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		ECA0F07515111F77005EF3BB /* secure_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secure_16.png; sourceTree = "<group>"; };
 		ECB40ECA138E76F600EB92A3 /* keypad_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_0.png; sourceTree = "<group>"; };
 		ECB40ECB138E76F600EB92A3 /* keypad_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_1.png; sourceTree = "<group>"; };
 		ECB40ECC138E76F600EB92A3 /* keypad_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad_2.png; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 		ECB40EC8138E76F600EB92A3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				ECA0F07515111F77005EF3BB /* secure_16.png */,
 				ECF29C2D13F2129000D1D315 /* bkg_btn_send.png */,
 				ECF29C2E13F2129000D1D315 /* bkg_btn_send@2x.png */,
 				ECF29B3113F1F5B300D1D315 /* baloon_in.png */,
@@ -1378,6 +1381,7 @@
 				ECE7EA381428547400466331 /* ringbacktone.wav in Resources */,
 				ECE7EA391428547400466331 /* ringtone.mp3 in Resources */,
 				ECE7EA3D1428548F00466331 /* NgnDataBase.db in Resources */,
+				ECA0F07615111F77005EF3BB /* secure_16.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1522,6 +1526,7 @@
 					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",
@@ -1572,6 +1577,7 @@
 					$DOUBANGO_LIBS,
 				);
 				OTHER_LDFLAGS = (
+					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
 					"-ltheora",

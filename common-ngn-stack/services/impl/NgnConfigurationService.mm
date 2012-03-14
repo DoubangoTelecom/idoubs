@@ -22,6 +22,7 @@
 #import "NgnConfigurationEntry.h"
 
 #import "tinydav.h"
+#import "MediaSessionMgr.h"
 #import "SipStack.h"
 
 #undef TAG
@@ -34,6 +35,7 @@
 
 @interface NgnConfigurationService(Private)
 - (void)userDefaultsDidChangeNotification:(NSNotification *)note;
+- (void)computeSecurity;
 - (void)computeCodecs;
 @end
 
@@ -41,6 +43,23 @@
 
 - (void)userDefaultsDidChangeNotification:(NSNotification *)note{
 	[self computeCodecs];
+	[self computeSecurity];
+}
+
+- (void)computeSecurity{
+	int srtpMode = [self getIntWithKey:SECURITY_SRTP_MODE];
+	switch (srtpMode) {
+		case kDefaultSecuritySRtpMode_None:
+		default:
+			MediaSessionMgr::defaultsSetSRtpMode(tmedia_srtp_mode_none);
+			break;
+		case kDefaultSecuritySRtpMode_Optional:
+			MediaSessionMgr::defaultsSetSRtpMode(tmedia_srtp_mode_optional);
+			break;
+		case kDefaultSecuritySRtpMode_Mandatory:
+			MediaSessionMgr::defaultsSetSRtpMode(tmedia_srtp_mode_mandatory);
+			break;
+	}
 }
 
 - (void)computeCodecs{
@@ -119,6 +138,10 @@
 
 -(BOOL) start{
 	NgnNSLog(TAG, @"Start()");
+	
+	[[NSNotificationCenter defaultCenter] addObserver: self 
+											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
+	
 	if(defaults == nil){
 		defaults = [NSUserDefaults standardUserDefaults];
 	
@@ -126,9 +149,6 @@
 		[defaults registerDefaults:defaults_];
 	}
 	
-	[self computeCodecs];// in case the configuration change while the service was stopped
-	[[NSNotificationCenter defaultCenter] addObserver: self 
-											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 	return YES;
 }
 
@@ -202,6 +222,7 @@
 	 DEFAULT_SECURITY_SSL_FILE_KEY_PRIV, SECURITY_SSL_FILE_KEY_PRIV,
 	 DEFAULT_SECURITY_SSL_FILE_KEY_PUB, SECURITY_SSL_FILE_KEY_PUB,
 	 DEFAULT_SECURITY_SSL_FILE_KEY_CA, SECURITY_SSL_FILE_KEY_CA,
+	 DEFAULT_SECURITY_SRTP_MODE, SECURITY_SRTP_MODE,
 			
 	 /* === XCAP === */
 	[NSNumber numberWithBool:DEFAULT_XCAP_ENABLED], XCAP_ENABLED,

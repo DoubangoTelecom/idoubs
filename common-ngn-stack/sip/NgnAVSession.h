@@ -78,6 +78,7 @@ class ActionConfig;
 -(BOOL) isMuted;
 -(BOOL) setSpeakerEnabled: (BOOL)speakerOn;
 -(BOOL) isSpeakerEnabled;
+-(BOOL) isSecure;
 #elif TARGET_OS_MAC
 -(BOOL) setRemoteVideoDisplay:(NSObject<NgnVideoView>*)display;
 -(BOOL) setLocalVideoDisplay: (QTCaptureView*)display;
