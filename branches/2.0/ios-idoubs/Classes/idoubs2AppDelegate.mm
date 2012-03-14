@@ -411,6 +411,7 @@ static dispatch_block_t sExpirationHandler = nil;
 	// Try to register the default identity
 	[self queryConfigurationAndRegister];
 	
+	
 	// enable the speaker: for errors, ringtone, numpad, ...
 	// shoud be done after the SipStack is initialized (thanks to tdav_init() which will initialize the audio system)
 	[[NgnEngine sharedInstance].soundService setSpeakerEnabled:YES];
