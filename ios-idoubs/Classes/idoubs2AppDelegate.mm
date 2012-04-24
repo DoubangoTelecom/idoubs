@@ -351,7 +351,9 @@
 				// call terminated while in background
 				// if the application goes to background while in call then the keepAwake mechanism was not started
 				if([NgnEngine sharedInstance].sipService.registered && ![NgnAVSession hasActiveSession]){
-					[[NgnEngine sharedInstance] startKeepAwake];
+					if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
+						[[NgnEngine sharedInstance] startKeepAwake];
+					}
 				}
 			}
 			break;
@@ -422,7 +424,9 @@ static dispatch_block_t sExpirationHandler = nil;
 		NSLog(@"Background task completed");
 		// keep awake
 		if([[NgnEngine sharedInstance].sipService isRegistered]){
-			[[NgnEngine sharedInstance] startKeepAwake];
+			if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
+				[[NgnEngine sharedInstance] startKeepAwake];
+			}
 		}
 		[[UIApplication sharedApplication] endBackgroundTask:sBackgroundTask];
 		sBackgroundTask = UIBackgroundTaskInvalid;
@@ -469,13 +473,15 @@ static dispatch_block_t sExpirationHandler = nil;
 			//}
 			if(registrationState == CONN_STATE_CONNECTED){
 				if(![NgnAVSession hasActiveSession]){
-					[[NgnEngine sharedInstance] startKeepAwake];
+					if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
+						[[NgnEngine sharedInstance] startKeepAwake];
+					}
 				}
 			}
 			
-			//[application setKeepAliveTimeout:600 handler: ^{
-			//	NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
-			//}];
+			[application setKeepAliveTimeout:600 handler: ^{
+				NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
+			}];
 		}
 	}
 #endif /* __IPHONE_OS_VERSION_MIN_REQUIRED */
