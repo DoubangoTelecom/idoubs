@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
+									<integer>19</integer>
 									<integer>15</integer>
 								</array>
 							</array>
@@ -312,7 +312,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC26C23A14269DDB0046BBB5</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>tnet_dns_regexp.c</string>
+								<string>UIVideoView.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,15 +320,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC26C23B14269DDB0046BBB5</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>tnet_dns_regexp.c</string>
+										<string>UIVideoView.mm</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECA0F1051511274F005EF3BB</string>
+										<string>ECB3857D155189BB0035F25D</string>
 										<key>history</key>
 										<array>
-											<string>ECE8001E142821EE002ABAA0</string>
-											<string>ECE800231428225B002ABAA0</string>
 											<string>ECE800321428229E002ABAA0</string>
 											<string>ECE800AE14282BDD002ABAA0</string>
 											<string>ECE800B114282BDD002ABAA0</string>
@@ -336,7 +334,6 @@
 											<string>ECE800BB14282D41002ABAA0</string>
 											<string>ECE800BC14282D41002ABAA0</string>
 											<string>ECE800BD14282D41002ABAA0</string>
-											<string>ECA0F1031511274F005EF3BB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -350,18 +347,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1161, 536}}</string>
+								<string>{{0, 0}, {1161, 531}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 141 1440 737 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>536pt</string>
+							<string>531pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>155pt</string>
+							<string>160pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -375,9 +372,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1161, 128}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 141 1440 737 0 0 1440 878 </string>
+										<string>{{10, 27}, {1161, 133}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -431,7 +426,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1161, 128}}</string>
+										<string>{{10, 27}, {1161, 133}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 141 1440 737 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -459,11 +456,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECA0F0C415112442005EF3BB</string>
+				<string>ECB3857E155189BB0035F25D</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECA0F0C515112442005EF3BB</string>
+				<string>ECB3857F155189BB0035F25D</string>
 				<string>EC26C23A14269DDB0046BBB5</string>
-				<string>ECA0F0C615112442005EF3BB</string>
+				<string>ECB38580155189BB0035F25D</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -653,8 +650,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECA0F10D1511274F005EF3BB</string>
-		<string>ECA0F10E1511274F005EF3BB</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

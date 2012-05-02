@@ -36,7 +36,6 @@
 /* Begin PBXBuildFile section */
 		EC26AF6D1422BC880046BBB5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4DBB19141BD1360024CBEF /* AddressBook.framework */; };
 		EC4DBBAA141BDAAE0024CBEF /* tdav_consumer_video.c in Sources */ = {isa = PBXBuildFile; fileRef = EC4DBBA8141BDAAE0024CBEF /* tdav_consumer_video.c */; };
-		EC4DBBAB141BDAAE0024CBEF /* tdav_video_jitterbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = EC4DBBA9141BDAAE0024CBEF /* tdav_video_jitterbuffer.c */; };
 		EC4DBBAE141BDAD00024CBEF /* tdav_consumer_video.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4DBBAC141BDAD00024CBEF /* tdav_consumer_video.h */; };
 		EC4DBBAF141BDAD00024CBEF /* tdav_video_jitterbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4DBBAD141BDAD00024CBEF /* tdav_video_jitterbuffer.h */; };
 		EC4DBE51141C0B990024CBEF /* libtinyDAV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */; };
@@ -198,6 +197,28 @@
 		ECA0F0F215112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0EE15112659005EF3BB /* thttp_header_Sec_WebSocket_Key.c */; };
 		ECA0F0F315112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0EF15112659005EF3BB /* thttp_header_Sec_WebSocket_Protocol.c */; };
 		ECA0F0F415112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c in Sources */ = {isa = PBXBuildFile; fileRef = ECA0F0F015112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c */; };
+		ECB384F6155174A70035F25D /* tdav_video_frame.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384F4155174A70035F25D /* tdav_video_frame.c */; };
+		ECB384F7155174A70035F25D /* tdav_video_jb.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384F5155174A70035F25D /* tdav_video_jb.c */; };
+		ECB384F9155174B30035F25D /* tdav_session_av.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384F8155174B30035F25D /* tdav_session_av.c */; };
+		ECB384FD155174C10035F25D /* tdav_codec_red.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384FB155174C10035F25D /* tdav_codec_red.c */; };
+		ECB384FE155174C10035F25D /* tdav_codec_ulpfec.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384FC155174C10035F25D /* tdav_codec_ulpfec.c */; };
+		ECB38500155174D60035F25D /* tmedia_imageattr.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB384FF155174D60035F25D /* tmedia_imageattr.c */; };
+		ECB38503155174F30035F25D /* trtp_rtcp_report_bye.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB38501155174F30035F25D /* trtp_rtcp_report_bye.c */; };
+		ECB38504155174F30035F25D /* trtp_rtcp_report_fb.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB38502155174F30035F25D /* trtp_rtcp_report_fb.c */; };
+		ECB385061551752D0035F25D /* trtp_srtp.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB385051551752D0035F25D /* trtp_srtp.c */; };
+		ECB38511155175450035F25D /* tnet_ice_candidate.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB38507155175450035F25D /* tnet_ice_candidate.c */; };
+		ECB38512155175450035F25D /* tnet_ice_candidate.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB38508155175450035F25D /* tnet_ice_candidate.h */; };
+		ECB38513155175450035F25D /* tnet_ice_ctx.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB38509155175450035F25D /* tnet_ice_ctx.c */; };
+		ECB38514155175450035F25D /* tnet_ice_ctx.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3850A155175450035F25D /* tnet_ice_ctx.h */; };
+		ECB38515155175450035F25D /* tnet_ice_event.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3850B155175450035F25D /* tnet_ice_event.c */; };
+		ECB38516155175450035F25D /* tnet_ice_event.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3850C155175450035F25D /* tnet_ice_event.h */; };
+		ECB38517155175450035F25D /* tnet_ice_pair.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3850D155175450035F25D /* tnet_ice_pair.c */; };
+		ECB38518155175450035F25D /* tnet_ice_pair.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3850E155175450035F25D /* tnet_ice_pair.h */; };
+		ECB38519155175450035F25D /* tnet_ice_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3850F155175450035F25D /* tnet_ice_utils.c */; };
+		ECB3851A155175450035F25D /* tnet_ice_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB38510155175450035F25D /* tnet_ice_utils.h */; };
+		ECB3851C1551755C0035F25D /* tsip_dialog_invite.ice.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3851B1551755C0035F25D /* tsip_dialog_invite.ice.c */; };
+		ECB38521155175C80035F25D /* trtp_rtcp_report_bye.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB3851F155175C80035F25D /* trtp_rtcp_report_bye.h */; };
+		ECB38522155175C80035F25D /* trtp_rtcp_report_fb.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB38520155175C80035F25D /* trtp_rtcp_report_fb.h */; };
 		ECC8C9D71407463B00E0A500 /* g722_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D41407463B00E0A500 /* g722_decode.c */; };
 		ECC8C9D81407463B00E0A500 /* g722_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D51407463B00E0A500 /* g722_encode.c */; };
 		ECC8C9D91407463B00E0A500 /* tdav_codec_g722.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C9D61407463B00E0A500 /* tdav_codec_g722.c */; };
@@ -1318,7 +1339,6 @@
 		EC4DBB80141BD5270024CBEF /* OSXNgnPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXNgnPrivate.h; sourceTree = "<group>"; };
 		EC4DBB81141BD5270024CBEF /* OSXNgnStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXNgnStack.h; sourceTree = "<group>"; };
 		EC4DBBA8141BDAAE0024CBEF /* tdav_consumer_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_video.c; sourceTree = "<group>"; };
-		EC4DBBA9141BDAAE0024CBEF /* tdav_video_jitterbuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_jitterbuffer.c; sourceTree = "<group>"; };
 		EC4DBBAC141BDAD00024CBEF /* tdav_consumer_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_video.h; sourceTree = "<group>"; };
 		EC4DBBAD141BDAD00024CBEF /* tdav_video_jitterbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_video_jitterbuffer.h; sourceTree = "<group>"; };
 		EC4DBE4B141C0B920024CBEF /* osx-ngn-stack.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "osx-ngn-stack.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1495,6 +1515,28 @@
 		ECA0F0F015112659005EF3BB /* thttp_header_Sec_WebSocket_Version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Version.c; sourceTree = "<group>"; };
 		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
 		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
+		ECB384F4155174A70035F25D /* tdav_video_frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_frame.c; sourceTree = "<group>"; };
+		ECB384F5155174A70035F25D /* tdav_video_jb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_jb.c; sourceTree = "<group>"; };
+		ECB384F8155174B30035F25D /* tdav_session_av.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_av.c; sourceTree = "<group>"; };
+		ECB384FB155174C10035F25D /* tdav_codec_red.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_red.c; sourceTree = "<group>"; };
+		ECB384FC155174C10035F25D /* tdav_codec_ulpfec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_ulpfec.c; sourceTree = "<group>"; };
+		ECB384FF155174D60035F25D /* tmedia_imageattr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_imageattr.c; sourceTree = "<group>"; };
+		ECB38501155174F30035F25D /* trtp_rtcp_report_bye.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trtp_rtcp_report_bye.c; sourceTree = "<group>"; };
+		ECB38502155174F30035F25D /* trtp_rtcp_report_fb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trtp_rtcp_report_fb.c; sourceTree = "<group>"; };
+		ECB385051551752D0035F25D /* trtp_srtp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trtp_srtp.c; sourceTree = "<group>"; };
+		ECB38507155175450035F25D /* tnet_ice_candidate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_ice_candidate.c; sourceTree = "<group>"; };
+		ECB38508155175450035F25D /* tnet_ice_candidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_ice_candidate.h; sourceTree = "<group>"; };
+		ECB38509155175450035F25D /* tnet_ice_ctx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_ice_ctx.c; sourceTree = "<group>"; };
+		ECB3850A155175450035F25D /* tnet_ice_ctx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_ice_ctx.h; sourceTree = "<group>"; };
+		ECB3850B155175450035F25D /* tnet_ice_event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_ice_event.c; sourceTree = "<group>"; };
+		ECB3850C155175450035F25D /* tnet_ice_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_ice_event.h; sourceTree = "<group>"; };
+		ECB3850D155175450035F25D /* tnet_ice_pair.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_ice_pair.c; sourceTree = "<group>"; };
+		ECB3850E155175450035F25D /* tnet_ice_pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_ice_pair.h; sourceTree = "<group>"; };
+		ECB3850F155175450035F25D /* tnet_ice_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_ice_utils.c; sourceTree = "<group>"; };
+		ECB38510155175450035F25D /* tnet_ice_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_ice_utils.h; sourceTree = "<group>"; };
+		ECB3851B1551755C0035F25D /* tsip_dialog_invite.ice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsip_dialog_invite.ice.c; sourceTree = "<group>"; };
+		ECB3851F155175C80035F25D /* trtp_rtcp_report_bye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trtp_rtcp_report_bye.h; sourceTree = "<group>"; };
+		ECB38520155175C80035F25D /* trtp_rtcp_report_fb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trtp_rtcp_report_fb.h; sourceTree = "<group>"; };
 		ECC8C9D41407463B00E0A500 /* g722_decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_decode.c; sourceTree = "<group>"; };
 		ECC8C9D51407463B00E0A500 /* g722_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_encode.c; sourceTree = "<group>"; };
 		ECC8C9D61407463B00E0A500 /* tdav_codec_g722.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_g722.c; sourceTree = "<group>"; };
@@ -3082,6 +3124,24 @@
 			path = storage;
 			sourceTree = "<group>";
 		};
+		ECB384F3155174A70035F25D /* jb */ = {
+			isa = PBXGroup;
+			children = (
+				ECB384F4155174A70035F25D /* tdav_video_frame.c */,
+				ECB384F5155174A70035F25D /* tdav_video_jb.c */,
+			);
+			path = jb;
+			sourceTree = "<group>";
+		};
+		ECB384FA155174C10035F25D /* fec */ = {
+			isa = PBXGroup;
+			children = (
+				ECB384FB155174C10035F25D /* tdav_codec_red.c */,
+				ECB384FC155174C10035F25D /* tdav_codec_ulpfec.c */,
+			);
+			path = fec;
+			sourceTree = "<group>";
+		};
 		ECFD23BC135D532A00E6A9A3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -3322,6 +3382,16 @@
 		ECFD29F8135E7B8500E6A9A3 /* ice */ = {
 			isa = PBXGroup;
 			children = (
+				ECB38507155175450035F25D /* tnet_ice_candidate.c */,
+				ECB38508155175450035F25D /* tnet_ice_candidate.h */,
+				ECB38509155175450035F25D /* tnet_ice_ctx.c */,
+				ECB3850A155175450035F25D /* tnet_ice_ctx.h */,
+				ECB3850B155175450035F25D /* tnet_ice_event.c */,
+				ECB3850C155175450035F25D /* tnet_ice_event.h */,
+				ECB3850D155175450035F25D /* tnet_ice_pair.c */,
+				ECB3850E155175450035F25D /* tnet_ice_pair.h */,
+				ECB3850F155175450035F25D /* tnet_ice_utils.c */,
+				ECB38510155175450035F25D /* tnet_ice_utils.h */,
 				ECFD29F9135E7B8500E6A9A3 /* tnet_ice.c */,
 				ECFD29FA135E7B8500E6A9A3 /* tnet_ice.h */,
 			);
@@ -3540,6 +3610,8 @@
 		ECFD2B2A135E7BDC00E6A9A3 /* rtcp */ = {
 			isa = PBXGroup;
 			children = (
+				ECB3851F155175C80035F25D /* trtp_rtcp_report_bye.h */,
+				ECB38520155175C80035F25D /* trtp_rtcp_report_fb.h */,
 				ECFD2B2B135E7BDC00E6A9A3 /* trtp_rtcp_header.h */,
 				ECFD2B2C135E7BDC00E6A9A3 /* trtp_rtcp_packet.h */,
 				ECFD2B2D135E7BDC00E6A9A3 /* trtp_rtcp_rblock.h */,
@@ -3579,6 +3651,7 @@
 				ECFD2B4C135E7BDC00E6A9A3 /* rtp */,
 				ECFD2B50135E7BDC00E6A9A3 /* rtsp */,
 				ECFD2B51135E7BDC00E6A9A3 /* trtp.c */,
+				ECB385051551752D0035F25D /* trtp_srtp.c */,
 				ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */,
 			);
 			path = src;
@@ -3587,6 +3660,8 @@
 		ECFD2B40135E7BDC00E6A9A3 /* rtcp */ = {
 			isa = PBXGroup;
 			children = (
+				ECB38501155174F30035F25D /* trtp_rtcp_report_bye.c */,
+				ECB38502155174F30035F25D /* trtp_rtcp_report_fb.c */,
 				ECFD2B41135E7BDC00E6A9A3 /* trtp_rtcp_header.c */,
 				ECFD2B42135E7BDC00E6A9A3 /* trtp_rtcp_packet.c */,
 				ECFD2B43135E7BDC00E6A9A3 /* trtp_rtcp_rblock.c */,
@@ -4039,6 +4114,7 @@
 		ECFD2D05135E7CAC00E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ECB384FF155174D60035F25D /* tmedia_imageattr.c */,
 				ECFD2D06135E7CAC00E6A9A3 /* content */,
 				ECFD2D0B135E7CAC00E6A9A3 /* tmedia.c */,
 				EC858FC313999E360017BB9F /* tmedia_defaults.c */,
@@ -4681,6 +4757,7 @@
 		ECFD2FAB135E7D8900E6A9A3 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				ECB3851B1551755C0035F25D /* tsip_dialog_invite.ice.c */,
 				ECD28550145F987100EFE997 /* tsip_dialog_info.c */,
 				ECFD2FAC135E7D8900E6A9A3 /* tsip_dialog.c */,
 				ECFD2FAD135E7D8900E6A9A3 /* tsip_dialog_invite.c */,
@@ -5163,6 +5240,7 @@
 				ECFD31F4135E7DBC00E6A9A3 /* msrp */,
 				ECFD31FA135E7DBC00E6A9A3 /* video */,
 				ECFD31F8135E7DBC00E6A9A3 /* tdav.c */,
+				ECB384F8155174B30035F25D /* tdav_session_av.c */,
 				ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */,
 			);
 			path = src;
@@ -5236,6 +5314,7 @@
 		ECFD31D2135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				ECB384FA155174C10035F25D /* fec */,
 				EC5462911426FE1600BFBF66 /* vpx */,
 				ECFD31D3135E7DBB00E6A9A3 /* amr */,
 				ECFD31D5135E7DBB00E6A9A3 /* bv */,
@@ -5402,6 +5481,7 @@
 		ECFD31FA135E7DBC00E6A9A3 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				ECB384F3155174A70035F25D /* jb */,
 				ECFD3200135E7DBC00E6A9A3 /* v4linux */,
 				ECFD31FB135E7DBC00E6A9A3 /* android */,
 				ECFD31FC135E7DBC00E6A9A3 /* directshow */,
@@ -5409,7 +5489,6 @@
 				ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */,
 				ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */,
 				EC4DBBA8141BDAAE0024CBEF /* tdav_consumer_video.c */,
-				EC4DBBA9141BDAAE0024CBEF /* tdav_video_jitterbuffer.c */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -5609,6 +5688,11 @@
 				ECFD2A8A135E7B8500E6A9A3 /* tnet_turn.h in Headers */,
 				ECFD2A8C135E7B8500E6A9A3 /* tnet_turn_attribute.h in Headers */,
 				ECFD2A8E135E7B8500E6A9A3 /* tnet_turn_message.h in Headers */,
+				ECB38512155175450035F25D /* tnet_ice_candidate.h in Headers */,
+				ECB38514155175450035F25D /* tnet_ice_ctx.h in Headers */,
+				ECB38516155175450035F25D /* tnet_ice_event.h in Headers */,
+				ECB38518155175450035F25D /* tnet_ice_pair.h in Headers */,
+				ECB3851A155175450035F25D /* tnet_ice_utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5664,6 +5748,8 @@
 				ECFD2B69135E7BDC00E6A9A3 /* trtp_manager.h in Headers */,
 				ECFD2B6A135E7BDC00E6A9A3 /* tinyrtp.h in Headers */,
 				ECFD2B6B135E7BDC00E6A9A3 /* tinyrtp_config.h in Headers */,
+				ECB38521155175C80035F25D /* trtp_rtcp_report_bye.h in Headers */,
+				ECB38522155175C80035F25D /* trtp_rtcp_report_fb.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6542,6 +6628,11 @@
 				ECFD2A8B135E7B8500E6A9A3 /* tnet_turn_attribute.c in Sources */,
 				ECFD2A8D135E7B8500E6A9A3 /* tnet_turn_message.c in Sources */,
 				ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */,
+				ECB38511155175450035F25D /* tnet_ice_candidate.c in Sources */,
+				ECB38513155175450035F25D /* tnet_ice_ctx.c in Sources */,
+				ECB38515155175450035F25D /* tnet_ice_event.c in Sources */,
+				ECB38517155175450035F25D /* tnet_ice_pair.c in Sources */,
+				ECB38519155175450035F25D /* tnet_ice_utils.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6592,6 +6683,9 @@
 				ECFD2B79135E7BDC00E6A9A3 /* trtp_rtp_session.c in Sources */,
 				ECFD2B7A135E7BDC00E6A9A3 /* trtp.c in Sources */,
 				ECFD2B7B135E7BDC00E6A9A3 /* trtp_manager.c in Sources */,
+				ECB38503155174F30035F25D /* trtp_rtcp_report_bye.c in Sources */,
+				ECB38504155174F30035F25D /* trtp_rtcp_report_fb.c in Sources */,
+				ECB385061551752D0035F25D /* trtp_srtp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6696,6 +6790,7 @@
 				ECFD2D4C135E7CAC00E6A9A3 /* tmedia_session_ghost.c in Sources */,
 				ECFD2D4D135E7CAC00E6A9A3 /* tmedia_vad.c in Sources */,
 				EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */,
+				ECB38500155174D60035F25D /* tmedia_imageattr.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6917,6 +7012,7 @@
 				ECFD3161135E7D8900E6A9A3 /* tsip_uri.c in Sources */,
 				ECD28551145F987100EFE997 /* tsip_dialog_info.c in Sources */,
 				ECD2855F145F98E400EFE997 /* tsip_api_info.c in Sources */,
+				ECB3851C1551755C0035F25D /* tsip_dialog_invite.ice.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6970,9 +7066,13 @@
 				ECC8C9D81407463B00E0A500 /* g722_encode.c in Sources */,
 				ECC8C9D91407463B00E0A500 /* tdav_codec_g722.c in Sources */,
 				EC4DBBAA141BDAAE0024CBEF /* tdav_consumer_video.c in Sources */,
-				EC4DBBAB141BDAAE0024CBEF /* tdav_video_jitterbuffer.c in Sources */,
 				EC5462931426FE1600BFBF66 /* tdav_codec_vp8.c in Sources */,
 				EC5464DC1427400100BFBF66 /* tdav_webrtc_denoise.c in Sources */,
+				ECB384F6155174A70035F25D /* tdav_video_frame.c in Sources */,
+				ECB384F7155174A70035F25D /* tdav_video_jb.c in Sources */,
+				ECB384F9155174B30035F25D /* tdav_session_av.c in Sources */,
+				ECB384FD155174C10035F25D /* tdav_codec_red.c in Sources */,
+				ECB384FE155174C10035F25D /* tdav_codec_ulpfec.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7173,6 +7273,7 @@
 				NGN_STACK_HOME = ..;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
+					"-fms-extensions",
 					"-DDEBUG_LEVEL=DEBUG_LEVEL_INFO",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
@@ -7212,6 +7313,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				NGN_STACK_HOME = ..;
 				OTHER_CFLAGS = (
+					"-fms-extensions",
 					"-DDEBUG_LEVEL=DEBUG_LEVEL_INFO",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
