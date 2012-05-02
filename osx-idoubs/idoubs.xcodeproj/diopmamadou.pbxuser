@@ -73,14 +73,11 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 353444928;
-			PBXWorkspaceStateSaveDate = 353444928;
+			PBXPerProjectTemplateStateSaveDate = 357659741;
+			PBXWorkspaceStateSaveDate = 357659741;
 		};
 		perUserProjectItems = {
-			ECA0F1031511274F005EF3BB /* XCBuildMessageTextBookmark */ = ECA0F1031511274F005EF3BB /* XCBuildMessageTextBookmark */;
-			ECA0F1051511274F005EF3BB /* PBXTextBookmark */ = ECA0F1051511274F005EF3BB /* PBXTextBookmark */;
-			ECE8001E142821EE002ABAA0 /* PBXTextBookmark */ = ECE8001E142821EE002ABAA0 /* PBXTextBookmark */;
-			ECE800231428225B002ABAA0 /* PBXTextBookmark */ = ECE800231428225B002ABAA0 /* PBXTextBookmark */;
+			ECB3857D155189BB0035F25D /* PBXTextBookmark */ = ECB3857D155189BB0035F25D /* PBXTextBookmark */;
 			ECE800321428229E002ABAA0 /* PBXTextBookmark */ = ECE800321428229E002ABAA0 /* PBXTextBookmark */;
 			ECE800AE14282BDD002ABAA0 /* PBXTextBookmark */ = ECE800AE14282BDD002ABAA0 /* PBXTextBookmark */;
 			ECE800B114282BDD002ABAA0 /* PBXTextBookmark */ = ECE800B114282BDD002ABAA0 /* PBXTextBookmark */;
@@ -238,71 +235,23 @@
 	};
 	EC4DC555141E5C140024CBEF /* UIVideoView.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1488, 3315}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 3263}}";
 			sepNavSelRange = "{2265, 0}";
-			sepNavVisRange = "{1705, 1217}";
+			sepNavVisRange = "{1784, 554}";
 		};
 	};
-	ECA0F1031511274F005EF3BB /* XCBuildMessageTextBookmark */ = {
+	ECB3857D155189BB0035F25D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		comments = "Unused variable 'tdns_machine_regexp_en_main'";
-		fRef = ECA0F1041511274F005EF3BB /* tnet_dns_regexp.c */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 126;
-		rType = 1;
-	};
-	ECA0F1041511274F005EF3BB /* tnet_dns_regexp.c */ = {
-		isa = PBXFileReference;
-		name = tnet_dns_regexp.c;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyNET/src/dns/tnet_dns_regexp.c";
-		sourceTree = "<absolute>";
-	};
-	ECA0F1051511274F005EF3BB /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECA0F1061511274F005EF3BB /* tnet_dns_regexp.c */;
-		name = "tnet_dns_regexp.c: 127";
-		rLen = 51;
-		rLoc = 3474;
+		fRef = EC4DC555141E5C140024CBEF /* UIVideoView.mm */;
+		name = "UIVideoView.mm: 100";
+		rLen = 0;
+		rLoc = 2265;
 		rType = 0;
-		vrLen = 770;
-		vrLoc = 3084;
-	};
-	ECA0F1061511274F005EF3BB /* tnet_dns_regexp.c */ = {
-		isa = PBXFileReference;
-		name = tnet_dns_regexp.c;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyNET/src/dns/tnet_dns_regexp.c";
-		sourceTree = "<absolute>";
+		vrLen = 554;
+		vrLoc = 1784;
 	};
 	ECE7EB3D142878CA00466331 /* idoubs.dmg */ = {
 		activeExec = 0;
-	};
-	ECE8000E14282128002ABAA0 /* SipSession.cxx */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.cpp;
-		name = SipSession.cxx;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/bindings/_common/SipSession.cxx;
-		sourceTree = "<absolute>";
-	};
-	ECE8001E142821EE002ABAA0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE8000E14282128002ABAA0 /* SipSession.cxx */;
-		name = "SipSession.cxx: 457";
-		rLen = 0;
-		rLoc = 11977;
-		rType = 0;
-		vrLen = 1944;
-		vrLoc = 10080;
-	};
-	ECE800231428225B002ABAA0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE8FFC114281A04002ABAA0 /* tmedia_session.c */;
-		name = "tmedia_session.c: 1294";
-		rLen = 0;
-		rLoc = 39075;
-		rType = 0;
-		vrLen = 2120;
-		vrLoc = 37989;
 	};
 	ECE800291428225B002ABAA0 /* tmedia_session.h */ = {
 		isa = PBXFileReference;
@@ -408,13 +357,6 @@
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1705;
-	};
-	ECE8FFC114281A04002ABAA0 /* tmedia_session.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = tmedia_session.c;
-		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyMEDIA/src/tmedia_session.c;
-		sourceTree = "<absolute>";
 	};
 	ECEA225C14210541004D456D /* UIHistoryItem.h */ = {
 		uiCtxt = {
