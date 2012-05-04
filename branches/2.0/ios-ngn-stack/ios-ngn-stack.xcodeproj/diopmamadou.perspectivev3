@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,17 +267,26 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>ECFD28FA135E7B2E00E6A9A3</string>
+								<string>ECFD2E9D135E7D8900E6A9A3</string>
+								<string>ECFD2F9E135E7D8900E6A9A3</string>
+								<string>ECFD2FAB135E7D8900E6A9A3</string>
+								<string>ECFD23BC135D532A00E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>37</integer>
-									<integer>21</integer>
+									<integer>19</integer>
+									<integer>13</integer>
+									<integer>10</integer>
+									<integer>6</integer>
+									<integer>3</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 54}, {331, 673}}</string>
+							<string>{{0, 0}, {331, 673}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -307,12 +314,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>EC4DBF71141C2CFA0024CBEF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iOSProxyVideoProducer.h</string>
+								<string>configure.sh</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC4DBF72141C2CFA0024CBEF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>iOSProxyVideoProducer.h</string>
+										<string>configure.sh</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECB38583155189C40035F25D</string>
+										<string>ECB1D9A01553600400AC5692</string>
 										<key>history</key>
 										<array>
 											<string>ECE7EA6F1428551700466331</string>
@@ -340,7 +349,6 @@
 											<string>EC8D44B01453004F00856531</string>
 											<string>EC8D44F31453264100856531</string>
 											<string>ECA2AB971477986B005CFABB</string>
-											<string>EC173644148F3CB000DB7AEF</string>
 											<string>EC173645148F3CB000DB7AEF</string>
 											<string>ECA97A9F149A8676006C852C</string>
 											<string>EC760AA51508F5810040DC6C</string>
@@ -368,8 +376,6 @@
 											<string>EC8C80DF1545D99D00D23ADF</string>
 											<string>EC8C813A154600B600D23ADF</string>
 											<string>EC8C813D154600B600D23ADF</string>
-											<string>EC8C813E154600B600D23ADF</string>
-											<string>EC8C81DB1546102A00D23ADF</string>
 											<string>EC8C81DD1546102A00D23ADF</string>
 											<string>EC8C81DE1546102A00D23ADF</string>
 											<string>EC8C81DF1546102A00D23ADF</string>
@@ -381,7 +387,20 @@
 											<string>ECB384A5155171CD0035F25D</string>
 											<string>ECB384AF155171CD0035F25D</string>
 											<string>ECB384B3155171CD0035F25D</string>
-											<string>ECE7EAAE142870C500466331</string>
+											<string>EC0630241551DCCC001AD2BC</string>
+											<string>EC0630251551DCCC001AD2BC</string>
+											<string>EC0630261551DCCC001AD2BC</string>
+											<string>EC0630271551DCCC001AD2BC</string>
+											<string>ECB1D9921553600400AC5692</string>
+											<string>ECB1D9941553600400AC5692</string>
+											<string>ECB1D9951553600400AC5692</string>
+											<string>ECB1D9961553600400AC5692</string>
+											<string>ECB1D9971553600400AC5692</string>
+											<string>ECB1D9981553600400AC5692</string>
+											<string>ECB1D9991553600400AC5692</string>
+											<string>ECB1D99A1553600400AC5692</string>
+											<string>ECB1D99C1553600400AC5692</string>
+											<string>ECB1D99E1553600400AC5692</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -395,18 +414,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1087, 507}}</string>
+								<string>{{0, 0}, {1087, 496}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 146 1440 732 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>507pt</string>
+							<string>496pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>179pt</string>
+							<string>190pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -420,7 +439,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1087, 152}}</string>
+										<string>{{10, 27}, {1087, 163}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 146 1440 732 0 0 1440 878 </string>
 									</dict>
@@ -476,7 +495,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1087, 152}}</string>
+										<string>{{10, 27}, {1087, 157}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -504,11 +523,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECB3846915516AE80035F25D</string>
+				<string>ECB1D9A21553600400AC5692</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECB3846A15516AE80035F25D</string>
+				<string>ECB1D9A31553600400AC5692</string>
 				<string>EC4DBF71141C2CFA0024CBEF</string>
-				<string>ECB3846B15516AE80035F25D</string>
+				<string>ECB1D9A41553600400AC5692</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -698,8 +717,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECB38589155189C40035F25D</string>
-		<string>ECB3858A155189C40035F25D</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

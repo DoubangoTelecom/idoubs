@@ -130,17 +130,18 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 357656020;
-			PBXWorkspaceStateSaveDate = 357656020;
+			PBXPerProjectTemplateStateSaveDate = 357773499;
+			PBXWorkspaceStateSaveDate = 357773499;
 		};
 		perUserProjectItems = {
-			EC8C80711545D2A800D23ADF /* PBXTextBookmark */ = EC8C80711545D2A800D23ADF /* PBXTextBookmark */;
-			EC8C8136154600B600D23ADF /* PBXTextBookmark */ = EC8C8136154600B600D23ADF /* PBXTextBookmark */;
-			EC8C81B215460D4000D23ADF /* PlistBookmark */ = EC8C81B215460D4000D23ADF /* PlistBookmark */;
-			EC99117915119A42008844C1 /* PBXTextBookmark */ = EC99117915119A42008844C1 /* PBXTextBookmark */;
-			EC99117B15119A42008844C1 /* PBXTextBookmark */ = EC99117B15119A42008844C1 /* PBXTextBookmark */;
-			ECB3859315518A000035F25D /* PBXTextBookmark */ = ECB3859315518A000035F25D /* PBXTextBookmark */;
-			ECB3859415518A000035F25D /* PBXTextBookmark */ = ECB3859415518A000035F25D /* PBXTextBookmark */;
+			EC06301B1551DCCB001AD2BC /* PlistBookmark */ = EC06301B1551DCCB001AD2BC /* PlistBookmark */;
+			EC06301E1551DCCB001AD2BC /* PlistBookmark */ = EC06301E1551DCCB001AD2BC /* PlistBookmark */;
+			ECB1D95C1553399800AC5692 /* PlistBookmark */ = ECB1D95C1553399800AC5692 /* PlistBookmark */;
+			ECB1D95D1553399800AC5692 /* PlistBookmark */ = ECB1D95D1553399800AC5692 /* PlistBookmark */;
+			ECB1D95E1553399800AC5692 /* PlistBookmark */ = ECB1D95E1553399800AC5692 /* PlistBookmark */;
+			ECB1D95F1553399800AC5692 /* PlistBookmark */ = ECB1D95F1553399800AC5692 /* PlistBookmark */;
+			ECB1D9A51553600500AC5692 /* PlistBookmark */ = ECB1D9A51553600500AC5692 /* PlistBookmark */;
+			ECB1D9A61553600500AC5692 /* PlistBookmark */ = ECB1D9A61553600500AC5692 /* PlistBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -158,11 +159,80 @@
 			sepNavWindowFrame = "{{15, 89}, {860, 789}}";
 		};
 	};
-	EC37E8A614E8F1A300D77FE0 /* Network.plist */ = {
+	EC062F4B1551BDAC001AD2BC /* Messaging.plist */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = text.plist.xml;
-		name = Network.plist;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Network.plist";
+		name = Messaging.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Messaging.plist";
+		sourceTree = "<absolute>";
+	};
+	EC062F4F1551BDAC001AD2BC /* NATT.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = NATT.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/NATT.plist";
+		sourceTree = "<absolute>";
+	};
+	EC062FB01551CF99001AD2BC /* QoS.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = QoS.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/QoS.plist";
+		sourceTree = "<absolute>";
+	};
+	EC062FB51551CF99001AD2BC /* Codecs.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Codecs.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Codecs.plist";
+		sourceTree = "<absolute>";
+	};
+	EC062FB71551CF99001AD2BC /* Root.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Root.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Root.plist";
+		plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.settings";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 91}, {1117, 782}}";
+		};
+	};
+	EC06301B1551DCCB001AD2BC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC062FB01551CF99001AD2BC /* QoS.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			Title,
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/QoS.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	EC06301E1551DCCB001AD2BC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC06301F1551DCCB001AD2BC /* Identity.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Identity.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	EC06301F1551DCCB001AD2BC /* Identity.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Identity.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Identity.plist";
+		sourceTree = "<absolute>";
+	};
+	EC0630231551DCCB001AD2BC /* Media.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Media.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
 		sourceTree = "<absolute>";
 	};
 	EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {
@@ -384,9 +454,9 @@
 	};
 	EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 8099}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 8086}}";
 			sepNavSelRange = "{17642, 0}";
-			sepNavVisRange = "{17108, 989}";
+			sepNavVisRange = "{16784, 1514}";
 		};
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
@@ -403,23 +473,6 @@
 		path = /Users/diopmamadou/Documents/mydoubs/doubango/branches/2.0/doubango/tinyNET/src/tnet_transport_poll.c;
 		sourceTree = "<absolute>";
 	};
-	EC8C7F80154593F800D23ADF /* CFStream.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = CFStream.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFStream.h;
-		sourceTree = "<absolute>";
-	};
-	EC8C80711545D2A800D23ADF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC8C7F80154593F800D23ADF /* CFStream.h */;
-		name = "CFStream.h: 101";
-		rLen = 55;
-		rLoc = 3810;
-		rType = 0;
-		vrLen = 834;
-		vrLoc = 3272;
-	};
 	EC8C80921545D43A00D23ADF /* tnet_transport_poll.c:417 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -434,26 +487,9 @@
 		ignoreCount = 0;
 		lineNumber = 417;
 		location = idoubs;
-		modificationTime = 357659492.236043;
+		modificationTime = 357783881.46787;
 		originalNumberOfMultipleMatches = 1;
-		state = 0;
-	};
-	EC8C8136154600B600D23ADF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC8C8137154600B600D23ADF /* CFSocketStream.h */;
-		name = "CFSocketStream.h: 212";
-		rLen = 111;
-		rLoc = 6684;
-		rType = 0;
-		vrLen = 1402;
-		vrLoc = 9636;
-	};
-	EC8C8137154600B600D23ADF /* CFSocketStream.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = CFSocketStream.h;
-		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CFNetwork.framework/Headers/CFSocketStream.h;
-		sourceTree = "<absolute>";
+		state = 1;
 	};
 	EC8C816C154604A400D23ADF /* tnet_transport_cfsocket.c */ = {
 		isa = PBXFileReference;
@@ -476,23 +512,9 @@
 		ignoreCount = 0;
 		lineNumber = 734;
 		location = idoubs;
-		modificationTime = 357659493.738616;
+		modificationTime = 357783652.930189;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
-	};
-	EC8C81B215460D4000D23ADF /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = EC37E8A614E8F1A300D77FE0 /* Network.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			PreferenceSpecifiers,
-			8,
-			Key,
-		);
-		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Network.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
 	};
 	EC8EBD741368447E00DC70DF /* Doubango */ = {
 		activeExec = 0;
@@ -526,33 +548,6 @@
 			sepNavWindowFrame = "{{15, 77}, {860, 798}}";
 		};
 	};
-	EC99117915119A42008844C1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC99117A15119A42008844C1 /* NgnInviteSession.h */;
-		name = "NgnInviteSession.h: 72";
-		rLen = 0;
-		rLoc = 2515;
-		rType = 0;
-		vrLen = 989;
-		vrLoc = 1818;
-	};
-	EC99117A15119A42008844C1 /* NgnInviteSession.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = NgnInviteSession.h;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/common-ngn-stack/sip/NgnInviteSession.h";
-		sourceTree = "<absolute>";
-	};
-	EC99117B15119A42008844C1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC7E2F7E138968E50020EB89 /* VideoCallViewController.mm */;
-		name = "VideoCallViewController.mm: 269";
-		rLen = 0;
-		rLoc = 8809;
-		rType = 0;
-		vrLen = 601;
-		vrLoc = 8417;
-	};
 	EC9EDB80139D50B30067EB59 /* Entitlements.plist */ = {
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 75}, {860, 798}}";
@@ -572,29 +567,85 @@
 		ignoreCount = 0;
 		lineNumber = 117;
 		location = idoubs;
-		modificationTime = 357659493.711239;
+		modificationTime = 357783652.901544;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	ECB3859315518A000035F25D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
-		name = "idoubs2AppDelegate.mm: 476";
+	ECB1D95C1553399800AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC062FB71551CF99001AD2BC /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			PreferenceSpecifiers,
+			4,
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Root.plist";
 		rLen = 0;
-		rLoc = 17642;
-		rType = 0;
-		vrLen = 1514;
-		vrLoc = 16784;
+		rLoc = 9223372036854775807;
 	};
-	ECB3859415518A000035F25D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC7E2FA31389696C0020EB89 /* idoubs2AppDelegate.mm */;
-		name = "idoubs2AppDelegate.mm: 476";
+	ECB1D95D1553399800AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC062F4F1551BDAC001AD2BC /* NATT.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/NATT.plist";
 		rLen = 0;
-		rLoc = 17642;
-		rType = 0;
-		vrLen = 1514;
-		vrLoc = 16784;
+		rLoc = 9223372036854775807;
+	};
+	ECB1D95E1553399800AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC062F4B1551BDAC001AD2BC /* Messaging.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Messaging.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECB1D95F1553399800AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC062FB51551CF99001AD2BC /* Codecs.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			PreferenceSpecifiers,
+			17,
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Codecs.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECB1D9A51553600500AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC0630231551DCCB001AD2BC /* Media.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECB1D9A61553600500AC5692 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = ECB1D9A71553600500AC5692 /* Media.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECB1D9A71553600500AC5692 /* Media.plist */ = {
+		isa = PBXFileReference;
+		name = Media.plist;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
+		sourceTree = "<absolute>";
 	};
 	ECB40EF4138E7ABA00EB92A3 /* PhoneEntryCell.h */ = {
 		uiCtxt = {

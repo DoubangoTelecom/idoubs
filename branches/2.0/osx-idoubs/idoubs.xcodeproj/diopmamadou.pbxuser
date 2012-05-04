@@ -1,5 +1,12 @@
 // !$*UTF8*$!
 {
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 494}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = Release;
@@ -73,18 +80,20 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 357659741;
-			PBXWorkspaceStateSaveDate = 357659741;
+			PBXPerProjectTemplateStateSaveDate = 357673357;
+			PBXWorkspaceStateSaveDate = 357673357;
 		};
 		perUserProjectItems = {
-			ECB3857D155189BB0035F25D /* PBXTextBookmark */ = ECB3857D155189BB0035F25D /* PBXTextBookmark */;
+			EC062EDC1551BC2A001AD2BC /* PBXTextBookmark */ = EC062EDC1551BC2A001AD2BC /* PBXTextBookmark */;
+			EC062EDD1551BC2A001AD2BC /* PlistBookmark */ = EC062EDD1551BC2A001AD2BC /* PlistBookmark */;
+			EC062EDE1551BC2A001AD2BC /* PBXBookmark */ = EC062EDE1551BC2A001AD2BC /* PBXBookmark */;
+			EC062EDF1551BC2A001AD2BC /* PBXTextBookmark */ = EC062EDF1551BC2A001AD2BC /* PBXTextBookmark */;
 			ECE800321428229E002ABAA0 /* PBXTextBookmark */ = ECE800321428229E002ABAA0 /* PBXTextBookmark */;
 			ECE800AE14282BDD002ABAA0 /* PBXTextBookmark */ = ECE800AE14282BDD002ABAA0 /* PBXTextBookmark */;
 			ECE800B114282BDD002ABAA0 /* PBXTextBookmark */ = ECE800B114282BDD002ABAA0 /* PBXTextBookmark */;
 			ECE800BA14282D41002ABAA0 /* PBXTextBookmark */ = ECE800BA14282D41002ABAA0 /* PBXTextBookmark */;
 			ECE800BB14282D41002ABAA0 /* PBXTextBookmark */ = ECE800BB14282D41002ABAA0 /* PBXTextBookmark */;
 			ECE800BC14282D41002ABAA0 /* PBXTextBookmark */ = ECE800BC14282D41002ABAA0 /* PBXTextBookmark */;
-			ECE800BD14282D41002ABAA0 /* PBXTextBookmark */ = ECE800BD14282D41002ABAA0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = EC26C23214269DC00046BBB5 /* Source Control */;
 		userBuildSettings = {
@@ -95,6 +104,47 @@
 		executables = (
 			EC26C22914269D940046BBB5 /* idoubs */,
 		);
+	};
+	8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 91}, {1117, 782}}";
+		};
+	};
+	EC062EDC1551BC2A001AD2BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC4DC555141E5C140024CBEF /* UIVideoView.mm */;
+		name = "UIVideoView.mm: 100";
+		rLen = 0;
+		rLoc = 2265;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 1820;
+	};
+	EC062EDD1551BC2A001AD2BC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* idoubs-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-idoubs/idoubs-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	EC062EDE1551BC2A001AD2BC /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "InfoPlist.strings (English)";
+	};
+	EC062EDF1551BC2A001AD2BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
 	};
 	EC26C11C14268C650046BBB5 /* UICodecItem.h */ = {
 		uiCtxt = {
@@ -235,20 +285,10 @@
 	};
 	EC4DC555141E5C140024CBEF /* UIVideoView.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1100, 3263}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 3341}}";
 			sepNavSelRange = "{2265, 0}";
-			sepNavVisRange = "{1784, 554}";
+			sepNavVisRange = "{1820, 518}";
 		};
-	};
-	ECB3857D155189BB0035F25D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC4DC555141E5C140024CBEF /* UIVideoView.mm */;
-		name = "UIVideoView.mm: 100";
-		rLen = 0;
-		rLoc = 2265;
-		rType = 0;
-		vrLen = 554;
-		vrLoc = 1784;
 	};
 	ECE7EB3D142878CA00466331 /* idoubs.dmg */ = {
 		activeExec = 0;
@@ -347,16 +387,6 @@
 		rType = 0;
 		vrLen = 1487;
 		vrLoc = 0;
-	};
-	ECE800BD14282D41002ABAA0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC4DC555141E5C140024CBEF /* UIVideoView.mm */;
-		name = "UIVideoView.mm: 100";
-		rLen = 0;
-		rLoc = 2265;
-		rType = 0;
-		vrLen = 1217;
-		vrLoc = 1705;
 	};
 	ECEA225C14210541004D456D /* UIHistoryItem.h */ = {
 		uiCtxt = {

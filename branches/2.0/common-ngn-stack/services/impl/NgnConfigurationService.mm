@@ -35,6 +35,8 @@
 
 @interface NgnConfigurationService(Private)
 - (void)userDefaultsDidChangeNotification:(NSNotification *)note;
+- (void)computeMedia;
+- (void)computeNATT;
 - (void)computeSecurity;
 - (void)computeCodecs;
 @end
@@ -42,8 +44,35 @@
 @implementation NgnConfigurationService(Private)
 
 - (void)userDefaultsDidChangeNotification:(NSNotification *)note{
+	[self computeMedia];
 	[self computeCodecs];
 	[self computeSecurity];
+	[self computeNATT];
+}
+
+- (void)computeMedia{
+	switch([self getIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE]){
+		case kDefaultMediaVsize_sqcif: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_sqcif);break;
+		case kDefaultMediaVsize_qcif: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_qcif);break;
+		case kDefaultMediaVsize_qvga: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_qvga);break;
+		case kDefaultMediaVsize_cif: default: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_cif);break;
+		case kDefaultMediaVsize_hvga: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_hvga);break;
+		case kDefaultMediaVsize_vga: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_vga);break;
+		case kDefaultMediaVsize_4cif: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_4cif);break;
+		case kDefaultMediaVsize_svga: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_svga);break;
+		case kDefaultMediaVsize_480p: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_480p);break;
+		case kDefaultMediaVsize_720p: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_720p);break;
+		case kDefaultMediaVsize_16cif: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_16cif);break;
+		case kDefaultMediaVsize_1080p: MediaSessionMgr::defaultsSetPrefVideoSize(tmedia_pref_video_size_1080p);break;
+	}
+	switch([self getIntWithKey:MEDIA_PROFILE]){
+		case kDefaultMediaProfile_Default: default: MediaSessionMgr::defaultsSetProfile(tmedia_profile_default);break;
+		case kDefaultMediaProfile_RTCWeb: MediaSessionMgr::defaultsSetProfile(tmedia_profile_rtcweb);break;
+	}
+}
+
+- (void)computeNATT{
+	 MediaSessionMgr::defaultsSetIceEnabled([self getBoolWithKey:NATT_USE_ICE]);
 }
 
 - (void)computeSecurity{
@@ -88,9 +117,8 @@
 		{ MEDIA_CODEC_USE_VP8, tdav_codec_id_vp8 },
 		{ MEDIA_CODEC_USE_H263, tdav_codec_id_h263 },
 		{ MEDIA_CODEC_USE_H263P, tdav_codec_id_h263p },
-		{ MEDIA_CODEC_USE_H264BP10, tdav_codec_id_h264_bp10 },
-		{ MEDIA_CODEC_USE_H264BP20, tdav_codec_id_h264_bp20 },
-		{ MEDIA_CODEC_USE_H264BP30, tdav_codec_id_h264_bp30 },
+		{ MEDIA_CODEC_USE_H264BP, tdav_codec_id_h264_bp },
+		{ MEDIA_CODEC_USE_H264MP, tdav_codec_id_h264_mp },
 		{ MEDIA_CODEC_USE_THEORA, tdav_codec_id_theora },
 		{ MEDIA_CODEC_USE_MP4VES, tdav_codec_id_mp4ves_es },
 	};
@@ -191,6 +219,8 @@
 	 DEFAULT_NETWORK_TRANSPORT, NETWORK_TRANSPORT,
 	 
 	 /* === MEDIA === */
+	 [NSNumber numberWithInt:DEFAULT_MEDIA_PROFILE], MEDIA_PROFILE,
+	 [NSNumber numberWithInt:DEFAULT_MEDIA_PREFERRED_VIDEO_SIZE], MEDIA_PREFERRED_VIDEO_SIZE,
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G722], MEDIA_CODEC_USE_G722,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
@@ -205,13 +235,13 @@
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_VP8], MEDIA_CODEC_USE_VP8,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263], MEDIA_CODEC_USE_H263,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H263P], MEDIA_CODEC_USE_H263P,
-	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP10], MEDIA_CODEC_USE_H264BP10,
-	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP20], MEDIA_CODEC_USE_H264BP20,
-	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP30], MEDIA_CODEC_USE_H264BP30,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264BP], MEDIA_CODEC_USE_H264BP,
+	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_H264MP], MEDIA_CODEC_USE_H264MP,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_THEORA], MEDIA_CODEC_USE_THEORA,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_MP4VES], MEDIA_CODEC_USE_MP4VES,
 	 
 	 /* === NATT === */
+	 [NSNumber numberWithBool:DEFAULT_NATT_USE_ICE], NATT_USE_ICE,
 	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN], NATT_USE_STUN,
 	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN_DISCO], NATT_USE_STUN_DISCO,
 	 DEFAULT_NATT_STUN_SERVER, NATT_STUN_SERVER,
