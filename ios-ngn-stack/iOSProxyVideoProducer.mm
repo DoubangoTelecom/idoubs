@@ -38,8 +38,8 @@
 // maxium size for a blank paket
 // under devices without camera there is no way to detect the video stream size
 // we also consider that the chroma is NV12 which is the default one on iPhone4 and 3GS
-// 640x480 => AVCaptureSessionPreset640x480
-static uint8_t kBlankPacketBuffer[(640*480*3)>>1] = { 0 };
+// 1280x720 => AVCaptureSessionPreset1280x720
+static uint8_t kBlankPacketBuffer[(1280*720*3)>>1] = { 0 };
 
 @interface NgnProxyVideoProducer(Private)
 -(int) prepareWithWidth:(int) width andHeight: (int)height andFps: (int) fps;
@@ -149,9 +149,13 @@ private:
 	else if(mHeight <= 480){
 		mCaptureSession.sessionPreset = AVCaptureSessionPresetHigh;
 	}
-	else {
+	else if(mHeight <= 720){
 		mCaptureSession.sessionPreset = AVCaptureSessionPreset640x480;
 	}
+	else {
+		mCaptureSession.sessionPreset = AVCaptureSessionPreset1280x720;
+	}
+
     [mCaptureSession addInput:videoInput];
 	
     // Currently, the only supported key is kCVPixelBufferPixelFormatTypeKey. Recommended pixel format choices are 
