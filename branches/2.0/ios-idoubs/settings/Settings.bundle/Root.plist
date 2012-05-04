@@ -36,6 +36,14 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
+			<string>Media</string>
+			<key>File</key>
+			<string>Media</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
 			<string>Codecs</string>
 			<key>File</key>
 			<string>Codecs</string>

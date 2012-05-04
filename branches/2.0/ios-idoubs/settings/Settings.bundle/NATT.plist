@@ -16,6 +16,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>Enable ICE</string>
+			<key>Key</key>
+			<string>NATT_USE_ICE</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>Enable STUN</string>
 			<key>Key</key>
 			<string>NATT_USE_STUN</string>

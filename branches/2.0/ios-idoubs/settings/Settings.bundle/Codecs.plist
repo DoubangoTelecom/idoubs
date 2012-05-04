@@ -152,31 +152,21 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>H.264-BP10</string>
+			<string>H.264 Base Profile</string>
 			<key>Key</key>
-			<string>MEDIA_CODEC_USE_H264BP10</string>
+			<string>MEDIA_CODEC_USE_H264BP</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>H.264 Main Profile</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_H264MP</string>
 			<key>DefaultValue</key>
 			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>H.264-BP20</string>
-			<key>Key</key>
-			<string>MEDIA_CODEC_USE_H264BP20</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>H.264-BP30</string>
-			<key>Key</key>
-			<string>MEDIA_CODEC_USE_H264BP30</string>
-			<key>DefaultValue</key>
-			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
