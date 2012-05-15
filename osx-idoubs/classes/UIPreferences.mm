@@ -28,6 +28,26 @@
 #define kIndexTCP 1
 #define kIndexTLS 2
 
+#define kIndexSRtpNone 0
+#define kIndexSRtpOptional 1
+#define kIndexSRtpMandatory 2
+
+#define kIndexMediaProfile_Default 0
+#define kIndexMediaProfile_RTCWeb 1
+
+#define  kIndexMediaVsize_sqcif 0
+#define  kIndexMediaVsize_qcif 1
+#define  kIndexMediaVsize_qvga 2
+#define  kIndexMediaVsize_cif 3
+#define  kIndexMediaVsize_hvga 4
+#define  kIndexMediaVsize_vga 5
+#define  kIndexMediaVsize_4cif 6
+#define  kIndexMediaVsize_svga 7
+#define  kIndexMediaVsize_480p 8
+#define  kIndexMediaVsize_720p 9
+#define  kIndexMediaVsize_16cif 10
+#define  kIndexMediaVsize_1080p 11
+
 typedef struct codec_s {
 	tdav_codec_id_t _id;
 	NSString *bundle_key;
@@ -52,9 +72,8 @@ static const codec_t __audioCodecs[] =
 static const codec_t __videoCodecs[] = 
 {	
 	{ tdav_codec_id_vp8, MEDIA_CODEC_USE_VP8, @"VP8", @"Google's VP8" },
-	{ tdav_codec_id_h264_bp30, MEDIA_CODEC_USE_H264BP30, @"H.264-BP30", @"H.264 Base Profile level 3.0" },
-	{ tdav_codec_id_h264_bp20, MEDIA_CODEC_USE_H264BP20, @"H.264-BP20", @"H.264 Base Profile level 2.0" },
-	{ tdav_codec_id_h264_bp10, MEDIA_CODEC_USE_H264BP10, @"H.264-BP10", @"H.264 Base Profile level 1.0" },
+	{ tdav_codec_id_h264_bp, MEDIA_CODEC_USE_H264BP, @"H.264-BP", @"H.264 Base Profile" },
+	{ tdav_codec_id_h264_mp, MEDIA_CODEC_USE_H264MP, @"H.264-MP", @"H.264 Main Profile" },
 	{ tdav_codec_id_h263, MEDIA_CODEC_USE_H263, @"H.263", @"H.263-1996" },
 	{ tdav_codec_id_h263p, MEDIA_CODEC_USE_H263P, @"H.263+", @"H.263-1998" },
 	{ tdav_codec_id_theora, MEDIA_CODEC_USE_THEORA, @"Theora", @"Theora" },
@@ -67,8 +86,9 @@ static const codec_t __videoCodecs[] =
 
 @interface UIPreferences(Private)
 -(void)onWindowClosed:(NSNotification*)notification;
--(void)load;
--(void)save;
+-(void)loadConfig;
+-(void)saveConfig;
+-(void)pushConfig;
 @end
 
 @implementation UIPreferences(Private)
@@ -78,7 +98,7 @@ static const codec_t __videoCodecs[] =
 	[self autorelease];
 }
 
--(void)load
+-(void)loadConfig
 {
 	// Identity
 	[self.textFieldDisplayName setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:IDENTITY_DISPLAY_NAME]];
@@ -87,8 +107,6 @@ static const codec_t __videoCodecs[] =
 	[self.textFieldPassword setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:IDENTITY_PASSWORD]];
 	[self.textFieldRealm setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:NETWORK_REALM]];
 	[self.checkBoxEarlyIMS setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_EARLY_IMS] ? NSOnState : NSOffState];
-	[self.textFieldAMF setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:SECURITY_IMSAKA_AMF]];
-	[self.textFieldOpId setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:SECURITY_IMSAKA_OPID]];
 	
 	// Network
 	[self.textFieldProxyHost setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:NETWORK_PCSCF_HOST]];
@@ -108,9 +126,35 @@ static const codec_t __videoCodecs[] =
 	[self.checkBoxDiscoDNS setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_PCSCF_DISCOVERY_USE_DNS] ? NSOnState : NSOffState];
 	[self.checkBoxDiscoDHCP setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_PCSCF_DISCOVERY_USE_DHCP] ? NSOnState : NSOffState];
 	[self.checkBoxSigComp setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_SIGCOMP] ? NSOnState : NSOffState];
+	[self.textFieldAMF setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:SECURITY_IMSAKA_AMF]];
+	[self.textFieldOpId setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:SECURITY_IMSAKA_OPID]];
+	switch ([[NgnEngine sharedInstance].configurationService getIntWithKey:SECURITY_SRTP_MODE]) {
+		case kDefaultSecuritySRtpMode_None: default: [self.comboBoxSRTPMode selectItemAtIndex:kIndexSRtpNone]; break;
+		case kDefaultSecuritySRtpMode_Optional: [self.comboBoxSRTPMode selectItemAtIndex:kIndexSRtpOptional]; break;
+		case kDefaultSecuritySRtpMode_Mandatory: [self.comboBoxSRTPMode selectItemAtIndex:kIndexSRtpMandatory]; break;
+	}
+	switch([[NgnEngine sharedInstance].configurationService getIntWithKey:MEDIA_PROFILE]){
+		case kDefaultMediaProfile_Default: default: [self.comboBoxProfile selectItemAtIndex:kIndexMediaProfile_Default]; break;
+		case kDefaultMediaProfile_RTCWeb: [self.comboBoxProfile selectItemAtIndex:kIndexMediaProfile_RTCWeb]; break;
+	}
+	switch([[NgnEngine sharedInstance].configurationService getIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE]){
+		case kDefaultMediaVsize_sqcif: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_sqcif]; break;
+		case kDefaultMediaVsize_qcif: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_qcif]; break;
+		case kDefaultMediaVsize_qvga: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_qvga]; break;
+		case kDefaultMediaVsize_cif: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_cif]; break;
+		case kDefaultMediaVsize_hvga: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_hvga]; break;
+		case kDefaultMediaVsize_vga: default:[self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_vga]; break;
+		case kDefaultMediaVsize_4cif: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_4cif]; break;
+		case kDefaultMediaVsize_svga: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_svga]; break;
+		case kDefaultMediaVsize_480p: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_480p]; break;
+		case kDefaultMediaVsize_720p: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_720p]; break;
+		case kDefaultMediaVsize_16cif: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_16cif]; break;
+		case kDefaultMediaVsize_1080p: [self.comboBoxPrefVsize selectItemAtIndex:kIndexMediaVsize_1080p]; break;
+	}
 	
 	
 	// NAT Traversal
+	[self.checkBoxICEEnable setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NATT_USE_ICE] ? NSOnState : NSOffState];
 	[self.checkBoxSTUNEnable setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NATT_USE_STUN] ? NSOnState : NSOffState];
 	[self.buttonCellSTUNDiscover setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NATT_USE_STUN_DISCO] ? NSOnState : NSOffState];
 	[self.buttonCellSTUNUseThisServer setState:[self.buttonCellSTUNDiscover state] == NSOnState ? NSOffState : NSOnState];
@@ -146,7 +190,7 @@ static const codec_t __videoCodecs[] =
 	[self.arrayControllerVideoCodecs setContent:self.videoCodecs];
 }
 
--(void)save
+-(void)saveConfig
 {
 	// Identity
 	[[NgnEngine sharedInstance].configurationService setStringWithKey:IDENTITY_DISPLAY_NAME andValue:[self.textFieldDisplayName stringValue]];
@@ -155,8 +199,6 @@ static const codec_t __videoCodecs[] =
 	[[NgnEngine sharedInstance].configurationService setStringWithKey:IDENTITY_PASSWORD andValue:[self.textFieldPassword stringValue]];
 	[[NgnEngine sharedInstance].configurationService setStringWithKey:NETWORK_REALM andValue:[self.textFieldRealm stringValue]];
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NETWORK_USE_EARLY_IMS andValue:[self.checkBoxEarlyIMS state]==NSOnState];
-	[[NgnEngine sharedInstance].configurationService setStringWithKey:SECURITY_IMSAKA_AMF andValue:[self.textFieldAMF stringValue]];
-	[[NgnEngine sharedInstance].configurationService setStringWithKey:SECURITY_IMSAKA_OPID andValue:[self.textFieldOpId stringValue]];
 	
 	// Network
 	[[NgnEngine sharedInstance].configurationService setStringWithKey:NETWORK_PCSCF_HOST andValue:[self.textFieldProxyHost stringValue]];
@@ -177,14 +219,54 @@ static const codec_t __videoCodecs[] =
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NETWORK_PCSCF_DISCOVERY_USE_DNS andValue:[self.checkBoxDiscoDNS state]==NSOnState];
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NETWORK_PCSCF_DISCOVERY_USE_DHCP andValue:[self.checkBoxDiscoDHCP state]==NSOnState];
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NETWORK_USE_SIGCOMP andValue:[self.checkBoxSigComp state]==NSOnState];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:SECURITY_IMSAKA_AMF andValue:[self.textFieldAMF stringValue]];
+	[[NgnEngine sharedInstance].configurationService setStringWithKey:SECURITY_IMSAKA_OPID andValue:[self.textFieldOpId stringValue]];
+	switch ([self.comboBoxSRTPMode indexOfSelectedItem]) {
+		case kIndexSRtpNone: default: [[NgnEngine sharedInstance].configurationService setIntWithKey:SECURITY_SRTP_MODE andValue:kDefaultSecuritySRtpMode_None]; break;
+		case kIndexSRtpOptional: [[NgnEngine sharedInstance].configurationService setIntWithKey:SECURITY_SRTP_MODE andValue:kDefaultSecuritySRtpMode_Optional]; break;
+		case kIndexSRtpMandatory: [[NgnEngine sharedInstance].configurationService setIntWithKey:SECURITY_SRTP_MODE andValue:kDefaultSecuritySRtpMode_Mandatory]; break;
+	}
+	switch ([self.comboBoxProfile indexOfSelectedItem]) {
+		case kIndexMediaProfile_Default: default: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PROFILE andValue: kDefaultMediaProfile_Default]; break;
+		case kIndexMediaProfile_RTCWeb: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PROFILE andValue: kDefaultMediaProfile_RTCWeb]; break;
+	}
+	switch ([self.comboBoxPrefVsize indexOfSelectedItem]) {
+		case kIndexMediaVsize_sqcif: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_sqcif]; break;
+		case kIndexMediaVsize_qcif: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_qcif]; break;
+		case kIndexMediaVsize_qvga: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_qvga]; break;	
+		case kIndexMediaVsize_cif: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_cif]; break;
+		case kIndexMediaVsize_hvga: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_hvga]; break;
+		case kIndexMediaVsize_vga: default: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_vga]; break;
+		case kIndexMediaVsize_4cif: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_4cif]; break;
+		case kIndexMediaVsize_svga: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_svga]; break;
+		case kIndexMediaVsize_480p: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_480p]; break;
+		case kIndexMediaVsize_720p: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_720p]; break;
+		case kIndexMediaVsize_16cif: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_16cif]; break;
+		case kIndexMediaVsize_1080p: [[NgnEngine sharedInstance].configurationService setIntWithKey:MEDIA_PREFERRED_VIDEO_SIZE andValue: kDefaultMediaVsize_1080p]; break;
+	}
+	
 	
 	// NAT Traversal
+	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NATT_USE_ICE andValue:[self.checkBoxICEEnable state]==NSOnState];
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NATT_USE_STUN andValue:[self.checkBoxSTUNEnable state]==NSOnState];
 	[[NgnEngine sharedInstance].configurationService setBoolWithKey:NATT_USE_STUN_DISCO andValue:[self.buttonCellSTUNDiscover state]==NSOnState];
 	[[NgnEngine sharedInstance].configurationService setStringWithKey:NATT_STUN_SERVER andValue:[self.textFieldSTUNServerHost stringValue]];
 	[[NgnEngine sharedInstance].configurationService setIntWithKey:NATT_STUN_PORT andValue:[self.textFieldSTUNServerPort intValue]];
 	
 	[[NgnEngine sharedInstance].configurationService synchronize];
+}
+
+-(void)pushConfig
+{
+	// Identity
+	// Other configs will be pushed when the user try to register again
+	
+	// Network
+	// Other configs will be pushed when the user try to register again
+	
+	// NAT Traversal
+	
+	
 }
 
 @end
@@ -206,8 +288,6 @@ static const codec_t __videoCodecs[] =
 @synthesize textFieldPassword;
 @synthesize textFieldRealm;
 @synthesize checkBoxEarlyIMS;
-@synthesize textFieldOpId;
-@synthesize textFieldAMF;
 
 // Network
 @synthesize textFieldProxyHost;
@@ -218,13 +298,21 @@ static const codec_t __videoCodecs[] =
 @synthesize checkBoxDiscoDHCP;
 @synthesize checkBoxDiscoDNS;
 @synthesize checkBoxSigComp;
+@synthesize textFieldOpId;
+@synthesize textFieldAMF;
+@synthesize comboBoxSRTPMode;
 
 // NAT Traversal
+@synthesize checkBoxICEEnable;
 @synthesize checkBoxSTUNEnable;
 @synthesize buttonCellSTUNDiscover;
 @synthesize buttonCellSTUNUseThisServer;
 @synthesize textFieldSTUNServerHost;
 @synthesize textFieldSTUNServerPort;
+
+// Media
+@synthesize comboBoxProfile;
+@synthesize comboBoxPrefVsize;
 
 // Codecs
 @synthesize collectionViewAudioCodecs;
@@ -262,7 +350,7 @@ static const codec_t __videoCodecs[] =
 	
 	//[[self window] setBackgroundColor:[NSColor whiteColor]];
 	
-	[self load];
+	[self loadConfig];
 	[[NSNotificationCenter defaultCenter] 
 	 addObserver:self selector:@selector(onWindowClosed:) name:NSWindowWillCloseNotification object:[self window]];
 }
@@ -270,10 +358,11 @@ static const codec_t __videoCodecs[] =
 - (IBAction)onButtonClick:(id)sender
 {
 	if(sender == self.buttonSave){
-		[self save];
+		[self saveConfig];
+		[self pushConfig];
 	}
 	else if(sender == self.buttonCancel){
-		[self load];
+		[self loadConfig];
 	}
 }
 

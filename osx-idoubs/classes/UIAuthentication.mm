@@ -22,8 +22,9 @@
 #import "OSXNgnStack.h"
 
 @interface UIAuthentication(Private)
--(void) onRegistrationEvent:(NSNotification*)notification;
 -(void)loadValues;
+-(void)userDefaultsDidChangeNotification:(NSNotification *)notification;
+-(void)onRegistrationEvent:(NSNotification*)notification;
 @end
 
 @implementation UIAuthentication(Private)
@@ -36,6 +37,10 @@
 	[self.textFieldPassword setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:IDENTITY_PASSWORD]];
 	[self.textFieldRealm setStringValue:[[NgnEngine sharedInstance].configurationService getStringWithKey:NETWORK_REALM]];
 	[self.checkBoxEarlyIMS setState:[[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_EARLY_IMS] ? NSOnState : NSOffState];
+}
+
+- (void)userDefaultsDidChangeNotification:(NSNotification *)notification{
+	[self loadValues];
 }
 
 -(void) onRegistrationEvent:(NSNotification*)notification
@@ -84,6 +89,8 @@
 	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onRegistrationEvent:) name:kNgnRegistrationEventArgs_Name object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver: self 
+											 selector: @selector(userDefaultsDidChangeNotification:) name: NSUserDefaultsDidChangeNotification object: nil];
 }
 
 

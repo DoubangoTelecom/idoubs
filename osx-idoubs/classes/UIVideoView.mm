@@ -100,6 +100,7 @@
 	
 	[lock unlock];
 	
+	[self setCurrentImage: nil];
 	[self setNeedsDisplay:YES];
 }
 
