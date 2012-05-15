@@ -384,7 +384,7 @@ static dispatch_block_t sExpirationHandler = nil;
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
     
 	// add observers
 	[[NSNotificationCenter defaultCenter]
