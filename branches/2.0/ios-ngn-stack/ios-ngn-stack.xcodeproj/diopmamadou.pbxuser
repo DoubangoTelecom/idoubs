@@ -66,14 +66,17 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 357773539;
-			PBXWorkspaceStateSaveDate = 357773539;
+			PBXPerProjectTemplateStateSaveDate = 358764489;
+			PBXWorkspaceStateSaveDate = 358764489;
 		};
 		perUserProjectItems = {
 			EC0630241551DCCC001AD2BC /* PBXTextBookmark */ = EC0630241551DCCC001AD2BC /* PBXTextBookmark */;
 			EC0630251551DCCC001AD2BC /* PBXTextBookmark */ = EC0630251551DCCC001AD2BC /* PBXTextBookmark */;
 			EC0630261551DCCC001AD2BC /* PBXTextBookmark */ = EC0630261551DCCC001AD2BC /* PBXTextBookmark */;
 			EC0630271551DCCC001AD2BC /* PBXTextBookmark */ = EC0630271551DCCC001AD2BC /* PBXTextBookmark */;
+			EC0DDC8E1562505800400FF3 /* PBXTextBookmark */ = EC0DDC8E1562505800400FF3 /* PBXTextBookmark */;
+			EC0DDC8F1562505800400FF3 /* XCBuildMessageTextBookmark */ = EC0DDC8F1562505800400FF3 /* XCBuildMessageTextBookmark */;
+			EC0DDC901562505800400FF3 /* PBXTextBookmark */ = EC0DDC901562505800400FF3 /* PBXTextBookmark */;
 			EC173645148F3CB000DB7AEF /* PBXTextBookmark */ = EC173645148F3CB000DB7AEF /* PBXTextBookmark */;
 			EC760AA51508F5810040DC6C /* PBXTextBookmark */ = EC760AA51508F5810040DC6C /* PBXTextBookmark */;
 			EC760AA61508F5810040DC6C /* PBXTextBookmark */ = EC760AA61508F5810040DC6C /* PBXTextBookmark */;
@@ -119,19 +122,12 @@
 			ECB1D9971553600400AC5692 /* PBXTextBookmark */ = ECB1D9971553600400AC5692 /* PBXTextBookmark */;
 			ECB1D9981553600400AC5692 /* PBXTextBookmark */ = ECB1D9981553600400AC5692 /* PBXTextBookmark */;
 			ECB1D9991553600400AC5692 /* PBXTextBookmark */ = ECB1D9991553600400AC5692 /* PBXTextBookmark */;
-			ECB1D99A1553600400AC5692 /* PBXTextBookmark */ = ECB1D99A1553600400AC5692 /* PBXTextBookmark */;
-			ECB1D99C1553600400AC5692 /* PBXTextBookmark */ = ECB1D99C1553600400AC5692 /* PBXTextBookmark */;
-			ECB1D99E1553600400AC5692 /* PBXTextBookmark */ = ECB1D99E1553600400AC5692 /* PBXTextBookmark */;
-			ECB1D9A01553600400AC5692 /* PBXTextBookmark */ = ECB1D9A01553600400AC5692 /* PBXTextBookmark */;
 			ECB384A1155171CD0035F25D /* PBXTextBookmark */ = ECB384A1155171CD0035F25D /* PBXTextBookmark */;
 			ECB384A5155171CD0035F25D /* PBXTextBookmark */ = ECB384A5155171CD0035F25D /* PBXTextBookmark */;
 			ECB384AF155171CD0035F25D /* PBXTextBookmark */ = ECB384AF155171CD0035F25D /* PBXTextBookmark */;
 			ECB384B3155171CD0035F25D /* PBXTextBookmark */ = ECB384B3155171CD0035F25D /* PBXTextBookmark */;
 			ECB8A5DA145081830042907B /* PBXTextBookmark */ = ECB8A5DA145081830042907B /* PBXTextBookmark */;
 			ECB8A5DB145081830042907B /* PBXTextBookmark */ = ECB8A5DB145081830042907B /* PBXTextBookmark */;
-			ECDBBD0814489B1C00F663C1 /* PBXTextBookmark */ = ECDBBD0814489B1C00F663C1 /* PBXTextBookmark */;
-			ECDBBD0914489B1C00F663C1 /* PBXTextBookmark */ = ECDBBD0914489B1C00F663C1 /* PBXTextBookmark */;
-			ECDBBD0A14489B1C00F663C1 /* PBXTextBookmark */ = ECDBBD0A14489B1C00F663C1 /* PBXTextBookmark */;
 			ECE7EA6F1428551700466331 /* PBXTextBookmark */ = ECE7EA6F1428551700466331 /* PBXTextBookmark */;
 			ECE7EA721428551700466331 /* PBXTextBookmark */ = ECE7EA721428551700466331 /* PBXTextBookmark */;
 			ECE7EA731428551700466331 /* PBXTextBookmark */ = ECE7EA731428551700466331 /* PBXTextBookmark */;
@@ -183,6 +179,35 @@
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 1751;
+	};
+	EC0DDC8E1562505800400FF3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB1D9A11553600400AC5692 /* configure.sh */;
+		name = "configure.sh: 646";
+		rLen = 0;
+		rLoc = 14945;
+		rType = 0;
+		vrLen = 1156;
+		vrLoc = 14483;
+	};
+	EC0DDC8F1562505800400FF3 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Passing argument 2 of 'tnet_ice_ctx_rtp_callback' from incompatible pointer type";
+		fRef = ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 254;
+		rType = 1;
+	};
+	EC0DDC901562505800400FF3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */;
+		name = "trtp_manager.c: 255";
+		rLen = 0;
+		rLoc = 8719;
+		rType = 0;
+		vrLen = 1217;
+		vrLoc = 8147;
 	};
 	EC173645148F3CB000DB7AEF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -906,6 +931,7 @@
 	};
 	ECB1D9931553600400AC5692 /* AVCaptureSession.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = AVCaptureSession.h;
 		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVCaptureSession.h;
 		sourceTree = "<absolute>";
@@ -970,74 +996,16 @@
 		vrLen = 1297;
 		vrLoc = 9380;
 	};
-	ECB1D99A1553600400AC5692 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECB1D99B1553600400AC5692 /* ios-vpx.sh */;
-		name = "ios-vpx.sh: 38";
-		rLen = 0;
-		rLoc = 1121;
-		rType = 0;
-		vrLen = 1084;
-		vrLoc = 0;
-	};
-	ECB1D99B1553600400AC5692 /* ios-vpx.sh */ = {
-		isa = PBXFileReference;
-		name = "ios-vpx.sh";
-		path = "/Users/diopmamadou/Documents/tmp/libvpx_old/ios-vpx.sh";
-		sourceTree = "<absolute>";
-	};
-	ECB1D99C1553600400AC5692 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECB1D99D1553600400AC5692 /* iosarmv6-vpx.sh */;
-		name = "iosarmv6-vpx.sh: 10";
-		rLen = 0;
-		rLoc = 304;
-		rType = 0;
-		vrLen = 1589;
-		vrLoc = 0;
-	};
-	ECB1D99D1553600400AC5692 /* iosarmv6-vpx.sh */ = {
-		isa = PBXFileReference;
-		name = "iosarmv6-vpx.sh";
-		path = "/Users/diopmamadou/Documents/tmp/libvpx/iosarmv6-vpx.sh";
-		sourceTree = "<absolute>";
-	};
-	ECB1D99E1553600400AC5692 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECB1D99F1553600400AC5692 /* configure.sh */;
-		name = "configure.sh: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1146;
-		vrLoc = 21070;
-	};
-	ECB1D99F1553600400AC5692 /* configure.sh */ = {
+	ECB1D9A11553600400AC5692 /* configure.sh */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = text.script.sh;
 		name = configure.sh;
 		path = /Users/diopmamadou/Documents/tmp/libvpx/build/make/configure.sh;
 		sourceTree = "<absolute>";
-	};
-	ECB1D9A01553600400AC5692 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECB1D9A11553600400AC5692 /* configure.sh */;
-		name = "configure.sh: 645";
-		rLen = 0;
-		rLoc = 14945;
-		rType = 0;
-		vrLen = 1156;
-		vrLoc = 14511;
-	};
-	ECB1D9A11553600400AC5692 /* configure.sh */ = {
-		isa = PBXFileReference;
-		name = configure.sh;
-		path = /Users/diopmamadou/Documents/tmp/libvpx/build/make/configure.sh;
-		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 15405}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1026, 13416}}";
 			sepNavSelRange = "{14945, 0}";
-			sepNavVisRange = "{14511, 1156}";
+			sepNavVisRange = "{14483, 1156}";
 		};
 	};
 	ECB3844815516A730035F25D /* tnet_ice_candidate.c */ = {
@@ -1183,36 +1151,6 @@
 			sepNavSelRange = "{1189, 34}";
 			sepNavVisRange = "{176, 1212}";
 		};
-	};
-	ECDBBD0814489B1C00F663C1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */;
-		name = "tdav_audiounit.c: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1105;
-		vrLoc = 1833;
-	};
-	ECDBBD0914489B1C00F663C1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECE7E8F814284CAC00466331 /* INgnHistoryService.h */;
-		name = "INgnHistoryService.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1666;
-		vrLoc = 0;
-	};
-	ECDBBD0A14489B1C00F663C1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */;
-		name = "iOSNgnPrivate.h: 33";
-		rLen = 0;
-		rLoc = 1400;
-		rType = 0;
-		vrLen = 1470;
-		vrLoc = 0;
 	};
 	ECE7E8B014284CAC00466331 /* NgnContactEventArgs.h */ = {
 		uiCtxt = {
@@ -1717,9 +1655,9 @@
 	};
 	ECFD2B52135E7BDC00E6A9A3 /* trtp_manager.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 11570}}";
-			sepNavSelRange = "{8773, 0}";
-			sepNavVisRange = "{8068, 1289}";
+			sepNavIntBoundsRect = "{{0, 0}, {1026, 11583}}";
+			sepNavSelRange = "{8719, 0}";
+			sepNavVisRange = "{8147, 1217}";
 		};
 	};
 	ECFD2C68135E7C5E00E6A9A3 /* thttp_action.h */ = {

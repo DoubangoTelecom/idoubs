@@ -7259,7 +7259,7 @@
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
@@ -7287,6 +7287,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_SRTP=1",
 					"-DHAVE_OPENSSL_H=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -7303,7 +7304,7 @@
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO/HOME/tinyMSRP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
@@ -7327,6 +7328,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_SRTP=1",
 					"-DHAVE_OPENSSL_H=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -7373,6 +7375,7 @@
 					"-lvpx",
 					"-lcrypto",
 					"-lssl",
+					"-lsrtp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -7421,6 +7424,7 @@
 					"-lvpx",
 					"-lcrypto",
 					"-lssl",
+					"-lsrtp",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -7558,6 +7562,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/mac/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -7574,6 +7579,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/mac/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -7892,6 +7898,7 @@
 					$DOUBANGO_HOME/tinySIP/include,
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
@@ -7917,6 +7924,7 @@
 					$DOUBANGO_HOME/tinySIP/include,
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,

@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -298,7 +296,7 @@
 							<real>230</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 146 1440 732 0 0 1440 878 </string>
+						<string>480 446 1440 732 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -326,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>ECB1D9A61553600500AC5692</string>
+										<string>EC0DDBB01562355200400FF3</string>
 										<key>history</key>
 										<array>
 											<string>EC06301B1551DCCB001AD2BC</string>
@@ -335,7 +333,7 @@
 											<string>ECB1D95D1553399800AC5692</string>
 											<string>ECB1D95E1553399800AC5692</string>
 											<string>ECB1D95F1553399800AC5692</string>
-											<string>ECB1D9A51553600500AC5692</string>
+											<string>ECB1D9A61553600500AC5692</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -349,18 +347,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1188, 484}}</string>
+								<string>{{0, 0}, {1188, 478}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 146 1440 732 0 0 1440 878 </string>
+								<string>480 446 1440 732 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>484pt</string>
+							<string>478pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>202pt</string>
+							<string>208pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -374,7 +372,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1188, 175}}</string>
+										<string>{{10, 27}, {1188, 181}}</string>
+										<key>RubberWindowFrame</key>
+										<string>480 446 1440 732 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -429,8 +429,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1188, 175}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 146 1440 732 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -458,11 +456,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECB1D9881553594B00AC5692</string>
+				<string>EC0DDBB21562355200400FF3</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECB1D9891553594B00AC5692</string>
+				<string>EC0DDBB31562355200400FF3</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>ECB1D98A1553594B00AC5692</string>
+				<string>EC0DDBB41562355200400FF3</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -652,12 +650,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECB1D9901553594B00AC5692</string>
-		<string>ECB1D9911553594B00AC5692</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 146 1440 732 0 0 1440 878 </string>
+	<string>480 446 1440 732 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

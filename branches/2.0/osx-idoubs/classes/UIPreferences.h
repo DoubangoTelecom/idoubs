@@ -31,8 +31,6 @@
 	NSSecureTextField *textFieldPassword;
 	NSTextField *textFieldRealm;
 	NSButton *checkBoxEarlyIMS;
-	NSTextField *textFieldOpId;
-	NSTextField *textFieldAMF;
 	
 	// Network
 	NSButtonCell *buttonCellIPv4;
@@ -43,13 +41,21 @@
 	NSButton *checkBoxDiscoDHCP;
 	NSButton *checkBoxDiscoDNS;
 	NSButton *checkBoxSigComp;
+	NSComboBox *comboBoxSRTPMode;
+	NSTextField *textFieldOpId;
+	NSTextField *textFieldAMF;
 	
 	// NAT Traversal
+	NSButton *checkBoxICEEnable;
 	NSButton *checkBoxSTUNEnable;
 	NSButtonCell *buttonCellSTUNDiscover;
 	NSButtonCell *buttonCellSTUNUseThisServer;
 	NSTextField *textFieldSTUNServerHost;
 	NSTextField *textFieldSTUNServerPort;
+	
+	// Media
+	NSComboBox *comboBoxProfile;
+	NSComboBox *comboBoxPrefVsize;
 	
 	// Codecs
 	NSCollectionView *collectionViewAudioCodecs;
@@ -70,8 +76,6 @@
 @property (assign) IBOutlet NSSecureTextField *textFieldPassword;
 @property (assign) IBOutlet NSTextField *textFieldRealm;
 @property (assign) IBOutlet NSButton *checkBoxEarlyIMS;
-@property (assign) IBOutlet NSTextField *textFieldOpId;
-@property (assign) IBOutlet NSTextField *textFieldAMF;
 
 // Network
 @property (assign) IBOutlet NSTextField *textFieldProxyHost;
@@ -82,13 +86,21 @@
 @property (assign) IBOutlet NSButton *checkBoxDiscoDHCP;
 @property (assign) IBOutlet NSButton *checkBoxDiscoDNS;
 @property (assign) IBOutlet NSButton *checkBoxSigComp;
+@property (assign) IBOutlet NSTextField *textFieldOpId;
+@property (assign) IBOutlet NSTextField *textFieldAMF;
+@property (assign) IBOutlet NSComboBox *comboBoxSRTPMode;
 
 // NAT Traversal
+@property (assign) IBOutlet NSButton *checkBoxICEEnable;
 @property (assign) IBOutlet NSButton *checkBoxSTUNEnable;
 @property (assign) IBOutlet NSButtonCell *buttonCellSTUNDiscover;
 @property (assign) IBOutlet NSButtonCell *buttonCellSTUNUseThisServer;
 @property (assign) IBOutlet NSTextField *textFieldSTUNServerHost;
 @property (assign) IBOutlet NSTextField *textFieldSTUNServerPort;
+
+// Media
+@property (assign) IBOutlet NSComboBox *comboBoxProfile;
+@property (assign) IBOutlet NSComboBox *comboBoxPrefVsize;
 
 // Codecs
 @property (assign) IBOutlet NSCollectionView *collectionViewAudioCodecs;
