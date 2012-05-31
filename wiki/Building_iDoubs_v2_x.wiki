@@ -57,8 +57,8 @@ As stated in the *Introduction* section, *iDoubs v2.x* depends on the NGN Stack 
 *Note:* *iDoubs* project already contains a reference to the NGN Stack (*ios-ngn-stack*) which means that you can build it directly from *iDoubs*. This is not advised if you are building *iDoubs* for the first time. <br />
 
   * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
-	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK.
-        # If you're using xcode 4.2 or later, change the compiler type: Right click on *ios-ngn-stack* => *Get Info* => *Build* -> From *Build Options* group adjust *Compiler for C/C++/Objective-C* and select *LLVM GCC 4.2*
+	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group, adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK
+	# If you're using xcode 4.2 or later, change the compiler type: Right click on *ios-ngn-stack* => *Get Info* => *Build* -> From *Build Options* group, adjust *Compiler for C/C++/Objective-C* and select *LLVM GCC 4.2*
 	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
 	# build the NGN stack: Right click on *ios-ngn-stack* target and select *Build ios-ngn-stack*
 
@@ -72,8 +72,8 @@ You are now ready to build the test applications if you want:
 *iDoubs* is the VoIP client and depends on *ios-ngn-stack* target. <br />
 
   * open *mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj*
-	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK.
-        # If you're using xcode 4.2 or later, change the compiler type: Right click on *ios-ngn-stack* => *Get Info* => *Build* -> From *Build Options* group adjust *Compiler for C/C++/Objective-C* and select *LLVM GCC 4.2*
+	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK
+	# If you're using xcode 4.2 or later, change the compiler type: Right click on *ios-ngn-stack* => *Get Info* => *Build* -> From *Build Options* group, adjust *Compiler for C/C++/Objective-C* and select *LLVM GCC 4.2*
 	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
 	# build the NGN stack: Right click on *Ngn* target and select *Build Ngn*
 	# build the iDoubs: Right click on *iDoubs* target and select *Build iDoubs*
