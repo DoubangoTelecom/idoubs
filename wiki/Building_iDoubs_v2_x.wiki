@@ -87,7 +87,7 @@ If you are license owner then, you can build a non-GPL version of Doubango and i
  * open *mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj*
  * Right click on *idoubs* target => *Get Info* => *Build* tab => *Other Linker Flags* then:
     # remove *-lx264*
-    # remove *lg729b* if you don't have required licenses
+    # remove *-lg729b* if you don't have required licenses
     # replace *-lswscale*, *-lavcore*, *-lavutil* and *-lavcodec* with *-lswscale-lgpl*, *-lavcore-lgpl*, *-lavutil-lgpl* and *-lavcodec-lgpl* respectively
 
  * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
