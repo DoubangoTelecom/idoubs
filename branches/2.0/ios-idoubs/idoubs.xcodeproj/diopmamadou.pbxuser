@@ -130,8 +130,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 358757702;
-			PBXWorkspaceStateSaveDate = 358757702;
+			PBXPerProjectTemplateStateSaveDate = 358553359;
+			PBXWorkspaceStateSaveDate = 358553359;
 		};
 		perUserProjectItems = {
 			EC06301B1551DCCB001AD2BC /* PlistBookmark */ = EC06301B1551DCCB001AD2BC /* PlistBookmark */;
@@ -141,7 +141,9 @@
 			ECB1D95D1553399800AC5692 /* PlistBookmark */ = ECB1D95D1553399800AC5692 /* PlistBookmark */;
 			ECB1D95E1553399800AC5692 /* PlistBookmark */ = ECB1D95E1553399800AC5692 /* PlistBookmark */;
 			ECB1D95F1553399800AC5692 /* PlistBookmark */ = ECB1D95F1553399800AC5692 /* PlistBookmark */;
-			ECB1D9A61553600500AC5692 /* PlistBookmark */ = ECB1D9A61553600500AC5692 /* PlistBookmark */;
+			ECC9D8BE155F1772001CD98C /* PlistBookmark */ = ECC9D8BE155F1772001CD98C /* PlistBookmark */;
+			ECC9D8C4155F1773001CD98C /* PBXTextBookmark */ = ECC9D8C4155F1773001CD98C /* PBXTextBookmark */;
+			ECC9D8E9155F4639001CD98C /* PBXTextBookmark */ = ECC9D8E9155F4639001CD98C /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -223,23 +225,6 @@
 		lastKnownFileType = text.plist.xml;
 		name = Identity.plist;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Identity.plist";
-		sourceTree = "<absolute>";
-	};
-	EC0DDBB01562355200400FF3 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = EC0DDBB11562355200400FF3 /* Media.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	EC0DDBB11562355200400FF3 /* Media.plist */ = {
-		isa = PBXFileReference;
-		name = Media.plist;
-		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
 		sourceTree = "<absolute>";
 	};
 	EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {
@@ -626,17 +611,6 @@
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
-	ECB1D9A61553600500AC5692 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = ECB1D9A71553600500AC5692 /* Media.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
 	ECB1D9A71553600500AC5692 /* Media.plist */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = text.plist.xml;
@@ -688,6 +662,55 @@
 			sepNavSelRange = "{976, 0}";
 			sepNavVisRange = "{0, 1467}";
 		};
+	};
+	ECC9D8BE155F1772001CD98C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = ECB1D9A71553600500AC5692 /* Media.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ECC9D8C2155F1772001CD98C /* trtp_manager.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = trtp_manager.c;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyRTP/src/trtp_manager.c";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 11479}}";
+			sepNavSelRange = "{8773, 101}";
+			sepNavVisRange = "{7997, 1129}";
+		};
+	};
+	ECC9D8C4155F1773001CD98C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC9D8C2155F1772001CD98C /* trtp_manager.c */;
+		name = "trtp_manager.c: 257";
+		rLen = 101;
+		rLoc = 8773;
+		rType = 0;
+		vrLen = 1129;
+		vrLoc = 7997;
+	};
+	ECC9D8E9155F4639001CD98C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC9D8EA155F4639001CD98C /* trtp_manager.c */;
+		name = "trtp_manager.c: 242";
+		rLen = 0;
+		rLoc = 8066;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 7824;
+	};
+	ECC9D8EA155F4639001CD98C /* trtp_manager.c */ = {
+		isa = PBXFileReference;
+		name = trtp_manager.c;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyRTP/src/trtp_manager.c";
+		sourceTree = "<absolute>";
 	};
 	ECFD23AB135D519D00E6A9A3 /* idoubs */ = {
 		isa = PBXExecutable;

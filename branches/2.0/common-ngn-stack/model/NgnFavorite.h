@@ -48,7 +48,7 @@ static const FavoriteMediaEntry_t kFavoriteMediaEntries[3] = {
 	
 @private
 	// to be used for any purpose (e.g. category)
-	id opaque;
+	NSObject* opaque;
 }
 
 -(NgnFavorite*) initWithId: (long long)id andNumber: (NSString*)number andMediaType: (NgnMediaType_t)mediatype;
@@ -62,6 +62,6 @@ static const FavoriteMediaEntry_t kFavoriteMediaEntries[3] = {
 @property(readonly) NgnContact *contact;
 @property(readonly) NSString *displayName;
 
-@property(readwrite, retain, nonatomic) id opaque;
+@property(readwrite, retain, nonatomic) NSObject* opaque;
 
 @end

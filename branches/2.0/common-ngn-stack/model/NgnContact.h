@@ -42,7 +42,7 @@ typedef NSArray NgnContactArray;
 	
 @private
 	// to be used for any purpose (e.g. category)
-	id opaque;
+	NSObject* opaque;
 }
 
 #if TARGET_OS_IPHONE
@@ -59,6 +59,6 @@ typedef NSArray NgnContactArray;
 @property(readonly) NSString* lastName;
 @property(readonly) NSMutableArray* phoneNumbers;
 @property(readonly) NSData* picture;
-@property(readwrite, retain, nonatomic) id opaque;
+@property(readwrite, retain, nonatomic) NSObject* opaque;
 
 @end
