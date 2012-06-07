@@ -153,7 +153,12 @@ private:
 		mCaptureSession.sessionPreset = AVCaptureSessionPreset640x480;
 	}
 	else {
-		mCaptureSession.sessionPreset = AVCaptureSessionPreset1280x720;
+        if([mCaptureDevice supportsAVCaptureSessionPreset:AVCaptureSessionPreset1280x720]){
+            mCaptureSession.sessionPreset = AVCaptureSessionPreset1280x720;
+        }
+        else{
+            mCaptureSession.sessionPreset = AVCaptureSessionPreset640x480;
+        }
 	}
 
     [mCaptureSession addInput:videoInput];

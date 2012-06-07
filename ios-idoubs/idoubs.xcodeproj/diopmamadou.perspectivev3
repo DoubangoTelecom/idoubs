@@ -307,12 +307,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ECFD23B4135D51A000E6A9A3</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Media.plist</string>
+								<string>trtp_manager.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ECFD23B5135D51A000E6A9A3</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Media.plist</string>
+										<string>trtp_manager.c</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC0DDBB01562355200400FF3</string>
+										<string>ECC9D8E9155F4639001CD98C</string>
 										<key>history</key>
 										<array>
 											<string>EC06301B1551DCCB001AD2BC</string>
@@ -333,7 +335,8 @@
 											<string>ECB1D95D1553399800AC5692</string>
 											<string>ECB1D95E1553399800AC5692</string>
 											<string>ECB1D95F1553399800AC5692</string>
-											<string>ECB1D9A61553600500AC5692</string>
+											<string>ECC9D8BE155F1772001CD98C</string>
+											<string>ECC9D8C4155F1773001CD98C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -373,8 +376,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1188, 181}}</string>
-										<key>RubberWindowFrame</key>
-										<string>480 446 1440 732 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -428,7 +429,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1188, 175}}</string>
+										<string>{{10, 27}, {1188, 181}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -456,11 +457,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0DDBB21562355200400FF3</string>
+				<string>ECC9D8EB155F4639001CD98C</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC0DDBB31562355200400FF3</string>
+				<string>ECC9D8EC155F4639001CD98C</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
-				<string>EC0DDBB41562355200400FF3</string>
+				<string>ECC9D8ED155F4639001CD98C</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -609,13 +610,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECB1D98B1553594B00AC5692</string>
+				<string>ECC9D8EE155F4639001CD98C</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>ECB1D98C1553594B00AC5692</string>
-				<string>ECB1D98D1553594B00AC5692</string>
-				<string>ECB1D98E1553594B00AC5692</string>
-				<string>ECB1D98F1553594B00AC5692</string>
+				<string>ECC9D8EF155F4639001CD98C</string>
+				<string>ECC9D8F0155F4639001CD98C</string>
+				<string>ECC9D8F1155F4639001CD98C</string>
+				<string>ECC9D8F2155F4639001CD98C</string>
 				<string>ECFD23B4135D51A000E6A9A3</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -650,6 +651,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ECC9D8F3155F4639001CD98C</string>
+		<string>ECC9D8F4155F4639001CD98C</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

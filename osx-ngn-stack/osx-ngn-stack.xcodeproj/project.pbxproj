@@ -7266,6 +7266,7 @@
 				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
@@ -7292,7 +7293,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				SYMROOT = build;
 			};
 			name = Debug;
@@ -7310,6 +7311,7 @@
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				NGN_STACK_HOME = ..;
@@ -7333,7 +7335,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				SYMROOT = build;
 			};
 			name = Release;
@@ -7384,7 +7386,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "osx-ngn-stack";
-				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -7433,7 +7434,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "osx-ngn-stack";
-				SDKROOT = macosx10.6;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -7781,6 +7781,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -7798,6 +7799,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;

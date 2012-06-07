@@ -1286,6 +1286,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/osx-ngn-stack",
@@ -1316,6 +1317,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/osx-ngn-stack",
