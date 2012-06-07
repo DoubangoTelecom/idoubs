@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>osx-ngn-stack.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
 		<key>testAudioCall.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -128,6 +133,11 @@
 			<true/>
 		</dict>
 		<key>EC0B501013EDE8070042EB6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC4DBE4A141C0B920024CBEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
