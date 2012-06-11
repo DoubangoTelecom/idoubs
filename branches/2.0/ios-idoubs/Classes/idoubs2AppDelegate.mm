@@ -146,6 +146,11 @@
 					[[NgnEngine sharedInstance].sipService registerIdentity];
 				}
 			}
+            else{
+                if([NgnEngine sharedInstance].sipService.registered){
+                    [[NgnEngine sharedInstance].sipService stopStackSynchronously];
+                }
+            }
 			
 			break;
 		}
