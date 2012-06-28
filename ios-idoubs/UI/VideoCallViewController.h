@@ -51,7 +51,6 @@
 	BOOL sendingVideo;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView* imageViewRemoteVideo;
 @property (retain, nonatomic) IBOutlet UIView* viewLocalVideo;
 
 @property (retain, nonatomic) IBOutlet UIView* viewTop;
