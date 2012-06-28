@@ -215,7 +215,7 @@
 -(void) updateVideoOrientation{
 	if(videoSession){
 		if(![videoSession isConnected]){
-			[NgnCamera setPreview:imageViewRemoteVideo];
+			[NgnCamera setPreview:self.glViewVideoRemote];
 		}
 		
 		switch ([UIDevice currentDevice].orientation) {
@@ -233,6 +233,10 @@
 				break;
 		}
 	}
+    
+    if(glViewVideoRemote){
+        [glViewVideoRemote setOrientation:[UIDevice currentDevice].orientation];
+    }
 }
 
 -(void) updateRemoteDeviceInfo{
@@ -240,14 +244,14 @@
 	switch(videoSession.remoteDeviceInfo.orientation)
 	{
 		case NgnDeviceInfo_Orientation_Portrait:
-			[self.imageViewRemoteVideo setContentMode:UIViewContentModeScaleAspectFill];
+			[self.glViewVideoRemote setContentMode:UIViewContentModeScaleAspectFill];
 			if(!deviceOrientPortrait){
 #if 0
 #endif
 			}
 			break;
 		case NgnDeviceInfo_Orientation_Landscape:
-			[self.imageViewRemoteVideo setContentMode:UIViewContentModeCenter];
+			[self.glViewVideoRemote setContentMode:UIViewContentModeCenter];
 			if(deviceOrientPortrait){
 #if 0
 				CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation(degreesToRadian(90));
@@ -302,7 +306,7 @@
 			[self updateViewAndState];
 			
 			// video session
-  			[NgnCamera setPreview:imageViewRemoteVideo];
+  			[NgnCamera setPreview:self.glViewVideoRemote];
 			if(sendingVideo){
 				[videoSession setRemoteVideoDisplay:nil];
 				[videoSession setLocalVideoDisplay:nil];
@@ -321,8 +325,10 @@
 			if(sendingVideo){
 				[videoSession setLocalVideoDisplay:viewLocalVideo];
 			}
-			[videoSession setRemoteVideoDisplay:imageViewRemoteVideo];
+			
 			[NgnCamera setPreview:nil];
+            [videoSession setRemoteVideoDisplay:self.glViewVideoRemote];
+            [self.glViewVideoRemote startAnimation];
 			
 			[self updateRemoteDeviceInfo];
 			[self sendDeviceInfo];
@@ -346,7 +352,8 @@
 				[videoSession setRemoteVideoDisplay:nil];
 				[videoSession setLocalVideoDisplay:nil];
 			}
-			[NgnCamera setPreview:imageViewRemoteVideo];
+            [self.glViewVideoRemote stopAnimation];
+			[NgnCamera setPreview:self.glViewVideoRemote];
 			
 			// releases session
 			[NgnAVSession releaseSession:&videoSession];
@@ -400,6 +407,8 @@
 
 @synthesize imageSecure;
 
+@synthesize glViewVideoRemote;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -438,6 +447,11 @@
 	// listen to the events
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onInviteEvent:) name:kNgnInviteEventArgs_Name object:nil];
+    
+    // GLView
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    self.glViewVideoRemote = [[[iOSGLView alloc] initWithFrame:screenBounds] autorelease];
+    [self.view insertSubview:self.glViewVideoRemote atIndex:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -445,7 +459,7 @@
 	videoSession = [[NgnAVSession getSessionWithId: self.sessionId] retain];
 	if(videoSession){
 		if([videoSession isConnected]){
-			[videoSession setRemoteVideoDisplay:imageViewRemoteVideo];
+			[videoSession setRemoteVideoDisplay:self.glViewVideoRemote];
 			[videoSession setLocalVideoDisplay:self.viewLocalVideo];
 		}
 		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName :[NgnStringUtils nullValue];
@@ -535,6 +549,8 @@
 	[self.viewPickHangUp release];
 	[self.buttonPick release];
 	[self.buttonHangUp release];
+    
+    [self.glViewVideoRemote release];
 	
     [super dealloc];
 }

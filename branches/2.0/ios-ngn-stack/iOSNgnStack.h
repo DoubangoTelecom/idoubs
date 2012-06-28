@@ -64,6 +64,8 @@
 #import "media/NgnCamera.h"
 
 
+#import "iOSGLView.h"
+
 
 #endif /* IOS_NGN_STACK_API_H */
 

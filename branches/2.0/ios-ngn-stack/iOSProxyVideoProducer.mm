@@ -160,7 +160,7 @@ private:
             mCaptureSession.sessionPreset = AVCaptureSessionPreset640x480;
         }
 	}
-
+    
     [mCaptureSession addInput:videoInput];
 	
     // Currently, the only supported key is kCVPixelBufferPixelFormatTypeKey. Recommended pixel format choices are 
@@ -177,12 +177,24 @@ private:
 							  nil];
     avCaptureVideoDataOutput.videoSettings = settings;
     [settings release];
-    avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
-	avCaptureVideoDataOutput.alwaysDiscardsLateVideoFrames = YES;
     
     dispatch_queue_t queue = dispatch_queue_create("org.doubango.idoubs.producer.captureoutput", NULL);
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
     [mCaptureSession addOutput:avCaptureVideoDataOutput];
+    
+    
+    avCaptureVideoDataOutput.alwaysDiscardsLateVideoFrames = YES;
+    if([[[UIDevice currentDevice] systemVersion] floatValue] < 5){
+        avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
+    }
+    else{
+        for(int i = 0; i < [[avCaptureVideoDataOutput connections] count]; i++) {
+            AVCaptureConnection *captureConnection = [[avCaptureVideoDataOutput connections] objectAtIndex:i];
+            captureConnection.videoMinFrameDuration = CMTimeMake(1, mFps);
+            captureConnection.videoMaxFrameDuration = CMTimeMake(1, mFps);
+        }
+    }
+    
 	
 	// orientation
 	//for(int i = 0; i < [[avCaptureVideoDataOutput connections] count]; i++) {
@@ -331,27 +343,29 @@ private:
 
 -(void)sendQueuedPacket{
 	tsk_list_lock(_mSenderPackets);
-	
 	tsk_list_item_t *item = tsk_list_pop_first_item(_mSenderPackets);
+    tsk_list_unlock(_mSenderPackets);
+    
 	if(item){
 		tmedia_producer_t* _wrapped_producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
 		if(_wrapped_producer){
 			_wrapped_producer->enc_cb.callback(_wrapped_producer->enc_cb.callback_data, TSK_BUFFER_DATA(item->data), TSK_BUFFER_SIZE(item->data));
+            tsk_object_unref(_wrapped_producer);
 		}
 		TSK_OBJECT_SAFE_FREE(item);
 	}
-	
-	tsk_list_unlock(_mSenderPackets);
 }
 
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-	CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection 
+{
+	CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	if(CVPixelBufferLockBaseAddress(pixelBuffer, 0) == kCVReturnSuccess){
         UInt8 *bufferPtr = (UInt8 *)CVPixelBufferGetBaseAddress(pixelBuffer);
         size_t buffeSize = CVPixelBufferGetDataSize(pixelBuffer);
 		
 		// http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
-		bufferPtr += 16 * sizeof(UInt8);
+        static const size_t pad = (sizeof(UInt8) << 4);
+		bufferPtr += pad;
 		
 		tmedia_producer_t* producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
 		
@@ -390,7 +404,7 @@ private:
 		// send data over the network
 		if(producer && bufferPtr && buffeSize && producer->enc_cb.callback){
 			dispatch_sync(_mSenderQueue, ^{
-				[self sendQueuedPacket];
+                [self sendQueuedPacket];
 			});
         }
 		

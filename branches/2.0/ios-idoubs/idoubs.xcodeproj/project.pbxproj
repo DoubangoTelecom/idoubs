@@ -141,6 +141,7 @@
 		ECB9663A138FB44900961D3A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB96639138FB44900961D3A /* star.png */; };
 		ECB967E61390226500961D3A /* star_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB967E51390226500961D3A /* star_128.png */; };
 		ECB968281390297900961D3A /* chat_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB968271390297900961D3A /* chat_128.png */; };
+		ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC6F5B61597E0E7005401EC /* OpenGLES.framework */; };
 		ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */; };
 		ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFB1368921400DC70DF /* libtinySAK.a */; };
 		ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFD1368921400DC70DF /* libtinyNET.a */; };
@@ -604,6 +605,7 @@
 		ECB96639138FB44900961D3A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		ECB967E51390226500961D3A /* star_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_128.png; sourceTree = "<group>"; };
 		ECB968271390297900961D3A /* chat_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_128.png; sourceTree = "<group>"; };
+		ECC6F5B61597E0E7005401EC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		ECE7EA1C1428547400466331 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
 		ECE7EA1D1428547400466331 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
 		ECE7EA1E1428547400466331 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */,
 				ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */,
 				ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */,
 				ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */,
@@ -738,6 +741,7 @@
 		29B97314FDCFA39411CA2CEA /* idoubs */ = {
 			isa = PBXGroup;
 			children = (
+				ECC6F5B61597E0E7005401EC /* OpenGLES.framework */,
 				EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */,
 				EC7E2F4D138968E50020EB89 /* UI */,
 				080E96DDFE201D6D7F000001 /* Classes */,

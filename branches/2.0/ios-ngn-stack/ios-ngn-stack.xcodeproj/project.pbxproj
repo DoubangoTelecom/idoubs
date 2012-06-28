@@ -200,6 +200,8 @@
 		ECB3847215516E170035F25D /* tdav_session_av.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3847115516E170035F25D /* tdav_session_av.c */; };
 		ECB3847615516E340035F25D /* tdav_video_frame.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3847415516E340035F25D /* tdav_video_frame.c */; };
 		ECB3847715516E340035F25D /* tdav_video_jb.c in Sources */ = {isa = PBXBuildFile; fileRef = ECB3847515516E340035F25D /* tdav_video_jb.c */; };
+		ECC6F5B41597D669005401EC /* iOSGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC6F5B21597D668005401EC /* iOSGLView.h */; };
+		ECC6F5B51597D669005401EC /* iOSGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECC6F5B31597D669005401EC /* iOSGLView.mm */; };
 		ECC8813213F373E500A90212 /* tdav_codec_vp8.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC8813113F373E500A90212 /* tdav_codec_vp8.h */; };
 		ECC8813513F3740000A90212 /* tdav_codec_vp8.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8813413F3740000A90212 /* tdav_codec_vp8.c */; };
 		ECC8C99614072BA300E0A500 /* g722_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = ECC8C99314072BA200E0A500 /* g722_decode.c */; };
@@ -2051,20 +2053,6 @@
 		EC83FF951380A29F00060A9D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EC858FC313999E360017BB9F /* tmedia_defaults.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_defaults.c; sourceTree = "<group>"; };
 		EC87251F1378101000C616F0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		EC9072211392BAB000E14556 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
-		EC9072221392BAB000E14556 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
-		EC9072231392BAB000E14556 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
-		EC9072241392BAB000E14556 /* dtmf-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-3.wav"; sourceTree = "<group>"; };
-		EC9072251392BAB000E14556 /* dtmf-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-4.wav"; sourceTree = "<group>"; };
-		EC9072261392BAB000E14556 /* dtmf-5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-5.wav"; sourceTree = "<group>"; };
-		EC9072271392BAB000E14556 /* dtmf-6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-6.wav"; sourceTree = "<group>"; };
-		EC9072281392BAB000E14556 /* dtmf-7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-7.wav"; sourceTree = "<group>"; };
-		EC9072291392BAB000E14556 /* dtmf-8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-8.wav"; sourceTree = "<group>"; };
-		EC90722A1392BAB000E14556 /* dtmf-9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-9.wav"; sourceTree = "<group>"; };
-		EC90722B1392BAB000E14556 /* dtmf-pound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-pound.wav"; sourceTree = "<group>"; };
-		EC90722C1392BAB000E14556 /* dtmf-star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-star.wav"; sourceTree = "<group>"; };
-		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
-		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
 		EC90C9C013B3A530000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Accept.h; sourceTree = "<group>"; };
 		ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Key.h; sourceTree = "<group>"; };
@@ -2076,8 +2064,6 @@
 		ECA0EFCF15110C6C005EF3BB /* thttp_header_Sec_WebSocket_Version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_header_Sec_WebSocket_Version.c; sourceTree = "<group>"; };
 		ECA0EFD815110CAF005EF3BB /* trtp_srtp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trtp_srtp.c; sourceTree = "<group>"; };
 		ECA0EFDA15110CC4005EF3BB /* trtp_srtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trtp_srtp.h; sourceTree = "<group>"; };
-		ECA6A625137D829F0022AD09 /* NgnDataBase.sql */ = {isa = PBXFileReference; explicitFileType = text.script.sh; fileEncoding = 4; path = NgnDataBase.sql; sourceTree = "<group>"; };
-		ECA6A626137D86FC0022AD09 /* NgnDataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = NgnDataBase.db; sourceTree = "<group>"; };
 		ECB37086141815D4006E6811 /* tdav_consumer_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_video.c; sourceTree = "<group>"; };
 		ECB3708A141815EB006E6811 /* tdav_consumer_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_video.h; sourceTree = "<group>"; };
 		ECB3708B141815EB006E6811 /* tdav_video_jitterbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_video_jitterbuffer.h; sourceTree = "<group>"; };
@@ -2100,6 +2086,8 @@
 		ECB3847115516E170035F25D /* tdav_session_av.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_av.c; sourceTree = "<group>"; };
 		ECB3847415516E340035F25D /* tdav_video_frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_frame.c; sourceTree = "<group>"; };
 		ECB3847515516E340035F25D /* tdav_video_jb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_video_jb.c; sourceTree = "<group>"; };
+		ECC6F5B21597D668005401EC /* iOSGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSGLView.h; sourceTree = "<group>"; };
+		ECC6F5B31597D669005401EC /* iOSGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSGLView.mm; sourceTree = "<group>"; };
 		ECC8813113F373E500A90212 /* tdav_codec_vp8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_vp8.h; sourceTree = "<group>"; };
 		ECC8813413F3740000A90212 /* tdav_codec_vp8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_vp8.c; sourceTree = "<group>"; };
 		ECC8C99314072BA200E0A500 /* g722_decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g722_decode.c; sourceTree = "<group>"; };
@@ -3642,7 +3630,6 @@
 		0867D691FE84028FC02AAC07 /* ios-ngn-stack */ = {
 			isa = PBXGroup;
 			children = (
-				ECA6A61B137D813D0022AD09 /* Resources */,
 				EC83BA0F1369908500DD3355 /* Tests */,
 				ECFD28FA135E7B2E00E6A9A3 /* Doubango */,
 				ECFD23BC135D532A00E6A9A3 /* Classes */,
@@ -3811,45 +3798,6 @@
 			name = testVideoCall;
 			path = ../testVideoCall;
 			sourceTree = SOURCE_ROOT;
-		};
-		EC9072201392BAB000E14556 /* sound */ = {
-			isa = PBXGroup;
-			children = (
-				EC9072211392BAB000E14556 /* dtmf-0.wav */,
-				EC9072221392BAB000E14556 /* dtmf-1.wav */,
-				EC9072231392BAB000E14556 /* dtmf-2.wav */,
-				EC9072241392BAB000E14556 /* dtmf-3.wav */,
-				EC9072251392BAB000E14556 /* dtmf-4.wav */,
-				EC9072261392BAB000E14556 /* dtmf-5.wav */,
-				EC9072271392BAB000E14556 /* dtmf-6.wav */,
-				EC9072281392BAB000E14556 /* dtmf-7.wav */,
-				EC9072291392BAB000E14556 /* dtmf-8.wav */,
-				EC90722A1392BAB000E14556 /* dtmf-9.wav */,
-				EC90722B1392BAB000E14556 /* dtmf-pound.wav */,
-				EC90722C1392BAB000E14556 /* dtmf-star.wav */,
-				EC90722D1392BAB000E14556 /* ringbacktone.wav */,
-				EC90722E1392BAB000E14556 /* ringtone.mp3 */,
-			);
-			path = sound;
-			sourceTree = "<group>";
-		};
-		ECA6A61B137D813D0022AD09 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EC9072201392BAB000E14556 /* sound */,
-				ECA6A624137D82670022AD09 /* storage */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		ECA6A624137D82670022AD09 /* storage */ = {
-			isa = PBXGroup;
-			children = (
-				ECA6A626137D86FC0022AD09 /* NgnDataBase.db */,
-				ECA6A625137D829F0022AD09 /* NgnDataBase.sql */,
-			);
-			path = storage;
-			sourceTree = "<group>";
 		};
 		ECB3846C15516E0A0035F25D /* fec */ = {
 			isa = PBXGroup;
@@ -4108,6 +4056,8 @@
 				EC83B77C1369768A00DD3355 /* iOSNgnStack.h */,
 				EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */,
 				ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */,
+				ECC6F5B21597D668005401EC /* iOSGLView.h */,
+				ECC6F5B31597D669005401EC /* iOSGLView.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -6567,6 +6517,7 @@
 				ECE7E99F14284CAC00466331 /* NSDate+Utilities.h in Headers */,
 				ECE7E9A314284CD300466331 /* iOSProxyVideoProducer.h in Headers */,
 				ECD284A6145F771B00EFE997 /* NgnDeviceInfo.h in Headers */,
+				ECC6F5B41597D669005401EC /* iOSGLView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7743,6 +7694,7 @@
 				ECE7E9A014284CAC00466331 /* NSDate+Utilities.m in Sources */,
 				ECE7E9A414284CD300466331 /* iOSProxyVideoProducer.mm in Sources */,
 				ECD284A7145F771B00EFE997 /* NgnDeviceInfo.mm in Sources */,
+				ECC6F5B51597D669005401EC /* iOSGLView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8945,7 +8897,7 @@
 				OTHER_CFLAGS = (
 					"-fms-extensions",
 					"-DRECYCLE_STACK=1",
-					"-DDEBUG_LEVEL=DEBUG_LEVEL_ERROR",
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_WARN",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",
@@ -8988,7 +8940,7 @@
 				OTHER_CFLAGS = (
 					"-fms-extensions",
 					"-DRECYCLE_STACK=1",
-					"-DDEBUG_LEVEL=DEBUG_LEVEL_ERROR",
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_WARN",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",

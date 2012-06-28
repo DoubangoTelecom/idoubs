@@ -28,6 +28,7 @@
 #import "media/NgnProxyVideoConsumer.h"
 #if TARGET_OS_IPHONE
 #	import "iOSProxyVideoProducer.h"
+#   import "iOSGLView.h"
 #elif TARGET_OS_MAC
 #	import "OSXProxyVideoProducer.h"
 #endif
@@ -70,7 +71,7 @@ class ActionConfig;
 -(BOOL) setFlipEncodedVideo: (BOOL) flip;
 -(BOOL) setFlipDecodedVideo: (BOOL) flip;
 #if TARGET_OS_IPHONE
--(BOOL) setRemoteVideoDisplay: (UIImageView*)display;
+-(BOOL) setRemoteVideoDisplay: (iOSGLView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
 -(BOOL) toggleCamera;
