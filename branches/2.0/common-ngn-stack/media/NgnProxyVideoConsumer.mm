@@ -44,7 +44,7 @@
 -(int) consumeFrame: (const ProxyVideoFrame*) _frame;
 -(int) pause;
 -(int) stop;
--(int) resizeBitmapContextWithWidth:(int)width andHeight: (int)height;
+-(int) resizeBufferWithWidth:(int)width andHeight: (int)height;
 @end
 
 //
@@ -124,21 +124,19 @@ private:
 		}
 		
 		_mBufferPtr = tsk_null, _mBufferPtr = tsk_null;
-		mBitmapContext = nil;
 		mWidth = kDefaultVideoWidth;
 		mHeight = kDefaultVideoHeight;
 		mFps = kDefaultVideoFrameRate;
+#if !TARGET_OS_IPHONE
+		mBitmapContext = nil;
+#endif
 	}
 	return self;
 }
 
 #if TARGET_OS_IPHONE
--(void) setDisplay: (UIImageView*)display{
+-(void) setDisplay: (iOSGLView*)display{
 	@synchronized(self){
-		if(mDisplay && !display){
-			mDisplay.image = nil;
-		}
-		
 		[mDisplay release];
 		mDisplay = [display retain];
 	}
@@ -158,15 +156,23 @@ private:
 		TSK_DEBUG_ERROR("Invalid embedded consumer");
 		return -1;
 	}
-	
+    
 	// resize buffer
-	if([self resizeBitmapContextWithWidth: width andHeight: height]){
+	if([self resizeBufferWithWidth: width andHeight: height]){
 		TSK_DEBUG_ERROR("resizeBitmapContextWithWidth:%i andHeight:%i has failed", width, height);
 		return -1;
 	}
 	
 	// mWidth and and mHeight already updated by resizeBitmap.... 
 	mFps = fps;
+    
+#if TARGET_OS_IPHONE
+    if(mDisplay){
+        [mDisplay setFps:mFps]; // OpenGL framerate
+    }
+#elif TARGET_OS_MAC
+#endif
+    
 	mPrepared = YES;
 	return 0;
 }
@@ -182,9 +188,8 @@ private:
 		NgnNSLog(TAG, "Invalid state");
 		return -1;
 	}
-	
-	// resize the buffer
-	if(_mBufferSize != availableSize){
+    
+    if(_mBufferSize != availableSize){
 		NgnNSLog(TAG, "bufferCopiedWithSize(copiedSize=%u,availableSize=%u)", copiedSize, availableSize);
 		unsigned _newWidth = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayWidth();
 		unsigned _newHeight = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayHeight();
@@ -192,17 +197,26 @@ private:
 			NgnNSLog(TAG,"nCopiedSize=%u and newWidth=%u and newHeight=%u", copiedSize, _newWidth, _newHeight);
 			return -1;
 		}
-		// resize the bitmap context
-		if([self resizeBitmapContextWithWidth: _newWidth andHeight: _newHeight]){
-			TSK_DEBUG_ERROR("resizeBitmapContextWithWidth:%i andHeight:%i has failed", _newWidth, _newHeight);
+		// resize buffer
+		if([self resizeBufferWithWidth: _newWidth andHeight: _newHeight]){
+			TSK_DEBUG_ERROR("resizeBufferWithWidth:%i andHeight:%i has failed", _newWidth, _newHeight);
 			return -1;
 		}
-		
 		// Draw the picture next time
 		return 0;
 	}
 	
-	return [self drawFrameOnMainThread];
+#if TARGET_OS_IPHONE
+    if(mDisplay) [mDisplay setBufferYUV:_mBufferPtr andWidth:mWidth andHeight:mHeight];
+     return 0;
+#else
+    if(mBitmapContext && mDisplay){
+        CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
+        [mDisplay setCurrentImage:imageRef];
+        CGImageRelease(imageRef);
+    }
+#endif
+    return 0;
 }
 
 -(int) consumeFrame: (const ProxyVideoFrame*) _frame{
@@ -210,9 +224,18 @@ private:
 		TSK_DEBUG_ERROR("Invalid state");
 		return -1;
 	}
-	if(_mBufferPtr){
+	if(_mBufferPtr && mDisplay){
 		memcpy(_mBufferPtr, _frame->fastGetContent(), TSK_MIN(_frame->fastGetSize(), _mBufferSize));
-		return [self drawFrameOnMainThread];
+		
+#if TARGET_OS_IPHONE
+        [mDisplay setBufferYUV:_mBufferPtr andWidth:mWidth andHeight:mHeight];
+#elif TARGET_OS_MAC
+        if(mBitmapContext){
+            CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
+            [mDisplay setCurrentImage:imageRef];
+            CGImageRelease(imageRef);
+        }
+#endif
 	}
 	return 0;
 }
@@ -229,18 +252,19 @@ private:
 	return 0;
 }
 
--(int) resizeBitmapContextWithWidth:(int)width andHeight: (int)height{
+-(int) resizeBufferWithWidth:(int)width andHeight: (int)height{
 	if(!_mConsumer){
 		TSK_DEBUG_ERROR("Invalid embedded consumer");
 		return -1;
 	}
 	int ret = 0;
 	@synchronized(self){
-		// release context
-		CGContextRelease(mBitmapContext), mBitmapContext = nil;
-	
 		// realloc the buffer
-		unsigned newBufferSize = width * height * 4;
+#if TARGET_OS_IPHONE
+        unsigned newBufferSize = (width * height * 3) >> 1; // NV12
+#elif TARGET_OS_MAC
+		unsigned newBufferSize = (width * height) << 2; // RGB32
+#endif
 		if(!(_mBufferPtr = (uint8_t*)tsk_realloc(_mBufferPtr, newBufferSize))){
 			TSK_DEBUG_ERROR("Failed to realloc buffer with size=%u", newBufferSize);
 			_mBufferSize = 0;
@@ -253,41 +277,18 @@ private:
 	
 		mWidth = width;
 		mHeight = height;
+#if TARGET_OS_IPHONE
+#elif TARGET_OS_MAC
+        // release context
+		CGContextRelease(mBitmapContext), mBitmapContext = nil;
 		CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 		mBitmapContext = CGBitmapContextCreate(_mBufferPtr, width, height, 8, width * 4, colorSpace, 
 											   kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
 		CGColorSpaceRelease(colorSpace);
+#endif
 	}
 	
 	return ret;
-}
-
--(void)setImage:(id)image{
-	@synchronized(self){
-		if(mDisplay){
-#if TARGET_OS_IPHONE
-			mDisplay.image =  image;
-#elif TARGET_OS_MAC
-			//--[mDisplay drawImage:(CIImage*)image atPoint:CGPointZero fromRect:[((CIImage*)image) extent]];
-#endif
-		}
-	}
-}
-
--(int)drawFrameOnMainThread{
-	if(mBitmapContext){
-		if(mDisplay){
-			CGImageRef imageRef = CGBitmapContextCreateImage(mBitmapContext);
-#if TARGET_OS_IPHONE
-			UIImage *image = [UIImage imageWithCGImage:imageRef];
-			[self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
-#elif TARGET_OS_MAC
-			[mDisplay setCurrentImage:imageRef];
-#endif
-			CGImageRelease(imageRef);
-		}
-	}
-	return 0;
 }
 
 -(void)makeInvalidate{
@@ -306,7 +307,10 @@ private:
 	}
 	_mConsumer = tsk_null; // you're not the owner
 	TSK_FREE(_mBufferPtr);
+#if TARGET_OS_IPHONE
+#elif TARGET_OS_MAC
 	CGContextRelease(mBitmapContext), mBitmapContext = nil;
+#endif
 	
 	[mDisplay release];
 	

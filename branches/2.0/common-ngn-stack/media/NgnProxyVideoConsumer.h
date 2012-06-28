@@ -22,6 +22,7 @@
 #if TARGET_OS_IPHONE
 #	import <UIKit/UIKit.h>
 #	import <AVFoundation/AVFoundation.h>
+#   import "iOSGLView.h"
 #elif TARGET_OS_MAC
 #	import "NgnVideoView.h"
 #	import <Cocoa/Cocoa.h>
@@ -46,11 +47,10 @@ class _NgnProxyVideoConsumerCallback;
 	int mFps;
 	BOOL mFlip;
 	
-	CGContextRef mBitmapContext;
-	
 #if TARGET_OS_IPHONE
-	UIImageView* mDisplay;
+	iOSGLView* mDisplay;
 #elif TARGET_OS_MAC
+    CGContextRef mBitmapContext;
 	NSObject<NgnVideoView>* mDisplay;
 #endif
 }
@@ -58,7 +58,7 @@ class _NgnProxyVideoConsumerCallback;
 -(NgnProxyVideoConsumer*) initWithId: (uint64_t)identifier andConsumer:(const ProxyVideoConsumer *)_consumer;
 
 #if TARGET_OS_IPHONE
--(void) setDisplay: (UIImageView*)display;
+-(void) setDisplay: (iOSGLView*)display;
 #elif TARGET_OS_MAC
 -(void) setDisplay: (NSObject<NgnVideoView>*)display;
 #endif
