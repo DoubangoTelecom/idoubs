@@ -36,13 +36,14 @@
 
 @implementation NgnUriUtils (Private)
 
-#define kkInvalidStringsSize 4
+#define kkInvalidStringsSize 5
 static NSString* kInvalidStrings[kkInvalidStringsSize][2] = 
 {
 	{@"(", @""},
 	{@")", @""},
 	{@" ", @""},
-	{@"#", @"%23"}
+	{@"#", @"%23"},
+    {@"\"", @"\""},
 };
 
 +(NSString*) trimInvalidStrings: (NSString*)uri{
