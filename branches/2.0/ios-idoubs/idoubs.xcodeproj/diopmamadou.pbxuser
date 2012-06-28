@@ -17,7 +17,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ECFD23AB135D519D00E6A9A3 /* idoubs */;
-		activeSDKPreference = iphoneos4.3;
+		activeSDKPreference = iphonesimulator4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* idoubs */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* idoubs */,
@@ -75,7 +75,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					949,
+					1429,
 					20,
 					48,
 					43,
@@ -113,7 +113,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					909,
+					1389,
 					60,
 					20,
 					48,
@@ -130,20 +130,22 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 358553359;
-			PBXWorkspaceStateSaveDate = 358553359;
+			PBXPerProjectTemplateStateSaveDate = 362546762;
+			PBXWorkspaceStateSaveDate = 362546762;
 		};
 		perUserProjectItems = {
-			EC06301B1551DCCB001AD2BC /* PlistBookmark */ = EC06301B1551DCCB001AD2BC /* PlistBookmark */;
-			EC06301E1551DCCB001AD2BC /* PlistBookmark */ = EC06301E1551DCCB001AD2BC /* PlistBookmark */;
-			EC0DDBB01562355200400FF3 /* PlistBookmark */ = EC0DDBB01562355200400FF3 /* PlistBookmark */;
-			ECB1D95C1553399800AC5692 /* PlistBookmark */ = ECB1D95C1553399800AC5692 /* PlistBookmark */;
-			ECB1D95D1553399800AC5692 /* PlistBookmark */ = ECB1D95D1553399800AC5692 /* PlistBookmark */;
-			ECB1D95E1553399800AC5692 /* PlistBookmark */ = ECB1D95E1553399800AC5692 /* PlistBookmark */;
-			ECB1D95F1553399800AC5692 /* PlistBookmark */ = ECB1D95F1553399800AC5692 /* PlistBookmark */;
-			ECC9D8BE155F1772001CD98C /* PlistBookmark */ = ECC9D8BE155F1772001CD98C /* PlistBookmark */;
-			ECC9D8C4155F1773001CD98C /* PBXTextBookmark */ = ECC9D8C4155F1773001CD98C /* PBXTextBookmark */;
-			ECC9D8E9155F4639001CD98C /* PBXTextBookmark */ = ECC9D8E9155F4639001CD98C /* PBXTextBookmark */;
+			EC06301B1551DCCB001AD2BC = EC06301B1551DCCB001AD2BC /* PlistBookmark */;
+			EC06301E1551DCCB001AD2BC = EC06301E1551DCCB001AD2BC /* PlistBookmark */;
+			EC69423F159C076D00749365 /* PBXTextBookmark */ = EC69423F159C076D00749365 /* PBXTextBookmark */;
+			EC694240159C076D00749365 /* XCBuildMessageTextBookmark */ = EC694240159C076D00749365 /* XCBuildMessageTextBookmark */;
+			EC694242159C076D00749365 /* PBXTextBookmark */ = EC694242159C076D00749365 /* PBXTextBookmark */;
+			ECB1D95C1553399800AC5692 = ECB1D95C1553399800AC5692 /* PlistBookmark */;
+			ECB1D95D1553399800AC5692 = ECB1D95D1553399800AC5692 /* PlistBookmark */;
+			ECB1D95E1553399800AC5692 = ECB1D95E1553399800AC5692 /* PlistBookmark */;
+			ECB1D95F1553399800AC5692 = ECB1D95F1553399800AC5692 /* PlistBookmark */;
+			ECC9D8BE155F1772001CD98C = ECC9D8BE155F1772001CD98C /* PlistBookmark */;
+			ECC9D8C4155F1773001CD98C = ECC9D8C4155F1773001CD98C /* PBXTextBookmark */;
+			ECC9D8E9155F4639001CD98C = ECC9D8E9155F4639001CD98C /* PBXTextBookmark */;
 		};
 		sourceControlManager = ECFD23BA135D51A000E6A9A3 /* Source Control */;
 		userBuildSettings = {
@@ -226,6 +228,54 @@
 		name = Identity.plist;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Identity.plist";
 		sourceTree = "<absolute>";
+	};
+	EC69423F159C076D00749365 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC9D8EA155F4639001CD98C /* trtp_manager.c */;
+		name = "trtp_manager.c: 255";
+		rLen = 101;
+		rLoc = 8719;
+		rType = 0;
+		vrLen = 1968;
+		vrLoc = 7816;
+	};
+	EC694240159C076D00749365 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Request for member 'videoMaxFrameDuration' in 'captureConnection', which is of non-class type 'AVCaptureConnection*'";
+		fRef = EC694241159C076D00749365 /* iOSProxyVideoProducer.mm */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 193;
+		rType = 1;
+	};
+	EC694241159C076D00749365 /* iOSProxyVideoProducer.mm */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
+		name = iOSProxyVideoProducer.mm;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/iOSProxyVideoProducer.mm";
+		sourceTree = "<absolute>";
+	};
+	EC694242159C076D00749365 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC694243159C076D00749365 /* iOSProxyVideoProducer.mm */;
+		name = "iOSProxyVideoProducer.mm: 186";
+		rLen = 0;
+		rLoc = 5924;
+		rType = 0;
+		vrLen = 2056;
+		vrLoc = 5310;
+	};
+	EC694243159C076D00749365 /* iOSProxyVideoProducer.mm */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.objcpp;
+		name = iOSProxyVideoProducer.mm;
+		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/iOSProxyVideoProducer.mm";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1607, 7709}}";
+			sepNavSelRange = "{5721, 0}";
+			sepNavVisRange = "{4664, 2530}";
+		};
 	};
 	EC7E2F52138968E50020EB89 /* AudioCallViewController.h */ = {
 		uiCtxt = {
@@ -453,9 +503,9 @@
 	};
 	EC7E2FA41389696C0020EB89 /* idoubs2Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1550, 858}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1607, 858}}";
 			sepNavSelRange = "{2469, 14}";
-			sepNavVisRange = "{107, 2464}";
+			sepNavVisRange = "{254, 2316}";
 		};
 	};
 	EC8C7F751545931000D23ADF /* tnet_transport_poll.c */ = {
@@ -479,7 +529,7 @@
 		ignoreCount = 0;
 		lineNumber = 417;
 		location = idoubs;
-		modificationTime = 357783881.4678701;
+		modificationTime = 357783881.4678702;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -672,7 +722,7 @@
 		);
 		name = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/settings/Settings.bundle/Media.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	ECC9D8C2155F1772001CD98C /* trtp_manager.c */ = {
 		isa = PBXFileReference;
@@ -680,11 +730,6 @@
 		name = trtp_manager.c;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyRTP/src/trtp_manager.c";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 11479}}";
-			sepNavSelRange = "{8773, 101}";
-			sepNavVisRange = "{7997, 1129}";
-		};
 	};
 	ECC9D8C4155F1773001CD98C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -708,9 +753,15 @@
 	};
 	ECC9D8EA155F4639001CD98C /* trtp_manager.c */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
 		name = trtp_manager.c;
 		path = "/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/../../../../../doubango/branches/2.0/doubango/tinyRTP/src/trtp_manager.c";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1607, 11648}}";
+			sepNavSelRange = "{8719, 101}";
+			sepNavVisRange = "{7816, 1968}";
+		};
 	};
 	ECFD23AB135D519D00E6A9A3 /* idoubs */ = {
 		isa = PBXExecutable;

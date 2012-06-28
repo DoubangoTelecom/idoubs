@@ -267,22 +267,17 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>EC4DBC5F141BE2A90024CBEF</string>
-								<string>EC4DBC63141BE2A90024CBEF</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>EC0DDCBB156253ED00400FF3</string>
-								<string>EC0DDCBC156253ED00400FF3</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>52</integer>
-									<integer>48</integer>
+									<integer>17</integer>
+									<integer>15</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 49}, {257, 974}}</string>
+							<string>{{0, 0}, {257, 974}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -329,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>EC0DDCC0156253ED00400FF3</string>
+										<string>EC6941FC159C064100749365</string>
 										<key>history</key>
 										<array>
 											<string>EC0DDC241562409300400FF3</string>
@@ -341,7 +336,7 @@
 											<string>EC0DDCA1156251C700400FF3</string>
 											<string>EC0DDCBD156253ED00400FF3</string>
 											<string>EC0DDCBE156253ED00400FF3</string>
-											<string>EC0DDCBF156253ED00400FF3</string>
+											<string>EC0DDCC11562563A00400FF3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -355,18 +350,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1640, 778}}</string>
+								<string>{{0, 0}, {1640, 774}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1 145 1919 1033 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>778pt</string>
+							<string>774pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>209pt</string>
+							<string>213pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -380,7 +375,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1640, 182}}</string>
+										<string>{{10, 27}, {1640, 186}}</string>
 										<key>RubberWindowFrame</key>
 										<string>1 145 1919 1033 0 0 1920 1178 </string>
 									</dict>
@@ -464,11 +459,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0DDB1915622C8F00400FF3</string>
+				<string>EC6941FD159C064100749365</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC0DDB1A15622C8F00400FF3</string>
+				<string>EC6941FE159C064100749365</string>
 				<string>EC26C23A14269DDB0046BBB5</string>
-				<string>EC0DDB1B15622C8F00400FF3</string>
+				<string>EC6941FF159C064100749365</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -617,14 +612,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0DDB1C15622C8F00400FF3</string>
+				<string>EC694200159C064100749365</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC0DDB1D15622C8F00400FF3</string>
-				<string>EC0DDB1E15622C8F00400FF3</string>
-				<string>EC0DDB1F15622C8F00400FF3</string>
-				<string>EC0DDB2015622C8F00400FF3</string>
-				<string>EC26C23A14269DDB0046BBB5</string>
+				<string>EC694201159C064100749365</string>
+				<string>EC694202159C064100749365</string>
+				<string>EC694203159C064100749365</string>
+				<string>EC694204159C064100749365</string>
+				<string>EC694205159C064100749365</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -658,8 +653,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC0DDB2115622C8F00400FF3</string>
-		<string>EC0DDB2215622C8F00400FF3</string>
 		<string>/Users/diopmamadou/Documents/mydoubs/iPhone/idoubs/branches/2.0/osx-idoubs/idoubs.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
