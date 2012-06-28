@@ -182,7 +182,7 @@ private:
     [avCaptureVideoDataOutput setSampleBufferDelegate:self queue:queue];
     [mCaptureSession addOutput:avCaptureVideoDataOutput];
     
-    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000
     avCaptureVideoDataOutput.alwaysDiscardsLateVideoFrames = YES;
     if([[[UIDevice currentDevice] systemVersion] floatValue] < 5){
         avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
@@ -194,6 +194,9 @@ private:
             captureConnection.videoMaxFrameDuration = CMTimeMake(1, mFps);
         }
     }
+#else
+	avCaptureVideoDataOutput.minFrameDuration = CMTimeMake(1, mFps);
+#endif
     
 	
 	// orientation

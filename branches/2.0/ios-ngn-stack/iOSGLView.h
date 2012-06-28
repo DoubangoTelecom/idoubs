@@ -1,6 +1,6 @@
 /* Copyright (c) 2012, Doubango Telecom. All rights reserved.
  *
- * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+ * Contact: Tech <tech(at)doubango(dot)org>
  *       
  * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
  *

@@ -30,7 +30,7 @@
 			<key>Key</key>
 			<string>MEDIA_CODEC_USE_G722</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>
