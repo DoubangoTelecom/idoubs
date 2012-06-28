@@ -389,6 +389,7 @@
 @implementation VideoCallViewController
 
 @synthesize viewLocalVideo;
+@synthesize glViewVideoRemote;
 
 @synthesize viewTop;
 @synthesize labelRemoteParty;
@@ -405,8 +406,6 @@
 @synthesize buttonHangUp;
 
 @synthesize imageSecure;
-
-@synthesize glViewVideoRemote;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
