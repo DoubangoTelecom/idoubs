@@ -385,7 +385,7 @@
 }
 
 #if TARGET_OS_IPHONE
--(BOOL) setRemoteVideoDisplay: (UIImageView*)display{
+-(BOOL) setRemoteVideoDisplay: (iOSGLView*)display{
 	if(mVideoConsumer){
 		[mVideoConsumer setDisplay: display];
 		return YES;

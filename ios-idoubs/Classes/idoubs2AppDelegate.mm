@@ -444,14 +444,14 @@ static dispatch_block_t sExpirationHandler = nil;
 	// Set media parameters if you want
 	MediaSessionMgr::defaultsSetAudioGain(0, 0);
 	// Set some codec priorities
-	int prio = 0;
+	/*int prio = 0;
 	SipStack::setCodecPriority(tdav_codec_id_g722, prio++);
 	SipStack::setCodecPriority(tdav_codec_id_speex_wb, prio++);
 	SipStack::setCodecPriority(tdav_codec_id_pcma, prio++);
 	SipStack::setCodecPriority(tdav_codec_id_pcmu, prio++);
-	SipStack::setCodecPriority(tdav_codec_id_h264_bp30, prio++);
-	SipStack::setCodecPriority(tdav_codec_id_h264_bp20, prio++);
-	SipStack::setCodecPriority(tdav_codec_id_vp8, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_h264_bp, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_h264_mp, prio++);
+	SipStack::setCodecPriority(tdav_codec_id_vp8, prio++);*/
 	//...etc etc etc
 	
     return YES;
@@ -477,11 +477,11 @@ static dispatch_block_t sExpirationHandler = nil;
 			sBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:sExpirationHandler];
 			//}
 			if(registrationState == CONN_STATE_CONNECTED){
-				if(![NgnAVSession hasActiveSession]){
-					if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
+                if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
+                    if(![NgnAVSession hasActiveSession]){
 						[[NgnEngine sharedInstance] startKeepAwake];
-					}
-				}
+                    }
+                }
 			}
 			
 			[application setKeepAliveTimeout:600 handler: ^{

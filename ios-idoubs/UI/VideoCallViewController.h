@@ -20,6 +20,8 @@
  */
 #import <UIKit/UIKit.h>
 
+#import "iOSNgnStack.h"
+
 #import "CallViewController.h"
 #import "TransparentToolbar.h"
 
@@ -42,6 +44,8 @@
 	UIButton *buttonHangUp;
 	
 	UIImageView *imageSecure;
+    
+    iOSGLView* glViewVideoRemote;
 	
 	NgnAVSession* videoSession;
 	BOOL sendingVideo;
@@ -65,6 +69,8 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonHangUp;
 
 @property (retain, nonatomic) IBOutlet UIImageView *imageSecure;
+
+@property (retain, nonatomic) IBOutlet iOSGLView* glViewVideoRemote;
 
 - (IBAction) onButtonClick: (id)sender;
 
