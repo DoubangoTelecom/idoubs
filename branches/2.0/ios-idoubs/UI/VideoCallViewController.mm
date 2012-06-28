@@ -388,7 +388,6 @@
 
 @implementation VideoCallViewController
 
-@synthesize imageViewRemoteVideo;
 @synthesize viewLocalVideo;
 
 @synthesize viewTop;
@@ -533,7 +532,6 @@
 }
 
 - (void)dealloc {
-	[self.imageViewRemoteVideo release];
 	[self.viewLocalVideo release];
 	
 	[self.viewToolbar release];
