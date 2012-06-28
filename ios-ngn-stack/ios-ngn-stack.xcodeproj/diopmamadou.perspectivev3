@@ -267,17 +267,19 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
+								<string>ECFD23BC135D532A00E6A9A3</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>43</integer>
-									<integer>21</integer>
+									<integer>11</integer>
+									<integer>3</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 126}, {331, 673}}</string>
+							<string>{{0, 0}, {331, 673}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -305,12 +307,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>EC4DBF71141C2CFA0024CBEF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>trtp_manager.c</string>
+								<string>iOSGLView.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC4DBF72141C2CFA0024CBEF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>trtp_manager.c</string>
+										<string>iOSGLView.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC0DDC901562505800400FF3</string>
+										<string>EC69428F159C096600749365</string>
 										<key>history</key>
 										<array>
 											<string>ECE7EA6F1428551700466331</string>
@@ -385,7 +389,9 @@
 											<string>ECB1D9981553600400AC5692</string>
 											<string>ECB1D9991553600400AC5692</string>
 											<string>EC0DDC8E1562505800400FF3</string>
-											<string>EC0DDC8F1562505800400FF3</string>
+											<string>EC69428C159C096600749365</string>
+											<string>EC69428D159C096600749365</string>
+											<string>EC69428E159C096600749365</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -399,18 +405,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1087, 490}}</string>
+								<string>{{0, 0}, {1087, 484}}</string>
 								<key>RubberWindowFrame</key>
 								<string>480 446 1440 732 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>490pt</string>
+							<string>484pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>196pt</string>
+							<string>202pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -424,7 +430,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1087, 169}}</string>
+										<string>{{10, 27}, {1087, 175}}</string>
+										<key>RubberWindowFrame</key>
+										<string>480 446 1440 732 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -479,8 +487,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1087, 169}}</string>
-										<key>RubberWindowFrame</key>
-										<string>480 446 1440 732 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -508,11 +514,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0DDC911562505800400FF3</string>
+				<string>EC694290159C096600749365</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC0DDC921562505800400FF3</string>
+				<string>EC694291159C096600749365</string>
 				<string>EC4DBF71141C2CFA0024CBEF</string>
-				<string>EC0DDC931562505800400FF3</string>
+				<string>EC694292159C096600749365</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
