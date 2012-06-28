@@ -26,7 +26,7 @@
 #import "TransparentToolbar.h"
 
 @interface VideoCallViewController : CallViewController {
-	UIImageView *imageViewRemoteVideo;
+	iOSGLView* glViewVideoRemote;
 	UIView *viewLocalVideo;
 	
 	UIView *viewTop;
@@ -44,14 +44,13 @@
 	UIButton *buttonHangUp;
 	
 	UIImageView *imageSecure;
-    
-    iOSGLView* glViewVideoRemote;
 	
 	NgnAVSession* videoSession;
 	BOOL sendingVideo;
 }
 
 @property (retain, nonatomic) IBOutlet UIView* viewLocalVideo;
+@property (retain, nonatomic) IBOutlet iOSGLView* glViewVideoRemote;
 
 @property (retain, nonatomic) IBOutlet UIView* viewTop;
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
@@ -69,7 +68,7 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *imageSecure;
 
-@property (retain, nonatomic) IBOutlet iOSGLView* glViewVideoRemote;
+
 
 - (IBAction) onButtonClick: (id)sender;
 
