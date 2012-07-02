@@ -30,6 +30,7 @@
     CAEAGLLayer* _eaglLayer;
     EAGLContext* _context;
     CADisplayLink* _displayLink;
+    GLuint _program;
     GLuint _renderBuffer;
     GLuint _framebuffer;
     GLuint _positionSlot;
@@ -38,6 +39,7 @@
     GLuint _lumaTexture, _chromaTexture;
     CGFloat _screenWidth, _screenHeight;
     GLint _textureWidth, _textureHeight;
+    GLuint _vertexShader, _fragmentShader;
     uint _bufferWidth, _bufferHeight, _bufferSize;
     uint8_t* _buffer;
     GLboolean _animating;
