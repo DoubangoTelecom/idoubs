@@ -519,7 +519,7 @@
 		[self showBottomView:self.viewToolbar shouldRefresh:YES];
 	}
 
-	else if(videoSession && sender == self.buttonToolBarEnd || sender == self.buttonHangUp) {
+	else if(videoSession && ((sender == self.buttonToolBarEnd) || (sender == self.buttonHangUp))) {
 		[videoSession hangUpCall];
 	}
 	else if(videoSession && sender == self.buttonPick){

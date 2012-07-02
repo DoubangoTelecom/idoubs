@@ -268,34 +268,34 @@ return; \
 
 - (void)compileShaders {
     
-    GLuint vertexShader = [self compileShader:SOURCE_SHADER_VERTEX withType:GL_VERTEX_SHADER];
-    GLuint fragmentShader = [self compileShader:SOURCE_SHADER_FRAGMENT withType:GL_FRAGMENT_SHADER];
+    _vertexShader = [self compileShader:SOURCE_SHADER_VERTEX withType:GL_VERTEX_SHADER];
+    _fragmentShader = [self compileShader:SOURCE_SHADER_FRAGMENT withType:GL_FRAGMENT_SHADER];
     
-    GLuint programHandle = glCreateProgram();
-    glAttachShader(programHandle, vertexShader);
-    glAttachShader(programHandle, fragmentShader);
-    glLinkProgram(programHandle);
+    _program = glCreateProgram();
+    glAttachShader(_program, _vertexShader);
+    glAttachShader(_program, _fragmentShader);
+    glLinkProgram(_program);
     
     GLint linkSuccess;
-    glGetProgramiv(programHandle, GL_LINK_STATUS, &linkSuccess);
+    glGetProgramiv(_program, GL_LINK_STATUS, &linkSuccess);
     if (linkSuccess == GL_FALSE) {
         GLchar messages[256];
-        glGetProgramInfoLog(programHandle, sizeof(messages), 0, &messages[0]);
+        glGetProgramInfoLog(_program, sizeof(messages), 0, &messages[0]);
         NSString *messageString = [NSString stringWithUTF8String:messages];
         NSLog(@"%@", messageString);
         exit(1);
     }
     
-    glUseProgram(programHandle);
+    glUseProgram(_program);
     
-    _positionSlot = glGetAttribLocation(programHandle, "position");
+    _positionSlot = glGetAttribLocation(_program, "position");
     glEnableVertexAttribArray(_positionSlot);
     
-    _texCoordSlot = glGetAttribLocation(programHandle, "texCoord");
+    _texCoordSlot = glGetAttribLocation(_program, "texCoord");
     glEnableVertexAttribArray(_texCoordSlot);
     
-    _lumaUniform = glGetUniformLocation(programHandle, "SamplerY");
-    _chromaUniform = glGetUniformLocation(programHandle, "SamplerUV");
+    _lumaUniform = glGetUniformLocation(_program, "SamplerY");
+    _chromaUniform = glGetUniformLocation(_program, "SamplerUV");
 }
 
 + (Class)layerClass {
@@ -341,6 +341,23 @@ return; \
 
 - (void)dealloc
 {
+    [EAGLContext setCurrentContext:_context];
+    [self stopAnimation];
+    
+    glDeleteRenderbuffers(1, &_renderBuffer);
+    glDeleteRenderbuffers(1, &_framebuffer);
+    
+    glDeleteShader(_fragmentShader);
+    glDeleteShader(_vertexShader);
+    
+    glDeleteTextures(1, &_lumaTexture);
+    glDeleteTextures(1, &_chromaTexture);
+    
+    if (_program) {
+        glDeleteProgram(_program);
+        _program = 0;
+    }
+    
     [_displayLink release];
     [_context release], _context = nil;
     
