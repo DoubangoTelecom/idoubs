@@ -190,7 +190,7 @@ done:
 	// Media plugins
     
 #if TARGET_OS_IPHONE /* opengl */
-    ProxyVideoConsumer::setDefaultChroma(tmedia_chroma_nv12);
+    ProxyVideoConsumer::setDefaultChroma(tmedia_chroma_yuv420p);
 #else
 	ProxyVideoConsumer::setDefaultChroma(tmedia_chroma_rgb32);
 #endif

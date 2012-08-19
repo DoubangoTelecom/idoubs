@@ -8883,7 +8883,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include $DOUBANGO_HOME/thirdparties/common/include";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
@@ -8912,7 +8912,8 @@
 					"-DHAVE_FFMPEG=1",
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
-					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_LIBYUV=1",
+					"-DHAVE_SWSSCALE=0",
 					"-DHAVE_OPENSSL_H=1",
 					"-DHAVE_SRTP=1",
 				);
@@ -8930,7 +8931,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include $DOUBANGO_HOME/thirdparties/common/include";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
@@ -8955,7 +8956,8 @@
 					"-DHAVE_FFMPEG=1",
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_H264=1",
-					"-DHAVE_SWSSCALE=1",
+					"-DHAVE_LIBYUV=1",
+					"-DHAVE_SWSSCALE=0",
 					"-DHAVE_OPENSSL_H=1",
 					"-DHAVE_SRTP=1",
 				);
@@ -8992,6 +8994,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9036,6 +9039,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9077,6 +9081,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9118,6 +9123,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9163,6 +9169,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9207,6 +9214,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9252,6 +9260,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9296,6 +9305,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9341,6 +9351,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9385,6 +9396,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9821,6 +9833,8 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyDAV/include,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
+					$DOUBANGO_HOME/thirdparties/common/include/libyuv,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyDAV;
@@ -9842,6 +9856,8 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyDAV/include,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
+					$DOUBANGO_HOME/thirdparties/common/include/libyuv,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyDAV;
@@ -9927,6 +9943,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",
@@ -9972,6 +9989,7 @@
 					"-ltheora",
 					"-lvorbis",
 					"-logg",
+					"-lyuv",
 					"-lvpx",
 					"-lx264",
 					"-lswscale",

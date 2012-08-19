@@ -166,10 +166,10 @@ private:
     // Currently, the only supported key is kCVPixelBufferPixelFormatTypeKey. Recommended pixel format choices are 
 	// kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange or kCVPixelFormatType_32BGRA. 
 	// On iPhone 3G, the recommended pixel format choices are kCVPixelFormatType_422YpCbCr8 or kCVPixelFormatType_32BGRA.
-	//
+	// When using libyuv kCVPixelFormatType_32BGRA is faster
     AVCaptureVideoDataOutput *avCaptureVideoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
     NSDictionary *settings = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              // [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange], kCVPixelBufferPixelFormatTypeKey,
+                               [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA], kCVPixelBufferPixelFormatTypeKey,
 							  [NSNumber numberWithInt: mWidth], (id)kCVPixelBufferWidthKey,
 							  [NSNumber numberWithInt: mHeight], (id)kCVPixelBufferHeightKey,
 							  
@@ -367,8 +367,8 @@ private:
         size_t buffeSize = CVPixelBufferGetDataSize(pixelBuffer);
 		
 		// http://code.google.com/p/idoubs/issues/detail?id=27&q=UInt8
-        static const size_t pad = (sizeof(UInt8) << 4);
-		bufferPtr += pad;
+        //static const size_t pad = (sizeof(UInt8) << 4);
+		//bufferPtr += pad;
 		
 		tmedia_producer_t* producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
 		

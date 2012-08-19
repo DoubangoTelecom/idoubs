@@ -35,8 +35,8 @@
     GLuint _framebuffer;
     GLuint _positionSlot;
     GLuint _texCoordSlot;
-    GLuint _lumaUniform, _chromaUniform;
-    GLuint _lumaTexture, _chromaTexture;
+    GLuint _lumaUniform, _chromaUniformU, _chromaUniformV;
+    GLuint _lumaTexture, _chromaTextureU, _chromaTextureV;
     CGFloat _screenWidth, _screenHeight;
     GLint _textureWidth, _textureHeight;
     GLuint _vertexShader, _fragmentShader;
