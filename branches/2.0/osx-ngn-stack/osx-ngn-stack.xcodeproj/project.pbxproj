@@ -189,6 +189,8 @@
 		EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BDF0136C742F0068BCB4 /* tdav_audiounit.c */; };
 		EC824AEE136ECE9F004FC3A8 /* tdav_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = EC824AED136ECE9F004FC3A8 /* tdav_apple.h */; };
 		EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC858FC313999E360017BB9F /* tmedia_defaults.c */; };
+		EC8C051A15E085210048DD21 /* tdav_converter_video.cxx in Sources */ = {isa = PBXBuildFile; fileRef = EC8C051915E085210048DD21 /* tdav_converter_video.cxx */; };
+		EC8C051C15E0854D0048DD21 /* tmedia_converter_video.c in Sources */ = {isa = PBXBuildFile; fileRef = EC8C051B15E0854D0048DD21 /* tmedia_converter_video.c */; };
 		ECA0F0E915112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */; };
 		ECA0F0EA15112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */; };
 		ECA0F0EB15112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */; };
@@ -1074,7 +1076,6 @@
 		ECFD3251135E7DBC00E6A9A3 /* tdav_session_msrp.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31F7135E7DBC00E6A9A3 /* tdav_session_msrp.c */; };
 		ECFD3252135E7DBC00E6A9A3 /* tdav.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31F8135E7DBC00E6A9A3 /* tdav.c */; };
 		ECFD3253135E7DBC00E6A9A3 /* tdav_win32.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */; };
-		ECFD3254135E7DBC00E6A9A3 /* tdav_converter_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31FD135E7DBC00E6A9A3 /* tdav_converter_video.c */; };
 		ECFD3255135E7DBC00E6A9A3 /* tdav_runnable_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */; };
 		ECFD3256135E7DBC00E6A9A3 /* tdav_session_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */; };
 		ECFD3268135E7DE200E6A9A3 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
@@ -1491,6 +1492,8 @@
 		EC83BC3D1369C57E00DD3355 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		EC83FF951380A29F00060A9D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EC858FC313999E360017BB9F /* tmedia_defaults.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_defaults.c; sourceTree = "<group>"; };
+		EC8C051915E085210048DD21 /* tdav_converter_video.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tdav_converter_video.cxx; sourceTree = "<group>"; };
+		EC8C051B15E0854D0048DD21 /* tmedia_converter_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_converter_video.c; sourceTree = "<group>"; };
 		EC9072211392BAB000E14556 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
 		EC9072221392BAB000E14556 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
 		EC9072231392BAB000E14556 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
@@ -2551,7 +2554,6 @@
 		ECFD31F7135E7DBC00E6A9A3 /* tdav_session_msrp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_msrp.c; sourceTree = "<group>"; };
 		ECFD31F8135E7DBC00E6A9A3 /* tdav.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav.c; sourceTree = "<group>"; };
 		ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_win32.c; sourceTree = "<group>"; };
-		ECFD31FD135E7DBC00E6A9A3 /* tdav_converter_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_converter_video.c; sourceTree = "<group>"; };
 		ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_runnable_video.c; sourceTree = "<group>"; };
 		ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_video.c; sourceTree = "<group>"; };
 		ECFD32AE135E821000E6A9A3 /* libtinyWRAP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyWRAP.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4114,6 +4116,7 @@
 		ECFD2D05135E7CAC00E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EC8C051B15E0854D0048DD21 /* tmedia_converter_video.c */,
 				ECB384FF155174D60035F25D /* tmedia_imageattr.c */,
 				ECFD2D06135E7CAC00E6A9A3 /* content */,
 				ECFD2D0B135E7CAC00E6A9A3 /* tmedia.c */,
@@ -5485,9 +5488,9 @@
 				ECFD3200135E7DBC00E6A9A3 /* v4linux */,
 				ECFD31FB135E7DBC00E6A9A3 /* android */,
 				ECFD31FC135E7DBC00E6A9A3 /* directshow */,
-				ECFD31FD135E7DBC00E6A9A3 /* tdav_converter_video.c */,
 				ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */,
 				ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */,
+				EC8C051915E085210048DD21 /* tdav_converter_video.cxx */,
 				EC4DBBA8141BDAAE0024CBEF /* tdav_consumer_video.c */,
 			);
 			path = video;
@@ -6791,6 +6794,7 @@
 				ECFD2D4D135E7CAC00E6A9A3 /* tmedia_vad.c in Sources */,
 				EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */,
 				ECB38500155174D60035F25D /* tmedia_imageattr.c in Sources */,
+				EC8C051C15E0854D0048DD21 /* tmedia_converter_video.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7054,7 +7058,6 @@
 				ECFD3251135E7DBC00E6A9A3 /* tdav_session_msrp.c in Sources */,
 				ECFD3252135E7DBC00E6A9A3 /* tdav.c in Sources */,
 				ECFD3253135E7DBC00E6A9A3 /* tdav_win32.c in Sources */,
-				ECFD3254135E7DBC00E6A9A3 /* tdav_converter_video.c in Sources */,
 				ECFD3255135E7DBC00E6A9A3 /* tdav_runnable_video.c in Sources */,
 				ECFD3256135E7DBC00E6A9A3 /* tdav_session_video.c in Sources */,
 				EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */,
@@ -7073,6 +7076,7 @@
 				ECB384F9155174B30035F25D /* tdav_session_av.c in Sources */,
 				ECB384FD155174C10035F25D /* tdav_codec_red.c in Sources */,
 				ECB384FE155174C10035F25D /* tdav_codec_ulpfec.c in Sources */,
+				EC8C051A15E085210048DD21 /* tdav_converter_video.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
