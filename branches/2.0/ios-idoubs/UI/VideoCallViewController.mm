@@ -422,8 +422,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.viewLocalVideo.layer.borderWidth = 2.f;
-	self.viewLocalVideo.layer.borderColor = [[UIColor whiteColor] CGColor];
+	self.viewLocalVideo.layer.borderWidth = 1.f;
+	self.viewLocalVideo.layer.borderColor = [[UIColor blackColor] CGColor];
 	// self.viewLocalVideo.layer.cornerRadius = 0.f;
 	
 	self.buttonToolBarEnd.backgroundColor = 
