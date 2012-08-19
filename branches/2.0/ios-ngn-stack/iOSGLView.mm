@@ -59,14 +59,15 @@ const GLubyte Indices[] = {
 "varying vec2 texCoordVarying;" \
 "" \
 "uniform sampler2D SamplerY; " \
-"uniform sampler2D SamplerUV;" \
+"uniform sampler2D SamplerU;" \
+"uniform sampler2D SamplerV;" \
 "" \
 "const mat3 yuv2rgb = mat3(1, 0, 1.2802,1, -0.214821, -0.380589,1, 2.127982, 0);" \
 "" \
 "void main() {    " \
 "    vec3 yuv = vec3(1.1643 * (texture2D(SamplerY, texCoordVarying).r - 0.0625)," \
-"                    texture2D(SamplerUV, texCoordVarying).r - 0.5," \
-"                    texture2D(SamplerUV, texCoordVarying).a - 0.5);" \
+"                    texture2D(SamplerU, texCoordVarying).r - 0.5," \
+"                    texture2D(SamplerV, texCoordVarying).r - 0.5);" \
 "    vec3 rgb = yuv * yuv2rgb;    " \
 "    gl_FragColor = vec4(rgb, 1.0);" \
 "} " \
@@ -88,9 +89,13 @@ return; \
         glUniform1i(_lumaUniform, 0); \
          \
         glActiveTexture(GL_TEXTURE1); \
-        glBindTexture(GL_TEXTURE_2D, _chromaTexture); \
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE_ALPHA, _bufferWidth>>1, _bufferHeight>>1, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, &_buffer[_bufferWidth * _bufferHeight]); \
-        glUniform1i(_chromaUniform, 1); \
+        glBindTexture(GL_TEXTURE_2D, _chromaTextureU); \
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, _bufferWidth>>1, _bufferHeight>>1, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, &_buffer[_bufferWidth * _bufferHeight]); \
+        glUniform1i(_chromaUniformU, 1); \
+        glActiveTexture(GL_TEXTURE2); \
+        glBindTexture(GL_TEXTURE_2D, _chromaTextureV); \
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, _bufferWidth>>1, _bufferHeight>>1, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, &_buffer[(_bufferWidth * _bufferHeight) + ((_bufferWidth>>1) * (_bufferHeight>>1)) ]); \
+        glUniform1i(_chromaUniformV, 2); \
     } \
      \
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0); \
@@ -144,8 +149,14 @@ return; \
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         
-        glGenTextures(1, &_chromaTexture);
-        glBindTexture(GL_TEXTURE_2D, _chromaTexture);
+        glGenTextures(1, &_chromaTextureU);
+        glBindTexture(GL_TEXTURE_2D, _chromaTextureU);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        
+        glGenTextures(2, &_chromaTextureV);
+        glBindTexture(GL_TEXTURE_2D, _chromaTextureV);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
@@ -295,7 +306,8 @@ return; \
     glEnableVertexAttribArray(_texCoordSlot);
     
     _lumaUniform = glGetUniformLocation(_program, "SamplerY");
-    _chromaUniform = glGetUniformLocation(_program, "SamplerUV");
+    _chromaUniformU = glGetUniformLocation(_program, "SamplerU");
+    _chromaUniformV = glGetUniformLocation(_program, "SamplerV");
 }
 
 + (Class)layerClass {
@@ -351,7 +363,8 @@ return; \
     glDeleteShader(_vertexShader);
     
     glDeleteTextures(1, &_lumaTexture);
-    glDeleteTextures(1, &_chromaTexture);
+    glDeleteTextures(1, &_chromaTextureU);
+    glDeleteTextures(1, &_chromaTextureV);
     
     if (_program) {
         glDeleteProgram(_program);
