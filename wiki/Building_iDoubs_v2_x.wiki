@@ -94,4 +94,6 @@ If you are license owner then, you can build a non-GPL version of Doubango and i
  * Right click on *ios-ngn-stack* target => *Get Info* => *Build* tab => *Other C Flags* then:
     # replace *-DHAVE_H264=1* with *-DHAVE_H264=0*
     # replace *-DHAVE_G729=1* with *-DHAVE_G729=0* if you don't have required licenses
-  
+
+===Technical help===
+Please check our [http://code.google.com/p/webrtc2sip/issues/list issue tracker] or [https://groups.google.com/group/doubango developer group] if you have any problem.
