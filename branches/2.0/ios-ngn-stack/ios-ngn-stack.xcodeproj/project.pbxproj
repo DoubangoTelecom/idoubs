@@ -237,6 +237,8 @@
 		ECDDBC2B137CA7960027105F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE71136C8EF80068BCB4 /* AVFoundation.framework */; };
 		ECDDBC2C137CA7960027105F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB9B137C9CB40027105F /* CoreMedia.framework */; };
 		ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
+		ECE203A415F640BB002FE99B /* tsk_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = ECE203A215F640BB002FE99B /* tsk_plugin.c */; };
+		ECE203A515F640BB002FE99B /* tsk_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE203A315F640BB002FE99B /* tsk_plugin.h */; };
 		ECE7E93514284CAC00466331 /* NgnContactEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8B014284CAC00466331 /* NgnContactEventArgs.h */; };
 		ECE7E93614284CAC00466331 /* NgnContactEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8B114284CAC00466331 /* NgnContactEventArgs.mm */; };
 		ECE7E93714284CAC00466331 /* NgnEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8B214284CAC00466331 /* NgnEventArgs.h */; };
@@ -2107,6 +2109,8 @@
 		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		ECE203A215F640BB002FE99B /* tsk_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsk_plugin.c; sourceTree = "<group>"; };
+		ECE203A315F640BB002FE99B /* tsk_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsk_plugin.h; sourceTree = "<group>"; };
 		ECE7E8B014284CAC00466331 /* NgnContactEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContactEventArgs.h; sourceTree = "<group>"; };
 		ECE7E8B114284CAC00466331 /* NgnContactEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnContactEventArgs.mm; sourceTree = "<group>"; };
 		ECE7E8B214284CAC00466331 /* NgnEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnEventArgs.h; sourceTree = "<group>"; };
@@ -4097,6 +4101,8 @@
 		ECFD2903135E7B5200E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ECE203A215F640BB002FE99B /* tsk_plugin.c */,
+				ECE203A315F640BB002FE99B /* tsk_plugin.h */,
 				ECFD2905135E7B5200E6A9A3 /* tinysak_config.h */,
 				ECFD2906135E7B5200E6A9A3 /* tsk.c */,
 				ECFD2907135E7B5200E6A9A3 /* tsk.h */,
@@ -6560,6 +6566,7 @@
 				ECFD2999135E7B5200E6A9A3 /* tsk_url.h in Headers */,
 				ECFD299B135E7B5200E6A9A3 /* tsk_uuid.h in Headers */,
 				ECFD299D135E7B5200E6A9A3 /* tsk_xml.h in Headers */,
+				ECE203A515F640BB002FE99B /* tsk_plugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7779,6 +7786,7 @@
 				ECFD2998135E7B5200E6A9A3 /* tsk_url.c in Sources */,
 				ECFD299A135E7B5200E6A9A3 /* tsk_uuid.c in Sources */,
 				ECFD299C135E7B5200E6A9A3 /* tsk_xml.c in Sources */,
+				ECE203A415F640BB002FE99B /* tsk_plugin.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
