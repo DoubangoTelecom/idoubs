@@ -557,7 +557,7 @@
 		EC9073131392CB3D00E14556 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EC9073141392CB3D00E14556 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EC90731C1392CB8700E14556 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		EC90766913932A4800E14556 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		EC90766913932A4800E14556 /* Settings.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Settings.bundle; sourceTree = "<group>"; };
 		EC90CA1E13B3A637000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EC967987139163C4006187D3 /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
 		EC967A4813918048006187D3 /* PickerViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewControllerDelegate.h; sourceTree = "<group>"; };

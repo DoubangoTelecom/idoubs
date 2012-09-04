@@ -155,8 +155,8 @@
 
 //      Identity
 #define DEFAULT_IDENTITY_DISPLAY_NAME @"John Doe"
-#define DEFAULT_IDENTITY_IMPU @"sip:johndoe@doubango.org"
-#define DEFAULT_IDENTITY_IMPI @"johndoe"
+#define DEFAULT_IDENTITY_IMPU @"sip:001@doubango.org"
+#define DEFAULT_IDENTITY_IMPI @"001"
 #define DEFAULT_IDENTITY_PASSWORD @""
 
 // Network
@@ -256,7 +256,7 @@
 // XCAP
 #define DEFAULT_XCAP_ENABLED NO
 #define DEFAULT_XCAP_ROOT @"http://doubango.org:8080/services"
-#define DEFAULT_XCAP_USERNAME @"sip:johndoe@doubango.org"
+#define DEFAULT_XCAP_USERNAME @"sip:001@doubango.org"
 #define DEFAULT_XCAP_PASSWORD @""
 
 // RCS (Rich Communication Suite)

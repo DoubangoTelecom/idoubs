@@ -189,17 +189,19 @@ private:
 		return -1;
 	}
     
-    if(_mBufferSize != availableSize){
+    // size comparaison is detect: chroma change or width/height change
+    // width/height comparaison is to detect: (width,heigh) swapping which would keep size unchanged
+    unsigned _frameWidth = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDecodedWidth();
+    unsigned _frameHeight = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDecodedHeight();
+    if(_mBufferSize != availableSize || (mWidth != _frameWidth) || (mHeight != _frameHeight)){
 		NgnNSLog(TAG, "bufferCopiedWithSize(copiedSize=%u,availableSize=%u)", copiedSize, availableSize);
-		unsigned _newWidth = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayWidth();
-		unsigned _newHeight = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayHeight();
-		if(_newWidth<=0 || _newHeight<=0){
-			NgnNSLog(TAG,"nCopiedSize=%u and newWidth=%u and newHeight=%u", copiedSize, _newWidth, _newHeight);
+		if(_frameWidth<=0 || _frameHeight<=0){
+			NgnNSLog(TAG,"nCopiedSize=%u and newWidth=%u and newHeight=%u", copiedSize, _frameWidth, _frameHeight);
 			return -1;
 		}
 		// resize buffer
-		if([self resizeBufferWithWidth: _newWidth andHeight: _newHeight]){
-			TSK_DEBUG_ERROR("resizeBufferWithWidth:%i andHeight:%i has failed", _newWidth, _newHeight);
+		if([self resizeBufferWithWidth:_frameWidth andHeight: _frameHeight]){
+			TSK_DEBUG_ERROR("resizeBufferWithWidth:%i andHeight:%i has failed", _frameWidth, _frameHeight);
 			return -1;
 		}
 		// Draw the picture next time
