@@ -191,8 +191,8 @@ private:
     
     // size comparaison is detect: chroma change or width/height change
     // width/height comparaison is to detect: (width,heigh) swapping which would keep size unchanged
-    unsigned _frameWidth = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDecodedWidth();
-    unsigned _frameHeight = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDecodedHeight();
+    unsigned _frameWidth = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayWidth();
+    unsigned _frameHeight = const_cast<ProxyVideoConsumer *>(_mConsumer)->getDisplayHeight();
     if(_mBufferSize != availableSize || (mWidth != _frameWidth) || (mHeight != _frameHeight)){
 		NgnNSLog(TAG, "bufferCopiedWithSize(copiedSize=%u,availableSize=%u)", copiedSize, availableSize);
 		if(_frameWidth<=0 || _frameHeight<=0){
