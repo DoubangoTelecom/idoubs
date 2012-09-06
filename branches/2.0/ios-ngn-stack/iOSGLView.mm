@@ -127,7 +127,7 @@ return; \
     if (self) {
         self.contentScaleFactor = [UIScreen mainScreen].scale;
         self.autoresizingMask = (UIViewAutoresizingFlexibleWidth |  UIViewAutoresizingFlexibleHeight);
-        self.contentMode = UIViewContentModeScaleToFill;
+        self.contentMode = UIViewContentModeScaleAspectFill;
         
         [self setupLayer];
         [self setupContext];
@@ -232,7 +232,9 @@ return; \
             @synchronized(self){
                 _bufferSize = ((bufferWidth * bufferHeight * 3) >> 1);
                 _buffer = (uint8_t*)realloc(_buffer, _bufferSize);
-                if(!_buffer) return;
+                if(!_buffer){
+                    return;
+                }
                 _bufferWidth = bufferWidth;
                 _bufferHeight = bufferHeight;
             }
