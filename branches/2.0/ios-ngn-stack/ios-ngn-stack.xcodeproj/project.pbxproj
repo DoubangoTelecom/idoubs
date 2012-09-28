@@ -9968,7 +9968,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testPresence;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -10014,7 +10013,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = testPresence;
-				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
