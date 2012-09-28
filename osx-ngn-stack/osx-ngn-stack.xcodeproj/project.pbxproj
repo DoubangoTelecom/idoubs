@@ -7284,7 +7284,6 @@
 				HEADER_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
 				NGN_STACK_HOME = ..;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-fms-extensions",
 					"-DDEBUG_LEVEL=DEBUG_LEVEL_INFO",
@@ -7305,7 +7304,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx;
 				SYMROOT = build;
 			};
 			name = Debug;
@@ -7347,7 +7345,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx;
 				SYMROOT = build;
 			};
 			name = Release;
@@ -7793,7 +7790,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -7811,7 +7807,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
-				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
