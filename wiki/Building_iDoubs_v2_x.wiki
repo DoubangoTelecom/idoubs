@@ -95,5 +95,16 @@ If you are license owner then, you can build a non-GPL version of Doubango and i
     # replace *-DHAVE_H264=1* with *-DHAVE_H264=0*
     # replace *-DHAVE_G729=1* with *-DHAVE_G729=0* if you don't have required licenses
 
+===Linking the ios-ngn-stack in your own app===
+1. Place your application code in the same folder than iDoubs: *mydoubs/ 
+iPhone/idoubs/branches/2.0/*. This is not required but it's easier to avoid changing the paths by yourself.<br />
+2. Add*ios-ngn-stack*project as reference to your xcode project as explained at [http://www.weston-fl.com/blog/?p=2429 http://www.weston-fl.com/blog/?p=2429]<br />
+3. Copy all "User-Defined" settings from iDoubs project (NOT target) 
+to your application project<br />
+4. Copy "Other Linker Flags" value from iDoubs target (NOT project) to 
+you application target<br />
+5. Same as (4) for "Header Search Paths"<br />
+6. Same as (4) for "Library Search Paths"<br />
+
 ===Technical help===
 Please check our [http://code.google.com/p/webrtc2sip/issues/list issue tracker] or [https://groups.google.com/group/doubango developer group] if you have any problem.
