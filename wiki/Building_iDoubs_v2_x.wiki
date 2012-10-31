@@ -98,7 +98,7 @@ If you are license owner then, you can build a non-GPL version of Doubango and i
 ===Linking the ios-ngn-stack in your own app===
 1. Place your application code in the same folder than iDoubs: *mydoubs/ 
 iPhone/idoubs/branches/2.0/*. This is not required but it's easier to avoid changing the paths by yourself.<br />
-2. Add*ios-ngn-stack*project as reference to your xcode project as explained at [http://www.weston-fl.com/blog/?p=2429 http://www.weston-fl.com/blog/?p=2429]<br />
+2. Add *ios-ngn-stack* project as reference to your xcode project as explained at [http://www.weston-fl.com/blog/?p=2429 http://www.weston-fl.com/blog/?p=2429]<br />
 3. Copy all "User-Defined" settings from iDoubs project (NOT target) 
 to your application project<br />
 4. Copy "Other Linker Flags" value from iDoubs target (NOT project) to 
