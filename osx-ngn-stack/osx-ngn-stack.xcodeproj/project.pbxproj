@@ -35,6 +35,15 @@
 
 /* Begin PBXBuildFile section */
 		EC26AF6D1422BC880046BBB5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4DBB19141BD1360024CBEF /* AddressBook.framework */; };
+		EC3021F916444CCA0084F78F /* tdav_consumer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F516444CCA0084F78F /* tdav_consumer_t140.h */; };
+		EC3021FA16444CCA0084F78F /* tdav_producer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F616444CCA0084F78F /* tdav_producer_t140.h */; };
+		EC3021FB16444CCA0084F78F /* tdav_session_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F716444CCA0084F78F /* tdav_session_t140.h */; };
+		EC3021FC16444CCA0084F78F /* tdav_session_av.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F816444CCA0084F78F /* tdav_session_av.h */; };
+		EC3021FF16444CDB0084F78F /* tdav_codec_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021FE16444CDB0084F78F /* tdav_codec_t140.h */; };
+		EC30220416444CF00084F78F /* tdav_consumer_t140.c in Sources */ = {isa = PBXBuildFile; fileRef = EC30220116444CF00084F78F /* tdav_consumer_t140.c */; };
+		EC30220516444CF00084F78F /* tdav_producer_t140.c in Sources */ = {isa = PBXBuildFile; fileRef = EC30220216444CF00084F78F /* tdav_producer_t140.c */; };
+		EC30220616444CF00084F78F /* tdav_session_t140.c in Sources */ = {isa = PBXBuildFile; fileRef = EC30220316444CF00084F78F /* tdav_session_t140.c */; };
+		EC30220916444D0A0084F78F /* tdav_codec_t140.c in Sources */ = {isa = PBXBuildFile; fileRef = EC30220816444D0A0084F78F /* tdav_codec_t140.c */; };
 		EC4DBBAA141BDAAE0024CBEF /* tdav_consumer_video.c in Sources */ = {isa = PBXBuildFile; fileRef = EC4DBBA8141BDAAE0024CBEF /* tdav_consumer_video.c */; };
 		EC4DBBAE141BDAD00024CBEF /* tdav_consumer_video.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4DBBAC141BDAD00024CBEF /* tdav_consumer_video.h */; };
 		EC4DBBAF141BDAD00024CBEF /* tdav_video_jitterbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4DBBAD141BDAD00024CBEF /* tdav_video_jitterbuffer.h */; };
@@ -1332,6 +1341,15 @@
 
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC3021F516444CCA0084F78F /* tdav_consumer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_t140.h; sourceTree = "<group>"; };
+		EC3021F616444CCA0084F78F /* tdav_producer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_t140.h; sourceTree = "<group>"; };
+		EC3021F716444CCA0084F78F /* tdav_session_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_t140.h; sourceTree = "<group>"; };
+		EC3021F816444CCA0084F78F /* tdav_session_av.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_av.h; sourceTree = "<group>"; };
+		EC3021FE16444CDB0084F78F /* tdav_codec_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_t140.h; sourceTree = "<group>"; };
+		EC30220116444CF00084F78F /* tdav_consumer_t140.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_consumer_t140.c; sourceTree = "<group>"; };
+		EC30220216444CF00084F78F /* tdav_producer_t140.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_producer_t140.c; sourceTree = "<group>"; };
+		EC30220316444CF00084F78F /* tdav_session_t140.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_t140.c; sourceTree = "<group>"; };
+		EC30220816444D0A0084F78F /* tdav_codec_t140.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_t140.c; sourceTree = "<group>"; };
 		EC4DBB19141BD1360024CBEF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		EC4DBB1B141BD1360024CBEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EC4DBB1D141BD1360024CBEF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -2807,6 +2825,42 @@
 			children = (
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		EC3021F416444CCA0084F78F /* t140 */ = {
+			isa = PBXGroup;
+			children = (
+				EC3021F516444CCA0084F78F /* tdav_consumer_t140.h */,
+				EC3021F616444CCA0084F78F /* tdav_producer_t140.h */,
+				EC3021F716444CCA0084F78F /* tdav_session_t140.h */,
+			);
+			path = t140;
+			sourceTree = "<group>";
+		};
+		EC3021FD16444CDB0084F78F /* t140 */ = {
+			isa = PBXGroup;
+			children = (
+				EC3021FE16444CDB0084F78F /* tdav_codec_t140.h */,
+			);
+			path = t140;
+			sourceTree = "<group>";
+		};
+		EC30220016444CF00084F78F /* t140 */ = {
+			isa = PBXGroup;
+			children = (
+				EC30220116444CF00084F78F /* tdav_consumer_t140.c */,
+				EC30220216444CF00084F78F /* tdav_producer_t140.c */,
+				EC30220316444CF00084F78F /* tdav_session_t140.c */,
+			);
+			path = t140;
+			sourceTree = "<group>";
+		};
+		EC30220716444D0A0084F78F /* t140 */ = {
+			isa = PBXGroup;
+			children = (
+				EC30220816444D0A0084F78F /* tdav_codec_t140.c */,
+			);
+			path = t140;
 			sourceTree = "<group>";
 		};
 		EC54628E1426FDFE00BFBF66 /* vpx */ = {
@@ -4964,11 +5018,13 @@
 		ECFD3177135E7DBB00E6A9A3 /* tinydav */ = {
 			isa = PBXGroup;
 			children = (
+				EC3021F416444CCA0084F78F /* t140 */,
 				ECFD3178135E7DBB00E6A9A3 /* audio */,
 				ECFD318C135E7DBB00E6A9A3 /* codecs */,
 				ECFD31AE135E7DBB00E6A9A3 /* msrp */,
 				ECFD31B4135E7DBB00E6A9A3 /* video */,
 				ECFD31B2135E7DBB00E6A9A3 /* tdav.h */,
+				EC3021F816444CCA0084F78F /* tdav_session_av.h */,
 				ECFD31B3135E7DBB00E6A9A3 /* tdav_win32.h */,
 				EC824AED136ECE9F004FC3A8 /* tdav_apple.h */,
 			);
@@ -5043,6 +5099,7 @@
 		ECFD318C135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				EC3021FD16444CDB0084F78F /* t140 */,
 				EC54628E1426FDFE00BFBF66 /* vpx */,
 				ECFD318D135E7DBB00E6A9A3 /* amr */,
 				ECFD318F135E7DBB00E6A9A3 /* bv */,
@@ -5244,6 +5301,7 @@
 		ECFD31BD135E7DBB00E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EC30220016444CF00084F78F /* t140 */,
 				ECFD31BE135E7DBB00E6A9A3 /* audio */,
 				ECFD31D2135E7DBB00E6A9A3 /* codecs */,
 				ECFD31F4135E7DBC00E6A9A3 /* msrp */,
@@ -5323,6 +5381,7 @@
 		ECFD31D2135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				EC30220716444D0A0084F78F /* t140 */,
 				ECB384FA155174C10035F25D /* fec */,
 				EC5462911426FE1600BFBF66 /* vpx */,
 				ECFD31D3135E7DBB00E6A9A3 /* amr */,
@@ -6152,6 +6211,11 @@
 				EC4DBBAF141BDAD00024CBEF /* tdav_video_jitterbuffer.h in Headers */,
 				EC5462901426FDFE00BFBF66 /* tdav_codec_vp8.h in Headers */,
 				EC5464DA14273FE500BFBF66 /* tdav_webrtc_denoise.h in Headers */,
+				EC3021F916444CCA0084F78F /* tdav_consumer_t140.h in Headers */,
+				EC3021FA16444CCA0084F78F /* tdav_producer_t140.h in Headers */,
+				EC3021FB16444CCA0084F78F /* tdav_session_t140.h in Headers */,
+				EC3021FC16444CCA0084F78F /* tdav_session_av.h in Headers */,
+				EC3021FF16444CDB0084F78F /* tdav_codec_t140.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7085,6 +7149,10 @@
 				ECB384FD155174C10035F25D /* tdav_codec_red.c in Sources */,
 				ECB384FE155174C10035F25D /* tdav_codec_ulpfec.c in Sources */,
 				EC8C051A15E085210048DD21 /* tdav_converter_video.cxx in Sources */,
+				EC30220416444CF00084F78F /* tdav_consumer_t140.c in Sources */,
+				EC30220516444CF00084F78F /* tdav_producer_t140.c in Sources */,
+				EC30220616444CF00084F78F /* tdav_session_t140.c in Sources */,
+				EC30220916444D0A0084F78F /* tdav_codec_t140.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
