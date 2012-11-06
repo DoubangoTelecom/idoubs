@@ -506,7 +506,7 @@ private:
 	
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
 	[self performSelectorOnMainThread:@selector(stopBlankPacketsTimer) withObject:nil waitUntilDone:NO];
-	[self stopVideoCapture];
+    [self performSelectorOnMainThread:@selector(stopVideoCapture) withObject:nil waitUntilDone:NO];
 #endif
 	return 0;
 }
