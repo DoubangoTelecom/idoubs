@@ -227,7 +227,7 @@ private:
 		return -1;
 	}
 	if(_mBufferPtr && mDisplay){
-		memcpy(_mBufferPtr, _frame->fastGetContent(), TSK_MIN(_frame->fastGetSize(), _mBufferSize));
+		memcpy(_mBufferPtr, _frame->getBufferPtr(), TSK_MIN(_frame->getBufferSize(), _mBufferSize));
 		
 #if TARGET_OS_IPHONE
         [mDisplay setBufferYUV:_mBufferPtr andWidth:mWidth andHeight:mHeight];
