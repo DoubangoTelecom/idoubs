@@ -122,8 +122,6 @@
 													 self.buttonHangUp.frame.size.height);
 				[self.buttonHangUp setTitle:@"End" forState:UIControlStateNormal];
 				
-				self.imageSecure.hidden = ![videoSession isSecure];
-				
 				break;
 			}
 			case INVITE_STATE_INCOMING:
@@ -187,6 +185,9 @@
 				self.imageSecure.hidden = ![videoSession isSecure];
 				
 				[[NgnEngine sharedInstance].soundService setSpeakerEnabled:[videoSession isSpeakerEnabled]];
+                
+                self.imageSecure.hidden = ![videoSession isSecure];
+                
 				break;
 			}
 			case INVITE_STATE_TERMINATED:
