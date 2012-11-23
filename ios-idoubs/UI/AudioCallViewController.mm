@@ -99,8 +99,6 @@
 													 self.buttonHideNumpad.hidden ? 
 														(self.viewBottom.frame.size.width - (2*pad)) : (self.viewBottom.frame.size.width/2) - (pad + pad/2),
 													 self.buttonHangup.frame.size.height);
-				
-				self.imageSecure.hidden = ![audioSession isSecure];
 				break;
 			}
 			case INVITE_STATE_INCOMING:
@@ -169,6 +167,8 @@
 				
 				[[NgnEngine sharedInstance].soundService stopRingBackTone];
 				[[NgnEngine sharedInstance].soundService stopRingTone];
+                
+                self.imageSecure.hidden = ![audioSession isSecure];
 				break;
 			}
 			case INVITE_STATE_TERMINATED:
