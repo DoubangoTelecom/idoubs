@@ -1278,6 +1278,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC28FB93166C6B8500EB654F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
 		EC7D39681379ED980052CE45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -7409,6 +7416,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC28FB94166C6B8500EB654F /* PBXTargetDependency */,
 				ECFD2697135D5DE500E6A9A3 /* PBXTargetDependency */,
 				ECFD2699135D5DE500E6A9A3 /* PBXTargetDependency */,
 			);
@@ -8390,6 +8398,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC28FB94166C6B8500EB654F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC28FB93166C6B8500EB654F /* PBXContainerItemProxy */;
+		};
 		EC7D39691379ED980052CE45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* ios-ngn-stack */;
@@ -8989,7 +9002,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_LIBYUV=1",
 					"-DHAVE_SWSSCALE=0",
-					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_OPENSSL=1",
 					"-DHAVE_SRTP=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -9032,7 +9045,7 @@
 					"-DHAVE_H264=1",
 					"-DHAVE_LIBYUV=1",
 					"-DHAVE_SWSSCALE=0",
-					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_OPENSSL=1",
 					"-DHAVE_SRTP=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -9612,6 +9625,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
@@ -9629,6 +9643,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
