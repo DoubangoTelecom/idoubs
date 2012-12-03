@@ -1134,6 +1134,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC28FB7F166C685100EB654F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
 		EC8EBCE11368330400DC70DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -6330,6 +6337,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC28FB80166C685100EB654F /* PBXTargetDependency */,
 				ECFD2697135D5DE500E6A9A3 /* PBXTargetDependency */,
 				ECFD2699135D5DE500E6A9A3 /* PBXTargetDependency */,
 			);
@@ -7184,6 +7192,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC28FB80166C685100EB654F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC28FB7F166C685100EB654F /* PBXContainerItemProxy */;
+		};
 		EC8EBCE21368330400DC70DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
@@ -7368,7 +7381,7 @@
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_SWSSCALE=1",
 					"-DHAVE_SRTP=1",
-					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_OPENSSL=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -7409,7 +7422,7 @@
 					"-DHAVE_LIBVPX=1",
 					"-DHAVE_SWSSCALE=1",
 					"-DHAVE_SRTP=1",
-					"-DHAVE_OPENSSL_H=1",
+					"-DHAVE_OPENSSL=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -7638,6 +7651,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/mac/include,
 				);
@@ -7655,6 +7669,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/tinyRTP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/mac/include,
 				);
