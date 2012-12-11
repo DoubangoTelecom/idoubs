@@ -87,7 +87,9 @@ public:
 		const SipMessage* _sipMesssage = _e->getSipMessage();
 		
 		if(!_session){
-			TSK_DEBUG_ERROR("Null Sip session");
+            // this is not really an issue and could happen when server-type sessions are terminated from doubango
+			if(_code == tsip_event_code_dialog_terminated) return 0;
+            TSK_DEBUG_ERROR("Null Sip session");
 			return -1;
 		}
 		
