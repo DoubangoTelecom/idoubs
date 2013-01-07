@@ -178,6 +178,8 @@
 		EC90C9C613B3A5A8000386CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90C9C013B3A530000386CA /* SystemConfiguration.framework */; };
 		EC95479B136DB84D00F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		EC9547CD136DBDC400F4C113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
+		EC9DE06E169B3DBA003A8B61 /* tnet_dtls.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9DE06C169B3DBA003A8B61 /* tnet_dtls.c */; };
+		EC9DE06F169B3DBA003A8B61 /* tnet_dtls.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9DE06D169B3DBA003A8B61 /* tnet_dtls.h */; };
 		ECA0EFC815110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */; };
 		ECA0EFC915110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */; };
 		ECA0EFCA15110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0EFC615110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */; };
@@ -2084,6 +2086,8 @@
 		EC8C052F15E0893A0048DD21 /* tmedia_converter_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmedia_converter_video.c; sourceTree = "<group>"; };
 		EC8C053115E0895D0048DD21 /* tdav_converter_video.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tdav_converter_video.cxx; sourceTree = "<group>"; };
 		EC90C9C013B3A530000386CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EC9DE06C169B3DBA003A8B61 /* tnet_dtls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_dtls.c; sourceTree = "<group>"; };
+		EC9DE06D169B3DBA003A8B61 /* tnet_dtls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_dtls.h; sourceTree = "<group>"; };
 		ECA0EFC415110C59005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Accept.h; sourceTree = "<group>"; };
 		ECA0EFC515110C59005EF3BB /* thttp_header_Sec_WebSocket_Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Key.h; sourceTree = "<group>"; };
 		ECA0EFC615110C59005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_header_Sec_WebSocket_Protocol.h; sourceTree = "<group>"; };
@@ -4390,6 +4394,8 @@
 		ECFD2A04135E7B8500E6A9A3 /* tls */ = {
 			isa = PBXGroup;
 			children = (
+				EC9DE06C169B3DBA003A8B61 /* tnet_dtls.c */,
+				EC9DE06D169B3DBA003A8B61 /* tnet_dtls.h */,
 				ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */,
 				ECFD2A06135E7B8500E6A9A3 /* tnet_tls.h */,
 			);
@@ -6690,6 +6696,7 @@
 				ECB3845715516A730035F25D /* tnet_ice_event.h in Headers */,
 				ECB3845915516A730035F25D /* tnet_ice_pair.h in Headers */,
 				ECB3845B15516A730035F25D /* tnet_ice_utils.h in Headers */,
+				EC9DE06F169B3DBA003A8B61 /* tnet_dtls.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7914,6 +7921,7 @@
 				ECB3845615516A730035F25D /* tnet_ice_event.c in Sources */,
 				ECB3845815516A730035F25D /* tnet_ice_pair.c in Sources */,
 				ECB3845A15516A730035F25D /* tnet_ice_utils.c in Sources */,
+				EC9DE06E169B3DBA003A8B61 /* tnet_dtls.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9689,6 +9697,7 @@
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					"$(DOUBANGO_HOME)/tinyMSRP/include",
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMSRP;
@@ -9706,6 +9715,7 @@
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					"$(DOUBANGO_HOME)/tinyMSRP/include",
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMSRP;
@@ -9723,6 +9733,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyHTTP;
@@ -9739,6 +9750,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyHTTP;
@@ -9757,6 +9769,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMEDIA;
@@ -9774,6 +9787,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMEDIA;
@@ -9844,6 +9858,7 @@
 					$DOUBANGO_HOME/tinyHTTP/include,
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
@@ -9861,6 +9876,7 @@
 					$DOUBANGO_HOME/tinyHTTP/include,
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
@@ -9881,6 +9897,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySIP;
@@ -9900,6 +9917,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO_HOME/thirdparties/iphone/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySIP;

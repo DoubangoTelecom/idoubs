@@ -200,6 +200,8 @@
 		EC858FC413999E360017BB9F /* tmedia_defaults.c in Sources */ = {isa = PBXBuildFile; fileRef = EC858FC313999E360017BB9F /* tmedia_defaults.c */; };
 		EC8C051A15E085210048DD21 /* tdav_converter_video.cxx in Sources */ = {isa = PBXBuildFile; fileRef = EC8C051915E085210048DD21 /* tdav_converter_video.cxx */; };
 		EC8C051C15E0854D0048DD21 /* tmedia_converter_video.c in Sources */ = {isa = PBXBuildFile; fileRef = EC8C051B15E0854D0048DD21 /* tmedia_converter_video.c */; };
+		EC9DE058169B3648003A8B61 /* tnet_dtls.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9DE056169B3648003A8B61 /* tnet_dtls.c */; };
+		EC9DE059169B3648003A8B61 /* tnet_dtls.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9DE057169B3648003A8B61 /* tnet_dtls.h */; };
 		ECA0F0E915112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */; };
 		ECA0F0EA15112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */; };
 		ECA0F0EB15112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */; };
@@ -1535,6 +1537,8 @@
 		EC90722C1392BAB000E14556 /* dtmf-star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-star.wav"; sourceTree = "<group>"; };
 		EC90722D1392BAB000E14556 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		EC90722E1392BAB000E14556 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		EC9DE056169B3648003A8B61 /* tnet_dtls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_dtls.c; sourceTree = "<group>"; };
+		EC9DE057169B3648003A8B61 /* tnet_dtls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_dtls.h; sourceTree = "<group>"; };
 		ECA0F0E515112649005EF3BB /* thttp_header_Sec_WebSocket_Accept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Accept.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Accept.h; sourceTree = "<group>"; };
 		ECA0F0E615112649005EF3BB /* thttp_header_Sec_WebSocket_Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Key.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Key.h; sourceTree = "<group>"; };
 		ECA0F0E715112649005EF3BB /* thttp_header_Sec_WebSocket_Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thttp_header_Sec_WebSocket_Protocol.h; path = tinyhttp/headers/thttp_header_Sec_WebSocket_Protocol.h; sourceTree = "<group>"; };
@@ -3483,6 +3487,8 @@
 		ECFD2A04135E7B8500E6A9A3 /* tls */ = {
 			isa = PBXGroup;
 			children = (
+				EC9DE056169B3648003A8B61 /* tnet_dtls.c */,
+				EC9DE057169B3648003A8B61 /* tnet_dtls.h */,
 				ECFD2A05135E7B8500E6A9A3 /* tnet_tls.c */,
 				ECFD2A06135E7B8500E6A9A3 /* tnet_tls.h */,
 			);
@@ -5769,6 +5775,7 @@
 				ECB38516155175450035F25D /* tnet_ice_event.h in Headers */,
 				ECB38518155175450035F25D /* tnet_ice_pair.h in Headers */,
 				ECB3851A155175450035F25D /* tnet_ice_utils.h in Headers */,
+				EC9DE059169B3648003A8B61 /* tnet_dtls.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6716,6 +6723,7 @@
 				ECB38515155175450035F25D /* tnet_ice_event.c in Sources */,
 				ECB38517155175450035F25D /* tnet_ice_pair.c in Sources */,
 				ECB38519155175450035F25D /* tnet_ice_utils.c in Sources */,
+				EC9DE058169B3648003A8B61 /* tnet_dtls.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
