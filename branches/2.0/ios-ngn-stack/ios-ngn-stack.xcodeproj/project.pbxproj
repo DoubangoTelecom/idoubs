@@ -2267,7 +2267,7 @@
 		ECE7E93414284CAC00466331 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		ECE7E9A114284CD300466331 /* iOSProxyVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSProxyVideoProducer.h; sourceTree = "<group>"; };
 		ECE7E9A214284CD300466331 /* iOSProxyVideoProducer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSProxyVideoProducer.mm; sourceTree = "<group>"; };
-		ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport_cfsocket.c; sourceTree = "<group>"; };
+		ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tnet_transport_cfsocket.c; sourceTree = "<group>"; };
 		ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnPrivate.h; sourceTree = "<group>"; };
 		ECFD2426135D584100E6A9A3 /* libtinySAK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinySAK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyNET.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -8997,7 +8997,7 @@
 				OTHER_CFLAGS = (
 					"-fms-extensions",
 					"-DRECYCLE_STACK=1",
-					"-DDEBUG_LEVEL=DEBUG_LEVEL_WARN",
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_INFO",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",
@@ -9013,7 +9013,7 @@
 					"-DHAVE_OPENSSL=1",
 					"-DHAVE_SRTP=1",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -9040,7 +9040,7 @@
 				OTHER_CFLAGS = (
 					"-fms-extensions",
 					"-DRECYCLE_STACK=1",
-					"-DDEBUG_LEVEL=DEBUG_LEVEL_WARN",
+					"-DDEBUG_LEVEL=DEBUG_LEVEL_INFO",
 					"-DHAVE_SPEEX_DSP=1",
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",
@@ -9056,7 +9056,7 @@
 					"-DHAVE_OPENSSL=1",
 					"-DHAVE_SRTP=1",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
