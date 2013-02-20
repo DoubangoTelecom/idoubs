@@ -49,6 +49,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		EC08364016D4362E00414D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC08363F16D4362E00414D31 /* Security.framework */; };
 		EC6AD68B136B3A8E00617B95 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6AD68A136B3A8E00617B95 /* MainWindow.xib */; };
 		EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994D1396BA62006A8F91 /* visio_call.png */; };
 		EC7D99501396BA62006A8F91 /* voice_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994E1396BA62006A8F91 /* voice_call.png */; };
@@ -489,6 +490,7 @@
 		28A0AB4B0D9B1048005BE974 /* idoubs_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idoubs_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* idoubs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "idoubs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC08363F16D4362E00414D31 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EC6AD68A136B3A8E00617B95 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		EC7D994D1396BA62006A8F91 /* visio_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visio_call.png; sourceTree = "<group>"; };
 		EC7D994E1396BA62006A8F91 /* voice_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_call.png; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC08364016D4362E00414D31 /* Security.framework in Frameworks */,
 				ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */,
 				ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */,
 				ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */,
@@ -741,6 +744,7 @@
 		29B97314FDCFA39411CA2CEA /* idoubs */ = {
 			isa = PBXGroup;
 			children = (
+				EC08363F16D4362E00414D31 /* Security.framework */,
 				ECC6F5B61597E0E7005401EC /* OpenGLES.framework */,
 				EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */,
 				EC7E2F4D138968E50020EB89 /* UI */,
