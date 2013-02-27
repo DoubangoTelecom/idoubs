@@ -351,10 +351,10 @@ private:
     
 	if(item){
 		tmedia_producer_t* _wrapped_producer = (tmedia_producer_t*)tsk_object_ref((void*)_mProducer->getWrappedPlugin());
-		if(_wrapped_producer){
+		if(_wrapped_producer && _wrapped_producer->is_started){
 			_wrapped_producer->enc_cb.callback(_wrapped_producer->enc_cb.callback_data, TSK_BUFFER_DATA(item->data), TSK_BUFFER_SIZE(item->data));
-            tsk_object_unref(_wrapped_producer);
 		}
+        tsk_object_unref(_wrapped_producer);
 		TSK_OBJECT_SAFE_FREE(item);
 	}
 }
