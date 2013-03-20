@@ -90,6 +90,10 @@
 		[self networkAlert:kNetworkAlertMsgThreedGNotEnabled];
 		return NO;
 	}
+    else if(![[NgnEngine sharedInstance].networkService isReachable]){
+        [self networkAlert:kNetworkAlertMsgNotReachable];
+		return NO;
+    }
 	else {
 		return [[NgnEngine sharedInstance].sipService registerIdentity];
 	}
@@ -498,7 +502,7 @@ static dispatch_block_t sExpirationHandler = nil;
 	// application.idleTimerDisabled = NO;
 	
     ConnectionState_t registrationState = [[NgnEngine sharedInstance].sipService getRegistrationState];
-	NgnNSLog(TAG, @"applicationWillEnterForeground and RegistrationState=%d", registrationState);
+	NgnNSLog(TAG, @"applicationWillEnterForeground and RegistrationState=%d, NetworkReachable=%s", registrationState, [NgnEngine sharedInstance].networkService.reachable ? "TRUE" : "FALSE");
 	
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000
 	// terminate background task
