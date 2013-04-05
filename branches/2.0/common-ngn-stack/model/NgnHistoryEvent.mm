@@ -58,7 +58,7 @@
 			self->remotePartyDisplayName = [self.remoteParty retain];
 		}
 		else {
-			self->remotePartyDisplayName = [[NgnStringUtils nullValue] retain];
+			self->remotePartyDisplayName = (NSString*)[[NgnStringUtils nullValue] retain];
 		}
 	}
 	return self->remotePartyDisplayName;

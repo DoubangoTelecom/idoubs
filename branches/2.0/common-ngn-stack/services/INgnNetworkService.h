@@ -58,7 +58,7 @@ NgnNetworkReachability_t;
 -(NgnNetworkReachability_t) getReachability;
 -(BOOL) isReachable;
 
-@property(readwrite, retain, getter=getReachabilityHostName, setter=setReachabilityHostName) NSString* reachabilityHostName;
+@property(readwrite, retain, getter=getReachabilityHostName, setter=setReachabilityHostName:) NSString* reachabilityHostName;
 @property(readonly, getter=getNetworkType) NgnNetworkType_t networkType;
 @property(readonly, getter=getReachability) NgnNetworkReachability_t reachability;
 @property(readonly, getter=isReachable) BOOL reachable;

@@ -46,7 +46,7 @@ ConnectionState_t;
 
 @property(readonly, getter=getId) long id;
 @property(readonly, getter=getConnectionState) ConnectionState_t connectionState;
-@property(readwrite, assign, getter=getRemotePartyUri, setter=setRemotePartyUri) NSString* remotePartyUri;
+@property(readwrite, assign, getter=getRemotePartyUri, setter=setRemotePartyUri:) NSString* remotePartyUri;
 @property(readonly, getter=getFromUri) NSString* fromUri;
 @property(readonly, getter=getToUri) NSString* toUri;
 @property(readonly, getter=isConnected) BOOL connected;
