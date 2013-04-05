@@ -134,7 +134,7 @@
 	if([NgnStringUtils isNullOrEmpty:mRemotePartyUri]){
 		mRemotePartyUri =  mOutgoing ? [mToUri retain] : [mFromUri retain];
 	}
-	return [NgnStringUtils isNullOrEmpty:mRemotePartyUri] ? [NgnStringUtils emptyValue] : mRemotePartyUri;
+	return mRemotePartyUri;
 }
 
 -(void)setRemotePartyUri:(NSString*)uri{

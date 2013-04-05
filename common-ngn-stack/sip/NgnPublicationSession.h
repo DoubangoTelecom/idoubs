@@ -31,8 +31,8 @@ class ActionConfig;
 	NSString *mContentType;
 }
 
-@property(retain,getter=getContentType,setter=setContentType) NSString* contentType;
-@property(retain,getter=getEvent,setter=setEvent) NSString* event;
+@property(retain,getter=getContentType,setter=setContentType:) NSString* contentType;
+@property(retain,getter=getEvent,setter=setEvent:) NSString* event;
 
 +(NSData*) createPresenceContentWithEntityUri:(NSString*)entityUri andStatus:(NgnPresenceStatus_t)status  andNote:(NSString*)note;
 +(NgnPublicationSession*) createOutgoingSessionWithStack:(NgnSipStack*)sipStack 

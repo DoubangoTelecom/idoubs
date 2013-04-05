@@ -53,7 +53,7 @@ InviteState_t;
 }
 
 @property(readonly,getter=getMediaType) NgnMediaType_t mediaType;
-@property(readwrite,getter=getState,setter=setState) InviteState_t state;
+@property(readwrite,getter=getState,setter=setState:) InviteState_t state;
 @property(readonly) BOOL active;
 @property(readonly,getter=getHistoryEvent) NgnHistoryEvent* historyEvent;
 @property(readonly,getter=getRemotePartyDisplayName) NSString* remotePartyDisplayName;
