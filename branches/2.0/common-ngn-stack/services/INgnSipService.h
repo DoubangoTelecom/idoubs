@@ -37,10 +37,10 @@
 -(BOOL)registerIdentity;
 -(BOOL)unRegisterIdentity;
 
-@property(readwrite, retain, getter=getDefaultIdentity, setter=setDefaultIdentity) NSString* defaultIdentity;
+@property(readwrite, retain, getter=getDefaultIdentity, setter=setDefaultIdentity:) NSString* defaultIdentity;
 @property(readonly, getter=getSipStack) NgnSipStack* stack;
 @property(readonly, getter=isRegistered) BOOL registered;
 @property(readonly, getter=getRegistrationState) ConnectionState_t registrationState;
-@property(readwrite, getter=getCodecs, setter=setCodecs) int codecs;
+@property(readwrite, getter=getCodecs, setter=setCodecs:) int codecs;
 
 @end
