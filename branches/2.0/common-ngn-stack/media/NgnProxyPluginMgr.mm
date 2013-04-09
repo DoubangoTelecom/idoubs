@@ -207,6 +207,7 @@ done:
 		_sPluginMgr = ProxyPluginMgr::createInstance(_sMyProxyPluginMgrCallback);
 	}
 	
+    MediaSessionMgr::defaultsSetVideoZeroArtifactsEnabled(NO);
 	MediaSessionMgr::defaultsSetBandwidthLevel(tmedia_bl_unrestricted);
 	MediaSessionMgr::defaultsSetNoiseSuppEnabled(YES);
 	MediaSessionMgr::defaultsSetVadEnabled(NO);
