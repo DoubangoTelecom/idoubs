@@ -66,6 +66,16 @@
 				<integer>11</integer>
 			</array>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Zero Video Artifacts (Perfect Quality)</string>
+			<key>Key</key>
+			<string>MEDIA_VIDEO_USE_ZERO_ARTIFACTS</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
 	</array>
 </dict>
 </plist>

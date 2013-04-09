@@ -69,6 +69,7 @@
 		case kDefaultMediaProfile_Default: default: MediaSessionMgr::defaultsSetProfile(tmedia_profile_default);break;
 		case kDefaultMediaProfile_RTCWeb: MediaSessionMgr::defaultsSetProfile(tmedia_profile_rtcweb);break;
 	}
+    MediaSessionMgr::defaultsSetVideoZeroArtifactsEnabled([self getBoolWithKey:MEDIA_VIDEO_USE_ZERO_ARTIFACTS]);
 }
 
 - (void)computeNATT{
@@ -221,6 +222,7 @@
 	 /* === MEDIA === */
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_PROFILE], MEDIA_PROFILE,
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_PREFERRED_VIDEO_SIZE], MEDIA_PREFERRED_VIDEO_SIZE,
+     [NSNumber numberWithBool:DEFAULT_MEDIA_VIDEO_USE_ZERO_ARTIFACTS], MEDIA_VIDEO_USE_ZERO_ARTIFACTS,
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G722], MEDIA_CODEC_USE_G722,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
