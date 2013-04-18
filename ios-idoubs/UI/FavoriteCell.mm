@@ -19,7 +19,7 @@
  *
  */
 #import "FavoriteCell.h"
-#import "ContactDetailsController.h";
+#import "ContactDetailsController.h"
 
 @interface FavoriteCell(Private)
 +(UIImage*) imageForMediaType: (NgnMediaType_t)mediaType;
