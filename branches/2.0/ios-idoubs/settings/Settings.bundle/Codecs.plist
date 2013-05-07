@@ -16,6 +16,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>OPUS</string>
+			<key>Key</key>
+			<string>MEDIA_CODEC_USE_OPUS</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>G.729</string>
 			<key>Key</key>
 			<string>MEDIA_CODEC_USE_G729AB</string>

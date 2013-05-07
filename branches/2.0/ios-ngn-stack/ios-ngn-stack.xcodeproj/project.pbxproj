@@ -228,6 +228,8 @@
 		ECD2848C145F707100EFE997 /* tsip_api_info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD2848B145F707100EFE997 /* tsip_api_info.h */; };
 		ECD284A6145F771B00EFE997 /* NgnDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */; };
 		ECD284A7145F771B00EFE997 /* NgnDeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */; };
+		ECDC421B1739BE5E00681794 /* tdav_codec_opus.c in Sources */ = {isa = PBXBuildFile; fileRef = ECDC421A1739BE5E00681794 /* tdav_codec_opus.c */; };
+		ECDC421E1739BE7300681794 /* tdav_codec_opus.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDC421D1739BE7300681794 /* tdav_codec_opus.h */; };
 		ECDDB577137BF7FF0027105F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81BE9C136C8FE60068BCB4 /* AudioToolbox.framework */; };
 		ECDDB765137C35250027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
 		ECDDB76A137C353D0027105F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDB764137C35250027105F /* CoreGraphics.framework */; };
@@ -2135,6 +2137,8 @@
 		ECD2848B145F707100EFE997 /* tsip_api_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsip_api_info.h; sourceTree = "<group>"; };
 		ECD284A4145F771B00EFE997 /* NgnDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnDeviceInfo.h; sourceTree = "<group>"; };
 		ECD284A5145F771B00EFE997 /* NgnDeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnDeviceInfo.mm; sourceTree = "<group>"; };
+		ECDC421A1739BE5E00681794 /* tdav_codec_opus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_opus.c; sourceTree = "<group>"; };
+		ECDC421D1739BE7300681794 /* tdav_codec_opus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_codec_opus.h; sourceTree = "<group>"; };
 		ECDDB764137C35250027105F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ECDDBB71137C9C3E0027105F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -3902,6 +3906,22 @@
 				ECC8813413F3740000A90212 /* tdav_codec_vp8.c */,
 			);
 			path = vpx;
+			sourceTree = "<group>";
+		};
+		ECDC42191739BE5E00681794 /* opus */ = {
+			isa = PBXGroup;
+			children = (
+				ECDC421A1739BE5E00681794 /* tdav_codec_opus.c */,
+			);
+			path = opus;
+			sourceTree = "<group>";
+		};
+		ECDC421C1739BE7300681794 /* opus */ = {
+			isa = PBXGroup;
+			children = (
+				ECDC421D1739BE7300681794 /* tdav_codec_opus.h */,
+			);
+			path = opus;
 			sourceTree = "<group>";
 		};
 		ECE7E8AE14284C9700466331 /* common */ = {
@@ -6017,6 +6037,7 @@
 		ECFD318C135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				ECDC421C1739BE7300681794 /* opus */,
 				EC3021E616444A770084F78F /* t140 */,
 				ECC8813013F373E500A90212 /* vpx */,
 				ECFD318D135E7DBB00E6A9A3 /* amr */,
@@ -6298,6 +6319,7 @@
 		ECFD31D2135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				ECDC42191739BE5E00681794 /* opus */,
 				EC3021E916444A850084F78F /* t140 */,
 				ECB3846C15516E0A0035F25D /* fec */,
 				ECC8813313F3740000A90212 /* vpx */,
@@ -7149,6 +7171,7 @@
 				EC3021DD16444A300084F78F /* tdav_session_t140.h in Headers */,
 				EC3021DE16444A300084F78F /* tdav_session_av.h in Headers */,
 				EC3021E816444A770084F78F /* tdav_codec_t140.h in Headers */,
+				ECDC421E1739BE7300681794 /* tdav_codec_opus.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8366,6 +8389,7 @@
 				EC3021E416444A470084F78F /* tdav_producer_t140.c in Sources */,
 				EC3021E516444A470084F78F /* tdav_session_t140.c in Sources */,
 				EC3021EB16444A850084F78F /* tdav_codec_t140.c in Sources */,
+				ECDC421B1739BE5E00681794 /* tdav_codec_opus.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9001,6 +9025,7 @@
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",
 					"-DHAVE_SPEEX_JB=1",
+					"-DHAVE_LIBOPUS=1",
 					"-DHAVE_G729=1",
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
@@ -9043,6 +9068,7 @@
 					"-DHAVE_SPEEX_DENOISE=1",
 					"-DHAVE_LIB_SPEEX=1",
 					"-DHAVE_SPEEX_JB=1",
+					"-DHAVE_LIBOPUS=1",
 					"-DHAVE_G729=1",
 					"-DHAVE_COREAUDIO_AUDIO_UNIT=1",
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
