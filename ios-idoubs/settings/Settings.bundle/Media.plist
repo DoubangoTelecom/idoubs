@@ -76,6 +76,58 @@
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>OpusMaxCapureRate</string>
+			<key>Key</key>
+			<string>MEDIA_AUDIO_OPUS_MAXCAPTURERATE</string>
+			<key>DefaultValue</key>
+			<integer>16000</integer>
+			<key>Titles</key>
+			<array>
+				<string>Narrowband (8000)</string>
+				<string>Mediumband (12000)</string>
+				<string>Wideband (16000)</string>
+				<string>Super-widebande (24000)</string>
+				<string>Fullband (48000)</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>8000</integer>
+				<integer>12000</integer>
+				<integer>16000</integer>
+				<integer>24000</integer>
+				<integer>48000</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>OpusMaxPlaybackRate</string>
+			<key>Key</key>
+			<string>MEDIA_AUDIO_OPUS_MAXPLAYBACKRATE</string>
+			<key>DefaultValue</key>
+			<integer>16000</integer>
+			<key>Titles</key>
+			<array>
+				<string>Narrowband (8000)</string>
+				<string>Mediumband (12000)</string>
+				<string>Wideband (16000)</string>
+				<string>Super-widebande (24000)</string>
+				<string>Fullband (48000)</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>8000</integer>
+				<integer>12000</integer>
+				<integer>16000</integer>
+				<integer>24000</integer>
+				<integer>48000</integer>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
