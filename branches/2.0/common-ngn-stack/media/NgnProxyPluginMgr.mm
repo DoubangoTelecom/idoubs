@@ -218,6 +218,10 @@ done:
 	MediaSessionMgr::defaultsSetAgcEnabled(YES);
 	MediaSessionMgr::defaultsSetEchoSuppEnabled(YES);
 #endif
+    
+    // OPUS max sample rates
+    MediaSessionMgr::defaultsSetOpusMaxCaptureRate(16000);
+    MediaSessionMgr::defaultsSetOpusMaxPlaybackRate(16000);
 	
 	// SIP Stack
 	SipStack::initialize();

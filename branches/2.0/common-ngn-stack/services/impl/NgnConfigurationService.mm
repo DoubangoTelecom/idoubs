@@ -70,6 +70,9 @@
 		case kDefaultMediaProfile_RTCWeb: MediaSessionMgr::defaultsSetProfile(tmedia_profile_rtcweb);break;
 	}
     MediaSessionMgr::defaultsSetVideoZeroArtifactsEnabled([self getBoolWithKey:MEDIA_VIDEO_USE_ZERO_ARTIFACTS]);
+    
+    MediaSessionMgr::defaultsSetOpusMaxCaptureRate([self getIntWithKey:MEDIA_AUDIO_OPUS_MAXCAPTURERATE]);
+    MediaSessionMgr::defaultsSetOpusMaxPlaybackRate([self getIntWithKey:MEDIA_AUDIO_OPUS_MAXPLAYBACKRATE]);
 }
 
 - (void)computeNATT{
@@ -105,6 +108,7 @@
 	
 	static codec_value_pair_t codec_value_pairs[] = 
 	{
+        { MEDIA_CODEC_USE_OPUS, tdav_codec_id_opus },
 		{ MEDIA_CODEC_USE_G722, tdav_codec_id_g722 },
 		{ MEDIA_CODEC_USE_G729AB, tdav_codec_id_g729ab },
 		{ MEDIA_CODEC_USE_AMR_NB_OA, tdav_codec_id_amr_nb_oa },
@@ -223,7 +227,10 @@
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_PROFILE], MEDIA_PROFILE,
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_PREFERRED_VIDEO_SIZE], MEDIA_PREFERRED_VIDEO_SIZE,
      [NSNumber numberWithBool:DEFAULT_MEDIA_VIDEO_USE_ZERO_ARTIFACTS], MEDIA_VIDEO_USE_ZERO_ARTIFACTS,
+     [NSNumber numberWithInt:DEFAULT_MEDIA_AUDIO_OPUS_MAXCAPTURERATE], MEDIA_AUDIO_OPUS_MAXCAPTURERATE,
+     [NSNumber numberWithInt:DEFAULT_MEDIA_AUDIO_OPUS_MAXPLAYBACKRATE], MEDIA_AUDIO_OPUS_MAXPLAYBACKRATE,
 	 [NSNumber numberWithInt:DEFAULT_MEDIA_CODECS], MEDIA_CODECS,
+     [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_OPUS], MEDIA_CODEC_USE_OPUS,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G722], MEDIA_CODEC_USE_G722,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_G729AB], MEDIA_CODEC_USE_G729AB,
 	 [NSNumber numberWithBool:DEFAULT_MEDIA_CODEC_USE_AMR_NB_OA], MEDIA_CODEC_USE_AMR_NB_OA,

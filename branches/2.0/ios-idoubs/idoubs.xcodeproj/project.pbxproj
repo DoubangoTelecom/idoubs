@@ -1509,12 +1509,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mamadou DIOP (89JZ5C3KM4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/ios-ngn-stack",
@@ -1547,6 +1547,7 @@
 					"-lswscale",
 					"-lavutil",
 					"-lavcodec",
+					"-lopus",
 					"-lg729b",
 					"-lspeex",
 					"-lspeexdsp",
@@ -1556,6 +1557,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
+				PROVISIONING_PROFILE = "12E8B910-D78C-4EF7-B92F-668793BE1731";
 			};
 			name = Debug;
 		};
@@ -1563,10 +1565,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mamadou DIOP (89JZ5C3KM4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/ios-ngn-stack",
@@ -1599,6 +1601,7 @@
 					"-lswscale",
 					"-lavutil",
 					"-lavcodec",
+					"-lopus",
 					"-lg729b",
 					"-lspeex",
 					"-lspeexdsp",
@@ -1608,6 +1611,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = idoubs;
+				PROVISIONING_PROFILE = "12E8B910-D78C-4EF7-B92F-668793BE1731";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1616,7 +1620,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
@@ -1627,7 +1630,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				NGN_STACK_HOME = ..;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1639,7 +1641,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
@@ -1651,7 +1652,6 @@
 				NGN_STACK_HOME = ..;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 1;
