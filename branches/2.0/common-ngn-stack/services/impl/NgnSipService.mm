@@ -1102,6 +1102,7 @@ private:
 	// Set STUN information
 	if([mConfigurationService getBoolWithKey:NATT_USE_STUN]){                 
 		NgnNSLog(TAG, @"STUN=yes");
+        [sipStack setSTUNEnabled:YES];
 		if([mConfigurationService getBoolWithKey:NATT_USE_STUN_DISCO]){
 			NSString* domain = [sipPreferences.realm stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
 			unsigned short stunPort = 0;
@@ -1120,7 +1121,7 @@ private:
 	}
 	else{
 		NgnNSLog(TAG, @"STUN=no");
-		[sipStack setSTUNServerIP:nil andPort:0];
+		[sipStack setSTUNEnabled:NO];
 	}
 	
 	// Set Proxy-CSCF
