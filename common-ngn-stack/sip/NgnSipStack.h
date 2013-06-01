@@ -62,6 +62,7 @@ STACK_STATE_T;
 -(NSString*) getSigCompId;
 -(void) setSigCompId: (NSString*)compId;
 
+-(BOOL) setSTUNEnabled: (BOOL)enabled;
 -(BOOL) setSTUNServerIP: (NSString*) ip andPort: (unsigned short) port;
 -(BOOL) setSTUNCredLogin: (NSString*) login andPassword: (NSString*) password;
 

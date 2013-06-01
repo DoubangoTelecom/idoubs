@@ -77,6 +77,8 @@
 
 - (void)computeNATT{
 	 MediaSessionMgr::defaultsSetIceEnabled([self getBoolWithKey:NATT_USE_ICE]);
+     MediaSessionMgr::defaultsSetIceStunEnabled(YES); // whether to gather ICE reflexive candidates
+     MediaSessionMgr::defaultsSetStunEnabled([self getBoolWithKey:NATT_USE_STUN]);
 }
 
 - (void)computeSecurity{
