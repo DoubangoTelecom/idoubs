@@ -212,6 +212,14 @@
 	}
 }
 
+-(BOOL) setSTUNEnabled: (BOOL)enabled{
+    if(_mSipStack){
+		return _mSipStack->setSTUNEnabled(enabled);
+	}
+	TSK_DEBUG_ERROR("Null embedded SipStack");
+	return FALSE;
+}
+
 -(BOOL) setSTUNServerIP: (NSString*) ip andPort: (unsigned short) port{
 	if(_mSipStack){
 		return _mSipStack->setSTUNServer([ip UTF8String], port);
