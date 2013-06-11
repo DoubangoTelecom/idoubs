@@ -113,7 +113,7 @@ public:
 			default:
 			{
 				NgnNSLog(TAG, @"Invalid Plugin type");
-				ret -1;
+				ret = -1;
 				goto done;
 			}
 		}
