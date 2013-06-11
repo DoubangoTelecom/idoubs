@@ -77,7 +77,7 @@ public:
 		
 		if(!_sPluginMgr){
 			TSK_DEBUG_ERROR("Media engine not initialized");
-			ret -1;
+			ret = -1;
 			goto done;
 		}
 		
