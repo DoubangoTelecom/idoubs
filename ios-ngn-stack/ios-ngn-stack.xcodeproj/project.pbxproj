@@ -36,6 +36,12 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		EC1041F717707C51008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC1041F817707C72008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC1041F917707C81008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC1041FA17707C8C008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC1041FB17707C9A008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC1041FC17707CA8008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC3021DB16444A300084F78F /* tdav_consumer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D716444A300084F78F /* tdav_consumer_t140.h */; };
 		EC3021DC16444A300084F78F /* tdav_producer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D816444A300084F78F /* tdav_producer_t140.h */; };
 		EC3021DD16444A300084F78F /* tdav_session_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D916444A300084F78F /* tdav_session_t140.h */; };
@@ -2023,6 +2029,7 @@
 		AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_ngn_stack_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1041F617707C51008E8E76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EC3021D716444A300084F78F /* tdav_consumer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_t140.h; sourceTree = "<group>"; };
 		EC3021D816444A300084F78F /* tdav_producer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_t140.h; sourceTree = "<group>"; };
 		EC3021D916444A300084F78F /* tdav_session_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_t140.h; sourceTree = "<group>"; };
@@ -3338,6 +3345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041FB17707C9A008E8E76 /* Security.framework in Frameworks */,
 				EC7D39861379ED9C0052CE45 /* libios_ngn_stack.a in Frameworks */,
 				EC7D39871379ED9C0052CE45 /* libtinyDAV.a in Frameworks */,
 				EC7D39881379ED9C0052CE45 /* libtinyHTTP.a in Frameworks */,
@@ -3370,6 +3378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041FA17707C8C008E8E76 /* Security.framework in Frameworks */,
 				EC81BE54136C8E140068BCB4 /* libtinyDAV.a in Frameworks */,
 				EC81BE55136C8E140068BCB4 /* libtinyHTTP.a in Frameworks */,
 				EC81BE56136C8E140068BCB4 /* libtinyIPSec.a in Frameworks */,
@@ -3397,6 +3406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041F717707C51008E8E76 /* Security.framework in Frameworks */,
 				EC83BC2A1369C55000DD3355 /* libios_ngn_stack.a in Frameworks */,
 				EC83BC2B1369C55000DD3355 /* libtinyDAV.a in Frameworks */,
 				EC83BC2C1369C55000DD3355 /* libtinyHTTP.a in Frameworks */,
@@ -3429,6 +3439,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041F817707C72008E8E76 /* Security.framework in Frameworks */,
 				EC83BC631369C64800DD3355 /* libios_ngn_stack.a in Frameworks */,
 				EC83BC641369C64800DD3355 /* libtinyDAV.a in Frameworks */,
 				EC83BC651369C64800DD3355 /* libtinyHTTP.a in Frameworks */,
@@ -3461,6 +3472,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041F917707C81008E8E76 /* Security.framework in Frameworks */,
 				EC83BC961369C68700DD3355 /* libios_ngn_stack.a in Frameworks */,
 				EC83BC971369C68700DD3355 /* libtinyDAV.a in Frameworks */,
 				EC83BC981369C68700DD3355 /* libtinyHTTP.a in Frameworks */,
@@ -3606,6 +3618,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1041FC17707CA8008E8E76 /* Security.framework in Frameworks */,
 				ECFDFB2B13A968C900D4C62A /* libios_ngn_stack.a in Frameworks */,
 				ECFDFB2C13A968C900D4C62A /* libtinyDAV.a in Frameworks */,
 				ECFDFB2D13A968C900D4C62A /* libtinyHTTP.a in Frameworks */,
@@ -3669,6 +3682,7 @@
 		0867D691FE84028FC02AAC07 /* ios-ngn-stack */ = {
 			isa = PBXGroup;
 			children = (
+				EC1041F617707C51008E8E76 /* Security.framework */,
 				EC83BA0F1369908500DD3355 /* Tests */,
 				ECFD28FA135E7B2E00E6A9A3 /* Doubango */,
 				ECFD23BC135D532A00E6A9A3 /* Classes */,
