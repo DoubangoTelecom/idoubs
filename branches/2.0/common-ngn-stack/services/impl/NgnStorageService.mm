@@ -124,12 +124,9 @@ static BOOL sDataBaseInitialized = NO;
 	NgnNSLog(TAG, @"creating (copy) new database from:%@", databasePathFromApp);
 	
 	if(![fileManager copyItemAtPath:databasePathFromApp toPath:sDataBasePath error:&error]){
-		[fileManager release];
 		NgnNSLog(TAG, @"Failed to copy database to the file system: %@", error);
 		return NO;
 	}
-	
-	[fileManager release];
 	
 	sDataBaseInitialized = YES;
 	return YES;
