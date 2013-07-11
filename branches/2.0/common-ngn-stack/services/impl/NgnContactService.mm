@@ -18,6 +18,7 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
+#import <UIKit/UIKit.h> /* UIDevice */
 #import "NgnContactService.h"
 #import "model/NgnContact.h"
 #import "events/NgnContactEventArgs.h"
@@ -105,7 +106,16 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	
 #if TARGET_OS_IPHONE
 	if(addressBook == nil){
-		addressBook = ABAddressBookCreate();
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0){
+            addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+            ABAddressBookRequestAccessWithCompletion(addressBook,
+                                                     ^(bool granted, CFErrorRef error){
+                                                         [self load:YES];
+                                                     });
+        }
+        else{
+            addressBook = ABAddressBookCreate();
+        }
 	}
 	
 	if(addressBook){
