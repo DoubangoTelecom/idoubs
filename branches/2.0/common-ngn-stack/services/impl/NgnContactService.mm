@@ -105,12 +105,16 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 	[mNumbers2ContacstMapper removeAllObjects];
 	
 #if TARGET_OS_IPHONE
+    BOOL bAsyncLoad = NO;
 	if(addressBook == nil){
         if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0){
             addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
             ABAddressBookRequestAccessWithCompletion(addressBook,
                                                      ^(bool granted, CFErrorRef error){
-                                                         [self load:YES];
+                                                         if(granted) {
+                                                             [self load:YES];
+                                                         }
+                                                         mAccessGranted = granted;
                                                      });
         }
         else{
@@ -118,7 +122,7 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
         }
 	}
 	
-	if(addressBook){
+	if(addressBook && mAccessGranted){
 		CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
 		CFMutableArrayRef peopleMutable = CFArrayCreateMutableCopy(
 										   kCFAllocatorDefault,
@@ -175,8 +179,10 @@ static CFComparisonResult NgnAddressBookCompareByCompositeName(ABRecordRef perso
 		mLoaderQueue = dispatch_queue_create(kNameSpace, NULL);
 		mContacts = [[NgnContactMutableArray alloc] init];
 		mNumbers2ContacstMapper = [[NSMutableDictionary alloc] init];
+        mAccessGranted = YES;
 #if TARGET_OS_IPHONE
 		addressBook = nil;
+        mAccessGranted = ([[UIDevice currentDevice].systemVersion floatValue] < 6.0); // Only iOS6 requires access request
 #elif TARGET_OS_MAC
 #endif
 	}
