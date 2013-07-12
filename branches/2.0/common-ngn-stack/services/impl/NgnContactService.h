@@ -36,6 +36,7 @@
 	dispatch_queue_t mLoaderQueue;
 	BOOL mLoading;
 	BOOL mStarted;
+    BOOL mAccessGranted;
 	NgnContactMutableArray* mContacts;
 	NSMutableDictionary *mNumbers2ContacstMapper;
 #if TARGET_OS_IPHONE
