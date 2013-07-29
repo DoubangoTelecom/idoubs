@@ -18,7 +18,9 @@
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  */
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h> /* UIDevice */
+#endif
 #import "NgnContactService.h"
 #import "model/NgnContact.h"
 #import "events/NgnContactEventArgs.h"
