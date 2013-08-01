@@ -317,6 +317,7 @@
 			
 		case INVITE_EVENT_CONNECTED:
 		case INVITE_EVENT_EARLY_MEDIA:
+        case INVITE_EVENT_MEDIA_UPDATED:
 		{
 			// updates status info
 			[self updateViewAndState];
@@ -460,6 +461,7 @@
 		if([videoSession isConnected]){
 			[videoSession setRemoteVideoDisplay:self.glViewVideoRemote];
 			[videoSession setLocalVideoDisplay:self.viewLocalVideo];
+            [self.glViewVideoRemote startAnimation];
 		}
 		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName :[NgnStringUtils nullValue];
 	}

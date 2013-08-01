@@ -443,7 +443,7 @@
 			[audioSession toggleHoldResume];
 		}
 		else if(sender == buttonVideo){
-			// [audioSession updateSession:MediaType_AudioVideo];
+			[audioSession updateSession:MediaType_AudioVideo];
 		}
 
 		else if(sender == buttonNumpad){
