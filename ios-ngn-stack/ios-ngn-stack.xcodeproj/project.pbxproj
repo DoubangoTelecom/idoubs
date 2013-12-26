@@ -606,14 +606,6 @@
 		ECFD2B9A135E7C0600E6A9A3 /* tinyipsec_config.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B86135E7C0600E6A9A3 /* tinyipsec_config.h */; };
 		ECFD2B9B135E7C0600E6A9A3 /* tipsec.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2B87135E7C0600E6A9A3 /* tipsec.c */; };
 		ECFD2B9C135E7C0600E6A9A3 /* tipsec.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B88135E7C0600E6A9A3 /* tipsec.h */; };
-		ECFD2B9D135E7C0600E6A9A3 /* tipsec_common.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2B89135E7C0600E6A9A3 /* tipsec_common.c */; };
-		ECFD2B9E135E7C0600E6A9A3 /* tipsec_common.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B8A135E7C0600E6A9A3 /* tipsec_common.h */; };
-		ECFD2B9F135E7C0600E6A9A3 /* tipsec_racoon.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2B8B135E7C0600E6A9A3 /* tipsec_racoon.c */; };
-		ECFD2BA0135E7C0600E6A9A3 /* tipsec_racoon.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B8C135E7C0600E6A9A3 /* tipsec_racoon.h */; };
-		ECFD2BA1135E7C0600E6A9A3 /* tipsec_vista.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2B8D135E7C0600E6A9A3 /* tipsec_vista.c */; };
-		ECFD2BA2135E7C0600E6A9A3 /* tipsec_vista.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B8E135E7C0600E6A9A3 /* tipsec_vista.h */; };
-		ECFD2BA3135E7C0600E6A9A3 /* tipsec_xp.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2B8F135E7C0600E6A9A3 /* tipsec_xp.c */; };
-		ECFD2BA4135E7C0600E6A9A3 /* tipsec_xp.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2B90135E7C0600E6A9A3 /* tipsec_xp.h */; };
 		ECFD2C0C135E7C3400E6A9A3 /* tmsrp_header.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2BAD135E7C3400E6A9A3 /* tmsrp_header.h */; };
 		ECFD2C0D135E7C3400E6A9A3 /* tmsrp_header_Authentication-Info.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2BAE135E7C3400E6A9A3 /* tmsrp_header_Authentication-Info.h */; };
 		ECFD2C0E135E7C3400E6A9A3 /* tmsrp_header_Authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2BAF135E7C3400E6A9A3 /* tmsrp_header_Authorization.h */; };
@@ -2536,14 +2528,6 @@
 		ECFD2B86135E7C0600E6A9A3 /* tinyipsec_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyipsec_config.h; sourceTree = "<group>"; };
 		ECFD2B87135E7C0600E6A9A3 /* tipsec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tipsec.c; sourceTree = "<group>"; };
 		ECFD2B88135E7C0600E6A9A3 /* tipsec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsec.h; sourceTree = "<group>"; };
-		ECFD2B89135E7C0600E6A9A3 /* tipsec_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tipsec_common.c; sourceTree = "<group>"; };
-		ECFD2B8A135E7C0600E6A9A3 /* tipsec_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsec_common.h; sourceTree = "<group>"; };
-		ECFD2B8B135E7C0600E6A9A3 /* tipsec_racoon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tipsec_racoon.c; sourceTree = "<group>"; };
-		ECFD2B8C135E7C0600E6A9A3 /* tipsec_racoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsec_racoon.h; sourceTree = "<group>"; };
-		ECFD2B8D135E7C0600E6A9A3 /* tipsec_vista.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tipsec_vista.c; sourceTree = "<group>"; };
-		ECFD2B8E135E7C0600E6A9A3 /* tipsec_vista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsec_vista.h; sourceTree = "<group>"; };
-		ECFD2B8F135E7C0600E6A9A3 /* tipsec_xp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tipsec_xp.c; sourceTree = "<group>"; };
-		ECFD2B90135E7C0600E6A9A3 /* tipsec_xp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsec_xp.h; sourceTree = "<group>"; };
 		ECFD2BAD135E7C3400E6A9A3 /* tmsrp_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmsrp_header.h; sourceTree = "<group>"; };
 		ECFD2BAE135E7C3400E6A9A3 /* tmsrp_header_Authentication-Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tmsrp_header_Authentication-Info.h"; sourceTree = "<group>"; };
 		ECFD2BAF135E7C3400E6A9A3 /* tmsrp_header_Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmsrp_header_Authorization.h; sourceTree = "<group>"; };
@@ -4724,14 +4708,6 @@
 				ECFD2B86135E7C0600E6A9A3 /* tinyipsec_config.h */,
 				ECFD2B87135E7C0600E6A9A3 /* tipsec.c */,
 				ECFD2B88135E7C0600E6A9A3 /* tipsec.h */,
-				ECFD2B89135E7C0600E6A9A3 /* tipsec_common.c */,
-				ECFD2B8A135E7C0600E6A9A3 /* tipsec_common.h */,
-				ECFD2B8B135E7C0600E6A9A3 /* tipsec_racoon.c */,
-				ECFD2B8C135E7C0600E6A9A3 /* tipsec_racoon.h */,
-				ECFD2B8D135E7C0600E6A9A3 /* tipsec_vista.c */,
-				ECFD2B8E135E7C0600E6A9A3 /* tipsec_vista.h */,
-				ECFD2B8F135E7C0600E6A9A3 /* tipsec_xp.c */,
-				ECFD2B90135E7C0600E6A9A3 /* tipsec_xp.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -6798,10 +6774,6 @@
 			files = (
 				ECFD2B9A135E7C0600E6A9A3 /* tinyipsec_config.h in Headers */,
 				ECFD2B9C135E7C0600E6A9A3 /* tipsec.h in Headers */,
-				ECFD2B9E135E7C0600E6A9A3 /* tipsec_common.h in Headers */,
-				ECFD2BA0135E7C0600E6A9A3 /* tipsec_racoon.h in Headers */,
-				ECFD2BA2135E7C0600E6A9A3 /* tipsec_vista.h in Headers */,
-				ECFD2BA4135E7C0600E6A9A3 /* tipsec_xp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8020,10 +7992,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFD2B9B135E7C0600E6A9A3 /* tipsec.c in Sources */,
-				ECFD2B9D135E7C0600E6A9A3 /* tipsec_common.c in Sources */,
-				ECFD2B9F135E7C0600E6A9A3 /* tipsec_racoon.c in Sources */,
-				ECFD2BA1135E7C0600E6A9A3 /* tipsec_vista.c in Sources */,
-				ECFD2BA3135E7C0600E6A9A3 /* tipsec_xp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
