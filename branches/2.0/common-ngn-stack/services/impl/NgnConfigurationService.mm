@@ -95,6 +95,19 @@
 			MediaSessionMgr::defaultsSetSRtpMode(tmedia_srtp_mode_mandatory);
 			break;
 	}
+    int srtpType = [self getIntWithKey:SECURITY_SRTP_TYPE];
+	switch (srtpType) {
+		case kDefaultSecuritySRtpType_Sdes:
+		default:
+			MediaSessionMgr::defaultsSetSRtpType(tmedia_srtp_type_sdes);
+			break;
+		case kDefaultSecuritySRtpType_Dtls:
+			MediaSessionMgr::defaultsSetSRtpType(tmedia_srtp_type_dtls);
+			break;
+		case kDefaultSecuritySRtpType_Both:
+			MediaSessionMgr::defaultsSetSRtpType(tmedia_srtp_type_sdes_dtls);
+			break;
+	}
 }
 
 - (void)computeCodecs{
@@ -265,6 +278,7 @@
 	 DEFAULT_SECURITY_SSL_FILE_KEY_PUB, SECURITY_SSL_FILE_KEY_PUB,
 	 DEFAULT_SECURITY_SSL_FILE_KEY_CA, SECURITY_SSL_FILE_KEY_CA,
 	 [NSNumber numberWithInt:DEFAULT_SECURITY_SRTP_MODE], SECURITY_SRTP_MODE,
+     [NSNumber numberWithInt:DEFAULT_SECURITY_SRTP_TYPE], SECURITY_SRTP_TYPE,
 			
 	 /* === XCAP === */
 	[NSNumber numberWithBool:DEFAULT_XCAP_ENABLED], XCAP_ENABLED,

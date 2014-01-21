@@ -1134,12 +1134,19 @@ private:
 							 sipPreferences.pcscfPort,
 							 sipPreferences.transport,
 							 sipPreferences.ipVersion);
+    int srtpMode = [mConfigurationService getIntWithKey:SECURITY_SRTP_MODE];
+    int srtpType = [mConfigurationService getIntWithKey:SECURITY_SRTP_TYPE];
+    NgnNSLog(TAG, @"srtpMode=%d, srtpType=%d", srtpMode, srtpType);
 	
 	// Set SSL certificates
-	if([sipPreferences.transport caseInsensitiveCompare:@"tls"] == NSOrderedSame ) {
-		if(![sipStack setSSLCertificates:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PRIV] 
-							   andPubKey:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PUB]
-								andCAKey:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_CA]]){
+	if([sipPreferences.transport caseInsensitiveCompare:@"tls"] == NSOrderedSame || ((srtpType == kDefaultSecuritySRtpType_Dtls || srtpType == kDefaultSecuritySRtpType_Both) && (srtpMode == kDefaultSecuritySRtpMode_Optional || srtpMode == kDefaultSecuritySRtpMode_Mandatory))) {
+        NSString *privPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PRIV] ofType:@"pem"];
+        NSString *pubPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PUB] ofType:@"pem"];
+        NSString *caPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_CA] ofType:@"pem"];
+        NgnNSLog(TAG, @"SSL Certificates:PRIV=%@, PUB=%@, CA=%@", privPath, pubPath, caPath);
+		if(![sipStack setSSLCertificates:privPath
+							   andPubKey:pubPath
+								andCAKey:caPath]){
 			TSK_DEBUG_ERROR("setSSLCertificates() failed");
 		}
 	}

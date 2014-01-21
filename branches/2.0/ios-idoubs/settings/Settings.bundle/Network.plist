@@ -116,7 +116,7 @@
 			<key>Key</key>
 			<string>SECURITY_SRTP_MODE</string>
 			<key>DefaultValue</key>
-			<string>None</string>
+			<integer>0</integer>
 			<key>Titles</key>
 			<array>
 				<string>None</string>
@@ -125,10 +125,68 @@
 			</array>
 			<key>Values</key>
 			<array>
-				<real>0</real>
+				<integer>0</integer>
 				<integer>1</integer>
 				<integer>2</integer>
 			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>SRTP Type</string>
+			<key>Key</key>
+			<string>SECURITY_SRTP_TYPE</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
+			<key>Titles</key>
+			<array>
+				<string>SDES</string>
+				<string>DTLS</string>
+				<string>BOTH</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Certificates</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>CA</string>
+			<key>Key</key>
+			<string>SECURITY_SSL_FILE_KEY_CA</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Public Key</string>
+			<key>Key</key>
+			<string>SECURITY_SSL_FILE_KEY_PUB</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Private Key</string>
+			<key>Key</key>
+			<string>SECURITY_SSL_FILE_KEY_PRIV</string>
+			<key>DefaultValue</key>
+			<string></string>
 		</dict>
 	</array>
 </dict>
