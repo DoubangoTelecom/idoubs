@@ -117,6 +117,7 @@
 #define SECURITY_SSL_FILE_KEY_PUB @"SECURITY_SSL_FILE_KEY_PUB"
 #define SECURITY_SSL_FILE_KEY_CA @"SECURITY_SSL_FILE_KEY_CA"
 #define SECURITY_SRTP_MODE @"SECURITY_SRTP_MODE"
+#define SECURITY_SRTP_TYPE @"SECURITY_SRTP_TYPE"
 
 // XCAP
 #define XCAP_PASSWORD @"XCAP_PASSWORD"
@@ -252,6 +253,9 @@
 #define kDefaultSecuritySRtpMode_None 0
 #define kDefaultSecuritySRtpMode_Optional 1
 #define kDefaultSecuritySRtpMode_Mandatory 2
+#define kDefaultSecuritySRtpType_Sdes 0
+#define kDefaultSecuritySRtpType_Dtls 1
+#define kDefaultSecuritySRtpType_Both 2
 
 #define DEFAULT_SECURITY_IMSAKA_AMF @"0x0000"
 #define DEFAULT_SECURITY_IMSAKA_OPID @"0x00000000000000000000000000000000"
@@ -259,6 +263,7 @@
 #define DEFAULT_SECURITY_SSL_FILE_KEY_PUB @""
 #define DEFAULT_SECURITY_SSL_FILE_KEY_CA @""
 #define DEFAULT_SECURITY_SRTP_MODE kDefaultSecuritySRtpMode_None
+#define DEFAULT_SECURITY_SRTP_TYPE kDefaultSecuritySRtpType_Sdes
 
 
 // XCAP
