@@ -143,6 +143,8 @@
 		ECB967E61390226500961D3A /* star_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB967E51390226500961D3A /* star_128.png */; };
 		ECB968281390297900961D3A /* chat_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB968271390297900961D3A /* chat_128.png */; };
 		ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC6F5B61597E0E7005401EC /* OpenGLES.framework */; };
+		ECDF139918900C1800F0FA68 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = ECDF139718900C1800F0FA68 /* private.pem */; };
+		ECDF139A18900C1800F0FA68 /* public.pem in Resources */ = {isa = PBXBuildFile; fileRef = ECDF139818900C1800F0FA68 /* public.pem */; };
 		ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */; };
 		ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFB1368921400DC70DF /* libtinySAK.a */; };
 		ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFD1368921400DC70DF /* libtinyNET.a */; };
@@ -608,6 +610,8 @@
 		ECB967E51390226500961D3A /* star_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_128.png; sourceTree = "<group>"; };
 		ECB968271390297900961D3A /* chat_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_128.png; sourceTree = "<group>"; };
 		ECC6F5B61597E0E7005401EC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		ECDF139718900C1800F0FA68 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = private.pem; path = ../private.pem; sourceTree = "<group>"; };
+		ECDF139818900C1800F0FA68 /* public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = public.pem; path = ../public.pem; sourceTree = "<group>"; };
 		ECE7EA1C1428547400466331 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
 		ECE7EA1D1428547400466331 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
 		ECE7EA1E1428547400466331 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
@@ -776,6 +780,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECDF139718900C1800F0FA68 /* private.pem */,
+				ECDF139818900C1800F0FA68 /* public.pem */,
 				ECE7EA3A1428548F00466331 /* storage */,
 				ECE7EA1B1428547400466331 /* sound */,
 				EC90766813932A4800E14556 /* settings */,
@@ -1390,6 +1396,8 @@
 				ECE7EA391428547400466331 /* ringtone.mp3 in Resources */,
 				ECE7EA3D1428548F00466331 /* NgnDataBase.db in Resources */,
 				ECA0F07615111F77005EF3BB /* secure_16.png in Resources */,
+				ECDF139918900C1800F0FA68 /* private.pem in Resources */,
+				ECDF139A18900C1800F0FA68 /* public.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
