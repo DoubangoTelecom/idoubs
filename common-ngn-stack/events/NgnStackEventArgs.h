@@ -29,7 +29,8 @@ typedef enum NgnStackEventTypes_e {
 	STACK_START_OK,
     STACK_START_NOK,
     STACK_STOP_OK,
-    STACK_STOP_NOK
+    STACK_STOP_NOK,
+    STACK_DISCONNECTED
 }
 NgnStackEventTypes_t;
 

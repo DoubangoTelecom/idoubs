@@ -395,6 +395,10 @@ done:
 				eventType = STACK_STOP_OK;
 				NgnNSLog(TAG, @"Stack stopped");
 				break;
+            case tsip_event_code_stack_disconnected:
+                eventType = STACK_DISCONNECTED;
+				NgnNSLog(TAG, @"Stack stopped");
+                break;
 		}
 		
 		NgnStackEventArgs* eargs = [[NgnStackEventArgs alloc]initWithEventType: eventType andPhrase: [NgnStringUtils toNSString:_phrase]];
