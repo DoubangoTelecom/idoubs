@@ -21,6 +21,7 @@
 #import "NgnContentType.h"
 #import "ActionConfig.h"
 #import "NgnStringUtils.h"
+#import "tsk_uuid.h"
 
 #undef kSessions
 #define kSessions [NgnPublicationSession getAllSessions]
@@ -67,6 +68,7 @@
 @interface NgnPublicationSession (Private)
 +(NSMutableDictionary*) getAllSessions;
 -(NgnPublicationSession*) internalInitWithStack:(NgnSipStack*)sipStack andToUri:(NSString*)toUri_;
++(NSString*) deviceId;
 @end
 
 
@@ -99,6 +101,16 @@
 	}
 	
 	return self;
+}
+
++(NSString*) deviceId {
+    static NSString* sDeviceId = nil;
+    if (!sDeviceId) {
+        tsk_uuidstring_t uuid;
+        tsk_uuidgenerate(&uuid);
+        sDeviceId = [[NgnStringUtils toNSString:(const char*)uuid] retain];
+    }
+    return sDeviceId;
 }
 
 @end
@@ -141,11 +153,7 @@
 							activity,
 							note,
 							basic,
-#if TARGET_OS_IPHONE
-							[UIDevice currentDevice].uniqueIdentifier
-#elif TARGET_OS_MAC
-							@"MAC_OS_X"
-#endif
+                            [NgnPublicationSession deviceId]
 						 ];
 	return [payload dataUsingEncoding:NSUTF8StringEncoding]; 
 }

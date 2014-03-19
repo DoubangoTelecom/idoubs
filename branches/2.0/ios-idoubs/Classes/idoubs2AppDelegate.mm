@@ -430,7 +430,7 @@ static dispatch_block_t sExpirationHandler = nil;
 	multitaskingSupported = [[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)] && [[UIDevice currentDevice] isMultitaskingSupported];
 	sBackgroundTask = UIBackgroundTaskInvalid;
 	sExpirationHandler = ^{
-		NSLog(@"Background task completed");
+		NgnNSLog(TAG, @"Background task completed");
 		// keep awake
 		if([[NgnEngine sharedInstance].sipService isRegistered]){
 			if([[NgnEngine sharedInstance].configurationService getBoolWithKey:NETWORK_USE_KEEPAWAKE]){
@@ -467,6 +467,7 @@ static dispatch_block_t sExpirationHandler = nil;
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
+    NgnNSLog(TAG, @"applicationWillResignActive");
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -475,7 +476,7 @@ static dispatch_block_t sExpirationHandler = nil;
 	if([idoubs2AppDelegate sharedInstance]->multitaskingSupported){
 		ConnectionState_t registrationState = [[NgnEngine sharedInstance].sipService getRegistrationState];
 		if(registrationState == CONN_STATE_CONNECTING || registrationState == CONN_STATE_CONNECTED){
-			NSLog(@"applicationDidEnterBackground (Registered or Registering)");
+			NgnNSLog(TAG, @"applicationDidEnterBackground (Registered or Registering)");
 			//if(registrationState == CONN_STATE_CONNECTING){
 			// request for 10min to complete the work (registration, computation ...)
 			sBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:sExpirationHandler];
@@ -489,7 +490,7 @@ static dispatch_block_t sExpirationHandler = nil;
 			}
 			
 			[application setKeepAliveTimeout:600 handler: ^{
-				NSLog(@"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
+				NgnNSLog(TAG, @"applicationDidEnterBackground:: setKeepAliveTimeout:handler^");
 			}];
 		}
 	}
@@ -585,6 +586,7 @@ static dispatch_block_t sExpirationHandler = nil;
 #pragma mark Memory management
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    NgnNSLog(TAG, @"applicationDidReceiveMemoryWarning");
     [[NgnEngine sharedInstance].contactService unload];
 	[[NgnEngine sharedInstance].historyService clear];
 	[[NgnEngine sharedInstance].storageService clearFavorites];
