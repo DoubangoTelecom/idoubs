@@ -183,11 +183,19 @@
 	switch (eargs.eventType) {
 		case STACK_STATE_STARTING:
 		{
+            NgnNSLog(TAG,@"STACK_STATE_STARTING");
 			// this is the only place where we can be sure that the audio system is up
 			[[NgnEngine sharedInstance].soundService setSpeakerEnabled:YES];
 			
 			break;
 		}
+        case STACK_DISCONNECTED: // Network connection closed
+        {
+            NgnNSLog(TAG,@"STACK_DISCONNECTED");
+            // Uncomment next line if you want to connect again
+            // [self queryConfigurationAndRegister];
+            break;
+        }
 		default:
 			break;
 	}
@@ -202,7 +210,7 @@
 		case CONN_STATE_TERMINATED:
 			if(scheduleRegistration){
 				scheduleRegistration = FALSE;
-				[[NgnEngine sharedInstance].sipService registerIdentity];
+				[self queryConfigurationAndRegister];
 			}
 			break;
 			

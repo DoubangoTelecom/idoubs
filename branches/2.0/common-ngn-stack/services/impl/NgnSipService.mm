@@ -1056,17 +1056,6 @@ private:
 -(BOOL)registerIdentity{
 	NgnNSLog(TAG, @"register()");
 	
-#if defined(RECYCLE_STACK) && RECYCLE_STACK // FIXME: This is a workaround because sometimes the client fails to register when you switch from network-1 or network-2
-	if(self->sipStack && (!self->sipRegSession || !self->sipRegSession.connected)){//registration terminated but stack still not destroyed => create new stack
-		NgnNSLog(TAG,@"Recycling the stack");
-		if(self->sipStack.state != STACK_STATE_STOPPED && self->sipStack.state != STACK_STATE_STOPPING){
-			[self->sipStack stop];
-		}
-		[self->sipStack release]; self->sipStack = nil;
-		[self releaseSipRegSession];
-	}
-#endif
-	
 	sipPreferences.realm = [mConfigurationService getStringWithKey:NETWORK_REALM];
 	sipPreferences.impi = [mConfigurationService getStringWithKey:IDENTITY_IMPI];
 	sipPreferences.impu = [mConfigurationService getStringWithKey:IDENTITY_IMPU];
