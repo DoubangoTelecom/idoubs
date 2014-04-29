@@ -49,6 +49,11 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
+		<key>tinyBFCP.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 		<key>tinyDAV.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -138,6 +143,11 @@
 			<true/>
 		</dict>
 		<key>EC4DBE4A141C0B920024CBEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC6131B2191048CB003C7245</key>
 		<dict>
 			<key>primary</key>
 			<true/>

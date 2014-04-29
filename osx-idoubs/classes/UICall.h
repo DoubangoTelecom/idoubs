@@ -43,7 +43,7 @@
 @property (assign) IBOutlet NSButton *buttonStartVideo;
 @property (assign) IBOutlet NSTextField *textFieldDuration;
 @property (assign) IBOutlet NSTextField *textFieldStatus;
-@property (retain, readwrite,setter=setAVSession) NgnAVSession *avSession;
+@property (retain, readwrite,setter=setAVSession:) NgnAVSession *avSession;
 
 
 -(UICall*) initWithSession:(NgnAVSession*)avSession;
