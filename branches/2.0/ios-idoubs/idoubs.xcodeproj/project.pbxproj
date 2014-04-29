@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				EC6131241910399D003C7245 /* PBXTargetDependency */,
 				EC83B7CC13697BA900DD3355 /* PBXTargetDependency */,
 				EC83B7CE13697BA900DD3355 /* PBXTargetDependency */,
 				EC83B7D013697BA900DD3355 /* PBXTargetDependency */,
@@ -50,6 +51,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		EC08364016D4362E00414D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC08363F16D4362E00414D31 /* Security.framework */; };
+		EC6131AD191045F8003C7245 /* libtinyBFCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61312F19103A0A003C7245 /* libtinyBFCP.a */; };
 		EC6AD68B136B3A8E00617B95 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6AD68A136B3A8E00617B95 /* MainWindow.xib */; };
 		EC7D994F1396BA62006A8F91 /* visio_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994D1396BA62006A8F91 /* visio_call.png */; };
 		EC7D99501396BA62006A8F91 /* voice_call.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7D994E1396BA62006A8F91 /* voice_call.png */; };
@@ -230,6 +232,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC6131231910399D003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6130DB1910368D003C7245;
+			remoteInfo = tinyBFCP;
+		};
+		EC61312E19103A0A003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC6130DC1910368D003C7245;
+			remoteInfo = tinyBFCP;
+		};
 		EC81BD56136C5B3E0068BCB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC8EBEE51368921400DC70DF /* ios-ngn-stack.xcodeproj */;
@@ -690,6 +706,7 @@
 				ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */,
 				ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */,
 				ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */,
+				EC6131AD191045F8003C7245 /* libtinyBFCP.a in Frameworks */,
 				ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */,
 				ECE113B61376F66C00096382 /* libtinySDP.a in Frameworks */,
 				ECE113B71376F66C00096382 /* libtinyRTP.a in Frameworks */,
@@ -877,6 +894,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */,
+				EC61312F19103A0A003C7245 /* libtinyBFCP.a */,
 				EC8EBEFB1368921400DC70DF /* libtinySAK.a */,
 				EC8EBEFD1368921400DC70DF /* libtinyNET.a */,
 				EC8EBEFF1368921400DC70DF /* libtinySDP.a */,
@@ -1119,6 +1137,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		EC61312F19103A0A003C7245 /* libtinyBFCP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyBFCP.a;
+			remoteRef = EC61312E19103A0A003C7245 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		EC81BD57136C5B3E0068BCB4 /* testAudioUnit.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -1440,6 +1465,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC6131241910399D003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyBFCP;
+			targetProxy = EC6131231910399D003C7245 /* PBXContainerItemProxy */;
+		};
 		EC83B7CC13697BA900DD3355 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = tinySAK;
