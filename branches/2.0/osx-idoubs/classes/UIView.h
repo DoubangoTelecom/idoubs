@@ -26,6 +26,6 @@
 
 -(void)setSelected:(BOOL)flag;
 
-@property (readwrite,setter=setSelected) BOOL selected;
+@property (readwrite,setter=setSelected:) BOOL selected;
 
 @end

@@ -119,6 +119,7 @@
 		EC5490011428425F00FFA990 /* keepawake.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC548FF21428425F00FFA990 /* keepawake.wav */; };
 		EC5490021428425F00FFA990 /* ringbacktone.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC548FF31428425F00FFA990 /* ringbacktone.wav */; };
 		EC5490031428425F00FFA990 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC548FF41428425F00FFA990 /* ringtone.mp3 */; };
+		EC6131EA1910496C003C7245 /* libtinyBFCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6131E91910496C003C7245 /* libtinyBFCP.a */; };
 		ECEA225E14210541004D456D /* UIHistoryItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECEA225D14210541004D456D /* UIHistoryItem.mm */; };
 		ECEA2280142106BF004D456D /* UIHistoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECEA227F142106BF004D456D /* UIHistoryItem.xib */; };
 		ECEA22FA14210EE3004D456D /* UIView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECEA22F914210EE3004D456D /* UIView.mm */; };
@@ -398,6 +399,13 @@
 			remoteGlobalIDString = EC4DBE4A141C0B920024CBEF;
 			remoteInfo = "osx-ngn-stack";
 		};
+		EC6131E81910496C003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC4DBC2C141BE0810024CBEF /* osx-ngn-stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC6131B3191048CB003C7245;
+			remoteInfo = tinyBFCP;
+		};
 		ECE7EB41142878F500466331 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -558,6 +566,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6131EA1910496C003C7245 /* libtinyBFCP.a in Frameworks */,
 				EC4DBEE2141C0D950024CBEF /* osx-ngn-stack.dylib in Frameworks */,
 				EC4DBE1F141C09370024CBEF /* libtinySAK.a in Frameworks */,
 				EC4DBE20141C09370024CBEF /* libtinyNET.a in Frameworks */,
@@ -678,6 +687,7 @@
 				EC4DBC58141BE0810024CBEF /* libtinyDAV.a */,
 				EC4DBC5A141BE0810024CBEF /* libtinyWRAP.a */,
 				EC4DBE50141C0B920024CBEF /* osx-ngn-stack.dylib */,
+				EC6131E91910496C003C7245 /* libtinyBFCP.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1022,6 +1032,13 @@
 			remoteRef = EC4DBE4F141C0B920024CBEF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		EC6131E91910496C003C7245 /* libtinyBFCP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtinyBFCP.a;
+			remoteRef = EC6131E81910496C003C7245 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1286,7 +1303,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/osx-ngn-stack",
@@ -1317,7 +1333,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = idoubs_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/osx-ngn-stack",

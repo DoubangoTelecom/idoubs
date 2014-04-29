@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				EC61323A19104A6A003C7245 /* PBXTargetDependency */,
 				EC8EBCE21368330400DC70DF /* PBXTargetDependency */,
 				EC8EBCE41368330400DC70DF /* PBXTargetDependency */,
 				EC8EBCE61368330400DC70DF /* PBXTargetDependency */,
@@ -187,6 +188,20 @@
 		EC5491141428446800FFA990 /* NgnVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5491131428446800FFA990 /* NgnVideoView.h */; };
 		EC54911A142844AB00FFA990 /* OSXProxyVideoProducer.h in Headers */ = {isa = PBXBuildFile; fileRef = EC549118142844AB00FFA990 /* OSXProxyVideoProducer.h */; };
 		EC54911B142844AB00FFA990 /* OSXProxyVideoProducer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC549119142844AB00FFA990 /* OSXProxyVideoProducer.mm */; };
+		EC6131D419104901003C7245 /* tbfcp_attr.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131BB19104901003C7245 /* tbfcp_attr.h */; };
+		EC6131D519104901003C7245 /* tbfcp_pkt.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131BC19104901003C7245 /* tbfcp_pkt.h */; };
+		EC6131D619104901003C7245 /* tbfcp_session.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131BD19104901003C7245 /* tbfcp_session.h */; };
+		EC6131D719104901003C7245 /* tbfcp_types.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131BE19104901003C7245 /* tbfcp_types.h */; };
+		EC6131D819104901003C7245 /* tbfcp_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131BF19104901003C7245 /* tbfcp_utils.h */; };
+		EC6131D919104901003C7245 /* tinybfcp.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131C019104901003C7245 /* tinybfcp.h */; };
+		EC6131DA19104901003C7245 /* tinybfcp_config.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6131C119104901003C7245 /* tinybfcp_config.h */; };
+		EC6131DB19104901003C7245 /* tbfcp_attr.c in Sources */ = {isa = PBXBuildFile; fileRef = EC6131C419104901003C7245 /* tbfcp_attr.c */; };
+		EC6131DC19104901003C7245 /* tbfcp_pkt.c in Sources */ = {isa = PBXBuildFile; fileRef = EC6131C519104901003C7245 /* tbfcp_pkt.c */; };
+		EC6131DD19104901003C7245 /* tbfcp_session.c in Sources */ = {isa = PBXBuildFile; fileRef = EC6131C619104901003C7245 /* tbfcp_session.c */; };
+		EC6131DE19104901003C7245 /* tbfcp_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = EC6131C719104901003C7245 /* tbfcp_utils.c */; };
+		EC6131E519104957003C7245 /* libtinyBFCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6131B3191048CB003C7245 /* libtinyBFCP.a */; };
+		EC61323D19104A88003C7245 /* tdav_session_bfcp.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61323C19104A88003C7245 /* tdav_session_bfcp.c */; };
+		EC61324019104A9C003C7245 /* tdav_codec_bfcp.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61323F19104A9C003C7245 /* tdav_codec_bfcp.c */; };
 		EC7D9AF71397094E006A8F91 /* tmedia_defaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */; };
 		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
 		EC81BD31136C57630068BCB4 /* tdav_producer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */; };
@@ -246,14 +261,6 @@
 		ECE203B015F641C7002FE99B /* tsk_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = ECE203AE15F641C7002FE99B /* tsk_plugin.c */; };
 		ECE203B115F641C7002FE99B /* tsk_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE203AF15F641C7002FE99B /* tsk_plugin.h */; };
 		ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */; };
-		ECFD24F2135D58F700E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
-		ECFD2688135D5D8500E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
-		ECFD26FE135D5EA200E6A9A3 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
-		ECFD26FF135D5EA200E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
-		ECFD2849135E7AA100E6A9A3 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
-		ECFD284A135E7AA100E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
-		ECFD2858135E7ACB00E6A9A3 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
-		ECFD2859135E7ACB00E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
 		ECFD2961135E7B5200E6A9A3 /* tinysak_config.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2905135E7B5200E6A9A3 /* tinysak_config.h */; };
 		ECFD2962135E7B5200E6A9A3 /* tsk.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2906135E7B5200E6A9A3 /* tsk.c */; };
 		ECFD2963135E7B5200E6A9A3 /* tsk.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2907135E7B5200E6A9A3 /* tsk.h */; };
@@ -581,8 +588,6 @@
 		ECFD2CCF135E7C5E00E6A9A3 /* thttp_message.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2C96135E7C5E00E6A9A3 /* thttp_message.c */; };
 		ECFD2CD0135E7C5E00E6A9A3 /* thttp_session.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2C97135E7C5E00E6A9A3 /* thttp_session.c */; };
 		ECFD2CD1135E7C5E00E6A9A3 /* thttp_url.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2C98135E7C5E00E6A9A3 /* thttp_url.c */; };
-		ECFD2CE5135E7C9100E6A9A3 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD24ED135D58EB00E6A9A3 /* libtinyNET.a */; };
-		ECFD2CE6135E7C9100E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
 		ECFD2D26135E7CAC00E6A9A3 /* tmedia_content.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2CEC135E7CAC00E6A9A3 /* tmedia_content.h */; };
 		ECFD2D27135E7CAC00E6A9A3 /* tmedia_content_cpim.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2CED135E7CAC00E6A9A3 /* tmedia_content_cpim.h */; };
 		ECFD2D28135E7CAC00E6A9A3 /* tmedia_content_multipart.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2CEE135E7CAC00E6A9A3 /* tmedia_content_multipart.h */; };
@@ -1083,10 +1088,6 @@
 		ECFD3253135E7DBC00E6A9A3 /* tdav_win32.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */; };
 		ECFD3255135E7DBC00E6A9A3 /* tdav_runnable_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31FE135E7DBC00E6A9A3 /* tdav_runnable_video.c */; };
 		ECFD3256135E7DBC00E6A9A3 /* tdav_session_video.c in Sources */ = {isa = PBXBuildFile; fileRef = ECFD31FF135E7DBC00E6A9A3 /* tdav_session_video.c */; };
-		ECFD3268135E7DE200E6A9A3 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
-		ECFD3283135E7F9300E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
-		ECFD328E135E7FC800E6A9A3 /* libtinyHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2851135E7ABA00E6A9A3 /* libtinyHTTP.a */; };
-		ECFD328F135E7FC800E6A9A3 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD2426135D584100E6A9A3 /* libtinySAK.a */; };
 		ECFD32DE135E824700E6A9A3 /* ActionConfig.cxx in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32B3135E824700E6A9A3 /* ActionConfig.cxx */; };
 		ECFD32DF135E824700E6A9A3 /* ActionConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD32B4135E824700E6A9A3 /* ActionConfig.h */; };
 		ECFD32E0135E824700E6A9A3 /* AudioResampler.cxx in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32B5135E824700E6A9A3 /* AudioResampler.cxx */; };
@@ -1134,6 +1135,356 @@
 			proxyType = 1;
 			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
 			remoteInfo = tinyMEDIA;
+		};
+		EC6131EB1910499B003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC6131ED191049B4003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC6131EF191049C2003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC6131F1191049C5003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC6131F3191049C7003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC6131F5191049CC003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC6131F7191049CF003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
+			remoteInfo = tinyHTTP;
+		};
+		EC6131F9191049D2003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC6131FB191049D6003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC6131FD191049D9003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC6131FF191049FF003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC61320119104A01003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC61320319104A04003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
+			remoteInfo = tinyHTTP;
+		};
+		EC61320519104A06003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC61320719104A09003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3;
+			remoteInfo = tinySMS;
+		};
+		EC61320919104A0D003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC61320B19104A0F003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC61320D19104A12003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC61320F19104A15003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC61321119104A18003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3;
+			remoteInfo = tinySIP;
+		};
+		EC61321319104A1B003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6131B2191048CB003C7245;
+			remoteInfo = tinyBFCP;
+		};
+		EC61321519104A1E003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
+			remoteInfo = tinyRTP;
+		};
+		EC61321719104A21003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3;
+			remoteInfo = tinyXCAP;
+		};
+		EC61321919104A24003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3;
+			remoteInfo = tinyDAV;
+		};
+		EC61321B19104A27003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD32AD135E821000E6A9A3;
+			remoteInfo = tinyWRAP;
+		};
+		EC61321D19104A2D003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC61321F19104A30003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
+			remoteInfo = tinyRTP;
+		};
+		EC61322119104A33003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC61322319104A36003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC61322519104A39003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2850135E7ABA00E6A9A3;
+			remoteInfo = tinyHTTP;
+		};
+		EC61322719104A3C003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2D59135E7CD800E6A9A3;
+			remoteInfo = tinySIGCOMP;
+		};
+		EC61322919104A3E003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC61322B19104A42003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E5A135E7D3600E6A9A3;
+			remoteInfo = tinyXCAP;
+		};
+		EC61322D19104A45003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD3170135E7DA100E6A9A3;
+			remoteInfo = tinyDAV;
+		};
+		EC61322F19104A4A003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC61323119104A4E003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC61323319104A51003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E99135E7D6D00E6A9A3;
+			remoteInfo = tinySIP;
+		};
+		EC61323519104A54003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2E01135E7D1000E6A9A3;
+			remoteInfo = tinySMS;
+		};
+		EC61323719104A57003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6131B2191048CB003C7245;
+			remoteInfo = tinyBFCP;
+		};
+		EC61323919104A6A003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6131B2191048CB003C7245;
+			remoteInfo = tinyBFCP;
+		};
+		EC61324119104E46003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC61324319104E49003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
+		};
+		EC61324519104E4E003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD25F6135D5CD100E6A9A3;
+			remoteInfo = tinySDP;
+		};
+		EC61324719104E51003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2692135D5DDD00E6A9A3;
+			remoteInfo = tinyRTP;
+		};
+		EC61324919104E56003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2766135E79B800E6A9A3;
+			remoteInfo = tinyIPSec;
+		};
+		EC61324B19104E59003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD279A135E7A0200E6A9A3;
+			remoteInfo = tinyMSRP;
+		};
+		EC61324D19104E5F003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2CDD135E7C7D00E6A9A3;
+			remoteInfo = tinyMEDIA;
+		};
+		EC61324F19104E66003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6131B2191048CB003C7245;
+			remoteInfo = tinyBFCP;
+		};
+		EC61325119104E6D003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD2425135D584100E6A9A3;
+			remoteInfo = tinySAK;
+		};
+		EC61325319104E71003C7245 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD24EC135D58EB00E6A9A3;
+			remoteInfo = tinyNET;
 		};
 		EC8EBCE11368330400DC70DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1498,6 +1849,20 @@
 		EC5491131428446800FFA990 /* NgnVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnVideoView.h; sourceTree = "<group>"; };
 		EC549118142844AB00FFA990 /* OSXProxyVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXProxyVideoProducer.h; sourceTree = "<group>"; };
 		EC549119142844AB00FFA990 /* OSXProxyVideoProducer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OSXProxyVideoProducer.mm; sourceTree = "<group>"; };
+		EC6131B3191048CB003C7245 /* libtinyBFCP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyBFCP.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6131BB19104901003C7245 /* tbfcp_attr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbfcp_attr.h; sourceTree = "<group>"; };
+		EC6131BC19104901003C7245 /* tbfcp_pkt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbfcp_pkt.h; sourceTree = "<group>"; };
+		EC6131BD19104901003C7245 /* tbfcp_session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbfcp_session.h; sourceTree = "<group>"; };
+		EC6131BE19104901003C7245 /* tbfcp_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbfcp_types.h; sourceTree = "<group>"; };
+		EC6131BF19104901003C7245 /* tbfcp_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbfcp_utils.h; sourceTree = "<group>"; };
+		EC6131C019104901003C7245 /* tinybfcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinybfcp.h; sourceTree = "<group>"; };
+		EC6131C119104901003C7245 /* tinybfcp_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinybfcp_config.h; sourceTree = "<group>"; };
+		EC6131C419104901003C7245 /* tbfcp_attr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tbfcp_attr.c; sourceTree = "<group>"; };
+		EC6131C519104901003C7245 /* tbfcp_pkt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tbfcp_pkt.c; sourceTree = "<group>"; };
+		EC6131C619104901003C7245 /* tbfcp_session.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tbfcp_session.c; sourceTree = "<group>"; };
+		EC6131C719104901003C7245 /* tbfcp_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tbfcp_utils.c; sourceTree = "<group>"; };
+		EC61323C19104A88003C7245 /* tdav_session_bfcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_bfcp.c; sourceTree = "<group>"; };
+		EC61323F19104A9C003C7245 /* tdav_codec_bfcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_bfcp.c; sourceTree = "<group>"; };
 		EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_defaults.h; sourceTree = "<group>"; };
 		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
@@ -2619,6 +2984,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6131E519104957003C7245 /* libtinyBFCP.a in Frameworks */,
 				EC4DBE51141C0B990024CBEF /* libtinyDAV.a in Frameworks */,
 				EC4DBE52141C0B990024CBEF /* libtinyHTTP.a in Frameworks */,
 				EC4DBE53141C0B990024CBEF /* libtinyIPSec.a in Frameworks */,
@@ -2646,6 +3012,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC6131B0191048CB003C7245 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFD2424135D584100E6A9A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2657,7 +3030,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD24F2135D58F700E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2665,7 +3037,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD2688135D5D8500E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2673,8 +3044,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD26FE135D5EA200E6A9A3 /* libtinyNET.a in Frameworks */,
-				ECFD26FF135D5EA200E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2689,9 +3058,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD2849135E7AA100E6A9A3 /* libtinyNET.a in Frameworks */,
-				ECFD284A135E7AA100E6A9A3 /* libtinySAK.a in Frameworks */,
-				ECFD3268135E7DE200E6A9A3 /* libtinyHTTP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2699,8 +3065,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD2858135E7ACB00E6A9A3 /* libtinyNET.a in Frameworks */,
-				ECFD2859135E7ACB00E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2708,8 +3072,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD2CE5135E7C9100E6A9A3 /* libtinyNET.a in Frameworks */,
-				ECFD2CE6135E7C9100E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2724,7 +3086,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD3283135E7F9300E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2732,8 +3093,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFD328E135E7FC800E6A9A3 /* libtinyHTTP.a in Frameworks */,
-				ECFD328F135E7FC800E6A9A3 /* libtinySAK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2779,6 +3138,7 @@
 				ECFD3171135E7DA100E6A9A3 /* libtinyDAV.a */,
 				ECFD32AE135E821000E6A9A3 /* libtinyWRAP.a */,
 				EC4DBE4B141C0B920024CBEF /* osx-ngn-stack.dylib */,
+				EC6131B3191048CB003C7245 /* libtinyBFCP.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3088,6 +3448,65 @@
 			name = common;
 			sourceTree = "<group>";
 		};
+		EC6131B719104901003C7245 /* tinyBFCP */ = {
+			isa = PBXGroup;
+			children = (
+				EC6131B919104901003C7245 /* include */,
+				EC6131C319104901003C7245 /* src */,
+			);
+			name = tinyBFCP;
+			path = ../../../../../doubango/branches/2.0/doubango/tinyBFCP;
+			sourceTree = "<group>";
+		};
+		EC6131B919104901003C7245 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EC6131BA19104901003C7245 /* tinybfcp */,
+				EC6131C019104901003C7245 /* tinybfcp.h */,
+				EC6131C119104901003C7245 /* tinybfcp_config.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EC6131BA19104901003C7245 /* tinybfcp */ = {
+			isa = PBXGroup;
+			children = (
+				EC6131BB19104901003C7245 /* tbfcp_attr.h */,
+				EC6131BC19104901003C7245 /* tbfcp_pkt.h */,
+				EC6131BD19104901003C7245 /* tbfcp_session.h */,
+				EC6131BE19104901003C7245 /* tbfcp_types.h */,
+				EC6131BF19104901003C7245 /* tbfcp_utils.h */,
+			);
+			path = tinybfcp;
+			sourceTree = "<group>";
+		};
+		EC6131C319104901003C7245 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EC6131C419104901003C7245 /* tbfcp_attr.c */,
+				EC6131C519104901003C7245 /* tbfcp_pkt.c */,
+				EC6131C619104901003C7245 /* tbfcp_session.c */,
+				EC6131C719104901003C7245 /* tbfcp_utils.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EC61323B19104A88003C7245 /* bfcp */ = {
+			isa = PBXGroup;
+			children = (
+				EC61323C19104A88003C7245 /* tdav_session_bfcp.c */,
+			);
+			path = bfcp;
+			sourceTree = "<group>";
+		};
+		EC61323E19104A9C003C7245 /* bfcp */ = {
+			isa = PBXGroup;
+			children = (
+				EC61323F19104A9C003C7245 /* tdav_codec_bfcp.c */,
+			);
+			path = bfcp;
+			sourceTree = "<group>";
+		};
 		EC81BDA8136C6BC00068BCB4 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -3213,6 +3632,7 @@
 		ECFD28FA135E7B2E00E6A9A3 /* Doubango */ = {
 			isa = PBXGroup;
 			children = (
+				EC6131B719104901003C7245 /* tinyBFCP */,
 				ECFD32B1135E821900E6A9A3 /* tinyWRAP */,
 				ECFD3174135E7DBB00E6A9A3 /* tinyDAV */,
 				ECFD2E9D135E7D8900E6A9A3 /* tinySIP */,
@@ -5290,6 +5710,7 @@
 		ECFD31BD135E7DBB00E6A9A3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EC61323B19104A88003C7245 /* bfcp */,
 				EC30220016444CF00084F78F /* t140 */,
 				ECFD31BE135E7DBB00E6A9A3 /* audio */,
 				ECFD31D2135E7DBB00E6A9A3 /* codecs */,
@@ -5370,6 +5791,7 @@
 		ECFD31D2135E7DBB00E6A9A3 /* codecs */ = {
 			isa = PBXGroup;
 			children = (
+				EC61323E19104A9C003C7245 /* bfcp */,
 				EC30220716444D0A0084F78F /* t140 */,
 				ECB384FA155174C10035F25D /* fec */,
 				EC5462911426FE1600BFBF66 /* vpx */,
@@ -5654,6 +6076,20 @@
 				EC5491141428446800FFA990 /* NgnVideoView.h in Headers */,
 				EC54911A142844AB00FFA990 /* OSXProxyVideoProducer.h in Headers */,
 				ECD28556145F98A300EFE997 /* NgnDeviceInfo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6131B1191048CB003C7245 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6131D519104901003C7245 /* tbfcp_pkt.h in Headers */,
+				EC6131D419104901003C7245 /* tbfcp_attr.h in Headers */,
+				EC6131D719104901003C7245 /* tbfcp_types.h in Headers */,
+				EC6131DA19104901003C7245 /* tinybfcp_config.h in Headers */,
+				EC6131D819104901003C7245 /* tbfcp_utils.h in Headers */,
+				EC6131D619104901003C7245 /* tbfcp_session.h in Headers */,
+				EC6131D919104901003C7245 /* tinybfcp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6246,11 +6682,45 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC61321C19104A27003C7245 /* PBXTargetDependency */,
+				EC61321A19104A24003C7245 /* PBXTargetDependency */,
+				EC61321819104A21003C7245 /* PBXTargetDependency */,
+				EC61321619104A1E003C7245 /* PBXTargetDependency */,
+				EC61321419104A1B003C7245 /* PBXTargetDependency */,
+				EC61321219104A18003C7245 /* PBXTargetDependency */,
+				EC61321019104A15003C7245 /* PBXTargetDependency */,
+				EC61320E19104A12003C7245 /* PBXTargetDependency */,
+				EC61320C19104A0F003C7245 /* PBXTargetDependency */,
+				EC61320A19104A0D003C7245 /* PBXTargetDependency */,
+				EC61320819104A09003C7245 /* PBXTargetDependency */,
+				EC61320619104A06003C7245 /* PBXTargetDependency */,
+				EC61320419104A04003C7245 /* PBXTargetDependency */,
+				EC61320219104A01003C7245 /* PBXTargetDependency */,
+				EC613200191049FF003C7245 /* PBXTargetDependency */,
 			);
 			name = "osx-ngn-stack";
 			productName = "osx-ngn-stack";
 			productReference = EC4DBE4B141C0B920024CBEF /* osx-ngn-stack.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		EC6131B2191048CB003C7245 /* tinyBFCP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC6131B6191048CB003C7245 /* Build configuration list for PBXNativeTarget "tinyBFCP" */;
+			buildPhases = (
+				EC6131AF191048CB003C7245 /* Sources */,
+				EC6131B0191048CB003C7245 /* Frameworks */,
+				EC6131B1191048CB003C7245 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC61325419104E71003C7245 /* PBXTargetDependency */,
+				EC61325219104E6D003C7245 /* PBXTargetDependency */,
+			);
+			name = tinyBFCP;
+			productName = tinyBFCP;
+			productReference = EC6131B3191048CB003C7245 /* libtinyBFCP.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		ECFD2425135D584100E6A9A3 /* tinySAK */ = {
 			isa = PBXNativeTarget;
@@ -6336,6 +6806,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC6131EC1910499B003C7245 /* PBXTargetDependency */,
 			);
 			name = tinyIPSec;
 			productName = tinyIPSec;
@@ -6411,6 +6882,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC6131EE191049B4003C7245 /* PBXTargetDependency */,
 			);
 			name = tinySIGCOMP;
 			productName = tinySIGCOMP;
@@ -6466,6 +6938,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC6131FE191049D9003C7245 /* PBXTargetDependency */,
+				EC6131FC191049D6003C7245 /* PBXTargetDependency */,
+				EC6131FA191049D2003C7245 /* PBXTargetDependency */,
+				EC6131F8191049CF003C7245 /* PBXTargetDependency */,
+				EC6131F6191049CC003C7245 /* PBXTargetDependency */,
+				EC6131F4191049C7003C7245 /* PBXTargetDependency */,
+				EC6131F2191049C5003C7245 /* PBXTargetDependency */,
+				EC6131F0191049C2003C7245 /* PBXTargetDependency */,
 			);
 			name = tinySIP;
 			productName = tinySIP;
@@ -6483,6 +6963,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC61325019104E66003C7245 /* PBXTargetDependency */,
+				EC61324E19104E5F003C7245 /* PBXTargetDependency */,
+				EC61324C19104E59003C7245 /* PBXTargetDependency */,
+				EC61324A19104E56003C7245 /* PBXTargetDependency */,
+				EC61324819104E51003C7245 /* PBXTargetDependency */,
+				EC61324619104E4E003C7245 /* PBXTargetDependency */,
+				EC61324419104E49003C7245 /* PBXTargetDependency */,
+				EC61324219104E46003C7245 /* PBXTargetDependency */,
 			);
 			name = tinyDAV;
 			productName = tinyDAV;
@@ -6500,6 +6988,20 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC61323819104A57003C7245 /* PBXTargetDependency */,
+				EC61323619104A54003C7245 /* PBXTargetDependency */,
+				EC61323419104A51003C7245 /* PBXTargetDependency */,
+				EC61323219104A4E003C7245 /* PBXTargetDependency */,
+				EC61323019104A4A003C7245 /* PBXTargetDependency */,
+				EC61322E19104A45003C7245 /* PBXTargetDependency */,
+				EC61322C19104A42003C7245 /* PBXTargetDependency */,
+				EC61322A19104A3E003C7245 /* PBXTargetDependency */,
+				EC61322819104A3C003C7245 /* PBXTargetDependency */,
+				EC61322619104A39003C7245 /* PBXTargetDependency */,
+				EC61322419104A36003C7245 /* PBXTargetDependency */,
+				EC61322219104A33003C7245 /* PBXTargetDependency */,
+				EC61322019104A30003C7245 /* PBXTargetDependency */,
+				EC61321E19104A2D003C7245 /* PBXTargetDependency */,
 			);
 			name = tinyWRAP;
 			productName = tinyWRAP;
@@ -6546,6 +7048,7 @@
 				ECFD32AD135E821000E6A9A3 /* tinyWRAP */,
 				EC8EBCDD136832D600DC70DF /* Doubango */,
 				EC4DBE4A141C0B920024CBEF /* osx-ngn-stack */,
+				EC6131B2191048CB003C7245 /* tinyBFCP */,
 			);
 		};
 /* End PBXProject section */
@@ -6603,6 +7106,17 @@
 				EC5490F91428431D00FFA990 /* NSDate+Utilities.m in Sources */,
 				EC54911B142844AB00FFA990 /* OSXProxyVideoProducer.mm in Sources */,
 				ECD28557145F98A300EFE997 /* NgnDeviceInfo.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6131AF191048CB003C7245 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6131DB19104901003C7245 /* tbfcp_attr.c in Sources */,
+				EC6131DE19104901003C7245 /* tbfcp_utils.c in Sources */,
+				EC6131DC19104901003C7245 /* tbfcp_pkt.c in Sources */,
+				EC6131DD19104901003C7245 /* tbfcp_session.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7097,6 +7611,7 @@
 				ECFD3240135E7DBC00E6A9A3 /* tdav_codec_bv32.c in Sources */,
 				ECFD3241135E7DBC00E6A9A3 /* tdav_codec_dtmf.c in Sources */,
 				ECFD3242135E7DBC00E6A9A3 /* g711.c in Sources */,
+				EC61324019104A9C003C7245 /* tdav_codec_bfcp.c in Sources */,
 				ECFD3243135E7DBC00E6A9A3 /* tdav_codec_g711.c in Sources */,
 				ECFD3244135E7DBC00E6A9A3 /* tdav_codec_g729.c in Sources */,
 				ECFD3245135E7DBC00E6A9A3 /* tdav_codec_gsm.c in Sources */,
@@ -7134,6 +7649,7 @@
 				ECB384FE155174C10035F25D /* tdav_codec_ulpfec.c in Sources */,
 				EC8C051A15E085210048DD21 /* tdav_converter_video.cxx in Sources */,
 				EC30220416444CF00084F78F /* tdav_consumer_t140.c in Sources */,
+				EC61323D19104A88003C7245 /* tdav_session_bfcp.c in Sources */,
 				EC30220516444CF00084F78F /* tdav_producer_t140.c in Sources */,
 				EC30220616444CF00084F78F /* tdav_session_t140.c in Sources */,
 				EC30220916444D0A0084F78F /* tdav_codec_t140.c in Sources */,
@@ -7172,6 +7688,256 @@
 			isa = PBXTargetDependency;
 			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
 			targetProxy = EC28FB7F166C685100EB654F /* PBXContainerItemProxy */;
+		};
+		EC6131EC1910499B003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC6131EB1910499B003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131EE191049B4003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC6131ED191049B4003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131F0191049C2003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC6131EF191049C2003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131F2191049C5003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC6131F1191049C5003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131F4191049C7003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC6131F3191049C7003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131F6191049CC003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC6131F5191049CC003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131F8191049CF003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			targetProxy = EC6131F7191049CF003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131FA191049D2003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC6131F9191049D2003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131FC191049D6003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC6131FB191049D6003C7245 /* PBXContainerItemProxy */;
+		};
+		EC6131FE191049D9003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			targetProxy = EC6131FD191049D9003C7245 /* PBXContainerItemProxy */;
+		};
+		EC613200191049FF003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC6131FF191049FF003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320219104A01003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC61320119104A01003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320419104A04003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			targetProxy = EC61320319104A04003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320619104A06003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC61320519104A06003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320819104A09003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			targetProxy = EC61320719104A09003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320A19104A0D003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC61320919104A0D003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320C19104A0F003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC61320B19104A0F003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61320E19104A12003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			targetProxy = EC61320D19104A12003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321019104A15003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC61320F19104A15003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321219104A18003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			targetProxy = EC61321119104A18003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321419104A1B003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6131B2191048CB003C7245 /* tinyBFCP */;
+			targetProxy = EC61321319104A1B003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321619104A1E003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			targetProxy = EC61321519104A1E003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321819104A21003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			targetProxy = EC61321719104A21003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321A19104A24003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			targetProxy = EC61321919104A24003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321C19104A27003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD32AD135E821000E6A9A3 /* tinyWRAP */;
+			targetProxy = EC61321B19104A27003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61321E19104A2D003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC61321D19104A2D003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322019104A30003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			targetProxy = EC61321F19104A30003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322219104A33003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC61322119104A33003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322419104A36003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC61322319104A36003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322619104A39003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2850135E7ABA00E6A9A3 /* tinyHTTP */;
+			targetProxy = EC61322519104A39003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322819104A3C003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2D59135E7CD800E6A9A3 /* tinySIGCOMP */;
+			targetProxy = EC61322719104A3C003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322A19104A3E003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC61322919104A3E003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322C19104A42003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E5A135E7D3600E6A9A3 /* tinyXCAP */;
+			targetProxy = EC61322B19104A42003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61322E19104A45003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD3170135E7DA100E6A9A3 /* tinyDAV */;
+			targetProxy = EC61322D19104A45003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323019104A4A003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC61322F19104A4A003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323219104A4E003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC61323119104A4E003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323419104A51003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E99135E7D6D00E6A9A3 /* tinySIP */;
+			targetProxy = EC61323319104A51003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323619104A54003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2E01135E7D1000E6A9A3 /* tinySMS */;
+			targetProxy = EC61323519104A54003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323819104A57003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6131B2191048CB003C7245 /* tinyBFCP */;
+			targetProxy = EC61323719104A57003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61323A19104A6A003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6131B2191048CB003C7245 /* tinyBFCP */;
+			targetProxy = EC61323919104A6A003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324219104E46003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC61324119104E46003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324419104E49003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC61324319104E49003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324619104E4E003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD25F6135D5CD100E6A9A3 /* tinySDP */;
+			targetProxy = EC61324519104E4E003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324819104E51003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2692135D5DDD00E6A9A3 /* tinyRTP */;
+			targetProxy = EC61324719104E51003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324A19104E56003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2766135E79B800E6A9A3 /* tinyIPSec */;
+			targetProxy = EC61324919104E56003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324C19104E59003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD279A135E7A0200E6A9A3 /* tinyMSRP */;
+			targetProxy = EC61324B19104E59003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61324E19104E5F003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2CDD135E7C7D00E6A9A3 /* tinyMEDIA */;
+			targetProxy = EC61324D19104E5F003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61325019104E66003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6131B2191048CB003C7245 /* tinyBFCP */;
+			targetProxy = EC61324F19104E66003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61325219104E6D003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD2425135D584100E6A9A3 /* tinySAK */;
+			targetProxy = EC61325119104E6D003C7245 /* PBXContainerItemProxy */;
+		};
+		EC61325419104E71003C7245 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD24EC135D58EB00E6A9A3 /* tinyNET */;
+			targetProxy = EC61325319104E71003C7245 /* PBXContainerItemProxy */;
 		};
 		EC8EBCE21368330400DC70DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7328,17 +8094,15 @@
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/tinyBFCP/include $DOUBANGO_HOME/thirdparties/mac/include ";
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
 				NGN_STACK_HOME = ..;
 				OTHER_CFLAGS = (
@@ -7372,13 +8136,12 @@
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/mac/include";
+				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/tinyBFCP/include $DOUBANGO_HOME/thirdparties/mac/include ";
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				NGN_STACK_HOME = ..;
@@ -7501,6 +8264,83 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = "osx-ngn-stack";
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		EC6131B4191048CB003C7245 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyBFCP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC6131B5191048CB003C7245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					$DOUBANGO_HOME/tinyBFCP/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -7921,6 +8761,7 @@
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyMSRP/include,
 					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyBFCP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyDAV/include,
 					$DOUBANGO_HOME/thirdparties/mac/include,
@@ -7942,6 +8783,7 @@
 					$DOUBANGO_HOME/tinyRTP/include,
 					$DOUBANGO_HOME/tinyMSRP/include,
 					$DOUBANGO_HOME/tinySDP/include,
+					$DOUBANGO_HOME/tinyBFCP/include,
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyDAV/include,
 					$DOUBANGO_HOME/thirdparties/mac/include,
@@ -8025,6 +8867,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EC6131B6191048CB003C7245 /* Build configuration list for PBXNativeTarget "tinyBFCP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6131B4191048CB003C7245 /* Debug */,
+				EC6131B5191048CB003C7245 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EC8EBCE0136832F400DC70DF /* Build configuration list for PBXAggregateTarget "Doubango" */ = {
 			isa = XCConfigurationList;
