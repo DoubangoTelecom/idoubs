@@ -202,6 +202,17 @@
 		EC6131E519104957003C7245 /* libtinyBFCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6131B3191048CB003C7245 /* libtinyBFCP.a */; };
 		EC61323D19104A88003C7245 /* tdav_session_bfcp.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61323C19104A88003C7245 /* tdav_session_bfcp.c */; };
 		EC61324019104A9C003C7245 /* tdav_codec_bfcp.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61323F19104A9C003C7245 /* tdav_codec_bfcp.c */; };
+		EC61325C19179BE0003C7245 /* tnet_stun_attr.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61325519179BE0003C7245 /* tnet_stun_attr.c */; };
+		EC61325D19179BE0003C7245 /* tnet_stun_attr.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61325619179BE0003C7245 /* tnet_stun_attr.h */; };
+		EC61325E19179BE0003C7245 /* tnet_stun_pkt.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61325719179BE0003C7245 /* tnet_stun_pkt.c */; };
+		EC61325F19179BE0003C7245 /* tnet_stun_pkt.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61325819179BE0003C7245 /* tnet_stun_pkt.h */; };
+		EC61326019179BE0003C7245 /* tnet_stun_types.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61325919179BE0003C7245 /* tnet_stun_types.h */; };
+		EC61326119179BE0003C7245 /* tnet_stun_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61325A19179BE0003C7245 /* tnet_stun_utils.c */; };
+		EC61326219179BE0003C7245 /* tnet_stun_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61325B19179BE0003C7245 /* tnet_stun_utils.h */; };
+		EC61326719179C1F003C7245 /* tnet_turn_attr.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61326319179C1F003C7245 /* tnet_turn_attr.c */; };
+		EC61326819179C1F003C7245 /* tnet_turn_attr.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61326419179C1F003C7245 /* tnet_turn_attr.h */; };
+		EC61326919179C1F003C7245 /* tnet_turn_session.c in Sources */ = {isa = PBXBuildFile; fileRef = EC61326519179C1F003C7245 /* tnet_turn_session.c */; };
+		EC61326A19179C1F003C7245 /* tnet_turn_session.h in Headers */ = {isa = PBXBuildFile; fileRef = EC61326619179C1F003C7245 /* tnet_turn_session.h */; };
 		EC7D9AF71397094E006A8F91 /* tmedia_defaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */; };
 		EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD2D136C572C0068BCB4 /* tdav_consumer_audioqueue.c */; };
 		EC81BD31136C57630068BCB4 /* tdav_producer_audioqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = EC81BD30136C57630068BCB4 /* tdav_producer_audioqueue.c */; };
@@ -1863,6 +1874,17 @@
 		EC6131C719104901003C7245 /* tbfcp_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tbfcp_utils.c; sourceTree = "<group>"; };
 		EC61323C19104A88003C7245 /* tdav_session_bfcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_session_bfcp.c; sourceTree = "<group>"; };
 		EC61323F19104A9C003C7245 /* tdav_codec_bfcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tdav_codec_bfcp.c; sourceTree = "<group>"; };
+		EC61325519179BE0003C7245 /* tnet_stun_attr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_attr.c; sourceTree = "<group>"; };
+		EC61325619179BE0003C7245 /* tnet_stun_attr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_attr.h; sourceTree = "<group>"; };
+		EC61325719179BE0003C7245 /* tnet_stun_pkt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_pkt.c; sourceTree = "<group>"; };
+		EC61325819179BE0003C7245 /* tnet_stun_pkt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_pkt.h; sourceTree = "<group>"; };
+		EC61325919179BE0003C7245 /* tnet_stun_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_types.h; sourceTree = "<group>"; };
+		EC61325A19179BE0003C7245 /* tnet_stun_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_utils.c; sourceTree = "<group>"; };
+		EC61325B19179BE0003C7245 /* tnet_stun_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_utils.h; sourceTree = "<group>"; };
+		EC61326319179C1F003C7245 /* tnet_turn_attr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_turn_attr.c; sourceTree = "<group>"; };
+		EC61326419179C1F003C7245 /* tnet_turn_attr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_turn_attr.h; sourceTree = "<group>"; };
+		EC61326519179C1F003C7245 /* tnet_turn_session.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_turn_session.c; sourceTree = "<group>"; };
+		EC61326619179C1F003C7245 /* tnet_turn_session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_turn_session.h; sourceTree = "<group>"; };
 		EC7D9AF61397094E006A8F91 /* tmedia_defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmedia_defaults.h; sourceTree = "<group>"; };
 		EC81BD28136C55420068BCB4 /* tdav_consumer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_audioqueue.h; sourceTree = "<group>"; };
 		EC81BD2A136C55670068BCB4 /* tdav_producer_audioqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_audioqueue.h; sourceTree = "<group>"; };
@@ -3878,6 +3900,13 @@
 		ECFD29FB135E7B8500E6A9A3 /* stun */ = {
 			isa = PBXGroup;
 			children = (
+				EC61325519179BE0003C7245 /* tnet_stun_attr.c */,
+				EC61325619179BE0003C7245 /* tnet_stun_attr.h */,
+				EC61325719179BE0003C7245 /* tnet_stun_pkt.c */,
+				EC61325819179BE0003C7245 /* tnet_stun_pkt.h */,
+				EC61325919179BE0003C7245 /* tnet_stun_types.h */,
+				EC61325A19179BE0003C7245 /* tnet_stun_utils.c */,
+				EC61325B19179BE0003C7245 /* tnet_stun_utils.h */,
 				ECFD29FC135E7B8500E6A9A3 /* tnet_stun.c */,
 				ECFD29FD135E7B8500E6A9A3 /* tnet_stun.h */,
 				ECFD29FE135E7B8500E6A9A3 /* tnet_stun_attribute.c */,
@@ -3902,6 +3931,10 @@
 		ECFD2A1C135E7B8500E6A9A3 /* turn */ = {
 			isa = PBXGroup;
 			children = (
+				EC61326319179C1F003C7245 /* tnet_turn_attr.c */,
+				EC61326419179C1F003C7245 /* tnet_turn_attr.h */,
+				EC61326519179C1F003C7245 /* tnet_turn_session.c */,
+				EC61326619179C1F003C7245 /* tnet_turn_session.h */,
 				ECFD2A1D135E7B8500E6A9A3 /* tnet_turn.c */,
 				ECFD2A1E135E7B8500E6A9A3 /* tnet_turn.h */,
 				ECFD2A1F135E7B8500E6A9A3 /* tnet_turn_attribute.c */,
@@ -6140,13 +6173,16 @@
 				ECFD2A39135E7B8500E6A9A3 /* tnet_dhcp.h in Headers */,
 				ECFD2A3B135E7B8500E6A9A3 /* tnet_dhcp_message.h in Headers */,
 				ECFD2A3D135E7B8500E6A9A3 /* tnet_dhcp_option.h in Headers */,
+				EC61326819179C1F003C7245 /* tnet_turn_attr.h in Headers */,
 				ECFD2A3F135E7B8500E6A9A3 /* tnet_dhcp_option_sip.h in Headers */,
 				ECFD2A41135E7B8500E6A9A3 /* tnet_dhcp6.h in Headers */,
 				ECFD2A43135E7B8500E6A9A3 /* tnet_dhcp6_duid.h in Headers */,
 				ECFD2A45135E7B8500E6A9A3 /* tnet_dhcp6_message.h in Headers */,
+				EC61326019179BE0003C7245 /* tnet_stun_types.h in Headers */,
 				ECFD2A47135E7B8500E6A9A3 /* tnet_dhcp6_option.h in Headers */,
 				ECFD2A49135E7B8500E6A9A3 /* tnet_dns.h in Headers */,
 				ECFD2A4B135E7B8500E6A9A3 /* tnet_dns_a.h in Headers */,
+				EC61326219179BE0003C7245 /* tnet_stun_utils.h in Headers */,
 				ECFD2A4D135E7B8500E6A9A3 /* tnet_dns_aaaa.h in Headers */,
 				ECFD2A4F135E7B8500E6A9A3 /* tnet_dns_cname.h in Headers */,
 				ECFD2A51135E7B8500E6A9A3 /* tnet_dns_message.h in Headers */,
@@ -6157,9 +6193,11 @@
 				ECFD2A5B135E7B8500E6A9A3 /* tnet_dns_ptr.h in Headers */,
 				ECFD2A5D135E7B8500E6A9A3 /* tnet_dns_regexp.h in Headers */,
 				ECFD2A5F135E7B8500E6A9A3 /* tnet_dns_resolvconf.h in Headers */,
+				EC61325D19179BE0003C7245 /* tnet_stun_attr.h in Headers */,
 				ECFD2A61135E7B8500E6A9A3 /* tnet_dns_rr.h in Headers */,
 				ECFD2A63135E7B8500E6A9A3 /* tnet_dns_soa.h in Headers */,
 				ECFD2A65135E7B8500E6A9A3 /* tnet_dns_srv.h in Headers */,
+				EC61325F19179BE0003C7245 /* tnet_stun_pkt.h in Headers */,
 				ECFD2A67135E7B8500E6A9A3 /* tnet_dns_txt.h in Headers */,
 				ECFD2A69135E7B8500E6A9A3 /* tnet_ice.h in Headers */,
 				ECFD2A6B135E7B8500E6A9A3 /* tnet_stun.h in Headers */,
@@ -6179,6 +6217,7 @@
 				ECFD2A83135E7B8500E6A9A3 /* tnet_transport.h in Headers */,
 				ECFD2A86135E7B8500E6A9A3 /* tnet_types.h in Headers */,
 				ECFD2A88135E7B8500E6A9A3 /* tnet_utils.h in Headers */,
+				EC61326A19179C1F003C7245 /* tnet_turn_session.h in Headers */,
 				ECFD2A8A135E7B8500E6A9A3 /* tnet_turn.h in Headers */,
 				ECFD2A8C135E7B8500E6A9A3 /* tnet_turn_attribute.h in Headers */,
 				ECFD2A8E135E7B8500E6A9A3 /* tnet_turn_message.h in Headers */,
@@ -7163,6 +7202,7 @@
 			files = (
 				ECFD2A38135E7B8500E6A9A3 /* tnet_dhcp.c in Sources */,
 				ECFD2A3A135E7B8500E6A9A3 /* tnet_dhcp_message.c in Sources */,
+				EC61326119179BE0003C7245 /* tnet_stun_utils.c in Sources */,
 				ECFD2A3C135E7B8500E6A9A3 /* tnet_dhcp_option.c in Sources */,
 				ECFD2A3E135E7B8500E6A9A3 /* tnet_dhcp_option_sip.c in Sources */,
 				ECFD2A40135E7B8500E6A9A3 /* tnet_dhcp6.c in Sources */,
@@ -7186,6 +7226,7 @@
 				ECFD2A64135E7B8500E6A9A3 /* tnet_dns_srv.c in Sources */,
 				ECFD2A66135E7B8500E6A9A3 /* tnet_dns_txt.c in Sources */,
 				ECFD2A68135E7B8500E6A9A3 /* tnet_ice.c in Sources */,
+				EC61326919179C1F003C7245 /* tnet_turn_session.c in Sources */,
 				ECFD2A6A135E7B8500E6A9A3 /* tnet_stun.c in Sources */,
 				ECFD2A6C135E7B8500E6A9A3 /* tnet_stun_attribute.c in Sources */,
 				ECFD2A6E135E7B8500E6A9A3 /* tnet_stun_message.c in Sources */,
@@ -7196,6 +7237,7 @@
 				ECFD2A7B135E7B8500E6A9A3 /* tnet_nat.c in Sources */,
 				ECFD2A7D135E7B8500E6A9A3 /* tnet_poll.c in Sources */,
 				ECFD2A80135E7B8500E6A9A3 /* tnet_socket.c in Sources */,
+				EC61326719179C1F003C7245 /* tnet_turn_attr.c in Sources */,
 				ECFD2A82135E7B8500E6A9A3 /* tnet_transport.c in Sources */,
 				ECFD2A84135E7B8500E6A9A3 /* tnet_transport_poll.c in Sources */,
 				ECFD2A85135E7B8500E6A9A3 /* tnet_transport_win32.c in Sources */,
@@ -7204,6 +7246,8 @@
 				ECFD2A8B135E7B8500E6A9A3 /* tnet_turn_attribute.c in Sources */,
 				ECFD2A8D135E7B8500E6A9A3 /* tnet_turn_message.c in Sources */,
 				ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */,
+				EC61325E19179BE0003C7245 /* tnet_stun_pkt.c in Sources */,
+				EC61325C19179BE0003C7245 /* tnet_stun_attr.c in Sources */,
 				ECB38511155175450035F25D /* tnet_ice_candidate.c in Sources */,
 				ECB38513155175450035F25D /* tnet_ice_ctx.c in Sources */,
 				ECB38515155175450035F25D /* tnet_ice_event.c in Sources */,
