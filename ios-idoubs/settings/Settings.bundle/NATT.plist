@@ -26,7 +26,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Enable STUN</string>
+			<string>Enable STUN for SIP</string>
 			<key>Key</key>
 			<string>NATT_USE_STUN</string>
 			<key>DefaultValue</key>
@@ -36,7 +36,27 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Discover</string>
+			<string>Enable STUN for ICE</string>
+			<key>Key</key>
+			<string>NATT_USE_STUN_FOR_ICE</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enable TURN for ICE</string>
+			<key>Key</key>
+			<string>NATT_USE_TURN_FOR_ICE</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Discover STUN server</string>
 			<key>Key</key>
 			<string>NATT_STUN_DISCO</string>
 			<key>DefaultValue</key>
@@ -46,7 +66,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string></string>
+			<string>Connection info</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -67,6 +87,34 @@
 			<string>NATT_STUN_PORT</string>
 			<key>DefaultValue</key>
 			<integer>3478</integer>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Credentials</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Username</string>
+			<key>Key</key>
+			<string>NATT_STUN_USERNAME</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IsSecure</key>
+			<true/>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Password</string>
+			<key>Key</key>
+			<string>NATT_STUN_PASSWORD</string>
+			<key>DefaultValue</key>
+			<string></string>
 		</dict>
 	</array>
 </dict>
