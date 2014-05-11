@@ -76,9 +76,12 @@
 }
 
 - (void)computeNATT{
-	 MediaSessionMgr::defaultsSetIceEnabled([self getBoolWithKey:NATT_USE_ICE]);
-     MediaSessionMgr::defaultsSetIceStunEnabled(YES); // whether to gather ICE reflexive candidates
-     MediaSessionMgr::defaultsSetStunEnabled([self getBoolWithKey:NATT_USE_STUN]);
+    MediaSessionMgr::defaultsSetIceEnabled([self getBoolWithKey:NATT_USE_ICE]);
+    MediaSessionMgr::defaultsSetIceStunEnabled([self getBoolWithKey:NATT_USE_STUN_FOR_ICE]); // whether to gather ICE reflexive candidates
+    MediaSessionMgr::defaultsSetIceTurnEnabled([self getBoolWithKey:NATT_USE_TURN_FOR_ICE]); // whether to gather ICE relay candidates
+    MediaSessionMgr::defaultsSetStunEnabled([self getBoolWithKey:NATT_USE_STUN_FOR_SIP]);
+    MediaSessionMgr::defaultsSetStunServer([[self getStringWithKey:NATT_STUN_SERVER] UTF8String], [self getIntWithKey:NATT_STUN_PORT]);
+    MediaSessionMgr::defaultsSetStunCred([[self getStringWithKey:NATT_STUN_USERNAME] UTF8String], [[self getStringWithKey:NATT_STUN_PASSWORD] UTF8String]);
 }
 
 - (void)computeSecurity{
@@ -266,10 +269,14 @@
 	 
 	 /* === NATT === */
 	 [NSNumber numberWithBool:DEFAULT_NATT_USE_ICE], NATT_USE_ICE,
-	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN], NATT_USE_STUN,
+	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN_FOR_SIP], NATT_USE_STUN_FOR_SIP,
+     [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN_FOR_ICE], NATT_USE_STUN_FOR_ICE,
+     [NSNumber numberWithBool:DEFAULT_NATT_USE_TURN_FOR_ICE], NATT_USE_TURN_FOR_ICE,
 	 [NSNumber numberWithBool:DEFAULT_NATT_USE_STUN_DISCO], NATT_USE_STUN_DISCO,
 	 DEFAULT_NATT_STUN_SERVER, NATT_STUN_SERVER,
 	 [NSNumber numberWithInt:DEFAULT_NATT_STUN_PORT], NATT_STUN_PORT,
+     DEFAULT_NATT_STUN_USERNAME, NATT_STUN_USERNAME,
+     DEFAULT_NATT_STUN_PASSWORD, NATT_STUN_PASSWORD,
 	 
 	 /* === SECURITY === */
 	 DEFAULT_SECURITY_IMSAKA_AMF,SECURITY_IMSAKA_AMF,

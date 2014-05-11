@@ -41,6 +41,8 @@
 		EC1041FA17707C8C008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041FB17707C9A008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041FC17707CA8008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC26BFD71920327400941ADE /* tnet_stun_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = EC26BFD51920327400941ADE /* tnet_stun_binding.c */; };
+		EC26BFD81920327400941ADE /* tnet_stun_binding.h in Headers */ = {isa = PBXBuildFile; fileRef = EC26BFD61920327400941ADE /* tnet_stun_binding.h */; };
 		EC3021DB16444A300084F78F /* tdav_consumer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D716444A300084F78F /* tdav_consumer_t140.h */; };
 		EC3021DC16444A300084F78F /* tdav_producer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D816444A300084F78F /* tdav_producer_t140.h */; };
 		EC3021DD16444A300084F78F /* tdav_session_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D916444A300084F78F /* tdav_session_t140.h */; };
@@ -2363,6 +2365,8 @@
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1041F617707C51008E8E76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EC26BFD51920327400941ADE /* tnet_stun_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_binding.c; sourceTree = "<group>"; };
+		EC26BFD61920327400941ADE /* tnet_stun_binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_binding.h; sourceTree = "<group>"; };
 		EC3021D716444A300084F78F /* tdav_consumer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_t140.h; sourceTree = "<group>"; };
 		EC3021D816444A300084F78F /* tdav_producer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_t140.h; sourceTree = "<group>"; };
 		EC3021D916444A300084F78F /* tdav_session_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_t140.h; sourceTree = "<group>"; };
@@ -4849,6 +4853,8 @@
 		ECFD29FB135E7B8500E6A9A3 /* stun */ = {
 			isa = PBXGroup;
 			children = (
+				EC26BFD51920327400941ADE /* tnet_stun_binding.c */,
+				EC26BFD61920327400941ADE /* tnet_stun_binding.h */,
 				EC61326C19179FD2003C7245 /* tnet_stun_attr.c */,
 				EC61326D19179FD2003C7245 /* tnet_stun_attr.h */,
 				EC61326E19179FD2003C7245 /* tnet_stun_pkt.c */,
@@ -7138,6 +7144,7 @@
 				ECFD2A4F135E7B8500E6A9A3 /* tnet_dns_cname.h in Headers */,
 				ECFD2A51135E7B8500E6A9A3 /* tnet_dns_message.h in Headers */,
 				ECFD2A53135E7B8500E6A9A3 /* tnet_dns_mx.h in Headers */,
+				EC26BFD81920327400941ADE /* tnet_stun_binding.h in Headers */,
 				ECFD2A55135E7B8500E6A9A3 /* tnet_dns_naptr.h in Headers */,
 				ECFD2A57135E7B8500E6A9A3 /* tnet_dns_ns.h in Headers */,
 				ECFD2A59135E7B8500E6A9A3 /* tnet_dns_opt.h in Headers */,
@@ -8479,6 +8486,7 @@
 				ECB3845415516A730035F25D /* tnet_ice_ctx.c in Sources */,
 				ECB3845615516A730035F25D /* tnet_ice_event.c in Sources */,
 				ECB3845815516A730035F25D /* tnet_ice_pair.c in Sources */,
+				EC26BFD71920327400941ADE /* tnet_stun_binding.c in Sources */,
 				ECB3845A15516A730035F25D /* tnet_ice_utils.c in Sources */,
 				EC9DE06E169B3DBA003A8B61 /* tnet_dtls.c in Sources */,
 			);
