@@ -1093,29 +1093,22 @@ private:
 	}
 	
 	// Set STUN information
-	if([mConfigurationService getBoolWithKey:NATT_USE_STUN]){                 
-		NgnNSLog(TAG, @"STUN=yes");
-        [sipStack setSTUNEnabled:YES];
-		if([mConfigurationService getBoolWithKey:NATT_USE_STUN_DISCO]){
-			NSString* domain = [sipPreferences.realm stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
-			unsigned short stunPort = 0;
-			NSString* stunServer = [sipStack dnsSrvWithService:[@"_stun._udp." stringByAppendingString:domain] andPort:&stunPort];
-			if(stunServer){
-				NgnNSLog(TAG, @"Failed to discover STUN server with service:_stun._udp.%@", domain);
-			}
-			[sipStack setSTUNServerIP:stunServer andPort:stunPort]; // Needed event if null (to disable/enable)
-		}
-		else{
-			NSString* server = [mConfigurationService getStringWithKey:NATT_STUN_SERVER];
-			int port = [mConfigurationService getIntWithKey:NATT_STUN_PORT];
-			NgnNSLog(TAG, @"STUN2 - server=%@ and port=%d", server, port);
-			[sipStack setSTUNServerIP:server andPort:port];
-		}
-	}
-	else{
-		NgnNSLog(TAG, @"STUN=no");
-		[sipStack setSTUNEnabled:NO];
-	}
+	[sipStack setSTUNEnabled:[mConfigurationService getBoolWithKey:NATT_USE_STUN_FOR_SIP]];
+    if([mConfigurationService getBoolWithKey:NATT_USE_STUN_DISCO]){
+        NSString* domain = [sipPreferences.realm stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
+        unsigned short stunPort = 0;
+        NSString* stunServer = [sipStack dnsSrvWithService:[@"_stun._udp." stringByAppendingString:domain] andPort:&stunPort];
+        if(stunServer){
+            NgnNSLog(TAG, @"Failed to discover STUN server with service:_stun._udp.%@", domain);
+        }
+        [sipStack setSTUNServerIP:stunServer andPort:stunPort]; // Needed event if null (to disable/enable)
+    }
+    else{
+        NSString* server = [mConfigurationService getStringWithKey:NATT_STUN_SERVER];
+        int port = [mConfigurationService getIntWithKey:NATT_STUN_PORT];
+        NgnNSLog(TAG, @"STUN2 - server=%@ and port=%d", server, port);
+        [sipStack setSTUNServerIP:server andPort:port];
+    }
 	
 	// Set Proxy-CSCF
 	sipPreferences.pcscfHost = [mConfigurationService getStringWithKey:NETWORK_PCSCF_HOST];
