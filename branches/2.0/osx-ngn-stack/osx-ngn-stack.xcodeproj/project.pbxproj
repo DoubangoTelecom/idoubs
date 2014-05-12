@@ -36,6 +36,8 @@
 
 /* Begin PBXBuildFile section */
 		EC26AF6D1422BC880046BBB5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4DBB19141BD1360024CBEF /* AddressBook.framework */; };
+		EC26BFDC19203D2E00941ADE /* tnet_stun_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = EC26BFDA19203D2E00941ADE /* tnet_stun_binding.c */; };
+		EC26BFDD19203D2E00941ADE /* tnet_stun_binding.h in Headers */ = {isa = PBXBuildFile; fileRef = EC26BFDB19203D2E00941ADE /* tnet_stun_binding.h */; };
 		EC3021F916444CCA0084F78F /* tdav_consumer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F516444CCA0084F78F /* tdav_consumer_t140.h */; };
 		EC3021FA16444CCA0084F78F /* tdav_producer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F616444CCA0084F78F /* tdav_producer_t140.h */; };
 		EC3021FB16444CCA0084F78F /* tdav_session_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021F716444CCA0084F78F /* tdav_session_t140.h */; };
@@ -1704,6 +1706,8 @@
 
 /* Begin PBXFileReference section */
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC26BFDA19203D2E00941ADE /* tnet_stun_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_binding.c; sourceTree = "<group>"; };
+		EC26BFDB19203D2E00941ADE /* tnet_stun_binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_binding.h; sourceTree = "<group>"; };
 		EC3021F516444CCA0084F78F /* tdav_consumer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_t140.h; sourceTree = "<group>"; };
 		EC3021F616444CCA0084F78F /* tdav_producer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_producer_t140.h; sourceTree = "<group>"; };
 		EC3021F716444CCA0084F78F /* tdav_session_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_session_t140.h; sourceTree = "<group>"; };
@@ -3900,6 +3904,8 @@
 		ECFD29FB135E7B8500E6A9A3 /* stun */ = {
 			isa = PBXGroup;
 			children = (
+				EC26BFDA19203D2E00941ADE /* tnet_stun_binding.c */,
+				EC26BFDB19203D2E00941ADE /* tnet_stun_binding.h */,
 				EC61325519179BE0003C7245 /* tnet_stun_attr.c */,
 				EC61325619179BE0003C7245 /* tnet_stun_attr.h */,
 				EC61325719179BE0003C7245 /* tnet_stun_pkt.c */,
@@ -6187,6 +6193,7 @@
 				ECFD2A4F135E7B8500E6A9A3 /* tnet_dns_cname.h in Headers */,
 				ECFD2A51135E7B8500E6A9A3 /* tnet_dns_message.h in Headers */,
 				ECFD2A53135E7B8500E6A9A3 /* tnet_dns_mx.h in Headers */,
+				EC26BFDD19203D2E00941ADE /* tnet_stun_binding.h in Headers */,
 				ECFD2A55135E7B8500E6A9A3 /* tnet_dns_naptr.h in Headers */,
 				ECFD2A57135E7B8500E6A9A3 /* tnet_dns_ns.h in Headers */,
 				ECFD2A59135E7B8500E6A9A3 /* tnet_dns_opt.h in Headers */,
@@ -7252,6 +7259,7 @@
 				ECB38513155175450035F25D /* tnet_ice_ctx.c in Sources */,
 				ECB38515155175450035F25D /* tnet_ice_event.c in Sources */,
 				ECB38517155175450035F25D /* tnet_ice_pair.c in Sources */,
+				EC26BFDC19203D2E00941ADE /* tnet_stun_binding.c in Sources */,
 				ECB38519155175450035F25D /* tnet_ice_utils.c in Sources */,
 				EC9DE058169B3648003A8B61 /* tnet_dtls.c in Sources */,
 			);
@@ -8919,6 +8927,7 @@
 				EC6131B5191048CB003C7245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC8EBCE0136832F400DC70DF /* Build configuration list for PBXAggregateTarget "Doubango" */ = {
 			isa = XCConfigurationList;
