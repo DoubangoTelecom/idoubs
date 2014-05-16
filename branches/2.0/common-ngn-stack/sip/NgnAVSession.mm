@@ -353,6 +353,7 @@
 			
 		case INVITE_STATE_TERMINATED:
 		case INVITE_STATE_TERMINATING:
+        default:
 		{
 			break;
 		}
@@ -460,6 +461,17 @@
 		}
 	}
 	TSK_DEBUG_ERROR("Failed to mute/unmute the session");
+	return NO;
+}
+
+-(BOOL) setAudioInterrupt: (BOOL)interrupt{
+	const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+	if(_mediaMgr){
+		if (const_cast<MediaSessionMgr*>(_mediaMgr)->producerSetInt32(twrap_media_audio, "interrupt", interrupt ? 1 : 0) && const_cast<MediaSessionMgr*>(_mediaMgr)->consumerSetInt32(twrap_media_audio, "interrupt", interrupt ? 1 : 0)) {
+			return YES;
+		}
+	}
+	TSK_DEBUG_ERROR("Session interrupt:%s failed", interrupt?"YES":"NO");
 	return NO;
 }
 
