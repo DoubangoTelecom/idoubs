@@ -76,6 +76,7 @@ class ActionConfig;
 -(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
 -(BOOL) toggleCamera;
 -(BOOL) setMute: (BOOL)mute;
+-(BOOL) setAudioInterrupt: (BOOL)interrupt;
 -(BOOL) isMuted;
 -(BOOL) setSpeakerEnabled: (BOOL)speakerOn;
 -(BOOL) isSpeakerEnabled;
