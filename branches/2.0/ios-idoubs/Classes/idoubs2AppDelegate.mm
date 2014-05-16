@@ -55,6 +55,7 @@
 -(void) networkAlert:(NSString*)message;
 -(void) newMessageAlert:(NSString*)message;
 -(BOOL) queryConfigurationAndRegister;
+-(void) setAudioInterrupt: (BOOL)interrupt;
 @end
 
 @implementation idoubs2AppDelegate(Private)
@@ -97,6 +98,14 @@
 	else {
 		return [[NgnEngine sharedInstance].sipService registerIdentity];
 	}
+}
+
+-(void) setAudioInterrupt: (BOOL)interrupt {
+    NgnAVSession *avSession = [[NgnAVSession getFirstActiveCallAndNot:-1] retain];
+    if (avSession) {
+        [avSession setAudioInterrupt:interrupt];
+    }
+    [avSession release];
 }
 
 @end
@@ -419,6 +428,15 @@ static dispatch_block_t sExpirationHandler = nil;
 	
 	// start the engine
 	[[NgnEngine sharedInstance] start];
+    
+    // must be here (after AVAudioSesssionInitialize)
+    if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 6.0) {
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self selector:@selector(onAudioSessionInteruptionEvent:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
+    }
+    else {
+        [[AVAudioSession sharedInstance] setDelegate:self];
+    }
 	
 	// Set the tab bar controller as the window's root view controller and display.
     self.window.rootViewController = self.tabBarController;
@@ -571,6 +589,39 @@ static dispatch_block_t sExpirationHandler = nil;
 
 
 #pragma mark -
+
+#pragma mark AudioSessionListner for iOS 6.0+
+
+- (void) onAudioSessionInteruptionEvent:(NSNotification*)notif {
+    const NSInteger iType = [[[notif userInfo] valueForKey:AVAudioSessionInterruptionTypeKey] intValue];
+    NgnNSLog(TAG, @"onAudioSessionInteruptionEvent:%d", iType);
+    switch (iType) {
+        case AVAudioSessionInterruptionTypeBegan:
+            {
+                [self setAudioInterrupt:YES];
+                break;
+            }
+        case AVAudioSessionInterruptionTypeEnded:
+            {
+                [self setAudioInterrupt:NO];
+                break;
+            }
+    }
+}
+
+#pragma mark AudioSessionListner for iOS 6.0-
+
+- (void)beginInterruption {
+    NgnNSLog(TAG, @"beginInterruption");
+    [self setAudioInterrupt:YES];
+}
+
+- (void)endInterruption {
+    NgnNSLog(TAG, @"endInterruption");
+    [self setAudioInterrupt:NO];
+}
+
+
 #pragma mark UITabBarControllerDelegate methods
 
 
