@@ -497,6 +497,7 @@
 		EC548FF21428425F00FFA990 /* keepawake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = keepawake.wav; sourceTree = "<group>"; };
 		EC548FF31428425F00FFA990 /* ringbacktone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringbacktone.wav; sourceTree = "<group>"; };
 		EC548FF41428425F00FFA990 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		EC9E52651932186500894753 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		ECEA225C14210541004D456D /* UIHistoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHistoryItem.h; sourceTree = "<group>"; };
 		ECEA225D14210541004D456D /* UIHistoryItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIHistoryItem.mm; sourceTree = "<group>"; };
 		ECEA227F142106BF004D456D /* UIHistoryItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIHistoryItem.xib; sourceTree = "<group>"; };
@@ -663,6 +664,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC9E52651932186500894753 /* libiconv.dylib */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
