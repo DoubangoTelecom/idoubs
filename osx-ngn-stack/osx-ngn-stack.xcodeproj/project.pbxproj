@@ -8142,7 +8142,6 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
@@ -8150,7 +8149,8 @@
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
-				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
+				"DOUBANGO_LIBS[sdk=macosx*][arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
+				"DOUBANGO_LIBS[sdk=macosx*][arch=x86_64]" = $DOUBANGO_HOME/thirdparties/mac/lib/x86_64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -8184,7 +8184,6 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
@@ -8192,7 +8191,8 @@
 				DOUBANGO_LDFLAGS = "";
 				"DOUBANGO_LDFLAGS[arch=i386]" = "-Wl,-read_only_relocs -Wl,suppress";
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
-				"DOUBANGO_LIBS[arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
+				"DOUBANGO_LIBS[sdk=macosx*][arch=i386]" = $DOUBANGO_HOME/thirdparties/mac/lib/i386;
+				"DOUBANGO_LIBS[sdk=macosx*][arch=x86_64]" = $DOUBANGO_HOME/thirdparties/mac/lib/x86_64;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -8243,11 +8243,11 @@
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
-					"-lns",
-					"-lspl",
 					"-lsystem_wrappers",
-					"-lapm_util",
-					"-laec",
+					"-laudio_processing",
+					"-laudio_processing_sse2",
+					"-lcommon_audio",
+					"-lcommon_audio_sse2",
 					"-lavutil",
 					"-lavcodec",
 					"-lswscale",
@@ -8290,11 +8290,11 @@
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
 				LIBRARY_SEARCH_PATHS = $DOUBANGO_LIBS;
 				OTHER_LDFLAGS = (
-					"-lns",
-					"-lspl",
 					"-lsystem_wrappers",
-					"-lapm_util",
-					"-laec",
+					"-laudio_processing",
+					"-laudio_processing_sse2",
+					"-lcommon_audio",
+					"-lcommon_audio_sse2",
 					"-lavutil",
 					"-lavcodec",
 					"-lswscale",
