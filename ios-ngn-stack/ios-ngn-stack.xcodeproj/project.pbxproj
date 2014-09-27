@@ -2791,7 +2791,7 @@
 		ECFD2A12135E7B8500E6A9A3 /* tnet_proto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proto.h; sourceTree = "<group>"; };
 		ECFD2A13135E7B8500E6A9A3 /* tnet_socket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_socket.c; sourceTree = "<group>"; };
 		ECFD2A14135E7B8500E6A9A3 /* tnet_socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_socket.h; sourceTree = "<group>"; };
-		ECFD2A15135E7B8500E6A9A3 /* tnet_transport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport.c; sourceTree = "<group>"; };
+		ECFD2A15135E7B8500E6A9A3 /* tnet_transport.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tnet_transport.c; sourceTree = "<group>"; };
 		ECFD2A16135E7B8500E6A9A3 /* tnet_transport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_transport.h; sourceTree = "<group>"; };
 		ECFD2A17135E7B8500E6A9A3 /* tnet_transport_poll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport_poll.c; sourceTree = "<group>"; };
 		ECFD2A18135E7B8500E6A9A3 /* tnet_transport_win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_transport_win32.c; sourceTree = "<group>"; };
