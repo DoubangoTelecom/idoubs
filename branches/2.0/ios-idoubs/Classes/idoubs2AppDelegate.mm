@@ -434,9 +434,11 @@ static dispatch_block_t sExpirationHandler = nil;
         [[NSNotificationCenter defaultCenter]
          addObserver:self selector:@selector(onAudioSessionInteruptionEvent:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
     }
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 6000
     else {
-        [[AVAudioSession sharedInstance] setDelegate:self];
+        [[AVAudioSession sharedInstance] setDelegate:self]; // deprecated starting SDK6
     }
+#endif
 	
 	// Set the tab bar controller as the window's root view controller and display.
     self.window.rootViewController = self.tabBarController;
