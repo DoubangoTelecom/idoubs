@@ -58,7 +58,6 @@ As stated in the *Introduction* section, *iDoubs v2.x* depends on the NGN Stack 
 
   * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
 	# *Very Important:* make sure that the right base sdk is selected (iOS SDK x.y): Right click on *ios-ngn-stack* => *Get Info* => *Build* tab => From *Architectures* group, adjust *Base SDK* and select "iOS x.y" where "x.y" is your preferred version of the iOS SDK
-	# If you're using xcode 4.2 or later, change the compiler type: Right click on *ios-ngn-stack* => *Get Info* => *Build* -> From *Build Options* group, adjust *Compiler for C/C++/Objective-C* and select *LLVM GCC 4.2*
 	# build *Doubango:* Right click on *Doubango* aggregated target and select *Build Doubango*
 	# build the NGN stack: Right click on *ios-ngn-stack* target and select *Build ios-ngn-stack*
 
