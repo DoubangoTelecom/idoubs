@@ -1582,9 +1582,6 @@
 					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
-					"-ltheora",
-					"-lvorbis",
-					"-logg",
 					"-lyuv",
 					"-lvpx",
 					"-lx264",
@@ -1638,9 +1635,6 @@
 					"-lsrtp",
 					"-lssl",
 					"-lcrypto",
-					"-ltheora",
-					"-lvorbis",
-					"-logg",
 					"-lyuv",
 					"-lvpx",
 					"-lx264",
@@ -1669,8 +1663,10 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				"DOUBANGO_LIBS[arch=arm64]" = $DOUBANGO_HOME/thirdparties/iphone/lib/arm64;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[arch=armv7s]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7s;
 				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -1679,8 +1675,7 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1690,8 +1685,10 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				"DOUBANGO_LIBS[arch=arm64]" = $DOUBANGO_HOME/thirdparties/iphone/lib/arm64;
 				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
 				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
+				"DOUBANGO_LIBS[arch=armv7s]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7s;
 				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -1701,8 +1698,7 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
