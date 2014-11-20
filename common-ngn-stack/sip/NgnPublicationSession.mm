@@ -268,7 +268,10 @@
 }
 
 -(BOOL)unPublishWithConfig:(ActionConfig*)_config{
-	return [self unPublishWithConfig:_config];
+    if (_mSession) {
+        return _mSession->unPublish(_config);
+    }
+    return NO;
 }
 
 -(BOOL)unPublish{
