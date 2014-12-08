@@ -4,10 +4,9 @@
 #summary Commercial License
 
 [http://code.google.com/p/idoubs/ iDoubs] is a free software licensed under the [http://www.gnu.org/licenses/gpl.html GNU GPLv3] license terms. As far as the commercial product using [http://code.google.com/p/idoubs/ iDoubs] or [http://doubango.org doubango] isn't a *closed-source* software and is compatible with [http://www.gnu.org/licenses/gpl.html GNU GPL] terms, there is no license violation. However, if your commercial product is a *closed-source* software and you want to keep it closed, then you should get a non-GPL license. <br /><br />
-We can provide a non-GPL version of all components used in both [http://code.google.com/p/idoubs/ iDoubs] and [http://doubango.org doubango] except for [http://www.videolan.org/developers/x264.html x264] library. <br /> An alternative to x264 could be PacketVideo's H.264 implementation which is released under Apache License.<br />
+We can provide a non-GPL version of all components used in both [http://code.google.com/p/idoubs/ iDoubs] and [http://doubango.org doubango] except for [http://www.videolan.org/developers/x264.html x264] library. <br />
+~~An alternative to x264 could be PacketVideo's H.264 implementation which is released under Apache License.~~ Starting Doubango *1210* we support [https://github.com/cisco/openh264 OpenH264] (BSD).<br />
 Owners of [http://doubango.org doubango] licenses can reuse part or whole 
 [http://code.google.com/p/idoubs/ iDoubs] source code whithout any restruction.<br/>
 
 See also: [http://code.google.com/p/idoubs/wiki/Licensing_Issues http://code.google.com/p/idoubs/wiki/Licensing_Issues]<br/>
-
-For more information, please send me a mail at *diopmamadou(at)doubango(dot)org* 
