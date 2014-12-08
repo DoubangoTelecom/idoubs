@@ -93,6 +93,21 @@ If you are license owner then, you can build a non-GPL version of Doubango and i
     # replace *-DHAVE_H264=1* with *-DHAVE_H264=0*
     # replace *-DHAVE_G729=1* with *-DHAVE_G729=0* if you don't have required licenses
 
+=== Building commercial version ===
+If you are license owner then, you can build a commercial version of Doubango and iDoubs like this:
+ * open *mydoubs/iPhone/idoubs/branches/2.0/ios-idoubs/idoubs.xcodeproj*
+ * Right click on *idoubs* target => *Get Info* => *Build* tab => *Other Linker Flags* then:
+    # remove *-lx264*
+    # remove *-lg729b* if you don't have required licenses
+    # remove *-lswscale*, *-lavcore*, *-lavutil* and *-lavcodec*
+
+ * open *mydoubs/iPhone/idoubs/branches/2.0/ios-ngn-stack/ios-ngn-stack.xcodeproj*
+ * Right click on *ios-ngn-stack* target => *Get Info* => *Build* tab => *Other C Flags* then:
+    # replace *-DHAVE_H264=1* with *-DHAVE_H264=0*
+    # replace *-DHAVE_FFMPEG=1* with *-DHAVE_FFMPEG=0*
+    # replace *-DHAVE_SWSCALE=1* with *-DHAVE_SWSCALE=0*
+    # replace *-DHAVE_G729=1* with *-DHAVE_G729=0* if you don't have required licenses
+
 ===Linking the ios-ngn-stack in your own app===
 1. Place your application code in the same folder than iDoubs: *mydoubs/ 
 iPhone/idoubs/branches/2.0/*. This is not required but it's easier to avoid changing the paths by yourself.<br />
