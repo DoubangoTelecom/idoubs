@@ -281,6 +281,8 @@
 		ECDDBC2D137CA7960027105F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDDBB71137C9C3E0027105F /* CoreVideo.framework */; };
 		ECE203A415F640BB002FE99B /* tsk_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = ECE203A215F640BB002FE99B /* tsk_plugin.c */; };
 		ECE203A515F640BB002FE99B /* tsk_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE203A315F640BB002FE99B /* tsk_plugin.h */; };
+		ECE308DF1A35C62200E93CBA /* tdav_codec_h264_cisco.cxx in Sources */ = {isa = PBXBuildFile; fileRef = ECE308DD1A35C62200E93CBA /* tdav_codec_h264_cisco.cxx */; };
+		ECE308E01A35C62200E93CBA /* tdav_codec_h264_cuda.cxx in Sources */ = {isa = PBXBuildFile; fileRef = ECE308DE1A35C62200E93CBA /* tdav_codec_h264_cuda.cxx */; };
 		ECE7E93514284CAC00466331 /* NgnContactEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8B014284CAC00466331 /* NgnContactEventArgs.h */; };
 		ECE7E93614284CAC00466331 /* NgnContactEventArgs.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8B114284CAC00466331 /* NgnContactEventArgs.mm */; };
 		ECE7E93714284CAC00466331 /* NgnEventArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8B214284CAC00466331 /* NgnEventArgs.h */; };
@@ -2518,6 +2520,8 @@
 		ECDDBB9B137C9CB40027105F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		ECE203A215F640BB002FE99B /* tsk_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsk_plugin.c; sourceTree = "<group>"; };
 		ECE203A315F640BB002FE99B /* tsk_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsk_plugin.h; sourceTree = "<group>"; };
+		ECE308DD1A35C62200E93CBA /* tdav_codec_h264_cisco.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tdav_codec_h264_cisco.cxx; sourceTree = "<group>"; };
+		ECE308DE1A35C62200E93CBA /* tdav_codec_h264_cuda.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tdav_codec_h264_cuda.cxx; sourceTree = "<group>"; };
 		ECE7E8B014284CAC00466331 /* NgnContactEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContactEventArgs.h; sourceTree = "<group>"; };
 		ECE7E8B114284CAC00466331 /* NgnContactEventArgs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnContactEventArgs.mm; sourceTree = "<group>"; };
 		ECE7E8B214284CAC00466331 /* NgnEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnEventArgs.h; sourceTree = "<group>"; };
@@ -6881,6 +6885,8 @@
 		ECFD31E6135E7DBC00E6A9A3 /* h264 */ = {
 			isa = PBXGroup;
 			children = (
+				ECE308DD1A35C62200E93CBA /* tdav_codec_h264_cisco.cxx */,
+				ECE308DE1A35C62200E93CBA /* tdav_codec_h264_cuda.cxx */,
 				ECFD31E7135E7DBC00E6A9A3 /* tdav_codec_h264.c */,
 				ECFD31E8135E7DBC00E6A9A3 /* tdav_codec_h264_rtp.c */,
 			);
@@ -8894,6 +8900,7 @@
 				ECFD3243135E7DBC00E6A9A3 /* tdav_codec_g711.c in Sources */,
 				ECFD3244135E7DBC00E6A9A3 /* tdav_codec_g729.c in Sources */,
 				ECFD3245135E7DBC00E6A9A3 /* tdav_codec_gsm.c in Sources */,
+				ECE308DF1A35C62200E93CBA /* tdav_codec_h264_cisco.cxx in Sources */,
 				ECFD3246135E7DBC00E6A9A3 /* tdav_codec_h261.c in Sources */,
 				ECFD3247135E7DBC00E6A9A3 /* tdav_codec_h263.c in Sources */,
 				ECFD3248135E7DBC00E6A9A3 /* tdav_codec_h264.c in Sources */,
@@ -8912,6 +8919,7 @@
 				ECFD3256135E7DBC00E6A9A3 /* tdav_session_video.c in Sources */,
 				EC81BD2F136C572C0068BCB4 /* tdav_consumer_audioqueue.c in Sources */,
 				EC81BD31136C57630068BCB4 /* tdav_producer_audioqueue.c in Sources */,
+				ECE308E01A35C62200E93CBA /* tdav_codec_h264_cuda.cxx in Sources */,
 				EC81BDE9136C73DF0068BCB4 /* tdav_consumer_audiounit.c in Sources */,
 				EC81BDED136C74090068BCB4 /* tdav_producer_audiounit.c in Sources */,
 				EC81BDF1136C742F0068BCB4 /* tdav_audiounit.c in Sources */,
@@ -9815,7 +9823,7 @@
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
 					"-DHAVE_FFMPEG=1",
 					"-DHAVE_LIBVPX=1",
-					"-DHAVE_H264=1",
+					"-DHAVE_OPENH264=1",
 					"-DHAVE_LIBYUV=1",
 					"-DHAVE_SWSSCALE=0",
 					"-DHAVE_OPENSSL=1",
@@ -9859,7 +9867,7 @@
 					"-DHAVE_COREAUDIO_AUDIO_QUEUE=0",
 					"-DHAVE_FFMPEG=1",
 					"-DHAVE_LIBVPX=1",
-					"-DHAVE_H264=1",
+					"-DHAVE_OPENH264=1",
 					"-DHAVE_LIBYUV=1",
 					"-DHAVE_SWSSCALE=0",
 					"-DHAVE_OPENSSL=1",
