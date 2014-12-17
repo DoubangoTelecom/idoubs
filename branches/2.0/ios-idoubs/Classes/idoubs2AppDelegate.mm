@@ -596,7 +596,7 @@ static dispatch_block_t sExpirationHandler = nil;
 
 - (void) onAudioSessionInteruptionEvent:(NSNotification*)notif {
     const NSInteger iType = [[[notif userInfo] valueForKey:AVAudioSessionInterruptionTypeKey] intValue];
-    NgnNSLog(TAG, @"onAudioSessionInteruptionEvent:%d", iType);
+    NgnNSLog(TAG, @"onAudioSessionInteruptionEvent:%d", (int)iType);
     switch (iType) {
         case AVAudioSessionInterruptionTypeBegan:
             {

@@ -41,6 +41,7 @@
 		EC1041FA17707C8C008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041FB17707C9A008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041FC17707CA8008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
+		EC267E891A3C956C00C4AD05 /* tdav_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC267E881A3C956C00C4AD05 /* tdav_apple.mm */; };
 		EC26BFD71920327400941ADE /* tnet_stun_binding.c in Sources */ = {isa = PBXBuildFile; fileRef = EC26BFD51920327400941ADE /* tnet_stun_binding.c */; };
 		EC26BFD81920327400941ADE /* tnet_stun_binding.h in Headers */ = {isa = PBXBuildFile; fileRef = EC26BFD61920327400941ADE /* tnet_stun_binding.h */; };
 		EC3021DB16444A300084F78F /* tdav_consumer_t140.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3021D716444A300084F78F /* tdav_consumer_t140.h */; };
@@ -2367,6 +2368,7 @@
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1041F617707C51008E8E76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EC267E881A3C956C00C4AD05 /* tdav_apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tdav_apple.mm; sourceTree = "<group>"; };
 		EC26BFD51920327400941ADE /* tnet_stun_binding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_stun_binding.c; sourceTree = "<group>"; };
 		EC26BFD61920327400941ADE /* tnet_stun_binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_stun_binding.h; sourceTree = "<group>"; };
 		EC3021D716444A300084F78F /* tdav_consumer_t140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdav_consumer_t140.h; sourceTree = "<group>"; };
@@ -6709,6 +6711,7 @@
 				ECFD31FA135E7DBC00E6A9A3 /* video */,
 				ECFD31F8135E7DBC00E6A9A3 /* tdav.c */,
 				ECFD31F9135E7DBC00E6A9A3 /* tdav_win32.c */,
+				EC267E881A3C956C00C4AD05 /* tdav_apple.mm */,
 				ECB3847115516E170035F25D /* tdav_session_av.c */,
 			);
 			path = src;
@@ -8932,6 +8935,7 @@
 				ECB3847015516E0A0035F25D /* tdav_codec_ulpfec.c in Sources */,
 				ECB3847215516E170035F25D /* tdav_session_av.c in Sources */,
 				ECB3847615516E340035F25D /* tdav_video_frame.c in Sources */,
+				EC267E891A3C956C00C4AD05 /* tdav_apple.mm in Sources */,
 				ECB3847715516E340035F25D /* tdav_video_jb.c in Sources */,
 				EC8C053215E0895D0048DD21 /* tdav_converter_video.cxx in Sources */,
 				EC3021E316444A470084F78F /* tdav_consumer_t140.c in Sources */,
