@@ -20,6 +20,7 @@
  */
 #import "NgnConfigurationService.h"
 #import "NgnConfigurationEntry.h"
+#import "NgnStringUtils.h"
 
 #import "tinydav.h"
 #import "MediaSessionMgr.h"
@@ -111,6 +112,8 @@
 			MediaSessionMgr::defaultsSetSRtpType(tmedia_srtp_type_sdes_dtls);
 			break;
 	}
+    
+    // SSL cert paths will be defined in SIP service
 }
 
 - (void)computeCodecs{
@@ -284,6 +287,7 @@
 	 DEFAULT_SECURITY_SSL_FILE_KEY_PRIV, SECURITY_SSL_FILE_KEY_PRIV,
 	 DEFAULT_SECURITY_SSL_FILE_KEY_PUB, SECURITY_SSL_FILE_KEY_PUB,
 	 DEFAULT_SECURITY_SSL_FILE_KEY_CA, SECURITY_SSL_FILE_KEY_CA,
+     [NSNumber numberWithBool:DEFAULT_SECURITY_SSL_VERIFY], SECURITY_SSL_VERIFY,
 	 [NSNumber numberWithInt:DEFAULT_SECURITY_SRTP_MODE], SECURITY_SRTP_MODE,
      [NSNumber numberWithInt:DEFAULT_SECURITY_SRTP_TYPE], SECURITY_SRTP_TYPE,
 			

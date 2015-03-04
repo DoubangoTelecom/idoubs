@@ -1126,13 +1126,33 @@ private:
 	
 	// Set SSL certificates
 	if([sipPreferences.transport caseInsensitiveCompare:@"tls"] == NSOrderedSame || ((srtpType == kDefaultSecuritySRtpType_Dtls || srtpType == kDefaultSecuritySRtpType_Both) && (srtpMode == kDefaultSecuritySRtpMode_Optional || srtpMode == kDefaultSecuritySRtpMode_Mandatory))) {
-        NSString *privPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PRIV] ofType:@"pem"];
-        NSString *pubPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PUB] ofType:@"pem"];
-        NSString *caPath = [[NSBundle mainBundle] pathForResource:[mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_CA] ofType:@"pem"];
-        NgnNSLog(TAG, @"SSL Certificates:PRIV=%@, PUB=%@, CA=%@", privPath, pubPath, caPath);
+        NSString* caPath = [mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_CA];
+        NSString* pubPath = [mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PUB];
+        NSString* privPath = [mConfigurationService getStringWithKey:SECURITY_SSL_FILE_KEY_PRIV];
+        BOOL verify = [mConfigurationService getBoolWithKey:SECURITY_SSL_VERIFY];
+        if (![NgnStringUtils isNullOrEmpty: caPath]) {
+            caPath = [[NSBundle mainBundle] pathForResource:caPath ofType:@"pem"];
+            if (![[NSFileManager defaultManager] fileExistsAtPath:caPath]) {
+                caPath = NULL;
+            }
+        }
+        if (![NgnStringUtils isNullOrEmpty: pubPath]) {
+            pubPath = [[NSBundle mainBundle] pathForResource:pubPath ofType:@"pem"];
+            if (![[NSFileManager defaultManager] fileExistsAtPath:pubPath]) {
+                pubPath = NULL;
+            }
+        }
+        if (![NgnStringUtils isNullOrEmpty: privPath]) {
+            privPath = [[NSBundle mainBundle] pathForResource:privPath ofType:@"pem"];
+            if (![[NSFileManager defaultManager] fileExistsAtPath:privPath]) {
+                privPath = NULL;
+            }
+        }
+        NgnNSLog(TAG, @"SSL Certificates:PRIV=%@, PUB=%@, CA=%@, VERIFY=%@", privPath, pubPath, caPath, verify ? @"TRUE" : @"FALSE");
 		if(![sipStack setSSLCertificates:privPath
 							   andPubKey:pubPath
-								andCAKey:caPath]){
+								andCAKey:caPath
+                               andVerify: verify]){
 			TSK_DEBUG_ERROR("setSSLCertificates() failed");
 		}
 	}

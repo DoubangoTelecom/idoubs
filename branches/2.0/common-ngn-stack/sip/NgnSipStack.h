@@ -70,6 +70,7 @@ STACK_STATE_T;
 -(NSString *) dnsNaptrSrvWithDomain: (NSString *) domain andService: (NSString *) service andPort: (unsigned short*) port;
 -(NSString *) dnsSrvWithService: (NSString *) service andPort: (unsigned short*) port;
 
+-(BOOL) setSSLCertificates: (NSString*)privKey andPubKey:(NSString*)pubKey andCAKey:(NSString*)caKey andVerify: (BOOL)verify;
 -(BOOL) setSSLCertificates: (NSString*)privKey andPubKey:(NSString*)pubKey andCAKey:(NSString*)caKey;
 
 -(NSString*)getPreferredIdentity;
