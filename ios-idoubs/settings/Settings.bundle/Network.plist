@@ -188,6 +188,16 @@
 			<key>DefaultValue</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Verify</string>
+			<key>Key</key>
+			<string>SECURITY_SSL_VERIFY</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
 	</array>
 </dict>
 </plist>
