@@ -261,12 +261,16 @@
 	return nil;
 }
 
+-(BOOL) setSSLCertificates: (NSString*)privKey andPubKey:(NSString*)pubKey andCAKey:(NSString*)caKey andVerify: (BOOL)verify{
+    if(_mSipStack){
+        return _mSipStack->setSSLCertificates([privKey UTF8String], [pubKey UTF8String], [caKey UTF8String], verify);
+    }
+    TSK_DEBUG_ERROR("Null embedded SipStack");
+    return NO;
+}
+
 -(BOOL) setSSLCertificates: (NSString*)privKey andPubKey:(NSString*)pubKey andCAKey:(NSString*)caKey{
-	if(_mSipStack){
-		return _mSipStack->setSSLCretificates([privKey UTF8String], [pubKey UTF8String], [caKey UTF8String]);
-	}
-	TSK_DEBUG_ERROR("Null embedded SipStack");
-	return NO;
+    return [self setSSLCertificates: privKey andPubKey:pubKey andCAKey:caKey andVerify:FALSE];
 }
 
 -(NSString*)getPreferredIdentity{

@@ -46,6 +46,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		15E11EE81AA6794A00156D8C /* SSL_CA.pem in Resources */ = {isa = PBXBuildFile; fileRef = 15E11EE51AA6794A00156D8C /* SSL_CA.pem */; };
+		15E11EE91AA6794A00156D8C /* SSL_Priv.pem in Resources */ = {isa = PBXBuildFile; fileRef = 15E11EE61AA6794A00156D8C /* SSL_Priv.pem */; };
+		15E11EEA1AA6794A00156D8C /* SSL_Pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 15E11EE71AA6794A00156D8C /* SSL_Pub.pem */; };
+		15E11EEC1AA6BF7500156D8C /* SSL_Pub.der in Resources */ = {isa = PBXBuildFile; fileRef = 15E11EEB1AA6BF7500156D8C /* SSL_Pub.der */; };
+		15E11EEE1AA6BF8100156D8C /* SSL_CA.der in Resources */ = {isa = PBXBuildFile; fileRef = 15E11EED1AA6BF8100156D8C /* SSL_CA.der */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -145,8 +150,6 @@
 		ECB967E61390226500961D3A /* star_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB967E51390226500961D3A /* star_128.png */; };
 		ECB968281390297900961D3A /* chat_128.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB968271390297900961D3A /* chat_128.png */; };
 		ECC6F5B71597E0E7005401EC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC6F5B61597E0E7005401EC /* OpenGLES.framework */; };
-		ECDF139918900C1800F0FA68 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = ECDF139718900C1800F0FA68 /* private.pem */; };
-		ECDF139A18900C1800F0FA68 /* public.pem in Resources */ = {isa = PBXBuildFile; fileRef = ECDF139818900C1800F0FA68 /* public.pem */; };
 		ECE113B31376F66C00096382 /* libios_ngn_stack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEF91368921400DC70DF /* libios_ngn_stack.a */; };
 		ECE113B41376F66C00096382 /* libtinySAK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFB1368921400DC70DF /* libtinySAK.a */; };
 		ECE113B51376F66C00096382 /* libtinyNET.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EBEFD1368921400DC70DF /* libtinyNET.a */; };
@@ -501,6 +504,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15E11EE51AA6794A00156D8C /* SSL_CA.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SSL_CA.pem; path = ../SSL_CA.pem; sourceTree = "<group>"; };
+		15E11EE61AA6794A00156D8C /* SSL_Priv.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SSL_Priv.pem; path = ../SSL_Priv.pem; sourceTree = "<group>"; };
+		15E11EE71AA6794A00156D8C /* SSL_Pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SSL_Pub.pem; path = ../SSL_Pub.pem; sourceTree = "<group>"; };
+		15E11EEB1AA6BF7500156D8C /* SSL_Pub.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = SSL_Pub.der; path = ../SSL_Pub.der; sourceTree = "<group>"; };
+		15E11EED1AA6BF8100156D8C /* SSL_CA.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = SSL_CA.der; path = ../SSL_CA.der; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* idoubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idoubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -626,8 +634,6 @@
 		ECB967E51390226500961D3A /* star_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_128.png; sourceTree = "<group>"; };
 		ECB968271390297900961D3A /* chat_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_128.png; sourceTree = "<group>"; };
 		ECC6F5B61597E0E7005401EC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		ECDF139718900C1800F0FA68 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = private.pem; path = ../private.pem; sourceTree = "<group>"; };
-		ECDF139818900C1800F0FA68 /* public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = public.pem; path = ../public.pem; sourceTree = "<group>"; };
 		ECE7EA1C1428547400466331 /* dtmf-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-0.wav"; sourceTree = "<group>"; };
 		ECE7EA1D1428547400466331 /* dtmf-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-1.wav"; sourceTree = "<group>"; };
 		ECE7EA1E1428547400466331 /* dtmf-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "dtmf-2.wav"; sourceTree = "<group>"; };
@@ -797,8 +803,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ECDF139718900C1800F0FA68 /* private.pem */,
-				ECDF139818900C1800F0FA68 /* public.pem */,
+				15E11EED1AA6BF8100156D8C /* SSL_CA.der */,
+				15E11EEB1AA6BF7500156D8C /* SSL_Pub.der */,
+				15E11EE51AA6794A00156D8C /* SSL_CA.pem */,
+				15E11EE61AA6794A00156D8C /* SSL_Priv.pem */,
+				15E11EE71AA6794A00156D8C /* SSL_Pub.pem */,
 				ECE7EA3A1428548F00466331 /* storage */,
 				ECE7EA1B1428547400466331 /* sound */,
 				EC90766813932A4800E14556 /* settings */,
@@ -1375,6 +1384,7 @@
 				ECF29ACB13F1E86100D1D315 /* vc_video@2x.png in Resources */,
 				ECF29ACC13F1E86100D1D315 /* vc_videoSel.png in Resources */,
 				ECF29ACD13F1E86100D1D315 /* vc_videoSel@2x.png in Resources */,
+				15E11EEC1AA6BF7500156D8C /* SSL_Pub.der in Resources */,
 				ECF29AE313F1ED5E00D1D315 /* bkg_btn_green.png in Resources */,
 				ECF29AE413F1ED5E00D1D315 /* bkg_btn_green@2x.png in Resources */,
 				ECF29AE513F1ED5E00D1D315 /* bkg_btn_red.png in Resources */,
@@ -1396,7 +1406,9 @@
 				ECF29B1E13F1F22000D1D315 /* kp_pad@2x.png in Resources */,
 				ECF29B1F13F1F22000D1D315 /* kp_padSel.png in Resources */,
 				ECF29B2013F1F22000D1D315 /* kp_padSel@2x.png in Resources */,
+				15E11EE81AA6794A00156D8C /* SSL_CA.pem in Resources */,
 				ECF29B2113F1F22000D1D315 /* kp_speaker.png in Resources */,
+				15E11EEA1AA6794A00156D8C /* SSL_Pub.pem in Resources */,
 				ECF29B2213F1F22000D1D315 /* kp_speaker@2x.png in Resources */,
 				ECF29B2313F1F22000D1D315 /* kp_speakerSel.png in Resources */,
 				ECF29B2413F1F22000D1D315 /* kp_speakerSel@2x.png in Resources */,
@@ -1426,9 +1438,9 @@
 				ECE7EA381428547400466331 /* ringbacktone.wav in Resources */,
 				ECE7EA391428547400466331 /* ringtone.mp3 in Resources */,
 				ECE7EA3D1428548F00466331 /* NgnDataBase.db in Resources */,
+				15E11EEE1AA6BF8100156D8C /* SSL_CA.der in Resources */,
+				15E11EE91AA6794A00156D8C /* SSL_Priv.pem in Resources */,
 				ECA0F07615111F77005EF3BB /* secure_16.png in Resources */,
-				ECDF139918900C1800F0FA68 /* private.pem in Resources */,
-				ECDF139A18900C1800F0FA68 /* public.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
