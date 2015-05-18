@@ -513,9 +513,13 @@
 
 - (IBAction) onButtonClick: (id)sender{
 	if(videoSession && sender == self.buttonToolBarVideo){
+#if 1 // stop camera without changing session media type
 		sendingVideo = !sendingVideo;
 		[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo :nil];
 		[self showBottomView:self.viewToolbar shouldRefresh:YES];
+#else // update video session to audio only
+        [videoSession updateSession:MediaType_Audio];
+#endif
 	}
 	else if(videoSession && sender == self.buttonToolBarMute){
 		[videoSession setMute:![videoSession isMuted]];

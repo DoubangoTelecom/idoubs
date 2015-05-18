@@ -33,14 +33,22 @@
 
 +(BOOL) presentSession: (NgnAVSession*)session{
 	if(session){
+        UIViewController* modalViewController = [idoubs2AppDelegate sharedInstance].tabBarController.presentedViewController;
+        if (!modalViewController) {
+            modalViewController = [idoubs2AppDelegate sharedInstance].tabBarController.presentingViewController;
+        }
 		if(isVideoType(session.mediaType)){
 			[idoubs2AppDelegate sharedInstance].videoCallController.sessionId = session.id;
-			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
+            if (modalViewController != [idoubs2AppDelegate sharedInstance].videoCallController) {
+                [[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].videoCallController animated: YES];
+            }
 			return YES;
 		}
 		else if(isAudioType(session.mediaType)){
 			[idoubs2AppDelegate sharedInstance].audioCallController.sessionId = session.id;
-			[[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
+            if (modalViewController != [idoubs2AppDelegate sharedInstance].audioCallController) {
+                [[idoubs2AppDelegate sharedInstance].tabBarController presentModalViewController: [idoubs2AppDelegate sharedInstance].audioCallController animated: YES];
+            }
 			return YES;
 		}
 	}
