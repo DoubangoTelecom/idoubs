@@ -361,13 +361,26 @@
 		case INVITE_EVENT_MEDIA_UPDATED:
 		{
 			NgnAVSession* session = [[NgnAVSession getSessionWithId:eargs.sessionId] retain];
-			if(session){
-				// Dismiss previous and display(present) the new one
-				// animation must be NO because we are calling dismiss then present
-				[self.tabBarController dismissModalViewControllerAnimated:NO];
-				[CallViewController displayCall:session];
+			if (session) {
+                UIViewController* modalViewController = self.tabBarController.presentedViewController;
+                if (!modalViewController) {
+                    modalViewController = self.tabBarController.presentingViewController;
+                }
+                BOOL hasVideo = isVideoType(session.mediaType);
+                BOOL hasAudio = isAudioType(session.mediaType);
+                BOOL openNewCallView = (hasVideo && modalViewController != self.videoCallController)
+                    || ((hasAudio && ! hasVideo) && modalViewController != self.audioCallController);
+                if (openNewCallView) {
+                    // Dismiss previous and display(present) the new one
+                    // animation must be NO because we are calling dismiss then present
+                    [self.tabBarController dismissViewControllerAnimated:NO completion:^{
+                        if (session.connectionState == CONN_STATE_CONNECTING || session.connectionState == CONN_STATE_CONNECTED) {
+                            [CallViewController displayCall:session];
+                        }
+                    }];
+                }
+                [NgnAVSession releaseSession:&session];
 			}
-			[NgnAVSession releaseSession:&session];
 			break;
 		}
 			

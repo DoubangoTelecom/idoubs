@@ -246,18 +246,24 @@ private:
 }
 
 - (void)startPreview{
-	if(mCaptureSession && mPreview && mStarted){
+	if (mCaptureSession && mPreview && mStarted) {
 		AVCaptureVideoPreviewLayer* previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:mCaptureSession];
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-		if(previewLayer.orientationSupported){
-			previewLayer.orientation = mOrientation;
+        //WARNING: -[<AVCaptureVideoPreviewLayer: 0x70235f60> isOrientationSupported] is deprecated.  Please use AVCaptureConnection's -isVideoOrientationSupported
+		if (([previewLayer respondsToSelector:@selector(connection)] ? [previewLayer connection].videoOrientation : previewLayer.orientationSupported)) {
+            // WARNING: -[<AVCaptureVideoPreviewLayer: 0x70235f60> setOrientation:] is deprecated.  Please use AVCaptureConnection's -setVideoOrientation:
+            if ([previewLayer respondsToSelector:@selector(connection)]) {
+                [previewLayer.connection setVideoOrientation:mOrientation];
+            } else {
+                previewLayer.orientation    = mOrientation;
+            }
 		}
 		
 		// remove all sublayers and add new one
-		if(mPreview){
-			for(CALayer *ly in mPreview.layer.sublayers){
-				if([ly isKindOfClass:[AVCaptureVideoPreviewLayer class]]){
+		if (mPreview) {
+			for(CALayer *ly in mPreview.layer.sublayers) {
+				if ([ly isKindOfClass:[AVCaptureVideoPreviewLayer class]]) {
 					[ly removeFromSuperlayer];
 					break;
 				}
@@ -266,7 +272,7 @@ private:
 			[mPreview.layer addSublayer:previewLayer];
 		}
 		
-		if(![mCaptureSession isRunning]){
+		if (![mCaptureSession isRunning]) {
 			[mCaptureSession startRunning];
 		}
 	}
@@ -521,20 +527,19 @@ private:
 	}
 }
 
--(void)setPreview: (UIView*)preview{
+-(void)setPreview: (UIView*)preview {
 #if NGN_PRODUCER_HAS_VIDEO_CAPTURE
-	
-	if(preview == nil){
+	if (preview == nil) {
 		// stop preview
 		[self stopPreview];
-		if(mPreview){
+		if (mPreview) {
 			// remove views
 			for (UIView *view in mPreview.subviews) {
 				[view removeFromSuperview];
 			}
 			// remove layers
-			for(CALayer *ly in mPreview.layer.sublayers){
-				if([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]){
+			for (CALayer *ly in mPreview.layer.sublayers) {
+				if ([ly isKindOfClass: [AVCaptureVideoPreviewLayer class]]) {
 					[ly removeFromSuperlayer];
 					break;
 				}
@@ -542,14 +547,13 @@ private:
 			[mPreview release], mPreview = nil;
 		}
 	}
-	else {
+	else if (preview != mPreview) {
 		// start preview
 		[mPreview release];
-		if((mPreview = [preview retain])){
+		if ((mPreview = [preview retain])) {
 			[self startPreview];
 		}
 	}
-	
 #endif
 }
 
