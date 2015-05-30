@@ -1585,6 +1585,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
 					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				INFOPLIST_FILE = "idoubs-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1639,6 +1640,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
 					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				INFOPLIST_FILE = "idoubs-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1677,12 +1679,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
-				"DOUBANGO_LIBS[arch=arm64]" = $DOUBANGO_HOME/thirdparties/iphone/lib/arm64;
-				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
-				"DOUBANGO_LIBS[arch=armv7s]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7s;
-				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/x86_64;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
+				"DOUBANGO_LIBS[sdk=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -1700,12 +1698,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
-				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
-				"DOUBANGO_LIBS[arch=arm64]" = $DOUBANGO_HOME/thirdparties/iphone/lib/arm64;
-				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
-				"DOUBANGO_LIBS[arch=armv7s]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7s;
-				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/x86_64;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
+				"DOUBANGO_LIBS[arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
