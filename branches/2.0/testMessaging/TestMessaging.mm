@@ -28,14 +28,14 @@
 #define TAG kTAG
 
 // credentials
-static const NSString* kProxyHost = @"proxy.sipthor.net";
-static const int kProxyPort = 5060;
-static const NSString* kRealm = @"sip2sip.info";
-static const NSString* kPassword = @"d3sb7j4fb8";
-static const NSString* kPrivateIdentity = @"2233392625";
-static const NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
-static const BOOL kEnableEarlyIMS = TRUE;
-static const NSString* kRemoteParty = @"test";
+static NSString* kProxyHost = @"proxy.sipthor.net";
+static int kProxyPort = 5060;
+static NSString* kRealm = @"sip2sip.info";
+static NSString* kPassword = @"d3sb7j4fb8";
+static NSString* kPrivateIdentity = @"2233392625";
+static NSString* kPublicIdentity = @"sip:2233392625@sip2sip.info";
+static BOOL kEnableEarlyIMS = TRUE;
+static NSString* kRemoteParty = @"test";
 
 //
 //	sip callback events implementation
