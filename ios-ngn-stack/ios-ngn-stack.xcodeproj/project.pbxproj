@@ -9799,10 +9799,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include $DOUBANGO_HOME/thirdparties/common/include";
-				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
-				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
+				"DOUBANGO_LIBS[arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -9847,10 +9845,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DOUBANGO_HOME = ../../../../../doubango/branches/2.0/doubango;
 				DOUBANGO_INCLUDES = "$DOUBANGO_HOME/tinySDP/include $DOUBANGO_HOME/tinySMS/include $DOUBANGO_HOME/tinyHTTP/include $DOUBANGO_HOME/tinySIP/include $DOUBANGO_HOME/tinyRTP/include $DOUBANGO_HOME/tinyMEDIA/include $DOUBANGO_HOME/tinyNET/src $DOUBANGO_HOME/tinyDAV/include $DOUBANGO_HOME/thirdparties/iphone/include $DOUBANGO_HOME/thirdparties/common/include";
-				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv6]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv6;
-				"DOUBANGO_LIBS[arch=armv7]" = $DOUBANGO_HOME/thirdparties/iphone/lib/armv7;
-				"DOUBANGO_LIBS[sdk=iphonesimulator*][arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/i386;
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
+				"DOUBANGO_LIBS[arch=*]" = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -9920,6 +9916,7 @@
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 					"$(DOUBANGO_HOME)/tinySAK/src",
 					"$(DOUBANGO_HOME)/tinyBFCP/include",
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
@@ -9959,6 +9956,7 @@
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 					"$(DOUBANGO_HOME)/tinySAK/src",
 					"$(DOUBANGO_HOME)/tinyBFCP/include",
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
@@ -10462,6 +10460,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
@@ -10478,6 +10477,7 @@
 				HEADER_SEARCH_PATHS = (
 					$DOUBANGO_HOME/thirdparties/iphone/include,
 					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyNET;
@@ -10530,6 +10530,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -10548,6 +10549,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyRTP;
@@ -10592,6 +10594,7 @@
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					"$(DOUBANGO_HOME)/tinyMSRP/include",
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMSRP;
@@ -10610,6 +10613,7 @@
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					"$(DOUBANGO_HOME)/tinyMSRP/include",
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMSRP;
@@ -10628,6 +10632,7 @@
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyHTTP;
@@ -10645,6 +10650,7 @@
 					"$(DOUBANGO_HOME)/tinyNET/src",
 					"$(DOUBANGO_HOME)/tinyHTTP/include",
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyHTTP;
@@ -10664,6 +10670,7 @@
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMEDIA;
@@ -10682,6 +10689,7 @@
 					$DOUBANGO_HOME/tinySDP/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyMEDIA;
@@ -10753,6 +10761,7 @@
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
@@ -10771,6 +10780,7 @@
 					$DOUBANGO_HOME/tinyXCAP/include,
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyXCAP;
@@ -10792,6 +10802,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySIP/include,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySIP;
@@ -10812,6 +10823,7 @@
 					$DOUBANGO_HOME/tinyMEDIA/include,
 					$DOUBANGO_HOME/tinySIP/include,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinySIP;
@@ -10888,6 +10900,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyWRAP;
@@ -10914,6 +10927,7 @@
 					$DOUBANGO_HOME/tinyNET/src,
 					$DOUBANGO_HOME/tinySAK/src,
 					$DOUBANGO_HOME/thirdparties/iphone/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = tinyWRAP;
