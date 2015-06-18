@@ -486,15 +486,16 @@ private:
 				const_cast<ProxyVideoProducer*>(_mProducer)->setRotation(0);
 				break;
 		}
-		
-		// send blank packets
-		[self performSelectorOnMainThread:@selector(startBlankPacketsTimer) withObject:nil waitUntilDone:NO];
 	}
 	if(!_mSenderQueue){
 		_mSenderQueue = dispatch_queue_create("org.doubango.idoubs.producer.sender", NULL);
 		dispatch_queue_t high_prio_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
 		dispatch_set_target_queue(_mSenderQueue, high_prio_queue);
 	}
+    if(_mProducer){
+        // send blank packets
+        [self performSelectorOnMainThread:@selector(startBlankPacketsTimer) withObject:nil waitUntilDone:NO];
+    }
 	[self startVideoCapture];
 #endif
 	return 0;
