@@ -513,7 +513,7 @@
 
 - (IBAction) onButtonClick: (id)sender{
 	if(videoSession && sender == self.buttonToolBarVideo){
-#if 0 // stop camera without changing session media type
+#if 1 // stop camera without changing session media type
 		sendingVideo = !sendingVideo;
 		[videoSession setLocalVideoDisplay: sendingVideo ? viewLocalVideo :nil];
 		[self showBottomView:self.viewToolbar shouldRefresh:YES];
