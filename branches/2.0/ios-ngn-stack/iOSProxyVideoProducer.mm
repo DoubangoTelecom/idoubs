@@ -251,7 +251,7 @@ private:
 		previewLayer.frame = mPreview.bounds;
 		previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         //WARNING: -[<AVCaptureVideoPreviewLayer: 0x70235f60> isOrientationSupported] is deprecated.  Please use AVCaptureConnection's -isVideoOrientationSupported
-		if (([previewLayer respondsToSelector:@selector(connection)] ? [previewLayer connection].videoOrientation : previewLayer.orientationSupported)) {
+		if (([previewLayer respondsToSelector:@selector(connection)] ? [[previewLayer connection] isVideoOrientationSupported] : previewLayer.orientationSupported)) {
             // WARNING: -[<AVCaptureVideoPreviewLayer: 0x70235f60> setOrientation:] is deprecated.  Please use AVCaptureConnection's -setVideoOrientation:
             if ([previewLayer respondsToSelector:@selector(connection)]) {
                 [previewLayer.connection setVideoOrientation:mOrientation];
