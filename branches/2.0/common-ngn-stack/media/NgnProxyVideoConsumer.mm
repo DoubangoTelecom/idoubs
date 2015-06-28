@@ -209,7 +209,7 @@ private:
 	}
 	
 #if TARGET_OS_IPHONE
-    if(mDisplay) [mDisplay setBufferYUV:_mBufferPtr andWidth:mWidth andHeight:mHeight];
+    if(mDisplay) [mDisplay setBufferYUV:_mBufferPtr width:mWidth height:mHeight];
      return 0;
 #else
     if(mBitmapContext && mDisplay){
