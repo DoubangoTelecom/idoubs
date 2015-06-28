@@ -34,6 +34,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		15A6AE471B406B4E00E02519 /* thttp_proxy_node_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE461B406B4E00E02519 /* thttp_proxy_node_plugin.c */; };
+		15A6AE491B406B6600E02519 /* thttp_proxy_node_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE481B406B6600E02519 /* thttp_proxy_node_plugin.h */; };
+		15A6AE501B406B8100E02519 /* tnet_proxy_node_socks_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE4A1B406B8100E02519 /* tnet_proxy_node_socks_plugin.c */; };
+		15A6AE511B406B8100E02519 /* tnet_proxy_node_socks_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE4B1B406B8100E02519 /* tnet_proxy_node_socks_plugin.h */; };
+		15A6AE521B406B8100E02519 /* tnet_proxy_plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE4C1B406B8100E02519 /* tnet_proxy_plugin.c */; };
+		15A6AE531B406B8100E02519 /* tnet_proxy_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE4D1B406B8100E02519 /* tnet_proxy_plugin.h */; };
+		15A6AE541B406B8100E02519 /* tnet_proxydetect.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE4E1B406B8100E02519 /* tnet_proxydetect.c */; };
+		15A6AE551B406B8100E02519 /* tnet_proxydetect.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE4F1B406B8100E02519 /* tnet_proxydetect.h */; };
 		AA747D9F0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */; };
 		EC1041F717707C51008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041F817707C72008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
@@ -2364,6 +2372,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		15A6AE461B406B4E00E02519 /* thttp_proxy_node_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thttp_proxy_node_plugin.c; sourceTree = "<group>"; };
+		15A6AE481B406B6600E02519 /* thttp_proxy_node_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thttp_proxy_node_plugin.h; sourceTree = "<group>"; };
+		15A6AE4A1B406B8100E02519 /* tnet_proxy_node_socks_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_proxy_node_socks_plugin.c; sourceTree = "<group>"; };
+		15A6AE4B1B406B8100E02519 /* tnet_proxy_node_socks_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proxy_node_socks_plugin.h; sourceTree = "<group>"; };
+		15A6AE4C1B406B8100E02519 /* tnet_proxy_plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_proxy_plugin.c; sourceTree = "<group>"; };
+		15A6AE4D1B406B8100E02519 /* tnet_proxy_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proxy_plugin.h; sourceTree = "<group>"; };
+		15A6AE4E1B406B8100E02519 /* tnet_proxydetect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_proxydetect.c; sourceTree = "<group>"; };
+		15A6AE4F1B406B8100E02519 /* tnet_proxydetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proxydetect.h; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_ngn_stack_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4745,6 +4761,12 @@
 				ECFD2A07135E7B8500E6A9A3 /* tnet.c */,
 				ECFD2A08135E7B8500E6A9A3 /* tnet.h */,
 				ECFD2A09135E7B8500E6A9A3 /* tnet_auth.c */,
+				15A6AE4A1B406B8100E02519 /* tnet_proxy_node_socks_plugin.c */,
+				15A6AE4B1B406B8100E02519 /* tnet_proxy_node_socks_plugin.h */,
+				15A6AE4C1B406B8100E02519 /* tnet_proxy_plugin.c */,
+				15A6AE4D1B406B8100E02519 /* tnet_proxy_plugin.h */,
+				15A6AE4E1B406B8100E02519 /* tnet_proxydetect.c */,
+				15A6AE4F1B406B8100E02519 /* tnet_proxydetect.h */,
 				ECFD2A0A135E7B8500E6A9A3 /* tnet_auth.h */,
 				ECFD2A0B135E7B8500E6A9A3 /* tnet_endianness.c */,
 				ECFD2A0C135E7B8500E6A9A3 /* tnet_endianness.h */,
@@ -5390,6 +5412,7 @@
 				ECFD2C68135E7C5E00E6A9A3 /* thttp_action.h */,
 				ECFD2C69135E7C5E00E6A9A3 /* thttp_dialog.h */,
 				ECFD2C6A135E7C5E00E6A9A3 /* thttp_event.h */,
+				15A6AE481B406B6600E02519 /* thttp_proxy_node_plugin.h */,
 				ECFD2C6B135E7C5E00E6A9A3 /* thttp_message.h */,
 				ECFD2C6C135E7C5E00E6A9A3 /* thttp_session.h */,
 				ECFD2C6D135E7C5E00E6A9A3 /* thttp_url.h */,
@@ -5465,6 +5488,7 @@
 				ECFD2C93135E7C5E00E6A9A3 /* thttp_action.c */,
 				ECFD2C94135E7C5E00E6A9A3 /* thttp_dialog.c */,
 				ECFD2C95135E7C5E00E6A9A3 /* thttp_event.c */,
+				15A6AE461B406B4E00E02519 /* thttp_proxy_node_plugin.c */,
 				ECFD2C96135E7C5E00E6A9A3 /* thttp_message.c */,
 				ECFD2C97135E7C5E00E6A9A3 /* thttp_session.c */,
 				ECFD2C98135E7C5E00E6A9A3 /* thttp_url.c */,
@@ -7143,6 +7167,7 @@
 				ECFD2A3F135E7B8500E6A9A3 /* tnet_dhcp_option_sip.h in Headers */,
 				ECFD2A41135E7B8500E6A9A3 /* tnet_dhcp6.h in Headers */,
 				ECFD2A43135E7B8500E6A9A3 /* tnet_dhcp6_duid.h in Headers */,
+				15A6AE531B406B8100E02519 /* tnet_proxy_plugin.h in Headers */,
 				ECFD2A45135E7B8500E6A9A3 /* tnet_dhcp6_message.h in Headers */,
 				EC61327719179FD2003C7245 /* tnet_stun_types.h in Headers */,
 				ECFD2A47135E7B8500E6A9A3 /* tnet_dhcp6_option.h in Headers */,
@@ -7160,6 +7185,7 @@
 				ECFD2A5B135E7B8500E6A9A3 /* tnet_dns_ptr.h in Headers */,
 				ECFD2A5D135E7B8500E6A9A3 /* tnet_dns_regexp.h in Headers */,
 				ECFD2A5F135E7B8500E6A9A3 /* tnet_dns_resolvconf.h in Headers */,
+				15A6AE511B406B8100E02519 /* tnet_proxy_node_socks_plugin.h in Headers */,
 				EC61327419179FD2003C7245 /* tnet_stun_attr.h in Headers */,
 				ECFD2A61135E7B8500E6A9A3 /* tnet_dns_rr.h in Headers */,
 				ECFD2A63135E7B8500E6A9A3 /* tnet_dns_soa.h in Headers */,
@@ -7169,6 +7195,7 @@
 				ECFD2A69135E7B8500E6A9A3 /* tnet_ice.h in Headers */,
 				ECFD2A6B135E7B8500E6A9A3 /* tnet_stun.h in Headers */,
 				ECFD2A6D135E7B8500E6A9A3 /* tnet_stun_attribute.h in Headers */,
+				15A6AE551B406B8100E02519 /* tnet_proxydetect.h in Headers */,
 				ECFD2A6F135E7B8500E6A9A3 /* tnet_stun_message.h in Headers */,
 				ECFD2A70135E7B8500E6A9A3 /* tinynet.h in Headers */,
 				ECFD2A71135E7B8500E6A9A3 /* tinynet_config.h in Headers */,
@@ -7312,6 +7339,7 @@
 				ECFD2CAD135E7C5E00E6A9A3 /* thttp_header_Content_Type.h in Headers */,
 				ECFD2CAE135E7C5E00E6A9A3 /* thttp_header_Dummy.h in Headers */,
 				ECFD2CAF135E7C5E00E6A9A3 /* thttp_header_ETag.h in Headers */,
+				15A6AE491B406B6600E02519 /* thttp_proxy_node_plugin.h in Headers */,
 				ECFD2CB0135E7C5E00E6A9A3 /* thttp_header_Transfer_Encoding.h in Headers */,
 				ECFD2CB1135E7C5E00E6A9A3 /* thttp_header_WWW_Authenticate.h in Headers */,
 				ECFD2CB2135E7C5E00E6A9A3 /* thttp_parser_header.h in Headers */,
@@ -8477,12 +8505,14 @@
 				ECFD2A74135E7B8500E6A9A3 /* tnet.c in Sources */,
 				ECFD2A76135E7B8500E6A9A3 /* tnet_auth.c in Sources */,
 				ECFD2A78135E7B8500E6A9A3 /* tnet_endianness.c in Sources */,
+				15A6AE541B406B8100E02519 /* tnet_proxydetect.c in Sources */,
 				ECFD2A7B135E7B8500E6A9A3 /* tnet_nat.c in Sources */,
 				ECFD2A7D135E7B8500E6A9A3 /* tnet_poll.c in Sources */,
 				ECFD2A80135E7B8500E6A9A3 /* tnet_socket.c in Sources */,
 				EC61327E19179FE3003C7245 /* tnet_turn_attr.c in Sources */,
 				ECFD2A82135E7B8500E6A9A3 /* tnet_transport.c in Sources */,
 				ECFD2A84135E7B8500E6A9A3 /* tnet_transport_poll.c in Sources */,
+				15A6AE501B406B8100E02519 /* tnet_proxy_node_socks_plugin.c in Sources */,
 				ECFD2A85135E7B8500E6A9A3 /* tnet_transport_win32.c in Sources */,
 				ECFD2A87135E7B8500E6A9A3 /* tnet_utils.c in Sources */,
 				ECFD2A89135E7B8500E6A9A3 /* tnet_turn.c in Sources */,
@@ -8494,6 +8524,7 @@
 				ECB3845215516A730035F25D /* tnet_ice_candidate.c in Sources */,
 				ECB3845415516A730035F25D /* tnet_ice_ctx.c in Sources */,
 				ECB3845615516A730035F25D /* tnet_ice_event.c in Sources */,
+				15A6AE521B406B8100E02519 /* tnet_proxy_plugin.c in Sources */,
 				ECB3845815516A730035F25D /* tnet_ice_pair.c in Sources */,
 				EC26BFD71920327400941ADE /* tnet_stun_binding.c in Sources */,
 				ECB3845A15516A730035F25D /* tnet_ice_utils.c in Sources */,
@@ -8607,6 +8638,7 @@
 				ECFD2CC1135E7C5E00E6A9A3 /* thttp_header_Content_Length.c in Sources */,
 				ECFD2CC2135E7C5E00E6A9A3 /* thttp_header_Content_Type.c in Sources */,
 				ECFD2CC3135E7C5E00E6A9A3 /* thttp_header_Dummy.c in Sources */,
+				15A6AE471B406B4E00E02519 /* thttp_proxy_node_plugin.c in Sources */,
 				ECFD2CC4135E7C5E00E6A9A3 /* thttp_header_ETag.c in Sources */,
 				ECFD2CC5135E7C5E00E6A9A3 /* thttp_header_Transfer_Encoding.c in Sources */,
 				ECFD2CC6135E7C5E00E6A9A3 /* thttp_header_WWW_Authenticate.c in Sources */,
