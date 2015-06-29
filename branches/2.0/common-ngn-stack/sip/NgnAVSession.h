@@ -25,7 +25,6 @@
 #import "model/NgnHistoryAVCallEvent.h"
 #import "media/NgnVideoView.h"
 
-#import "media/NgnProxyVideoConsumer.h"
 #if TARGET_OS_IPHONE
 #	import "iOSProxyVideoProducer.h"
 #   import "iOSGLView.h"
@@ -49,9 +48,13 @@ class ActionConfig;
 	BOOL mMute;
 	BOOL mSpeakerOn;
 	
-	BOOL mConsumersAndProducersInitialzed;
-	NgnProxyVideoConsumer* mVideoConsumer;
-	NgnProxyVideoProducer* mVideoProducer;
+#if TARGET_OS_IPHONE
+    iOSGLView* mRemoteDisplay;
+    UIView* mLocalDisplay;
+#else
+    NSObject<NgnVideoView>* mRemoteDisplay;
+    QTCaptureView* mLocalDisplay;
+#endif
 }
 
 -(BOOL) makeCall: (NSString*) validUri;
@@ -73,7 +76,7 @@ class ActionConfig;
 #if TARGET_OS_IPHONE
 -(BOOL) setRemoteVideoDisplay: (iOSGLView*)display;
 -(BOOL) setLocalVideoDisplay: (UIView*)display;
--(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation;
+-(BOOL) setOrientation: (AVCaptureVideoOrientation)orientation  __attribute__ ((deprecated));
 -(BOOL) toggleCamera;
 -(BOOL) setMute: (BOOL)mute;
 -(BOOL) setAudioInterrupt: (BOOL)interrupt;

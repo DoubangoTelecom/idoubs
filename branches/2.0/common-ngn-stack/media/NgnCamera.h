@@ -1,7 +1,5 @@
-/* Copyright (C) 2010-2011, Mamadou Diop.
- * Copyright (c) 2011, Doubango Telecom. All rights reserved.
- *
- * Contact: Mamadou Diop <diopmamadou(at)doubango(dot)org>
+/* Copyright (C) 2010-2015, Mamadou Diop.
+ * Copyright (c) 2011-2015, Doubango Telecom. All rights reserved.
  *       
  * This file is part of iDoubs Project ( http://code.google.com/p/idoubs )
  *
@@ -30,7 +28,7 @@
 	
 }
 
-#if NGN_PRODUCER_HAS_VIDEO_CAPTURE
+#if NGN_HAVE_VIDEO_CAPTURE
 + (AVCaptureDevice *)frontFacingCamera;
 + (AVCaptureDevice *)backCamera;
 #endif /* NGN_PRODUCER_HAS_VIDEO_CAPTURE */
