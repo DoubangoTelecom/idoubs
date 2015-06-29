@@ -28,13 +28,9 @@
 #import "NgnSoundService.h"
 #import "NgnNetworkService.h"
 #import "NgnStorageService.h"
-#import "NgnProxyPluginMgr.h"
 #import "NgnVideoConsumer.h"
 
-
-#import "NgnProxyVideoConsumer.h"
 #if TARGET_OS_IPHONE
-#	import "iOSProxyVideoProducer.h"
 #   import "iOSVideoProducer.h"
 #elif TARGET_OS_MAC
 #	import "OSXProxyVideoProducer.h"

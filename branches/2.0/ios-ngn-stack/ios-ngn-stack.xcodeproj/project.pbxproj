@@ -323,12 +323,6 @@
 		ECE7E94D14284CAC00466331 /* NgnContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8C914284CAC00466331 /* NgnContentType.h */; };
 		ECE7E94E14284CAC00466331 /* NgnEventPackageType.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8CA14284CAC00466331 /* NgnEventPackageType.h */; };
 		ECE7E94F14284CAC00466331 /* NgnMediaType.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8CB14284CAC00466331 /* NgnMediaType.h */; };
-		ECE7E95014284CAC00466331 /* NgnProxyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8CC14284CAC00466331 /* NgnProxyPlugin.h */; };
-		ECE7E95114284CAC00466331 /* NgnProxyPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8CD14284CAC00466331 /* NgnProxyPlugin.mm */; };
-		ECE7E95214284CAC00466331 /* NgnProxyPluginMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8CE14284CAC00466331 /* NgnProxyPluginMgr.h */; };
-		ECE7E95314284CAC00466331 /* NgnProxyPluginMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8CF14284CAC00466331 /* NgnProxyPluginMgr.mm */; };
-		ECE7E95414284CAC00466331 /* NgnProxyVideoConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8D014284CAC00466331 /* NgnProxyVideoConsumer.h */; };
-		ECE7E95514284CAC00466331 /* NgnProxyVideoConsumer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8D114284CAC00466331 /* NgnProxyVideoConsumer.mm */; };
 		ECE7E95614284CAC00466331 /* NgnVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8D214284CAC00466331 /* NgnVideoView.h */; };
 		ECE7E95714284CAC00466331 /* NgnContact.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E8D414284CAC00466331 /* NgnContact.h */; };
 		ECE7E95814284CAC00466331 /* NgnContact.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E8D514284CAC00466331 /* NgnContact.m */; };
@@ -404,8 +398,6 @@
 		ECE7E99E14284CAC00466331 /* NgnUriUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E93214284CAC00466331 /* NgnUriUtils.mm */; };
 		ECE7E99F14284CAC00466331 /* NSDate+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E93314284CAC00466331 /* NSDate+Utilities.h */; };
 		ECE7E9A014284CAC00466331 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E93414284CAC00466331 /* NSDate+Utilities.m */; };
-		ECE7E9A314284CD300466331 /* iOSProxyVideoProducer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE7E9A114284CD300466331 /* iOSProxyVideoProducer.h */; };
-		ECE7E9A414284CD300466331 /* iOSProxyVideoProducer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE7E9A214284CD300466331 /* iOSProxyVideoProducer.mm */; };
 		ECEB878B138AC1F700BC7BA0 /* tnet_transport_cfsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */; };
 		ECF64C06139EA03B004AF043 /* iOSNgnPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */; };
 		ECFD2961135E7B5200E6A9A3 /* tinysak_config.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD2905135E7B5200E6A9A3 /* tinysak_config.h */; };
@@ -2575,12 +2567,6 @@
 		ECE7E8C914284CAC00466331 /* NgnContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContentType.h; sourceTree = "<group>"; };
 		ECE7E8CA14284CAC00466331 /* NgnEventPackageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnEventPackageType.h; sourceTree = "<group>"; };
 		ECE7E8CB14284CAC00466331 /* NgnMediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnMediaType.h; sourceTree = "<group>"; };
-		ECE7E8CC14284CAC00466331 /* NgnProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPlugin.h; sourceTree = "<group>"; };
-		ECE7E8CD14284CAC00466331 /* NgnProxyPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPlugin.mm; sourceTree = "<group>"; };
-		ECE7E8CE14284CAC00466331 /* NgnProxyPluginMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyPluginMgr.h; sourceTree = "<group>"; };
-		ECE7E8CF14284CAC00466331 /* NgnProxyPluginMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyPluginMgr.mm; sourceTree = "<group>"; };
-		ECE7E8D014284CAC00466331 /* NgnProxyVideoConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnProxyVideoConsumer.h; sourceTree = "<group>"; };
-		ECE7E8D114284CAC00466331 /* NgnProxyVideoConsumer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnProxyVideoConsumer.mm; sourceTree = "<group>"; };
 		ECE7E8D214284CAC00466331 /* NgnVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnVideoView.h; sourceTree = "<group>"; };
 		ECE7E8D414284CAC00466331 /* NgnContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnContact.h; sourceTree = "<group>"; };
 		ECE7E8D514284CAC00466331 /* NgnContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NgnContact.m; sourceTree = "<group>"; };
@@ -2673,8 +2659,6 @@
 		ECE7E93214284CAC00466331 /* NgnUriUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnUriUtils.mm; sourceTree = "<group>"; };
 		ECE7E93314284CAC00466331 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		ECE7E93414284CAC00466331 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
-		ECE7E9A114284CD300466331 /* iOSProxyVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSProxyVideoProducer.h; sourceTree = "<group>"; };
-		ECE7E9A214284CD300466331 /* iOSProxyVideoProducer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSProxyVideoProducer.mm; sourceTree = "<group>"; };
 		ECEB878A138AC1F700BC7BA0 /* tnet_transport_cfsocket.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tnet_transport_cfsocket.c; sourceTree = "<group>"; };
 		ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSNgnPrivate.h; sourceTree = "<group>"; };
 		ECFD2426135D584100E6A9A3 /* libtinySAK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinySAK.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4462,12 +4446,6 @@
 				ECE7E8C914284CAC00466331 /* NgnContentType.h */,
 				ECE7E8CA14284CAC00466331 /* NgnEventPackageType.h */,
 				ECE7E8CB14284CAC00466331 /* NgnMediaType.h */,
-				ECE7E8CC14284CAC00466331 /* NgnProxyPlugin.h */,
-				ECE7E8CD14284CAC00466331 /* NgnProxyPlugin.mm */,
-				ECE7E8CE14284CAC00466331 /* NgnProxyPluginMgr.h */,
-				ECE7E8CF14284CAC00466331 /* NgnProxyPluginMgr.mm */,
-				ECE7E8D014284CAC00466331 /* NgnProxyVideoConsumer.h */,
-				ECE7E8D114284CAC00466331 /* NgnProxyVideoConsumer.mm */,
 				ECE7E8D214284CAC00466331 /* NgnVideoView.h */,
 			);
 			name = media;
@@ -4625,8 +4603,6 @@
 			isa = PBXGroup;
 			children = (
 				ECE7E8AE14284C9700466331 /* common */,
-				ECE7E9A114284CD300466331 /* iOSProxyVideoProducer.h */,
-				ECE7E9A214284CD300466331 /* iOSProxyVideoProducer.mm */,
 				EC83B77C1369768A00DD3355 /* iOSNgnStack.h */,
 				EC83BD851369D05B00DD3355 /* iOSNgnConfig.h */,
 				ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */,
@@ -7075,9 +7051,6 @@
 				ECE7E94D14284CAC00466331 /* NgnContentType.h in Headers */,
 				ECE7E94E14284CAC00466331 /* NgnEventPackageType.h in Headers */,
 				ECE7E94F14284CAC00466331 /* NgnMediaType.h in Headers */,
-				ECE7E95014284CAC00466331 /* NgnProxyPlugin.h in Headers */,
-				ECE7E95214284CAC00466331 /* NgnProxyPluginMgr.h in Headers */,
-				ECE7E95414284CAC00466331 /* NgnProxyVideoConsumer.h in Headers */,
 				ECE7E95614284CAC00466331 /* NgnVideoView.h in Headers */,
 				ECE7E95714284CAC00466331 /* NgnContact.h in Headers */,
 				ECE7E95914284CAC00466331 /* NgnFavorite.h in Headers */,
@@ -7124,7 +7097,6 @@
 				ECE7E99B14284CAC00466331 /* NgnStringUtils.h in Headers */,
 				ECE7E99D14284CAC00466331 /* NgnUriUtils.h in Headers */,
 				ECE7E99F14284CAC00466331 /* NSDate+Utilities.h in Headers */,
-				ECE7E9A314284CD300466331 /* iOSProxyVideoProducer.h in Headers */,
 				ECD284A6145F771B00EFE997 /* NgnDeviceInfo.h in Headers */,
 				ECC6F5B41597D669005401EC /* iOSGLView.h in Headers */,
 			);
@@ -8349,9 +8321,6 @@
 				ECE7E94814284CAC00466331 /* NgnStackEventArgs.m in Sources */,
 				ECE7E94A14284CAC00466331 /* NgnSubscriptionEventArgs.m in Sources */,
 				ECE7E94C14284CAC00466331 /* NgnCamera.mm in Sources */,
-				ECE7E95114284CAC00466331 /* NgnProxyPlugin.mm in Sources */,
-				ECE7E95314284CAC00466331 /* NgnProxyPluginMgr.mm in Sources */,
-				ECE7E95514284CAC00466331 /* NgnProxyVideoConsumer.mm in Sources */,
 				ECE7E95814284CAC00466331 /* NgnContact.m in Sources */,
 				ECE7E95A14284CAC00466331 /* NgnFavorite.mm in Sources */,
 				ECE7E95C14284CAC00466331 /* NgnHistoryAVCallEvent.mm in Sources */,
@@ -8384,7 +8353,6 @@
 				ECE7E99C14284CAC00466331 /* NgnStringUtils.m in Sources */,
 				ECE7E99E14284CAC00466331 /* NgnUriUtils.mm in Sources */,
 				ECE7E9A014284CAC00466331 /* NSDate+Utilities.m in Sources */,
-				ECE7E9A414284CD300466331 /* iOSProxyVideoProducer.mm in Sources */,
 				ECD284A7145F771B00EFE997 /* NgnDeviceInfo.mm in Sources */,
 				ECC6F5B51597D669005401EC /* iOSGLView.mm in Sources */,
 			);

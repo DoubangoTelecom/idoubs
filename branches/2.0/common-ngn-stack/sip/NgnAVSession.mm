@@ -22,7 +22,6 @@
 #import "NgnEngine.h"
 #import "NgnStringUtils.h"
 #import "NgnUriUtils.h"
-#import "NgnProxyPluginMgr.h"
 
 #import "SipSession.h"
 #import "SipMessage.h"

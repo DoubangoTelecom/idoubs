@@ -26,7 +26,7 @@
 #import "media/NgnVideoView.h"
 
 #if TARGET_OS_IPHONE
-#	import "iOSProxyVideoProducer.h"
+#	import "iOSVideoProducer.h"
 #   import "iOSGLView.h"
 #elif TARGET_OS_MAC
 #	import "OSXProxyVideoProducer.h"
