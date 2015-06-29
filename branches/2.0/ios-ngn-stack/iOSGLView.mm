@@ -101,6 +101,7 @@ static inline RECT LetterBoxRect(const RECT& rcSrc, const RECT& rcDst);
 
 @interface iOSGLView(Private)
 - (void)initialize;
+- (void)orientationChanged:(NSNotification *)notification;
 - (void)setupLayer;
 - (void)setupContext;
 - (void)setupRenderBuffer;
@@ -191,6 +192,7 @@ static inline RECT LetterBoxRect(const RECT& rcSrc, const RECT& rcDst);
     _fullScreen = GL_TRUE; // for backward compatibility
     
     [self addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification  object:nil];
 }
 
 - (id)initWithCoder:(NSCoder*)aDecoder {
@@ -211,6 +213,12 @@ static inline RECT LetterBoxRect(const RECT& rcSrc, const RECT& rcDst);
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == self && [keyPath isEqualToString:@"bounds"]) {
+        [self updateSizes];
+    }
+}
+
+-(void)orientationChanged:(NSNotification *)notification {
+    @synchronized(self) {
         [self updateSizes];
     }
 }
@@ -257,10 +265,7 @@ static inline RECT LetterBoxRect(const RECT& rcSrc, const RECT& rcDst);
 }
 
 -(void) setOrientation: (UIDeviceOrientation)orientation {
-    @synchronized(self) {
-        // FIXME: update only if orientation changed
-        [self updateSizes];
-    }
+    // @deprecated
 }
 
 -(void)setBufferYUV:(const uint8_t*)buffer width:(uint)bufferWidth height:(uint)bufferHeight {

@@ -42,6 +42,10 @@
 		15A6AE531B406B8100E02519 /* tnet_proxy_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE4D1B406B8100E02519 /* tnet_proxy_plugin.h */; };
 		15A6AE541B406B8100E02519 /* tnet_proxydetect.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE4E1B406B8100E02519 /* tnet_proxydetect.c */; };
 		15A6AE551B406B8100E02519 /* tnet_proxydetect.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE4F1B406B8100E02519 /* tnet_proxydetect.h */; };
+		15A6AE591B40742E00E02519 /* NgnVideoConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE581B40742E00E02519 /* NgnVideoConsumer.h */; };
+		15A6AE5B1B40744000E02519 /* NgnVideoConsumer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE5A1B40744000E02519 /* NgnVideoConsumer.mm */; };
+		15A6AE5D1B40D36900E02519 /* iOSVideoProducer.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A6AE5C1B40D36900E02519 /* iOSVideoProducer.h */; };
+		15A6AE611B40D3C300E02519 /* iOSVideoProducer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15A6AE601B40D3C300E02519 /* iOSVideoProducer.mm */; };
 		AA747D9F0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */; };
 		EC1041F717707C51008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
 		EC1041F817707C72008E8E76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1041F617707C51008E8E76 /* Security.framework */; };
@@ -2380,6 +2384,10 @@
 		15A6AE4D1B406B8100E02519 /* tnet_proxy_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proxy_plugin.h; sourceTree = "<group>"; };
 		15A6AE4E1B406B8100E02519 /* tnet_proxydetect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tnet_proxydetect.c; sourceTree = "<group>"; };
 		15A6AE4F1B406B8100E02519 /* tnet_proxydetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tnet_proxydetect.h; sourceTree = "<group>"; };
+		15A6AE581B40742E00E02519 /* NgnVideoConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NgnVideoConsumer.h; sourceTree = "<group>"; };
+		15A6AE5A1B40744000E02519 /* NgnVideoConsumer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NgnVideoConsumer.mm; sourceTree = "<group>"; };
+		15A6AE5C1B40D36900E02519 /* iOSVideoProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVideoProducer.h; sourceTree = "<group>"; };
+		15A6AE601B40D3C300E02519 /* iOSVideoProducer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSVideoProducer.mm; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ios_ngn_stack_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_ngn_stack_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libios_ngn_stack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios_ngn_stack.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4447,6 +4455,8 @@
 		ECE7E8C614284CAC00466331 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				15A6AE5A1B40744000E02519 /* NgnVideoConsumer.mm */,
+				15A6AE581B40742E00E02519 /* NgnVideoConsumer.h */,
 				ECE7E8C714284CAC00466331 /* NgnCamera.h */,
 				ECE7E8C814284CAC00466331 /* NgnCamera.mm */,
 				ECE7E8C914284CAC00466331 /* NgnContentType.h */,
@@ -4622,6 +4632,8 @@
 				ECF64C05139EA03B004AF043 /* iOSNgnPrivate.h */,
 				ECC6F5B21597D668005401EC /* iOSGLView.h */,
 				ECC6F5B31597D669005401EC /* iOSGLView.mm */,
+				15A6AE5C1B40D36900E02519 /* iOSVideoProducer.h */,
+				15A6AE601B40D3C300E02519 /* iOSVideoProducer.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -7096,6 +7108,7 @@
 				ECE7E98214284CAC00466331 /* NgnInviteSession.h in Headers */,
 				ECE7E98414284CAC00466331 /* NgnMessagingSession.h in Headers */,
 				ECE7E98614284CAC00466331 /* NgnMsrpSession.h in Headers */,
+				15A6AE591B40742E00E02519 /* NgnVideoConsumer.h in Headers */,
 				ECE7E98814284CAC00466331 /* NgnPresenceStatus.h in Headers */,
 				ECE7E98914284CAC00466331 /* NgnPublicationSession.h in Headers */,
 				ECE7E98B14284CAC00466331 /* NgnRegistrationSession.h in Headers */,
@@ -7103,6 +7116,7 @@
 				ECE7E98F14284CAC00466331 /* NgnSipSession.h in Headers */,
 				ECE7E99114284CAC00466331 /* NgnSipStack.h in Headers */,
 				ECE7E99314284CAC00466331 /* NgnSubscriptionSession.h in Headers */,
+				15A6AE5D1B40D36900E02519 /* iOSVideoProducer.h in Headers */,
 				ECE7E99514284CAC00466331 /* NgnConfigurationEntry.h in Headers */,
 				ECE7E99614284CAC00466331 /* NgnDateTimeUtils.h in Headers */,
 				ECE7E99814284CAC00466331 /* NgnNotificationCenter.h in Headers */,
@@ -8327,6 +8341,7 @@
 				ECE7E93A14284CAC00466331 /* NgnFavoriteEventArgs.mm in Sources */,
 				ECE7E93C14284CAC00466331 /* NgnHistoryEventArgs.mm in Sources */,
 				ECE7E93E14284CAC00466331 /* NgnInviteEventArgs.m in Sources */,
+				15A6AE5B1B40744000E02519 /* NgnVideoConsumer.mm in Sources */,
 				ECE7E94014284CAC00466331 /* NgnMessagingEventArgs.m in Sources */,
 				ECE7E94214284CAC00466331 /* NgnNetworkEventArgs.mm in Sources */,
 				ECE7E94414284CAC00466331 /* NgnPublicationEventArgs.m in Sources */,
@@ -8348,6 +8363,7 @@
 				ECE7E96914284CAC00466331 /* NgnContactService.mm in Sources */,
 				ECE7E96B14284CAC00466331 /* NgnHistoryService.mm in Sources */,
 				ECE7E96D14284CAC00466331 /* NgnHttpClientService.mm in Sources */,
+				15A6AE611B40D3C300E02519 /* iOSVideoProducer.mm in Sources */,
 				ECE7E96F14284CAC00466331 /* NgnNetworkService.mm in Sources */,
 				ECE7E97114284CAC00466331 /* NgnSipService.mm in Sources */,
 				ECE7E97314284CAC00466331 /* NgnSoundService.mm in Sources */,

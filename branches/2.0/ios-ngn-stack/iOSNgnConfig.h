@@ -21,10 +21,14 @@
 #ifndef IOS_NGN_CONFIG_H
 #define IOS_NGN_CONFIG_H
 
+#import <TargetConditionals.h>
+#import <Availability.h>
+
 #define NgnNSLog(TAG, FMT, ...) NSLog(@"%@" FMT "\n", TAG, ##__VA_ARGS__)
 
-// FIXME: to be renamed to "NGN_HAS_VIDEO_CAPTURE" in both NgnStack and iDoubs
-#define NGN_PRODUCER_HAS_VIDEO_CAPTURE (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000 && TARGET_OS_EMBEDDED)
+#if !defined(NGN_HAVE_VIDEO_CAPTURE)
+#   define NGN_HAVE_VIDEO_CAPTURE (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000 && TARGET_OS_EMBEDDED)
+#endif /* NGN_HAVE_VIDEO_CAPTURE */
 
 #endif /* IOS_NGN_CONFIG_H */
 

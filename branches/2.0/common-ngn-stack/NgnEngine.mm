@@ -29,6 +29,16 @@
 #import "NgnNetworkService.h"
 #import "NgnStorageService.h"
 #import "NgnProxyPluginMgr.h"
+#import "NgnVideoConsumer.h"
+
+
+#import "NgnProxyVideoConsumer.h"
+#if TARGET_OS_IPHONE
+#	import "iOSProxyVideoProducer.h"
+#   import "iOSVideoProducer.h"
+#elif TARGET_OS_MAC
+#	import "OSXProxyVideoProducer.h"
+#endif
 
 #undef TAG
 #define kTAG @"NgnEngine///: "
@@ -241,12 +251,58 @@
 
 #endif /* TARGET_OS_IPHONE */
 
-+(void)initialize{
++(BOOL)initialize {
 	static BOOL sMediaLayerInitialized = NO;
 	
-	if(!sMediaLayerInitialized){
-		sMediaLayerInitialized = ([NgnProxyPluginMgr initialize] == 0);
+	if (!sMediaLayerInitialized) {
+        if (tnet_startup() != 0) {
+            return NO;
+        }
+        
+        if (thttp_startup() != 0) {
+            return NO;
+        }
+        
+        if (tdav_init() != 0) {
+            return NO;
+        }
+        
+        assert(tmedia_defaults_set_profile(tmedia_profile_default) == 0);
+        assert(tmedia_defaults_set_avpf_mode(tmedia_mode_optional) == 0);
+        assert(tmedia_defaults_set_srtp_type(tmedia_srtp_type_none) == 0);
+        assert(tmedia_defaults_set_srtp_mode(tmedia_srtp_mode_none) == 0);
+        assert(tmedia_defaults_set_ice_enabled(tsk_false) == 0);
+        
+        assert(tmedia_defaults_set_rtcpmux_enabled(tsk_true) == 0);
+        assert(tmedia_defaults_set_rtcp_enabled(tsk_true) == 0);
+        
+        assert(tmedia_defaults_set_pref_video_size(tmedia_pref_video_size_cif) == 0);
+        assert(tmedia_defaults_set_video_fps(15) == 0);
+        assert(tmedia_defaults_set_video_zeroartifacts_enabled(tsk_false) == 0);
+        
+        assert(tmedia_defaults_set_webproxy_auto_detect(tsk_true) == 0);
+        
+#if HAVE_COREAUDIO_AUDIO_UNIT && TARGET_OS_IPHONE // iOS devices have native AEC
+        assert(tmedia_defaults_set_echo_supp_enabled(tsk_false) == 0);
+        assert(tmedia_defaults_set_echo_skew(0) == 0);
+        assert(tmedia_defaults_set_echo_tail(0) == 0);
+#else
+        assert(tmedia_defaults_set_echo_supp_enabled(tsk_true) == 0);
+        assert(tmedia_defaults_set_echo_skew(0) == 0);
+        assert(tmedia_defaults_set_echo_tail(100) == 0);
+#endif /* HAVE_COREAUDIO_AUDIO_UNIT && TARGET_OS_IPHONE */
+        
+        assert(tmedia_defaults_set_opus_maxcapturerate(16000) == 0);
+        assert(tmedia_defaults_set_opus_maxplaybackrate(16000) == 0);
+        
+#if TARGET_OS_IPHONE
+        assert(tmedia_producer_plugin_register(ios_producer_video_plugin_def_t) == 0);
+#endif
+        assert(tmedia_consumer_plugin_register(ngn_consumer_video_plugin_def_t) == 0);
+        
+		sMediaLayerInitialized = YES;
 	}
+    return sMediaLayerInitialized;
 }
 
 +(NgnEngine*) getInstance{

@@ -73,7 +73,7 @@
 -(BOOL) stopKeepAwake;
 #endif /* TARGET_OS_IPHONE */
 
-+(void)initialize;
++(BOOL)initialize;
 +(NgnEngine*)getInstance __attribute__ ((deprecated)); // Replaced by "+(NgnEngine*)sharedInstance"
 +(NgnEngine*)sharedInstance;
 
