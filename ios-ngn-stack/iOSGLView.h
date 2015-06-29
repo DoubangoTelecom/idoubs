@@ -22,6 +22,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "iOSNgnConfig.h"
 
 @protocol iOSGLViewDelegate <NSObject>
 @optional
@@ -37,7 +38,7 @@
 -(void)setFps:(GLuint)fps;
 -(void)startAnimation;
 -(void)stopAnimation;
--(void)setOrientation:(UIDeviceOrientation)orientation;
+-(void)setOrientation:(UIDeviceOrientation)orientation  __attribute__ ((deprecated));
 -(void)setBufferYUV:(const uint8_t*)buffer width:(uint)bufferWidth height:(uint)bufferHeight;
 -(void)setDelegate:(id<iOSGLViewDelegate>)delegate;
 -(void)setPAR:(int)numerator denominator:(int)denominator;

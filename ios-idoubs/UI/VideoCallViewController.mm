@@ -218,7 +218,7 @@
 		if(![videoSession isConnected]){
 			[NgnCamera setPreview:self.glViewVideoRemote];
 		}
-		
+#if 0 // @deprecated
 		switch ([UIDevice currentDevice].orientation) {
 			case UIInterfaceOrientationPortrait:
 				[videoSession setOrientation:AVCaptureVideoOrientationPortrait];
@@ -233,11 +233,13 @@
 				[videoSession setOrientation:AVCaptureVideoOrientationLandscapeRight];
 				break;
 		}
+#endif
 	}
-    
+#if 0 // @deprecated
     if(glViewVideoRemote){
         [glViewVideoRemote setOrientation:[UIDevice currentDevice].orientation];
     }
+#endif
 }
 
 -(void) updateRemoteDeviceInfo{
@@ -330,7 +332,6 @@
 			
 			[NgnCamera setPreview:nil];
             [videoSession setRemoteVideoDisplay:self.glViewVideoRemote];
-            [self.glViewVideoRemote startAnimation];
 			
 			[self updateRemoteDeviceInfo];
 			[self sendDeviceInfo];
@@ -461,7 +462,6 @@
 		if([videoSession isConnected]){
 			[videoSession setRemoteVideoDisplay:self.glViewVideoRemote];
 			[videoSession setLocalVideoDisplay:self.viewLocalVideo];
-            [self.glViewVideoRemote startAnimation];
 		}
 		labelRemoteParty.text = (videoSession.historyEvent) ? videoSession.historyEvent.remotePartyDisplayName :[NgnStringUtils nullValue];
 	}
