@@ -25,7 +25,7 @@
 
 #import <netinet/in.h> /* sockaddr_in */
 
-#define kReachabilityHostName @"google.com"
+#define kReachabilityHostName nil
 
 #undef TAG
 #define kTAG @"NgnNetworkService///: "
@@ -97,16 +97,22 @@ static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNe
 	if([self stopListening]){
 		Boolean ok;
 		int err = 0;
-#if 0 /* SCNetworkReachabilityCreateWithName won't returns the rigth flags imediately. We need to wait for the callback. */
-		mReachability = SCNetworkReachabilityCreateWithName(NULL, [NgnStringUtils toCString:self.reachabilityHostName]);
-#else
-		struct sockaddr_in fakeAddress;
-		bzero(&fakeAddress, sizeof(fakeAddress));
-		fakeAddress.sin_len = sizeof(fakeAddress);
-		fakeAddress.sin_family = AF_INET;
-		
-		mReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *) &fakeAddress);
-#endif
+        
+         NgnNSLog(TAG, @"startListening(%@)", self.reachabilityHostName);
+        
+        /* SCNetworkReachabilityCreateWithName won't returns the rigth flags imediately. We need to wait for the callback. */
+        if ([NgnStringUtils isNullOrEmpty:self.reachabilityHostName]) {
+            struct sockaddr_in fakeAddress;
+            bzero(&fakeAddress, sizeof(fakeAddress));
+            fakeAddress.sin_len = sizeof(fakeAddress);
+            fakeAddress.sin_family = AF_INET;
+            
+            mReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *) &fakeAddress);
+        }
+        else {
+            mReachability = SCNetworkReachabilityCreateWithName(NULL, [NgnStringUtils toCString:self.reachabilityHostName]);
+        }
+        
 		if (mReachability == NULL) {
 			err = SCError();
 		}
@@ -138,6 +144,9 @@ static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNe
 				err = SCError();
 			}
 		}
+        else  {
+            NgnNSLog(TAG, @"startListening() filed: %d", err);
+        }
 		return (err == 0);
 	}
 	return NO;
@@ -242,7 +251,20 @@ static void NgnNetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNe
 #endif
 	;
 }
-
+-(BOOL) isReachable:(NSString*)hostName {
+    BOOL reachable = NO;
+    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [hostName cStringUsingEncoding:NSASCIIStringEncoding]);
+    if (reachability) {
+        SCNetworkReachabilityFlags flags;
+        reachable = (SCNetworkReachabilityGetFlags(reachability, &flags) == true) && (flags & kSCNetworkFlagsReachable)
+#if TARGET_OS_MAC || TARGET_IPHONE_SIMULATOR
+        && !(flags & kSCNetworkFlagsConnectionRequired)
+#endif
+        ;
+        CFRelease(reachability);
+    }
+    return reachable;
+}
 -(void)dealloc{
 	[self stopListening];
 	
