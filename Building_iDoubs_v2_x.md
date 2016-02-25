@@ -9,7 +9,7 @@ This new version is now split in two parts: **iDoubs v2.x** and **ios-ngn-stack*
 
 ## Checking out the source code ##
 
-To build the source code you will need: xcode 3.x or later, iOS SDK 4.x or later and svn tools.<br />
+To build the source code you will need: xcode 3.x or later, iOS SDK 4.x or later and git tools.<br />
 
   * open new Terminal (Applications => Utilities => Terminal)
 
