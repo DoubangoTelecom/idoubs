@@ -32,6 +32,7 @@
 	UIView *viewTop;
 	UILabel *labelRemoteParty;
 	UILabel *labelStatus;
+    UILabel *labelQoS;
 	
 	UIView *viewToolbar;
 	UIButton *buttonToolBarMute;
@@ -44,10 +45,14 @@
 	UIButton *buttonHangUp;
 	
 	UIImageView *imageSecure;
+    
+    NSTimer *timerQoS;
 	
 	NgnAVSession* videoSession;
 	BOOL sendingVideo;
 }
+
+@property (retain, nonatomic) NSTimer* timerQoS;
 
 @property (retain, nonatomic) IBOutlet UIView* viewLocalVideo;
 @property (retain, nonatomic) IBOutlet iOSGLView* glViewVideoRemote;
@@ -55,6 +60,7 @@
 @property (retain, nonatomic) IBOutlet UIView* viewTop;
 @property (retain, nonatomic) IBOutlet UILabel *labelRemoteParty;
 @property (retain, nonatomic) IBOutlet UILabel *labelStatus;
+@property (retain, nonatomic) IBOutlet UILabel *labelQoS;
 
 @property (retain, nonatomic) IBOutlet UIView* viewToolbar;
 @property (retain, nonatomic) IBOutlet UIButton *buttonToolBarMute;

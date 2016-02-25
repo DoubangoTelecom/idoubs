@@ -41,6 +41,7 @@
 /*=== VideoCallViewController (Timers) ===*/
 @interface VideoCallViewController (Timers)
 -(void)timerInCallTick:(NSTimer*)timer;
+-(void)timerQoSTick:(NSTimer*)timer;
 -(void)timerSuicideTick:(NSTimer*)timer;
 
 @end
@@ -196,6 +197,7 @@
 				self.viewTop.hidden = NO;
 				self.labelStatus.text = @"Terminating...";
 				self.viewLocalVideo.hidden = YES;
+                self.labelQoS.text = @"";
 				
 				[self hideBottomView:self.viewToolbar];
 				
@@ -335,6 +337,15 @@
 			
 			[self updateRemoteDeviceInfo];
 			[self sendDeviceInfo];
+            // starts QoS timer
+            if (self.timerQoS == nil) {
+            self.timerQoS = [NSTimer scheduledTimerWithTimeInterval:kQoSTimer
+                                             target:self
+                                           selector:@selector(timerQoSTick:)
+                                           userInfo:nil 
+                                            repeats:YES];
+            }
+            
 			break;
 		}
 			
@@ -347,6 +358,12 @@
 		case INVITE_EVENT_TERMINATED:
 		case INVITE_EVENT_TERMWAIT:
 		{
+            // stops QoS timer
+            if (self.timerQoS) {
+                [self.timerQoS invalidate];
+                self.timerQoS = nil;
+            }
+            
 			// updates status info
 			[self updateViewAndState];
 			
@@ -383,6 +400,26 @@
 	// to be implemented for the call time display
 }
 
+-(void)timerQoSTick:(NSTimer*)timer{
+    if (videoSession && videoSession.connected) {
+        NgnQoS* ngnQoS = [videoSession videoQoS];
+        if (ngnQoS) {
+            self.labelQoS.text = [NSString stringWithFormat:@"Quality:  %i%%\nReceiving:  %iKbps\nSending:  %iKbps\nVideo in:  %ix%i\nVideo out:  %ix%i\nVideo in fps:  %i\nVideo enc. time:  %imillis\nVideo dec. time:  %imillis",
+                                  [ngnQoS qualityAvgPercent],
+                                  [ngnQoS bandwidthDownKbps],
+                                  [ngnQoS bandwidthUpKbps],
+                                  [ngnQoS videoInWidth],
+                                  [ngnQoS videoInHeight],
+                                  [ngnQoS videoOutWidth],
+                                  [ngnQoS videoOutHeight],
+                                  [ngnQoS videoInAvgFps],
+                                  [ngnQoS videoEncAvgTime],
+                                  [ngnQoS videoDecAvgTime]
+                                  ];
+        }
+    }
+}
+
 -(void)timerSuicideTick:(NSTimer*)timer{
     [self performSelectorOnMainThread:@selector(closeView) withObject:nil waitUntilDone:NO];
 }
@@ -391,12 +428,15 @@
 
 @implementation VideoCallViewController
 
+@synthesize timerQoS;
+
 @synthesize viewLocalVideo;
 @synthesize glViewVideoRemote;
 
 @synthesize viewTop;
 @synthesize labelRemoteParty;
 @synthesize labelStatus;
+@synthesize labelQoS;
 
 @synthesize viewToolbar;
 @synthesize buttonToolBarMute;
@@ -448,6 +488,10 @@
 	// listen to the events
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self selector:@selector(onInviteEvent:) name:kNgnInviteEventArgs_Name object:nil];
+    
+    // QoS Info
+    self.labelQoS.numberOfLines = 11;
+    self.labelQoS.textAlignment = NSTextAlignmentLeft;
     
     // GLView
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -555,6 +599,8 @@
 	[self.buttonHangUp release];
     
     [self.glViewVideoRemote release];
+    
+    [self .timerQoS release];
 	
     [super dealloc];
 }

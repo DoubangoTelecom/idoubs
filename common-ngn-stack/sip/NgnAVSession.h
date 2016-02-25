@@ -40,6 +40,23 @@
 class CallSession;
 class SipMessage;
 class ActionConfig;
+class QoS;
+
+@interface NgnQoS : NSObject {
+    QoS* mQoS;
+}
+-(NgnQoS*) initWithQoS: (QoS**)ppQoS;
+-(unsigned int) qualityAvgPercent;
+-(unsigned int) bandwidthDownKbps;
+-(unsigned int) bandwidthUpKbps;
+-(unsigned int) videoInWidth;
+-(unsigned int) videoInHeight;
+-(unsigned int) videoOutWidth;
+-(unsigned int) videoOutHeight;
+-(unsigned int) videoInAvgFps;
+-(unsigned int) videoEncAvgTime;
+-(unsigned int) videoDecAvgTime;
+@end
 
 @interface NgnAVSession : NgnInviteSession {
 	CallSession* _mSession;
@@ -84,6 +101,7 @@ class ActionConfig;
 -(BOOL) setSpeakerEnabled: (BOOL)speakerOn;
 -(BOOL) isSpeakerEnabled;
 -(BOOL) isSecure;
+-(NgnQoS*) videoQoS;
 #elif TARGET_OS_MAC
 -(BOOL) setRemoteVideoDisplay:(NSObject<NgnVideoView>*)display;
 -(BOOL) setLocalVideoDisplay: (QTCaptureView*)display;

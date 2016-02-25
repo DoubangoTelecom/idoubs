@@ -53,6 +53,7 @@ nil]
 
 
 #define kCallTimerSuicide	1.5f
+#define kQoSTimer           3.0f
 
 /* == Images for VideoCall Screen */
 #define kImageVCMute	@"mute"

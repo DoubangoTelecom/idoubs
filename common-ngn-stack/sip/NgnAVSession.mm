@@ -33,6 +33,65 @@
 #define kSessions [NgnAVSession getAllSessions]
 
 //
+//  NgnQoS
+//
+
+@implementation NgnQoS
+
+-(NgnQoS*) initWithQoS: (QoS**)ppQoS {
+    if ((self = [super init])) {
+        mQoS = *ppQoS;
+        *ppQoS = NULL;
+    }
+    else {
+        mQoS = nil;
+        // print error
+    }
+    return self;
+}
+
+-(unsigned int) qualityAvgPercent {
+    return (UInt32)(mQoS->getQavg() * 100);
+}
+-(unsigned int) bandwidthDownKbps {
+    return mQoS->getBandwidthDownKbps();
+}
+-(unsigned int) bandwidthUpKbps {
+    return mQoS->getBandwidthUpKbps();
+}
+-(unsigned int) videoInWidth {
+    return mQoS->getVideoInWidth();
+}
+-(unsigned int) videoInHeight {
+    return mQoS->getVideoInHeight();
+}
+-(unsigned int) videoOutWidth {
+    return mQoS->getVideoOutWidth();
+}
+-(unsigned int) videoOutHeight {
+    return mQoS->getVideoOutHeight();
+}
+-(unsigned int) videoInAvgFps {
+        return mQoS->getVideoInAvgFps();
+}
+-(unsigned int) videoEncAvgTime {
+    return mQoS->getVideoEncAvgTime();
+}
+-(unsigned int) videoDecAvgTime {
+    return mQoS->getVideoDecAvgTime();
+}
+
+-(void)dealloc {
+    if (mQoS) {
+        delete mQoS;
+    }
+    [super dealloc];
+}
+
+@end
+
+
+//
 // private implementation
 //
 
@@ -476,6 +535,21 @@
         return (const_cast<MediaSessionMgr*>(_mediaMgr)->sessionGetInt32(twrap_media_audiovideo, "srtp-enabled") != 0);
     }
     return NO;
+}
+
+-(NgnQoS*) videoQoS {
+    const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+    if (_mediaMgr) {
+        QoS* cppQoS = const_cast<MediaSessionMgr*>(_mediaMgr)->sessionGetQoS(twrap_media_video);
+        if (cppQoS) {
+            NgnQoS* ngnQoS = [[NgnQoS alloc] initWithQoS:&cppQoS];
+            if (cppQoS) {
+                delete cppQoS;
+            }
+            return [ngnQoS autorelease];
+        }
+    }
+    return nil;
 }
 
 +(NgnAVSession*) takeIncomingSessionWithSipStack: (NgnSipStack*) sipStack andCallSession: (CallSession**) session andMediaType: (twrap_media_type_t) mediaType andSipMessage: (const SipMessage*) sipMessage{
