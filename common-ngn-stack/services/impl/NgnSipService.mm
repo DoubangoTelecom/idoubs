@@ -687,6 +687,7 @@ done:
 		
 		
 done:
+        [eargs autorelease];
 		[pool release];
 		return 0; 
 	}
