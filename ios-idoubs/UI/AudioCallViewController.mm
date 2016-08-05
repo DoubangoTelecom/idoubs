@@ -427,6 +427,7 @@
 		else if(sender == buttonMute){
 			if([audioSession setMute:![audioSession isMuted]]){
 				self.buttonMute.selected = [audioSession isMuted];
+                //[audioSession toggleHoldResume];
 				//[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
 				//									forView:self.buttonMute withBorder:NO];
 			}

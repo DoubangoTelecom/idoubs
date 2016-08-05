@@ -380,6 +380,20 @@
     return [self toggleHoldResumeWithConfig:nil];
 }
 
+// Overrided method
+-(void) setLocalHold:(BOOL)held {
+    const MediaSessionMgr* _mediaMgr = [super getMediaSessionMgr];
+    if(_mediaMgr){
+        if (const_cast<MediaSessionMgr*>(_mediaMgr)->producerSetInt32(twrap_media_audio, "hold", held ? 1 : 0) && const_cast<MediaSessionMgr*>(_mediaMgr)->consumerSetInt32(twrap_media_audio, "hold", held ? 1 : 0)) {
+            TSK_DEBUG_INFO("Putting call on hold succeeded. Held=%s", held ? "YES" : "NO");
+        }
+    }
+    else {
+        TSK_DEBUG_ERROR("Session hold: no media session associated");
+    }
+    [super setLocalHold:held];
+}
+
 -(void) setState: (InviteState_t)newState{
     if(mState == newState){
         return;
