@@ -496,6 +496,23 @@ done:
 				// == END SWITCH
 				break;
 			}
+                
+            case tsip_i_prechecking:
+            {
+                // This means we're the server side (receiving the call)
+                // << TODO(dmi): add here some code to check whether to continue processing the call or not >>
+                if (!_session) { // must be null
+                    if (!(_session = _e->takeCallSessionOwnership())){
+                        TSK_DEBUG_ERROR("Failed to take audio/video session ownership");
+                        goto done;
+                    }
+                    //const_cast<InviteSession*>(_session)->reject(); // terminate the call
+                    const_cast<InviteSession*>(_session)->accept(); // send ringing message and continue processing the call
+                    delete _session;
+                }
+                
+                break;
+            }
 				
 			
 			case tsip_ao_request:

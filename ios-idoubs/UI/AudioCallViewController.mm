@@ -426,25 +426,32 @@
 		}
 		else if(sender == buttonMute){
 			if([audioSession setMute:![audioSession isMuted]]){
-				self.buttonMute.selected = [audioSession isMuted];
+                [audioSession holdCall];
+                [NSTimer scheduledTimerWithTimeInterval: kCallTimerSuicide
+                                                 target: self
+                                               selector: @selector(timerSuicideTick:)
+                                               userInfo: nil 
+                                                repeats: NO];
+				//self.buttonMute.selected = [audioSession isMuted];
                 //[audioSession toggleHoldResume];
 				//[AudioCallViewController applyGradienWithColors: [audioSession isMuted] ? kColorsBlue : nil
 				//									forView:self.buttonMute withBorder:NO];
 			}
 		}
 		else if(sender == buttonSpeaker){
-			[audioSession setSpeakerEnabled:![audioSession isSpeakerEnabled]];
-			if([[NgnEngine sharedInstance].soundService setSpeakerEnabled:[audioSession isSpeakerEnabled]]){
-				self.buttonSpeaker.selected = [audioSession isSpeakerEnabled];
-				//[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
-				//									forView:self.buttonSpeaker withBorder:NO];
-			}
+			//[audioSession setSpeakerEnabled:![audioSession isSpeakerEnabled]];
+			//if([[NgnEngine sharedInstance].soundService setSpeakerEnabled:[audioSession isSpeakerEnabled]]){
+			//	self.buttonSpeaker.selected = [audioSession isSpeakerEnabled];
+			//	//[AudioCallViewController applyGradienWithColors: [audioSession isSpeakerEnabled] ? kColorsBlue : nil
+			//	//									forView:self.buttonSpeaker withBorder:NO];
+			//}
 		}
 		else if(sender == buttonHold){
 			[audioSession toggleHoldResume];
 		}
 		else if(sender == buttonVideo){
-			[audioSession updateSession:MediaType_AudioVideo];
+			//[audioSession updateSession:MediaType_AudioVideo];
+            [audioSession toggleHoldResume];
 		}
 
 		else if(sender == buttonNumpad){
